@@ -6,6 +6,7 @@ site:
       key: ecoinvent-reference
       title: 中文技术文档
       path: documentation
+      default: true
       children:
         - type: space
           key: ecoinvent-zh

@@ -92,6 +92,9 @@ config = yaml.safe_load((CONTENT / '.gitbook.yaml').read_text())
 if config != {'root': './', 'structure': {'readme': 'README.md', 'summary': 'SUMMARY.md'}}:
     errors.append('Unexpected content configuration')
 site = yaml.safe_load((ROOT / 'gitbook-docs.yaml').read_text())
+sections = [s for s in site['site']['structure'] if s['type'] == 'section']
+if sections and sum(s.get('default') is True for s in sections) != 1:
+    errors.append('GitBook requires exactly one default section')
 space = site['site']['structure'][0]['children'][0]
 if (ROOT / space['content']['directory']).resolve() != CONTENT or space['content']['language'] != 'zh':
     errors.append('Incorrect site content mapping')
