@@ -1,0 +1,22 @@
+{
+  "repository": "https://github.com/RichardCao06/ecoinvent-chinese-handbook",
+  "visibility": "public",
+  "branch": "main",
+  "site_url": "https://hiqlcd.gitbook.io/hiqlcd-docs/",
+  "content_directory": "./content",
+  "initial_sync_direction": "GitHub -> GitBook",
+  "observed_sync_status": "Synced",
+  "observed_source_commit": "71dff598",
+  "public_homepage_verified": true,
+  "public_homepage_title": "文档概览 | ecoinvent 中文技术文档",
+  "chinese_navigation_verified": true,
+  "system_models_chinese_preview_verified": true,
+  "system_models_english_tab_verified": true,
+  "source_articles": 99,
+  "source_topics": 11,
+  "source_assets": 213,
+  "source_review_annotations": 170,
+  "source_pending_expert_review": 40,
+  "github_actions_validation": "success",
+  "configuration_fix": "Exactly one section must have default: true, in addition to the default space."
+}
