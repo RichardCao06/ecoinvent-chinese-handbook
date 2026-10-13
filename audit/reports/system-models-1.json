@@ -1,0 +1,84 @@
+{
+  "slug": "system-models-1",
+  "reviewer": "translator_b_cross",
+  "translator": "translator_a",
+  "status": "passed_with_notes",
+  "reviewed_blocks": [
+    "b0001",
+    "b0002",
+    "b0003",
+    "b0004",
+    "b0005",
+    "b0006",
+    "b0007",
+    "b0008",
+    "b0009",
+    "b0010",
+    "b0011",
+    "b0012",
+    "b0013",
+    "b0014",
+    "b0015",
+    "b0016",
+    "b0017",
+    "b0018",
+    "b0019",
+    "b0020",
+    "b0021",
+    "b0022",
+    "b0023",
+    "b0024"
+  ],
+  "source_sha256": "3387d8bdc7525e7665968f6502e2d3c40846d711aa54e408351252857e3b7d6d",
+  "translation_sha256": "e8f13c8faf135f12e924e42b309c2dfa844719ce68766738a0a109fa85f5957b",
+  "checks": [
+    "逐块完整对照英文原文与中文译文，核对语义和限定条件",
+    "核对LCA、LCI、LCIA与系统模型术语",
+    "核对数字、单位、正负号、版本、地理代码及数据标识",
+    "验证全部块覆盖以及HTML标签、链接和属性保留",
+    "核对译者具体疑点，修正确定译文问题并记录"
+  ],
+  "issues": [
+    {
+      "block": "b0020",
+      "category": "translation_issue",
+      "severity": "minor",
+      "source_excerpt": "MSW",
+      "translation_excerpt": "这里所述的同一过程已在所有产生城市固体废物（MSW）的供应链中发生；因此会生成相当多的“treatment of aluminium scrap”实例。",
+      "reason_zh": "APOS 语境的 MFT 为 material for treatment（待处理材料），不是多功能处理；MSW 对应城市固体废物。",
+      "recommendation_zh": "已修正缩写对应中文及生产者关系。",
+      "status": "resolved"
+    },
+    {
+      "block": "b0023",
+      "category": "translation_issue",
+      "severity": "major",
+      "source_excerpt": "MFT",
+      "translation_excerpt": "与城市固体废物（MSW）类似，其他待处理材料（MFT）也产生这类废铝，并遵循上述相同的链接程序，最终合并为一个已链接的“treatment for aluminium scrap”UPR。",
+      "reason_zh": "APOS 语境的 MFT 为 material for treatment（待处理材料），不是多功能处理；MSW 对应城市固体废物。",
+      "recommendation_zh": "已修正缩写对应中文及生产者关系。",
+      "status": "resolved"
+    },
+    {
+      "block": "b0024",
+      "category": "translation_issue",
+      "severity": "major",
+      "source_excerpt": "MFT",
+      "translation_excerpt": "该 UPR 承担所有待处理材料（MFT）生产者的一部分环境负荷；这些材料在处理时会以副产品形式产生废铝。",
+      "reason_zh": "APOS 语境的 MFT 为 material for treatment（待处理材料），不是多功能处理；MSW 对应城市固体废物。",
+      "recommendation_zh": "已修正缩写对应中文及生产者关系。",
+      "status": "resolved"
+    },
+    {
+      "block": "b0012",
+      "category": "source_issue",
+      "severity": "review",
+      "source_excerpt": "1 kg of fluting medium",
+      "translation_excerpt": "1 kg 瓦楞原纸（fluting medium）",
+      "reason_zh": "该段前后均讨论棉花生产，却突然将归一化产品称为瓦楞原纸，疑似原文误植。",
+      "recommendation_zh": "请对照原图核实，应否改为棉纤维；当前译文保留原文产品名。",
+      "status": "needs_expert_review"
+    }
+  ],
+  "summary_zh": "已完成所有块的AI独立交叉审阅；保留原文快照时点、检索名称和技术限定。具体修正和原文疑点见 issues。"
+}

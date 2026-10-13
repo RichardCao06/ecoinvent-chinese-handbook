@@ -1,0 +1,1280 @@
+[
+  {
+    "path": "content/assets/ed61b05b819d-ecoQuery-info.png",
+    "sha256": "d3d875595061d23fa6d791416eec5ef2ebf4161a3b328333d52ff089a119866b",
+    "bytes": 41473,
+    "source_url": "https://support.ecoinvent.org/hubfs/ecoQuery-info.png"
+  },
+  {
+    "path": "content/assets/e18fda20c928-database-info.png",
+    "sha256": "b4418c49803d940905ab182e0817dc51e28da15cf4e4030cb518acde6dd4d724",
+    "bytes": 21249,
+    "source_url": "https://support.ecoinvent.org/hubfs/database-info.png"
+  },
+  {
+    "path": "content/assets/30c5d075cc22-version-3.png",
+    "sha256": "c637198c0b70c421f009207a5480361e44820d93efdc20d9250e1e586f8aba84",
+    "bytes": 21190,
+    "source_url": "https://support.ecoinvent.org/hubfs/version-3.png"
+  },
+  {
+    "path": "content/assets/45719eac63ae-sectors.png",
+    "sha256": "a859b98d9d87ee404f633f582e6eb8cdfcf87340b917782113d4acbf89b6ea82",
+    "bytes": 39462,
+    "source_url": "https://support.ecoinvent.org/hubfs/sectors.png"
+  },
+  {
+    "path": "content/assets/b7e1ab9976bb-submission.png",
+    "sha256": "dc80b61e04a750eef7e0c93da3564da196f8c2b30784a4454afe1a8826744053",
+    "bytes": 17995,
+    "source_url": "https://support.ecoinvent.org/hubfs/Knowledge%20Base/Template/submission.png"
+  },
+  {
+    "path": "content/assets/dfb8f5d7a0d1-faq.png",
+    "sha256": "907552bb5b2ad69534694dd2a4eec3ff9a51c388b6d1414e0abd2c3788b6297e",
+    "bytes": 13996,
+    "source_url": "https://support.ecoinvent.org/hubfs/Knowledge%20Base/Template/faq.png"
+  },
+  {
+    "path": "content/assets/07a1b68f6f29-use-case-1.png",
+    "sha256": "459af6b734a2a665884479dc5569a214da0c4fa7a6378489e8dda2874bf1ce72",
+    "bytes": 27782,
+    "source_url": "https://support.ecoinvent.org/hubfs/use-case-1.png"
+  },
+  {
+    "path": "content/assets/90da168a9f42-accounts.png",
+    "sha256": "2edafbfa9c6f84f7ee0bb555738cea42fef308d2c599a6136d8bd9b51f5b2ce0",
+    "bytes": 34664,
+    "source_url": "https://support.ecoinvent.org/hubfs/accounts.png"
+  },
+  {
+    "path": "content/assets/3ef3333a9b69-resources.png",
+    "sha256": "80b350fcb56da08cec54115728c22046e9193865e85805e29947173f7ac8e4ee",
+    "bytes": 16353,
+    "source_url": "https://support.ecoinvent.org/hubfs/Knowledge%20Base/Template/resources.png"
+  },
+  {
+    "path": "content/assets/f0e45159aa7b-reseller.png",
+    "sha256": "6a8fe46c67d0cc97ed551cbad9e106a4e004a0c3d6ff718e02d4f61a1ff5cd9d",
+    "bytes": 43706,
+    "source_url": "https://support.ecoinvent.org/hubfs/reseller.png"
+  },
+  {
+    "path": "content/assets/821e60bc37d8-glossary.png",
+    "sha256": "663fc756770d95289b7284962d63536c771038803aa531560486850930b89d4d",
+    "bytes": 40209,
+    "source_url": "https://support.ecoinvent.org/hubfs/Knowledge%20Base/Template/glossary.png"
+  },
+  {
+    "path": "content/assets/82635ed9f8dc-Grafik-2.png",
+    "sha256": "3495ee3349ada12e220a4701613ae9b0561c39cb8fa1d1c6a809578b0d2a8a64",
+    "bytes": 12061,
+    "source_url": "https://support.ecoinvent.org/hs-fs/hubfs/Knowledge%20Base/Database/Fundamentals/Grafik-2.png?width=688&height=510&name=Grafik-2.png"
+  },
+  {
+    "path": "content/assets/8c1a4a4a0d1f-Grafik-4.png",
+    "sha256": "51caf504311b0341ea0570fa1696c1f41f401e947eaf2a5a67e74f1a1ab3b1d3",
+    "bytes": 12314,
+    "source_url": "https://support.ecoinvent.org/hs-fs/hubfs/Knowledge%20Base/Database/Fundamentals/Grafik-4.png?width=688&height=305&name=Grafik-4.png"
+  },
+  {
+    "path": "content/assets/3be518850997-Grafik-3.png",
+    "sha256": "6f00aaa396dfe608bf10db1fb2d7c9143f347f7a44dcca12d9579d7e901c15da",
+    "bytes": 12525,
+    "source_url": "https://support.ecoinvent.org/hs-fs/hubfs/Knowledge%20Base/Database/Fundamentals/Grafik-3.png?width=688&height=345&name=Grafik-3.png"
+  },
+  {
+    "path": "content/assets/024d8f149226-doc-icon.png",
+    "sha256": "11c752a10914d1abb623a90e6bd84a84df7236f9c972bc88ebfdfc17ddd0df88",
+    "bytes": 577,
+    "source_url": "https://support.ecoinvent.org/hs-fs/hubfs/Knowledge%20Base/Template/doc-icon.png?width=20&height=27&name=doc-icon.png"
+  },
+  {
+    "path": "content/assets/30cb0c4dc3d6-Database-Overview-v3.12.xlsx",
+    "sha256": "93b9f045833316560b92c6560f338d4766b08c5f54fd8ac03ee87de03a88098c",
+    "bytes": 18465710,
+    "source_url": "https://support.ecoinvent.org/hubfs/Knowledge%20Base/Database/Releases/3.12/Database%20Overview%20v3.12.xlsx"
+  },
+  {
+    "path": "content/assets/e270067e0ba3-Ecoinvent_Tool_Model_Description_20180130.pdf",
+    "sha256": "aaffa6036cf3245f12710fbc03d44fe990b3edc761ba825954c9c3ee4dfc2b20",
+    "bytes": 1603187,
+    "source_url": "https://support.ecoinvent.org/hubfs/Knowledge%20Base/Database/Sectors/Ecoinvent_Tool_Model_Description_20180130.pdf"
+  },
+  {
+    "path": "content/assets/cc35352d4593-change_report_v3_3_final.pdf",
+    "sha256": "d9095a922891f3968d039cd932fd3da3d8477f7065aed85c27d68743661f0146",
+    "bytes": 837452,
+    "source_url": "https://ecoinvent.org/wp-content/uploads/2020/08/change_report_v3_3_final.pdf"
+  },
+  {
+    "path": "content/assets/c2b709cb8f7f-ConsiderationOfLandUseChange_ecoinventDatabase.pdf",
+    "sha256": "bab604b5a09023476240650ebcadb16c9081ee994094f880a2cbab71e416c8d0",
+    "bytes": 1170983,
+    "source_url": "https://support.ecoinvent.org/hubfs/Knowledge%20Base/Database/Sectors/ConsiderationOfLandUseChange_ecoinventDatabase.pdf"
+  },
+  {
+    "path": "content/assets/f13bc31a7ff7-change_report_v3_4_20171004_1-1.pdf",
+    "sha256": "a36aff260560d94e3a2d0eb5d4af3e0d1c58a3adf5241f1eee78849b381e8f91",
+    "bytes": 508498,
+    "source_url": "https://support.ecoinvent.org/hubfs/Knowledge%20Base/Database/Releases/change_report_v3_4_20171004_1-1.pdf"
+  },
+  {
+    "path": "content/assets/103695c5a046-Change-Report-v3.9.pdf",
+    "sha256": "d0124b8eed871b52eb1b274823b31d6668d0cca47559c2367ea96bf04776d261",
+    "bytes": 29964991,
+    "source_url": "https://support.ecoinvent.org/hubfs/Change-Report-v3.9.pdf"
+  },
+  {
+    "path": "content/assets/942a0d044f2d-Sustainability_Performance_Report_Geberit_2019.pdf",
+    "sha256": "68ceb180e82773e60266387b93014f52462dab8836d02a9bb743f10ce5b3955b",
+    "bytes": 475303,
+    "source_url": "https://support.ecoinvent.org/hubfs/Knowledge%20Base/Resources/Use%20Cases/Sustainability_Performance_Report_Geberit_2019.pdf"
+  },
+  {
+    "path": "content/assets/61e82dab93c7-200810_documentation_ecospold_1.3.pdf",
+    "sha256": "83c947e6043da0de8d499341ef3fc25868b95bf90c9db1c86a3f715c191418f2",
+    "bytes": 642886,
+    "source_url": "https://support.ecoinvent.org/hubfs/Knowledge%20Base/Resources/Data%20Formats/200810_documentation_ecospold_1.3.pdf"
+  },
+  {
+    "path": "content/assets/ca185cb4a589-Licence-Agreement-ecoSpold1.pdf",
+    "sha256": "d2e5a997bd63e1545ce31cadccb63c3ed4228184f16078af273b2a4d5f3445ab",
+    "bytes": 101587,
+    "source_url": "https://support.ecoinvent.org/hubfs/Knowledge%20Base/Resources/Data%20Formats/Licence%20Agreement%20ecoSpold1.pdf"
+  },
+  {
+    "path": "content/assets/58422431916f-200905_ecospold1_open_hearing_feedback_with_comments_on_implementation_in_v2.pdf",
+    "sha256": "cb35bd09efdc63784b198d7c062f5e2ce645d4fe534a6200050a9fcf6d17158d",
+    "bytes": 147950,
+    "source_url": "https://support.ecoinvent.org/hubfs/Knowledge%20Base/Resources/Data%20Formats/200905_ecospold1_open_hearing_feedback_with_comments_on_implementation_in_v2.pdf"
+  },
+  {
+    "path": "content/assets/78bf6fd01393-ecoeditor_for_version_3_release_notes_2.pdf",
+    "sha256": "b76ac05f88bda8fba90e115f9d1ac7a9ce7bf6271067ed83b7db6e03692e3e11",
+    "bytes": 235980,
+    "source_url": "https://support.ecoinvent.org/hubfs/Knowledge%20Base/Data%20Submission/ecoEditor/ecoeditor_for_version_3_release_notes_2.pdf"
+  },
+  {
+    "path": "content/assets/090d3be8a2ed-ecoeditor_introduction_20130503.pdf",
+    "sha256": "246c2ac5a6461efb4793e859cb9a7dfed3505c28f53eac7312fa45b753d81b4f",
+    "bytes": 2360382,
+    "source_url": "https://support.ecoinvent.org/hubfs/Knowledge%20Base/Data%20Submission/ecoEditor/ecoeditor_introduction_20130503.pdf"
+  },
+  {
+    "path": "content/assets/c685d017a4d8-check_list_data_submission.pdf",
+    "sha256": "98248a058635109e69fedc8de6b1df9289d02959af31d1aded6c97a47b9a304c",
+    "bytes": 4017534,
+    "source_url": "https://support.ecoinvent.org/hubfs/Knowledge%20Base/Data%20Submission/ecoEditor/check_list_data_submission.pdf"
+  },
+  {
+    "path": "content/assets/02a0ab4f9731-validation_errors.pdf",
+    "sha256": "1a2921b683526a709545710a3e5714218026469b86e8d4201621db1a7920417d",
+    "bytes": 3662006,
+    "source_url": "https://support.ecoinvent.org/hubfs/Knowledge%20Base/Data%20Submission/ecoEditor/validation_errors.pdf"
+  },
+  {
+    "path": "content/assets/92e26dcf90f0-v3.8_example_dataset_reefer_production__intermodal_shipping_container_...__undefined.pdf",
+    "sha256": "fb3dffaaebf48c07f3f7b34851efe7aea1471cb42e305e227d8e7d0c6617eb74",
+    "bytes": 1092864,
+    "source_url": "https://support.ecoinvent.org/hubfs/Knowledge%20Base/Data%20Submission/ecoEditor/v3.8_example_dataset_reefer_production__intermodal_shipping_container_...__undefined.pdf"
+  },
+  {
+    "path": "content/assets/0390207d8f43-overview_methodology_ecoinvent-version-2.pdf",
+    "sha256": "0247333fd9b510f81263612d19362a3c3ec3cd78a3c4335503cb00a35cfe06c9",
+    "bytes": 560689,
+    "source_url": "https://support.ecoinvent.org/hubfs/Knowledge%20Base/Database/Releases/overview_methodology_ecoinvent%20version%202.pdf"
+  },
+  {
+    "path": "content/assets/7049e6386447-code-of-practice_ecoinvent-version-2.pdf",
+    "sha256": "8a0b3cd5b34ea29d749bdc69cd266d41479c48e654b3c9a0707e69381a3c1d58",
+    "bytes": 239582,
+    "source_url": "https://support.ecoinvent.org/hubfs/Knowledge%20Base/Database/Releases/code%20of%20practice_ecoinvent%20version%202.pdf"
+  },
+  {
+    "path": "content/assets/2a12adb94e2f-LCIA-methods_ecoinvent-version-2.pdf",
+    "sha256": "a1afb9c3e97fd711c8b8228dea56a7c16bfb52dc22da4c9df17a11e3a03162ad",
+    "bytes": 1596799,
+    "source_url": "https://support.ecoinvent.org/hubfs/Knowledge%20Base/Database/Releases/LCIA%20methods_ecoinvent%20version%202.pdf"
+  },
+  {
+    "path": "content/assets/57e53f4c58bc-Report-of-Changes_ecoinvent-version-2.pdf",
+    "sha256": "8a1688fde5df58b049e2c910cf0a4023482924ffa91eef9ce357712c7f14ea78",
+    "bytes": 95830,
+    "source_url": "https://support.ecoinvent.org/hubfs/Knowledge%20Base/Database/Releases/Report%20of%20Changes_ecoinvent%20version%202.pdf"
+  },
+  {
+    "path": "content/assets/02506c085096-doc-icon.png",
+    "sha256": "11c752a10914d1abb623a90e6bd84a84df7236f9c972bc88ebfdfc17ddd0df88",
+    "bytes": 577,
+    "source_url": "https://support.ecoinvent.org/hs-fs/hubfs/Knowledge%20Base/Template/doc-icon.png?width=20&height=28&name=doc-icon.png"
+  },
+  {
+    "path": "content/assets/c353def44572-15-007_simapro_case_study_a.i.s.e..pdf",
+    "sha256": "5cdc4b895215ec7479fffd5a2ca40cc051cfed0dac5b5fa0ec26b72ef9698ea0",
+    "bytes": 690268,
+    "source_url": "https://support.ecoinvent.org/hubfs/Knowledge%20Base/Resources/Use%20Cases/15-007_simapro_case_study_a.i.s.e..pdf"
+  },
+  {
+    "path": "content/assets/c8dce9ef1260-15-007_simapro_case_study_lucite.pdf",
+    "sha256": "0b6220b88d040d7ddfa4b6398c1169127b8e54fd4396978c10a96b491e33873f",
+    "bytes": 546746,
+    "source_url": "https://support.ecoinvent.org/hubfs/Knowledge%20Base/Resources/Use%20Cases/15-007_simapro_case_study_lucite.pdf"
+  },
+  {
+    "path": "content/assets/638603ede67f-20140630_report_of_changes_ecoinvent_3.01_to_3.1.pdf",
+    "sha256": "086db58ba7dadebc08f2a3bab9dfddb47ca11b81ccd0688954a294ad4d979998",
+    "bytes": 550672,
+    "source_url": "https://support.ecoinvent.org/hubfs/Knowledge%20Base/Database/Releases/20140630_report_of_changes_ecoinvent_3.01_to_3.1.pdf"
+  },
+  {
+    "path": "content/assets/2dacd37093e1-activity_overview_for_users_3.1_undefined.xlsx",
+    "sha256": "51d44848ca2254a221a188defebdfa06d5c6f0f4434b0ac6708040a1e50cc6ab",
+    "bytes": 2425104,
+    "source_url": "https://support.ecoinvent.org/hubfs/Knowledge%20Base/Database/Releases/activity_overview_for_users_3.1_undefined.xlsx"
+  },
+  {
+    "path": "content/assets/4e43ccdbcec9-activity_overview_for_users_3.1_default.xlsx",
+    "sha256": "bf4b1e6c1732d6c46b256d296ee1de5df4f0019a0d4e1ccd455fa61215daf079",
+    "bytes": 1531513,
+    "source_url": "https://support.ecoinvent.org/hubfs/Knowledge%20Base/Database/Releases/activity_overview_for_users_3.1_default.xlsx"
+  },
+  {
+    "path": "content/assets/ab7e7ae78a9e-activity_overview_for_users_3.1_long-term-1.xlsx",
+    "sha256": "be1c560fe790b119637724eb33977e31b40f72d658c7f18b95f5cda1da5b4258",
+    "bytes": 1514693,
+    "source_url": "https://support.ecoinvent.org/hubfs/Knowledge%20Base/Database/Releases/activity_overview_for_users_3.1_long-term-1.xlsx"
+  },
+  {
+    "path": "content/assets/f0779c8332a5-activity_overview_for_users_3.1_cut-off.xlsx",
+    "sha256": "7c4dad2b9f67fa3b0e38fddfed8870536370b7266d0bdedaadecb5f3fbc4cafb",
+    "bytes": 1533557,
+    "source_url": "https://support.ecoinvent.org/hubfs/Knowledge%20Base/Database/Releases/activity_overview_for_users_3.1_cut-off.xlsx"
+  },
+  {
+    "path": "content/assets/1fd0ecc76fd9-report_of_changes_ecoinvent_2.2_to_3.0_20130904.pdf",
+    "sha256": "d04783db507b82e8ccaad355c612bc5ada56328925d72d09a0d1d9bfc22c212f",
+    "bytes": 454630,
+    "source_url": "https://support.ecoinvent.org/hubfs/Knowledge%20Base/Database/Releases/report_of_changes_ecoinvent_2.2_to_3.0_20130904.pdf"
+  },
+  {
+    "path": "content/assets/0924b23cc5e2-correspondence_file_elementary-exchanges_v2.2-v3.0_20130904.xls",
+    "sha256": "1656bd66bd69610e8f76a80949ba9a19f20b7ef4a33b477fd28dc324a3a2cc65",
+    "bytes": 1721856,
+    "source_url": "https://support.ecoinvent.org/hubfs/Knowledge%20Base/Database/Releases/correspondence_file_elementary-exchanges_v2.2-v3.0_20130904.xls"
+  },
+  {
+    "path": "content/assets/7f294018741b-correspondence_file_intermediate-exchangesv2.2_to_v3.0_20130904.xlsx",
+    "sha256": "cd598b9c357a1c0f55ca5e00fc9861a753cbdce772a07dd43e8acffcb8f2b959",
+    "bytes": 578537,
+    "source_url": "https://support.ecoinvent.org/hubfs/Knowledge%20Base/Database/Releases/correspondence_file_intermediate-exchangesv2.2_to_v3.0_20130904.xlsx"
+  },
+  {
+    "path": "content/assets/58caafe4b015-activity_overview_for_users_3.01_20130904-1.xlsx",
+    "sha256": "6f773d010b9dcc8f098803533d3bf998d3fd7907943aa9ade1a5dee8a98913c6",
+    "bytes": 1761542,
+    "source_url": "https://support.ecoinvent.org/hubfs/Knowledge%20Base/Database/Releases/activity_overview_for_users_3.01_20130904-1.xlsx"
+  },
+  {
+    "path": "content/assets/9c37f83e3b0d-webinar-icon.png",
+    "sha256": "bbbed15378a3f9634b61ef3e95a0cc3fec091fa144be28b1a610145522ce16de",
+    "bytes": 950,
+    "source_url": "https://support.ecoinvent.org/hs-fs/hubfs/Knowledge%20Base/Template/webinar-icon.png?width=36&height=26&name=webinar-icon.png"
+  },
+  {
+    "path": "content/assets/c294d225037a-Webinar-introduction-to-ecoinvent-v3.11-FAQ.pdf",
+    "sha256": "ad76a8681ab45a00df637da4de47fcb9c2239076d964b92243ffdb8c620a008f",
+    "bytes": 162594,
+    "source_url": "https://support.ecoinvent.org/hubfs/Knowledge%20Base/Database/Releases/3.11/Webinar-introduction-to-ecoinvent-v3.11-FAQ.pdf"
+  },
+  {
+    "path": "content/assets/c29a5e16a923-Webinar-introduction-to-ecoinvent-v3.11.pdf",
+    "sha256": "72b0fcdf489127fa75669fb31c7ef8df04a5dafc83fe726245053a3ec59f73a4",
+    "bytes": 6147460,
+    "source_url": "https://support.ecoinvent.org/hubfs/Knowledge%20Base/Database/Releases/3.11/Webinar-introduction-to-ecoinvent-v3.11.pdf"
+  },
+  {
+    "path": "content/assets/b05ee1a65d32-Change-Report-v3.11.pdf",
+    "sha256": "4d7595bfaf7088c2a5fa43689734810d60d834b4cafae8e1b48fe1c30baa1b39",
+    "bytes": 4865132,
+    "source_url": "https://support.ecoinvent.org/hubfs/Knowledge%20Base/Database/Releases/3.11/Change%20Report%20v3.11.pdf"
+  },
+  {
+    "path": "content/assets/c827eab44ad7-Correspondence-File-v3.10---v.3.11.xlsx",
+    "sha256": "45bc6ed19af7b8b4a89128f6ad20042aadd201b9b2660fb4ac43a803a3f25c80",
+    "bytes": 21907889,
+    "source_url": "https://support.ecoinvent.org/hubfs/Knowledge%20Base/Database/Releases/3.11/Correspondence%20File%20v3.10%20-%20v.3.11.xlsx"
+  },
+  {
+    "path": "content/assets/8b779e1f37c9-Correspondence-File-v3.10.1---v.3.11.xlsx",
+    "sha256": "db2f5c45063014d09cd699f4e7e96c00354a7ce9c52e16e75dd3c2fa4dc0da2b",
+    "bytes": 21907913,
+    "source_url": "https://support.ecoinvent.org/hubfs/Knowledge%20Base/Database/Releases/3.11/Correspondence%20File%20v3.10.1%20-%20v.3.11.xlsx"
+  },
+  {
+    "path": "content/assets/066ac4ecf765-Database-Overview-for-ecoinvent-v3.11-6-.xlsx",
+    "sha256": "34f1176700af78b746ba1f8d44b4b697b4a59f3d7ca3470441e9c8d6e88bdae4",
+    "bytes": 20055216,
+    "source_url": "https://support.ecoinvent.org/hubfs/Knowledge%20Base/Database/Releases/3.11/Database-Overview-for-ecoinvent-v3.11%20(6).xlsx"
+  },
+  {
+    "path": "content/assets/957bf4cc0635-LCIA-implementation-3.11.pdf",
+    "sha256": "6c7e0ff88921fbb81f29c22ac055c17956fecdc98936bbb9033effca19103542",
+    "bytes": 2007942,
+    "source_url": "https://support.ecoinvent.org/hubfs/Knowledge%20Base/Database/Releases/3.11/LCIA%20implementation%203.11.pdf"
+  },
+  {
+    "path": "content/assets/98e680a1ed50-Known-Issue-v3.12_Australian-Cereal-Carbon-Corrections.xlsx",
+    "sha256": "0d84fe505febe6d8303181eb03255bb4a128c527b4426b40c302dee567c8e45f",
+    "bytes": 15807,
+    "source_url": "https://support.ecoinvent.org/hubfs/Knowledge%20Base/Database/Releases/3.12/Known%20Issue%20v3.12_Australian%20Cereal%20Carbon%20Corrections.xlsx"
+  },
+  {
+    "path": "content/assets/15fd4ad3835e-Webinar-3.10-faqs.pdf",
+    "sha256": "92fb50f8ffa106af57cc34ba9ac81707f5cbc6eb02a89d4ea1b1472bab9e75fa",
+    "bytes": 338107,
+    "source_url": "https://support.ecoinvent.org/hubfs/Knowledge%20Base/Database/Releases/Webinar-3.10-faqs.pdf"
+  },
+  {
+    "path": "content/assets/8f59298dbb92-Webinar-introduction-to-ecoinvent-3.10-final.pdf",
+    "sha256": "71bac9cadd20c3576368e2fdf4147abac3a521ede7f2650dbd3c66ac004caf3c",
+    "bytes": 4873165,
+    "source_url": "https://support.ecoinvent.org/hubfs/Knowledge%20Base/Webinar-introduction-to-ecoinvent-3.10-final.pdf"
+  },
+  {
+    "path": "content/assets/ce795d9e52c9-Change-Report-v3.10---20231214.pdf",
+    "sha256": "af34c79834b2e154ea87c69913774f78980cef29fc9f295c5685d99f492549cd",
+    "bytes": 5665534,
+    "source_url": "https://support.ecoinvent.org/hubfs/Knowledge%20Base/Database/Releases/Change%20Report%20v3.10%20-%2020231214.pdf"
+  },
+  {
+    "path": "content/assets/13c0adbcd246-Correspondence-File-v3.9.1---v.3.10-1.xlsx",
+    "sha256": "a4ca7261c085cd092f89011b15bab6b13fdc8abd9bbf192c80971f0c33c333af",
+    "bytes": 21662925,
+    "source_url": "https://support.ecoinvent.org/hubfs/Knowledge%20Base/Database/Releases/Correspondence%20File%20v3.9.1%20-%20v.3.10-1.xlsx"
+  },
+  {
+    "path": "content/assets/c804f776c8d3-Database-Overview-for-ecoinvent-v3.10.xlsx",
+    "sha256": "c7142dc69ac74e8521232aa6be034817b2ef34c300165a45ec40edb836780a66",
+    "bytes": 18732289,
+    "source_url": "https://ecoinvent.org/wp-content/uploads/2023/11/Database-Overview-for-ecoinvent-v3.10.xlsx"
+  },
+  {
+    "path": "content/assets/bcbd83af2ff3-LCIA-implementation-3.10-1-.pdf",
+    "sha256": "d956b314051c6a9e2944dd35f8e9c9b76f2402b8d0b5aeb3b90c282911bbb59a",
+    "bytes": 1649306,
+    "source_url": "https://support.ecoinvent.org/hubfs/Knowledge%20Base/Database/Releases/LCIA%20implementation%203.10%20(1).pdf"
+  },
+  {
+    "path": "content/assets/182a4019c27b-Known-Issue-Correction_Coke_3.10_All-System-Models.xlsx",
+    "sha256": "cb850603e1bc5d097be8e5e220127cd2db9acf9a799595a9e6b6ee07eb53f9df",
+    "bytes": 26852,
+    "source_url": "https://support.ecoinvent.org/hubfs/Knowledge%20Base/Database/Releases/Known%20Issue%20Correction_Coke_3.10_All%20System%20Models.xlsx"
+  },
+  {
+    "path": "content/assets/e7560598d4c4-change_report_v3_3_final.pdf",
+    "sha256": "d9095a922891f3968d039cd932fd3da3d8477f7065aed85c27d68743661f0146",
+    "bytes": 837452,
+    "source_url": "https://support.ecoinvent.org/hubfs/Knowledge%20Base/Database/Releases/change_report_v3_3_final.pdf"
+  },
+  {
+    "path": "content/assets/bddd19095e1e-ecoinvent_correspondence_file_eiv3.2_to_eiv3.3.xlsx",
+    "sha256": "1618235d9698bc6564f16f6f66e2c9b2c6da4aab1e5ae544381da8c51326eaab",
+    "bytes": 7196837,
+    "source_url": "https://support.ecoinvent.org/hubfs/Knowledge%20Base/Database/Releases/ecoinvent_correspondence_file_eiv3.2_to_eiv3.3.xlsx"
+  },
+  {
+    "path": "content/assets/2222ed0f26e2-activity_overview_for_users_3.3_undefined_1-1.xlsx",
+    "sha256": "c311ea50ce001772611dbf8c9b9f118594142052d9e0d127001b150243febe22",
+    "bytes": 2913300,
+    "source_url": "https://support.ecoinvent.org/hubfs/Knowledge%20Base/Database/Releases/activity_overview_for_users_3.3_undefined_1-1.xlsx"
+  },
+  {
+    "path": "content/assets/75b961b9d93a-activity_overview_for_users_3.3_apos.xlsx",
+    "sha256": "4258e70d55946bf6173223faeb29aaa7c9d128379d9b200340da3c751820d8f0",
+    "bytes": 1897519,
+    "source_url": "https://support.ecoinvent.org/hubfs/Knowledge%20Base/Database/Releases/activity_overview_for_users_3.3_apos.xlsx"
+  },
+  {
+    "path": "content/assets/dd7bf50d86ae-activity_overview_for_users_3.3_consequential.xlsx",
+    "sha256": "7fb404f0d8fca3be5ff60ae2a254db10b68de4efa3eb913265dab46d73f7cb0d",
+    "bytes": 1854719,
+    "source_url": "https://support.ecoinvent.org/hubfs/Knowledge%20Base/Database/Releases/activity_overview_for_users_3.3_consequential.xlsx"
+  },
+  {
+    "path": "content/assets/1a12c0309c91-activity_overview_for_users_3.3_cut-off.xlsx",
+    "sha256": "e36bc2223a5cb2830d4a3f8c2adbf21bb74d7688cfddaa27f9e76fd8dff2b804",
+    "bytes": 1899480,
+    "source_url": "https://support.ecoinvent.org/hubfs/Knowledge%20Base/Database/Releases/activity_overview_for_users_3.3_cut-off.xlsx"
+  },
+  {
+    "path": "content/assets/36b677e15ef1-list_of_methods_and_indicators_ecoinvent_v3.3.xlsx",
+    "sha256": "793cfb8edb7853209615ff197216fee87fd82d03e6c41bab333c7a5b65e0c859",
+    "bytes": 28752,
+    "source_url": "https://support.ecoinvent.org/hubfs/Knowledge%20Base/Database/Releases/list_of_methods_and_indicators_ecoinvent_v3.3.xlsx"
+  },
+  {
+    "path": "content/assets/642c4b5fa69a-ecoinvent-Introduction-to-version-3.12-Webinar-Q-A.pdf",
+    "sha256": "4f165e33a2e3026040029902c83f8363b1d0adbb27e46ac2dce440622a9fb737",
+    "bytes": 346366,
+    "source_url": "https://support.ecoinvent.org/hubfs/Comms/2025%20v3.12%20Release/ecoinvent%20Introduction%20to%20version%203.12%20Webinar%20Q%26A.pdf"
+  },
+  {
+    "path": "content/assets/82c7659626d9-Webinar-introduction-to-ecoinvent-v3.11.pdf",
+    "sha256": "72b0fcdf489127fa75669fb31c7ef8df04a5dafc83fe726245053a3ec59f73a4",
+    "bytes": 6147460,
+    "source_url": "https://support.ecoinvent.org/hubfs/Knowledge%20Base/Database/Releases/3.11/Webinar-introduction-to-ecoinvent-v3.11.pdf?hsLang=en"
+  },
+  {
+    "path": "content/assets/95000f85e0bd-Introduction-to-ecoinvent-v3.12.pdf",
+    "sha256": "77b4b49e07e8dbf5a4c3abf68d9bebe3939ddc89056bd0b8c7792ce231cd7bea",
+    "bytes": 4608950,
+    "source_url": "https://support.ecoinvent.org/hubfs/Comms/2025%20v3.12%20Release/Introduction%20to%20ecoinvent%20v3.12.pdf"
+  },
+  {
+    "path": "content/assets/83605407160d-Change-Report-v3.12.pdf",
+    "sha256": "2b81dc1aa078aef7e833c548074daef93b1a8460ebda8a40ef89f37549772607",
+    "bytes": 4449704,
+    "source_url": "https://support.ecoinvent.org/hubfs/Knowledge%20Base/Database/Releases/3.12/Change%20Report%20v3.12.pdf"
+  },
+  {
+    "path": "content/assets/43adfb73b32e-Correspondence-File-v3.11---v.3.12.xlsx",
+    "sha256": "bdbcf8c78c8fb80ce232a1dd64a80e266456a9c6f451e085d6d6f089a237017f",
+    "bytes": 23354487,
+    "source_url": "https://support.ecoinvent.org/hubfs/Knowledge%20Base/Database/Releases/3.12/Correspondence%20File%20v3.11%20-%20v.3.12.xlsx"
+  },
+  {
+    "path": "content/assets/08f95eab812e-LCIA-Implementation-v3.12.pdf",
+    "sha256": "e7b0cd447af5f0c18e956eeacf7ed21e61091cfc36899a5071ac623f11c485a7",
+    "bytes": 1958358,
+    "source_url": "https://support.ecoinvent.org/hubfs/Knowledge%20Base/Database/Releases/3.12/LCIA%20Implementation%20v3.12.pdf"
+  },
+  {
+    "path": "content/assets/282c4157bb71-correspondence_file_eiv3.3_to_eiv3.4_20170921_final-1.xlsx",
+    "sha256": "50f997272b5e9c3f1211fb0a061176ba70c835df333f7d142e395fb4506b2d0d",
+    "bytes": 13326128,
+    "source_url": "https://support.ecoinvent.org/hubfs/Knowledge%20Base/Database/Releases/correspondence_file_eiv3.3_to_eiv3.4_20170921_final-1.xlsx"
+  },
+  {
+    "path": "content/assets/1f538fb556ac-activity_overview_3.4_undefined_public-2.xlsx",
+    "sha256": "9318ae87614cec5aff3929f61bc45c4d9aba14d88652be130c18c26b80d9b0cb",
+    "bytes": 2856116,
+    "source_url": "https://support.ecoinvent.org/hubfs/Knowledge%20Base/Database/Releases/activity_overview_3.4_undefined_public-2.xlsx"
+  },
+  {
+    "path": "content/assets/702e9a054aad-activity_overview_3.4_allocation__apos_public-1.xlsx",
+    "sha256": "d654403fd648bf9178770f46b9fa30ad97c383baccba9525246b1c43a918142e",
+    "bytes": 1776551,
+    "source_url": "https://support.ecoinvent.org/hubfs/Knowledge%20Base/Database/Releases/activity_overview_3.4_allocation__apos_public-1.xlsx"
+  },
+  {
+    "path": "content/assets/f76e0d10e188-activity_overview_3.4_consequential_public-1.xlsx",
+    "sha256": "cf8d725fbc58b1a2ed9a826ea5e8b8c3b3d706104dde565705a2c81b22b6cbe0",
+    "bytes": 1732281,
+    "source_url": "https://support.ecoinvent.org/hubfs/Knowledge%20Base/Database/Releases/activity_overview_3.4_consequential_public-1.xlsx"
+  },
+  {
+    "path": "content/assets/3208bc7e7cf6-activity_overview_3.4_allocation__cut-off_public-1.xlsx",
+    "sha256": "5ac6b011cc66e01e6d2aa1ad3f2f46e62a4ca84d8149fbc543f4f2a8028f1ccd",
+    "bytes": 1773266,
+    "source_url": "https://support.ecoinvent.org/hubfs/Knowledge%20Base/Database/Releases/activity_overview_3.4_allocation__cut-off_public-1.xlsx"
+  },
+  {
+    "path": "content/assets/ddf5f61b24e3-list_of_methods_and_indicators_ecoinvent_v3.4-1.xlsx",
+    "sha256": "bc9ad3771642da745138d5a5efe5a554f5cfe50de8340a9783354ebe4562705a",
+    "bytes": 28940,
+    "source_url": "https://support.ecoinvent.org/hubfs/Knowledge%20Base/Database/Releases/list_of_methods_and_indicators_ecoinvent_v3.4-1.xlsx"
+  },
+  {
+    "path": "content/assets/127a8208107b-3-4-img1-jpg.jpeg",
+    "sha256": "d4e00fd130de97ab9968625618406550b969de58627a693fd0259d0edae84d44",
+    "bytes": 25091,
+    "source_url": "https://support.ecoinvent.org/hubfs/3-4-img1-jpg.jpeg"
+  },
+  {
+    "path": "content/assets/a47d793d0077-report_of_changes_v3_2-1.pdf",
+    "sha256": "f0c34004f59617db9e6259490d1ce9b5462cbd847396b490615e15c2d0bc9723",
+    "bytes": 684755,
+    "source_url": "https://support.ecoinvent.org/hubfs/Knowledge%20Base/Database/Releases/report_of_changes_v3_2-1.pdf"
+  },
+  {
+    "path": "content/assets/573bb7ab7642-ecoinvent_correspondence_file_eiv3_1_to_eiv3_2_updated20151214_2-3.xlsx",
+    "sha256": "50de160f32a23b2a62df8bc5dbafefe93cfba2e8d2885d9144ea5cca708d15c3",
+    "bytes": 6208219,
+    "source_url": "https://support.ecoinvent.org/hubfs/Knowledge%20Base/Database/Releases/ecoinvent_correspondence_file_eiv3_1_to_eiv3_2_updated20151214_2-3.xlsx"
+  },
+  {
+    "path": "content/assets/0a4b53555649-activity_overview_for_users_3.2_undefined_20160901-4.xlsx",
+    "sha256": "6e4debfe75e5a16fbd8983e4f08f23897f4104c5ca7cda80825bb169810ee7fc",
+    "bytes": 2914890,
+    "source_url": "https://support.ecoinvent.org/hubfs/Knowledge%20Base/Database/Releases/activity_overview_for_users_3.2_undefined_20160901-4.xlsx"
+  },
+  {
+    "path": "content/assets/c05b16833b90-activity_overview_for_users_3.2_apos-2.xlsx",
+    "sha256": "e64107dbe7ef1f23fe2cf41b0e18c4ad67c07a2ead4f6cf9ee9538e3db42a349",
+    "bytes": 1803597,
+    "source_url": "https://support.ecoinvent.org/hubfs/Knowledge%20Base/Database/Releases/activity_overview_for_users_3.2_apos-2.xlsx"
+  },
+  {
+    "path": "content/assets/432123773d3d-activity_overview_for_users_3.2_consequential-2.xlsx",
+    "sha256": "88b26b075847a231d9b192378397b38df726898c7554cce25e71b490ec793f40",
+    "bytes": 1762370,
+    "source_url": "https://support.ecoinvent.org/hubfs/Knowledge%20Base/Database/Releases/activity_overview_for_users_3.2_consequential-2.xlsx"
+  },
+  {
+    "path": "content/assets/49316d902abd-activity_overview_for_users_3.2_cut-off-1.xlsx",
+    "sha256": "8aed824c9baa227789f92563597db33706bf589a077b568b41a6a14a294eadf3",
+    "bytes": 1796943,
+    "source_url": "https://support.ecoinvent.org/hubfs/Knowledge%20Base/Database/Releases/activity_overview_for_users_3.2_cut-off-1.xlsx"
+  },
+  {
+    "path": "content/assets/0324a3eb9240-list_of_methods_and_indicators_ecoinvent_v3.2-2.xlsx",
+    "sha256": "a1d5378171c4a45ff4116285076a1ea74dfda469f96b8c3fd33c3405efa5dd8c",
+    "bytes": 33960,
+    "source_url": "https://support.ecoinvent.org/hubfs/Knowledge%20Base/Database/Releases/list_of_methods_and_indicators_ecoinvent_v3.2-2.xlsx"
+  },
+  {
+    "path": "content/assets/c00887147c31-change_report_v3_5_20180823.pdf",
+    "sha256": "af09039fb2213f9fc27fd472e2bd36f14fb2d16d5a9029deaf28824078ffc92e",
+    "bytes": 1273549,
+    "source_url": "https://support.ecoinvent.org/hubfs/Knowledge%20Base/Database/Releases/change_report_v3_5_20180823.pdf"
+  },
+  {
+    "path": "content/assets/7af8b3a071fb-correspondence_file_eiv3.4_to_eiv3.5_20180822_final_1.xlsx",
+    "sha256": "64bbccaa848b9d3d2ccc95fca0cece16101ee02d1ffc624aca7f0066bc382d87",
+    "bytes": 8923512,
+    "source_url": "https://support.ecoinvent.org/hubfs/Knowledge%20Base/Database/Releases/correspondence_file_eiv3.4_to_eiv3.5_20180822_final_1.xlsx"
+  },
+  {
+    "path": "content/assets/a45f9f3f10b5-activity_overview_3.5_undefined_public.xlsx",
+    "sha256": "1bb30f0dba4f0a47e76fb8043922194227adc8987bc77d93ce697fb1c6a1dba4",
+    "bytes": 3789695,
+    "source_url": "https://support.ecoinvent.org/hubfs/Knowledge%20Base/Database/Releases/activity_overview_3.5_undefined_public.xlsx"
+  },
+  {
+    "path": "content/assets/8a4a327166ab-activity_overview_3.5_allocation__apos_public.xlsx",
+    "sha256": "d563e8081689062cfa98727f213915ccdd0f45684cad3dbdef6e219e49adea25",
+    "bytes": 2125285,
+    "source_url": "https://support.ecoinvent.org/hubfs/Knowledge%20Base/Database/Releases/activity_overview_3.5_allocation__apos_public.xlsx"
+  },
+  {
+    "path": "content/assets/266d628fa0ec-activity_overview_3.5_consequential_public.xlsx",
+    "sha256": "58349960d5bc90d9f13a7377b653121f68d7f6351f6f354a83188fe1658ccccb",
+    "bytes": 2074073,
+    "source_url": "https://support.ecoinvent.org/hubfs/Knowledge%20Base/Database/Releases/activity_overview_3.5_consequential_public.xlsx"
+  },
+  {
+    "path": "content/assets/10c44a977d5b-activity_overview_3.5_allocation__cut-off_public.xlsx",
+    "sha256": "742eb721e6576069f39ce9057814812cb8f963cb982471e3c40697a15454b7b6",
+    "bytes": 2153029,
+    "source_url": "https://support.ecoinvent.org/hubfs/Knowledge%20Base/Database/Releases/activity_overview_3.5_allocation__cut-off_public.xlsx"
+  },
+  {
+    "path": "content/assets/3693441b23cf-list_of_methods_and_indicators_ecoinvent_v3.520180824.xlsx",
+    "sha256": "62cbbcc586467a3a9e0dced4477ba7b43567157127559420dbb741c3619b320d",
+    "bytes": 31042,
+    "source_url": "https://support.ecoinvent.org/hubfs/Knowledge%20Base/Database/Releases/list_of_methods_and_indicators_ecoinvent_v3.520180824.xlsx"
+  },
+  {
+    "path": "content/assets/ef894a0de591-change_report_v3_6_20190912.pdf",
+    "sha256": "f6c04df0b1b89ace9a7af01d133f5a1951e7936be311814317b229e5fb942529",
+    "bytes": 3301463,
+    "source_url": "https://support.ecoinvent.org/hubfs/Knowledge%20Base/Database/Releases/change_report_v3_6_20190912.pdf"
+  },
+  {
+    "path": "content/assets/9bb6f8d2afda-correspondence_file_eiv3.5_to_eiv3.6.xlsx",
+    "sha256": "905e01339c37db1ac6b6251e723d08cc0dd8861e099c7720c4ea9314468e27ad",
+    "bytes": 10744378,
+    "source_url": "https://support.ecoinvent.org/hubfs/Knowledge%20Base/Database/Releases/correspondence_file_eiv3.5_to_eiv3.6.xlsx"
+  },
+  {
+    "path": "content/assets/9f6273a3c95b-activity_overview_3.6_undefined_public_1.xlsx",
+    "sha256": "9a698308468ab91b755c3e759a7bf117c2f123a0a19e7c932bc8caf173cf5a0c",
+    "bytes": 3925929,
+    "source_url": "https://support.ecoinvent.org/hubfs/Knowledge%20Base/Database/Releases/activity_overview_3.6_undefined_public_1.xlsx"
+  },
+  {
+    "path": "content/assets/839e749064a3-activity_overview_3.6_allocation__apos_public_1.xlsx",
+    "sha256": "f28d13fb79298b263cf697dc15b142e89aeee55d5ec3ce05ed5b626146001496",
+    "bytes": 2497531,
+    "source_url": "https://support.ecoinvent.org/hubfs/Knowledge%20Base/Database/Releases/activity_overview_3.6_allocation__apos_public_1.xlsx"
+  },
+  {
+    "path": "content/assets/da2e65ca8740-activity_overview_3.6_consequential_public_1.xlsx",
+    "sha256": "742a954e70401f4a5e53062002e044a09f545360cdb7d610dba22056ef979fac",
+    "bytes": 2239649,
+    "source_url": "https://support.ecoinvent.org/hubfs/Knowledge%20Base/Database/Releases/activity_overview_3.6_consequential_public_1.xlsx"
+  },
+  {
+    "path": "content/assets/24cdaf0514a6-activity_overview_3.6_allocation__cut-off_public_1-1.xlsx",
+    "sha256": "95d4e213f1f3f4c6648b2fca8f591dcb7c9cb24058a4116288ed1f33da774188",
+    "bytes": 2497086,
+    "source_url": "https://support.ecoinvent.org/hubfs/Knowledge%20Base/Database/Releases/activity_overview_3.6_allocation__cut-off_public_1-1.xlsx"
+  },
+  {
+    "path": "content/assets/48648d5d8f23-list_of_methods_and_indicators_ecoinvent_v3.6.xlsx",
+    "sha256": "39fb33cd9936f0a795731f3f98cc687fe2aa4601ced29a686e82c3b888287af9",
+    "bytes": 31442,
+    "source_url": "https://support.ecoinvent.org/hubfs/Knowledge%20Base/Database/Releases/list_of_methods_and_indicators_ecoinvent_v3.6.xlsx"
+  },
+  {
+    "path": "content/assets/7139151e80d4-Change-Report-v3.10.1.pdf",
+    "sha256": "a789609e8fea60c683eb7daccbfba02b24085c963ae56c1d64b8fe79b0dcb53f",
+    "bytes": 220479,
+    "source_url": "https://support.ecoinvent.org/hubfs/Version%20Releases/3.10.1/Change%20Report%20v3.10.1.pdf"
+  },
+  {
+    "path": "content/assets/bd57a6dc654d-Correspondence-File-v3.10---v.3.10.1.xlsx",
+    "sha256": "8a9315f4627b963eee1eac6dc9270f98a1758f84af240a0f0dee4c8acce4c394",
+    "bytes": 21805301,
+    "source_url": "https://support.ecoinvent.org/hubfs/Version%20Releases/3.10.1/Correspondence%20File%20v3.10%20-%20v.3.10.1.xlsx"
+  },
+  {
+    "path": "content/assets/be8e63e767cc-Database-Overview-for-ecoinvent-v3.10.1.xlsx",
+    "sha256": "747d921f14dbd97c4b98b986a2caec755dc979b5566dfd2240472a866cde6471",
+    "bytes": 16693061,
+    "source_url": "https://support.ecoinvent.org/hubfs/Version%20Releases/3.10.1/Database-Overview-for-ecoinvent-v3.10.1.xlsx"
+  },
+  {
+    "path": "content/assets/f9702d5ab70f-LCIA-implementation-3.10.1.pdf",
+    "sha256": "736f6c6fd4f17008ff601d4508bd13060dc00bc821679ad592953d2da911d863",
+    "bytes": 1800306,
+    "source_url": "https://support.ecoinvent.org/hubfs/Version%20Releases/3.10.1/LCIA%20implementation%203.10.1.pdf"
+  },
+  {
+    "path": "content/assets/87f134eda0de-Change-Report-v3.8.pdf",
+    "sha256": "bae4620e45eccfcc1754f667499e5066e28b07a3554b556e1b9cc2c0089a3163",
+    "bytes": 1481922,
+    "source_url": "https://support.ecoinvent.org/hubfs/Knowledge%20Base/Database/Releases/3.8/Change-Report-v3.8.pdf"
+  },
+  {
+    "path": "content/assets/b50476fe0866-Correspondence-File-v3.7.1-v3.8.xlsx",
+    "sha256": "c003dc55d81aa382dcf7cf7b992588d3e523ecf92368cb998185a782500b3e6a",
+    "bytes": 13765636,
+    "source_url": "https://support.ecoinvent.org/hubfs/Correspondence-File-v3.7.1-v3.8.xlsx"
+  },
+  {
+    "path": "content/assets/04194da4f83c-Database-Overview-for-ecoinvent-v3.8-1.xlsx",
+    "sha256": "f9bc521b30d9d7b114c61b6082fb104475a1dcef93630b8671560cbef5c7df28",
+    "bytes": 16261430,
+    "source_url": "https://support.ecoinvent.org/hubfs/Database-Overview-for-ecoinvent-v3.8-1.xlsx"
+  },
+  {
+    "path": "content/assets/e0a7eed10e0f-LCIA-Implementation-v3.8.pdf",
+    "sha256": "9d01fdde53b76df252fe71ea8dcaf2af9a2d8f4fb259ec6e1f9c952eb738a413",
+    "bytes": 518828,
+    "source_url": "https://support.ecoinvent.org/hubfs/Knowledge%20Base/Database/Releases/3.8/LCIA%20Implementation%20v3.8.pdf"
+  },
+  {
+    "path": "content/assets/42659ab6e598-technical-report_v3-7-1_20201217-1.pdf",
+    "sha256": "7baeec464ba6d086f27544fc468d84799ef6bb5a071013e1cae35fb83bf62347",
+    "bytes": 767123,
+    "source_url": "https://support.ecoinvent.org/hubfs/Knowledge%20Base/Database/Releases/technical-report_v3-7-1_20201217-1.pdf"
+  },
+  {
+    "path": "content/assets/1cebba817257-change-report_v3-7-1_20201217.pdf",
+    "sha256": "5e0dd5e57dd0159fc2b03e1c444a08be2698e10a6e887f70e71948cc5500a3fe",
+    "bytes": 3393698,
+    "source_url": "https://support.ecoinvent.org/hubfs/Knowledge%20Base/Database/Releases/change%20report_v3%207%201_20201217.pdf"
+  },
+  {
+    "path": "content/assets/d0091c2e42d9-correspondence_file_eiv3.6_to_eiv3.7.1.xlsx",
+    "sha256": "cd7b5797957b2f43dc2a8ac6c4227b31302120acae18389361a9327af11d6038",
+    "bytes": 12926841,
+    "source_url": "https://support.ecoinvent.org/hubfs/Knowledge%20Base/Database/Releases/correspondence_file_eiv3.6_to_eiv3.7.1.xlsx"
+  },
+  {
+    "path": "content/assets/dc982e5aca4c-activity_overview_3.7.1_undefined_public-1.xlsx",
+    "sha256": "d5e150edfb5542962260593c1a3ea3ce38715cbfb1b13d791b2ef0a98a9ec44e",
+    "bytes": 4202820,
+    "source_url": "https://support.ecoinvent.org/hubfs/Knowledge%20Base/Database/Releases/activity_overview_3.7.1_undefined_public-1.xlsx"
+  },
+  {
+    "path": "content/assets/f58f787d6a1b-activity_overview_3.7.1_allocation_apos_public.xlsx",
+    "sha256": "af0cc17cd7dde5a5fc5e8dfa11d9a6402f15db6305c89480aadc8a0bbe4be0f6",
+    "bytes": 2816287,
+    "source_url": "https://support.ecoinvent.org/hubfs/Knowledge%20Base/Database/Releases/activity_overview_3.7.1_allocation_apos_public.xlsx"
+  },
+  {
+    "path": "content/assets/00a2d23a2e4e-activity_overview_3.7.1_consequential_public.xlsx",
+    "sha256": "214f8322b694e9ef1b2dcf12a8fef7181bd8b290914df61f282fb265127b2d34",
+    "bytes": 2732318,
+    "source_url": "https://support.ecoinvent.org/hubfs/Knowledge%20Base/Database/Releases/activity_overview_3.7.1_consequential_public.xlsx"
+  },
+  {
+    "path": "content/assets/a1db8f35b9c8-activity_overview_3.7.1_allocation_cut_off_public.xlsx",
+    "sha256": "910f2ab7c66573f5a75d2d8aa1d2a883e225a638ae1f194b97bf9231711227b9",
+    "bytes": 2801568,
+    "source_url": "https://support.ecoinvent.org/hubfs/Knowledge%20Base/Database/Releases/activity_overview_3.7.1_allocation_cut_off_public.xlsx"
+  },
+  {
+    "path": "content/assets/3ceafd157e8f-LCIA-methods-in-ecoinvent-3.7.1.xlsx",
+    "sha256": "8acd8428b27aaf982beda2fd04c56da45fd19859252e4e831546ffaa558a3b7e",
+    "bytes": 31460,
+    "source_url": "https://support.ecoinvent.org/hubfs/Knowledge%20Base/Database/Releases/LCIA%20methods%20in%20ecoinvent%203.7.1.xlsx"
+  },
+  {
+    "path": "content/assets/67941e148133-ecospold02_formula_language_specification.pdf",
+    "sha256": "848c99935d20e66e3a71b35bffe187fe036d47a557399228a6130c7b2bbb2c57",
+    "bytes": 163279,
+    "source_url": "https://support.ecoinvent.org/hubfs/Knowledge%20Base/Resources/Data%20Formats/ecospold02_formula_language_specification.pdf"
+  },
+  {
+    "path": "content/assets/c7fb8198c9d5-doc-icon.png",
+    "sha256": "fb19de9055d1c3a3e07023c189ceb3a04bf225f0c8a2c64fff0b5160794b6baf",
+    "bytes": 686,
+    "source_url": "https://support.ecoinvent.org/hs-fs/hubfs/Knowledge%20Base/Template/doc-icon.png?width=22&height=30&name=doc-icon.png"
+  },
+  {
+    "path": "content/assets/cc227411f20d-ecoeditor_introduction_20130503-1.pdf",
+    "sha256": "246c2ac5a6461efb4793e859cb9a7dfed3505c28f53eac7312fa45b753d81b4f",
+    "bytes": 2360382,
+    "source_url": "https://support.ecoinvent.org/hubfs/Knowledge%20Base/Resources/Data%20Formats/ecoeditor_introduction_20130503-1.pdf"
+  },
+  {
+    "path": "content/assets/592754ebf3e3-dataset_documentation_ecoinvent_3.pdf",
+    "sha256": "96262e2f8179d6ce2a180b2124d0a57ac958268a1ff48284b37ff65d7c2e1932",
+    "bytes": 73905,
+    "source_url": "https://support.ecoinvent.org/hubfs/Knowledge%20Base/Resources/Data%20Formats/dataset_documentation_ecoinvent_3.pdf"
+  },
+  {
+    "path": "content/assets/3cc5ab77aec2-graphic-map1.webp",
+    "sha256": "d5c0635ecd1acda41da9238b70d06d98d779abb0a4ed78c6a8ea9148cbe9b583",
+    "bytes": 35763,
+    "source_url": "https://support.ecoinvent.org/hs-fs/hubfs/Knowledge%20Base/Database/Sectors/graphic-map1.webp?width=670&height=313&name=graphic-map1.webp"
+  },
+  {
+    "path": "content/assets/e76a05aa526b-graphic-map2.webp",
+    "sha256": "0af979bc4b1dfebc1a3cfb4c4ccc2c9ccb18c9b21410895311834d254a3ea428",
+    "bytes": 35574,
+    "source_url": "https://support.ecoinvent.org/hs-fs/hubfs/Knowledge%20Base/Database/Sectors/graphic-map2.webp?width=670&height=313&name=graphic-map2.webp"
+  },
+  {
+    "path": "content/assets/44ce6cbe9c4f-graphic-table-updated09122025.webp",
+    "sha256": "8a098101d4ad1bf9d8699ddf2dccd1a73c52c7dcb18c49cbff479dbcdbb6725d",
+    "bytes": 36697,
+    "source_url": "https://support.ecoinvent.org/hs-fs/hubfs/Knowledge%20Base/Database/Sectors/graphic-table-updated09122025.webp?width=670&height=335&name=graphic-table-updated09122025.webp"
+  },
+  {
+    "path": "content/assets/7720360f6a5d-graphic-table2.webp",
+    "sha256": "7d0efd6830b7a647706a2d2d96b04eefc4cfad39edea7f321c8456ac7bfb8e27",
+    "bytes": 452896,
+    "source_url": "https://support.ecoinvent.org/hubfs/Knowledge%20Base/Database/Sectors/graphic-table2.webp"
+  },
+  {
+    "path": "content/assets/38e74d6d21af-ifu_CO2_Balances_at_BRITA_GmbH.pdf",
+    "sha256": "fd9d13d57bd24780d471647946aba2b97a5123452ca47dbd0ee0a7aa10601ad6",
+    "bytes": 491902,
+    "source_url": "https://support.ecoinvent.org/hubfs/Knowledge%20Base/Resources/Use%20Cases/ifu_CO2_Balances_at_BRITA_GmbH.pdf"
+  },
+  {
+    "path": "content/assets/b032fbd37028-3.11-cutoff-9807-Combined-Harvesting-CH.pdf",
+    "sha256": "5c95092f244e12aa8fd24ba2c9e034d524eaec3b16a4fee79a54e572e05829e5",
+    "bytes": 315569,
+    "source_url": "https://support.ecoinvent.org/hubfs/Knowledge%20Base/Getting%20started/Step-by-Step%20Guide/3.11%20update/3.11-cutoff-9807-Combined-Harvesting-CH.pdf"
+  },
+  {
+    "path": "content/assets/79e0226efc8b-3.11-EN15804-9807-Combined-Harvesting-CH.pdf",
+    "sha256": "11d52d9649d3db07440aae842f4ac5f94049680eefe5302bd52c94153129a7e3",
+    "bytes": 315378,
+    "source_url": "https://support.ecoinvent.org/hubfs/Knowledge%20Base/Getting%20started/Step-by-Step%20Guide/3.11%20update/3.11-EN15804-9807-Combined-Harvesting-CH.pdf"
+  },
+  {
+    "path": "content/assets/491e97eda37c-3.11-apos-9807-Combined-Harvesting-CH.pdf",
+    "sha256": "527807fadee358b949e8d24b2130044324dd630ea24f74f5311f7a5d446fae91",
+    "bytes": 315550,
+    "source_url": "https://support.ecoinvent.org/hubfs/Knowledge%20Base/Getting%20started/Step-by-Step%20Guide/3.11%20update/3.11-apos-9807-Combined-Harvesting-CH.pdf"
+  },
+  {
+    "path": "content/assets/ab4b42b22a32-3.11-consequential-9807-Combined-Harvesting-CH.pdf",
+    "sha256": "11db726ac13a15165d874ca89b296710f2f3cdb76fe412fddde7607eef8f9fe6",
+    "bytes": 315542,
+    "source_url": "https://support.ecoinvent.org/hubfs/Knowledge%20Base/Getting%20started/Step-by-Step%20Guide/3.11%20update/3.11-consequential-9807-Combined-Harvesting-CH.pdf"
+  },
+  {
+    "path": "content/assets/c7db608e2efc-3.11-undefined-9807-Combined-Harvesting-CH.pdf",
+    "sha256": "e574e873f4a61b1695c75bad5ec085f54c79b9800dde4c70297794bd75249902",
+    "bytes": 297728,
+    "source_url": "https://support.ecoinvent.org/hubfs/Knowledge%20Base/Getting%20started/Step-by-Step%20Guide/3.11%20update/3.11-undefined-9807-Combined-Harvesting-CH.pdf"
+  },
+  {
+    "path": "content/assets/347843747ebb-3.11-cutoff-2716-Power-Sawing-WO-CC-RER.pdf",
+    "sha256": "0b56b03357196910adac460c2c6f557423d180efb1fbbf1a8c962b6ad33a9bf8",
+    "bytes": 601955,
+    "source_url": "https://support.ecoinvent.org/hubfs/Knowledge%20Base/Getting%20started/Step-by-Step%20Guide/3.11%20update/3.11-cutoff-2716-Power-Sawing-WO-CC-RER.pdf"
+  },
+  {
+    "path": "content/assets/f528412eb09e-3.11-EN15804-2716-Power-Sawing-WO-CC-RER.pdf",
+    "sha256": "afd97134ed7639c17f764d4e984b5662c8ee200f63392024ada78ab87dcb6637",
+    "bytes": 602217,
+    "source_url": "https://support.ecoinvent.org/hubfs/Knowledge%20Base/Getting%20started/Step-by-Step%20Guide/3.11%20update/3.11-EN15804-2716-Power-Sawing-WO-CC-RER.pdf"
+  },
+  {
+    "path": "content/assets/8093e8d5eb40-3.11-apos-2716-Power-Sawing-WO-CC-RER.pdf",
+    "sha256": "94077d1895fdc823dd61b82ab01018ebb8691166ebdd3041d4a93842027bad59",
+    "bytes": 601936,
+    "source_url": "https://support.ecoinvent.org/hubfs/Knowledge%20Base/Getting%20started/Step-by-Step%20Guide/3.11%20update/3.11-apos-2716-Power-Sawing-WO-CC-RER.pdf"
+  },
+  {
+    "path": "content/assets/b7375d311359-3.11-consequential-2716-Power-Sawing-WO-CC-RER.pdf",
+    "sha256": "c0c0943afb9c0953cd7f739eb7fa91cbd5aeb6c80a7a3d2d5010fcaa28f60519",
+    "bytes": 601962,
+    "source_url": "https://support.ecoinvent.org/hubfs/Knowledge%20Base/Getting%20started/Step-by-Step%20Guide/3.11%20update/3.11-consequential-2716-Power-Sawing-WO-CC-RER.pdf"
+  },
+  {
+    "path": "content/assets/cec5c6a102d4-3.11-undefined-2716-Power-Sawing-WO-CC-RER.pdf",
+    "sha256": "afaa365418e1ba144621da364b1793582dba47e56d63c7c13816c4bb7bdec5a0",
+    "bytes": 583123,
+    "source_url": "https://support.ecoinvent.org/hubfs/Knowledge%20Base/Getting%20started/Step-by-Step%20Guide/3.11%20update/3.11-undefined-2716-Power-Sawing-WO-CC-RER.pdf"
+  },
+  {
+    "path": "content/assets/736f69d2bebe-production-volume-graphic.png",
+    "sha256": "f7eaf844bca78323976fe7c37c687d79b0ae718952756b076e5b4d563ca40961",
+    "bytes": 14840,
+    "source_url": "https://support.ecoinvent.org/hs-fs/hubfs/production-volume-graphic.png?width=688&height=316&name=production-volume-graphic.png"
+  },
+  {
+    "path": "content/assets/07bbd30fc9e8-image-png-1.png",
+    "sha256": "8ff2131ca73321340999c5ec2a4e7736247f97280ce0e2ad05ea2710ae2e8c63",
+    "bytes": 78058,
+    "source_url": "https://support.ecoinvent.org/hs-fs/hubfs/image-png-1.png?width=670&height=745&name=image-png-1.png"
+  },
+  {
+    "path": "content/assets/4cc9323307d9-IPCC-mapping-3.11-3.10.xlsx",
+    "sha256": "51ab8c593b6b4b0c22f5ca468e7290968615895f067ad90b7d99e78ed826e23e",
+    "bytes": 31792,
+    "source_url": "https://support.ecoinvent.org/hubfs/Knowledge%20Base/Database/Fundamentals/IPCC%20mapping%203.11-3.10.xlsx"
+  },
+  {
+    "path": "content/assets/6894da5870f1-image-png.png",
+    "sha256": "370d388aab0ca70d1bf9f5f693fb4134e25ebe4d0006858a451578e92d02c7b3",
+    "bytes": 14677,
+    "source_url": "https://support.ecoinvent.org/hs-fs/hubfs/image-png.png?width=670&height=123&name=image-png.png"
+  },
+  {
+    "path": "content/assets/af2cb902caad-Graphic-lci-lcia.png",
+    "sha256": "e0ccb7163a0e77a1971c9a9a9fa7359e575381f2313711d5258a50b3bb218114",
+    "bytes": 26051,
+    "source_url": "https://support.ecoinvent.org/hs-fs/hubfs/Graphic-lci-lcia.png?width=670&height=375&name=Graphic-lci-lcia.png"
+  },
+  {
+    "path": "content/assets/cf8537648262-Database-Overview-for-ecoinvent-v3.10_29.04.24.xlsx",
+    "sha256": "c7142dc69ac74e8521232aa6be034817b2ef34c300165a45ec40edb836780a66",
+    "bytes": 18732289,
+    "source_url": "https://support.ecoinvent.org/hubfs/Knowledge%20Base/Database/Releases/Database-Overview-for-ecoinvent-v3.10_29.04.24.xlsx"
+  },
+  {
+    "path": "content/assets/3bb9220ec182-201007_hischier_weidema_implementation_of_lcia_methods.pdf",
+    "sha256": "a1afb9c3e97fd711c8b8228dea56a7c16bfb52dc22da4c9df17a11e3a03162ad",
+    "bytes": 1596799,
+    "source_url": "https://support.ecoinvent.org/hubfs/Knowledge%20Base/Database/Fundamentals/201007_hischier_weidema_implementation_of_lcia_methods.pdf"
+  },
+  {
+    "path": "content/assets/ef4af7c44cd6-dataqualityguideline_ecoinvent_3_20130506.pdf",
+    "sha256": "ce02b163e6902f43b49d89b14d1020555e1d51129c68aafbabb6a113556f2cf7",
+    "bytes": 1936492,
+    "source_url": "https://support.ecoinvent.org/hubfs/Knowledge%20Base/Database/Fundamentals/dataqualityguideline_ecoinvent_3_20130506.pdf"
+  },
+  {
+    "path": "content/assets/7da8bd6a5b33-technical-report_v3-7-1_20201217.pdf",
+    "sha256": "7baeec464ba6d086f27544fc468d84799ef6bb5a071013e1cae35fb83bf62347",
+    "bytes": 767123,
+    "source_url": "https://support.ecoinvent.org/hubfs/Knowledge%20Base/Database/Releases/technical-report_v3-7-1_20201217.pdf"
+  },
+  {
+    "path": "content/assets/779846c080ea-change-report_v3-7_20200918.pdf",
+    "sha256": "6be2e7ffcb3fd7b871f023c870e70ee859d739bd487ea5147c1ea8bd08b93828",
+    "bytes": 2887592,
+    "source_url": "https://support.ecoinvent.org/hubfs/Knowledge%20Base/Database/Releases/change-report_v3-7_20200918.pdf"
+  },
+  {
+    "path": "content/assets/6c13576cd393-correspondence_file_eiv3.6_to_eiv3.7.xlsx",
+    "sha256": "5083eecc3e5ec5958155135264a9a20a3c269a8da5daa650f96f1e3efbbe4837",
+    "bytes": 12959613,
+    "source_url": "https://support.ecoinvent.org/hubfs/correspondence_file_eiv3.6_to_eiv3.7.xlsx"
+  },
+  {
+    "path": "content/assets/2206b86247db-activity_overview_3.7_undefined_public-1.xlsx",
+    "sha256": "659a38adeb0a93d6d23026af699f26566efd9a3e1a5582058dd290172c9f6be8",
+    "bytes": 4221827,
+    "source_url": "https://support.ecoinvent.org/hubfs/activity_overview_3.7_undefined_public-1.xlsx"
+  },
+  {
+    "path": "content/assets/693c2cc417c3-activity_overview_3.7_allocation_apos_public.xlsx",
+    "sha256": "acf3d3dff91424a5f19ed7fe037614bcc9d79ab8829efffd42ff5d52734fb4ca",
+    "bytes": 2746072,
+    "source_url": "https://support.ecoinvent.org/hubfs/activity_overview_3.7_allocation_apos_public.xlsx"
+  },
+  {
+    "path": "content/assets/4ca085e307af-activity_overview_3.7_consequential_public.xlsx",
+    "sha256": "954707b32ab6c292fb7204e3531bf0f99b37df6d3a43080aee0ad03056997fe0",
+    "bytes": 2681946,
+    "source_url": "https://support.ecoinvent.org/hubfs/activity_overview_3.7_consequential_public.xlsx"
+  },
+  {
+    "path": "content/assets/268b6abdb25e-activity_overview_3.7_allocation_cut_off_public.xlsx",
+    "sha256": "4251110fb75bb7f4c3f091241e46b55ea5867a3c93875171b2a1a7744a90a11a",
+    "bytes": 2743611,
+    "source_url": "https://support.ecoinvent.org/hubfs/activity_overview_3.7_allocation_cut_off_public.xlsx"
+  },
+  {
+    "path": "content/assets/a86bd417337e-LCIA-methods-in-ecoinvent-3.7.xlsx",
+    "sha256": "f81b1052699fe996b1560597faffe8bf371a93959b68a04db6e93d14391d6412",
+    "bytes": 31463,
+    "source_url": "https://support.ecoinvent.org/hubfs/LCIA-methods-in-ecoinvent-3.7.xlsx"
+  },
+  {
+    "path": "content/assets/bc77913ecedf-Graphic-import-activity-1.png",
+    "sha256": "ec78ed32c8e6844400ad958f689faa6dba8ed68b014bffca1b6415742d7aa2be",
+    "bytes": 7449,
+    "source_url": "https://support.ecoinvent.org/hs-fs/hubfs/Knowledge%20Base/FAQ/Graphic-import-activity-1.png?width=688&height=191&name=Graphic-import-activity-1.png"
+  },
+  {
+    "path": "content/assets/f2c5a9ecf828-Graphic-market-group-1.png",
+    "sha256": "ef55ec4b6c9c25d1d9543929fd4141bcdf660fd06ddfd554ced2de533d031c8b",
+    "bytes": 40995,
+    "source_url": "https://support.ecoinvent.org/hs-fs/hubfs/Knowledge%20Base/FAQ/Graphic-market-group-1.png?width=688&height=401&name=Graphic-market-group-1.png"
+  },
+  {
+    "path": "content/assets/3f3332f5b42b-change_report_v3_6_20190912.pdf",
+    "sha256": "f6c04df0b1b89ace9a7af01d133f5a1951e7936be311814317b229e5fb942529",
+    "bytes": 3301463,
+    "source_url": "https://support.ecoinvent.org/hubfs/Knowledge%20Base/Database/Fundamentals/change_report_v3_6_20190912.pdf"
+  },
+  {
+    "path": "content/assets/ee50d49ba003-Graphic-direct-activity-link-1.png",
+    "sha256": "25ca3f36945fbda498b68f67651dde98f3a2534bc74a24dc3de3ffc870e0d080",
+    "bytes": 18057,
+    "source_url": "https://support.ecoinvent.org/hs-fs/hubfs/Knowledge%20Base/FAQ/Graphic-direct-activity-link-1.png?width=688&height=391&name=Graphic-direct-activity-link-1.png"
+  },
+  {
+    "path": "content/assets/43f57d0faaac-undefined-Sep-25-2023-07-40-25-6943-PM.png",
+    "sha256": "79c62fb5df6441011653152e0d09621792e94b2ef8812d5719aee914d2618287",
+    "bytes": 477584,
+    "source_url": "https://support.ecoinvent.org/hubfs/undefined-Sep-25-2023-07-40-25-6943-PM.png"
+  },
+  {
+    "path": "content/assets/41ae72e7c961-undefined-Sep-25-2023-07-43-57-9579-PM.png",
+    "sha256": "5ad420a8cd9c233817a2490fa9129c839ec702f9bfe0d81b034451ff83e7a9d7",
+    "bytes": 423568,
+    "source_url": "https://support.ecoinvent.org/hubfs/undefined-Sep-25-2023-07-43-57-9579-PM.png"
+  },
+  {
+    "path": "content/assets/1b8bb6ed3aa3-undefined-Sep-25-2023-07-46-56-6901-PM.png",
+    "sha256": "af296d63ffd3ddf29c9f10d08d7fe0f6af387bb713714e8726c61259d18eaeee",
+    "bytes": 372388,
+    "source_url": "https://support.ecoinvent.org/hubfs/undefined-Sep-25-2023-07-46-56-6901-PM.png"
+  },
+  {
+    "path": "content/assets/705d90963aba-undefined-Sep-25-2023-07-47-53-6329-PM.png",
+    "sha256": "9583b48aa6cbd47eba57ab2179c656287b28660716d1ff6c7dcf3ff89b4686f1",
+    "bytes": 18510,
+    "source_url": "https://support.ecoinvent.org/hubfs/undefined-Sep-25-2023-07-47-53-6329-PM.png"
+  },
+  {
+    "path": "content/assets/8ce9820c1aeb-activity_overview_3.7.1_undefined_public.xlsx",
+    "sha256": "d5e150edfb5542962260593c1a3ea3ce38715cbfb1b13d791b2ef0a98a9ec44e",
+    "bytes": 4202820,
+    "source_url": "https://support.ecoinvent.org/hubfs/Knowledge%20Base/Database/Releases/activity_overview_3.7.1_undefined_public.xlsx"
+  },
+  {
+    "path": "content/assets/6085936a40c9-ecoquery-version.png",
+    "sha256": "4868f7a617a4873beb6320d10e08a34f12a344156da9d79fbfb19c51931b0485",
+    "bytes": 35024,
+    "source_url": "https://support.ecoinvent.org/hs-fs/hubfs/Knowledge%20Base/Getting%20started/Step-by-step%20guide%20(2025%20rebrand)/ecoquery-version.png?width=670&height=362&name=ecoquery-version.png"
+  },
+  {
+    "path": "content/assets/acc8258a2d83-Screenshot-ecoquery-2.png",
+    "sha256": "0d88f3d4ec30f138c804244ea5baedd27c7e4f81d386b72fce0bead0504d8db6",
+    "bytes": 21264,
+    "source_url": "https://support.ecoinvent.org/hs-fs/hubfs/Knowledge%20Base/Getting%20started/Step-by-Step%20Guide/Screenshot-ecoquery-2.png?width=476&height=505&name=Screenshot-ecoquery-2.png"
+  },
+  {
+    "path": "content/assets/cf247aba48a1-Screenshot-ecoquery-3.png",
+    "sha256": "38d51c2d6e519ab7ee88c00792f1bfd6dcba88eaa5ffdd03b2893a319973688f",
+    "bytes": 42277,
+    "source_url": "https://support.ecoinvent.org/hs-fs/hubfs/Knowledge%20Base/Getting%20started/Step-by-Step%20Guide/Screenshot-ecoquery-3.png?width=472&height=468&name=Screenshot-ecoquery-3.png"
+  },
+  {
+    "path": "content/assets/99ca91119294-Graphic-Handling-of-waste-1.png",
+    "sha256": "d266001c343d8114a7831fcc53c2b95a3546e3ea1d5431cdf2d8d16a251d8806",
+    "bytes": 9833,
+    "source_url": "https://support.ecoinvent.org/hs-fs/hubfs/Knowledge%20Base/Database/Fundamentals/Graphic-Handling-of-waste-1.png?width=688&height=207&name=Graphic-Handling-of-waste-1.png"
+  },
+  {
+    "path": "content/assets/2ecef358f985-Graphic-Handling-of-non-waste-1.png",
+    "sha256": "c6fc4e99497082b76f80241311f760c3b6105cef43a3c7871aaed7976dddcdee",
+    "bytes": 11913,
+    "source_url": "https://support.ecoinvent.org/hs-fs/hubfs/Knowledge%20Base/Database/Fundamentals/Graphic-Handling-of-non-waste-1.png?width=688&height=237&name=Graphic-Handling-of-non-waste-1.png"
+  },
+  {
+    "path": "content/assets/8b3b829174ad-Graphic-Handling-of-recyclables-1.png",
+    "sha256": "132069f2b9a20420f35a92f06ba0e4157628f9a54d70270a69dbf4d2eae40009",
+    "bytes": 16086,
+    "source_url": "https://support.ecoinvent.org/hs-fs/hubfs/Knowledge%20Base/Database/Fundamentals/Graphic-Handling-of-recyclables-1.png?width=688&height=226&name=Graphic-Handling-of-recyclables-1.png"
+  },
+  {
+    "path": "content/assets/f799634c6ec7-Graphic-Market-of-recyclable-1.png",
+    "sha256": "b221d5d88dd5b75e1f6507a0ddf3260fb817ae98ff2f883a307915a117c3dad8",
+    "bytes": 12512,
+    "source_url": "https://support.ecoinvent.org/hs-fs/hubfs/Knowledge%20Base/Database/Fundamentals/Graphic-Market-of-recyclable-1.png?width=688&height=223&name=Graphic-Market-of-recyclable-1.png"
+  },
+  {
+    "path": "content/assets/27110e9529ca-Graphic-Recycling-chain-1.png",
+    "sha256": "0f6e59c1448d16279f07d0921a32637f233e97dde879c499e73c0db2002a5f57",
+    "bytes": 17197,
+    "source_url": "https://support.ecoinvent.org/hs-fs/hubfs/Knowledge%20Base/Database/Fundamentals/Graphic-Recycling-chain-1.png?width=688&height=256&name=Graphic-Recycling-chain-1.png"
+  },
+  {
+    "path": "content/assets/95639559e861-Graphic-Handling-of-allocatable-products-1.png",
+    "sha256": "f037c9d4bd69e6ab9b5b4b2a784479305b8843aa0a9178ce3292347126188b5a",
+    "bytes": 15878,
+    "source_url": "https://support.ecoinvent.org/hs-fs/hubfs/Knowledge%20Base/Database/Fundamentals/Graphic-Handling-of-allocatable-products-1.png?width=688&height=257&name=Graphic-Handling-of-allocatable-products-1.png"
+  },
+  {
+    "path": "content/assets/1a2679705ceb-Graphic-figure1-system-boundaries.png",
+    "sha256": "420d08536a26d2f974c21b3ab6a061c2ccad7b976db8d4954debdaa1c3df44ed",
+    "bytes": 8511,
+    "source_url": "https://support.ecoinvent.org/hs-fs/hubfs/Knowledge%20Base/Database/Fundamentals/Graphic-figure1-system-boundaries.png?width=688&height=125&name=Graphic-figure1-system-boundaries.png"
+  },
+  {
+    "path": "content/assets/dd6c5b4730cc-Graphic-figure2.png",
+    "sha256": "eab748d33b28f8a48fec05f0657a0e80231a879799a124bf207a7bd2e312d3f9",
+    "bytes": 17890,
+    "source_url": "https://support.ecoinvent.org/hs-fs/hubfs/Knowledge%20Base/Database/Fundamentals/Graphic-figure2.png?width=688&height=179&name=Graphic-figure2.png"
+  },
+  {
+    "path": "content/assets/95df5423953a-Graphic-figure3.png",
+    "sha256": "87274a08f4260067344bbe2682005d98e703b6dd6d4cdc88130f5ad617c55040",
+    "bytes": 16528,
+    "source_url": "https://support.ecoinvent.org/hs-fs/hubfs/Knowledge%20Base/Database/Fundamentals/Graphic-figure3.png?width=688&height=185&name=Graphic-figure3.png"
+  },
+  {
+    "path": "content/assets/f4c107149cee-Graphic-Handling-of-non-mft-1.png",
+    "sha256": "b8bdbdb1d8384f06c735cb4ef5263cf9e4404cbce357d66c4110027aa4332d2a",
+    "bytes": 14052,
+    "source_url": "https://support.ecoinvent.org/hs-fs/hubfs/Knowledge%20Base/Database/Fundamentals/Graphic-Handling-of-non-mft-1.png?width=688&height=257&name=Graphic-Handling-of-non-mft-1.png"
+  },
+  {
+    "path": "content/assets/f56c093e45c4-Graphic-expanded-allocation-system-1.png",
+    "sha256": "c26d75f0142703dad1b302cda38ae664c924f7e6233488d194db70b997ae0d2c",
+    "bytes": 16761,
+    "source_url": "https://support.ecoinvent.org/hs-fs/hubfs/Knowledge%20Base/Database/Fundamentals/Graphic-expanded-allocation-system-1.png?width=688&height=460&name=Graphic-expanded-allocation-system-1.png"
+  },
+  {
+    "path": "content/assets/16266d256080-Graphic-joint-production-activity-1.png",
+    "sha256": "bb657be926c871530eec0f2ec4b933eb3150e8cdacdbfc701ca6f0638c94757f",
+    "bytes": 27384,
+    "source_url": "https://support.ecoinvent.org/hs-fs/hubfs/Knowledge%20Base/Database/Fundamentals/Graphic-joint-production-activity-1.png?width=688&height=406&name=Graphic-joint-production-activity-1.png"
+  },
+  {
+    "path": "content/assets/ebc361ca50de-Graphic-example1-new.jpg",
+    "sha256": "a8c06ac64022a0882788947d3a459487d5a37fb5e417ad80f22f1749b3d26863",
+    "bytes": 17897,
+    "source_url": "https://support.ecoinvent.org/hs-fs/hubfs/Knowledge%20Base/Database/Fundamentals/Graphic-example1-new.jpg?width=688&height=310&name=Graphic-example1-new.jpg"
+  },
+  {
+    "path": "content/assets/14e018af744a-Graphic-example2-1.png",
+    "sha256": "10171acdc56c7f33e371d4e7ccc5004037b027f22aff5bbe84483d4c24490998",
+    "bytes": 28050,
+    "source_url": "https://support.ecoinvent.org/hs-fs/hubfs/Knowledge%20Base/Database/Fundamentals/Graphic-example2-1.png?width=688&height=420&name=Graphic-example2-1.png"
+  },
+  {
+    "path": "content/assets/25f3b0355c10-Graphic-example3-1.png",
+    "sha256": "51d280cedc10863e55bcd7772aac099e0df8ea2a5db8bc4b135918820311b988",
+    "bytes": 32884,
+    "source_url": "https://support.ecoinvent.org/hs-fs/hubfs/Knowledge%20Base/Database/Fundamentals/Graphic-example3-1.png?width=688&height=436&name=Graphic-example3-1.png"
+  },
+  {
+    "path": "content/assets/2498bd5de61a-Graphic-example4-1.png",
+    "sha256": "88ec7024ae36ce4d3733ebbbf875fbc3d8799a6f9f320c68451fc85f8f6b67da",
+    "bytes": 23061,
+    "source_url": "https://support.ecoinvent.org/hs-fs/hubfs/Knowledge%20Base/Database/Fundamentals/Graphic-example4-1.png?width=688&height=279&name=Graphic-example4-1.png"
+  },
+  {
+    "path": "content/assets/8adcf3c304f4-Graphic-example5-1.png",
+    "sha256": "cf02b2cc18b185bc94baf4204f8c1995772a8f9629c30623c0d8b0e93e39014c",
+    "bytes": 15258,
+    "source_url": "https://support.ecoinvent.org/hs-fs/hubfs/Knowledge%20Base/Database/Fundamentals/Graphic-example5-1.png?width=688&height=291&name=Graphic-example5-1.png"
+  },
+  {
+    "path": "content/assets/d9c8a6cd9337-Graphic-consequential-example1-1.png",
+    "sha256": "fcfc26b23e58afaefbe80589fb83967f4ab92d307773760cc49661f61c81a497",
+    "bytes": 7375,
+    "source_url": "https://support.ecoinvent.org/hs-fs/hubfs/Knowledge%20Base/Database/Fundamentals/Graphic-consequential-example1-1.png?width=688&height=123&name=Graphic-consequential-example1-1.png"
+  },
+  {
+    "path": "content/assets/597642ec830b-Graphic-consequential-example2-1.png",
+    "sha256": "7d599563f4805845b29a0882c3b9b8c4580de840be7ca7b3e96359dc59e31ff1",
+    "bytes": 19365,
+    "source_url": "https://support.ecoinvent.org/hs-fs/hubfs/Knowledge%20Base/Database/Fundamentals/Graphic-consequential-example2-1.png?width=688&height=275&name=Graphic-consequential-example2-1.png"
+  },
+  {
+    "path": "content/assets/db4d6313b55a-Graphic-map.png",
+    "sha256": "e4adc00258e1bfeddcb8d0438df773fa72b11b846196792f4629622a1f72ba9e",
+    "bytes": 33691,
+    "source_url": "https://support.ecoinvent.org/hs-fs/hubfs/Graphic-map.png?width=670&height=325&name=Graphic-map.png"
+  },
+  {
+    "path": "content/assets/a66996eb6552-Graphic-figure1-system-boundaries.png",
+    "sha256": "e72e422b0d84fdb8cd01e85fb67df7aa3aa5ce11aa505dcab2b193542ce1268a",
+    "bytes": 8486,
+    "source_url": "https://support.ecoinvent.org/hs-fs/hubfs/Knowledge%20Base/Database/Fundamentals/Graphic-figure1-system-boundaries.png?width=670&height=122&name=Graphic-figure1-system-boundaries.png"
+  },
+  {
+    "path": "content/assets/c0d58ee65469-Graphic-figure2.png",
+    "sha256": "09ea7c68986c54f203f04095583459ff499a5709b46ee804fc092d95cda41f6f",
+    "bytes": 17559,
+    "source_url": "https://support.ecoinvent.org/hs-fs/hubfs/Knowledge%20Base/Database/Fundamentals/Graphic-figure2.png?width=670&height=174&name=Graphic-figure2.png"
+  },
+  {
+    "path": "content/assets/152845bb0bc8-undefined-2.jpeg",
+    "sha256": "ab15b23ab1d4fdd53898145d014cf750c83879914c9091209878333a423e9613",
+    "bytes": 45575,
+    "source_url": "https://support.ecoinvent.org/hubfs/undefined-2.jpeg"
+  },
+  {
+    "path": "content/assets/d33b789aff66-undefined-3.jpeg",
+    "sha256": "d406171f11c5a2d6d711966187c081fe0925fa208101ad04086e635140acf2ff",
+    "bytes": 82405,
+    "source_url": "https://support.ecoinvent.org/hubfs/undefined-3.jpeg"
+  },
+  {
+    "path": "content/assets/904247063657-formel.png",
+    "sha256": "44b1e96539a143d34c1590bda8fb14bb74d455b51a5dc0830f9b67fdb7e0a194",
+    "bytes": 5751,
+    "source_url": "https://support.ecoinvent.org/hs-fs/hubfs/Knowledge%20Base/FAQ/formel.png?width=688&height=133&name=formel.png"
+  },
+  {
+    "path": "content/assets/9a4c35a9aac4-table-knowledgebase1.png",
+    "sha256": "381bd8661a59cea6673304375037b2ae1275ca46e627ed709753a802a5c9ddf3",
+    "bytes": 14615,
+    "source_url": "https://support.ecoinvent.org/hs-fs/hubfs/Knowledge%20Base/FAQ/table-knowledgebase1.png?width=688&height=198&name=table-knowledgebase1.png"
+  },
+  {
+    "path": "content/assets/3d636abb6c18-table-knowledgebase2.png",
+    "sha256": "3fedf48a1489ce7e9cbf5dc653a3d81404bea4d7a6577188d8c0672db3878a36",
+    "bytes": 35758,
+    "source_url": "https://support.ecoinvent.org/hs-fs/hubfs/Knowledge%20Base/FAQ/table-knowledgebase2.png?width=688&height=522&name=table-knowledgebase2.png"
+  },
+  {
+    "path": "content/assets/f141e1a9d37c-table-knowledgebase3.png",
+    "sha256": "3f041d8f7b11930d3b30e56d883dc6ac5e341c9e6e6c41de3045fee6e83ba767",
+    "bytes": 32616,
+    "source_url": "https://support.ecoinvent.org/hs-fs/hubfs/Knowledge%20Base/FAQ/table-knowledgebase3.png?width=688&height=352&name=table-knowledgebase3.png"
+  },
+  {
+    "path": "content/assets/1e50c0778c0b-table-knowledgebase4.png",
+    "sha256": "df172495014d6c8d29f826f26e78b0a6412d0d99e31602fcbffbec15899b88d3",
+    "bytes": 38090,
+    "source_url": "https://support.ecoinvent.org/hs-fs/hubfs/Knowledge%20Base/FAQ/table-knowledgebase4.png?width=688&height=472&name=table-knowledgebase4.png"
+  },
+  {
+    "path": "content/assets/8e3db3149336-undefined-Sep-25-2023-07-30-14-4734-PM.png",
+    "sha256": "a769f1eb76af52147e0fb36893c6cef8c24c6b99ecfab39811a93ebb49339b5c",
+    "bytes": 24910,
+    "source_url": "https://support.ecoinvent.org/hs-fs/hubfs/undefined-Sep-25-2023-07-30-14-4734-PM.png?width=688&height=287&name=undefined-Sep-25-2023-07-30-14-4734-PM.png"
+  },
+  {
+    "path": "content/assets/497e8c271bba-excel-example_FAQ_uncertainty_ecoinvent.xlsx",
+    "sha256": "c0c9c75973f64f7fff053cde673528f9c7626612b7396b2c3ab16e042ee1023f",
+    "bytes": 20758,
+    "source_url": "https://support.ecoinvent.org/hubfs/Knowledge%20Base/FAQ/excel-example_FAQ_uncertainty_ecoinvent.xlsx"
+  },
+  {
+    "path": "content/assets/ec7f7fdfdab9-Graphic-upr.png",
+    "sha256": "a6cece9d097b2d7cda76f758199e2680e5bccde196763ac126ef122a15f580d4",
+    "bytes": 13356,
+    "source_url": "https://support.ecoinvent.org/hs-fs/hubfs/Knowledge%20Base/Database/Fundamentals/Graphic-upr.png?width=688&height=220&name=Graphic-upr.png"
+  },
+  {
+    "path": "content/assets/68050b6ff3a0-Graphic-lci1.png",
+    "sha256": "d562261212efb89751cce24e9515251871e81b694f4d67c1346ef9db88bad920",
+    "bytes": 13900,
+    "source_url": "https://support.ecoinvent.org/hs-fs/hubfs/Knowledge%20Base/Database/Fundamentals/Graphic-lci1.png?width=688&height=268&name=Graphic-lci1.png"
+  },
+  {
+    "path": "content/assets/e88306000343-Graphic-lci2.png",
+    "sha256": "9f132ff144f0e501849f276ef4fdc12196e396e7e84fac20c65b3dff50129469",
+    "bytes": 11923,
+    "source_url": "https://support.ecoinvent.org/hs-fs/hubfs/Knowledge%20Base/Database/Fundamentals/Graphic-lci2.png?width=688&height=317&name=Graphic-lci2.png"
+  },
+  {
+    "path": "content/assets/54e21beafcb6-Graphic-lci3.png",
+    "sha256": "a6a58f7eae7d034f9f88463acf6aa9b78728d7e893d57f410696d42e338f0d69",
+    "bytes": 10612,
+    "source_url": "https://support.ecoinvent.org/hs-fs/hubfs/Knowledge%20Base/Database/Fundamentals/Graphic-lci3.png?width=688&height=311&name=Graphic-lci3.png"
+  },
+  {
+    "path": "content/assets/4846b15cdabb-Graphic-lcia1.png",
+    "sha256": "88375c532ccfa6a27ea8eecbdf5688736b67656fd20fe6c890f941a62c97caad",
+    "bytes": 19202,
+    "source_url": "https://support.ecoinvent.org/hs-fs/hubfs/Knowledge%20Base/Database/Fundamentals/Graphic-lcia1.png?width=688&height=372&name=Graphic-lcia1.png"
+  },
+  {
+    "path": "content/assets/d7f0a8b2febf-Graphic-lcia2.png",
+    "sha256": "e05ffe521f34923c2bc9d87fabb89e4706f69a3ca9da8b2ee0fecc74f705e260",
+    "bytes": 15098,
+    "source_url": "https://support.ecoinvent.org/hs-fs/hubfs/Knowledge%20Base/Database/Fundamentals/Graphic-lcia2.png?width=688&height=370&name=Graphic-lcia2.png"
+  },
+  {
+    "path": "content/assets/a7c33028c816-ecoquery-search_mango_results_numbers.png",
+    "sha256": "5eafd486289d1a2c84064e0ae21a92d5490c599ef4ac72cd17f0517d40745f74",
+    "bytes": 24062,
+    "source_url": "https://support.ecoinvent.org/hs-fs/hubfs/Knowledge%20Base/Getting%20started/Step-by-step%20guide%20(2025%20rebrand)/ecoquery-search_mango_results_numbers.png?width=688&height=372&name=ecoquery-search_mango_results_numbers.png"
+  },
+  {
+    "path": "content/assets/0c8a26bab4bd-Change-Report-v3.9.1.pdf",
+    "sha256": "68ad287a08a836cf37b0d7da9d2773a3ac4cd8fdb617e4c0afb77d96bedbedf6",
+    "bytes": 288928,
+    "source_url": "https://support.ecoinvent.org/hubfs/Knowledge%20Base/Database/Releases/3.9.1/Change-Report-v3.9.1.pdf"
+  },
+  {
+    "path": "content/assets/0439269e189d-Correspondence-File-v3.8-v3.9.1-1.xlsx",
+    "sha256": "cd7126e8eaf8c5b5c001877093baceaaaadedda93588aaa321d1e7d8f3c54bc7",
+    "bytes": 19954907,
+    "source_url": "https://support.ecoinvent.org/hubfs/Correspondence-File-v3.8-v3.9.1-1.xlsx"
+  },
+  {
+    "path": "content/assets/bfc333634386-LCIA_implementation_3.9-and-3.9.1.pdf",
+    "sha256": "ce2592d1b5a90c736dac0136c3005fa1abdc6f22d63f52131f22895baff879f9",
+    "bytes": 1615869,
+    "source_url": "https://support.ecoinvent.org/hubfs/LCIA_implementation_3.9-and-3.9.1.pdf"
+  },
+  {
+    "path": "content/assets/34bb93e02a6f-Database-Overview-for-ecoinvent-v3.9.1-9.xlsx",
+    "sha256": "899d9d865d7434db4f43093cefc9fa1bab2cae0c5a9741ff1e50b60255ae238f",
+    "bytes": 27507414,
+    "source_url": "https://support.ecoinvent.org/hubfs/Database-Overview-for-ecoinvent-v3.9.1-9.xlsx"
+  },
+  {
+    "path": "content/assets/adb816446555-known-issue-v3.9.1-water-imbalances-in-wastewater-treatment-activities.xlsx",
+    "sha256": "9595cb31517940eb31b478575c78591fe851e2c0eb4f5ad36911887e6231f486",
+    "bytes": 30135,
+    "source_url": "https://support.ecoinvent.org/hubfs/Knowledge%20Base/Database/Releases/known%20issue%20v3.9.1%20water%20imbalances%20in%20wastewater%20treatment%20activities.xlsx"
+  },
+  {
+    "path": "content/assets/2d743037fc47-Correspondence-File-v3.8-v3.9.xlsx",
+    "sha256": "9fdab4d0f50e322b051e554c3657c978a7d849a52e6ccd31c3707c7f08e2e1ff",
+    "bytes": 14924038,
+    "source_url": "https://support.ecoinvent.org/hubfs/Correspondence-File-v3.8-v3.9.xlsx"
+  },
+  {
+    "path": "content/assets/6976cb25e45b-LCIA_implementation_3.9.pdf",
+    "sha256": "64450f7e3f5549b5feda225e4d7de7a60a49217dab42e91f6cc6a88d3369c84b",
+    "bytes": 1133641,
+    "source_url": "https://support.ecoinvent.org/hubfs/LCIA_implementation_3.9.pdf"
+  },
+  {
+    "path": "content/assets/bd9f67e8b5ab-Database-Overview-for-ecoinvent-v3.9.xlsx",
+    "sha256": "306598ca31a2b60adfa20c9b9a2280166fe25bc23a83dc2869395706177cfe35",
+    "bytes": 14539363,
+    "source_url": "https://support.ecoinvent.org/hubfs/Database-Overview-for-ecoinvent-v3.9.xlsx"
+  },
+  {
+    "path": "content/assets/320865b24326-known-issues_sub-compartments.xlsx",
+    "sha256": "dd7d794d23a812b3cf2374736b4eb6c51c76de6a6669877e6b16b251dc1f05ff",
+    "bytes": 42411,
+    "source_url": "https://support.ecoinvent.org/hubfs/known-issues_sub-compartments.xlsx"
+  }
+]

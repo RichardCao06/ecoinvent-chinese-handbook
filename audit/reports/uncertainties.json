@@ -1,0 +1,61 @@
+{
+  "slug": "uncertainties",
+  "reviewer": "translator_c_cross",
+  "translator": "translator_b",
+  "status": "passed_with_notes",
+  "reviewed_blocks": [
+    "b0001",
+    "b0002",
+    "b0003",
+    "b0004",
+    "b0005",
+    "b0006",
+    "b0007",
+    "b0008",
+    "b0009",
+    "b0010",
+    "b0011",
+    "b0012",
+    "b0013",
+    "b0014",
+    "b0015",
+    "b0016",
+    "b0017",
+    "b0018",
+    "b0019",
+    "b0020"
+  ],
+  "source_sha256": "a8cec525d71fd4b61537a651481e8e6662cbc94e0b5e634750004c7944986f37",
+  "translation_sha256": "fb164b61d2d908eaa8277565f379b1a4ad35857561de5455bc1337e1172cebde",
+  "checks": [
+    "逐块对照全文覆盖与语义完整性",
+    "否定、限定和条件含义",
+    "供应链输入输出及上下游方向",
+    "数字、单位、公式与版本标识",
+    "专业术语和可检索英文数据集名",
+    "HTML 结构、链接及属性保留"
+  ],
+  "issues": [
+    {
+      "block": "b0014",
+      "category": "translation_issue",
+      "severity": "review",
+      "source_excerpt": "Then, the basic uncertainty is chosen. This value reflects the fact that even “perfect” data is uncertain: there are fluctuations over time, errors in measurements, etc. Table 10.3 of the Data Quality Guidelines provides for values, dependi",
+      "translation_excerpt": "exp((Variance of log-transformed data)0.5)2",
+      "reason_zh": "恢复原公式中的字段名，保持公式与软件字段可直接核对。",
+      "recommendation_zh": "已修正译稿并重新核对原文。",
+      "status": "resolved"
+    },
+    {
+      "block": "b0017",
+      "category": "translation_issue",
+      "severity": "review",
+      "source_excerpt": "exp((Variance of log-transformed data)0.5)2, corresponding to the square of sigma*.",
+      "translation_excerpt": "exp((Variance of log-transformed data)0.5)2",
+      "reason_zh": "恢复原公式中的字段名，保持公式与软件字段可直接核对。",
+      "recommendation_zh": "已修正译稿并重新核对原文。",
+      "status": "resolved"
+    }
+  ],
+  "summary_zh": "已逐块独立对照原文与译文完成 AI 交叉审阅。修正 2 处确定问题。沿用译稿已有 2 条具体注记。不代表人工专家或 ecoinvent 官方签核。"
+}

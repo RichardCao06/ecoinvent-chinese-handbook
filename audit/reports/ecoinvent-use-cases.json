@@ -1,0 +1,30 @@
+{
+  "slug": "ecoinvent-use-cases",
+  "reviewer": "translator_b_cross",
+  "translator": "translator_a",
+  "status": "passed",
+  "reviewed_blocks": [
+    "b0001",
+    "b0002",
+    "b0003",
+    "b0004",
+    "b0005",
+    "b0006",
+    "b0007",
+    "b0008",
+    "b0009",
+    "b0010",
+    "b0011"
+  ],
+  "source_sha256": "2c036b4e5098392542dfa9c40f9ea111fbcb7a5dd0fc3a7a98d9c33ad50fe5d5",
+  "translation_sha256": "465b0c5199a0d6bf973eccd407fe1f7a17816ae5e56a7bce0abfbaf657ef8d13",
+  "checks": [
+    "逐块完整对照英文原文与中文译文，核对语义和限定条件",
+    "核对LCA、LCI、LCIA与系统模型术语",
+    "核对数字、单位、正负号、版本、地理代码及数据标识",
+    "验证全部块覆盖以及HTML标签、链接和属性保留",
+    "核对译者具体疑点，修正确定译文问题并记录"
+  ],
+  "issues": [],
+  "summary_zh": "已完成所有块的AI独立交叉审阅；保留原文快照时点、检索名称和技术限定。未发现需要修改的译文问题。"
+}

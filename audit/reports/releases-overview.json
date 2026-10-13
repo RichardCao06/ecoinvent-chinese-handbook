@@ -1,0 +1,43 @@
+{
+  "slug": "releases-overview",
+  "reviewer": "translator_b_cross",
+  "translator": "translator_a",
+  "status": "passed_with_notes",
+  "reviewed_blocks": [
+    "b0001",
+    "b0002",
+    "b0003",
+    "b0004",
+    "b0005",
+    "b0006",
+    "b0007",
+    "b0008",
+    "b0009",
+    "b0010",
+    "b0011",
+    "b0012",
+    "b0013"
+  ],
+  "source_sha256": "25ff22d45afab2d6b631d81b09c9cdbbd1d79c296803d6135ec2c25b4e351241",
+  "translation_sha256": "eee486663075f36c3c7a896fa57f9e0a3bad692810a3a7b47c4a8d668dc7b49f",
+  "checks": [
+    "逐块完整对照英文原文与中文译文，核对语义和限定条件",
+    "核对LCA、LCI、LCIA与系统模型术语",
+    "核对数字、单位、正负号、版本、地理代码及数据标识",
+    "验证全部块覆盖以及HTML标签、链接和属性保留",
+    "核对译者具体疑点，修正确定译文问题并记录"
+  ],
+  "issues": [
+    {
+      "block": "b0013",
+      "category": "source_issue",
+      "severity": "review",
+      "source_excerpt": "supporting three system models: Allocation cut-off by classification, Allocation at the Point of Substitution, and Consequential",
+      "translation_excerpt": "支持三种系统模型：按分类截断的分配模型、替代点分配模型以及后果型模型",
+      "reason_zh": "原文该段沿用较早的三模型描述，仅列 Cut-off、APOS 和 Consequential；同一原文快照的 system-models 文档明确列出四种系统模型，另包含 EN15804。因此，这是已通过文档对照确认的来源时点差异，不应将此历史段落误当作当前完整模型清单。英文原文与中文译文均未擅自更新其枚举。",
+      "recommendation_zh": "阅读此历史概览时保留“三种”及原枚举；当前模型选型请参考《系统模型》（system-models）四模型文档。该差异已说明，无新增待专家确认事项。",
+      "status": "resolved"
+    }
+  ],
+  "summary_zh": "已完成所有块的AI独立交叉审阅；正文保持原文历史时点与三模型枚举。b0013 的较早三模型描述与系统模型文档四模型清单的来源时点差异已对照说明，当前选型应参阅四模型文档，无未解决译文错误。"
+}

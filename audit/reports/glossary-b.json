@@ -1,0 +1,30 @@
+{
+  "slug": "glossary-b",
+  "reviewer": "translator_c_cross",
+  "translator": "translator_b",
+  "status": "passed",
+  "reviewed_blocks": [
+    "b0001",
+    "b0002",
+    "b0003",
+    "b0004",
+    "b0005",
+    "b0006",
+    "b0007",
+    "b0008",
+    "b0009",
+    "b0010"
+  ],
+  "source_sha256": "c1ba1ef88a0de6decbbeff8a3d7bbdd42aab41f77b9cd3e166aa4d31fa3508c9",
+  "translation_sha256": "da7aa12bcec833a5ad988f149d185149574aaa2553e7b049f131a82385aba0e8",
+  "checks": [
+    "逐块对照全文覆盖与语义完整性",
+    "否定、限定和条件含义",
+    "供应链输入输出及上下游方向",
+    "数字、单位、公式与版本标识",
+    "专业术语和可检索英文数据集名",
+    "HTML 结构、链接及属性保留"
+  ],
+  "issues": [],
+  "summary_zh": "已逐块独立对照原文与译文完成 AI 交叉审阅。未发现需修正的译文错误。不代表人工专家或 ecoinvent 官方签核。"
+}

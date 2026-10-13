@@ -1,0 +1,22 @@
+{
+  "slug": "glossary-k",
+  "reviewer": "translator_b_cross",
+  "translator": "translator_a",
+  "status": "passed",
+  "reviewed_blocks": [
+    "b0001",
+    "b0002",
+    "b0003"
+  ],
+  "source_sha256": "40af3330de19433a3c497ca9d96a8bd40f4c7aa9c1a55ef96a20cc82ecc3e006",
+  "translation_sha256": "48c24417c07ec34a414391ab3ccc47329c15dd4a79454156f57f2d52b0f8638d",
+  "checks": [
+    "逐块完整对照英文原文与中文译文，核对语义和限定条件",
+    "核对LCA、LCI、LCIA与系统模型术语",
+    "核对数字、单位、正负号、版本、地理代码及数据标识",
+    "验证全部块覆盖以及HTML标签、链接和属性保留",
+    "核对译者具体疑点，修正确定译文问题并记录"
+  ],
+  "issues": [],
+  "summary_zh": "已完成所有块的AI独立交叉审阅；保留原文快照时点、检索名称和技术限定。未发现需要修改的译文问题。"
+}

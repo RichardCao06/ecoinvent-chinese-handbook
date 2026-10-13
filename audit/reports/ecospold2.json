@@ -1,0 +1,65 @@
+{
+  "slug": "ecospold2",
+  "reviewer": "translator_b_cross",
+  "translator": "translator_a",
+  "status": "passed_with_notes",
+  "reviewed_blocks": [
+    "b0001",
+    "b0002",
+    "b0003",
+    "b0004",
+    "b0005",
+    "b0006",
+    "b0007",
+    "b0008",
+    "b0009",
+    "b0010",
+    "b0011",
+    "b0012",
+    "b0013",
+    "b0014",
+    "b0015",
+    "b0016",
+    "b0017",
+    "b0018",
+    "b0019",
+    "b0020",
+    "b0021",
+    "b0022",
+    "b0023",
+    "b0024",
+    "b0025"
+  ],
+  "source_sha256": "3d454f250f2a22444b7733c226ea740a1600f1984f174e6b8ffb790a14e5b51b",
+  "translation_sha256": "76607e825a6475195893eb5288b302a6596bad7badccb8fe659eb80772246953",
+  "checks": [
+    "逐块完整对照英文原文与中文译文，核对语义和限定条件",
+    "核对LCA、LCI、LCIA与系统模型术语",
+    "核对数字、单位、正负号、版本、地理代码及数据标识",
+    "验证全部块覆盖以及HTML标签、链接和属性保留",
+    "核对译者具体疑点，修正确定译文问题并记录"
+  ],
+  "issues": [
+    {
+      "block": "b0009",
+      "category": "translation_issue",
+      "severity": "minor",
+      "source_excerpt": "production volumes",
+      "translation_excerpt": "新增产量字段。",
+      "reason_zh": "统一指南规定的产量术语。",
+      "recommendation_zh": "已将生产量改为产量。",
+      "status": "resolved"
+    },
+    {
+      "block": "b0004",
+      "category": "source_issue",
+      "severity": "review",
+      "source_excerpt": "all three stages of life cycle assessment: UPR, LCI, and LCIA",
+      "translation_excerpt": "生命周期评价的三个阶段：UPR、LCI 和 LCIA",
+      "reason_zh": "UPR、LCI 和 LCIA 此处描述三种数据形式；UPR 并非 ISO 所规定的 LCA 阶段。原文将其称为三个阶段，译文忠实保留，存在方法学用语歧义。",
+      "recommendation_zh": "请技术编辑确认改为三种数据形式，并同步原文和译文。",
+      "status": "needs_expert_review"
+    }
+  ],
+  "summary_zh": "已完成所有块的AI独立交叉审阅；保留原文快照时点、检索名称和技术限定。具体修正和原文疑点见 issues。"
+}

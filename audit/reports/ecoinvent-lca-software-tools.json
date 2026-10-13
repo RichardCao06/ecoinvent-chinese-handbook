@@ -1,0 +1,59 @@
+{
+  "slug": "ecoinvent-lca-software-tools",
+  "reviewer": "translator_c_cross",
+  "translator": "translator_b",
+  "status": "passed_with_notes",
+  "reviewed_blocks": [
+    "b0001",
+    "b0002",
+    "b0003",
+    "b0004",
+    "b0005",
+    "b0006",
+    "b0007",
+    "b0008",
+    "b0009",
+    "b0010",
+    "b0011",
+    "b0012",
+    "b0013",
+    "b0014",
+    "b0015",
+    "b0016",
+    "b0017",
+    "b0018",
+    "b0019",
+    "b0020",
+    "b0021",
+    "b0022",
+    "b0023",
+    "b0024",
+    "b0025",
+    "b0026",
+    "b0027",
+    "b0028"
+  ],
+  "source_sha256": "bc513f8ad2dd253c6bb744d5a731cd537cb61c5d2efc33dd2f86b2aa9d52866d",
+  "translation_sha256": "b1d21ff625774b3a4060361f3efad6881ff261c73126ba83edcab9301c94b966",
+  "checks": [
+    "逐块对照全文覆盖与语义完整性",
+    "否定、限定和条件含义",
+    "供应链输入输出及上下游方向",
+    "数字、单位、公式与版本标识",
+    "专业术语和可检索英文数据集名",
+    "HTML 结构、链接及属性保留"
+  ],
+  "issues": [
+    {
+      "block": "b0014",
+      "category": "translation_issue",
+      "severity": "review",
+      "source_excerpt": "Some methods do not carry CFs for a substance in all the sub-compartments present in ecoinvent. For example, should a chemical emission to groundwater receive the same CF as the same emission to surface water, if the groundwater CF is not e",
+      "translation_excerpt": "子区室",
+      "reason_zh": "统一 sub-compartment 的数据库结构术语，避免与一般环境介质概念混淆。",
+      "recommendation_zh": "已修正译稿并重新核对原文。",
+      "status": "resolved"
+    }
+  ],
+  "summary_zh": "已逐块独立对照原文与译文完成 AI 交叉审阅。修正 1 处确定问题。不代表人工专家或 ecoinvent 官方签核。"
+}

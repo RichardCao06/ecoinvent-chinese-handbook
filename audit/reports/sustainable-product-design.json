@@ -1,0 +1,29 @@
+{
+  "slug": "sustainable-product-design",
+  "reviewer": "translator_c_cross",
+  "translator": "translator_b",
+  "status": "passed",
+  "reviewed_blocks": [
+    "b0001",
+    "b0002",
+    "b0003",
+    "b0004",
+    "b0005",
+    "b0006",
+    "b0007",
+    "b0008",
+    "b0009"
+  ],
+  "source_sha256": "6be01b47f3030dab187e24213aa29846cb3b8b02568f7713d73659cb1e956b77",
+  "translation_sha256": "4f467be6c068e7db4f1800306ee7a7911e83bcd68d5af35881bb42ccf06adf25",
+  "checks": [
+    "逐块对照全文覆盖与语义完整性",
+    "否定、限定和条件含义",
+    "供应链输入输出及上下游方向",
+    "数字、单位、公式与版本标识",
+    "专业术语和可检索英文数据集名",
+    "HTML 结构、链接及属性保留"
+  ],
+  "issues": [],
+  "summary_zh": "已逐块独立对照原文与译文完成 AI 交叉审阅。未发现需修正的译文错误。不代表人工专家或 ecoinvent 官方签核。"
+}

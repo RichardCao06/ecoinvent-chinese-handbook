@@ -1,0 +1,25 @@
+{
+  "slug": "life-cycle-sustainability-assessment-lcsa",
+  "reviewer": "translator_b_cross",
+  "translator": "translator_a",
+  "status": "passed",
+  "reviewed_blocks": [
+    "b0001",
+    "b0002",
+    "b0003",
+    "b0004",
+    "b0005",
+    "b0006"
+  ],
+  "source_sha256": "614ac145d80b74b30411828f30f070203594098ec846118a753c194fdb4cc6b2",
+  "translation_sha256": "b9d62674d8b2f0c4f57a3b055a9744238eea58d553744d94ba0cca5f045b481f",
+  "checks": [
+    "逐块完整对照英文原文与中文译文，核对语义和限定条件",
+    "核对LCA、LCI、LCIA与系统模型术语",
+    "核对数字、单位、正负号、版本、地理代码及数据标识",
+    "验证全部块覆盖以及HTML标签、链接和属性保留",
+    "核对译者具体疑点，修正确定译文问题并记录"
+  ],
+  "issues": [],
+  "summary_zh": "已完成所有块的AI独立交叉审阅；保留原文快照时点、检索名称和技术限定。未发现需要修改的译文问题。"
+}

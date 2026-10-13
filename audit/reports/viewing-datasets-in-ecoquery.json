@@ -1,0 +1,40 @@
+{
+  "slug": "viewing-datasets-in-ecoquery",
+  "reviewer": "translator_b_cross",
+  "translator": "translator_a",
+  "status": "passed_with_notes",
+  "reviewed_blocks": [
+    "b0001",
+    "b0002",
+    "b0003",
+    "b0004",
+    "b0005",
+    "b0006",
+    "b0007",
+    "b0008",
+    "b0009",
+    "b0010"
+  ],
+  "source_sha256": "16ebff9368847423242eecae149760fba84126b6dd9a6dcc5eb91c04f42e9f81",
+  "translation_sha256": "4bf693b74a66a15ac382798da4a83637eaa45c9a9f5563989a191397b5bdd866",
+  "checks": [
+    "逐块完整对照英文原文与中文译文，核对语义和限定条件",
+    "核对LCA、LCI、LCIA与系统模型术语",
+    "核对数字、单位、正负号、版本、地理代码及数据标识",
+    "验证全部块覆盖以及HTML标签、链接和属性保留",
+    "核对译者具体疑点，修正确定译文问题并记录"
+  ],
+  "issues": [
+    {
+      "block": "b0006",
+      "category": "translation_issue",
+      "severity": "minor",
+      "source_excerpt": "production volumes",
+      "translation_excerpt": "不确定性、产量及属性。",
+      "reason_zh": "统一指南规定的产量术语。",
+      "recommendation_zh": "已将生产量改为产量。",
+      "status": "resolved"
+    }
+  ],
+  "summary_zh": "已完成所有块的AI独立交叉审阅；保留原文快照时点、检索名称和技术限定。具体修正和原文疑点见 issues。"
+}

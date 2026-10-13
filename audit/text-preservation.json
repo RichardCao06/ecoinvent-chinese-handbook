@@ -1,0 +1,7 @@
+{
+  "checked_bodies": 198,
+  "reviewed_source_blocks": 4583,
+  "method": "Compare all rendered Chinese and English body text to reviewed source HTML; normalize whitespace only.",
+  "gitbook_online_rendering_verified": false,
+  "errors": []
+}

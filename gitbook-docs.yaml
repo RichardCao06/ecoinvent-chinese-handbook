@@ -1,0 +1,17 @@
+$schema: https://api.gitbook.com/gitbook-docs.yaml
+site:
+  title: ecoinvent 中文技术文档
+  structure:
+    - type: section
+      key: ecoinvent-reference
+      title: 中文技术文档
+      path: documentation
+      children:
+        - type: space
+          key: ecoinvent-zh
+          title: 简体中文
+          path: zh
+          default: true
+          content:
+            directory: ./content
+            language: zh

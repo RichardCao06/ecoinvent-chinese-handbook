@@ -1,0 +1,27 @@
+{
+  "slug": "product-supply-chain-management",
+  "reviewer": "translator_c_cross",
+  "translator": "translator_b",
+  "status": "passed",
+  "reviewed_blocks": [
+    "b0001",
+    "b0002",
+    "b0003",
+    "b0004",
+    "b0005",
+    "b0006",
+    "b0007"
+  ],
+  "source_sha256": "0261236a3ef49b2facdc66da6a5486f9f17e7448ffb5ddd211c8d49a63be211f",
+  "translation_sha256": "b6a665b6dd212e86fb52ec8749b50f16f2e500a62d4e4ff32f442a0fc6f95943",
+  "checks": [
+    "逐块对照全文覆盖与语义完整性",
+    "否定、限定和条件含义",
+    "供应链输入输出及上下游方向",
+    "数字、单位、公式与版本标识",
+    "专业术语和可检索英文数据集名",
+    "HTML 结构、链接及属性保留"
+  ],
+  "issues": [],
+  "summary_zh": "已逐块独立对照原文与译文完成 AI 交叉审阅。未发现需修正的译文错误。不代表人工专家或 ecoinvent 官方签核。"
+}

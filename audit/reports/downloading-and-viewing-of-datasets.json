@@ -1,0 +1,23 @@
+{
+  "slug": "downloading-and-viewing-of-datasets",
+  "reviewer": "translator_b_cross",
+  "translator": "translator_a",
+  "status": "passed",
+  "reviewed_blocks": [
+    "b0001",
+    "b0002",
+    "b0003",
+    "b0004"
+  ],
+  "source_sha256": "c45735ba4749a2ad95768717328f13cff5a6e7a0651730375d567a5d8c7a7ba9",
+  "translation_sha256": "63eb1a0aefcf67a8024ab0952d7bdf6edc2bed03ef185e9fe27dc649e7a21b0b",
+  "checks": [
+    "逐块完整对照英文原文与中文译文，核对语义和限定条件",
+    "核对LCA、LCI、LCIA与系统模型术语",
+    "核对数字、单位、正负号、版本、地理代码及数据标识",
+    "验证全部块覆盖以及HTML标签、链接和属性保留",
+    "核对译者具体疑点，修正确定译文问题并记录"
+  ],
+  "issues": [],
+  "summary_zh": "已完成所有块的AI独立交叉审阅；保留原文快照时点、检索名称和技术限定。未发现需要修改的译文问题。"
+}

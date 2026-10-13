@@ -1,0 +1,23 @@
+{
+  "slug": "glossary-x",
+  "reviewer": "translator_a_cross",
+  "translator": "translator_c",
+  "status": "passed_with_notes",
+  "reviewed_blocks": [
+    "b0001",
+    "b0002",
+    "b0003"
+  ],
+  "source_sha256": "0688cbd5ea03f0e6ee864d9e1bf7d1e84c71f0e93de0cf38ca83e9cb4828c0eb",
+  "translation_sha256": "b378d71ae79228a968b14b41e12ed85d57e32965a866e6fa1aabceb764656fe0",
+  "checks": [
+    "逐块全文对照：标题、正文、列表及表格均无遗漏",
+    "技术术语和可检索英文名称",
+    "否定、必须／可能／仅等限定与逻辑关系",
+    "供应链上下游、输入输出及分配方向",
+    "数字、百分比、单位、公式与版本号",
+    "HTML 标签结构、属性、链接、图片及锚点保留"
+  ],
+  "issues": [],
+  "summary_zh": "已独立逐块对照该文全部源块与译块，并检查技术含义、限定关系及结构完整性；记录具体修正或原文疑点。本审核为 AI 交叉审阅，不构成人工专家或官方认证。"
+}

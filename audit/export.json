@@ -1,0 +1,893 @@
+[
+  {
+    "slug": "about",
+    "path": "articles/about.md",
+    "blocks": 21,
+    "source_sha256": "36d582c560d55f21ec40f0d42879be23f5c193ec4147fbc5fec563b727291b6d",
+    "translation_sha256": "aac98cd9d18e9211abcf9a41fba8a57e061ce4ae84724ad6a8420c606d9c69fd",
+    "markdown_sha256": "d54a8e3d966452dd1b73aee88bd0152e16a2273a44ff5871b35394639e2dcf1e",
+    "review_status": "passed"
+  },
+  {
+    "slug": "accommodation-services",
+    "path": "articles/accommodation-services.md",
+    "blocks": 23,
+    "source_sha256": "bdb504c43db6c293e891772941537ff3b2b814214b1950fd2321b06b59ab5aaf",
+    "translation_sha256": "e2c46cb4a540dcc0a4d8760d052a46aaaa61bfe01fef5999c9651e9da4bdf105",
+    "markdown_sha256": "9c7e881d217ddbac9f6b949d60624d1b95c93fd27b96ccd101be8164351ffbb7",
+    "review_status": "passed"
+  },
+  {
+    "slug": "activities-products",
+    "path": "articles/activities-products.md",
+    "blocks": 61,
+    "source_sha256": "4225b9ae2243411208bf5ab69c9f9cae8203f1664b20fa042a93cd5c76a1a1ae",
+    "translation_sha256": "b6afec4dac89380be161dfe031d00647fac3a398f801d2c850c4e58a7bfcd545",
+    "markdown_sha256": "5463ec2d62aeadca4d3f59647f12752313c0f6e41732818cc54b7e14bcc850b3",
+    "review_status": "passed_with_notes"
+  },
+  {
+    "slug": "agriculture-fishery-and-animal-husbandry",
+    "path": "articles/agriculture-fishery-and-animal-husbandry.md",
+    "blocks": 52,
+    "source_sha256": "7682233d029b25ae3a891f3708bfa738d2d93f34ba1a8e24cce16766d01a49b9",
+    "translation_sha256": "92a747e44cf132d52fa3028a23d77ce5e5f923070cd9165aca3f4540a0c7d890",
+    "markdown_sha256": "afeaa8e669d22bbfff847283f504d2d27ff0850af7a05aaa3534b160d0bcef23",
+    "review_status": "passed_with_notes"
+  },
+  {
+    "slug": "batteries-electronics",
+    "path": "articles/batteries-electronics.md",
+    "blocks": 24,
+    "source_sha256": "fa9be333629bc03ebcd2641ef09c882f84fb28bfead42bd9c31103a03717e836",
+    "translation_sha256": "ee9465d1849eeacb8c1ba8d8cf86ef214eebfb72cc4260571b8acb60037290a7",
+    "markdown_sha256": "feea9bcc51af9bd40a4b4c02e78460729941b81ec3b5501a31c7dd832f1bcd6f",
+    "review_status": "passed_with_notes"
+  },
+  {
+    "slug": "building-and-construction",
+    "path": "articles/building-and-construction.md",
+    "blocks": 48,
+    "source_sha256": "5e68ebfc4e9d83b703aa1f8b28f61b0d6f7fb15e541e453fdae8a88d18618430",
+    "translation_sha256": "3fa90fc7abb935d8732391025d5d8092d6c5ccb343f2c277a77d20fed40b84f3",
+    "markdown_sha256": "dce59e5bfc392df8639bf88bca18e209fdf90f3ec31394591744ddb7b028d08f",
+    "review_status": "passed_with_notes"
+  },
+  {
+    "slug": "changes-ecospold1-to-ecospold2",
+    "path": "articles/changes-ecospold1-to-ecospold2.md",
+    "blocks": 30,
+    "source_sha256": "d0a7c2b3e2c8c0b710e3887f5870586785b8f1363d06dca81594134437627612",
+    "translation_sha256": "5e15a5857507b50802f290604f755aaaab899946ec66a69c212506e4c9f1bd7d",
+    "markdown_sha256": "fd94145faa4ff0dca253dd3be5a5afdb7f7a3dd7681dccff730b1f3a8f77510b",
+    "review_status": "passed"
+  },
+  {
+    "slug": "chemicals-and-plastics",
+    "path": "articles/chemicals-and-plastics.md",
+    "blocks": 61,
+    "source_sha256": "4fafd0b39398847a522cba175947128a39e294a1bebd82b11506d9e0eaa76cd5",
+    "translation_sha256": "b761d3fae58061391968f1cc7cfa64227ebf79f5a8507c3afd1eaf163d005ed8",
+    "markdown_sha256": "f85995b48068b86bb5f3b04b25b69f7e7a7dda89908184c5bc5942b7692b6465",
+    "review_status": "passed_with_notes"
+  },
+  {
+    "slug": "corporate-sustainability-reporting",
+    "path": "articles/corporate-sustainability-reporting.md",
+    "blocks": 7,
+    "source_sha256": "e3c92e260f82d7163880fc74774f79c39146fc6a56ac4da579471ef6a4052b8c",
+    "translation_sha256": "393ccc108cacfaeded8db9070927fcac468c7d077d1fb6f446f572a58afcbafe",
+    "markdown_sha256": "92ea6a1e6c02ab13cd5f35a0fd8f9d0ab45174ce23390fcb0fb3f6d1aea1fb37",
+    "review_status": "passed"
+  },
+  {
+    "slug": "data-formats",
+    "path": "articles/data-formats.md",
+    "blocks": 7,
+    "source_sha256": "ae2f8881bd49cdfc63a0b85b04f548cffca1640e5941c157d650918b8e024a6d",
+    "translation_sha256": "ac471de60f84fd197313a1ae412a2f37d5a70fb7e449cc0c0f2dbc2fd4e6b542",
+    "markdown_sha256": "c0aabc4e78ec6c9e110a374c51834bf9eec6c4e484035f327ea075004f20ef48",
+    "review_status": "passed"
+  },
+  {
+    "slug": "data-formats-overview",
+    "path": "articles/data-formats-overview.md",
+    "blocks": 5,
+    "source_sha256": "b29a9bdcec3c7406824499326e0b1733cbb4312d2030236f6d96ff55845e7684",
+    "translation_sha256": "03d9ef3c67b33bbbfea42b66910142bdab09d1519aa3ed8915ff4dccecedb9f9",
+    "markdown_sha256": "5181dbf6e3222679e711df1bf26ba0007c8b74ee2987b613e8ba1836cc8e25be",
+    "review_status": "passed"
+  },
+  {
+    "slug": "data-formats-overview-2",
+    "path": "articles/data-formats-overview-2.md",
+    "blocks": 44,
+    "source_sha256": "faf540fca88b82b0ffcdfcd7295db8215ee7b659f7e84aa91998fb3054c87150",
+    "translation_sha256": "32c5fdd01a7692646bcc3c88dcafdfdadf29a3294b24490863cabd2a7ee184f8",
+    "markdown_sha256": "a0188da037e7f385b3c8d99610a5a4c93cf50c7610b3b4efab4af2ab47308d34",
+    "review_status": "passed"
+  },
+  {
+    "slug": "data-submission-process",
+    "path": "articles/data-submission-process.md",
+    "blocks": 41,
+    "source_sha256": "e141ad989bd2551a556ba7a5e5671d60ee059ef8b1da64aacdf5d3aa2f576c7c",
+    "translation_sha256": "fadf45d31a3fbda6cead07ee0c50895d50f272abaf859b04ff8421a772c94ff8",
+    "markdown_sha256": "fdd94d8ef0e9cc77beac1e27a667a00bf9299f78d289c5d159d4f22663fe5425",
+    "review_status": "passed_with_notes"
+  },
+  {
+    "slug": "downloading-and-viewing-of-datasets",
+    "path": "articles/downloading-and-viewing-of-datasets.md",
+    "blocks": 4,
+    "source_sha256": "c45735ba4749a2ad95768717328f13cff5a6e7a0651730375d567a5d8c7a7ba9",
+    "translation_sha256": "63eb1a0aefcf67a8024ab0952d7bdf6edc2bed03ef185e9fe27dc649e7a21b0b",
+    "markdown_sha256": "e4b6b22a0cce8e5994bd10c2183c5741777afd8cd7294d3c9bd73c5d1b4ef261",
+    "review_status": "passed"
+  },
+  {
+    "slug": "e-learning-fundamentals-database",
+    "path": "articles/e-learning-fundamentals-database.md",
+    "blocks": 17,
+    "source_sha256": "edd0be16f1fa02b617ed02def13fbbcfa55ec9cd3a9ccf2d3868365c7986f779",
+    "translation_sha256": "50084b45229f0a2535b4a7182726ed28b2b5a96b9774ca1cfd9c4fd2ae418d2d",
+    "markdown_sha256": "138f79023804307b478354a29879eb5e37d5fa76087dbbe545c580caedcd0db1",
+    "review_status": "passed"
+  },
+  {
+    "slug": "ecoeditor",
+    "path": "articles/ecoeditor.md",
+    "blocks": 30,
+    "source_sha256": "cedd06df18d540c9d28ecd5afb89bedd891b92c1a40462b4ed4e7f3c5b1d608c",
+    "translation_sha256": "2e35e2aa2858a7e55a864a3b380d5c868c0c4bbb1150e031faf5aae395010e5f",
+    "markdown_sha256": "617aff5bcd236692addf9d4ff778e79d7d06c9608fd5c8661ed2535959cfcc09",
+    "review_status": "passed"
+  },
+  {
+    "slug": "ecoinvent-lca-software-tools",
+    "path": "articles/ecoinvent-lca-software-tools.md",
+    "blocks": 28,
+    "source_sha256": "bc513f8ad2dd253c6bb744d5a731cd537cb61c5d2efc33dd2f86b2aa9d52866d",
+    "translation_sha256": "b1d21ff625774b3a4060361f3efad6881ff261c73126ba83edcab9301c94b966",
+    "markdown_sha256": "622a2000ba40607fbc12e1f7ce55dcdb164c69bcdebcfea71a44a11ad6f547d2",
+    "review_status": "passed_with_notes"
+  },
+  {
+    "slug": "ecoinvent-use-cases",
+    "path": "articles/ecoinvent-use-cases.md",
+    "blocks": 11,
+    "source_sha256": "2c036b4e5098392542dfa9c40f9ea111fbcb7a5dd0fc3a7a98d9c33ad50fe5d5",
+    "translation_sha256": "465b0c5199a0d6bf973eccd407fe1f7a17816ae5e56a7bce0abfbaf657ef8d13",
+    "markdown_sha256": "c43a46441ac5927a4431299f639c52859d833a352f8e3e029e2dd04204f721cc",
+    "review_status": "passed"
+  },
+  {
+    "slug": "ecoinvent-version-2",
+    "path": "articles/ecoinvent-version-2.md",
+    "blocks": 39,
+    "source_sha256": "32f33043cd16eba41eb60ce4907e3ae7cff92f768521cf9e69b37d58ed3cd46c",
+    "translation_sha256": "baede6432ea500ac582de7ff621a762793e8b751e92cefa8b50d8bd22eaa0ae7",
+    "markdown_sha256": "e34a61433aaebf6e7f0d5a3d88902e661593261242592954f37bfb51a3ee2022",
+    "review_status": "passed_with_notes"
+  },
+  {
+    "slug": "ecoinvent-version-3.0",
+    "path": "articles/ecoinvent-version-3.0.md",
+    "blocks": 59,
+    "source_sha256": "5a0a734022e857665036778313e62e605759fb0dfc2110a87f02527cf9013e74",
+    "translation_sha256": "8f4319a53d8cd746bfd863373970f2bdd160ae2a2d45f6e23fdaf4432d7a0768",
+    "markdown_sha256": "1044e97d03e170b0ee8d0d3c947964bf792b63e17e14712fd8cb453c394f319c",
+    "review_status": "passed_with_notes"
+  },
+  {
+    "slug": "ecoinvent-version-3.1",
+    "path": "articles/ecoinvent-version-3.1.md",
+    "blocks": 55,
+    "source_sha256": "f075f2964392f5d89944245361a470e0239cde72cdda4e6892814059e87387ff",
+    "translation_sha256": "f51a72a9277e16eca806fc6d0ca726091e87db6538bcf389b8e0d483301c8139",
+    "markdown_sha256": "7a8c5a4397e73bbcdea74b9d0ca243cfcef5a373cae359e83fbb3b0b6d7126cc",
+    "review_status": "passed_with_notes"
+  },
+  {
+    "slug": "ecoinvent-version-3.10",
+    "path": "articles/ecoinvent-version-3.10.md",
+    "blocks": 337,
+    "source_sha256": "fa8cf8db5eb05c1b6f8107c389684f10288b92e185848e3bb82cfa146923b063",
+    "translation_sha256": "47fb2d859d1da728dab00b9872ccda9acb72ccd76921d1164420a3b16f906a0b",
+    "markdown_sha256": "5dc69b02b1da8a512c5be41d1130e2ee9fd50a4f2a08fe6b63d73792d75d1874",
+    "review_status": "passed_with_notes"
+  },
+  {
+    "slug": "ecoinvent-version-3.10.1",
+    "path": "articles/ecoinvent-version-3.10.1.md",
+    "blocks": 272,
+    "source_sha256": "21079fcf28a4935a02c4a6b5b4b30ee7348f317c36eee1761c654866ab626e2a",
+    "translation_sha256": "815a2bd10be54b813a664e6c8780698a226aeb1f65d2db8c0f0f88fab1c67539",
+    "markdown_sha256": "aa60e9243ab01332d49322a94c4e08f11df908930e1b30fb84729c9a84aaf807",
+    "review_status": "passed_with_notes"
+  },
+  {
+    "slug": "ecoinvent-version-3.11",
+    "path": "articles/ecoinvent-version-3.11.md",
+    "blocks": 171,
+    "source_sha256": "4a3d40a72a62cfe68832a80a41f41c73344ba97c58d7308e0e451bcd0dff99d9",
+    "translation_sha256": "4c3ef518a52a65cea99637e5c89ed116be07057a0516b7fe2914199b3791da6e",
+    "markdown_sha256": "a07b314a0f709ff915c70f64e3c915aaf67788e4cc541b2ccb4edf4a8238d8a1",
+    "review_status": "passed_with_notes"
+  },
+  {
+    "slug": "ecoinvent-version-3.12",
+    "path": "articles/ecoinvent-version-3.12.md",
+    "blocks": 103,
+    "source_sha256": "429f8e4866511e3b05ff9704c448e5d013e8c8178d755873569f08e2b094fa2b",
+    "translation_sha256": "237186fabb2e1cb3fc771e720f2fc90b53f116a0914f56c50d2ee11e64a4fcf8",
+    "markdown_sha256": "721e8cb69ba76601984ee3d031c3f260bd9e231914937e08f2861ea91b580510",
+    "review_status": "passed_with_notes"
+  },
+  {
+    "slug": "ecoinvent-version-3.2",
+    "path": "articles/ecoinvent-version-3.2.md",
+    "blocks": 51,
+    "source_sha256": "e67d02c7b468b9f01369375458ebbb050b481961029f7243539476fab6c47348",
+    "translation_sha256": "916883023b01745b5e6d25867ac4d9d375ac2e89ce94ce33bcb9434ad1214f3c",
+    "markdown_sha256": "5bbd504ef2f32285abb4997870c33f76d1f3a3c29b189f0d4284937cebf3c9c2",
+    "review_status": "passed_with_notes"
+  },
+  {
+    "slug": "ecoinvent-version-3.3",
+    "path": "articles/ecoinvent-version-3.3.md",
+    "blocks": 69,
+    "source_sha256": "525b7299b4e1306217fa29877585be6a84671503e83d5930477a07df703d9b38",
+    "translation_sha256": "18cac00b0ba5f13c032d72c9d8e2b09544901cc534d2533b719ba4e1dd924492",
+    "markdown_sha256": "0c94620e4801e1b5f3663e95bf22e0129b2eb7d42c74a39b34726fdf6e20767b",
+    "review_status": "passed_with_notes"
+  },
+  {
+    "slug": "ecoinvent-version-3.4",
+    "path": "articles/ecoinvent-version-3.4.md",
+    "blocks": 60,
+    "source_sha256": "cae77e8a54c0b281b1706da57a7017f67e0fef6cefa2ea49c62ad12a766a782e",
+    "translation_sha256": "371325a577efcfb2aa3e4dbf892730af2023788f062610423aca9de20bb30843",
+    "markdown_sha256": "1139e70de7fe6af209f604441e80b4d691265fefbe33e668fddd62e48e28a3d8",
+    "review_status": "passed_with_notes"
+  },
+  {
+    "slug": "ecoinvent-version-3.5",
+    "path": "articles/ecoinvent-version-3.5.md",
+    "blocks": 55,
+    "source_sha256": "870cd597ffcdf307f8d4723d325899c7247c1395a8f88169d40a2fc374457f3b",
+    "translation_sha256": "6828c633af93781919b9dd6dd743493209ead7ebbc6ba3afd4e4b05e5ff04eea",
+    "markdown_sha256": "203d2dce97df0179dda368bb2a32f47b4b8379d76e8080edbc750b6489d04de2",
+    "review_status": "passed_with_notes"
+  },
+  {
+    "slug": "ecoinvent-version-3.6",
+    "path": "articles/ecoinvent-version-3.6.md",
+    "blocks": 193,
+    "source_sha256": "39d9febf8855dc9a8e6ae0d7b471bf894d048d5f14023562c7e19a6921777dbb",
+    "translation_sha256": "cd38ed649baf3d24a51c223470c12f9f6c0b5ec77eac7c7a0f77835b48368ffe",
+    "markdown_sha256": "874946709c1f18d556dd8153122b56dc194fea667dae00150c3b1c60072e0245",
+    "review_status": "passed_with_notes"
+  },
+  {
+    "slug": "ecoinvent-version-3.7",
+    "path": "articles/ecoinvent-version-3.7.md",
+    "blocks": 192,
+    "source_sha256": "2c4a5e72eb336634be2dd685ba0a307e739db48a344bf91dda7c775f509362fd",
+    "translation_sha256": "46401ba6f92f81307271633b8532bed39f414f3bdfed12097533bd6406b854a3",
+    "markdown_sha256": "7e77b955b92dd0a66e0bd8a890cc146d4e5c638143db7b30a8750c4964aaae91",
+    "review_status": "passed_with_notes"
+  },
+  {
+    "slug": "ecoinvent-version-3.7.1",
+    "path": "articles/ecoinvent-version-3.7.1.md",
+    "blocks": 106,
+    "source_sha256": "4cdd13d527bfbae4ca8403bc362abd88ad562b9c75224b49c87f8d3f2ab096cc",
+    "translation_sha256": "6a87cf26864b709aa6e589c93246482315e16c2fe718091e6d2737bebebcc9b3",
+    "markdown_sha256": "5f8f40e29dcf011bd8c99e5f671de1fa19fc74998be9a20cdde50cce580988c1",
+    "review_status": "passed_with_notes"
+  },
+  {
+    "slug": "ecoinvent-version-3.8",
+    "path": "articles/ecoinvent-version-3.8.md",
+    "blocks": 133,
+    "source_sha256": "00759e097212e057bda757af2c9125a366b99c83d26ff3097efc492fc7418c3a",
+    "translation_sha256": "5e8f332a5e3a87c0d948d5126989b5c488dbc14b10c3388caa08874dd9032855",
+    "markdown_sha256": "9ec86d36d10755e8f545bd951fcc758f0b45a3422f238f43a8bfa4d1f4a55fb3",
+    "review_status": "passed_with_notes"
+  },
+  {
+    "slug": "ecoinvent-version-3.9",
+    "path": "articles/ecoinvent-version-3.9.md",
+    "blocks": 122,
+    "source_sha256": "3c16b5a28aa758945f1dc1f43d1a728a0ff8e114cfee85d4a33d4328d4647bc1",
+    "translation_sha256": "f9b7f19a80e15d71762ef02f76ff7d42baaa61bcb6ac3dd2b1d5d15667c454db",
+    "markdown_sha256": "b851ad68c1b5c83abedd5e58c84463477bfe3f486487102fad879aa894016882",
+    "review_status": "passed_with_notes"
+  },
+  {
+    "slug": "ecoinvent-version-3.9.1",
+    "path": "articles/ecoinvent-version-3.9.1.md",
+    "blocks": 124,
+    "source_sha256": "79c2ba3dc72aef1d1c0e50ee864675a8f852cb69e869063adc1d540b80b4166f",
+    "translation_sha256": "9a134eea0964854e2991e80c318d0913f75c92f2a64b27255afa093d9c237ff9",
+    "markdown_sha256": "9142e018428c71eeb22a6f1436e9bbbe05ddb8dd8c193f7268be7a287a996255",
+    "review_status": "passed_with_notes"
+  },
+  {
+    "slug": "ecospold2",
+    "path": "articles/ecospold2.md",
+    "blocks": 25,
+    "source_sha256": "3d454f250f2a22444b7733c226ea740a1600f1984f174e6b8ffb790a14e5b51b",
+    "translation_sha256": "76607e825a6475195893eb5288b302a6596bad7badccb8fe659eb80772246953",
+    "markdown_sha256": "4dc3cec3e2bfdaf642485c3534b23968df14738d479e1d2f083fa3b36b22b7b1",
+    "review_status": "passed_with_notes"
+  },
+  {
+    "slug": "energy",
+    "path": "articles/energy.md",
+    "blocks": 139,
+    "source_sha256": "eadb6b6b7c688eec3f6e8eeba41361aceb1f57e1dab6fa1a79feb9d46edc1f3b",
+    "translation_sha256": "2b6aba67168a1d6ba10198f7f2646afedca584a567170d92078a1d665ab0fa8a",
+    "markdown_sha256": "8e076ae3e7a243079bf6c48f1dc038c884dc27178ef6c92a25d31815d1e6e182",
+    "review_status": "passed_with_notes"
+  },
+  {
+    "slug": "environmental-footprinting-and-offsetting",
+    "path": "articles/environmental-footprinting-and-offsetting.md",
+    "blocks": 9,
+    "source_sha256": "3444af71817857e9132cb22ba70f6a93e4d2c877ce4d3ff25bc4f147a93d6980",
+    "translation_sha256": "1f1d591b62d85e95d1d4cfbd5cbf7e80deb01aa526d558c0c5de1e96903ac750",
+    "markdown_sha256": "20d15d4561c2a39054ebc40792973d7834fca1403d3c5e3f9f2fe1490a027d87",
+    "review_status": "passed"
+  },
+  {
+    "slug": "environmental-product-declarations-epds",
+    "path": "articles/environmental-product-declarations-epds.md",
+    "blocks": 15,
+    "source_sha256": "e09f3ca25a53cb8f10c080d35210607eaed7a6102c8b87dfd14178b14a428ac2",
+    "translation_sha256": "af6e1c08f869de3d322a98e2c4b560c579f86ad028dcf991186933fb1db85a80",
+    "markdown_sha256": "e69a3232a4d5fb26641fa1ddf58df47166c0e12fb7925cb34642ca22c7f4bd92",
+    "review_status": "passed"
+  },
+  {
+    "slug": "eula",
+    "path": "articles/eula.md",
+    "blocks": 17,
+    "source_sha256": "50d1746f256a3a4aa5ed149ba3d82d87aa071efacbb3804e10050a9e29583896",
+    "translation_sha256": "5d1bbe7dff8041ae1dfe4e0e249b510dd404d090fc910ae84e94d07bece2fa38",
+    "markdown_sha256": "86ef4616e1ae51e518100c9d158c8aebd0a7c3b495428025921c5e7d1cc990b2",
+    "review_status": "passed"
+  },
+  {
+    "slug": "example-datasets",
+    "path": "articles/example-datasets.md",
+    "blocks": 31,
+    "source_sha256": "c5d169b86dda97f277a8569538bc5eced79e56670984b06c11f6d4eda4c3b9c3",
+    "translation_sha256": "cdafe4f81e925a22af807e1f744b0a39d5aeb5ea348d97ed544fc82e8b2c7c7d",
+    "markdown_sha256": "09cd24f702176a1daed434933e40d9bfb8719a690f0b79e118fa1169212dee86",
+    "review_status": "passed"
+  },
+  {
+    "slug": "faqs-guide",
+    "path": "articles/faqs-guide.md",
+    "blocks": 103,
+    "source_sha256": "d5361d30f3cf818d3f9a7e4d43409fb33f37103a1c51b0e6798574f9c614da5a",
+    "translation_sha256": "bd5956b1ec163231d1d3757af1f679e7c0de4b593c2a2cd3fe1da59a3ec3145e",
+    "markdown_sha256": "69a743a2a37d78a160fca1fe0f4091408663d32af66ff4dec68dcdbb9988e1ec",
+    "review_status": "passed"
+  },
+  {
+    "slug": "files",
+    "path": "articles/files.md",
+    "blocks": 23,
+    "source_sha256": "abd2decbee449ce82ed831a9a598189a21737100ce71763160af49b86b4feb05",
+    "translation_sha256": "db3948e11359200ce71759e6b4879c6a3ba3f239d32da7744e85e50df6aa805d",
+    "markdown_sha256": "aec07735698b62d1ac595b8c1c4f774c9fa7b30455d1bbf1c34202f761e83efc",
+    "review_status": "passed_with_notes"
+  },
+  {
+    "slug": "first-log-in-to-ecoinvent",
+    "path": "articles/first-log-in-to-ecoinvent.md",
+    "blocks": 34,
+    "source_sha256": "f4bd191ea93130867f873548001780ae45180955dfffb23f1dc40765cec21846",
+    "translation_sha256": "5f58b1215ec3d50128fdb524a7263985341b412ac67da763d1510e27d56e9a8b",
+    "markdown_sha256": "86452669412346fc2c35bf4c92ca3b468ddec333acb1bb66e1b8eedc47f6dd56",
+    "review_status": "passed"
+  },
+  {
+    "slug": "forestry-and-wood",
+    "path": "articles/forestry-and-wood.md",
+    "blocks": 33,
+    "source_sha256": "d6cfb54b27942fb76bae4a4c4be8e6725fbd29ca1f755675daa478324b67c36f",
+    "translation_sha256": "f1c37f9168a067b23cb0b6e0f03d2882bb9005fc4d10e330bb9f0ebc53171c78",
+    "markdown_sha256": "26d995891f5d4e03b01ed8711f943e8da0564010d0f38f66b7768b479b76dc69",
+    "review_status": "passed_with_notes"
+  },
+  {
+    "slug": "fuels",
+    "path": "articles/fuels.md",
+    "blocks": 129,
+    "source_sha256": "59072a6000bab570f6f925a65f825cb858d7dfa6e4f1990cde966e9fc830a9dc",
+    "translation_sha256": "d3b991760b8db7132ac68fa51cdf6fd0313a3168d976a13dcf2af6684e7e0f11",
+    "markdown_sha256": "da0dc6eb3713b2e5b630f9251f004d18bc4a7da55651662d59aeb8437b948afc",
+    "review_status": "passed_with_notes"
+  },
+  {
+    "slug": "geographies",
+    "path": "articles/geographies.md",
+    "blocks": 21,
+    "source_sha256": "56df835fbb72c039bb204c5b7af8a3d446a612160b9afe6dd3ca969ca0e2b44b",
+    "translation_sha256": "c127f7d5386773491a144030be065ec3ffae7b4dd6ad2d0ef64a3f047a7fd8ee",
+    "markdown_sha256": "e43392b9a7a67661ef0b65144a8093528294d0af37e2058d9550a411589079f2",
+    "review_status": "passed"
+  },
+  {
+    "slug": "glossary-a",
+    "path": "articles/glossary-a.md",
+    "blocks": 18,
+    "source_sha256": "d9b6590eb75a8407c3fe9d574c1f94c5e0e55b56e1f04d72b548fcd789bce7b5",
+    "translation_sha256": "b0a06f0b4e60a035aab8a5c2af18cb4aa5a171b7de5b3a71c1610fee6c037cd8",
+    "markdown_sha256": "7f8292c090e0c8775ca7db40b2dc4ac9432b0eb9bda3d29f17e228aef7da17b4",
+    "review_status": "passed"
+  },
+  {
+    "slug": "glossary-b",
+    "path": "articles/glossary-b.md",
+    "blocks": 10,
+    "source_sha256": "c1ba1ef88a0de6decbbeff8a3d7bbdd42aab41f77b9cd3e166aa4d31fa3508c9",
+    "translation_sha256": "da7aa12bcec833a5ad988f149d185149574aaa2553e7b049f131a82385aba0e8",
+    "markdown_sha256": "462500771d201ba27d96e236536a2380cdb7577f01d0f05c54b36dd5c1acc23b",
+    "review_status": "passed"
+  },
+  {
+    "slug": "glossary-c",
+    "path": "articles/glossary-c.md",
+    "blocks": 37,
+    "source_sha256": "2228db3afdcfed522878b146261c42943a693fa1b12b86de6ff37dd014a452e3",
+    "translation_sha256": "9042832db689ba9305836033c61264b31b98b8ca959f8d9e8d94795b812eadc2",
+    "markdown_sha256": "2da3a590902868d8a6a36475e0e3acf26f8e551fb13a585e40f27d6e2c3ad6e1",
+    "review_status": "passed_with_notes"
+  },
+  {
+    "slug": "glossary-d",
+    "path": "articles/glossary-d.md",
+    "blocks": 16,
+    "source_sha256": "b8cafca8d32fcb4c90f4dac2ddf664a629d5ab35b27c0b30b72f4b0461252100",
+    "translation_sha256": "f196322ee9daa2ac8027217d3f38ac0c986b41da4425239ea84673b337cf3c1f",
+    "markdown_sha256": "2bd2635e8247c6555f88a13705d4ac4448b728b2d5337a869f75de0042f33184",
+    "review_status": "passed"
+  },
+  {
+    "slug": "glossary-e",
+    "path": "articles/glossary-e.md",
+    "blocks": 33,
+    "source_sha256": "b14acf0e5df45eb0b8f3834e8008bfa8903a6d434996d36bbb0238fc61b6dc81",
+    "translation_sha256": "9d1ebb345b52633fdffca84c935423202618e5a6ca199158244b33ad169b9646",
+    "markdown_sha256": "5f0ff7bba65c37288cc1d104f5f59861668b308012cd86c8873f1064799578dc",
+    "review_status": "passed"
+  },
+  {
+    "slug": "glossary-f",
+    "path": "articles/glossary-f.md",
+    "blocks": 13,
+    "source_sha256": "d0aa39fe64e87c085d506cd09e6f4d54a236705320205ab7265b224d0ecb19e2",
+    "translation_sha256": "ad871b9bc6c2d661f525723a08ffdab0a87d6da1cf686c06590cc0e75892d604",
+    "markdown_sha256": "c8443f55ccbc35740db3906aaa2aab67a886c0f06b7315dc47f45903fab6b82e",
+    "review_status": "passed"
+  },
+  {
+    "slug": "glossary-g",
+    "path": "articles/glossary-g.md",
+    "blocks": 17,
+    "source_sha256": "95892401ac766d70f32167cea75ee9aca3286caf35307702093d57aee9e866d4",
+    "translation_sha256": "e98cbfe6fa53066a9e60908a2e15a436e167c2d08786a1054e800b2020587a2f",
+    "markdown_sha256": "9e660b65dc60a9fc1032c648d00946f4096b7e08fbef897ea674ac36000be9b6",
+    "review_status": "passed"
+  },
+  {
+    "slug": "glossary-i",
+    "path": "articles/glossary-i.md",
+    "blocks": 23,
+    "source_sha256": "8e16c21ef6c53051202d77f20d0594a5ace33149a522b19d0ae029232a6479a3",
+    "translation_sha256": "b890826c7d1e2e7a5a775bb9ee48338e5386473872cb3b1e10d030b52d8e5e0c",
+    "markdown_sha256": "a96cb4be6cbe2b654fc97ed29cfdb946206b1710e0a4edaa51462240d18d06f7",
+    "review_status": "passed_with_notes"
+  },
+  {
+    "slug": "glossary-k",
+    "path": "articles/glossary-k.md",
+    "blocks": 3,
+    "source_sha256": "40af3330de19433a3c497ca9d96a8bd40f4c7aa9c1a55ef96a20cc82ecc3e006",
+    "translation_sha256": "48c24417c07ec34a414391ab3ccc47329c15dd4a79454156f57f2d52b0f8638d",
+    "markdown_sha256": "fbf30a90daf54b7545dc2238c084887725744d0a91f5218f11b4c43b74eeb6ec",
+    "review_status": "passed"
+  },
+  {
+    "slug": "glossary-l",
+    "path": "articles/glossary-l.md",
+    "blocks": 28,
+    "source_sha256": "c4f95ce3a6c6d19c1d589ed95eb910b0d63a2d95489ad45db66ce781278fb1f3",
+    "translation_sha256": "947ad9068462792707ae9400ae057761aae51b0331737cfa094f4b9a0c05796b",
+    "markdown_sha256": "0e04bcf69d47eb099b5c237f5a07b77fc6e3bc8b528a122357c216eadf885c89",
+    "review_status": "passed_with_notes"
+  },
+  {
+    "slug": "glossary-m",
+    "path": "articles/glossary-m.md",
+    "blocks": 17,
+    "source_sha256": "fb8a91bfd97502608c25bfe6033f50453ce5eb483cbdf0239044129a6fd88b6b",
+    "translation_sha256": "f1cfa13eda84873bd8773fc79b73d238552c451453f214ee25088e80486fdb77",
+    "markdown_sha256": "82b01827bc5e52c5d98d6e845a22170218c6d51ea6baeacf2747b366c6fa06c7",
+    "review_status": "passed"
+  },
+  {
+    "slug": "glossary-n",
+    "path": "articles/glossary-n.md",
+    "blocks": 16,
+    "source_sha256": "923fa54f31545424acf2ad1872e090866cfd6390f5a1963d5c6553a1ba9ce523",
+    "translation_sha256": "54913d435c4b9fbf77442db161695d9cd7cd16d9df3ea614cc2b9da0e01f15d2",
+    "markdown_sha256": "7c5f394ee0a4d0734000d00b1cddc0b6a4c63fe2820077edc6e8597e593e75aa",
+    "review_status": "passed"
+  },
+  {
+    "slug": "glossary-p",
+    "path": "articles/glossary-p.md",
+    "blocks": 37,
+    "source_sha256": "86d8adc896a25552a3712cd66229b7178d2d28dd4b15ae54dc49ba1f1c86feb9",
+    "translation_sha256": "421f37837492c88dce4d09815f3f6e31d19e6a051185a6a4ede5b45e2b286e82",
+    "markdown_sha256": "950a2815ee27eaab50683da37a7f2f047117d2d6e6d2231c82c9fab377774edc",
+    "review_status": "passed"
+  },
+  {
+    "slug": "glossary-r",
+    "path": "articles/glossary-r.md",
+    "blocks": 7,
+    "source_sha256": "61c3ef98302673d7f4d82d7c02c535950a7882902e2e7aafc24174e62808d706",
+    "translation_sha256": "7cfda2b031791f6a9e2b92c0e8f12558d87ffaae03817117bef7a42286eb48cb",
+    "markdown_sha256": "6c00c45cd01e8a39dd16257f3b16a01062c387c04a1fc2128eb001b79a2c56c8",
+    "review_status": "passed"
+  },
+  {
+    "slug": "glossary-s",
+    "path": "articles/glossary-s.md",
+    "blocks": 23,
+    "source_sha256": "fa7563b443628013e78c854b6b9fa0c2077d99b06aac92066b5a6db13bee7f44",
+    "translation_sha256": "3c23551732f93f4c0640b2ac9e4e0359fae9f148328cf7d9046ecab41c4d70ec",
+    "markdown_sha256": "77491b8d6cd1a06d16f78603c780b61e3086d2be3b73dbc5a4edaaefb8c77277",
+    "review_status": "passed"
+  },
+  {
+    "slug": "glossary-t",
+    "path": "articles/glossary-t.md",
+    "blocks": 31,
+    "source_sha256": "bedc3cd5a3089e2aeaa172d01bcf1b49deb299b6bbb0e51ae8e9bb3337b9af9c",
+    "translation_sha256": "9e14e478f2ccc36f97b9662e51ba17eeb0bbaa375dca0e2e889e4c8b93aed722",
+    "markdown_sha256": "8279cf3cd2c36df474d474f6cc9dfa0441a7298d18c05a84c6d921e9b8922d6c",
+    "review_status": "passed"
+  },
+  {
+    "slug": "glossary-u",
+    "path": "articles/glossary-u.md",
+    "blocks": 11,
+    "source_sha256": "e33cfb458a725d3fc78adedaf7bca236e534e1f2ed5efb0379c2486b3317247d",
+    "translation_sha256": "9f4ba37427ffbef40f77647587198f2eab3ab561545dc3876a22d15169730a69",
+    "markdown_sha256": "00169f659998b736a1f38825bd3c52f112800a4b8ae42f55e1457f5ed4853dba",
+    "review_status": "passed"
+  },
+  {
+    "slug": "glossary-w",
+    "path": "articles/glossary-w.md",
+    "blocks": 34,
+    "source_sha256": "40cc8c6f35fc6e594025583d6fc9b15da5f3105f659b24dac9022e2da03c086d",
+    "translation_sha256": "463cdda533de80a6853992ea70e2d23e4a686a5a9aca0785a28b016c455f5a06",
+    "markdown_sha256": "eff0b0ae5297c1e9248a78ae920143d4fcafd989ae5eba291016115796f39a39",
+    "review_status": "passed"
+  },
+  {
+    "slug": "glossary-x",
+    "path": "articles/glossary-x.md",
+    "blocks": 3,
+    "source_sha256": "0688cbd5ea03f0e6ee864d9e1bf7d1e84c71f0e93de0cf38ca83e9cb4828c0eb",
+    "translation_sha256": "b378d71ae79228a968b14b41e12ed85d57e32965a866e6fa1aabceb764656fe0",
+    "markdown_sha256": "b9f0c65e634be54cfad1fcc7a4398a822d25bd1dc005ad9514d0590606462364",
+    "review_status": "passed_with_notes"
+  },
+  {
+    "slug": "green-public-procurement",
+    "path": "articles/green-public-procurement.md",
+    "blocks": 5,
+    "source_sha256": "1ae6cf7d04327c63576b24a2153293fcaa8283d2fedaacff85f7afb05e0102ab",
+    "translation_sha256": "712454401b55229a06279ed7c2e266f33376b505539c6c535043dba2eeae0156",
+    "markdown_sha256": "f9166ab54a8c2cc7e39bd9afd0c6f83f42c016070fa422e17cc8374fd2acc0a0",
+    "review_status": "passed"
+  },
+  {
+    "slug": "guidance-on-ipcc-methods",
+    "path": "articles/guidance-on-ipcc-methods.md",
+    "blocks": 34,
+    "source_sha256": "08c8490943d848266d16b2d681ff04c92701f41adcc5f699b7d15ca01edcf14d",
+    "translation_sha256": "12b22d057b03d9795ccafb4031cb5288ea375cab2ebf6255ba2c2f074e9e12ca",
+    "markdown_sha256": "34ec749c53d101ca30a2b370dfcb3148949feb41e37e2c8be5543ade27743ac8",
+    "review_status": "passed"
+  },
+  {
+    "slug": "impact-assessment",
+    "path": "articles/impact-assessment.md",
+    "blocks": 48,
+    "source_sha256": "3f394d8db9db7440d986e40c05ff0d2bd8ddec471914ff4997a3c777c10c8348",
+    "translation_sha256": "1e3d3520ff6ed0d041cd646773c6361d4f4ed27782829443055fb3d49da3d180",
+    "markdown_sha256": "4881243d832edc1fc82917401a38d8b9bf7b33280969eede00dc727b38f40bc2",
+    "review_status": "passed_with_notes"
+  },
+  {
+    "slug": "infrastructures",
+    "path": "articles/infrastructures.md",
+    "blocks": 45,
+    "source_sha256": "5500aea9807d5d1f5a37216a175fb2b39a2190e4291e1f384dff55a2342e082a",
+    "translation_sha256": "305aa9c44fb87f2fbd004a0c82cb3a3b390a368f4b3aa892346881951dc5bf8b",
+    "markdown_sha256": "c57fa54214beda13427a6a4408e837ec0f78e496406d075d14e41623d2559b58",
+    "review_status": "passed"
+  },
+  {
+    "slug": "introduction-to-the-database",
+    "path": "articles/introduction-to-the-database.md",
+    "blocks": 19,
+    "source_sha256": "b89586d0b51a8266393443e19c005fda99dd73bc7324fd2b356a7d3cb7375494",
+    "translation_sha256": "84938940c57a1a1a196ef4f36667138d3ac45beb5e712efc8c845ebaf12e4808",
+    "markdown_sha256": "63404a619be69ce68b350f537db284abd62f6e0cbee492a07288dc81ebde6d2b",
+    "review_status": "passed"
+  },
+  {
+    "slug": "lcia-results",
+    "path": "articles/lcia-results.md",
+    "blocks": 22,
+    "source_sha256": "bcc25f24c15241430abe16b08955d102d2f4920be91d1a57a5810d453d7e34f8",
+    "translation_sha256": "c74b0e5bef494bb009854ac2f2b6d990a386d65e44910af14a9b7ad2a926b4e5",
+    "markdown_sha256": "6394b13a81c6c47c8ac974f7c1348c27ee2092753e2e3f3f9462cd7da8a918af",
+    "review_status": "passed_with_notes"
+  },
+  {
+    "slug": "licensing",
+    "path": "articles/licensing.md",
+    "blocks": 80,
+    "source_sha256": "06b72100755a8ab0a118a69a716ddb1f5c60fca2a23b6a610dc88170d33e4249",
+    "translation_sha256": "0daf113d152bfe135b061e3d86f39cc7f5ae33cc6f5b3cca88f5032cfaa948c8",
+    "markdown_sha256": "34a0a8642364c1977d6d2366dce13a4b62467793369cbc4ab237a640a66eaeba",
+    "review_status": "passed"
+  },
+  {
+    "slug": "life-cycle-sustainability-assessment-lcsa",
+    "path": "articles/life-cycle-sustainability-assessment-lcsa.md",
+    "blocks": 6,
+    "source_sha256": "614ac145d80b74b30411828f30f070203594098ec846118a753c194fdb4cc6b2",
+    "translation_sha256": "b9d62674d8b2f0c4f57a3b055a9744238eea58d553744d94ba0cca5f045b481f",
+    "markdown_sha256": "775b66f82742e83133441484eb9ddc42f278559844fbdcfc1b36cd134095f72b",
+    "review_status": "passed"
+  },
+  {
+    "slug": "market-activities",
+    "path": "articles/market-activities.md",
+    "blocks": 37,
+    "source_sha256": "143663bd541f2260fc5ff5543479c62aefb76c66ffd3f3ef98be2ee0a76b141a",
+    "translation_sha256": "0b42ba99f08e381be7e0bb928ebf0d473350f2477f2cf8ab9d7ed5df32c319fd",
+    "markdown_sha256": "85d99371a9587e0fb172707f518306d667199a0c28ae03350090a161388ed3ff",
+    "review_status": "passed_with_notes"
+  },
+  {
+    "slug": "markets",
+    "path": "articles/markets.md",
+    "blocks": 31,
+    "source_sha256": "d374064fa1e37c31e76793ef2a4ce39c4feeb4cf34fe98f7537ca40d90e57a58",
+    "translation_sha256": "c0180c566c92d0411881c7fc2d4f6ff2501f7b8a11e6f32b7b3b576e01fe2d10",
+    "markdown_sha256": "89d8da23207fcf613230d0b0cf781abdebf8f99845de73f7bf10c70cfac72cb4",
+    "review_status": "passed_with_notes"
+  },
+  {
+    "slug": "metals",
+    "path": "articles/metals.md",
+    "blocks": 43,
+    "source_sha256": "1d9a597662aa3ffdf35f582b6c491acbaf0b922b531e70c2f9851095044f4d13",
+    "translation_sha256": "00beb2ee60aa6eb69ff5d7c181c9cf27abca6050bed26649c65b0b6e499b3707",
+    "markdown_sha256": "6612c9628b9d0db73aa3dbb01e49a229daeb2183fc448b51ecfccaafc2e5c57e",
+    "review_status": "passed"
+  },
+  {
+    "slug": "product-supply-chain-management",
+    "path": "articles/product-supply-chain-management.md",
+    "blocks": 7,
+    "source_sha256": "0261236a3ef49b2facdc66da6a5486f9f17e7448ffb5ddd211c8d49a63be211f",
+    "translation_sha256": "b6a665b6dd212e86fb52ec8749b50f16f2e500a62d4e4ff32f442a0fc6f95943",
+    "markdown_sha256": "18aa93e94022e721face7e1b2de2f70505345f3afbcb67e6aa0d0ddf55ef7f58",
+    "review_status": "passed"
+  },
+  {
+    "slug": "properties",
+    "path": "articles/properties.md",
+    "blocks": 24,
+    "source_sha256": "f7e1a3bf9104cc0827f42b04a58bbf7052ce9d5781e94640472ed9785e9e6702",
+    "translation_sha256": "69c4e5a2685540423f8314b82e197cb3edc4d9165b237272c47e0bc148495ba8",
+    "markdown_sha256": "7871b8a1c2d9fc9cbda76d99d05dcb41d3ebc4bb1db1e45ccd84eced5a46283e",
+    "review_status": "passed"
+  },
+  {
+    "slug": "pulp-and-paper",
+    "path": "articles/pulp-and-paper.md",
+    "blocks": 45,
+    "source_sha256": "8dc91795f3214f917aa839f9184ced742a7491a338323c33721276000c512750",
+    "translation_sha256": "85dcb2876f1ef33e884342f77d8d2d5bbd10f74a01dae793a245dc33268345bb",
+    "markdown_sha256": "2b9f703cf36d1fc70b9ab2dfea936178f4ec5aeebf2d338346c2b05e6b083b96",
+    "review_status": "passed_with_notes"
+  },
+  {
+    "slug": "releases-overview",
+    "path": "articles/releases-overview.md",
+    "blocks": 13,
+    "source_sha256": "25ff22d45afab2d6b631d81b09c9cdbbd1d79c296803d6135ec2c25b4e351241",
+    "translation_sha256": "eee486663075f36c3c7a896fa57f9e0a3bad692810a3a7b47c4a8d668dc7b49f",
+    "markdown_sha256": "5b31f9f218c21663b5fd300ab79aa1de5412ec2df8a610a1d51d8cc33288888f",
+    "review_status": "passed_with_notes"
+  },
+  {
+    "slug": "relevant-standards",
+    "path": "articles/relevant-standards.md",
+    "blocks": 31,
+    "source_sha256": "1ee4bfc94fb769dbbe1bacaceadbda1cfb0792a2b8d25a54fcfcec7454964320",
+    "translation_sha256": "6c0f1d297a5ef9afcb6ce5b02c6ed86d1f045d74b39f8696e4880f13c3af04d4",
+    "markdown_sha256": "d0d5560d9f8b2fb5d456b221d20b8011193e4243b069b15fcd85fedaddeaa79b",
+    "review_status": "passed"
+  },
+  {
+    "slug": "reports",
+    "path": "articles/reports.md",
+    "blocks": 22,
+    "source_sha256": "6e34ac25b414ad6cbfef6e5b31f47ef51b14584def1f60359a6564d281529b3e",
+    "translation_sha256": "274e73a790b0bb96cff31adbd8bb959577a3a28da864f1aa61a311b203504b5b",
+    "markdown_sha256": "a47320ed9d9805ad4c42f08b8227b33207ed824f1cbd35828df1ba201aee7125",
+    "review_status": "passed"
+  },
+  {
+    "slug": "scope-2-3-greenhouse-gas-ghg-emission-reporting",
+    "path": "articles/scope-2-3-greenhouse-gas-ghg-emission-reporting.md",
+    "blocks": 12,
+    "source_sha256": "b853d2960769c3f80c743669b9390d70ec096ada04c1e581b84614d8b4844048",
+    "translation_sha256": "d4e230f0e4b46b8df287c53871bddc176113a44f5a6c05e70efa18285692bc52",
+    "markdown_sha256": "747a1f44408d3383bf4b9a9fdb7c2426f92c4073d4381fbe10fd24384d9bd113",
+    "review_status": "passed"
+  },
+  {
+    "slug": "searching-for-datasets",
+    "path": "articles/searching-for-datasets.md",
+    "blocks": 12,
+    "source_sha256": "ec81061f261b8ad7821e9ba63f9db1877ba216a2dc6c16186314f4369853212d",
+    "translation_sha256": "7c31749b2d146a34de8bbc33f8d91d91d85c2b8324246e5cbab6c68aefff1762",
+    "markdown_sha256": "b44714f96999e921c1173db10113d8e2386ced7edff93a60c7fd5d6c8d9760fd",
+    "review_status": "passed"
+  },
+  {
+    "slug": "sector-overview",
+    "path": "articles/sector-overview.md",
+    "blocks": 5,
+    "source_sha256": "5f33332552e93357dec078f7bffe1294b54874e15f60269665591453c6569032",
+    "translation_sha256": "a02ac39e180ea8cd7802f0ac7ddb207352d7704578e7661e8d237402b4612208",
+    "markdown_sha256": "d4958545b56a7c9e54e8be866cff6c3bfd548ef6106d583b8cf1c0f8a3870f05",
+    "review_status": "passed"
+  },
+  {
+    "slug": "sources-citation",
+    "path": "articles/sources-citation.md",
+    "blocks": 20,
+    "source_sha256": "c6ee406a7611c07338ae6b4633dd76cb9201f1b3b86f0656e606092d3eb319b7",
+    "translation_sha256": "57f45347eefa98127829d77e95ce0ac6965c378b3c11be88e40a7d38e6875501",
+    "markdown_sha256": "dabf43a080508c2eab5cb18b1ffefcdc1b66633b4b3f641320981b19591d2144",
+    "review_status": "passed"
+  },
+  {
+    "slug": "sustainable-product-design",
+    "path": "articles/sustainable-product-design.md",
+    "blocks": 9,
+    "source_sha256": "6be01b47f3030dab187e24213aa29846cb3b8b02568f7713d73659cb1e956b77",
+    "translation_sha256": "4f467be6c068e7db4f1800306ee7a7911e83bcd68d5af35881bb42ccf06adf25",
+    "markdown_sha256": "8a52b988a3fddfa0fce456eb8bb0282d000d3a8599a30b3fe80e201cc0dce0aa",
+    "review_status": "passed"
+  },
+  {
+    "slug": "system-models",
+    "path": "articles/system-models.md",
+    "blocks": 119,
+    "source_sha256": "cc5bd7677fa5d485cea7e88a863dd7222ef6890f34e4c61324fa86a54960e1a6",
+    "translation_sha256": "32f953e25e0f14c6e66badad48c98ab462ddc65b3401ddc62573ccc7b1123fca",
+    "markdown_sha256": "11a377275cc6c6f2cbeb31cdbf5917de8d633f4a4ac02d2b5383b8e5129712f7",
+    "review_status": "passed_with_notes"
+  },
+  {
+    "slug": "system-models-1",
+    "path": "articles/system-models-1.md",
+    "blocks": 24,
+    "source_sha256": "3387d8bdc7525e7665968f6502e2d3c40846d711aa54e408351252857e3b7d6d",
+    "translation_sha256": "e8f13c8faf135f12e924e42b309c2dfa844719ce68766738a0a109fa85f5957b",
+    "markdown_sha256": "616fed3214f8cb241d21ef198df291b5805e6674dfffc2dc501970e5a1a9c207",
+    "review_status": "passed_with_notes"
+  },
+  {
+    "slug": "textiles",
+    "path": "articles/textiles.md",
+    "blocks": 33,
+    "source_sha256": "c0828daf198a612c9256ae55c6967e26083b20660f0ef18eb4b43ce606f6882b",
+    "translation_sha256": "42523b5474e54933220779d4497d1e14a271686c536d1d42760d478e9a2c93e3",
+    "markdown_sha256": "b6851770aa8a94897b15fbdc93ef52f27e236e66260068680fa1b7844a648196",
+    "review_status": "passed"
+  },
+  {
+    "slug": "transport",
+    "path": "articles/transport.md",
+    "blocks": 44,
+    "source_sha256": "e2c6f2ec8c0a116a7a345ca4cc574b311fd73ca6d7f24ebf834d7810f69919cf",
+    "translation_sha256": "00deb8fabee7407d73a18abfa7ff552827e8208d6e6e5ecc1c263bcd97a9677f",
+    "markdown_sha256": "c7c11a25a7620f3161957d02970442884997b496a9654fa9165924678c470c5c",
+    "review_status": "passed"
+  },
+  {
+    "slug": "ump-access-to-section",
+    "path": "articles/ump-access-to-section.md",
+    "blocks": 7,
+    "source_sha256": "9b4506278098bc99dc183c7159dd9b0114cb184bff17a9d798599775a5e43dc0",
+    "translation_sha256": "1eb44ac719fb10b7c25708b8c11bc136c6cf79eed086d865250226899e98a729",
+    "markdown_sha256": "f79abb8ad7d4d4fdc5ee45d84819575d227c8f06d361f9977dcf3334e5809136",
+    "review_status": "passed"
+  },
+  {
+    "slug": "uncertainties",
+    "path": "articles/uncertainties.md",
+    "blocks": 20,
+    "source_sha256": "a8cec525d71fd4b61537a651481e8e6662cbc94e0b5e634750004c7944986f37",
+    "translation_sha256": "fb164b61d2d908eaa8277565f379b1a4ad35857561de5455bc1337e1172cebde",
+    "markdown_sha256": "6b4d96ff1ba73189a357360b54beb010990300832502b9f4b0a0c7489b0a2c9c",
+    "review_status": "passed_with_notes"
+  },
+  {
+    "slug": "upr-lci-lcia",
+    "path": "articles/upr-lci-lcia.md",
+    "blocks": 25,
+    "source_sha256": "6348beedba043fd446c2d49979fdb5643640020967f6456ef8df6619037096c2",
+    "translation_sha256": "1690125055266c579ad4f77d5599b3c6af04a76e4734d48f4a847287d412f699",
+    "markdown_sha256": "5872608ae0f5949953bf1df6641ce49b495a125a3ae91f9acfa0b4971429a0f6",
+    "review_status": "passed_with_notes"
+  },
+  {
+    "slug": "viewing-datasets-in-ecoquery",
+    "path": "articles/viewing-datasets-in-ecoquery.md",
+    "blocks": 10,
+    "source_sha256": "16ebff9368847423242eecae149760fba84126b6dd9a6dcc5eb91c04f42e9f81",
+    "translation_sha256": "4bf693b74a66a15ac382798da4a83637eaa45c9a9f5563989a191397b5bdd866",
+    "markdown_sha256": "ad5fe13ffae9d348c19b1f5bddae349d52384eef68b0b07b80e3a5d733a5de28",
+    "review_status": "passed_with_notes"
+  },
+  {
+    "slug": "waste-management-and-recycling",
+    "path": "articles/waste-management-and-recycling.md",
+    "blocks": 45,
+    "source_sha256": "56c8f3b593a255e058e4edc2b830fa68a7ee9577ebe193ee7cf1bcb7f5269de7",
+    "translation_sha256": "1c1148db62011421ebfca4f998d5262844ed2dea66414116cfc47b1360033672",
+    "markdown_sha256": "e54d493153e1db73b03cbdddfd7e8cc273c70997da5280f9aa5c628ae16fc888",
+    "review_status": "passed"
+  },
+  {
+    "slug": "water-supply",
+    "path": "articles/water-supply.md",
+    "blocks": 47,
+    "source_sha256": "c00b1f544efc03a7c2d2ae075cf1076cc10a05bd589cd3d1499bbdfb0ab71018",
+    "translation_sha256": "eeb15c836a419a6b77cf8516dcd898307dc9d2200c38917fc2bf0b2a0094faf6",
+    "markdown_sha256": "29f2ed42ad713264d802a2eacc8c1faf346d364b6183d13f454856f79e4ff620",
+    "review_status": "passed"
+  },
+  {
+    "slug": "webinars-and-recordings",
+    "path": "articles/webinars-and-recordings.md",
+    "blocks": 28,
+    "source_sha256": "245cfd72840f2083025dfd6fefa7952ad2b5c96bbcf8b3a7583dac417e5db8dd",
+    "translation_sha256": "0f9adbb585572893e2c40ebbda41419599f3bef292ea940ee08375d63815bab2",
+    "markdown_sha256": "a29711941c40b11a8f3e7bfe9ffdc11f01b0e17e46ff223b61af41680c6a5d5f",
+    "review_status": "passed"
+  }
+]
