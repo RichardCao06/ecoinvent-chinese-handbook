@@ -1,0 +1,63 @@
+{
+  "reviewer": "translator_c",
+  "status": "passed_with_notes",
+  "files": {
+    "content/ecospold2/demo/extract_ecospold.py": "2be840128ff1c0bf73e1082a283df55a6db8b0013933032fe51196bb676a7c15",
+    "content/ecospold2/demo/demo-product.spold": "6026093ad3de8482a209a22ad6388f974efd6fd996d7db551b71526878b5eec2",
+    "content/ecospold2/demo/demo-electricity.spold": "18737e0b1ea0ea29003b5fafcad18ba8ca7b7f8fc33b6e9108b6421fa674fec5",
+    "content/ecospold2/demo/demo-lcia.spold": "7ed6af657147a09dac91bffd126764b583590496a121624a07e57a691daf4981",
+    "content/ecospold2/demo/README.txt": "f7656238fe5e0ef469f0693980b9472d6588f25cccee4d2677330744dc05da10",
+    "content/ecospold2/demo/extraction-example.json": "e97ffb0b86d21ea49dbd21a4182247452710bb1a44e8c3d8146e72d564a5e409",
+    "tools/test_ecospold_tutorial.py": "a4ae6d439e8cdac11df5c9efbe20640face2067eaf0a0c862c28b0f205ea32d3"
+  },
+  "tests_run": [
+    {
+      "command": "python3 -m unittest discover -s tools -p test_ecospold_tutorial.py -v",
+      "cwd": "ecoinvent-gitbook",
+      "result": "environment_unavailable",
+      "details_zh": "仓库环境所选 python3 缺 lxml，11 项通过、仅官方 XSD 测试因依赖缺失报错；这是校验环境限制，非提取器错误。"
+    },
+    {
+      "command": "/opt/homebrew/anaconda3/bin/python3 -m unittest discover -s tools -p test_ecospold_tutorial.py -v",
+      "cwd": "ecoinvent-gitbook",
+      "result": "passed",
+      "test_count": 12,
+      "details_zh": "含三个 XML 的离线官方 XSD 验证及模型/发布版本/未知元数据反例。"
+    },
+    {
+      "command": "python3 /tmp/check_tutorial_c.py",
+      "result": "passed",
+      "details_zh": "独立比较 extraction-example 全数量、CSV 列、metadata/supplier 样例；实跑 product upr 及 lcia CLI；原样执行 practice.md Python 代码；四个模型/发布版本反例均为 incompatible-metadata。"
+    },
+    {
+      "command": "python3 /tmp/check_tutorial_c_edges.py",
+      "result": "passed",
+      "details_zh": "负输入方向、无参考输出、科学计数法原文、缺上下文、非有限不确定性和语言回退。"
+    },
+    {
+      "command": "python3 ecoinvent-gitbook/content/ecospold2/demo/query_demo.py",
+      "result": "passed",
+      "details_zh": "电力25/2.5、化石输出1.5/-0.1净1.4/0.14、生物源0.2排除、模拟指标13.9/1.39全部吻合。"
+    },
+    {
+      "command": "python3 /tmp/check_supplier_unknown_c.py",
+      "result": "passed",
+      "details_zh": "独立7反例：缺供应模型、已知+未知候选、缺模型及数据集上下文均 metadata-unconfirmed；模型上下文回退 matched；不同修订/地区/时间仍 matched；多个相容修订 ambiguous；等值整数发布词法仍 matched。"
+    }
+  ],
+  "findings": [
+    {
+      "id": "supplier-model-release",
+      "status": "resolved",
+      "file": "content/ecospold2/demo/extract_ecospold.py",
+      "reason_zh": "先前缺少模型与发布版本筛选现已修正；独立修改供应 systemModelId、systemModelContextId、majorRelease、minorRelease 四个反例均返回 incompatible-metadata，候选与原因保留。",
+      "verification_zh": "12 项测试同时确认未知模型/上下文 metadata-unconfirmed、可选模型上下文回退、不同修订/地理/年份不直接拒绝、多个相容修订 ambiguous、不自动选最新。"
+    },
+    {
+      "id": "schema-validation-dependency",
+      "status": "resolved",
+      "reason_zh": "默认仓库 Python 无 lxml；采用环境已有且含 lxml 的 /opt/homebrew/anaconda3/bin/python3 后 12 项全通过。提取器和查询脚本始终只用标准库；lxml 仅用于测试的官方模式校验。"
+    }
+  ],
+  "summary_zh": "独立重新审阅最新版提取器、三个教学 XML、README、输出结构样例及仓库内测试文件，完成实际回归与 CLI/原样实践代码/查询/边界反例。UUID/有效上下文/系统模型/发布版本筛选修复通过，未知候选不会误称匹配，多修订不自动选新；数量/方向/多语言/多数据集/子差异拒绝/不缩放属性参数产量/LCIA仅unitName/公式不执行均与教程一致。13.9与1.39为已写入教学XML的模拟值，未执行真实LCI或LCIA计算。没有未解决代码错误；保留校验依赖及真实数据语义不属于模式认证的具体范围。README 后续补明回归命令须在完整仓库根运行，独立教学 ZIP 不含测试文件；提取与查询本身仍仅依赖标准库，已核对并更新该文件哈希。"
+}

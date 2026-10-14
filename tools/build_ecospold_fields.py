@@ -4,6 +4,7 @@ import html
 import json
 import re
 import shutil
+import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -302,6 +303,11 @@ summary = (CONTENT / 'SUMMARY.md').read_text()
 summary = re.sub(r'## ecoSpold2 XML 字段参考\n.*?(?=## 参考与审核)', '', summary, flags=re.S)
 summary = summary.replace('## 参考与审核', '\n'.join(nav) + '\n## 参考与审核')
 (CONTENT / 'SUMMARY.md').write_text(summary)
+
+if (AUDIT / 'tutorial/guide.json').exists():
+    sys.path.insert(0,str(REPO / 'tools'))
+    from build_ecospold_tutorial import build_content
+    build_content()
 
 manifest = {'source_sha256': SOURCE['source_sha256'], 'package_sha256': sha(OUT / 'original/documentation_on_ecospold2_format.v1.0.13.zip'),
             'source_file': SOURCE['source_file'], 'source_url': SOURCE['source_url'],

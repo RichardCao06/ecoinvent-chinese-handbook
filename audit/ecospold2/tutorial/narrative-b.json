@@ -1,0 +1,354 @@
+{
+  "author": "translator_b",
+  "sections": {
+    "TCustomExchange": "### 先读交换的共同结构\n\n一个活动的数据不只是一个总数，而是一组说明“交换了什么、交换多少、用什么单位表示”的记录。`TCustomExchange` 定义中间交换与基本流交换共有的字段；`TIntermediateExchange` 和 `TElementaryExchange` 在它的基础上增加各自的信息。因此，读到具体交换时，既要读取该交换类型的专用字段，也要读取这些共同字段。下文用代码标出实际 XML 名称：属性写在元素的开始标签中，名称、说明等内容则由子元素承载。\n\n识别一条记录时，先区分名称与标识。必需的 `name` 是交换名称，必需的 `id` 是这条交换实例的 UUID。它不是产品的 `intermediateExchangeId`，也不是基本流主数据的 `elementaryExchangeId`：同一数据集可以有多条交换引用同一个主数据条目，因此按产品或基本流标识去重会丢失交换实例。随后读取必需的 `amount`，它以 `TFloatNumber` 表示这条交换的数量；必需的 `unitId` 引用该数量的单位，必需的 `unitName` 提供便于阅读的单位名称。可选的 `unitContextId` 指明单位主数据所属上下文，省略时使用数据集自身的上下文。取数时应把交换实例标识、数量、单位标识及其上下文一起保留，以免把不同单位或不同主数据空间的同名记录合并。\n\n`name`、`unitName` 和可选的 `comment` 可以用多种语言表达；`comment` 为这条交换提供一般说明。读取文本时，应根据 `xml:lang` 选择需要的语言，而不是把多个语言版本串成一个名称。可重复的 `synonym` 是同义词，每条最多 80 个字符，可有 0..n 条；与普通多语言字符串不同，同义词允许同一个 `xml:lang` 对应多个条目。可重复的 `tag` 则是供筛选、分组和搜索使用的开放关键词。原说明写明，`validTags` 主文件中找不到某个标签时，语义验证应提示信息，而不应把它当成错误。`casNumber` 是可选的化学品 CAS 编号；这份格式说明给出的形式为 `000000-00-0`，并允许第一组数字不足六位。CAS 编号帮助识别化学物质，但并不能替代交换实例标识、单位或基本流区室信息。\n\n一些交换数量还带有计算关系。可选的 `variableName` 为交换数量提供公式中的简称；文档要求以字母 a-z 开头，可含字母、数字和下划线，且不区分大小写，例如 `calorific_Value` 与 `Calorific_value` 等同。可选的 `mathematicalRelation` 通过变量名或 `REF` 函数引用流、参数和属性，在给定一组变量值后，其计算结果写入 `amount`。当 `isCalculatedAmount` 为 `true` 时，`amount` 是 `mathematicalRelation` 或 `transferCoefficient` 的计算值；共同交换类型的 XSD 将这一标记默认设为 `false`。解析文件可以读取已保存的数量与公式，但重新求值需要支持对应公式语言，不能把公式字符串本身当成数值。\n\n可重复的 `transferCoefficient` 将特定输入与特定输出关联，表示该输入中流向该输出的份额；按其专用结构说明，系数应乘以被引用交换的数量。可选的 `uncertainty` 用分布函数、参数和／或数据质量谱系信息描述交换数量的不确定性。可重复的 `property` 描述交换的干质量、含水率、价格或特定元素和物质的含量。这三类字段都是具有内部结构的元素，读数时不能只提取其标签文字，也不能把属性值、不确定性参数或转移系数直接相加到交换数量中。\n\n可选的 `sourceId` 指向有效来源，`sourceContextId` 指明来源所属上下文，省略时使用数据集上下文。`sourceYear` 记录出版或交流年份；网站来源记录最后访问年份。`sourceFirstAuthor` 用姓和名字缩写记录第一作者，例如 Einstein A.；在现场测量、口头交流、个人书面交流和问卷调查这几类来源中，即 `sourceType` 为 4、5、6、7 时，记录提供信息的人员。`pageNumbers` 给出文章或较大型出版物中实际取数的页码。这组字段与数量一同读取，才能追溯某条交换的依据；`sourceYear` 不等于活动数据的有效年份。\n\n若交换有独立的分配设置，`specificAllocationPropertyId` 指定分配所用属性，并覆盖数据集层面由 `masterAllocationPropertyId` 定义的默认设置；`specificAllocationPropertyContextId` 指明该属性所属上下文，省略时使用数据集上下文。这些字段说明应使用哪项属性，不能单凭它们自行构造一套新的分配算法。继承时还要读取 `sourceIdOverwrittenByChild` 与 `specificAllocationPropertyIdOverwrittenByChild`：子数据集要移除对应的主数据引用，必须把相应标记设为 `true`；否则，引用不再出现仍可能被解释为“保留父数据集的值”，不能据此判断它已被清空。",
+    "TIntermediateExchange": "### 中间交换如何连接产品与供应者\n\n`TIntermediateExchange` 表示单元过程中的产品、服务或废物输入与输出，连接活动与技术圈。它继承共同交换字段，因此一条记录既有交换实例的 `id` 和数量 `amount`，又有引用产品主数据的 `intermediateExchangeId`。后者为必需 UUID，回答“是哪一种中间产品”；可选的 `intermediateExchangeContextId` 指明产品主数据上下文，省略时使用数据集自身的上下文。产品名称相同，不等于实例相同，也不等于供应活动相同。\n\n流向由 `inputGroup` 与 `outputGroup` 表达，XSD 使用二选一结构，每条中间交换只应具有其中一个。输入分组的 1 表示材料／燃料，2 表示电力／热，3 表示服务，5 表示未进一步指定的来自技术圈的流。输出分组的 0 表示参考产品，2 表示副产品，3 表示待处理材料，5 表示存量增加。读参考输出时，应识别 `outputGroup` 为 0 的记录，而不是按名称猜测或挑数值最大的输出。分组说明流向和角色，`amount` 的正负则是另一个维度；不能把所有正数都当输出、负数都当输入，也不能在读文件时不加区分地取绝对值。\n\n参考输出提供理解交换数量的基准，但原始单元过程的参考数量不一定为 1。提取输入和排放后，若研究需要按单位参考产品表达，应先明确所选参考输出、它的数量和单位，以及所用系统模型和已经完成的分配状态，再按适用方法对相关数量作一致缩放。XML 读取本身不自动执行这一归一化；多输出记录也不能仅靠除以任意一个输出量，就当作已经完成产品间分配的结果。\n\n供应者由可选的 `activityLinkId` 显式指定，它是活动链接，不能用本条交换的 `id` 或产品的 `intermediateExchangeId` 代替。`activityLinkContextId` 指明活动链接所属上下文，省略时使用数据集上下文；`activityLinkIdOverwrittenByChild` 则允许子数据集明确移除继承的链接，需设为 `true`，否则仍会保留父值。原说明写明，如果 `activityLinkId` 为空，供应活动由使用本活动地理和时间信息的链接规则确定。因此，空链接不代表没有供应者，更不能自行任选一个同名活动作为供应者。原表还给出“引用另一活动数据集的字段 105”的提示，但该数字在活动部分对应 `activityNameId`，而 XSD 将 `activityLinkId` 声明为 `TActivityIndexEntry` 引用；实现活动匹配时应核对活动索引，不能把这条提示当成交换实例、产品或活动名称标识可以互换的依据。\n\n与每条交换的数量不同，可选的 `productionVolumeAmount` 表示按年计的产品产量，单位与该交换一致。它不是当前参考输出数量，也不是把清单归一化到单位产品时可直接使用的分母。`productionVolumeVariableName` 给产量提供公式简称，命名规则同样是字母 a-z 开头、允许字母数字下划线且不区分大小写。`productionVolumeMathematicalRelation` 通过变量名或 `REF` 引用流、参数和属性；这里有一项已记录的原文疑点：该字段说明把公式结果的目标写成 `amount`，而 XSD 单独定义了产量字段 `productionVolumeAmount`。教程保留这一差异，不根据这段说明把产量公式值写入普通交换数量；需要重新求值时，应确认具体软件的目标字段。\n\n产量有一组独立的来源说明。`productionVolumeSourceId` 引用产量依据的有效来源，`productionVolumeSourceContextId` 指明其上下文，省略时使用数据集上下文。`productionVolumeSourceIdOverwrittenByChild` 设为 `true`，才明确表示在子数据集中移除该来源引用；缺少引用本身仍可能意味着继承父值。`productionVolumeSourceYear` 表示出版、交流或网站最后访问年份；`productionVolumeSourceFirstAuthor` 表示第一作者或现场测量、口头交流、个人书面交流及问卷来源的提供人员，规则对应 `sourceType` 为 4、5、6、7 的情况。可多语言填写的 `productionVolumeComment` 解释产量来源、假设和计算，可选的 `productionVolumeUncertainty` 则用分布及其参数和／或谱系信息记录产量不确定性。最后，可重复的 `classification` 通过分类配对描述产品所属类别。提取产量时应连同这一组依据保存，而不是拿交换的一般来源记录代替产量来源。",
+    "TElementaryExchange": "### 基本流交换记录与环境的往来\n\n`TElementaryExchange` 表示单元过程与环境之间的基本流输入或输出，同样继承 `TCustomExchange` 的实例标识、数量、单位、来源和不确定性等共同字段。与中间产品的识别方式相对应，必需的 `elementaryExchangeId` 引用基本流的主数据条目，而可选的 `elementaryExchangeContextId` 指明该主数据所属上下文，省略时使用数据集自身上下文。取数时应保留这个基本流标识，同时保留交换实例 `id`；一个用于识别流，另一个用于识别本数据集中的具体记录。\n\n基本流的分组值与中间交换不同：`inputGroup` 的有效值 4 表示来自环境，`outputGroup` 的有效值 4 表示流向环境。两者仍然只能选择一个，不能因为中间交换有材料、能源或参考产品分组，就把同一套编号移用于基本流。来自环境的资源获取、流向环境的释放，都要结合分组理解；数量的符号不能替代分组判定，也不应在未理解模型含义之前被删除。\n\n必需的 `compartment` 提供区室与子区室的配对信息，由 `TCompartment` 的内部结构表达。原说明中的 `validCompartments` 所引用 XML 文档定义给定语言下有效的区室／子区室配对。可选的 `formula` 可补充化学式，例如分子式，但它不代替基本流主数据或区室。读取环境清单时，应同时取出流标识、名称、方向、数量、单位以及区室配对；不能仅按化学名称把不同区室的流合为一个“总排放”，然后假设可以直接使用同一个表征因子。",
+    "TCompartment": "### 区室配对决定环境流的具体位置\n\n`TCompartment` 用来说明一条基本流属于哪一组区室与子区室。“区室”既可表达环境接收介质，也可用于自然资源分类，因此本文采用已交叉审阅确定的“区室／子区室”术语。内部的 `compartment` 和 `subcompartment` 是必需的多语言名称，提供所引用配对的纯文本表示；前者是区室名，后者是更细的子区室名。原表分别将它们追溯到字段 5315 和 5325，不应把这些跨表编号误读成该数据集里的交换编号。\n\n必需的 `subcompartmentId` 是配对引用的 UUID，必须在有效区室清单中定义，原表指向字段 5330。可选的 `subcompartmentContextId` 指明子区室所属上下文，省略时使用数据集自身上下文。因而读数时应把配对标识及上下文与显示名称一起保存：显示名称有助于理解，主数据引用用于一致匹配。外层基本流的 `compartment` 元素与内层区室名称的 `compartment` 元素同名，但处于不同结构位置；提取时应按层级识别，避免把整个配对结构当成一段普通文字。",
+    "TParameter": "### 参数为交换公式提供可追溯的数值\n\n`TParameter` 保存供公式使用的数据集参数。参数不是物质输入或排放记录，即使也具有 `amount`，也不能混入基本流或中间交换的清单总量。必需的 `name` 是可多语言填写的描述性名称，必需的 `parameterId` 引用有效参数主数据；可选的 `parameterContextId` 指明参数所属上下文，省略时使用数据集上下文。必需的 `amount` 保存参数当前数值，是阅读公式时可用的已保存值，而非参数名称或 UUID。\n\n参数的单位信息均为可选：`unitId` 引用参数数值的单位，`unitContextId` 指明单位上下文，省略时使用数据集上下文，`unitName` 是可多语言填写的单位名称。未提供单位时，不应自动补成质量单位，也不能仅凭字段名认定参数无量纲；应结合参数主数据和用途理解。可选的多语言 `comment` 提供针对该参数的一般说明，可选的 `uncertainty` 描述参数数值的不确定性，读参数值时可将这些解释和质量信息一起保存。\n\n`variableName` 是可选的公式变量名。官方原说明在这一参数字段下沿用了“交换简称”和“交换量”的措辞，这项疑点已记录；从 `TParameter` 的用途看，不能据此认定它只能引用交换。文档列出的规则仍是以字母 a-z 开头，可含字母、数字和下划线，并不区分大小写；`calorific_Value` 与 `Calorific_value` 为相同变量名。另一项已记录差异是，`TVariableName` 的 XSD 限制为最大长度 40，并使用 `\\w\\S*` 模式，并未直接表达与这些文字规则完全等价的限制。XSD 验证通过，不意味着已经满足公式解析器或语义验证的全部命名要求。\n\n可选的 `mathematicalRelation` 通过变量名或 `REF` 函数引用流、参数和属性的值，在给定变量值后，将结果写入参数自身的 `amount`。可选的 `isCalculatedAmount` 为 `true` 时，说明该数值由该数学关系计算得到；这一参数标记的 XSD 没有声明默认值，不能套用共同交换类型的默认设置。阅读现有文件时应区分直接记录的当前数值与其计算依据，只有在正确理解公式语言和依赖关系后，才重新计算参数。",
+    "TImpactIndicatorResult": "### 影响评价结果不是一条环境排放\n\n`TImpactIndicatorResult` 保存已经计算出的影响指标结果。它的必需字段 `amount` 是指标值，不是某种污染物的排放量，也不是未表征的资源消耗量；即使字段名与交换数量相同，读数含义也由所在类型决定。提取 LCIA 结果时，需要同时保留方法、类别、指标和单位，不能只取出一列数值，也不能把这些结果与基本流交换相加。\n\n一条结果包含三层必需的主数据标识。`impactMethodId` 引用影响评价方法；`impactCategoryId` 按 XSD 引用方法中的影响类别；`impactIndicatorId` 引用具体影响指标。它们分别回答采用什么方法、结果属于什么类别、使用什么指标。这些 ID 均为 UUID，不能因显示名称近似而互相替代。原表字段 1820 的说明写作“对影响类别所属方法的引用”，但其 XSD 引用对象为 `TImpactMethodCategory`，与 `impactMethodId` 的 `TImpactMethod` 不同；这项源文矛盾已在审阅中记录，此处明确区分实际的类别引用与方法引用，没有改写原表译文。\n\n可选的 `impactMethodContextId`、`impactCategoryContextId` 和 `impactIndicatorContextId` 分别指定方法、类别和指标主数据所在上下文，任何一个省略时，都使用数据集自身的上下文。结果也包含便于阅读的必需多语言文本：`impactMethodName` 为方法名称，`impactCategoryName` 为类别名称，`name` 为指标名称，`unitName` 为指标值的单位名称。选择语言时应按 `xml:lang` 读取这些名称，不应把多语言版本当成多条独立结果。\n\n因此，读 LCIA 结果的一条可靠路径，是先用方法、类别和指标的标识及上下文确定这条结果的身份，再把 `amount` 与 `unitName` 配对，最后核对活动、产品和系统模型等外部背景及参考数量基准。这个类型自身没有交换的 `inputGroup`、`outputGroup`，也没有为结果另列 `unitId`；不能照搬读取排放交换的字段路径。不同方法、不同指标、不同单位或不同参考基准的结果，应先确认可比性，不能只因中文名称相似就合并或比较。"
+  },
+  "coverage": [
+    {
+      "section": "TCustomExchange",
+      "field_id": "1000"
+    },
+    {
+      "section": "TCustomExchange",
+      "field_id": "1005"
+    },
+    {
+      "section": "TCustomExchange",
+      "field_id": "1020"
+    },
+    {
+      "section": "TCustomExchange",
+      "field_id": "1030"
+    },
+    {
+      "section": "TCustomExchange",
+      "field_id": "1031"
+    },
+    {
+      "section": "TCustomExchange",
+      "field_id": "1035"
+    },
+    {
+      "section": "TCustomExchange",
+      "field_id": "1040"
+    },
+    {
+      "section": "TCustomExchange",
+      "field_id": "1050"
+    },
+    {
+      "section": "TCustomExchange",
+      "field_id": "1060"
+    },
+    {
+      "section": "TCustomExchange",
+      "field_id": "1100"
+    },
+    {
+      "section": "TCustomExchange",
+      "field_id": "1110"
+    },
+    {
+      "section": "TCustomExchange",
+      "field_id": "1120"
+    },
+    {
+      "section": "TCustomExchange",
+      "field_id": "1121"
+    },
+    {
+      "section": "TCustomExchange",
+      "field_id": "1122"
+    },
+    {
+      "section": "TCustomExchange",
+      "field_id": "1125"
+    },
+    {
+      "section": "TCustomExchange",
+      "field_id": "1126"
+    },
+    {
+      "section": "TCustomExchange",
+      "field_id": "1130"
+    },
+    {
+      "section": "TCustomExchange",
+      "field_id": "1150"
+    },
+    {
+      "section": "TCustomExchange",
+      "field_id": "1151"
+    },
+    {
+      "section": "TCustomExchange",
+      "field_id": "1152"
+    },
+    {
+      "section": "TCustomExchange",
+      "field_id": "1200"
+    },
+    {
+      "section": "TCustomExchange",
+      "field_id": "1300"
+    },
+    {
+      "section": "TCustomExchange",
+      "field_id": "1400"
+    },
+    {
+      "section": "TCustomExchange",
+      "field_id": "1450"
+    },
+    {
+      "section": "TCustomExchange",
+      "field_id": "1470"
+    },
+    {
+      "section": "TIntermediateExchange",
+      "field_id": "1500"
+    },
+    {
+      "section": "TIntermediateExchange",
+      "field_id": "1510"
+    },
+    {
+      "section": "TIntermediateExchange",
+      "field_id": "1515"
+    },
+    {
+      "section": "TIntermediateExchange",
+      "field_id": "1516"
+    },
+    {
+      "section": "TIntermediateExchange",
+      "field_id": "1520"
+    },
+    {
+      "section": "TIntermediateExchange",
+      "field_id": "1521"
+    },
+    {
+      "section": "TIntermediateExchange",
+      "field_id": "1522"
+    },
+    {
+      "section": "TIntermediateExchange",
+      "field_id": "1530"
+    },
+    {
+      "section": "TIntermediateExchange",
+      "field_id": "1531"
+    },
+    {
+      "section": "TIntermediateExchange",
+      "field_id": "1532"
+    },
+    {
+      "section": "TIntermediateExchange",
+      "field_id": "1533"
+    },
+    {
+      "section": "TIntermediateExchange",
+      "field_id": "1534"
+    },
+    {
+      "section": "TIntermediateExchange",
+      "field_id": "1535"
+    },
+    {
+      "section": "TIntermediateExchange",
+      "field_id": "1536"
+    },
+    {
+      "section": "TIntermediateExchange",
+      "field_id": "1537"
+    },
+    {
+      "section": "TIntermediateExchange",
+      "field_id": "1538"
+    },
+    {
+      "section": "TIntermediateExchange",
+      "field_id": "1539"
+    },
+    {
+      "section": "TIntermediateExchange",
+      "field_id": "1540"
+    },
+    {
+      "section": "TElementaryExchange",
+      "field_id": "1600"
+    },
+    {
+      "section": "TElementaryExchange",
+      "field_id": "1610"
+    },
+    {
+      "section": "TElementaryExchange",
+      "field_id": "1615"
+    },
+    {
+      "section": "TElementaryExchange",
+      "field_id": "1616"
+    },
+    {
+      "section": "TElementaryExchange",
+      "field_id": "1660"
+    },
+    {
+      "section": "TElementaryExchange",
+      "field_id": "1670"
+    },
+    {
+      "section": "TParameter",
+      "field_id": "1700"
+    },
+    {
+      "section": "TParameter",
+      "field_id": "1705"
+    },
+    {
+      "section": "TParameter",
+      "field_id": "1706"
+    },
+    {
+      "section": "TParameter",
+      "field_id": "1710"
+    },
+    {
+      "section": "TParameter",
+      "field_id": "1712"
+    },
+    {
+      "section": "TParameter",
+      "field_id": "1713"
+    },
+    {
+      "section": "TParameter",
+      "field_id": "1714"
+    },
+    {
+      "section": "TParameter",
+      "field_id": "1715"
+    },
+    {
+      "section": "TParameter",
+      "field_id": "1720"
+    },
+    {
+      "section": "TParameter",
+      "field_id": "1725"
+    },
+    {
+      "section": "TParameter",
+      "field_id": "1730"
+    },
+    {
+      "section": "TParameter",
+      "field_id": "1740"
+    },
+    {
+      "section": "TImpactIndicatorResult",
+      "field_id": "1800"
+    },
+    {
+      "section": "TImpactIndicatorResult",
+      "field_id": "1801"
+    },
+    {
+      "section": "TImpactIndicatorResult",
+      "field_id": "1810"
+    },
+    {
+      "section": "TImpactIndicatorResult",
+      "field_id": "1811"
+    },
+    {
+      "section": "TImpactIndicatorResult",
+      "field_id": "1815"
+    },
+    {
+      "section": "TImpactIndicatorResult",
+      "field_id": "1820"
+    },
+    {
+      "section": "TImpactIndicatorResult",
+      "field_id": "1821"
+    },
+    {
+      "section": "TImpactIndicatorResult",
+      "field_id": "1825"
+    },
+    {
+      "section": "TImpactIndicatorResult",
+      "field_id": "1830"
+    },
+    {
+      "section": "TImpactIndicatorResult",
+      "field_id": "1840"
+    },
+    {
+      "section": "TImpactIndicatorResult",
+      "field_id": "1850"
+    },
+    {
+      "section": "TCompartment",
+      "field_id": "330"
+    },
+    {
+      "section": "TCompartment",
+      "field_id": "340"
+    },
+    {
+      "section": "TCompartment",
+      "field_id": "350"
+    },
+    {
+      "section": "TCompartment",
+      "field_id": "351"
+    }
+  ],
+  "notes": [
+    {
+      "block": "TParameter.1715.description.0",
+      "status": "needs_expert_review",
+      "reason_zh": "该说明位于 TParameter 下，却将变量名描述为 exchange 的简称，可能沿用了交换字段说明；不能据此认定它仅能引用交换。",
+      "recommendation_zh": "译文忠实保留“交换”措辞，请对照参数变量名字段及公式语言规范确认此处是否应为 parameter。",
+      "source": "已交叉审阅译稿的具体注记"
+    },
+    {
+      "block": "TImpactIndicatorResult.1820.description.0",
+      "status": "needs_expert_review",
+      "reason_zh": "原文写“对影响类别所属方法的引用”，但 EcoSpold02FlowData.xsd 约第 1039–1048 行明确本字段为 impactCategoryId、类型 TUuid、referenceToComplexType=TImpactMethodCategory，区别于字段 1810 的 impactMethodId（TImpactMethod）。译文忠实保留原文方法措辞，源文说明与引用对象存在矛盾。",
+      "recommendation_zh": "请确认应将官方说明修正为对影响类别的引用；实现时以 impactCategoryId 与 TImpactMethodCategory 的模式定义为依据。",
+      "source": "已交叉审阅译稿的具体注记"
+    },
+    {
+      "block": "TParameter.1715.description.0",
+      "status": "needs_expert_review",
+      "reason_zh": "文档要求变量名以字母（a-z）开头，并描述字母、数字、下划线字符规则；EcoSpold02DataTypes.xsd 的 TVariableName 仅声明 maxLength=40 与 pattern=\\w\\S*（约第 858–862 行），该模式未直接表达与文字说明完全等价的规则。可能另有语义验证或公式解析约束。",
+      "recommendation_zh": "保留原文变量规则；请核对公式解析及语义验证规范，不应将 XSD 验证通过等同于满足全部变量名规则。",
+      "source": "已交叉审阅译稿的具体注记"
+    },
+    {
+      "block": "TIntermediateExchange.1534.description.1",
+      "status": "needs_expert_review",
+      "reason_zh": "此说明隶属于 @productionVolumeMathematicalRelation，但原文称公式结果写入 amount，可能为通用说明复制残留。官方 EcoSpold02FlowData.xsd 包含同样说明，同时将产量数值字段定义为 productionVolumeAmount；普通交换数值字段为 amount。仅凭XSD说明无法确认软件实际求值目标。译文保留原文 amount。",
+      "recommendation_zh": "核对产量公式的实际求值实现，确认目标是否应为 productionVolumeAmount，并由技术编辑同步修正文档；不要据此把产量公式值写入普通交换 amount。",
+      "source": "已交叉审阅译稿的具体注记"
+    },
+    {
+      "block": "TIntermediateExchange.1520.options",
+      "status": "needs_expert_review",
+      "reason_zh": "原表1520选项提示引用另一活动数据集字段105，该字段是activityNameId；官方XSD又将activityLinkId声明为TActivityIndexEntry引用，提示与结构引用对象需核对。叙述按已明确的供应活动链接含义解释，并保留原编号提示，不把不同标识混用。",
+      "recommendation_zh": "按实际活动索引解析供应活动，向技术编辑核对该跨表字段编号；不使用交换实例或产品标识替代activityLinkId。",
+      "source": "EcoSpold02FlowData.xsd / 字段1520 与 TActivity字段105 对照"
+    }
+  ]
+}

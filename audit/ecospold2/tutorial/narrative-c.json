@@ -1,0 +1,429 @@
+{
+  "author": "translator_c",
+  "sections": {
+    "TUncertainty": "### 不确定性：先辨认分布，再读取它的参数\n\n交换、属性、参数和转移系数可以分别附带 `uncertainty`，中间交换的生产量则使用 `productionVolumeUncertainty`。这些元素采用同一个复合类型 `TUncertainty`，但描述的是各自所属数值的不确定性。读取时，先确定外层对象和它的单位，再进入不确定性结构；不能把这里的概率参数当成另一笔投入、排放或产品数量，加进生命周期清单。`comment` 用来补充这项不确定性的说明，也可能交代数据来源或选用分布的理由。\n\n在这份正常数据集 XSD 中，`TUncertainty` 的 `xsd:choice` 要求从 `lognormal`、`normal`、`triangular`、`uniform`、`beta`、`gamma`、`binomial` 和 `undefined` 中恰好选择一个。原表把各分布行都列为必填，并不表示必须同时填写八种分布：只有被选择的分布，其内部必填属性才适用。选择组之外还可以有 `pedigreeMatrix` 和 `comment`。这也意味着仅有质量评分、却没有任何分布分支的结构，不能据此当作已满足正常模式中的完整 `uncertainty`。\n\n`lognormal` 描述的是自然对数 `ln(x)` 服从正态分布的情况。它的 `meanValue` 是原数值尺度上的几何平均值，`mu` 是底层正态分布，也就是 `ln(x)` 的算术平均值。两者所处的尺度不同，不能把 `mu` 直接当作交换的确定数量。`variance` 是底层正态分布的无偏方差，`varianceWithPedigreeUncertainty` 则是包含基础和谱系不确定性的无偏方差；前者在 XSD 中可省略，后者必填，`meanValue` 和 `mu` 也必填。这里的方差既不是原变量 `x` 的算术方差，也不是标准差。原英文总述把符号 σ 称为方差，而常见统计记号用 σ 表示标准差、σ² 表示方差，这处符号歧义仍待澄清，不能据它自动对字段数值再平方或开方。\n\n`normal` 直接描述数值本身的正态分布，所以它的 `meanValue` 是算术平均值，与 `lognormal/meanValue` 的几何平均值含义不同。`normal/variance` 是无偏方差，`normal/varianceWithPedigreeUncertainty` 是包含基础和谱系不确定性的无偏方差；前者可省略，后者和 `meanValue` 必填。原总述提到的 `MeanValue`、`Deviation` 是说明文字中的名称，当前分支实际存储的属性是 `meanValue`、`variance` 和 `varianceWithPedigreeUncertainty`，并没有 `Deviation` 属性。读方差时必须保留其平方尺度，不能把标准差直接填进 `variance`，也不能仅因它和均值位于同一节点便按相同数值含义解释。\n\n对于 `triangular`，三个参数 `minValue`、`mostLikelyValue` 和 `maxValue` 分别给出最小值、众数和最大值。这里的众数是最可能出现的值，并不等于均值。原文要求使用三角分布时从 `mostLikelyValue` 计算 `meanValue`，又明确禁止在 ecoinvent 上下文使用 `mostLikelyValue` 字段 #3797；而当前 XSD 把字段 2122 的 `mostLikelyValue` 列为必填，并未在该分支声明 `meanValue`。#3797 与当前字段编号不同，这几句话的适用范围不能自行合并或撤销。在来源确认前，不应据此删除当前模式要求的属性，也不应声称单靠众数就能确定三角分布均值。\n\n`uniform` 通过 `minValue` 和 `maxValue` 给出均匀分布区间，两个属性都必填。原文规定，若 `maxValue` 小于 `minValue`，应交换两者的值；这是该分布说明中的明确处理约定，不应外推成所有分布都允许随意重排参数。`beta` 则用 `minValue`、`mostFrequentValue` 和 `maxValue` 表示 a、m、b，分别是下界、最常出现的值和上界。原文给出的条件是 `((a <= m) and (m <= b)) or (a = b)`，形状参数计算式为 `Shape1 = 1 + 4 * ((m-a) / (b-a))` 和 `Shape2 = 6 - Shape1`。这三个属性是输入参数，`Shape1`、`Shape2` 是原文说明中的派生量，并非该分支声明的 XML 属性。源文允许 a=b，却未说明公式分母 b-a 为零时如何处理，不能直接把这个边界代入公式，或在教程中替官方实现编造退化分布算法。\n\n`gamma` 的 `shape` 和 `scale` 分别是形状和尺度参数，`minValue` 是最小值或位置参数，三个属性都必填。原说明规定“这里输入的值将取绝对值使用”，同时规定将最小值参数的值加到所有抽样值上。取绝对值的规则是否也包括位置参数，原文没有明确说明；实现取数或抽样时应核对软件约定，不能自行限定这条规则的适用范围。它们描述分布形状、尺度和平移，并不是三笔交换数量。`binomial` 用整数属性 `n` 表示独立试验次数，用 `p` 表示每次试验的成功概率；两者都必填。读取它时也要先理解概率试验的含义，不能把 `n` 当作产品单位数，或把 `p` 当作市场份额。\n\n`undefined` 是一个明确选择的遗留数据分支，不是省略分布或选择“未指定系统模型”的同义词。它用于保存 EcoSpold01 中分布未定义的旧记录，保留 `minValue`、`maxValue` 和 `standardDeviation95`。前两个属性表示最小值和最大值，后者在原文中仅被描述为从均值向两侧扩展、覆盖总体 95% 所需的值。原文没有交代它究竟是加性半宽、乘性因子还是其他约定，因此读取旧数据时应核查其历史定义，不能一概当成普通算术标准差。\n\n`pedigreeMatrix` 将五项数据质量评价组合在一起。它本身不是一个评分数值，评分位于 `reliability`、`completeness`、`temporalCorrelation`、`geographicalCorrelation` 和 `furtherTechnologyCorrelation` 五个整数属性中。每项取值为 1–5；在正常 XSD 中，选择填写该容器后，五个属性都必须出现。原表把容器一行的类型列为 `integer`，但实际 XSD 使用含属性的复合结构，不能把它当成一个整数叶节点解析。质量评分可依既定方法转换为附加不确定性，再与基础不确定性结合；评分本身不是方差，也不能直接把五个评分相加当作 `varianceWithPedigreeUncertainty`。\n\n`reliability` 关注证据的可靠程度：1 是基于测量且经过验证的数据；2 是部分基于假设但经过验证的数据，或基于测量但未验证的数据；3 是部分依靠有专业依据估算、且未验证的数据；4 是由行业专家等作出的有专业依据估算；5 是无专业依据估算，原说明称其为默认项。这里的默认说明不替代 XSD 对显式属性的要求。`completeness` 关注所考察市场场所和时间跨度：1 覆盖相关全部场所，且跨度足以平滑正常波动；2 覆盖 >50% 的相关场所，且跨度足够；3 覆盖仅部分场所、其比例 <<50%，或覆盖 >50% 但时间跨度较短；4 是仅一个相关场所的代表性数据，或部分场所且时间跨度较短的数据；5 是代表性未知，或仅少数场所且时间跨度较短的数据。\n\n`temporalCorrelation` 将数据年代与数据集时间段字段 600–610 比较：1、2、3、4 分别对应相差不足 3、6、10、15 年，5 对应年代未知或相差超过 15 年。原说明没有明确恰好相差 15 年的归类，不能自行补造边界规则。`geographicalCorrelation` 的 1 是研究区域自身的数据，2 是包含研究区域的更大区域平均数据，3 是生产条件相似区域的数据，4 是生产条件略有相似之处区域的数据，5 是未知区域或明显不同区域的数据，例如用北美代替中东、用 OECD 欧洲代替俄罗斯。`furtherTechnologyCorrelation` 的 1 对应所研究企业、过程和材料，2 对应相同过程与材料及相同技术但不同企业，3 对应同类过程和材料但不同技术，4 对应相关过程或材料，5 对应实验室规模相关过程或不同技术的数据。完整读取这五项，才能理解质量评价的依据，而不能仅凭某一个低分判定整个数据集适用。",
+    "TProperty": "### 交换属性：把产品特征与交换数量分开理解\n\n`TProperty` 附在交换的 `property` 元素中，描述干质量、含水率、价格、元素或物质含量等特征。中间交换和基本流交换都继承通用交换结构，因此都可具有这些属性。阅读一条属性时，首先用 `propertyId` 识别它引用的属性主数据，再读描述性文本 `name`；`propertyContextId` 指定该属性主数据所属的上下文，省略时采用数据集自身的上下文。UUID 引用和上下文确定的是属性身份，名称帮助人理解身份，不能仅靠同名文字认定两个属性一定相同。\n\n属性的数值存于自身的 `amount`，其单位由 `unitId` 引用，`unitName` 提供单位名称，`unitContextId` 指明单位主数据上下文，省略时同样采用数据集上下文。这里的 `amount` 并不等于外层交换的 `amount`，也不保证与它具有相同单位；价格、含水率和干质量描述的量并不相同。取数时，应把属性定义、数值及单位一起读取，并核查其计量或归一化基准，不能直接把属性量加到投入输出清单中。`isDefiningValue` 为 true 时，属性值属于交换定义的一部分，与交换量之间具有不能针对不同数据集中个别实例改变的固定关系；它既不表示两个数值相等，也不是允许任意按比例改写所有属性的开关。\n\n若属性不是手工指定的值，`mathematicalRelation` 可通过变量名或 `REF` 函数引用流、参数和属性的数值，计算结果写入本属性的 `amount`；`isCalculatedAmount` 为 true 表示这个数值来自该数学关系。`variableName` 则给本属性量一个可在数学关系中引用的名字。文档要求变量名以字母 a-z 开头，可以包含字母、数字和下划线，并且不区分大小写，例如 `calorific_Value` 与 `Calorific_value` 等同。所附 XSD 的 `TVariableName` 类型限定长度最多 40，并采用正则 `\\w\\S*`，它没有直接表达与文字规则完全等价的约束，因此不能仅凭 XSD 验证通过就认定变量名满足所有公式语言规则。读取已计算数值与重算公式是不同工作；字段定义本身不足以替代公式解析、引用解析和继承处理。\n\n`uncertainty` 描述的是该属性值的不确定性，仍须按所选分布解释，而不是默认套用外层交换的不确定性。`sourceId` 引用记录该属性的有效来源或出版物，`sourceContextId` 指定来源上下文，省略时采用数据集上下文。对子数据集，如果要移除继承的来源引用，应将 `sourceIdOverwrittenByChild` 设为 true；仅让引用消失会按原文规则被解释为保留父值。`sourceYear` 记录出版或交流年份，网站来源记录最后访问；`sourceFirstAuthor` 通常填写第一作者的姓氏和名字缩写，例如 Einstein A.，而来源类型 `sourceType` 为 4、5、6、7 的现场测量、口头交流、个人书面交流或问卷调查，填写提供信息的人。最后，`comment` 可以补充该交换中这项具体属性的假设、说明和限制，使数值能够追溯到其证据。",
+    "TTransferCoefficient": "### 转移系数：追踪特定投入对特定输出的贡献\n\n转移系数将一项特定投入与一项特定输出关联，记录该投入对该输出的贡献份额，用于根据投入量计算相应的输出贡献。在 XSD 中，`transferCoefficient` 定义在 `TCustomExchange` 内，因此中间交换和基本流交换都可以通过继承包含它，不能把它限制为只供中间产品使用。阅读时应同时保留容纳系数的交换和被引用交换的身份，才能知道所描述的是哪一条投入输出关系。\n\n`exchangeId` 引用的是某个具体交换的 UUID，即交换实例的 `id`，不是产品主数据的 `intermediateExchangeId` 或基本流主数据的 `elementaryExchangeId`。同一主数据条目可能在同一个数据集中被多项交换引用，所以两种身份不能混用。系数自身的 `amount` 是转移系数数值；原说明要求将它与所引用交换的数量相乘，以得到该系数对应的数量贡献。这个 `amount` 不是另一笔投入量，也不是不加区分地分配整个过程环境影响的因子。不能仅凭一个系数的存在，就推出完整质量平衡、输出总量或通用过程计算算法。\n\n`mathematicalRelation` 可以通过变量名或 `REF` 引用流、参数和属性来计算系数，结果写入这个系数的 `amount`；`isCalculatedAmount` 为 true 时表示该值是数学关系的计算结果。可选的 `uncertainty` 描述系数数值的不确定性，应与被引用交换数量的不确定性区分。取数时，可以读取已存系数与它的引用对象；若要进一步重新计算，必须另行处理引用、公式和不确定性，不能把它们合并成一个未经格式说明支持的计算规则。\n\n证据链由 `sourceId`、`sourceContextId`、`sourceYear` 和 `sourceFirstAuthor` 组成。`sourceId` 指向有效来源，原选项说明将其关联到 `modellingAndValidation` 部分定义的来源；`sourceContextId` 指定来源的上下文，省略时使用数据集上下文；`sourceYear` 是出版或交流年份，网站记录最后访问；`sourceFirstAuthor` 是第一作者姓氏和名字缩写，现场测量、口头交流、个人书面交流和问卷调查，即 `sourceType` 为 4、5、6、7 时，则填写提供信息的人员。在子数据集中移除继承的来源引用，需要将 `sourceIdOverwrittenByChild` 设为 true，否则移除会被解释为保留父值。`comment` 用于每个系数的补充说明，读取时应与该系数而非其他交换的说明关联。",
+    "TTextAndImage": "### 文本和图像：按顺序组织说明，用文本变量继承局部内容\n\n`TTextAndImage` 是一般说明、技术描述和审查详细意见等字段采用的复合结构。实际 XSD 将它定义为可以多次出现的 `xsd:choice`，其中可交错选择 `text`、`imageUrl` 和 `variable`；这与不确定性中恰选一种分布的选择组不同。它可以包含多个文本和图像片段，而不是一次性固定为“一个文本加一张图”。原英文说明多次使用 `imageUri`，但所附 XSD 的实际图像元素名是 `imageUrl`。教程取数应按实际元素名识别，源文这一不一致仍在审校注记中保留，不能据说明文字生成一个并不存在的 `imageUri` 元素。\n\n`text` 是描述当前部分的自由文本，使用 `TIndexedString32000` 类型，其 `index` 属性指定显示顺序。`imageUrl` 保存图像 URI，也有必填的整数 `index`，用来把图像插入文本之间。还原正文时，必须结合这些顺序值，而不是分别收集全部文本和全部图片后拼接。多语言文本还可能带有 `xml:lang`，取数时应保存语言信息，不能将不同语言片段无条件混成一篇说明。具体位置上的索引唯一性和其他条件，应以包含该字段的 XSD 声明为准。\n\n`variable` 则是 `TNamedString32000` 类型的文本变量定义：其必填 `name` 属性给出变量名，元素文本给出变量值，正文可以通过 `{{variablename}}` 引用它。子活动数据集可以重新定义父文本中的变量值，同时保持其余父文本不变；这是修改继承说明中局部内容的机制。它与交换、属性或参数的数学 `variableName` 不同，也不是 `mathematicalRelation` 的数值公式参数。读取文本变量不意味着要运行算术求值；同样，`variable` 没有文本和图像所用的 `index` 属性，不能照搬这两类片段的排序方式处理它。",
+    "TRepresentativeness": "### 代表性：理解数据代表的总体，以及样本如何形成\n\n`representativeness` 位于 `modellingAndValidation` 中，采用 `TRepresentativeness` 类型，记录数据集的代表性和数据如何采样或计算。它帮助读者判断数据能否服务于研究中的地区、技术和时间条件，而不是为每项交换提供一个新的数量。首先，`systemModelId` 引用所用系统模型，`systemModelContextId` 指定该模型的上下文，省略时采用数据集自身的上下文；`systemModelName` 是该引用的纯文本名称。这些信息说明活动数据集如何链接成产品系统。原文举出的 `undefined`、`attributional, average current suppliers, revenue allocation` 和 `consequential, small-scale, long-term decisions` 是该历史格式说明中的模型描述，不能未经核对就视为当前全部系统模型名称或完整清单。在正常 XSD 中，只要此可选结构出现，模型引用和模型名称便是其内部必填项。\n\n`percent` 表示所采样数据占活动拟代表总体的百分比。该总体由地理区域、技术和时间范围共同确定，因此读取百分比之前，要先知道它针对的是哪个总体；它不是这个活动对产品系统的贡献率，也不是供应市场的份额。原表和 XSD 都将最大值规定为 100，但未填写这一可选属性，不代表覆盖比例为零或百分之百。\n\n`samplingProcedure` 描述量化交换所用的采样和计算程序，应说明某些基本流交换或中间交换是否采用不同于一般程序的做法，以及组合不同采样程序可能产生的问题。这里有一个需要对照模式的源文疑点：英文说明随后混入了文本和图像字段的通用描述，但实际 XSD 把 `samplingProcedure` 定义为 `TString32000` 多语言文本，而不是 `TTextAndImage`。读取它应保留文本和语言，不应因为这段通用说明就尝试读取嵌套的 `text`、`imageUrl` 或 `variable`。\n\n`extrapolations` 记录数据从其他时间、其他地理区域或其他技术外推而来的情况，以及外推如何实施。说明应交代单个交换是否采用不同的外推方法；如果把一个国家运行活动的数据用于另一个国家，可以在这里注明原始代表性，并记录外推引起的均值变化。读取这段内容后，才能把样本覆盖、原始来源和当前适用范围联系起来；不能仅因模型名称或地区代码符合要求，就跳过采样及外推说明。",
+    "TReview": "### 审查记录：把意见、人员和所审版本对应起来\n\n`review` 位于 `modellingAndValidation` 中，采用 `TReview` 类型，记录开展鉴定性评审的人员、主要结果、结论和建议。父级允许多个 `review`，因此一份数据集可以有多位评审者或多条审查记录；读取时不能只取第一条便覆盖其余意见。另一方面，一条记录包含的姓名、日期和意见只证明它记录了一次评审，并不自动代表整个数据库已获官方认证。\n\n每条评审由 `reviewerId` 引用人员主数据，原表将它对应到人员字段 3610；`reviewerContextId` 指定人员上下文，省略时采用数据集自身的上下文。`reviewerName` 记录名字和姓氏，`reviewerEmail` 记录完整电子邮件地址，`reviewDate` 是验证或评审日期。这些信息应共同保留，才能将意见对应到具体评审者及其时间，而不应只凭姓名文本匹配人员身份。\n\n审查所针对的数据集版本由 `reviewedMajorRelease`、`reviewedMinorRelease`、`reviewedMajorRevision` 和 `reviewedMinorRevision` 四个整数属性分别记录，依次对应文件属性中的字段 3800、3805、3810、3815，即主发布、次发布、主修订和次修订部分。它们不是审查记录自身的编号，也不能只保留前两个数字。阅读时应把四部分版本与当前文件的版本信息对照：如果记录针对较早版本，就不能把其意见不加判断地解释为对当前修改后内容的审查结论。正常 XSD 中，这四项版本、评审者引用、姓名、邮件及日期在一条出现的 `review` 内均必填；子数据集需另按其对应模式判断。\n\n详细意见存于可选的 `details`，它使用 `TTextAndImage`，因此可以按 `index` 组织文本与图像，并使用 `variable` 文本变量在继承数据集中改写局部内容。这里同样应以实际的 `imageUrl` 元素名读取，而不是原说明中混用的 `imageUri`。`otherDetails` 则是普通多语言文本，保存评审过程的进一步信息，例如数据集首次发布后补充的小幅修正。两者的结构不同，但都应与该条记录的人员和所审版本一起阅读，避免把发布后的补充说明误当成数值交换，或把历史意见移接到其他版本。"
+  },
+  "coverage": [
+    {
+      "section": "TUncertainty",
+      "field_id": "2010"
+    },
+    {
+      "section": "TUncertainty",
+      "field_id": "2100"
+    },
+    {
+      "section": "TUncertainty",
+      "field_id": "2101"
+    },
+    {
+      "section": "TUncertainty",
+      "field_id": "2102"
+    },
+    {
+      "section": "TUncertainty",
+      "field_id": "2103"
+    },
+    {
+      "section": "TUncertainty",
+      "field_id": "2104"
+    },
+    {
+      "section": "TUncertainty",
+      "field_id": "2110"
+    },
+    {
+      "section": "TUncertainty",
+      "field_id": "2111"
+    },
+    {
+      "section": "TUncertainty",
+      "field_id": "2112"
+    },
+    {
+      "section": "TUncertainty",
+      "field_id": "2113"
+    },
+    {
+      "section": "TUncertainty",
+      "field_id": "2120"
+    },
+    {
+      "section": "TUncertainty",
+      "field_id": "2121"
+    },
+    {
+      "section": "TUncertainty",
+      "field_id": "2122"
+    },
+    {
+      "section": "TUncertainty",
+      "field_id": "2123"
+    },
+    {
+      "section": "TUncertainty",
+      "field_id": "2130"
+    },
+    {
+      "section": "TUncertainty",
+      "field_id": "2131"
+    },
+    {
+      "section": "TUncertainty",
+      "field_id": "2132"
+    },
+    {
+      "section": "TUncertainty",
+      "field_id": "2140"
+    },
+    {
+      "section": "TUncertainty",
+      "field_id": "2141"
+    },
+    {
+      "section": "TUncertainty",
+      "field_id": "2142"
+    },
+    {
+      "section": "TUncertainty",
+      "field_id": "2143"
+    },
+    {
+      "section": "TUncertainty",
+      "field_id": "2150"
+    },
+    {
+      "section": "TUncertainty",
+      "field_id": "2151"
+    },
+    {
+      "section": "TUncertainty",
+      "field_id": "2152"
+    },
+    {
+      "section": "TUncertainty",
+      "field_id": "2153"
+    },
+    {
+      "section": "TUncertainty",
+      "field_id": "2160"
+    },
+    {
+      "section": "TUncertainty",
+      "field_id": "2161"
+    },
+    {
+      "section": "TUncertainty",
+      "field_id": "2162"
+    },
+    {
+      "section": "TUncertainty",
+      "field_id": "2170"
+    },
+    {
+      "section": "TUncertainty",
+      "field_id": "2171"
+    },
+    {
+      "section": "TUncertainty",
+      "field_id": "2172"
+    },
+    {
+      "section": "TUncertainty",
+      "field_id": "2173"
+    },
+    {
+      "section": "TUncertainty",
+      "field_id": "2270"
+    },
+    {
+      "section": "TUncertainty",
+      "field_id": "2271"
+    },
+    {
+      "section": "TUncertainty",
+      "field_id": "2272"
+    },
+    {
+      "section": "TUncertainty",
+      "field_id": "2273"
+    },
+    {
+      "section": "TUncertainty",
+      "field_id": "2274"
+    },
+    {
+      "section": "TUncertainty",
+      "field_id": "2275"
+    },
+    {
+      "section": "TProperty",
+      "field_id": "2300"
+    },
+    {
+      "section": "TProperty",
+      "field_id": "2301"
+    },
+    {
+      "section": "TProperty",
+      "field_id": "2310"
+    },
+    {
+      "section": "TProperty",
+      "field_id": "2320"
+    },
+    {
+      "section": "TProperty",
+      "field_id": "2321"
+    },
+    {
+      "section": "TProperty",
+      "field_id": "2325"
+    },
+    {
+      "section": "TProperty",
+      "field_id": "2330"
+    },
+    {
+      "section": "TProperty",
+      "field_id": "2335"
+    },
+    {
+      "section": "TProperty",
+      "field_id": "2340"
+    },
+    {
+      "section": "TProperty",
+      "field_id": "2345"
+    },
+    {
+      "section": "TProperty",
+      "field_id": "2350"
+    },
+    {
+      "section": "TProperty",
+      "field_id": "2360"
+    },
+    {
+      "section": "TProperty",
+      "field_id": "2370"
+    },
+    {
+      "section": "TProperty",
+      "field_id": "2371"
+    },
+    {
+      "section": "TProperty",
+      "field_id": "2372"
+    },
+    {
+      "section": "TProperty",
+      "field_id": "2375"
+    },
+    {
+      "section": "TProperty",
+      "field_id": "2376"
+    },
+    {
+      "section": "TProperty",
+      "field_id": "2380"
+    },
+    {
+      "section": "TTransferCoefficient",
+      "field_id": "2400"
+    },
+    {
+      "section": "TTransferCoefficient",
+      "field_id": "2410"
+    },
+    {
+      "section": "TTransferCoefficient",
+      "field_id": "2420"
+    },
+    {
+      "section": "TTransferCoefficient",
+      "field_id": "2425"
+    },
+    {
+      "section": "TTransferCoefficient",
+      "field_id": "2430"
+    },
+    {
+      "section": "TTransferCoefficient",
+      "field_id": "2440"
+    },
+    {
+      "section": "TTransferCoefficient",
+      "field_id": "2441"
+    },
+    {
+      "section": "TTransferCoefficient",
+      "field_id": "2442"
+    },
+    {
+      "section": "TTransferCoefficient",
+      "field_id": "2445"
+    },
+    {
+      "section": "TTransferCoefficient",
+      "field_id": "2446"
+    },
+    {
+      "section": "TTransferCoefficient",
+      "field_id": "2450"
+    },
+    {
+      "section": "TTextAndImage",
+      "field_id": "3900"
+    },
+    {
+      "section": "TTextAndImage",
+      "field_id": "3910"
+    },
+    {
+      "section": "TTextAndImage",
+      "field_id": "3920"
+    },
+    {
+      "section": "TRepresentativeness",
+      "field_id": "3000"
+    },
+    {
+      "section": "TRepresentativeness",
+      "field_id": "3001"
+    },
+    {
+      "section": "TRepresentativeness",
+      "field_id": "3005"
+    },
+    {
+      "section": "TRepresentativeness",
+      "field_id": "3010"
+    },
+    {
+      "section": "TRepresentativeness",
+      "field_id": "3030"
+    },
+    {
+      "section": "TRepresentativeness",
+      "field_id": "3040"
+    },
+    {
+      "section": "TReview",
+      "field_id": "3300"
+    },
+    {
+      "section": "TReview",
+      "field_id": "3301"
+    },
+    {
+      "section": "TReview",
+      "field_id": "3305"
+    },
+    {
+      "section": "TReview",
+      "field_id": "3306"
+    },
+    {
+      "section": "TReview",
+      "field_id": "3310"
+    },
+    {
+      "section": "TReview",
+      "field_id": "3320"
+    },
+    {
+      "section": "TReview",
+      "field_id": "3325"
+    },
+    {
+      "section": "TReview",
+      "field_id": "3330"
+    },
+    {
+      "section": "TReview",
+      "field_id": "3335"
+    },
+    {
+      "section": "TReview",
+      "field_id": "3340"
+    },
+    {
+      "section": "TReview",
+      "field_id": "3350"
+    }
+  ],
+  "notes": [
+    {
+      "block": "TUncertainty.2100.description.0",
+      "status": "needs_expert_review",
+      "reason_zh": "原文将 σ 称为 variance（方差），而常见对数正态分布记号以 σ 为底层正态分布标准差、σ²为方差；同组字段则明确为 variance。译文忠实保留原符号及“方差”，不能据此自动将参数平方或开方。",
+      "recommendation_zh": "以对应 XSD 字段定义及读取软件实际实现确认 Mu/Variance 参数的尺度；请技术编辑澄清原文 σ 的定义。"
+    },
+    {
+      "block": "TUncertainty.2120.description.1",
+      "status": "needs_expert_review",
+      "reason_zh": "原文要求从 mostLikelyValue 计算 meanValue，同时禁止在 ecoinvent 上下文使用 mostLikelyValue（#3797）。官方 EcoSpold02DataTypes.xsd 的 triangular 类型却将当前 @mostLikelyValue（fieldId=2122）设为 required；#3797 与当前编号不同，禁令适用对象及与模式必填要求的关系尚不清楚。三角分布均值也不能仅由众数单独确定。正文保留 shall/must not 及 #3797，不擅自撤销禁令。",
+      "recommendation_zh": "请向数据方确认 #3797 是否仅指旧格式字段、当前 @mostLikelyValue 的提交规则及 meanValue 的具体含义；勿将众数直接当作三角分布均值。证据：Schemas/datasets/EcoSpold02DataTypes.xsd 的 triangular 定义。"
+    },
+    {
+      "block": "TUncertainty.2140.description.0",
+      "status": "needs_expert_review",
+      "reason_zh": "原文允许退化条件 a=b，但所列 Shape1 公式含分母 b-a，此条件下会出现除零；原文未说明退化分布如何处理。译文完整保留条件和公式。",
+      "recommendation_zh": "核实实现是否对 a=b 单独生成常数样本，或是否应要求 a<b；确认前不要直接按常规形状公式计算该边界情况。"
+    },
+    {
+      "block": "TUncertainty.2173.description.0",
+      "status": "needs_expert_review",
+      "reason_zh": "原文仅将旧格式 standardDeviation95 描述为从均值两侧扩展、覆盖总体95%所需的值，未说明它是加性半宽度、乘性因子或其他量，不能一概理解成普通标准差。译文不额外指定计算形式。",
+      "recommendation_zh": "读取 EcoSpold01 遗留数据时核对具体旧分布及字段约定，勿无条件将该值作为算术标准差。"
+    },
+    {
+      "block": "TUncertainty.2110.description.0",
+      "status": "needs_expert_review",
+      "reason_zh": "原文将正态分布参数称为 MeanValue 和 Deviation，但官方 XSD 中当前 normal 类型的属性为 meanValue、variance 和 varianceWithPedigreeUncertainty，没有 Deviation。原文的标准差概念说明不等同于当前字段的方差存储约定。",
+      "recommendation_zh": "正文保留原文参数名称；实现时对照 fieldId=2111/2112/2113 的 XSD 定义，不将标准差直接写入 variance 字段。请数据方澄清旧参数名称与当前属性的关系。"
+    },
+    {
+      "block": "TTextAndImage.intro.0",
+      "status": "needs_expert_review",
+      "reason_zh": "源文开头将图像元素称为 imageUri，后文却称为 imageUrl；相同 imageUri 表述也出现于 TTechnology.510 和 TReview.3340 的复用说明。独立核查官方 Schemas/datasets/EcoSpold02DataTypes.xsd 的 TTextAndImage 定义，实际子元素为 text、imageUrl、variable，而没有 imageUri。译文忠实保留原文两种名称，文档说明与XSD元素定义存在冲突。",
+      "recommendation_zh": "生成或解析XML时以该XSD中的 imageUrl 为准；原英文说明的 imageUri 应由技术编辑确认统一。译文原有名称不静默替换。"
+    },
+    {
+      "block": "TUncertainty.2270.description.0",
+      "status": "needs_expert_review",
+      "reason_zh": "主 HTML 把 pedigreeMatrix 行类型写为 integer，但实际 EcoSpold02DataTypes.xsd 定义的是含五个整数评分属性的匿名复合类型。教程按 XSD 说明容器结构，原始译表应保留原表并提示差异。",
+      "recommendation_zh": "请由技术编辑修正原表的类型标记，读取实现按 XSD 属性结构处理。"
+    },
+    {
+      "block": "TUncertainty.2273.description.4",
+      "status": "needs_expert_review",
+      "reason_zh": "原评分 4 为不足 15 年，评分 5 为超过 15 年，未明确恰好 15 年的分类。教程保留边界并明示缺口，没有自行推断为大于等于。",
+      "recommendation_zh": "请依据数据质量指南或官方实现确认恰好 15 年时使用哪个评分。"
+    },
+    {
+      "block": "TRepresentativeness.3030.description.0",
+      "status": "needs_expert_review",
+      "reason_zh": "samplingProcedure 的说明混入 TTextAndImage 模板，但 EcoSpold02MetaInformation.xsd 实际将该元素定义为 TString32000，不能包含 text/imageUrl/variable 子元素。教程保留其业务含义，并明确区分文字模板与实际字段类型。",
+      "recommendation_zh": "请技术编辑移除错误的文本图像模板；实现以 TString32000 的 simpleContent 为准。"
+    },
+    {
+      "block": "TProperty.2350.description.1",
+      "status": "needs_expert_review",
+      "reason_zh": "文字变量规则与 TVariableName 的 maxLength=40、pattern=\\w\\S* 并非直接等价；教程分别陈述文档规则与 XSD 约束，不从模式单独推断全部公式语言规则。",
+      "recommendation_zh": "核对语义验证及公式解析规范以确认实际变量名规则。"
+    },
+    {
+      "block": "TUncertainty.2150.description.0",
+      "status": "needs_expert_review",
+      "reason_zh": "原文及官方 EcoSpold02DataTypes.xsd 注释均说“Absolute values of the values entered here will be used”，继而说将最小值参数加到所有样本。前句未明确绝对值处理是否只适用于 shape/scale，或也涵盖 minValue；模式仅声明三个浮点属性，不提供抽样实现。教程已移除将范围限定到形状、尺度参数的推断。",
+      "recommendation_zh": "请数据方或抽样软件实现确认绝对值处理的参数范围及 minValue 的符号约定；确认前保留原句范围，不替源文规定负位置参数的处理。"
+    }
+  ]
+}

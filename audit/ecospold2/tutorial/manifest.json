@@ -1,0 +1,1296 @@
+{
+  "scope": "A continuous Chinese tutorial, complete 243-field narrative, runnable synthetic demo and faithful original-table translation",
+  "coverage": [
+    {
+      "section": "TActivity",
+      "field_id": "100"
+    },
+    {
+      "section": "TActivity",
+      "field_id": "102"
+    },
+    {
+      "section": "TActivity",
+      "field_id": "105"
+    },
+    {
+      "section": "TActivity",
+      "field_id": "106"
+    },
+    {
+      "section": "TActivity",
+      "field_id": "110"
+    },
+    {
+      "section": "TActivity",
+      "field_id": "115"
+    },
+    {
+      "section": "TActivity",
+      "field_id": "120"
+    },
+    {
+      "section": "TActivity",
+      "field_id": "130"
+    },
+    {
+      "section": "TActivity",
+      "field_id": "131"
+    },
+    {
+      "section": "TActivity",
+      "field_id": "135"
+    },
+    {
+      "section": "TActivity",
+      "field_id": "145"
+    },
+    {
+      "section": "TActivity",
+      "field_id": "150"
+    },
+    {
+      "section": "TActivity",
+      "field_id": "170"
+    },
+    {
+      "section": "TActivity",
+      "field_id": "175"
+    },
+    {
+      "section": "TActivity",
+      "field_id": "180"
+    },
+    {
+      "section": "TActivity",
+      "field_id": "190"
+    },
+    {
+      "section": "TActivity",
+      "field_id": "191"
+    },
+    {
+      "section": "TActivity",
+      "field_id": "192"
+    },
+    {
+      "section": "TActivity",
+      "field_id": "195"
+    },
+    {
+      "section": "TActivity",
+      "field_id": "200"
+    },
+    {
+      "section": "TClassification",
+      "field_id": "300"
+    },
+    {
+      "section": "TClassification",
+      "field_id": "310"
+    },
+    {
+      "section": "TClassification",
+      "field_id": "320"
+    },
+    {
+      "section": "TClassification",
+      "field_id": "321"
+    },
+    {
+      "section": "TGeography",
+      "field_id": "400"
+    },
+    {
+      "section": "TGeography",
+      "field_id": "401"
+    },
+    {
+      "section": "TGeography",
+      "field_id": "410"
+    },
+    {
+      "section": "TGeography",
+      "field_id": "420"
+    },
+    {
+      "section": "TTechnology",
+      "field_id": "500"
+    },
+    {
+      "section": "TTechnology",
+      "field_id": "510"
+    },
+    {
+      "section": "TTimePeriod",
+      "field_id": "600"
+    },
+    {
+      "section": "TTimePeriod",
+      "field_id": "610"
+    },
+    {
+      "section": "TTimePeriod",
+      "field_id": "620"
+    },
+    {
+      "section": "TTimePeriod",
+      "field_id": "630"
+    },
+    {
+      "section": "TMacroEconomicScenario",
+      "field_id": "700"
+    },
+    {
+      "section": "TMacroEconomicScenario",
+      "field_id": "701"
+    },
+    {
+      "section": "TMacroEconomicScenario",
+      "field_id": "720"
+    },
+    {
+      "section": "TMacroEconomicScenario",
+      "field_id": "740"
+    },
+    {
+      "section": "TDataEntryBy",
+      "field_id": "3400"
+    },
+    {
+      "section": "TDataEntryBy",
+      "field_id": "3401"
+    },
+    {
+      "section": "TDataEntryBy",
+      "field_id": "3403"
+    },
+    {
+      "section": "TDataEntryBy",
+      "field_id": "3405"
+    },
+    {
+      "section": "TDataEntryBy",
+      "field_id": "3406"
+    },
+    {
+      "section": "TDataGeneratorAndPublication",
+      "field_id": "3500"
+    },
+    {
+      "section": "TDataGeneratorAndPublication",
+      "field_id": "3501"
+    },
+    {
+      "section": "TDataGeneratorAndPublication",
+      "field_id": "3505"
+    },
+    {
+      "section": "TDataGeneratorAndPublication",
+      "field_id": "3506"
+    },
+    {
+      "section": "TDataGeneratorAndPublication",
+      "field_id": "3510"
+    },
+    {
+      "section": "TDataGeneratorAndPublication",
+      "field_id": "3520"
+    },
+    {
+      "section": "TDataGeneratorAndPublication",
+      "field_id": "3521"
+    },
+    {
+      "section": "TDataGeneratorAndPublication",
+      "field_id": "3522"
+    },
+    {
+      "section": "TDataGeneratorAndPublication",
+      "field_id": "3525"
+    },
+    {
+      "section": "TDataGeneratorAndPublication",
+      "field_id": "3526"
+    },
+    {
+      "section": "TDataGeneratorAndPublication",
+      "field_id": "3530"
+    },
+    {
+      "section": "TDataGeneratorAndPublication",
+      "field_id": "3540"
+    },
+    {
+      "section": "TDataGeneratorAndPublication",
+      "field_id": "3550"
+    },
+    {
+      "section": "TDataGeneratorAndPublication",
+      "field_id": "3560"
+    },
+    {
+      "section": "TDataGeneratorAndPublication",
+      "field_id": "3561"
+    },
+    {
+      "section": "TDataGeneratorAndPublication",
+      "field_id": "3562"
+    },
+    {
+      "section": "TDataGeneratorAndPublication",
+      "field_id": "3563"
+    },
+    {
+      "section": "TFileAttributes",
+      "field_id": "3800"
+    },
+    {
+      "section": "TFileAttributes",
+      "field_id": "3805"
+    },
+    {
+      "section": "TFileAttributes",
+      "field_id": "3810"
+    },
+    {
+      "section": "TFileAttributes",
+      "field_id": "3815"
+    },
+    {
+      "section": "TFileAttributes",
+      "field_id": "3820"
+    },
+    {
+      "section": "TFileAttributes",
+      "field_id": "3830"
+    },
+    {
+      "section": "TFileAttributes",
+      "field_id": "3840"
+    },
+    {
+      "section": "TFileAttributes",
+      "field_id": "3850"
+    },
+    {
+      "section": "TFileAttributes",
+      "field_id": "3860"
+    },
+    {
+      "section": "TFileAttributes",
+      "field_id": "3870"
+    },
+    {
+      "section": "TFileAttributes",
+      "field_id": "3880"
+    },
+    {
+      "section": "TFileAttributes",
+      "field_id": "3885"
+    },
+    {
+      "section": "TFileAttributes",
+      "field_id": "3890"
+    },
+    {
+      "section": "TRequiredContextReference",
+      "field_id": "7810"
+    },
+    {
+      "section": "TRequiredContextReference",
+      "field_id": "7820"
+    },
+    {
+      "section": "TRequiredContextReference",
+      "field_id": "7830"
+    },
+    {
+      "section": "TRequiredContextReference",
+      "field_id": "7840"
+    },
+    {
+      "section": "TRequiredContextReference",
+      "field_id": "7850"
+    },
+    {
+      "section": "TRequiredContextReference",
+      "field_id": "7855"
+    },
+    {
+      "section": "TRequiredContextReference",
+      "field_id": "7860"
+    },
+    {
+      "section": "TCustomExchange",
+      "field_id": "1000"
+    },
+    {
+      "section": "TCustomExchange",
+      "field_id": "1005"
+    },
+    {
+      "section": "TCustomExchange",
+      "field_id": "1020"
+    },
+    {
+      "section": "TCustomExchange",
+      "field_id": "1030"
+    },
+    {
+      "section": "TCustomExchange",
+      "field_id": "1031"
+    },
+    {
+      "section": "TCustomExchange",
+      "field_id": "1035"
+    },
+    {
+      "section": "TCustomExchange",
+      "field_id": "1040"
+    },
+    {
+      "section": "TCustomExchange",
+      "field_id": "1050"
+    },
+    {
+      "section": "TCustomExchange",
+      "field_id": "1060"
+    },
+    {
+      "section": "TCustomExchange",
+      "field_id": "1100"
+    },
+    {
+      "section": "TCustomExchange",
+      "field_id": "1110"
+    },
+    {
+      "section": "TCustomExchange",
+      "field_id": "1120"
+    },
+    {
+      "section": "TCustomExchange",
+      "field_id": "1121"
+    },
+    {
+      "section": "TCustomExchange",
+      "field_id": "1122"
+    },
+    {
+      "section": "TCustomExchange",
+      "field_id": "1125"
+    },
+    {
+      "section": "TCustomExchange",
+      "field_id": "1126"
+    },
+    {
+      "section": "TCustomExchange",
+      "field_id": "1130"
+    },
+    {
+      "section": "TCustomExchange",
+      "field_id": "1150"
+    },
+    {
+      "section": "TCustomExchange",
+      "field_id": "1151"
+    },
+    {
+      "section": "TCustomExchange",
+      "field_id": "1152"
+    },
+    {
+      "section": "TCustomExchange",
+      "field_id": "1200"
+    },
+    {
+      "section": "TCustomExchange",
+      "field_id": "1300"
+    },
+    {
+      "section": "TCustomExchange",
+      "field_id": "1400"
+    },
+    {
+      "section": "TCustomExchange",
+      "field_id": "1450"
+    },
+    {
+      "section": "TCustomExchange",
+      "field_id": "1470"
+    },
+    {
+      "section": "TIntermediateExchange",
+      "field_id": "1500"
+    },
+    {
+      "section": "TIntermediateExchange",
+      "field_id": "1510"
+    },
+    {
+      "section": "TIntermediateExchange",
+      "field_id": "1515"
+    },
+    {
+      "section": "TIntermediateExchange",
+      "field_id": "1516"
+    },
+    {
+      "section": "TIntermediateExchange",
+      "field_id": "1520"
+    },
+    {
+      "section": "TIntermediateExchange",
+      "field_id": "1521"
+    },
+    {
+      "section": "TIntermediateExchange",
+      "field_id": "1522"
+    },
+    {
+      "section": "TIntermediateExchange",
+      "field_id": "1530"
+    },
+    {
+      "section": "TIntermediateExchange",
+      "field_id": "1531"
+    },
+    {
+      "section": "TIntermediateExchange",
+      "field_id": "1532"
+    },
+    {
+      "section": "TIntermediateExchange",
+      "field_id": "1533"
+    },
+    {
+      "section": "TIntermediateExchange",
+      "field_id": "1534"
+    },
+    {
+      "section": "TIntermediateExchange",
+      "field_id": "1535"
+    },
+    {
+      "section": "TIntermediateExchange",
+      "field_id": "1536"
+    },
+    {
+      "section": "TIntermediateExchange",
+      "field_id": "1537"
+    },
+    {
+      "section": "TIntermediateExchange",
+      "field_id": "1538"
+    },
+    {
+      "section": "TIntermediateExchange",
+      "field_id": "1539"
+    },
+    {
+      "section": "TIntermediateExchange",
+      "field_id": "1540"
+    },
+    {
+      "section": "TElementaryExchange",
+      "field_id": "1600"
+    },
+    {
+      "section": "TElementaryExchange",
+      "field_id": "1610"
+    },
+    {
+      "section": "TElementaryExchange",
+      "field_id": "1615"
+    },
+    {
+      "section": "TElementaryExchange",
+      "field_id": "1616"
+    },
+    {
+      "section": "TElementaryExchange",
+      "field_id": "1660"
+    },
+    {
+      "section": "TElementaryExchange",
+      "field_id": "1670"
+    },
+    {
+      "section": "TParameter",
+      "field_id": "1700"
+    },
+    {
+      "section": "TParameter",
+      "field_id": "1705"
+    },
+    {
+      "section": "TParameter",
+      "field_id": "1706"
+    },
+    {
+      "section": "TParameter",
+      "field_id": "1710"
+    },
+    {
+      "section": "TParameter",
+      "field_id": "1712"
+    },
+    {
+      "section": "TParameter",
+      "field_id": "1713"
+    },
+    {
+      "section": "TParameter",
+      "field_id": "1714"
+    },
+    {
+      "section": "TParameter",
+      "field_id": "1715"
+    },
+    {
+      "section": "TParameter",
+      "field_id": "1720"
+    },
+    {
+      "section": "TParameter",
+      "field_id": "1725"
+    },
+    {
+      "section": "TParameter",
+      "field_id": "1730"
+    },
+    {
+      "section": "TParameter",
+      "field_id": "1740"
+    },
+    {
+      "section": "TImpactIndicatorResult",
+      "field_id": "1800"
+    },
+    {
+      "section": "TImpactIndicatorResult",
+      "field_id": "1801"
+    },
+    {
+      "section": "TImpactIndicatorResult",
+      "field_id": "1810"
+    },
+    {
+      "section": "TImpactIndicatorResult",
+      "field_id": "1811"
+    },
+    {
+      "section": "TImpactIndicatorResult",
+      "field_id": "1815"
+    },
+    {
+      "section": "TImpactIndicatorResult",
+      "field_id": "1820"
+    },
+    {
+      "section": "TImpactIndicatorResult",
+      "field_id": "1821"
+    },
+    {
+      "section": "TImpactIndicatorResult",
+      "field_id": "1825"
+    },
+    {
+      "section": "TImpactIndicatorResult",
+      "field_id": "1830"
+    },
+    {
+      "section": "TImpactIndicatorResult",
+      "field_id": "1840"
+    },
+    {
+      "section": "TImpactIndicatorResult",
+      "field_id": "1850"
+    },
+    {
+      "section": "TCompartment",
+      "field_id": "330"
+    },
+    {
+      "section": "TCompartment",
+      "field_id": "340"
+    },
+    {
+      "section": "TCompartment",
+      "field_id": "350"
+    },
+    {
+      "section": "TCompartment",
+      "field_id": "351"
+    },
+    {
+      "section": "TUncertainty",
+      "field_id": "2010"
+    },
+    {
+      "section": "TUncertainty",
+      "field_id": "2100"
+    },
+    {
+      "section": "TUncertainty",
+      "field_id": "2101"
+    },
+    {
+      "section": "TUncertainty",
+      "field_id": "2102"
+    },
+    {
+      "section": "TUncertainty",
+      "field_id": "2103"
+    },
+    {
+      "section": "TUncertainty",
+      "field_id": "2104"
+    },
+    {
+      "section": "TUncertainty",
+      "field_id": "2110"
+    },
+    {
+      "section": "TUncertainty",
+      "field_id": "2111"
+    },
+    {
+      "section": "TUncertainty",
+      "field_id": "2112"
+    },
+    {
+      "section": "TUncertainty",
+      "field_id": "2113"
+    },
+    {
+      "section": "TUncertainty",
+      "field_id": "2120"
+    },
+    {
+      "section": "TUncertainty",
+      "field_id": "2121"
+    },
+    {
+      "section": "TUncertainty",
+      "field_id": "2122"
+    },
+    {
+      "section": "TUncertainty",
+      "field_id": "2123"
+    },
+    {
+      "section": "TUncertainty",
+      "field_id": "2130"
+    },
+    {
+      "section": "TUncertainty",
+      "field_id": "2131"
+    },
+    {
+      "section": "TUncertainty",
+      "field_id": "2132"
+    },
+    {
+      "section": "TUncertainty",
+      "field_id": "2140"
+    },
+    {
+      "section": "TUncertainty",
+      "field_id": "2141"
+    },
+    {
+      "section": "TUncertainty",
+      "field_id": "2142"
+    },
+    {
+      "section": "TUncertainty",
+      "field_id": "2143"
+    },
+    {
+      "section": "TUncertainty",
+      "field_id": "2150"
+    },
+    {
+      "section": "TUncertainty",
+      "field_id": "2151"
+    },
+    {
+      "section": "TUncertainty",
+      "field_id": "2152"
+    },
+    {
+      "section": "TUncertainty",
+      "field_id": "2153"
+    },
+    {
+      "section": "TUncertainty",
+      "field_id": "2160"
+    },
+    {
+      "section": "TUncertainty",
+      "field_id": "2161"
+    },
+    {
+      "section": "TUncertainty",
+      "field_id": "2162"
+    },
+    {
+      "section": "TUncertainty",
+      "field_id": "2170"
+    },
+    {
+      "section": "TUncertainty",
+      "field_id": "2171"
+    },
+    {
+      "section": "TUncertainty",
+      "field_id": "2172"
+    },
+    {
+      "section": "TUncertainty",
+      "field_id": "2173"
+    },
+    {
+      "section": "TUncertainty",
+      "field_id": "2270"
+    },
+    {
+      "section": "TUncertainty",
+      "field_id": "2271"
+    },
+    {
+      "section": "TUncertainty",
+      "field_id": "2272"
+    },
+    {
+      "section": "TUncertainty",
+      "field_id": "2273"
+    },
+    {
+      "section": "TUncertainty",
+      "field_id": "2274"
+    },
+    {
+      "section": "TUncertainty",
+      "field_id": "2275"
+    },
+    {
+      "section": "TProperty",
+      "field_id": "2300"
+    },
+    {
+      "section": "TProperty",
+      "field_id": "2301"
+    },
+    {
+      "section": "TProperty",
+      "field_id": "2310"
+    },
+    {
+      "section": "TProperty",
+      "field_id": "2320"
+    },
+    {
+      "section": "TProperty",
+      "field_id": "2321"
+    },
+    {
+      "section": "TProperty",
+      "field_id": "2325"
+    },
+    {
+      "section": "TProperty",
+      "field_id": "2330"
+    },
+    {
+      "section": "TProperty",
+      "field_id": "2335"
+    },
+    {
+      "section": "TProperty",
+      "field_id": "2340"
+    },
+    {
+      "section": "TProperty",
+      "field_id": "2345"
+    },
+    {
+      "section": "TProperty",
+      "field_id": "2350"
+    },
+    {
+      "section": "TProperty",
+      "field_id": "2360"
+    },
+    {
+      "section": "TProperty",
+      "field_id": "2370"
+    },
+    {
+      "section": "TProperty",
+      "field_id": "2371"
+    },
+    {
+      "section": "TProperty",
+      "field_id": "2372"
+    },
+    {
+      "section": "TProperty",
+      "field_id": "2375"
+    },
+    {
+      "section": "TProperty",
+      "field_id": "2376"
+    },
+    {
+      "section": "TProperty",
+      "field_id": "2380"
+    },
+    {
+      "section": "TTransferCoefficient",
+      "field_id": "2400"
+    },
+    {
+      "section": "TTransferCoefficient",
+      "field_id": "2410"
+    },
+    {
+      "section": "TTransferCoefficient",
+      "field_id": "2420"
+    },
+    {
+      "section": "TTransferCoefficient",
+      "field_id": "2425"
+    },
+    {
+      "section": "TTransferCoefficient",
+      "field_id": "2430"
+    },
+    {
+      "section": "TTransferCoefficient",
+      "field_id": "2440"
+    },
+    {
+      "section": "TTransferCoefficient",
+      "field_id": "2441"
+    },
+    {
+      "section": "TTransferCoefficient",
+      "field_id": "2442"
+    },
+    {
+      "section": "TTransferCoefficient",
+      "field_id": "2445"
+    },
+    {
+      "section": "TTransferCoefficient",
+      "field_id": "2446"
+    },
+    {
+      "section": "TTransferCoefficient",
+      "field_id": "2450"
+    },
+    {
+      "section": "TTextAndImage",
+      "field_id": "3900"
+    },
+    {
+      "section": "TTextAndImage",
+      "field_id": "3910"
+    },
+    {
+      "section": "TTextAndImage",
+      "field_id": "3920"
+    },
+    {
+      "section": "TRepresentativeness",
+      "field_id": "3000"
+    },
+    {
+      "section": "TRepresentativeness",
+      "field_id": "3001"
+    },
+    {
+      "section": "TRepresentativeness",
+      "field_id": "3005"
+    },
+    {
+      "section": "TRepresentativeness",
+      "field_id": "3010"
+    },
+    {
+      "section": "TRepresentativeness",
+      "field_id": "3030"
+    },
+    {
+      "section": "TRepresentativeness",
+      "field_id": "3040"
+    },
+    {
+      "section": "TReview",
+      "field_id": "3300"
+    },
+    {
+      "section": "TReview",
+      "field_id": "3301"
+    },
+    {
+      "section": "TReview",
+      "field_id": "3305"
+    },
+    {
+      "section": "TReview",
+      "field_id": "3306"
+    },
+    {
+      "section": "TReview",
+      "field_id": "3310"
+    },
+    {
+      "section": "TReview",
+      "field_id": "3320"
+    },
+    {
+      "section": "TReview",
+      "field_id": "3325"
+    },
+    {
+      "section": "TReview",
+      "field_id": "3330"
+    },
+    {
+      "section": "TReview",
+      "field_id": "3335"
+    },
+    {
+      "section": "TReview",
+      "field_id": "3340"
+    },
+    {
+      "section": "TReview",
+      "field_id": "3350"
+    }
+  ],
+  "notes": [
+    {
+      "section": "TActivity",
+      "field_id": "135",
+      "status": "needs_expert_review",
+      "reason_zh": "继承深度的父层数定义与地理／时间／情景类型说明之间关系未明确；正文保留原定义及0–3含义，不自行推断父链。",
+      "recommendation_zh": "依据继承专门规范确认各层级的允许关系。"
+    },
+    {
+      "section": "TActivity",
+      "field_id": "120",
+      "status": "needs_expert_review",
+      "reason_zh": "格式说明的 TTextAndImage 复用段落写 imageUri，官方 XSD 实际元素名为 imageUrl。正文明确区分说明文字与模式标识，未静默改写源文。",
+      "recommendation_zh": "解析采用实际XSD名称，建议官方统一说明命名；同问题涉及195、420、510、630等文本图像字段。"
+    },
+    {
+      "section": "TClassification",
+      "field_id": "300",
+      "status": "needs_expert_review",
+      "reason_zh": "classificationSystem 与 classificationValue 的说明称可选，但完整XSD默认minOccurs=1且HTML表格列为必填。正文并列说明差异。",
+      "recommendation_zh": "实现时区分完整与子模式，并请数据方统一说明中的可选性。"
+    },
+    {
+      "section": "TRequiredContextReference",
+      "field_id": "7850",
+      "status": "needs_expert_review",
+      "reason_zh": "requiredContextId 说明存在省略时回退，但当前完整XSD将其设为required。正文明确交代矛盾，不将回退说明变为可省略的验证规则。",
+      "recommendation_zh": "请确认回退说明是否面向其他模式或早期版本；完整模式校验按XSD执行。"
+    },
+    {
+      "section": "TDataGeneratorAndPublication",
+      "field_id": "3560",
+      "status": "resolved",
+      "reason_zh": "759、757及801是有效旧SpoldID引用，已依据XSD在正文解释对应当前fieldId 3550、3520及3110。",
+      "recommendation_zh": "保持附译表中的原编号，通过明确的映射理解访问条件与来源引用。"
+    },
+    {
+      "section": "TDataGeneratorAndPublication",
+      "field_id": "3562",
+      "status": "needs_expert_review",
+      "reason_zh": "原文及 TCompanyCode 的文字说明要求 7 个大写字母，但 XSD 仅规定 maxLength=7，没有固定长度和字母模式。",
+      "recommendation_zh": "正文已区分文字约定与 XSD 约束；是否另有业务语义验证规则需由数据方确认。"
+    },
+    {
+      "section": "TActivity",
+      "field_id": "130",
+      "status": "resolved",
+      "reason_zh": "补明 EcoSpold02.xsd 中子数据集外层容器仍属于普通命名空间，避免将子类型的命名空间误套在容器元素上。",
+      "recommendation_zh": "已在正文修正或补明。"
+    },
+    {
+      "section": "TDataEntryBy",
+      "field_id": "3403",
+      "status": "resolved",
+      "reason_zh": "明确默认值来自完整数据模式；子模式未设该默认值，省略时先按继承处理。",
+      "recommendation_zh": "已在正文修正或补明。"
+    },
+    {
+      "section": "TDataGeneratorAndPublication",
+      "field_id": "3525",
+      "status": "resolved",
+      "reason_zh": "原文网站情况仅写 last visited，不能擅自缩窄为最后访问年份。",
+      "recommendation_zh": "已在正文修正或补明。"
+    },
+    {
+      "section": "TDataGeneratorAndPublication",
+      "field_id": "3562",
+      "status": "resolved",
+      "reason_zh": "区分文字约定与 TCompanyCode 实際 maxLength=7 约束，不让教程暗示 XSD 强制恰好 7 个字母。",
+      "recommendation_zh": "已在正文修正或补明。"
+    },
+    {
+      "section": "TFileAttributes",
+      "field_id": "3820",
+      "status": "resolved",
+      "reason_zh": "子模式未设 default=en；澄清完整记录的模式默认值与子差异记录的继承。",
+      "recommendation_zh": "已在正文修正或补明。"
+    },
+    {
+      "section": "TRequiredContextReference",
+      "field_id": "7810",
+      "status": "resolved",
+      "reason_zh": "补明官方子类型中的 use=optional 与 minOccurs=0，避免把完整数据模式的要求泛化到子差异记录。",
+      "recommendation_zh": "已在正文修正或补明。"
+    },
+    {
+      "section": "TActivity",
+      "field_id": "110",
+      "status": "needs_expert_review",
+      "reason_zh": "官方 type=2 文字说明称没有中间交换，但本包完整 TFlowData 对 intermediateExchange 的默认 minOccurs=1；教学结果文件以中间交换保留参考输出并通过模式验证。",
+      "recommendation_zh": "正文明确区分产品系统已汇总与 XML 参考输出；真实不同导出形式仍应按来源和实例确认，不能把说明中的绝对句用于文件阶段判定。"
+    },
+    {
+      "block": "TParameter.1715.description.0",
+      "status": "needs_expert_review",
+      "reason_zh": "该说明位于 TParameter 下，却将变量名描述为 exchange 的简称，可能沿用了交换字段说明；不能据此认定它仅能引用交换。",
+      "recommendation_zh": "译文忠实保留“交换”措辞，请对照参数变量名字段及公式语言规范确认此处是否应为 parameter。",
+      "source": "已交叉审阅译稿的具体注记"
+    },
+    {
+      "block": "TImpactIndicatorResult.1820.description.0",
+      "status": "needs_expert_review",
+      "reason_zh": "原文写“对影响类别所属方法的引用”，但 EcoSpold02FlowData.xsd 约第 1039–1048 行明确本字段为 impactCategoryId、类型 TUuid、referenceToComplexType=TImpactMethodCategory，区别于字段 1810 的 impactMethodId（TImpactMethod）。译文忠实保留原文方法措辞，源文说明与引用对象存在矛盾。",
+      "recommendation_zh": "请确认应将官方说明修正为对影响类别的引用；实现时以 impactCategoryId 与 TImpactMethodCategory 的模式定义为依据。",
+      "source": "已交叉审阅译稿的具体注记"
+    },
+    {
+      "block": "TParameter.1715.description.0",
+      "status": "needs_expert_review",
+      "reason_zh": "文档要求变量名以字母（a-z）开头，并描述字母、数字、下划线字符规则；EcoSpold02DataTypes.xsd 的 TVariableName 仅声明 maxLength=40 与 pattern=\\w\\S*（约第 858–862 行），该模式未直接表达与文字说明完全等价的规则。可能另有语义验证或公式解析约束。",
+      "recommendation_zh": "保留原文变量规则；请核对公式解析及语义验证规范，不应将 XSD 验证通过等同于满足全部变量名规则。",
+      "source": "已交叉审阅译稿的具体注记"
+    },
+    {
+      "block": "TIntermediateExchange.1534.description.1",
+      "status": "needs_expert_review",
+      "reason_zh": "此说明隶属于 @productionVolumeMathematicalRelation，但原文称公式结果写入 amount，可能为通用说明复制残留。官方 EcoSpold02FlowData.xsd 包含同样说明，同时将产量数值字段定义为 productionVolumeAmount；普通交换数值字段为 amount。仅凭XSD说明无法确认软件实际求值目标。译文保留原文 amount。",
+      "recommendation_zh": "核对产量公式的实际求值实现，确认目标是否应为 productionVolumeAmount，并由技术编辑同步修正文档；不要据此把产量公式值写入普通交换 amount。",
+      "source": "已交叉审阅译稿的具体注记"
+    },
+    {
+      "block": "TIntermediateExchange.1520.options",
+      "status": "needs_expert_review",
+      "reason_zh": "原表1520选项提示引用另一活动数据集字段105，该字段是activityNameId；官方XSD又将activityLinkId声明为TActivityIndexEntry引用，提示与结构引用对象需核对。叙述按已明确的供应活动链接含义解释，并保留原编号提示，不把不同标识混用。",
+      "recommendation_zh": "按实际活动索引解析供应活动，向技术编辑核对该跨表字段编号；不使用交换实例或产品标识替代activityLinkId。",
+      "source": "EcoSpold02FlowData.xsd / 字段1520 与 TActivity字段105 对照"
+    },
+    {
+      "block": "TUncertainty.2100.description.0",
+      "status": "needs_expert_review",
+      "reason_zh": "原文将 σ 称为 variance（方差），而常见对数正态分布记号以 σ 为底层正态分布标准差、σ²为方差；同组字段则明确为 variance。译文忠实保留原符号及“方差”，不能据此自动将参数平方或开方。",
+      "recommendation_zh": "以对应 XSD 字段定义及读取软件实际实现确认 Mu/Variance 参数的尺度；请技术编辑澄清原文 σ 的定义。"
+    },
+    {
+      "block": "TUncertainty.2120.description.1",
+      "status": "needs_expert_review",
+      "reason_zh": "原文要求从 mostLikelyValue 计算 meanValue，同时禁止在 ecoinvent 上下文使用 mostLikelyValue（#3797）。官方 EcoSpold02DataTypes.xsd 的 triangular 类型却将当前 @mostLikelyValue（fieldId=2122）设为 required；#3797 与当前编号不同，禁令适用对象及与模式必填要求的关系尚不清楚。三角分布均值也不能仅由众数单独确定。正文保留 shall/must not 及 #3797，不擅自撤销禁令。",
+      "recommendation_zh": "请向数据方确认 #3797 是否仅指旧格式字段、当前 @mostLikelyValue 的提交规则及 meanValue 的具体含义；勿将众数直接当作三角分布均值。证据：Schemas/datasets/EcoSpold02DataTypes.xsd 的 triangular 定义。"
+    },
+    {
+      "block": "TUncertainty.2140.description.0",
+      "status": "needs_expert_review",
+      "reason_zh": "原文允许退化条件 a=b，但所列 Shape1 公式含分母 b-a，此条件下会出现除零；原文未说明退化分布如何处理。译文完整保留条件和公式。",
+      "recommendation_zh": "核实实现是否对 a=b 单独生成常数样本，或是否应要求 a<b；确认前不要直接按常规形状公式计算该边界情况。"
+    },
+    {
+      "block": "TUncertainty.2173.description.0",
+      "status": "needs_expert_review",
+      "reason_zh": "原文仅将旧格式 standardDeviation95 描述为从均值两侧扩展、覆盖总体95%所需的值，未说明它是加性半宽度、乘性因子或其他量，不能一概理解成普通标准差。译文不额外指定计算形式。",
+      "recommendation_zh": "读取 EcoSpold01 遗留数据时核对具体旧分布及字段约定，勿无条件将该值作为算术标准差。"
+    },
+    {
+      "block": "TUncertainty.2110.description.0",
+      "status": "needs_expert_review",
+      "reason_zh": "原文将正态分布参数称为 MeanValue 和 Deviation，但官方 XSD 中当前 normal 类型的属性为 meanValue、variance 和 varianceWithPedigreeUncertainty，没有 Deviation。原文的标准差概念说明不等同于当前字段的方差存储约定。",
+      "recommendation_zh": "正文保留原文参数名称；实现时对照 fieldId=2111/2112/2113 的 XSD 定义，不将标准差直接写入 variance 字段。请数据方澄清旧参数名称与当前属性的关系。"
+    },
+    {
+      "block": "TTextAndImage.intro.0",
+      "status": "needs_expert_review",
+      "reason_zh": "源文开头将图像元素称为 imageUri，后文却称为 imageUrl；相同 imageUri 表述也出现于 TTechnology.510 和 TReview.3340 的复用说明。独立核查官方 Schemas/datasets/EcoSpold02DataTypes.xsd 的 TTextAndImage 定义，实际子元素为 text、imageUrl、variable，而没有 imageUri。译文忠实保留原文两种名称，文档说明与XSD元素定义存在冲突。",
+      "recommendation_zh": "生成或解析XML时以该XSD中的 imageUrl 为准；原英文说明的 imageUri 应由技术编辑确认统一。译文原有名称不静默替换。"
+    },
+    {
+      "block": "TUncertainty.2270.description.0",
+      "status": "needs_expert_review",
+      "reason_zh": "主 HTML 把 pedigreeMatrix 行类型写为 integer，但实际 EcoSpold02DataTypes.xsd 定义的是含五个整数评分属性的匿名复合类型。教程按 XSD 说明容器结构，原始译表应保留原表并提示差异。",
+      "recommendation_zh": "请由技术编辑修正原表的类型标记，读取实现按 XSD 属性结构处理。"
+    },
+    {
+      "block": "TUncertainty.2273.description.4",
+      "status": "needs_expert_review",
+      "reason_zh": "原评分 4 为不足 15 年，评分 5 为超过 15 年，未明确恰好 15 年的分类。教程保留边界并明示缺口，没有自行推断为大于等于。",
+      "recommendation_zh": "请依据数据质量指南或官方实现确认恰好 15 年时使用哪个评分。"
+    },
+    {
+      "block": "TRepresentativeness.3030.description.0",
+      "status": "needs_expert_review",
+      "reason_zh": "samplingProcedure 的说明混入 TTextAndImage 模板，但 EcoSpold02MetaInformation.xsd 实际将该元素定义为 TString32000，不能包含 text/imageUrl/variable 子元素。教程保留其业务含义，并明确区分文字模板与实际字段类型。",
+      "recommendation_zh": "请技术编辑移除错误的文本图像模板；实现以 TString32000 的 simpleContent 为准。"
+    },
+    {
+      "block": "TProperty.2350.description.1",
+      "status": "needs_expert_review",
+      "reason_zh": "文字变量规则与 TVariableName 的 maxLength=40、pattern=\\w\\S* 并非直接等价；教程分别陈述文档规则与 XSD 约束，不从模式单独推断全部公式语言规则。",
+      "recommendation_zh": "核对语义验证及公式解析规范以确认实际变量名规则。"
+    },
+    {
+      "block": "TUncertainty.2150.description.0",
+      "status": "needs_expert_review",
+      "reason_zh": "原文及官方 EcoSpold02DataTypes.xsd 注释均说“Absolute values of the values entered here will be used”，继而说将最小值参数加到所有样本。前句未明确绝对值处理是否只适用于 shape/scale，或也涵盖 minValue；模式仅声明三个浮点属性，不提供抽样实现。教程已移除将范围限定到形状、尺度参数的推断。",
+      "recommendation_zh": "请数据方或抽样软件实现确认绝对值处理的参数范围及 minValue 的符号约定；确认前保留原句范围，不替源文规定负位置参数的处理。"
+    }
+  ],
+  "source_blocks": 388,
+  "source_html_sha256": "3f03c496b83ac15afb08d6e4ea60381603e14b89804324bc465d12c474a605ce",
+  "xml_snippets": [
+    {
+      "title": "参考产品：10 kg",
+      "tag": "{http://www.EcoInvent.org/EcoSpold02}intermediateExchange",
+      "attributes": {
+        "id": "b8754d71-a0c7-5b08-a889-67d6f1146d58",
+        "amount": "10",
+        "unitId": "a4800e12-54b1-5444-a6d0-b48a59529439",
+        "intermediateExchangeId": "c5a1fe25-46d4-5646-9d78-5c10b6bfdeae"
+      },
+      "snippet_sha256": "812bf2cc93aba157fc65a81e2dd4e4f1c9adb4fd686ed8dc8485c6fe9b40a912"
+    },
+    {
+      "title": "电力输入：25 kWh",
+      "tag": "{http://www.EcoInvent.org/EcoSpold02}intermediateExchange",
+      "attributes": {
+        "id": "33697568-a16c-54ea-a6db-8275bf713e20",
+        "amount": "25",
+        "unitId": "a5533771-6995-50cd-b03c-7a2af998708e",
+        "intermediateExchangeId": "cf4dd220-d849-5595-92fe-1dac1fcecae7",
+        "activityLinkId": "44be1818-16fc-56f4-a988-9306a39129df",
+        "variableName": "electricity_use",
+        "isCalculatedAmount": "true",
+        "mathematicalRelation": "electricity_intensity * 10"
+      },
+      "snippet_sha256": "58ed20064a90d8473bfeb37bfc326ab00f6681f45132d846a1c2b9f90f426672"
+    },
+    {
+      "title": "化石源二氧化碳修正：仍是 outputGroup 输出",
+      "tag": "{http://www.EcoInvent.org/EcoSpold02}elementaryExchange",
+      "attributes": {
+        "id": "fff82fe6-92c9-5f26-98e2-3b04663bc952",
+        "amount": "-0.1",
+        "unitId": "a4800e12-54b1-5444-a6d0-b48a59529439",
+        "elementaryExchangeId": "f420b314-c085-57e7-ba47-5cdfa839e9a3",
+        "formula": "CO2"
+      },
+      "snippet_sha256": "46510104eba2dae9f5bf33c5a0f9b4a03456c68f2327967173957417036c9d8d"
+    },
+    {
+      "title": "模拟 LCIA 指标：13.9 kg CO2-eq",
+      "tag": "{http://www.EcoInvent.org/EcoSpold02}impactIndicator",
+      "attributes": {
+        "impactIndicatorId": "9ce9802d-268d-5ac0-af08-ffca6dc91aa2",
+        "impactMethodId": "496741dc-72ec-5f95-bedb-078512fde969",
+        "impactCategoryId": "07a7bfca-c863-5fd0-a2bf-24aa3af0d959",
+        "amount": "13.9"
+      },
+      "snippet_sha256": "b576cb51b6bd9f24541005d49c0c17a8b7450c580cdf3b064dd818530a0600fc"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "content/ecospold2/README.md",
+      "sha256": "e0a391e15eddeb2a0ed17955c7d91deedb39e0802f419a7991bb630094b0835c"
+    },
+    {
+      "path": "content/ecospold2/attachments/EcoSpold02.zh.html",
+      "sha256": "d30d0a3b7979334d9499b9587f6a1811275e0345f17848d0ba46c7c2de9dbece"
+    },
+    {
+      "path": "content/ecospold2/demo/README.txt",
+      "sha256": "f7656238fe5e0ef469f0693980b9472d6588f25cccee4d2677330744dc05da10"
+    },
+    {
+      "path": "content/ecospold2/demo/demo-electricity.spold",
+      "sha256": "18737e0b1ea0ea29003b5fafcad18ba8ca7b7f8fc33b6e9108b6421fa674fec5"
+    },
+    {
+      "path": "content/ecospold2/demo/demo-lcia.spold",
+      "sha256": "7ed6af657147a09dac91bffd126764b583590496a121624a07e57a691daf4981"
+    },
+    {
+      "path": "content/ecospold2/demo/demo-product.spold",
+      "sha256": "6026093ad3de8482a209a22ad6388f974efd6fd996d7db551b71526878b5eec2"
+    },
+    {
+      "path": "content/ecospold2/demo/ecospold2-tutorial-demo.zip",
+      "sha256": "586bff0f9fcfdb6e9fe13f86fa5be0877bd820e4bb2eaa01c4591aaa3f004310"
+    },
+    {
+      "path": "content/ecospold2/demo/extract_ecospold.py",
+      "sha256": "2be840128ff1c0bf73e1082a283df55a6db8b0013933032fe51196bb676a7c15"
+    },
+    {
+      "path": "content/ecospold2/demo/extraction-example.json",
+      "sha256": "e97ffb0b86d21ea49dbd21a4182247452710bb1a44e8c3d8146e72d564a5e409"
+    },
+    {
+      "path": "content/ecospold2/demo/query_demo.py",
+      "sha256": "edb45ce31768fad8f929ac7d044909db36307325632481f67d7a8703a594118b"
+    },
+    {
+      "path": "content/ecospold2/tutorial-review.md",
+      "sha256": "b6e5ec999412237c903c5f58f279000cf6bba4be8882639f86a11d429f79f5f7"
+    }
+  ],
+  "review_files": [
+    {
+      "path": "audit/ecospold2/tutorial/narrative-review-a.json",
+      "sha256": "07beddf75f5749a398e6cec63a64e677fdd7fcfb232ebcc319f0b66bc5f0d5ec"
+    },
+    {
+      "path": "audit/ecospold2/tutorial/narrative-review-b.json",
+      "sha256": "0e013f8a6cb7422cc0e4988aa39311f7e8cb435c0efb777cdd671c9fb2ca2fe3"
+    },
+    {
+      "path": "audit/ecospold2/tutorial/narrative-review-c.json",
+      "sha256": "d18bcbefeb1b1b6d264219d2a365775b5b802c93e05bfc23aaaf418c0cbfbec9"
+    },
+    {
+      "path": "audit/ecospold2/tutorial/queries-review.json",
+      "sha256": "bdc08191a846e9ca53a95b12c5888ef3944dbcb6f91781bd465e2e44c5cb82c3"
+    },
+    {
+      "path": "audit/ecospold2/tutorial/tutorial-code-review.json",
+      "sha256": "49062f05cea8d2b5b43330fbcd1dc5d63f9f565fe25e2fc968c34f2a72d5e8d7"
+    },
+    {
+      "path": "audit/ecospold2/tutorial/tutorial-guide-review.json",
+      "sha256": "eb85116c92abb3f1ff0a7e91333427c698c3788df52f22017e9462aa73f92445"
+    }
+  ]
+}

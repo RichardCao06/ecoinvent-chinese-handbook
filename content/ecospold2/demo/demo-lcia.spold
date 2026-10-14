@@ -1,0 +1,72 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ecoSpold xmlns="http://www.EcoInvent.org/EcoSpold02">
+  <!--教学构造 / Synthetic teaching data. NOT real ecoinvent data. NOT an official impact method.-->
+  <activityDataset>
+    <activityDescription>
+      <activity id="fc37834f-30b0-5563-b8f5-16fb8683b395" activityNameId="43efd20c-48f5-5e76-b9f0-024f99830e37" type="2" specialActivityType="0">
+        <activityName xml:lang="zh">教学累计清单与模拟影响结果</activityName>
+        <activityName xml:lang="en">Teaching cumulative inventory and synthetic impact result</activityName>
+        <generalComment>
+          <text index="1" xml:lang="zh">教学构造，非 ecoinvent 真实数据。仅用于格式、读数和算术比例演示。参考数量不是默认1；不据此演示分配、完整LCI或官方LCIA算法。</text>
+          <text index="2" xml:lang="en">Synthetic teaching data, not real ecoinvent data. Format and arithmetic-ratio demonstration only; no allocation or official LCI/LCIA algorithm.</text>
+        </generalComment>
+      </activity>
+      <geography geographyId="a099d998-acea-50db-a416-a5eaeaf6eb23" geographyContextId="f71ac544-3bc8-5c15-8ea4-072d907663f1">
+        <shortname xml:lang="zh">教学区域（虚构）</shortname>
+        <shortname xml:lang="en">Teaching region (synthetic)</shortname>
+      </geography>
+      <technology technologyLevel="3"/>
+      <timePeriod startDate="2025-01-01" endDate="2025-12-31" isDataValidForEntirePeriod="true"/>
+      <macroEconomicScenario macroEconomicScenarioId="0984f81b-aa81-5830-b34b-99b00a49a684">
+        <name xml:lang="zh">教学情景</name>
+        <name xml:lang="en">Teaching scenario</name>
+      </macroEconomicScenario>
+    </activityDescription>
+    <flowData>
+      <intermediateExchange id="0e0d2b01-23df-5f63-bec5-43cc23acab73" amount="10" unitId="a4800e12-54b1-5444-a6d0-b48a59529439" intermediateExchangeId="c5a1fe25-46d4-5646-9d78-5c10b6bfdeae">
+        <name xml:lang="zh">教学产品</name>
+        <name xml:lang="en">Teaching product</name>
+        <unitName xml:lang="zh">kg</unitName>
+        <unitName xml:lang="en">kg</unitName>
+        <outputGroup>0</outputGroup>
+      </intermediateExchange>
+      <elementaryExchange id="fd80faaa-ba78-50c3-87be-b096bb29bfde" amount="13.9" unitId="a4800e12-54b1-5444-a6d0-b48a59529439" elementaryExchangeId="f420b314-c085-57e7-ba47-5cdfa839e9a3" formula="CO2">
+        <name xml:lang="zh">二氧化碳，化石源（教学）</name>
+        <name xml:lang="en">Carbon dioxide, fossil (synthetic)</name>
+        <unitName xml:lang="zh">kg</unitName>
+        <unitName xml:lang="en">kg</unitName>
+        <compartment subcompartmentId="6bbb1a41-12de-5599-843e-cc02d4084a9a">
+          <compartment xml:lang="zh">空气</compartment>
+          <compartment xml:lang="en">air</compartment>
+          <subcompartment xml:lang="zh">未指定</subcompartment>
+          <subcompartment xml:lang="en">unspecified</subcompartment>
+        </compartment>
+        <outputGroup>4</outputGroup>
+      </elementaryExchange>
+      <impactIndicator impactIndicatorId="9ce9802d-268d-5ac0-af08-ffca6dc91aa2" impactMethodId="496741dc-72ec-5f95-bedb-078512fde969" impactCategoryId="07a7bfca-c863-5fd0-a2bf-24aa3af0d959" amount="13.9">
+        <impactMethodName xml:lang="zh">教学方法（非官方）</impactMethodName>
+        <impactMethodName xml:lang="en">Teaching method (synthetic, unofficial)</impactMethodName>
+        <impactCategoryName xml:lang="zh">教学化石CO2类别</impactCategoryName>
+        <impactCategoryName xml:lang="en">Teaching fossil CO2 category</impactCategoryName>
+        <name xml:lang="zh">教学GWP（构造）</name>
+        <name xml:lang="en">Teaching GWP (synthetic)</name>
+        <unitName xml:lang="zh">kg CO2-eq</unitName>
+        <unitName xml:lang="en">kg CO2-eq</unitName>
+      </impactIndicator>
+    </flowData>
+    <modellingAndValidation>
+      <representativeness systemModelId="a381359e-f5e9-58f7-90b2-e0f2251938a1" systemModelContextId="f71ac544-3bc8-5c15-8ea4-072d907663f1">
+        <systemModelName xml:lang="zh">教学约定系统（非官方模型）</systemModelName>
+        <systemModelName xml:lang="en">Teaching convention (not an official model)</systemModelName>
+      </representativeness>
+    </modellingAndValidation>
+    <administrativeInformation>
+      <dataEntryBy personId="2163e122-88c4-55e7-af84-00947e9b7b0a" personName="Teaching author" personEmail="demo@example.invalid" isActiveAuthor="false"/>
+      <dataGeneratorAndPublication personId="2163e122-88c4-55e7-af84-00947e9b7b0a" personName="Teaching author" personEmail="demo@example.invalid" isCopyrightProtected="false" dataPublishedIn="0" accessRestrictedTo="0"/>
+      <fileAttributes majorRelease="1" minorRelease="0" majorRevision="1" minorRevision="1" internalSchemaVersion="2.0.13" defaultLanguage="zh" creationTimestamp="2025-01-01T00:00:00Z" lastEditTimestamp="2025-01-01T00:00:00Z" fileTimestamp="2025-01-01T00:00:00Z" fileGenerator="Synthetic tutorial generator" contextId="f71ac544-3bc8-5c15-8ea4-072d907663f1">
+        <contextName xml:lang="zh">教学主数据上下文（虚构UUID）</contextName>
+        <contextName xml:lang="en">Teaching master-data context (synthetic UUIDs)</contextName>
+      </fileAttributes>
+    </administrativeInformation>
+  </activityDataset>
+</ecoSpold>

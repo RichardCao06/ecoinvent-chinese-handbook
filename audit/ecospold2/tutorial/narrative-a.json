@@ -1,0 +1,430 @@
+{
+  "author": "translator_a",
+  "sections": {
+    "TActivity": "### 先识别活动，再判断边界与继承\n\n读取一个活动数据集时，可先进入 `activityDescription/activity`。这个元素采用 `TActivity` 类型，回答“这是什么活动、记录了哪一层数据、边界在哪里”。元素 `activityName` 是供人阅读的活动名称；属性 `id` 是活动的 UUID，而 `activityNameId` 是对活动名称主数据条目的 UUID 引用。两种 UUID 的角色不同：前者识别活动，后者查找名称主数据，不能因为都使用 `TUuid` 就混作同一个键。该类型以 36 个字符表示 UUID；创建新条目的 UUID 需要由外部软件生成。`activityNameContextId` 指明名称主数据所属上下文，省略时使用数据集自身的上下文。因此，程序可以把名称提取为显示文本，但在追踪对象身份和解析主数据时，应同时保留相应 UUID 与上下文。\n\n接下来读取属性 `type`，区分单元过程与汇总结果。`type=1` 表示单元过程，这是数据提供方录入数据的形式；`type=2` 表示 `System terminated`，即已经纳入上游活动并汇总的完整产品系统。这种系统记录与单元过程某一特定产品有关的累积生命周期清单及影响结果，已包含沿中间交换链接的全部上游活动。官方说明将这种产品系统描述为“自身没有中间交换，只有环境交换和累积影响评价结果”，强调上游供应结构已经汇总；但当前完整 XSD 的 `TFlowData` 仍要求至少一个 `intermediateExchange`，因为该元素的 `minOccurs` 未显式设置，默认值为 `1`。教学结果文件用这个元素承载参考输出，而不保留上游电力输入。因此，不能以是否存在任意中间交换判断 UPR，也不能仅凭 `type=2` 确认某份文件已提供 LCIA。这个说明与模式之间的差异需要保留；各种真实 LCI、LCIA 导出的具体内容仍须结合其来源和文件核对。这里的 terminated 不能理解成“设备停运”或“废物寿命终结”。在提取供应链连接或过程间产品流之前，先检查这一属性，避免把汇总清单当成保留供应商结构的单元过程。\n\n属性 `specialActivityType` 进一步说明活动在数据库中的作用。值 `0` 是普通转化活动：输入被转化为不同的输出，范围包括开采、生产、运输、消费和废物处理。值 `1` 是市场活动：它不转化输入，而把生产者的中间输出传递给消费者，通常混合不同生产者的类似产品，形成消费组合。值 `10` 是市场组：它把市场再按区域汇集；在未指定系统模型中仅有参考产品，链接算法会加入地理范围内、参考产品相同的供应市场。值 `2` 是来自国家供给使用表的投入产出活动，通常表示特定行业的供给与使用；值 `3` 是残余活动，是从同一年、同一地区、同一活动类别的供给使用数据中减去已有单元过程后得到的部分。读取时应据此区分“生产产品的过程”“把产品连接起来的市场”和“统计表中的行业活动”。\n\n其余类型描述组合、贸易和修正。`specialActivityType=4` 是某地区内供应者按生产量加权的生产组合；`5` 是指定产品进入指定地区的进口活动，仅用于国家平衡核算，不参与自动生成的消费组合。进入行政约束市场或来自部分孤立市场的进口，为纳入消费组合而按普通转化活动建模。值 `6` 是在生产组合中加入进口的供应组合。值 `7` 是国家生产组合的出口量，地理范围为该国，不参与自动消费组合；为得到正确出口价值，还直接纳入市场通常承担的运输、生产损失、批发零售活动、产品税和补贴。值 `8` 是地区的再出口量，同样不参与自动消费组合。值 `9` 是修正活动：它以正流和负流各加入一次，把交换从系统的一处移到另一处，用来修正上游活动的下游效应或分配造成的质量平衡偏差。不能把这些代码只当显示标签；它们解释了某些记录为何不直接代表普通生产。\n\n判断活动是否适用于研究，还需读取边界说明。`includedActivitiesStart` 描述起点；对 `type=2`，起点始终为从摇篮开始并包括全部上游活动。对单元过程，它可描述原材料接收或服务所需投入等起点。`includedActivitiesEnd` 不只是终点名称，还说明活动中包含的步骤及有意排除的活动或输入，最后交代最后一道活动或交付点。例如，作为服务的农药施用可排除农药本身，从而适用于不同有效成分。`generalComment` 容纳无法放入更专门字段的一般说明和引用，信息应足以帮助判断数据集适用性。它是 `TTextAndImage`，读取时应考虑文本、图片与变量及其顺序；通用说明写 `imageUri`，但本版 XSD 的实际图像元素名是 `imageUrl`，这是文档命名不一致，解析时须对照实际模式。`synonym` 提供同义词，允许 `0..n` 个条目，每个最长 80 个字符，且同一 `xml:lang` 可以出现多条。`tag` 是用于筛选、分组和搜索的开放关键词列表；不在 `validTags` 主文件中的标签应产生提示信息，而不是语义验证错误。`datasetIcon` 是图标的 URI，可用于快速识别、品牌或公司徽标；图标存放于本地或网络服务器，通过 Http 获取，并非嵌入数据集本身。\n\n若存在 `parentActivityId`，应先解析继承，再把当前文件当成完整记录取数。它引用父活动数据集；`parentActivityContextId` 指定父活动所在上下文，省略时使用当前数据集上下文。子活动承接父字段，只存储相对父活动的变化。空字段表示沿用父值，填写的新内容覆盖父值；字符串中的 `{{PARENTTEXT}}` 把父文本插入指定位置。`TTextAndImage` 还支持文本变量 `{{text_variables}}` 和引用形式 `{{variablename}}`，允许子活动重新定义变量而保留其他父文本。具有数学关系的数量字段可在 `mathematicalRelation` 中使用 `PARENTVALUE`，例如原说明中的 `PARENTVALUE*0.5` 将父数量减半。因而，子文件未写某字段不能直接解释为零值或不存在。原说明指出，子数据集不能按完整 EcoSpold02 活动的数据模式要求直接验证；官方包同时提供子模式。这里还要区分元素与类型的命名空间：根元素 `ecoSpold` 及其外层容器 `activityDataset`、`childActivityDataset` 都属于 `http://www.EcoInvent.org/EcoSpold02`；其中 `childActivityDataset` 使用属于 `http://www.EcoInvent.org/EcoSpold02Child` 的 `TActivityDataset` 类型，其内部 `activityDescription` 等元素也属于这个子命名空间。读取和校验应区分完整记录与差异记录，并按元素实际命名空间选择路径。\n\n属性 `inheritanceDepth` 默认是 `0`。原说明将其定义为当前数据集的父数据集最大数量，又给出 `0` 为非子数据集、`1` 为地理子数据集、`2` 为时间子数据集、`3` 为宏观经济情景子数据集的解释。层数和类型的对应关系仍需依据继承专门规范确认；不能仅凭这一数值自行构造父链，实际父对象仍由 `parentActivityId` 引用。\n\n能源和分配信息也属于活动描述。`energyValues` 默认 `0`，表示未指定；`1` 表示净值，即低位热值；`2` 表示总值，即高位热值。它声明能源数值的口径，不是另一笔能源交换。`masterAllocationPropertyId` 引用全数据集默认分配属性，`masterAllocationPropertyContextId` 指定该属性所属上下文，省略时沿用数据集上下文；某交换可通过自己的 `specificAllocationPropertyId` 覆盖这一默认属性。按原说明，某输出的分配因子等于该输出的 `TProperty` 值乘输出数量，再除以所有输出相应乘积的总和。`allocationComment` 解释分配程序和选择该属性的理由，也可说明采用物理、经济等不同参数却得到相同分配因子的情况。若子数据集要删除默认分配属性的引用，必须把 `masterAllocationPropertyIdOverwrittenByChild` 设为 `true`；单纯不写引用会被解释为保留父值。",
+    "TClassification": "### 用分类定位行业，不把名称当作主数据标识\n\n活动描述中的 `classification` 可重复出现，每一项采用 `TClassification`，把一个分类体系与其中的类别配对。元素 `classificationSystem` 给出体系名称，如原文示例 `ISIC Rev. 4`；`classificationValue` 给出活动在该体系中所属的类别。它们便于展示和筛选，但机器解析的主数据引用是属性 `classificationId`，指向有效分类列表中的分类值。`classificationContextId` 指定这个分类所属上下文，省略时采用数据集自身的上下文。取数时应逐项保留体系、类别和引用标识，不能假定只有一个分类，也不能将不同体系中看起来相同的类别文本合并为同一条主数据。\n\n这里有一处需明确交代的原文差异：字段说明把 `classificationSystem` 和 `classificationValue` 称为可选纯文本值，而本版完整数据 XSD 将两个元素设为至少出现一次，官方 HTML 表格也标为必填。阅读已有文本与校验文件结构是不同操作；校验当前完整数据时应按所用 XSD 执行，不能根据说明中的“可选”自行删除元素。子数据集另有差异模式，其规则还需结合继承处理。",
+    "TGeography": "### 地理信息描述适用范围，也界定市场范围\n\n`activityDescription/geography` 采用 `TGeography`。属性 `geographyId` 引用有效地理位置主数据中的详细定义，`geographyContextId` 指定该引用的上下文，省略时使用数据集自身的上下文。元素 `shortname` 是这一地理位置的描述性简称，可用于报告和筛选；它不是替代 UUID 的主数据键。元素 `comment` 提供进一步的地理解释，采用 `TTextAndImage`，可说明边界划分的性质、非行政区域的界定方式以及市场边界的依据。\n\n不要把 geography 一律理解为国家。它可表示活动的点位置、移动活动的线，或包含多个具体活动地点的分布式活动及生产组合的区域。对于市场和消费组合，它描述限制跨界进出口的市场边界。读取时可先提取 `shortname` 了解地理范围，再用 `geographyId` 及对应上下文解析主数据，最后结合 `comment` 判断该范围是否与研究对象一致；地理简称本身并不交代全部边界含义。",
+    "TTechnology": "### 技术水平要结合有效年份和地点阅读\n\n`activityDescription/technology` 采用 `TTechnology`。属性 `technologyLevel` 是粗粒度的技术分类，默认值为 `3`，可用于建模时选择特定技术水平的过程。值 `0` 为未指定，适用于没有技术水平的市场活动；`1` 为新兴技术，在某些方面技术性能优于现代技术，但纯按经济考虑投资时尚未成为最常安装的选择；`2` 为现代技术，是纯按经济考虑新增产能时采用的、竞争力最强的技术；`3` 为当前技术，介于现代与旧有之间；`4` 为旧有技术，是纯按经济考虑退役时正在退出使用、竞争力最低的技术；`5` 为过时技术，已经不再使用。\n\n这些标签不是设备年龄。技术即使已存在很久，只要仍最有竞争力，就可以标为现代；技术即使出现较晚，也可能很快被更有竞争力的技术取代而标为旧有。同一技术可随数据有效年份变化等级，也可在同一年、不同地区具有不同等级。因此，读取 `technologyLevel` 时应同时读取时间和地理信息，不能将某地区某年的等级外推为全球永久属性。\n\n元素 `comment` 采用 `TTextAndImage`，说明技术的性质、特征及单元过程的技术属性。若活动包含多个子活动，也应描述对应技术，并使用专业工艺名称。提取这段说明，是理解技术差异及决定是否采用数据的步骤；仅用技术等级整数无法替代工艺文档。",
+    "TTimePeriod": "### 时间段与整段有效性要分开判断\n\n`activityDescription/timePeriod` 采用 `TTimePeriod`。属性 `startDate` 和 `endDate` 是数据集有效时间段的完整日期，采用年-月-日；它们与文件创建、编辑和导出时间不同。属性 `isDataValidForEntirePeriod` 说明该活动的基本流交换和中间交换是否对所列整个时间段都有效，不能仅根据起止日期推定整段有效。\n\n当 `isDataValidForEntirePeriod` 不为真时，可在元素 `comment` 中解释。这个 `TTextAndImage` 字段也可说明单元过程的时间相关性，例如较早数据是否仍适用于当前活动；还可说明为什么数据不覆盖整个期间、实际在哪些较短期间内有效。取数时应将起止日期、整段有效性标记和这段说明一并保存，否则会丢失日期区间内的重要限定。",
+    "TMacroEconomicScenario": "### 情景是主数据引用，也可能是子数据集的变化依据\n\n`activityDescription/macroEconomicScenario` 采用 `TMacroEconomicScenario`。属性 `macroEconomicScenarioId` 指向有效情景列表中的宏观经济情景；`macroEconomicScenarioContextId` 指定该情景主数据所属上下文，省略时使用数据集自身的上下文。元素 `name` 是情景名称，供人阅读；不能用它替换情景 UUID 做唯一连接。\n\n元素 `comment` 说明宏观经济子数据集与父数据集默认情景的差异。它是 `TString32000` 文本，而不是混合图片的 `TTextAndImage`。读取情景时，可先保留名称和引用，再结合活动的父数据集关系阅读这段差异说明；仅从名称无法知道哪些输入、输出或其他条件相对于父情景发生了变化。",
+    "TDataEntryBy": "### 录入者说明谁编制并提交了这份记录\n\n在 `administrativeInformation/dataEntryBy` 中，`TDataEntryBy` 记录编制数据集并将其录入数据库的人员。属性 `personId` 引用该人员，`personContextId` 指定人员主数据所属上下文，省略时使用数据集自身的上下文。属性 `personName` 和 `personEmail` 分别存储人员的名与姓以及完整电子邮件地址；它们用于显示和联系，身份连接仍依赖人员 ID 与上下文。\n\n属性 `isActiveAuthor` 表示这位人员是否为数据集的活跃作者，完整数据 XSD 的默认值为 `false`。这里的活跃作者是后续维护中的联系角色：其他数据提供者今后修改数据集时，将征询此人的意见。它不能仅凭姓名是否出现在文件中推断，也不等同于版权人、审核人或原始数据采集者。取数时应保留这个标记，才能区分一般录入人员与需要在后续变更中联系的作者。",
+    "TDataGeneratorAndPublication": "### 原始数据来源、出版物与访问限制构成另一组管理信息\n\n`administrativeInformation/dataGeneratorAndPublication` 采用 `TDataGeneratorAndPublication`。这里的属性 `personId` 识别收集、汇编或发布原始数据的数据生成者，未必与 `dataEntryBy` 的录入者相同。`personContextId` 指向其人员上下文，省略时沿用数据集上下文；`personName` 和 `personEmail` 分别记录姓名和完整邮箱。读取两个人员组时，要保留各自所属的 XML 路径，即使字段都叫 `personId`，也不能把两种角色覆盖成同一个“作者”。原说明还将数据生成者解释为应获认可的数据来源及承担主要采集工作的个人或组织；当前人员引用须与相应人员主数据匹配。\n\n属性 `dataPublishedIn` 表示发布程度：`0` 是数据本身未在别处发布，也是默认值；`1` 是部分单元过程或子系统已发布；`2` 是数据完整发布于所引用来源。`publishedSourceId` 引用记录数据的报告或来源，`publishedSourceContextId` 指定来源上下文，省略时使用数据集自身上下文。`publishedSourceYear` 记录出版或沟通年份，对网站记录最后访问时间；原文没有限定网站条目只能写年份，实际类型为 `TBaseString30`。`publishedSourceFirstAuthor` 给出第一作者的姓和名字缩写。对于 `sourceType=4, 5, 6, 7` 的现场测量、口头沟通、个人书面沟通和问卷，它记录沟通人员。`pageNumbers` 进一步定位文章或较大出版物中的相关页码。取数时，这些字段共同构成可追溯来源，不能用一个年份或第一作者文本替代来源主数据引用。\n\n原说明出现的旧编号也有明确对应关系：`757` 是 `publishedSourceId` 的旧 SpoldID，当前 fieldId 为 `3520`；它引用的来源 `id` 的旧 SpoldID 是 `801`，当前 fieldId 为 `3110`。这些是编号体系之间的映射，而非需要替换的 XML 名称。在子数据集中，若要删除父数据集的来源引用，必须将 `publishedSourceIdOverwrittenByChild` 设为 `true`；仅省略 `publishedSourceId` 会沿用父引用。\n\n版权和可访问性由不同属性表达。`isCopyrightProtected` 表示是否有著作权，原说明要求对应填写 `1` 或 `0`。`accessRestrictedTo` 默认 `0`，表示无访问限制；`1` 表示只有上下文定义的许可证持有者可访问；`2` 表示这些许可证持有者只能访问 LCI 结果，不能访问单元过程原始数据，而数据库管理员仍具有完整访问权限；`3` 表示只有指定组织及数据库管理员可访问。不能把版权标记当成公开许可，也不能从文件技术上可读推断有权公开传播其中数据。\n\n当访问限制为 `3` 时，`companyId` 引用获准使用数据集的组织或机构，`companyContextId` 指定该组织上下文，省略时使用数据集上下文；`companyCode` 是对应公司的可选代码纯文本。原说明称其为 7 字母代码，`TCompanyCode` 的说明还称应使用大写字母，但本版 XSD 的实际约束只有最长 7 个字符，没有固定长度或字母字符模式；因此，通过 XSD 并不等于已经满足这项文字约定。原文条件 `759=3` 中的 `759` 是 `accessRestrictedTo` 的旧 SpoldID，当前 fieldId 为 `3550`，因此条件应理解为访问限制类别为 `3`，不是另一项编号为 759 的当前属性。若子数据集需要移除组织引用，必须把 `companyIdOverwrittenByChild` 设为 `true`，否则仍视为保留父值。这套规则让程序能够分别处理“继承已有引用”与“明确删除引用”。",
+    "TFileAttributes": "### 区分数据库发布版本、数据集修订版本和文件时间\n\n`administrativeInformation/fileAttributes` 采用 `TFileAttributes`，描述文件整体信息。属性 `majorRelease` 和 `minorRelease` 属于发布版本：主发布号在重大更新时加一，次发布号在两次重大更新之间的每次发布时加一。原文以每两年一次为重大更新的例子，但这不是由格式规定的固定发布日程。属性 `majorRevision` 和 `minorRevision` 则区分某个数据集本身的修订，独立于数据库发布版本。因此，程序应将发布版本和数据集修订版本分别保存，而不是拼成一个失去角色区分的版本字段。\n\n`majorRevision` 反映数据集已获接受的变更，只能随时间增加，不得手动更改。在 ecoinvent 上下文中，活动变更通过审查并加入数据库后，它增加，同时将 `minorRevision` 重置为 `1`。`minorRevision` 描述提交审查前编辑过程中的版本；数据提供者每次将修改保存到本地或作为服务器草稿保存时，它自动增加。读取一份草稿与已接受版本时，应据此理解修订状态，不能把文件较新的时间戳直接等同于已接受的内容变更。\n\n时间属性同样需要分开。`creationTimestamp` 是数据集创建时自动生成的日期时间，`lastEditTimestamp` 是保存数据集时自动生成的日期时间；`fileTimestamp` 是当前文件创建的日期时间。前两者描述数据集的创建和编辑，后者描述文件生成，它们都不替代 `timePeriod` 的数据有效日期。`fileGenerator` 说明创建文件的程序，最好包括软件版本；`internalSchemaVersion` 说明生成数据集所依据的内部模式版本。记录这些信息，有助于判断解析环境和追踪导出来源。\n\n属性 `defaultLanguage` 为多语言字段指定默认语言，在完整数据 XSD 中省略时为 `en`；子差异文件省略该属性时应先处理继承，不能绕过父值直接取 `en`。每个多语言字段至少应有默认语言的值。提取活动名称等多语言元素时，应先选择相应语言内容，并保留语言标识，而不是把不同语言的重复元素当成重复数据。元素 `contextName` 是上下文名称，属性 `contextId` 是数据集所面向上下文的 UUID。上下文可用于限制信息访问范围，并决定解析引用时需要哪些主数据文件；它取代旧 ecoSpold01 的 quality network，ecoinvent 质量网络对应的上下文 ID 可在 `Context.xml` 中查找。\n\n缺少 `contextId` 时，说明将文件视为独立数据集，主数据引用不能被解析为实际主数据内容。这与缺少某个可选的 `…ContextId` 属性不同：后者通常沿用数据集上下文，但前提是这个上下文已经可知。元素 `requiredContext` 可重复出现，采用 `TRequiredContextReference`，用于列明完整读取主数据引用所需的其他上下文。真正取数前，应先识别本文件的上下文及所需上下文，再尝试连接各个名称、地点、人员、来源和属性的 UUID。",
+    "TRequiredContextReference": "### 解析跨上下文引用前，先核对主数据依赖\n\n每个 `requiredContext` 条目采用 `TRequiredContextReference`，说明读取文件所需的主数据上下文。属性 `requiredContextId` 引用主数据文件所属上下文，元素 `requiredContextName` 提供相应名称；属性 `requiredContextFileLocation` 是可选 URI，指向包含这一上下文主数据文件的目录。它给出的是主数据目录位置，不能直接当成某一条主数据对象的 UUID，也不应未经判断就当成单个 XML 文件路径。\n\n这个条目也有属性 `majorRelease`、`minorRelease`、`majorRevision` 和 `minorRevision`。它们用于确保该活动所需的主数据条目在相应版本中存在，描述的是所依赖上下文的版本要求，不是当前数据集自己的版本。完整 XSD 要求主发布号与次发布号，主修订号与次修订号则为可选。读取程序需知道各上下文，并知道实际主数据文件在哪里；只有 UUID 文本而没有对应主数据文件，并不能完成引用解析。\n\n原文另有一处结构要求与说明冲突：它称省略 `requiredContextId` 时应使用数据集自身上下文，但本版完整 XSD 把这个属性设为必填。因而，不能依据这句回退说明生成缺少该属性却宣称通过完整模式验证的文件。教程保留这项文档差异，具体适用条件需由数据方澄清；在实现当前完整模式时，应核对 `use=\"required\"` 的实际要求。另须区分子差异模式：`EcoSpold02ChildDataTypes.xsd` 将 `requiredContextId` 及四个版本属性设为可选，也将 `requiredContextName` 设为可省略；这并不改变完整数据模式的必填要求。读取子记录时仍须结合继承及实际上下文，不能把省略值直接当成一个已经解析成功的主数据引用。"
+  },
+  "coverage": [
+    {
+      "section": "TActivity",
+      "field_id": "100"
+    },
+    {
+      "section": "TActivity",
+      "field_id": "102"
+    },
+    {
+      "section": "TActivity",
+      "field_id": "105"
+    },
+    {
+      "section": "TActivity",
+      "field_id": "106"
+    },
+    {
+      "section": "TActivity",
+      "field_id": "110"
+    },
+    {
+      "section": "TActivity",
+      "field_id": "115"
+    },
+    {
+      "section": "TActivity",
+      "field_id": "120"
+    },
+    {
+      "section": "TActivity",
+      "field_id": "130"
+    },
+    {
+      "section": "TActivity",
+      "field_id": "131"
+    },
+    {
+      "section": "TActivity",
+      "field_id": "135"
+    },
+    {
+      "section": "TActivity",
+      "field_id": "145"
+    },
+    {
+      "section": "TActivity",
+      "field_id": "150"
+    },
+    {
+      "section": "TActivity",
+      "field_id": "170"
+    },
+    {
+      "section": "TActivity",
+      "field_id": "175"
+    },
+    {
+      "section": "TActivity",
+      "field_id": "180"
+    },
+    {
+      "section": "TActivity",
+      "field_id": "190"
+    },
+    {
+      "section": "TActivity",
+      "field_id": "191"
+    },
+    {
+      "section": "TActivity",
+      "field_id": "192"
+    },
+    {
+      "section": "TActivity",
+      "field_id": "195"
+    },
+    {
+      "section": "TActivity",
+      "field_id": "200"
+    },
+    {
+      "section": "TClassification",
+      "field_id": "300"
+    },
+    {
+      "section": "TClassification",
+      "field_id": "310"
+    },
+    {
+      "section": "TClassification",
+      "field_id": "320"
+    },
+    {
+      "section": "TClassification",
+      "field_id": "321"
+    },
+    {
+      "section": "TGeography",
+      "field_id": "400"
+    },
+    {
+      "section": "TGeography",
+      "field_id": "401"
+    },
+    {
+      "section": "TGeography",
+      "field_id": "410"
+    },
+    {
+      "section": "TGeography",
+      "field_id": "420"
+    },
+    {
+      "section": "TTechnology",
+      "field_id": "500"
+    },
+    {
+      "section": "TTechnology",
+      "field_id": "510"
+    },
+    {
+      "section": "TTimePeriod",
+      "field_id": "600"
+    },
+    {
+      "section": "TTimePeriod",
+      "field_id": "610"
+    },
+    {
+      "section": "TTimePeriod",
+      "field_id": "620"
+    },
+    {
+      "section": "TTimePeriod",
+      "field_id": "630"
+    },
+    {
+      "section": "TMacroEconomicScenario",
+      "field_id": "700"
+    },
+    {
+      "section": "TMacroEconomicScenario",
+      "field_id": "701"
+    },
+    {
+      "section": "TMacroEconomicScenario",
+      "field_id": "720"
+    },
+    {
+      "section": "TMacroEconomicScenario",
+      "field_id": "740"
+    },
+    {
+      "section": "TDataEntryBy",
+      "field_id": "3400"
+    },
+    {
+      "section": "TDataEntryBy",
+      "field_id": "3401"
+    },
+    {
+      "section": "TDataEntryBy",
+      "field_id": "3403"
+    },
+    {
+      "section": "TDataEntryBy",
+      "field_id": "3405"
+    },
+    {
+      "section": "TDataEntryBy",
+      "field_id": "3406"
+    },
+    {
+      "section": "TDataGeneratorAndPublication",
+      "field_id": "3500"
+    },
+    {
+      "section": "TDataGeneratorAndPublication",
+      "field_id": "3501"
+    },
+    {
+      "section": "TDataGeneratorAndPublication",
+      "field_id": "3505"
+    },
+    {
+      "section": "TDataGeneratorAndPublication",
+      "field_id": "3506"
+    },
+    {
+      "section": "TDataGeneratorAndPublication",
+      "field_id": "3510"
+    },
+    {
+      "section": "TDataGeneratorAndPublication",
+      "field_id": "3520"
+    },
+    {
+      "section": "TDataGeneratorAndPublication",
+      "field_id": "3521"
+    },
+    {
+      "section": "TDataGeneratorAndPublication",
+      "field_id": "3522"
+    },
+    {
+      "section": "TDataGeneratorAndPublication",
+      "field_id": "3525"
+    },
+    {
+      "section": "TDataGeneratorAndPublication",
+      "field_id": "3526"
+    },
+    {
+      "section": "TDataGeneratorAndPublication",
+      "field_id": "3530"
+    },
+    {
+      "section": "TDataGeneratorAndPublication",
+      "field_id": "3540"
+    },
+    {
+      "section": "TDataGeneratorAndPublication",
+      "field_id": "3550"
+    },
+    {
+      "section": "TDataGeneratorAndPublication",
+      "field_id": "3560"
+    },
+    {
+      "section": "TDataGeneratorAndPublication",
+      "field_id": "3561"
+    },
+    {
+      "section": "TDataGeneratorAndPublication",
+      "field_id": "3562"
+    },
+    {
+      "section": "TDataGeneratorAndPublication",
+      "field_id": "3563"
+    },
+    {
+      "section": "TFileAttributes",
+      "field_id": "3800"
+    },
+    {
+      "section": "TFileAttributes",
+      "field_id": "3805"
+    },
+    {
+      "section": "TFileAttributes",
+      "field_id": "3810"
+    },
+    {
+      "section": "TFileAttributes",
+      "field_id": "3815"
+    },
+    {
+      "section": "TFileAttributes",
+      "field_id": "3820"
+    },
+    {
+      "section": "TFileAttributes",
+      "field_id": "3830"
+    },
+    {
+      "section": "TFileAttributes",
+      "field_id": "3840"
+    },
+    {
+      "section": "TFileAttributes",
+      "field_id": "3850"
+    },
+    {
+      "section": "TFileAttributes",
+      "field_id": "3860"
+    },
+    {
+      "section": "TFileAttributes",
+      "field_id": "3870"
+    },
+    {
+      "section": "TFileAttributes",
+      "field_id": "3880"
+    },
+    {
+      "section": "TFileAttributes",
+      "field_id": "3885"
+    },
+    {
+      "section": "TFileAttributes",
+      "field_id": "3890"
+    },
+    {
+      "section": "TRequiredContextReference",
+      "field_id": "7810"
+    },
+    {
+      "section": "TRequiredContextReference",
+      "field_id": "7820"
+    },
+    {
+      "section": "TRequiredContextReference",
+      "field_id": "7830"
+    },
+    {
+      "section": "TRequiredContextReference",
+      "field_id": "7840"
+    },
+    {
+      "section": "TRequiredContextReference",
+      "field_id": "7850"
+    },
+    {
+      "section": "TRequiredContextReference",
+      "field_id": "7855"
+    },
+    {
+      "section": "TRequiredContextReference",
+      "field_id": "7860"
+    }
+  ],
+  "notes": [
+    {
+      "section": "TActivity",
+      "field_id": "135",
+      "status": "needs_expert_review",
+      "reason_zh": "继承深度的父层数定义与地理／时间／情景类型说明之间关系未明确；正文保留原定义及0–3含义，不自行推断父链。",
+      "recommendation_zh": "依据继承专门规范确认各层级的允许关系。"
+    },
+    {
+      "section": "TActivity",
+      "field_id": "120",
+      "status": "needs_expert_review",
+      "reason_zh": "格式说明的 TTextAndImage 复用段落写 imageUri，官方 XSD 实际元素名为 imageUrl。正文明确区分说明文字与模式标识，未静默改写源文。",
+      "recommendation_zh": "解析采用实际XSD名称，建议官方统一说明命名；同问题涉及195、420、510、630等文本图像字段。"
+    },
+    {
+      "section": "TClassification",
+      "field_id": "300",
+      "status": "needs_expert_review",
+      "reason_zh": "classificationSystem 与 classificationValue 的说明称可选，但完整XSD默认minOccurs=1且HTML表格列为必填。正文并列说明差异。",
+      "recommendation_zh": "实现时区分完整与子模式，并请数据方统一说明中的可选性。"
+    },
+    {
+      "section": "TRequiredContextReference",
+      "field_id": "7850",
+      "status": "needs_expert_review",
+      "reason_zh": "requiredContextId 说明存在省略时回退，但当前完整XSD将其设为required。正文明确交代矛盾，不将回退说明变为可省略的验证规则。",
+      "recommendation_zh": "请确认回退说明是否面向其他模式或早期版本；完整模式校验按XSD执行。"
+    },
+    {
+      "section": "TDataGeneratorAndPublication",
+      "field_id": "3560",
+      "status": "resolved",
+      "reason_zh": "759、757及801是有效旧SpoldID引用，已依据XSD在正文解释对应当前fieldId 3550、3520及3110。",
+      "recommendation_zh": "保持附译表中的原编号，通过明确的映射理解访问条件与来源引用。"
+    },
+    {
+      "section": "TDataGeneratorAndPublication",
+      "field_id": "3562",
+      "status": "needs_expert_review",
+      "reason_zh": "原文及 TCompanyCode 的文字说明要求 7 个大写字母，但 XSD 仅规定 maxLength=7，没有固定长度和字母模式。",
+      "recommendation_zh": "正文已区分文字约定与 XSD 约束；是否另有业务语义验证规则需由数据方确认。"
+    },
+    {
+      "section": "TActivity",
+      "field_id": "130",
+      "status": "resolved",
+      "reason_zh": "补明 EcoSpold02.xsd 中子数据集外层容器仍属于普通命名空间，避免将子类型的命名空间误套在容器元素上。",
+      "recommendation_zh": "已在正文修正或补明。"
+    },
+    {
+      "section": "TDataEntryBy",
+      "field_id": "3403",
+      "status": "resolved",
+      "reason_zh": "明确默认值来自完整数据模式；子模式未设该默认值，省略时先按继承处理。",
+      "recommendation_zh": "已在正文修正或补明。"
+    },
+    {
+      "section": "TDataGeneratorAndPublication",
+      "field_id": "3525",
+      "status": "resolved",
+      "reason_zh": "原文网站情况仅写 last visited，不能擅自缩窄为最后访问年份。",
+      "recommendation_zh": "已在正文修正或补明。"
+    },
+    {
+      "section": "TDataGeneratorAndPublication",
+      "field_id": "3562",
+      "status": "resolved",
+      "reason_zh": "区分文字约定与 TCompanyCode 实際 maxLength=7 约束，不让教程暗示 XSD 强制恰好 7 个字母。",
+      "recommendation_zh": "已在正文修正或补明。"
+    },
+    {
+      "section": "TFileAttributes",
+      "field_id": "3820",
+      "status": "resolved",
+      "reason_zh": "子模式未设 default=en；澄清完整记录的模式默认值与子差异记录的继承。",
+      "recommendation_zh": "已在正文修正或补明。"
+    },
+    {
+      "section": "TRequiredContextReference",
+      "field_id": "7810",
+      "status": "resolved",
+      "reason_zh": "补明官方子类型中的 use=optional 与 minOccurs=0，避免把完整数据模式的要求泛化到子差异记录。",
+      "recommendation_zh": "已在正文修正或补明。"
+    },
+    {
+      "section": "TActivity",
+      "field_id": "110",
+      "status": "needs_expert_review",
+      "reason_zh": "官方 type=2 文字说明称没有中间交换，但本包完整 TFlowData 对 intermediateExchange 的默认 minOccurs=1；教学结果文件以中间交换保留参考输出并通过模式验证。",
+      "recommendation_zh": "正文明确区分产品系统已汇总与 XML 参考输出；真实不同导出形式仍应按来源和实例确认，不能把说明中的绝对句用于文件阶段判定。"
+    }
+  ]
+}

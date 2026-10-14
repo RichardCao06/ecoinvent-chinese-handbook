@@ -1,0 +1,119 @@
+{
+  "author": "translator_a",
+  "status": "passed",
+  "checked_at_utc": "2026-10-14T02:47:53.540454+00:00",
+  "python_version": "3.12.7 | packaged by Anaconda, Inc. | (main, Oct  4 2024, 08:22:19) [Clang 14.0.6 ]",
+  "script_path": "ecoinvent-gitbook/content/ecospold2/demo/query_demo.py",
+  "script_sha256": "edb45ce31768fad8f929ac7d044909db36307325632481f67d7a8703a594118b",
+  "markdown_path": "translation-work/ecospold-article/extraction-queries.md",
+  "markdown_sha256": "7fc61ed902bf535876541466fe5114360ad418bc339e63d1b177e3dc1d83a1c5",
+  "input_sha256": {
+    "extract_ecospold.py": "2be840128ff1c0bf73e1082a283df55a6db8b0013933032fe51196bb676a7c15",
+    "demo-electricity.spold": "18737e0b1ea0ea29003b5fafcad18ba8ca7b7f8fc33b6e9108b6421fa674fec5",
+    "demo-product.spold": "6026093ad3de8482a209a22ad6388f974efd6fd996d7db551b71526878b5eec2",
+    "demo-lcia.spold": "7ed6af657147a09dac91bffd126764b583590496a121624a07e57a691daf4981"
+  },
+  "checks": [
+    "文章仅含一个 Python 代码块，与 query_demo.py 文件内容逐字节对应",
+    "仅使用已写入三个教学 demo 的虚构 UUID；无真实 ecoinvent UUID",
+    "逐条读取 metadata/exchanges/impacts 并以 dataset_key 隔离主 UPR",
+    "电力查询匹配 input、产品 UUID/上下文与单位 UUID/上下文，原量 25、归一化 2.5",
+    "化石 CO₂ 查询完整匹配六项 UUID/有效上下文身份键及基本流 output 分组，两实例 1.5/-0.1 保持 output",
+    "化石 CO₂ Decimal 有符号求和为 1.4、归一化求和 0.14；生物源 0.2 独立排除；供给 UPR 0.5 未混入",
+    "模拟 LCIA 匹配方法/类别/指标三层 UUID/有效上下文及 unitName，读取 13.9/1.39",
+    "检查唯一正参考输出、缺失和多匹配；原量及 normalized_amount 缺失不默认零",
+    "代码使用 Decimal，无 eval 或公式执行，无 pip 依赖",
+    "从 demo 目录及仓库根目录实际运行，输出相同，验证 __file__ 相对文件定位",
+    "正文保持连贯段落，无表格，说明真实数据须确认 UUID、上下文、单位、研究口径和预期记录数量"
+  ],
+  "guard_checks": [
+    {
+      "check": "missing_query_result",
+      "status": "passed",
+      "error": "缺失测试：预期 1 行，实际 0 行；请核对缺失或多匹配"
+    },
+    {
+      "check": "multiple_unique_query_results",
+      "status": "passed",
+      "error": "多匹配测试：预期 1 行，实际 2 行；请核对缺失或多匹配"
+    },
+    {
+      "check": "missing_normalized_amount",
+      "status": "passed",
+      "error": "normalized_amount：数值缺失，不能替换为零"
+    },
+    {
+      "check": "unavailable_normalization",
+      "status": "passed",
+      "error": "没有唯一正参考输出，不能使用 normalized_amount"
+    },
+    {
+      "check": "missing_raw_amount",
+      "status": "passed",
+      "error": "缺失原量：数值缺失，不能替换为零"
+    }
+  ],
+  "runs": [
+    {
+      "cwd": "/Users/shujudagongren/Workspace/ecoinvent-china/ecoinvent-gitbook/content/ecospold2/demo",
+      "command": [
+        "/opt/homebrew/anaconda3/bin/python3",
+        "/Users/shujudagongren/Workspace/ecoinvent-china/ecoinvent-gitbook/content/ecospold2/demo/query_demo.py"
+      ],
+      "exit_code": 0,
+      "stdout": "教学产品基准：10 kg（唯一正参考输出）\n电力 input：25 kWh；normalized_amount=2.5 kWh/kg 教学产品\n化石 CO₂ output 行：amount=1.5 kg；normalized_amount=0.15 kg/kg 教学产品\n化石 CO₂ output 行：amount=-0.1 kg；normalized_amount=-0.01 kg/kg 教学产品\n直接化石 CO₂ 净量：1.4 kg；normalized 净量=0.14 kg/kg 教学产品\n生物源 CO₂ 排除：0.2 kg；未计入化石 CO₂ 净量\n模拟 LCIA 指标：13.9 kg CO2-eq；normalized_amount=1.39 kg CO2-eq/kg 教学产品\n",
+      "stderr": ""
+    },
+    {
+      "cwd": "/Users/shujudagongren/Workspace/ecoinvent-china",
+      "command": [
+        "/opt/homebrew/anaconda3/bin/python3",
+        "/Users/shujudagongren/Workspace/ecoinvent-china/ecoinvent-gitbook/content/ecospold2/demo/query_demo.py"
+      ],
+      "exit_code": 0,
+      "stdout": "教学产品基准：10 kg（唯一正参考输出）\n电力 input：25 kWh；normalized_amount=2.5 kWh/kg 教学产品\n化石 CO₂ output 行：amount=1.5 kg；normalized_amount=0.15 kg/kg 教学产品\n化石 CO₂ output 行：amount=-0.1 kg；normalized_amount=-0.01 kg/kg 教学产品\n直接化石 CO₂ 净量：1.4 kg；normalized 净量=0.14 kg/kg 教学产品\n生物源 CO₂ 排除：0.2 kg；未计入化石 CO₂ 净量\n模拟 LCIA 指标：13.9 kg CO2-eq；normalized_amount=1.39 kg CO2-eq/kg 教学产品\n",
+      "stderr": ""
+    }
+  ],
+  "verified_results": {
+    "reference_output": {
+      "amount": "10",
+      "unit_name": "kg"
+    },
+    "electricity_input": {
+      "amount": "25",
+      "normalized_amount": "2.5",
+      "unit_name": "kWh"
+    },
+    "fossil_co2_outputs": [
+      {
+        "amount": "1.5",
+        "normalized_amount": "0.15",
+        "direction": "output"
+      },
+      {
+        "amount": "-0.1",
+        "normalized_amount": "-0.01",
+        "direction": "output"
+      }
+    ],
+    "fossil_co2_net": {
+      "amount": "1.4",
+      "normalized_amount": "0.14",
+      "unit_name": "kg"
+    },
+    "excluded_biogenic_co2": {
+      "amount": "0.2",
+      "unit_name": "kg"
+    },
+    "synthetic_lcia": {
+      "amount": "13.9",
+      "normalized_amount": "1.39",
+      "unit_name": "kg CO2-eq"
+    }
+  },
+  "notes": [
+    "作者运行核对记录，不代表人工或官方签核。",
+    "教学预期行数及预期数值不能直接作为真实数据库的查询条件。"
+  ]
+}

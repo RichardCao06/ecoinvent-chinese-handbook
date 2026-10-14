@@ -1,0 +1,405 @@
+{
+  "reviewer": "translator_c",
+  "status": "passed_with_notes",
+  "reviewed_fields": [
+    {
+      "section": "TActivity",
+      "field_id": "100"
+    },
+    {
+      "section": "TActivity",
+      "field_id": "102"
+    },
+    {
+      "section": "TActivity",
+      "field_id": "105"
+    },
+    {
+      "section": "TActivity",
+      "field_id": "106"
+    },
+    {
+      "section": "TActivity",
+      "field_id": "110"
+    },
+    {
+      "section": "TActivity",
+      "field_id": "115"
+    },
+    {
+      "section": "TActivity",
+      "field_id": "120"
+    },
+    {
+      "section": "TActivity",
+      "field_id": "130"
+    },
+    {
+      "section": "TActivity",
+      "field_id": "131"
+    },
+    {
+      "section": "TActivity",
+      "field_id": "135"
+    },
+    {
+      "section": "TActivity",
+      "field_id": "145"
+    },
+    {
+      "section": "TActivity",
+      "field_id": "150"
+    },
+    {
+      "section": "TActivity",
+      "field_id": "170"
+    },
+    {
+      "section": "TActivity",
+      "field_id": "175"
+    },
+    {
+      "section": "TActivity",
+      "field_id": "180"
+    },
+    {
+      "section": "TActivity",
+      "field_id": "190"
+    },
+    {
+      "section": "TActivity",
+      "field_id": "191"
+    },
+    {
+      "section": "TActivity",
+      "field_id": "192"
+    },
+    {
+      "section": "TActivity",
+      "field_id": "195"
+    },
+    {
+      "section": "TActivity",
+      "field_id": "200"
+    },
+    {
+      "section": "TClassification",
+      "field_id": "300"
+    },
+    {
+      "section": "TClassification",
+      "field_id": "310"
+    },
+    {
+      "section": "TClassification",
+      "field_id": "320"
+    },
+    {
+      "section": "TClassification",
+      "field_id": "321"
+    },
+    {
+      "section": "TGeography",
+      "field_id": "400"
+    },
+    {
+      "section": "TGeography",
+      "field_id": "401"
+    },
+    {
+      "section": "TGeography",
+      "field_id": "410"
+    },
+    {
+      "section": "TGeography",
+      "field_id": "420"
+    },
+    {
+      "section": "TTechnology",
+      "field_id": "500"
+    },
+    {
+      "section": "TTechnology",
+      "field_id": "510"
+    },
+    {
+      "section": "TTimePeriod",
+      "field_id": "600"
+    },
+    {
+      "section": "TTimePeriod",
+      "field_id": "610"
+    },
+    {
+      "section": "TTimePeriod",
+      "field_id": "620"
+    },
+    {
+      "section": "TTimePeriod",
+      "field_id": "630"
+    },
+    {
+      "section": "TMacroEconomicScenario",
+      "field_id": "700"
+    },
+    {
+      "section": "TMacroEconomicScenario",
+      "field_id": "701"
+    },
+    {
+      "section": "TMacroEconomicScenario",
+      "field_id": "720"
+    },
+    {
+      "section": "TMacroEconomicScenario",
+      "field_id": "740"
+    },
+    {
+      "section": "TDataEntryBy",
+      "field_id": "3400"
+    },
+    {
+      "section": "TDataEntryBy",
+      "field_id": "3401"
+    },
+    {
+      "section": "TDataEntryBy",
+      "field_id": "3403"
+    },
+    {
+      "section": "TDataEntryBy",
+      "field_id": "3405"
+    },
+    {
+      "section": "TDataEntryBy",
+      "field_id": "3406"
+    },
+    {
+      "section": "TDataGeneratorAndPublication",
+      "field_id": "3500"
+    },
+    {
+      "section": "TDataGeneratorAndPublication",
+      "field_id": "3501"
+    },
+    {
+      "section": "TDataGeneratorAndPublication",
+      "field_id": "3505"
+    },
+    {
+      "section": "TDataGeneratorAndPublication",
+      "field_id": "3506"
+    },
+    {
+      "section": "TDataGeneratorAndPublication",
+      "field_id": "3510"
+    },
+    {
+      "section": "TDataGeneratorAndPublication",
+      "field_id": "3520"
+    },
+    {
+      "section": "TDataGeneratorAndPublication",
+      "field_id": "3521"
+    },
+    {
+      "section": "TDataGeneratorAndPublication",
+      "field_id": "3522"
+    },
+    {
+      "section": "TDataGeneratorAndPublication",
+      "field_id": "3525"
+    },
+    {
+      "section": "TDataGeneratorAndPublication",
+      "field_id": "3526"
+    },
+    {
+      "section": "TDataGeneratorAndPublication",
+      "field_id": "3530"
+    },
+    {
+      "section": "TDataGeneratorAndPublication",
+      "field_id": "3540"
+    },
+    {
+      "section": "TDataGeneratorAndPublication",
+      "field_id": "3550"
+    },
+    {
+      "section": "TDataGeneratorAndPublication",
+      "field_id": "3560"
+    },
+    {
+      "section": "TDataGeneratorAndPublication",
+      "field_id": "3561"
+    },
+    {
+      "section": "TDataGeneratorAndPublication",
+      "field_id": "3562"
+    },
+    {
+      "section": "TDataGeneratorAndPublication",
+      "field_id": "3563"
+    },
+    {
+      "section": "TFileAttributes",
+      "field_id": "3800"
+    },
+    {
+      "section": "TFileAttributes",
+      "field_id": "3805"
+    },
+    {
+      "section": "TFileAttributes",
+      "field_id": "3810"
+    },
+    {
+      "section": "TFileAttributes",
+      "field_id": "3815"
+    },
+    {
+      "section": "TFileAttributes",
+      "field_id": "3820"
+    },
+    {
+      "section": "TFileAttributes",
+      "field_id": "3830"
+    },
+    {
+      "section": "TFileAttributes",
+      "field_id": "3840"
+    },
+    {
+      "section": "TFileAttributes",
+      "field_id": "3850"
+    },
+    {
+      "section": "TFileAttributes",
+      "field_id": "3860"
+    },
+    {
+      "section": "TFileAttributes",
+      "field_id": "3870"
+    },
+    {
+      "section": "TFileAttributes",
+      "field_id": "3880"
+    },
+    {
+      "section": "TFileAttributes",
+      "field_id": "3885"
+    },
+    {
+      "section": "TFileAttributes",
+      "field_id": "3890"
+    },
+    {
+      "section": "TRequiredContextReference",
+      "field_id": "7810"
+    },
+    {
+      "section": "TRequiredContextReference",
+      "field_id": "7820"
+    },
+    {
+      "section": "TRequiredContextReference",
+      "field_id": "7830"
+    },
+    {
+      "section": "TRequiredContextReference",
+      "field_id": "7840"
+    },
+    {
+      "section": "TRequiredContextReference",
+      "field_id": "7850"
+    },
+    {
+      "section": "TRequiredContextReference",
+      "field_id": "7855"
+    },
+    {
+      "section": "TRequiredContextReference",
+      "field_id": "7860"
+    }
+  ],
+  "narrative_sha256": "ad173cb81b3a203d6a0b0f78510607c17c326d8268884a9e34420304c020d36a",
+  "corrections": [
+    {
+      "section": "TActivity",
+      "field_ids": [
+        "130"
+      ],
+      "status": "resolved",
+      "before_zh": "官方包同时提供 `EcoSpold02Child` 命名空间及子模式，读取和校验应区分完整记录与差异记录。",
+      "after_zh": "官方包同时提供子模式。这里还要区分元素与类型的命名空间：根元素 `ecoSpold` 及其外层容器 `activityDataset`、`childActivityDataset` 都属于 `http://www.EcoInvent.org/EcoSpold02`；其中 `childActivityDataset` 使用属于 `http://www.EcoInvent.org/EcoSpold02Child` 的 `TActivityDataset` 类型，其内部 `activityDescription` 等元素也属于这个子命名空间。读取和校验应区分完整记录与差异记录，并按元素实际命名空间选择路径。",
+      "reason_zh": "补明 EcoSpold02.xsd 中子数据集外层容器仍属于普通命名空间，避免将子类型的命名空间误套在容器元素上。"
+    },
+    {
+      "section": "TDataEntryBy",
+      "field_ids": [
+        "3403"
+      ],
+      "status": "resolved",
+      "before_zh": "XSD 默认值为 `false`",
+      "after_zh": "完整数据 XSD 的默认值为 `false`",
+      "reason_zh": "明确默认值来自完整数据模式；子模式未设该默认值，省略时先按继承处理。"
+    },
+    {
+      "section": "TDataGeneratorAndPublication",
+      "field_ids": [
+        "3525"
+      ],
+      "status": "resolved",
+      "before_zh": "`publishedSourceYear` 记录出版或沟通年份，对网站记录最后访问年份；",
+      "after_zh": "`publishedSourceYear` 记录出版或沟通年份，对网站记录最后访问时间；原文没有限定网站条目只能写年份，实际类型为 `TBaseString30`。",
+      "reason_zh": "原文网站情况仅写 last visited，不能擅自缩窄为最后访问年份。"
+    },
+    {
+      "section": "TDataGeneratorAndPublication",
+      "field_ids": [
+        "3562"
+      ],
+      "status": "resolved",
+      "before_zh": "`companyCode` 是对应公司的可选 7 字母代码纯文本。",
+      "after_zh": "`companyCode` 是对应公司的可选代码纯文本。原说明称其为 7 字母代码，`TCompanyCode` 的说明还称应使用大写字母，但本版 XSD 的实际约束只有最长 7 个字符，没有固定长度或字母字符模式；因此，通过 XSD 并不等于已经满足这项文字约定。",
+      "reason_zh": "区分文字约定与 TCompanyCode 实際 maxLength=7 约束，不让教程暗示 XSD 强制恰好 7 个字母。"
+    },
+    {
+      "section": "TFileAttributes",
+      "field_ids": [
+        "3820"
+      ],
+      "status": "resolved",
+      "before_zh": "属性 `defaultLanguage` 为多语言字段指定默认语言，省略时为 `en`；",
+      "after_zh": "属性 `defaultLanguage` 为多语言字段指定默认语言，在完整数据 XSD 中省略时为 `en`；子差异文件省略该属性时应先处理继承，不能绕过父值直接取 `en`。",
+      "reason_zh": "子模式未设 default=en；澄清完整记录的模式默认值与子差异记录的继承。"
+    },
+    {
+      "section": "TRequiredContextReference",
+      "field_ids": [
+        "7810",
+        "7820",
+        "7830",
+        "7840",
+        "7850",
+        "7855"
+      ],
+      "status": "resolved",
+      "before_zh": "在实现当前完整模式时，应核对 `use=\"required\"` 的实际要求。",
+      "after_zh": "在实现当前完整模式时，应核对 `use=\"required\"` 的实际要求。另须区分子差异模式：`EcoSpold02ChildDataTypes.xsd` 将 `requiredContextId` 及四个版本属性设为可选，也将 `requiredContextName` 设为可省略；这并不改变完整数据模式的必填要求。读取子记录时仍须结合继承及实际上下文，不能把省略值直接当成一个已经解析成功的主数据引用。",
+      "reason_zh": "补明官方子类型中的 use=optional 与 minOccurs=0，避免把完整数据模式的要求泛化到子差异记录。"
+    },
+    {
+      "section": "TActivity",
+      "field_ids": [
+        "110"
+      ],
+      "status": "resolved",
+      "before_zh": "这种系统记录与单元过程某一特定产品有关的累积生命周期清单及影响结果，已包含沿中间交换链接的全部上游活动，因此自身没有中间交换，只有环境交换和累积影响评价结果。",
+      "after_zh": "这种系统记录与单元过程某一特定产品有关的累积生命周期清单及影响结果，已包含沿中间交换链接的全部上游活动。官方说明将这种产品系统描述为“自身没有中间交换，只有环境交换和累积影响评价结果”，强调上游供应结构已经汇总；但当前完整 XSD 的 `TFlowData` 仍要求至少一个 `intermediateExchange`，因为该元素的 `minOccurs` 未显式设置，默认值为 `1`。教学结果文件用这个元素承载参考输出，而不保留上游电力输入。因此，不能以是否存在任意中间交换判断 UPR，也不能仅凭 `type=2` 确认某份文件已提供 LCIA。这个说明与模式之间的差异需要保留；各种真实 LCI、LCIA 导出的具体内容仍须结合其来源和文件核对。",
+      "reason_zh": "修正教程对 type=2 不含任何中间交换的无条件断言；明确原文与当前完整 XSD 差异，并保留待数据方确认的实际导出限制。"
+    }
+  ],
+  "summary_zh": "逐段核对全部 10 章、80 字段及相应原文段落，并直接检查 EcoSpold02.xsd、完整与子活动模式、MetaInformation 与 DataTypes 的实际定义。UUID 对象与上下文引用、全部特殊活动枚举、地理及时间边界、分配公式、继承替换与显式删除、版权及访问权限、主发布号与数据集修订号含义均吻合。完成 6 处修正或模式适用范围澄清：子容器命名空间、isActiveAuthor 默认值适用完整模式、网站最后访问时间、公司代码模式约束、defaultLanguage 子数据集继承、requiredContext 子模式可选性。原有 inheritanceDepth 语义、imageUri/imageUrl 命名、分类可选与必填、requiredContextId 回退与完整模式必填疑点仍明确保留；补充公司代码文字约定与 XSD 限制差异。80 项 coverage 完整保留，正文持续采用自然段，无表格或字段卡片。本记录为代理独立交叉审校，不代表人工或官方签核。追加修正 type=2 的绝对无中间交换表述：官方文字仍留痕，但完整模式要求至少一个 intermediateExchange，教学结果以其承载参考输出；不能据任意中间交换或 type 数字单独断定 UPR/LCIA。"
+}

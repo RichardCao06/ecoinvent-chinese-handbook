@@ -1,0 +1,58 @@
+{
+  "reviewer": "translator_c",
+  "status": "passed_with_notes",
+  "files": {
+    "opening.md": "a4720bfc0232465929889454f24ce7e5e1221f8280251ef8ad2cdfed6d3112d5",
+    "practice.md": "98bf29d8933cacf3adde36567b69932b5f9a66a6a5aa20016ac9559f82fd9bb8"
+  },
+  "corrections": [
+    {
+      "file": "opening.md",
+      "status": "resolved",
+      "before_zh": "它们按所附 XSD 检查 XML 结构，并以注释明确标识来源。",
+      "after_zh": "它们以注释明确标识来源；所附 XSD 用于检查 XML 结构，实际校验和运行状态以配套审阅记录为准。",
+      "reason_zh": "本次独立审閱时 demo 的实际校验与运行尚未核验，不提前断言已通过。"
+    },
+    {
+      "file": "opening.md",
+      "status": "resolved",
+      "before_zh": "主数据流 UUID、上下文、区室、子区室和单位都一致时",
+      "after_zh": "主数据流 UUID 及其有效上下文、区室、子区室及其有效上下文、单位 UUID 及其有效上下文都一致时",
+      "reason_zh": "聚合键需采用各引用实际身份；unitName 相同不足以证明单位身份相同，省略的可选上下文应先回退到已知数据集上下文。"
+    },
+    {
+      "file": "opening.md",
+      "status": "resolved",
+      "before_zh": "同时读 `impactMethodId`、`impactCategoryId`、`impactIndicatorId`，对应的名称，以及 `amount` 和 `unitName`。",
+      "after_zh": "同时读 `impactMethodId`、`impactCategoryId`、`impactIndicatorId` 及其各自的 `impactMethodContextId`、`impactCategoryContextId`、`impactIndicatorContextId`，对应的名称，以及 `amount` 和 `unitName`。本版 `TImpactIndicatorResult` 没有 `unitId` 或 `unitContextId` 属性，因此单位应结合指标主数据定义核对，不能照搬交换字段的单位 UUID 路径。可选上下文省略时按规范采用数据集上下文；若数据集上下文也不可知，应保留尚未解析的身份状态。",
+      "reason_zh": "方法、类别和指标的身份由 UUID 与有效上下文共同限定；影响结果只有 unitName，没有交换所用的 unitId/unitContextId，单位须结合指标主数据核对。"
+    },
+    {
+      "file": "practice.md",
+      "status": "resolved",
+      "before_zh": "    if exchange.findtext(\"es:outputGroup\", default=\"\", namespaces=ns) == \"0\":\n        reference_rows.append(exchange)",
+      "after_zh": "    group_text = exchange.findtext(\"es:outputGroup\", namespaces=ns)\n    if group_text is not None and int(group_text) == 0:\n        reference_rows.append(exchange)",
+      "reason_zh": "outputGroup 是整数，XML 合法词法允许空白、+0 或 00；不能仅用原始文本等于字符串 0 判定参考输出。"
+    },
+    {
+      "file": "practice.md",
+      "status": "resolved",
+      "before_zh": "匹配其主数据 UUID、上下文、区室、子区室和单位，并保留正负记录。",
+      "after_zh": "匹配其基本流主数据 UUID 及有效上下文、区室、子区室及其有效上下文，以及单位 UUID 及有效上下文，并保留正负记录。",
+      "reason_zh": "补明聚合单位和子区室引用身份，避免只按单位显示文本合并。"
+    },
+    {
+      "file": "practice.md",
+      "status": "resolved",
+      "before_zh": "本文的 demo 与提取例子经过运行检查；字段叙述完成 AI 交叉审阅。",
+      "after_zh": "字段叙述完成 AI 交叉审阅；demo、提取器和示例代码的实际校验与运行状态，以本文配套的教程审阅记录为准。",
+      "reason_zh": "当前只审閱导读及代码文字，不把尚未进行的实际 demo 执行称为已完成。"
+    },
+    {
+      "file": "opening.md / practice.md",
+      "status": "resolved",
+      "reason_zh": "供应模型与发布版本筛选已修正，实际回归、CLI及示例运行通过，将此前待实测措辞更新为与实际范围一致的完成状态。"
+    }
+  ],
+  "summary_zh": "逐段独立审阅 opening.md 与 practice.md，结合官方 XSD、已有 UPR/LCI/LCIA 与下载说明、已审校字段和三份教学 demo/标准库提取器规格。教学順序由层级与参考量、XML结构、demo读取、字段解释、Python导出到使用场景，连贯且适当。type 不能单独区分 LCI/LCIA、参考量比例不是分配、负 outputGroup 仍为输出、教学 13.9/1.39 不冒充真实 ecoinvent 值等关键口径准确；Decimal 保留缺失与非有限数量、Element 用 is None 判断的短示例正确。完成 6 处修正：实际验证措辞两处；整数分组词法判定一处；污染物流/子区室/单位身份两处；指标上下文身份一处。后续已独立实测修正后的 12 项回归测试、三个 XML 的官方 XSD、UPR/LCIA CLI、原样实践短代码、查询脚本及供应模型/发布版本反例，结果通过；正文验证状态已据实际测试更新。验证范围为教学文件与这些明确测试，不等于所有真实导出的内容或方法认证。"
+}

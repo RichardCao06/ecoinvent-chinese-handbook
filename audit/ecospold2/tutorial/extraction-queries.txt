@@ -1,0 +1,155 @@
+### 把问题变成明确的查询：电力、直接排放和现成影响指标
+
+下面把“拿到自己想要的数据”落实成三个可以运行的查询。先将 `extract_ecospold.py`、`demo-product.spold`、`demo-electricity.spold` 和 `demo-lcia.spold` 放在同一目录，再[下载查询脚本 query_demo.py](demo/query_demo.py)，或将下面完整代码保存为该目录中的 `query_demo.py`。在该目录运行 `python3 query_demo.py` 即可，全部依赖都来自 Python 标准库，无需安装 pip 包。代码通过 `Path(__file__).resolve().parent` 找到同目录文件，因此保存为脚本后，也可以从其他工作目录运行它。
+
+三个文件及代码中的所有 UUID 都是教学构造，不是 ecoinvent 的真实数据或真实对象标识。用于自己的文件时，第一步应读出其元数据和候选记录，确认活动、产品或基本流、区室、单位、系统模型和导出阶段，再从实际 XML 与对应主数据中确认 UUID 及上下文；不能把下面的教学 UUID 直接套在真实数据上。代码中的预期行数和预期数值也是针对教学文件的核对条件，改用自己的文件时，应按研究目标重新定义这些条件。
+
+第一项查询从 `exchanges` 取电力中间交换的 `input` 行，同时匹配产品 UUID、有效上下文及单位 UUID、有效上下文。主 UPR 的参考输出为 10 kg 教学产品，所以电力原量 25 kWh 对应的 `normalized_amount` 是 2.5 kWh/kg 教学产品。代码虽然一起读取了供给电力的教学 UPR，却先以活动 UUID、上下文和唯一 `dataset_key` 限定主产品过程；供给过程自身的排放不会进入本过程的直接排放查询。`kind='upr'` 是我们根据文件来源声明的阶段，不会触发网络计算。
+
+第二项查询取主 UPR 的化石源 CO₂ 基本流 `output`。筛选键包含流 UUID 与有效上下文、子区室 UUID 与有效上下文、单位 UUID 与有效上下文这六项身份信息，另明确要求基本流输出分组。区室的“空气”和子区室的“未指定”由这里选定的子区室主数据身份确定，名称只用于解释。有效上下文指显式引用上下文，或引用属性省略时回退到文件自身上下文；提取器已完成这一步。两个不同交换实例的原量 1.5 和 -0.1 都保持 `output`，方向由分组定义，不能因负号改成输入，也不能取绝对值。按同一完整键汇总，两行净量为 1.4 kg，归一化净量为 0.14 kg/kg 教学产品。生物源 CO₂ 有另一个流 UUID，其 0.2 kg 单独显示并排除在化石源净量之外。这里有意要求恰好两条教学记录；在真实文件中多条同键记录可能是合法的，应保留交换实例，明确汇总口径后再求和，不能无条件只拿第一条或删除重复名称。
+
+第三项查询从 `impacts` 读取现成的模拟 LCIA 指标，逐层匹配方法、类别、指标各自的 UUID 与有效上下文，并核对 `unitName` 为 `kg CO2-eq`。这种指标字段以单位名称记录单位，不应凭空补上交换量所用的单位 UUID。教学文件中的原指标量是 13.9 kg CO2-eq，参考输出同样为 10 kg，归一化量是 1.39 kg CO2-eq/kg 教学产品。它来自文件中已存的 `impactIndicator/@amount`，不是把前面的直接 CO₂ 净量当成任意气候指标，也不是本程序算出了完整 LCIA。
+
+三个查询都先检查结果数量：预期唯一的活动、电力或指标若缺失或多匹配，会明确报错；预期的两条化石记录也核对数量及实例 UUID。没有唯一正参考输出，或 `normalized_amount` 缺失时，代码拒绝给出归一化量。原量和归一化量使用 `Decimal`，求和保留符号，整个代码不执行公式文本。下面的数值检查用于复现教学结果；归一化只是相对于参考输出的算术比例，不能代替分配、继承展开、上游网络求解或影响评价计算。
+
+```python
+#!/usr/bin/env python3
+"""查询教学构造数据；只读已存数值，不执行公式或计算产品系统。"""
+from decimal import Decimal, InvalidOperation, localcontext
+from pathlib import Path
+
+from extract_ecospold import extract
+
+
+# 以下 UUID 全部来自随文教学 demo，不能用于筛选真实 ecoinvent 数据。
+DEMO = Path(__file__).resolve().parent
+CONTEXT = "f71ac544-3bc8-5c15-8ea4-072d907663f1"
+PRODUCT_ACTIVITY = "19d3e06c-2a4a-545d-b368-6470e75e1a27"
+LCIA_ACTIVITY = "fc37834f-30b0-5563-b8f5-16fb8683b395"
+ELECTRICITY = "cf4dd220-d849-5595-92fe-1dac1fcecae7"
+FOSSIL_CO2 = "f420b314-c085-57e7-ba47-5cdfa839e9a3"
+BIOGENIC_CO2 = "d951f598-3f40-57c4-ba76-71df73f1096b"
+AIR_UNSPECIFIED = "6bbb1a41-12de-5599-843e-cc02d4084a9a"
+KG = "a4800e12-54b1-5444-a6d0-b48a59529439"
+KWH = "a5533771-6995-50cd-b03c-7a2af998708e"
+METHOD = "496741dc-72ec-5f95-bedb-078512fde969"
+CATEGORY = "07a7bfca-c863-5fd0-a2bf-24aa3af0d959"
+INDICATOR = "9ce9802d-268d-5ac0-af08-ffca6dc91aa2"
+
+
+def require_count(rows, expected, label):
+    if len(rows) != expected:
+        raise ValueError(f"{label}：预期 {expected} 行，实际 {len(rows)} 行；请核对缺失或多匹配")
+    return rows
+
+
+def quantity(raw, label):
+    if raw is None or str(raw).strip() == "":
+        raise ValueError(f"{label}：数值缺失，不能替换为零")
+    try:
+        value = Decimal(raw)
+    except (InvalidOperation, TypeError, ValueError) as exc:
+        raise ValueError(f"{label}：不是有效十进制数 {raw!r}") from exc
+    if not value.is_finite():
+        raise ValueError(f"{label}：数值必须有限")
+    return value
+
+
+def normalized(row):
+    if row.get("normalization_status") != "unique-positive-reference":
+        raise ValueError("没有唯一正参考输出，不能使用 normalized_amount")
+    return quantity(row.get("normalized_amount"), "normalized_amount")
+
+
+def expect(actual, expected, label):
+    if actual != Decimal(expected):
+        raise ValueError(f"{label}：教学结果应为 {expected}，实际为 {actual}")
+
+
+def dataset_meta(result, activity_id, label):
+    matches = [m for m in result["metadata"]
+               if m["activity_id"] == activity_id and m["context_id"] == CONTEXT]
+    meta = require_count(matches, 1, label)[0]
+    norm = meta["normalization"]
+    if norm["status"] != "unique-positive-reference":
+        raise ValueError(f"{label}：参考输出缺失、多条、零值或负值")
+    expect(quantity(norm["reference_amount"], "参考数量"), "10", label + "参考数量")
+    refs = [r for r in result["exchanges"]
+            if r["dataset_key"] == meta["dataset_key"]
+            and r["exchange_id"] == norm["reference_exchange_id"]]
+    ref = require_count(refs, 1, "参考交换实例")[0]
+    if (ref["unit_id"], ref["unit_context_id"], ref["unit_name"]) != (KG, CONTEXT, "kg"):
+        raise ValueError("教学参考输出的单位应为指定上下文的 kg")
+    return meta
+
+
+def elementary_key(row):
+    # 三个对象各用 UUID + 有效上下文；有效上下文已由提取器处理省略回退。
+    return (row["flow_id"], row["flow_context_id"],
+            row["subcompartment_id"], row["subcompartment_context_id"],
+            row["unit_id"], row["unit_context_id"])
+
+
+def main():
+    upr = extract([DEMO / "demo-product.spold", DEMO / "demo-electricity.spold"],
+                  language="zh", kind="upr")
+    meta = dataset_meta(upr, PRODUCT_ACTIVITY, "教学产品 UPR")
+    # 限定主 UPR，供应过程的直接排放不混入本过程直接排放。
+    rows = [r for r in upr["exchanges"] if r["dataset_key"] == meta["dataset_key"]]
+    print("教学产品基准：10 kg（唯一正参考输出）")
+
+    electricity = [r for r in rows if r["exchange_kind"] == "intermediateExchange"
+                   and r["direction"] == "input"
+                   and (r["flow_id"], r["flow_context_id"], r["unit_id"], r["unit_context_id"])
+                   == (ELECTRICITY, CONTEXT, KWH, CONTEXT)]
+    power = require_count(electricity, 1, "指定电力输入")[0]
+    expect(quantity(power["amount"], "电力原量"), "25", "电力原量")
+    expect(normalized(power), "2.5", "电力归一化量")
+    print(f"电力 input：{power['amount']} kWh；normalized_amount={normalized(power)} kWh/kg 教学产品")
+
+    fossil_key = (FOSSIL_CO2, CONTEXT, AIR_UNSPECIFIED, CONTEXT, KG, CONTEXT)
+    fossil = [r for r in rows if r["exchange_kind"] == "elementaryExchange"
+              and r["direction"] == "output" and r["group_code"] == 4
+              and elementary_key(r) == fossil_key]
+    require_count(fossil, 2, "教学化石 CO₂ 输出记录")
+    if len({r["exchange_id"] for r in fossil}) != 2:
+        raise ValueError("化石 CO₂ 的交换实例 UUID 重复")
+    amounts = [quantity(r["amount"], "化石 CO₂ 原量") for r in fossil]
+    if sorted(amounts) != sorted([Decimal("1.5"), Decimal("-0.1")]):
+        raise ValueError("教学化石 CO₂ 应保留 1.5 和 -0.1 两行，不改负号或方向")
+    with localcontext() as ctx:
+        ctx.prec = 50
+        net = sum(amounts, Decimal("0"))
+        net_normalized = sum((normalized(r) for r in fossil), Decimal("0"))
+    expect(net, "1.4", "化石 CO₂ 净量")
+    expect(net_normalized, "0.14", "化石 CO₂ 归一化净量")
+    for r in fossil:
+        print(f"化石 CO₂ {r['direction']} 行：amount={r['amount']} kg；normalized_amount={normalized(r)} kg/kg 教学产品")
+    print(f"直接化石 CO₂ 净量：{net} kg；normalized 净量={net_normalized} kg/kg 教学产品")
+
+    bio_key = (BIOGENIC_CO2, CONTEXT, AIR_UNSPECIFIED, CONTEXT, KG, CONTEXT)
+    bio = require_count([r for r in rows if r["exchange_kind"] == "elementaryExchange"
+                         and r["direction"] == "output" and elementary_key(r) == bio_key],
+                        1, "教学生物源 CO₂ 输出")[0]
+    expect(quantity(bio["amount"], "生物源 CO₂"), "0.2", "生物源 CO₂")
+    print(f"生物源 CO₂ 排除：{bio['amount']} kg；未计入化石 CO₂ 净量")
+
+    lcia = extract([DEMO / "demo-lcia.spold"], language="zh", kind="lcia")
+    lcia_meta = dataset_meta(lcia, LCIA_ACTIVITY, "教学模拟 LCIA")
+    impact_key = (METHOD, CONTEXT, CATEGORY, CONTEXT, INDICATOR, CONTEXT, "kg CO2-eq")
+    impacts = [r for r in lcia["impacts"] if r["dataset_key"] == lcia_meta["dataset_key"]
+               and (r["impactMethodId"], r["impactMethodContextId"],
+                    r["impactCategoryId"], r["impactCategoryContextId"],
+                    r["impactIndicatorId"], r["impactIndicatorContextId"], r["unit_name"])
+               == impact_key]
+    impact = require_count(impacts, 1, "指定方法/类别/指标及单位")[0]
+    expect(quantity(impact["amount"], "模拟 LCIA 原量"), "13.9", "模拟 LCIA 原量")
+    expect(normalized(impact), "1.39", "模拟 LCIA 归一化量")
+    print(f"模拟 LCIA 指标：{impact['amount']} {impact['unit_name']}；normalized_amount={normalized(impact)} kg CO2-eq/kg 教学产品")
+
+
+if __name__ == "__main__":
+    main()
+```
+
+运行后，电力查询显示 `25` 和 `2.5`；两条化石 CO₂ 输出分别显示原量 `1.5`、`-0.1` 以及归一化量 `0.15`、`-0.01`，净量为 `1.4` 和 `0.14`；生物源 `0.2` 明确排除；模拟 LCIA 显示 `13.9` 和 `1.39`。保留这些原行、筛选键及参考输出，才可以解释这个数从哪个过程、哪类流和哪个基准而来。

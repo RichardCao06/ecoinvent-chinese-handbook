@@ -1,0 +1,360 @@
+{
+  "notice_zh": "全部 XML、UUID、活动、流和指标均为教学构造，非真实 ecoinvent 数据；数值仅演示格式读取与算术比例。",
+  "api": {
+    "extract": "extract(paths, language=\"zh\", kind=\"unknown\") -> dict",
+    "discover": "discover(inputs) -> list[Path]，文件夹递归查找 .xml/.spold 并去重",
+    "write_outputs": "write_outputs(result, out) -> None",
+    "main": "main(argv=None) -> int (0 success, 2 error)"
+  },
+  "counts": {
+    "metadata": 3,
+    "exchanges": 10,
+    "parameters": 1,
+    "properties": 1,
+    "impacts": 1,
+    "uncertainty": 1,
+    "supplier-links": 1
+  },
+  "csv_columns": {
+    "exchanges": [
+      "dataset_key",
+      "activity_id",
+      "context_id",
+      "record_index",
+      "name",
+      "names",
+      "amount",
+      "unit_name",
+      "unit_names",
+      "unit_id",
+      "unit_context_id",
+      "xml_attributes",
+      "raw_children",
+      "exchange_kind",
+      "exchange_id",
+      "flow_id",
+      "flow_context_id",
+      "direction",
+      "group",
+      "group_code",
+      "activity_link_id",
+      "activity_link_context_id",
+      "production_volume_amount",
+      "compartment",
+      "subcompartment",
+      "subcompartment_id",
+      "subcompartment_context_id",
+      "normalization_status",
+      "normalized_amount"
+    ],
+    "parameters": [
+      "dataset_key",
+      "activity_id",
+      "context_id",
+      "record_index",
+      "name",
+      "names",
+      "amount",
+      "unit_name",
+      "unit_names",
+      "unit_id",
+      "unit_context_id",
+      "xml_attributes",
+      "raw_children",
+      "parameter_id",
+      "parameter_context_id",
+      "variable_name"
+    ],
+    "properties": [
+      "dataset_key",
+      "activity_id",
+      "context_id",
+      "record_index",
+      "name",
+      "names",
+      "amount",
+      "unit_name",
+      "unit_names",
+      "unit_id",
+      "unit_context_id",
+      "xml_attributes",
+      "raw_children",
+      "exchange_id",
+      "property_id",
+      "property_context_id"
+    ],
+    "impacts": [
+      "dataset_key",
+      "activity_id",
+      "context_id",
+      "record_index",
+      "name",
+      "names",
+      "amount",
+      "unit_name",
+      "unit_names",
+      "unit_id",
+      "unit_context_id",
+      "xml_attributes",
+      "raw_children",
+      "impactMethodId",
+      "impactMethodContextId",
+      "impactCategoryId",
+      "impactCategoryContextId",
+      "impactIndicatorId",
+      "impactIndicatorContextId",
+      "impact_method_names",
+      "impact_category_names",
+      "normalization_status",
+      "normalized_amount"
+    ]
+  },
+  "metadata_fields": [
+    "dataset_key",
+    "file",
+    "dataset_index",
+    "activity_id",
+    "activity_type",
+    "kind",
+    "context_id",
+    "default_language",
+    "name",
+    "names",
+    "geography",
+    "time_period",
+    "system_model",
+    "database_release",
+    "dataset_revision",
+    "raw_sections",
+    "normalization"
+  ],
+  "metadata_sample_without_raw_sections": {
+    "dataset_key": "content/ecospold2/demo/demo-electricity.spold#0",
+    "file": "content/ecospold2/demo/demo-electricity.spold",
+    "dataset_index": 0,
+    "activity_id": "44be1818-16fc-56f4-a988-9306a39129df",
+    "activity_type": "1",
+    "kind": "unknown",
+    "context_id": "f71ac544-3bc8-5c15-8ea4-072d907663f1",
+    "default_language": "zh",
+    "name": "教学电力单元过程",
+    "names": [
+      {
+        "language": "zh",
+        "text": "教学电力单元过程",
+        "attributes": {
+          "{http://www.w3.org/XML/1998/namespace}lang": "zh"
+        }
+      },
+      {
+        "language": "en",
+        "text": "Teaching electricity unit process",
+        "attributes": {
+          "{http://www.w3.org/XML/1998/namespace}lang": "en"
+        }
+      }
+    ],
+    "geography": {
+      "attributes": {
+        "geographyId": "a099d998-acea-50db-a416-a5eaeaf6eb23",
+        "geographyContextId": "f71ac544-3bc8-5c15-8ea4-072d907663f1"
+      },
+      "shortnames": [
+        {
+          "language": "zh",
+          "text": "教学区域（虚构）",
+          "attributes": {
+            "{http://www.w3.org/XML/1998/namespace}lang": "zh"
+          }
+        },
+        {
+          "language": "en",
+          "text": "Teaching region (synthetic)",
+          "attributes": {
+            "{http://www.w3.org/XML/1998/namespace}lang": "en"
+          }
+        }
+      ]
+    },
+    "time_period": {
+      "startDate": "2025-01-01",
+      "endDate": "2025-12-31",
+      "isDataValidForEntirePeriod": "true"
+    },
+    "system_model": {
+      "id": "a381359e-f5e9-58f7-90b2-e0f2251938a1",
+      "context_id": "f71ac544-3bc8-5c15-8ea4-072d907663f1",
+      "attributes": {
+        "systemModelId": "a381359e-f5e9-58f7-90b2-e0f2251938a1",
+        "systemModelContextId": "f71ac544-3bc8-5c15-8ea4-072d907663f1"
+      },
+      "names": [
+        {
+          "language": "zh",
+          "text": "教学约定系统（非官方模型）",
+          "attributes": {
+            "{http://www.w3.org/XML/1998/namespace}lang": "zh"
+          }
+        },
+        {
+          "language": "en",
+          "text": "Teaching convention (not an official model)",
+          "attributes": {
+            "{http://www.w3.org/XML/1998/namespace}lang": "en"
+          }
+        }
+      ]
+    },
+    "database_release": {
+      "major_release": 1,
+      "minor_release": 0,
+      "raw_major_release": "1",
+      "raw_minor_release": "0"
+    },
+    "dataset_revision": {
+      "major_revision": "1",
+      "minor_revision": "1"
+    },
+    "normalization": {
+      "status": "unique-positive-reference",
+      "reference_exchange_id": "a11f9334-8f0c-5f03-8d7a-c6f2aaae9fd1",
+      "reference_amount": "1",
+      "reference_unit_id": "a5533771-6995-50cd-b03c-7a2af998708e",
+      "decimal_precision": 50,
+      "scope": "Arithmetic ratio only; no allocation or LCI/LCIA calculation."
+    }
+  },
+  "exchange_identity_key": [
+    "flow_id",
+    "flow_context_id",
+    "subcompartment_id",
+    "subcompartment_context_id",
+    "unit_id",
+    "unit_context_id"
+  ],
+  "expected": {
+    "product_fossil_output_rows": [
+      {
+        "exchange_id": "8f3bf890-fe29-5b2f-9648-95e9e569b715",
+        "flow_id": "f420b314-c085-57e7-ba47-5cdfa839e9a3",
+        "direction": "output",
+        "amount": "1.5",
+        "normalized_amount": "0.15"
+      },
+      {
+        "exchange_id": "fff82fe6-92c9-5f26-98e2-3b04663bc952",
+        "flow_id": "f420b314-c085-57e7-ba47-5cdfa839e9a3",
+        "direction": "output",
+        "amount": "-0.1",
+        "normalized_amount": "-0.01"
+      }
+    ],
+    "product_direct_fossil_sum": "1.4",
+    "product_direct_fossil_sum_per_kg": "0.14",
+    "electricity_per_kg": "2.5",
+    "water_per_kg": "0.004",
+    "parameter_amount": "2.5",
+    "property_amount": "1",
+    "lcia_amount": "13.9",
+    "lcia_per_kg": "1.39",
+    "supplier_status": "matched"
+  },
+  "supplier_link_sample": {
+    "dataset_key": "content/ecospold2/demo/demo-product.spold#0",
+    "exchange_id": "33697568-a16c-54ea-a6db-8275bf713e20",
+    "activity_link_id": "44be1818-16fc-56f4-a988-9306a39129df",
+    "activity_link_context_id": "f71ac544-3bc8-5c15-8ea4-072d907663f1",
+    "flow_id": "cf4dd220-d849-5595-92fe-1dac1fcecae7",
+    "flow_context_id": "f71ac544-3bc8-5c15-8ea4-072d907663f1",
+    "status": "matched",
+    "candidates": [
+      {
+        "dataset_key": "content/ecospold2/demo/demo-electricity.spold#0",
+        "exchange_id": "a11f9334-8f0c-5f03-8d7a-c6f2aaae9fd1",
+        "amount": "1",
+        "unit_id": "a5533771-6995-50cd-b03c-7a2af998708e",
+        "unit_context_id": "f71ac544-3bc8-5c15-8ea4-072d907663f1",
+        "unit_matches_request": true,
+        "compatibility": "compatible",
+        "compatibility_reasons": [],
+        "metadata": {
+          "activity_id": "44be1818-16fc-56f4-a988-9306a39129df",
+          "context_id": "f71ac544-3bc8-5c15-8ea4-072d907663f1",
+          "system_model": {
+            "id": "a381359e-f5e9-58f7-90b2-e0f2251938a1",
+            "context_id": "f71ac544-3bc8-5c15-8ea4-072d907663f1",
+            "attributes": {
+              "systemModelId": "a381359e-f5e9-58f7-90b2-e0f2251938a1",
+              "systemModelContextId": "f71ac544-3bc8-5c15-8ea4-072d907663f1"
+            },
+            "names": [
+              {
+                "language": "zh",
+                "text": "教学约定系统（非官方模型）",
+                "attributes": {
+                  "{http://www.w3.org/XML/1998/namespace}lang": "zh"
+                }
+              },
+              {
+                "language": "en",
+                "text": "Teaching convention (not an official model)",
+                "attributes": {
+                  "{http://www.w3.org/XML/1998/namespace}lang": "en"
+                }
+              }
+            ]
+          },
+          "database_release": {
+            "major_release": 1,
+            "minor_release": 0,
+            "raw_major_release": "1",
+            "raw_minor_release": "0"
+          },
+          "dataset_revision": {
+            "major_revision": "1",
+            "minor_revision": "1"
+          },
+          "geography": {
+            "attributes": {
+              "geographyId": "a099d998-acea-50db-a416-a5eaeaf6eb23",
+              "geographyContextId": "f71ac544-3bc8-5c15-8ea4-072d907663f1"
+            },
+            "shortnames": [
+              {
+                "language": "zh",
+                "text": "教学区域（虚构）",
+                "attributes": {
+                  "{http://www.w3.org/XML/1998/namespace}lang": "zh"
+                }
+              },
+              {
+                "language": "en",
+                "text": "Teaching region (synthetic)",
+                "attributes": {
+                  "{http://www.w3.org/XML/1998/namespace}lang": "en"
+                }
+              }
+            ]
+          },
+          "time_period": {
+            "startDate": "2025-01-01",
+            "endDate": "2025-12-31",
+            "isDataValidForEntirePeriod": "true"
+          }
+        }
+      }
+    ],
+    "scope": "Candidates in this export only; no traversal or network calculation."
+  },
+  "validation_run": {
+    "working_directory": "ecoinvent-gitbook",
+    "command": "python -m unittest discover -s tools -p test_ecospold_tutorial.py -v",
+    "tests_passed": 12,
+    "official_xsd_valid_files": [
+      "demo-product.spold",
+      "demo-electricity.spold",
+      "demo-lcia.spold"
+    ],
+    "note_zh": "该记录来自本次实际运行；提取器标准库，lxml 仅用于 XSD 测试。"
+  }
+}

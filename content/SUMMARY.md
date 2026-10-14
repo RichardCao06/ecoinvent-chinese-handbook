@@ -118,7 +118,7 @@
 
 ## ecoSpold2 XML 字段参考
 
-- [字段参考概览](ecospold2/README.md)
+- [完整教程：读懂 XML 并提取数据](ecospold2/README.md)
   - [阅读约定与 XSD 约束](ecospold2/reading-guide.md)
   - [全部字段索引](ecospold2/field-index.md)
   - [活动描述](ecospold2/activity-description.md)
@@ -148,6 +148,7 @@
     - [数据生成者与发布](ecospold2/publication.md)
     - [文件属性](ecospold2/file-attributes.md)
     - [所需上下文引用](ecospold2/required-contexts.md)
+  - [完整教程的编写与运行审阅](ecospold2/tutorial-review.md)
   - [字段翻译与审校记录](ecospold2/translation-review.md)
 
 ## 参考与审核

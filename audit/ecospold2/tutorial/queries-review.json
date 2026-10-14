@@ -1,0 +1,18 @@
+{
+  "reviewer": "translator_c",
+  "status": "passed",
+  "markdown_sha256": "bdb00887740807ba6cfef6d6c5cffb2b540087fc9e4d528884f58345afc0e5af",
+  "code_sha256": "edb45ce31768fad8f929ac7d044909db36307325632481f67d7a8703a594118b",
+  "summary_zh": "逐段核对三个查询及逐行源码，Markdown 代码与 query_demo.py 完全一致（忽略末尾换行）。查询以唯一 dataset_key 限定主产品过程，电力按产品/上下文/单位身份选输入；化石基本流以六键及输出分组匹配，保留两个交换实例和负号，不混入生物源0.2或供应过程0.5；指标匹配三个UUID各自有效上下文及unitName，没有编造指标单位UUID。参考输出唯一正量及kg单位、缺失/非有限Decimal、多匹配与不执行公式的处理准确。已实跑脚本并核验全部教学输出。修正文中一处 XML 属性路径 impactIndicator/amount 为 impactIndicator/@amount，源码无需修正。",
+  "tests_run": [
+    {
+      "command": "python3 ecoinvent-gitbook/content/ecospold2/demo/query_demo.py",
+      "result": "passed",
+      "expected_zh": "电力25→2.5；化石输出1.5/-0.1→0.15/-0.01；净1.4→0.14；生物源0.2排除；模拟LCIA13.9→1.39。"
+    },
+    {
+      "check": "Markdown Python fenced block equals actual query_demo.py",
+      "result": "passed"
+    }
+  ]
+}

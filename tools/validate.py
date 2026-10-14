@@ -123,6 +123,10 @@ if (ROOT / 'audit/ecospold2/manifest.json').exists():
     from validate_ecospold import validate as validate_ecospold
     report['ecospold2_fields'] = validate_ecospold()
     errors.extend(report['ecospold2_fields']['errors'])
+if (ROOT / 'audit/ecospold2/tutorial/manifest.json').exists():
+    from validate_ecospold_tutorial import validate as validate_ecospold_tutorial
+    report['ecospold2_tutorial'] = validate_ecospold_tutorial()
+    errors.extend(report['ecospold2_tutorial']['errors'])
 print(json.dumps(report, ensure_ascii=False, indent=2))
 if args.snapshot:
     (ROOT / 'audit/validation.json').write_text(json.dumps(report, ensure_ascii=False, indent=2) + '\n')

@@ -1,0 +1,123 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ecoSpold xmlns="http://www.EcoInvent.org/EcoSpold02">
+  <!--教学构造 / Synthetic teaching data. NOT real ecoinvent data. NOT an official impact method.-->
+  <activityDataset>
+    <activityDescription>
+      <activity id="19d3e06c-2a4a-545d-b368-6470e75e1a27" activityNameId="b0ce0613-267e-5be2-82cd-160d5a5d5d4f" type="1" specialActivityType="0">
+        <activityName xml:lang="zh">教学产品单元过程</activityName>
+        <activityName xml:lang="en">Teaching product unit process</activityName>
+        <generalComment>
+          <text index="1" xml:lang="zh">教学构造，非 ecoinvent 真实数据。仅用于格式、读数和算术比例演示。参考数量不是默认1；不据此演示分配、完整LCI或官方LCIA算法。</text>
+          <text index="2" xml:lang="en">Synthetic teaching data, not real ecoinvent data. Format and arithmetic-ratio demonstration only; no allocation or official LCI/LCIA algorithm.</text>
+        </generalComment>
+      </activity>
+      <geography geographyId="a099d998-acea-50db-a416-a5eaeaf6eb23" geographyContextId="f71ac544-3bc8-5c15-8ea4-072d907663f1">
+        <shortname xml:lang="zh">教学区域（虚构）</shortname>
+        <shortname xml:lang="en">Teaching region (synthetic)</shortname>
+      </geography>
+      <technology technologyLevel="3"/>
+      <timePeriod startDate="2025-01-01" endDate="2025-12-31" isDataValidForEntirePeriod="true"/>
+      <macroEconomicScenario macroEconomicScenarioId="0984f81b-aa81-5830-b34b-99b00a49a684">
+        <name xml:lang="zh">教学情景</name>
+        <name xml:lang="en">Teaching scenario</name>
+      </macroEconomicScenario>
+    </activityDescription>
+    <flowData>
+      <intermediateExchange id="b8754d71-a0c7-5b08-a889-67d6f1146d58" amount="10" unitId="a4800e12-54b1-5444-a6d0-b48a59529439" intermediateExchangeId="c5a1fe25-46d4-5646-9d78-5c10b6bfdeae">
+        <name xml:lang="zh">教学产品</name>
+        <name xml:lang="en">Teaching product</name>
+        <unitName xml:lang="zh">kg</unitName>
+        <unitName xml:lang="en">kg</unitName>
+        <property propertyId="157cb588-bc77-5666-9107-3791e5783446" amount="1" unitId="00875264-8155-513e-8182-437026535fcb" isDefiningValue="true">
+          <name xml:lang="zh">干质量（教学比例）</name>
+          <name xml:lang="en">Dry mass (teaching ratio)</name>
+          <unitName xml:lang="zh">kg/kg</unitName>
+          <unitName xml:lang="en">kg/kg</unitName>
+        </property>
+        <outputGroup>0</outputGroup>
+      </intermediateExchange>
+      <intermediateExchange id="33697568-a16c-54ea-a6db-8275bf713e20" amount="25" unitId="a5533771-6995-50cd-b03c-7a2af998708e" intermediateExchangeId="cf4dd220-d849-5595-92fe-1dac1fcecae7" activityLinkId="44be1818-16fc-56f4-a988-9306a39129df" variableName="electricity_use" isCalculatedAmount="true" mathematicalRelation="electricity_intensity * 10">
+        <name xml:lang="zh">教学电力</name>
+        <name xml:lang="en">Teaching electricity</name>
+        <unitName xml:lang="zh">kWh</unitName>
+        <unitName xml:lang="en">kWh</unitName>
+        <uncertainty>
+          <lognormal meanValue="25" mu="3.2188758248682006" variance="0.01" varianceWithPedigreeUncertainty="0.04"/>
+        </uncertainty>
+        <inputGroup>2</inputGroup>
+      </intermediateExchange>
+      <elementaryExchange id="9da6137e-52d1-5c5f-930a-fed238b20968" amount="0.04" unitId="ff547598-1a08-5b8b-904c-a0d8a4d032fd" elementaryExchangeId="376dc400-e4fb-5da8-a2fb-2f8c581892cb">
+        <name xml:lang="zh">水，来自环境（教学）</name>
+        <name xml:lang="en">Water, from environment (synthetic)</name>
+        <unitName xml:lang="zh">m3</unitName>
+        <unitName xml:lang="en">m3</unitName>
+        <compartment subcompartmentId="9bfcfd12-1b84-56cf-8bd8-1abc71a30268">
+          <compartment xml:lang="zh">自然资源</compartment>
+          <compartment xml:lang="en">natural resource</compartment>
+          <subcompartment xml:lang="zh">水</subcompartment>
+          <subcompartment xml:lang="en">in water</subcompartment>
+        </compartment>
+        <inputGroup>4</inputGroup>
+      </elementaryExchange>
+      <elementaryExchange id="8f3bf890-fe29-5b2f-9648-95e9e569b715" amount="1.5" unitId="a4800e12-54b1-5444-a6d0-b48a59529439" elementaryExchangeId="f420b314-c085-57e7-ba47-5cdfa839e9a3" formula="CO2">
+        <name xml:lang="zh">二氧化碳，化石源（教学）</name>
+        <name xml:lang="en">Carbon dioxide, fossil (synthetic)</name>
+        <unitName xml:lang="zh">kg</unitName>
+        <unitName xml:lang="en">kg</unitName>
+        <compartment subcompartmentId="6bbb1a41-12de-5599-843e-cc02d4084a9a">
+          <compartment xml:lang="zh">空气</compartment>
+          <compartment xml:lang="en">air</compartment>
+          <subcompartment xml:lang="zh">未指定</subcompartment>
+          <subcompartment xml:lang="en">unspecified</subcompartment>
+        </compartment>
+        <outputGroup>4</outputGroup>
+      </elementaryExchange>
+      <elementaryExchange id="fff82fe6-92c9-5f26-98e2-3b04663bc952" amount="-0.1" unitId="a4800e12-54b1-5444-a6d0-b48a59529439" elementaryExchangeId="f420b314-c085-57e7-ba47-5cdfa839e9a3" formula="CO2">
+        <name xml:lang="zh">二氧化碳，化石源（教学）</name>
+        <name xml:lang="en">Carbon dioxide, fossil (synthetic)</name>
+        <unitName xml:lang="zh">kg</unitName>
+        <unitName xml:lang="en">kg</unitName>
+        <compartment subcompartmentId="6bbb1a41-12de-5599-843e-cc02d4084a9a">
+          <compartment xml:lang="zh">空气</compartment>
+          <compartment xml:lang="en">air</compartment>
+          <subcompartment xml:lang="zh">未指定</subcompartment>
+          <subcompartment xml:lang="en">unspecified</subcompartment>
+        </compartment>
+        <outputGroup>4</outputGroup>
+      </elementaryExchange>
+      <elementaryExchange id="c0b41e55-61ce-5aad-909d-1d01846e83db" amount="0.2" unitId="a4800e12-54b1-5444-a6d0-b48a59529439" elementaryExchangeId="d951f598-3f40-57c4-ba76-71df73f1096b" formula="CO2">
+        <name xml:lang="zh">二氧化碳，生物源（教学）</name>
+        <name xml:lang="en">Carbon dioxide, biogenic (synthetic)</name>
+        <unitName xml:lang="zh">kg</unitName>
+        <unitName xml:lang="en">kg</unitName>
+        <compartment subcompartmentId="6bbb1a41-12de-5599-843e-cc02d4084a9a">
+          <compartment xml:lang="zh">空气</compartment>
+          <compartment xml:lang="en">air</compartment>
+          <subcompartment xml:lang="zh">未指定</subcompartment>
+          <subcompartment xml:lang="en">unspecified</subcompartment>
+        </compartment>
+        <outputGroup>4</outputGroup>
+      </elementaryExchange>
+      <parameter parameterId="0c72e7c0-a190-5ba6-85ae-0b15236cc19d" amount="2.5" unitId="0489b6ee-11b9-577d-b8e0-1e45b6b2fcc1" variableName="electricity_intensity">
+        <name xml:lang="zh">电力强度（教学）</name>
+        <name xml:lang="en">Electricity intensity (synthetic)</name>
+        <unitName xml:lang="zh">kWh/kg</unitName>
+        <unitName xml:lang="en">kWh/kg</unitName>
+      </parameter>
+    </flowData>
+    <modellingAndValidation>
+      <representativeness systemModelId="a381359e-f5e9-58f7-90b2-e0f2251938a1" systemModelContextId="f71ac544-3bc8-5c15-8ea4-072d907663f1">
+        <systemModelName xml:lang="zh">教学约定系统（非官方模型）</systemModelName>
+        <systemModelName xml:lang="en">Teaching convention (not an official model)</systemModelName>
+      </representativeness>
+    </modellingAndValidation>
+    <administrativeInformation>
+      <dataEntryBy personId="2163e122-88c4-55e7-af84-00947e9b7b0a" personName="Teaching author" personEmail="demo@example.invalid" isActiveAuthor="false"/>
+      <dataGeneratorAndPublication personId="2163e122-88c4-55e7-af84-00947e9b7b0a" personName="Teaching author" personEmail="demo@example.invalid" isCopyrightProtected="false" dataPublishedIn="0" accessRestrictedTo="0"/>
+      <fileAttributes majorRelease="1" minorRelease="0" majorRevision="1" minorRevision="1" internalSchemaVersion="2.0.13" defaultLanguage="zh" creationTimestamp="2025-01-01T00:00:00Z" lastEditTimestamp="2025-01-01T00:00:00Z" fileTimestamp="2025-01-01T00:00:00Z" fileGenerator="Synthetic tutorial generator" contextId="f71ac544-3bc8-5c15-8ea4-072d907663f1">
+        <contextName xml:lang="zh">教学主数据上下文（虚构UUID）</contextName>
+        <contextName xml:lang="en">Teaching master-data context (synthetic UUIDs)</contextName>
+      </fileAttributes>
+    </administrativeInformation>
+  </activityDataset>
+</ecoSpold>
