@@ -2,6 +2,8 @@
 
 电子学习课程、网络研讨会、数据格式和标准资料。
 
+逐字段查询：[ecoSpold2 XML 字段参考](../ecospold2/README.md) · [全部字段索引](../ecospold2/field-index.md)。
+
 来源：[官方主题目录](https://support.ecoinvent.org/resources)
 
 - [从 ecoSpold1 到 ecoSpold2 的变化](../articles/changes-ecospold1-to-ecospold2.md)

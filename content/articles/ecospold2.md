@@ -109,6 +109,10 @@ The ecoSpold2 format introduces the new field “mathematicalRelation” for exc
 
 {% endtabs %}
 
+## 新增中文逐字段参考
+
+官方格式包中 `EcoSpold02.html` 的 **22 个字段分组、243 条字段定义**已整理为[ecoSpold2 XML 字段参考](../ecospold2/README.md)，提供完整中英对照、[字段索引](../ecospold2/field-index.md)、XSD 约束及独立审校记录。此补充部分基于格式包 v1.0.13（XSD version 2.0.13），不替代实际数据版本的模式校验。
+
 ## 翻译与审校注记 <a href="#review-notes" id="review-notes"></a>
 
 - **已处理／已说明 · b0009**：统一指南规定的产量术语。 已将生产量改为产量。 [查看完整记录](../review/issues.md#issue-122)

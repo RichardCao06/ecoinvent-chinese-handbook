@@ -1,0 +1,6050 @@
+{
+  "source_sha256": "3f03c496b83ac15afb08d6e4ea60381603e14b89804324bc465d12c474a605ce",
+  "package_sha256": "0670b9dfe85cf10f608d016d4e0e583204301e7934b01297ca00f747fd5799c1",
+  "source_file": "Format description/EcoSpold02.html",
+  "source_url": "https://support.ecoinvent.org/hubfs/Knowledge%20Base/Resources/Data%20Formats/documentation_on_ecospold2_format.v1.0.13.zip",
+  "sections": 22,
+  "fields": [
+    {
+      "section": "TActivity",
+      "name": "activityName",
+      "field_id": "100",
+      "local_path": "TActivity/activityName",
+      "page": "ecospold2/activity.md",
+      "anchor": "field-100",
+      "metadata": {
+        "type": "TString120",
+        "size": "120",
+        "required": "Yes",
+        "multiple": "No",
+        "multilingual": "Yes",
+        "redundant_master_data": "Yes",
+        "spold1_id": "401-rename"
+      },
+      "source_blocks": [
+        "TActivity.100.description.0"
+      ]
+    },
+    {
+      "section": "TActivity",
+      "name": "@id",
+      "field_id": "102",
+      "local_path": "TActivity/@id",
+      "page": "ecospold2/activity.md",
+      "anchor": "field-102",
+      "metadata": {
+        "type": "TUuid",
+        "size": "36",
+        "required": "Yes",
+        "multiple": "No",
+        "multilingual": "No",
+        "redundant_master_data": "No",
+        "spold1_id": "200-type"
+      },
+      "source_blocks": [
+        "TActivity.102.description.0"
+      ]
+    },
+    {
+      "section": "TActivity",
+      "name": "@activityNameId",
+      "field_id": "105",
+      "local_path": "TActivity/@activityNameId",
+      "page": "ecospold2/activity.md",
+      "anchor": "field-105",
+      "metadata": {
+        "type": "TUuid",
+        "size": "36",
+        "required": "Yes",
+        "multiple": "No",
+        "multilingual": "No",
+        "redundant_master_data": "No",
+        "spold1_id": "new"
+      },
+      "source_blocks": [
+        "TActivity.105.description.0"
+      ]
+    },
+    {
+      "section": "TActivity",
+      "name": "@activityNameContextId",
+      "field_id": "106",
+      "local_path": "TActivity/@activityNameContextId",
+      "page": "ecospold2/activity.md",
+      "anchor": "field-106",
+      "metadata": {
+        "type": "TUuid",
+        "size": "36",
+        "required": "No",
+        "multiple": "No",
+        "multilingual": "No",
+        "redundant_master_data": "No",
+        "spold1_id": "new"
+      },
+      "source_blocks": [
+        "TActivity.106.description.0",
+        "TActivity.106.description.1"
+      ]
+    },
+    {
+      "section": "TActivity",
+      "name": "@type",
+      "field_id": "110",
+      "local_path": "TActivity/@type",
+      "page": "ecospold2/activity.md",
+      "anchor": "field-110",
+      "metadata": {
+        "type": "integer",
+        "size": "",
+        "required": "Yes",
+        "multiple": "No",
+        "multilingual": "No",
+        "redundant_master_data": "No",
+        "spold1_id": "201-type"
+      },
+      "source_blocks": [
+        "TActivity.110.description.0",
+        "TActivity.110.options"
+      ]
+    },
+    {
+      "section": "TActivity",
+      "name": "@specialActivityType",
+      "field_id": "115",
+      "local_path": "TActivity/@specialActivityType",
+      "page": "ecospold2/activity.md",
+      "anchor": "field-115",
+      "metadata": {
+        "type": "integer",
+        "size": "",
+        "required": "Yes",
+        "multiple": "No",
+        "multilingual": "No",
+        "redundant_master_data": "No",
+        "spold1_id": "new"
+      },
+      "source_blocks": [
+        "TActivity.115.description.0",
+        "TActivity.115.options"
+      ]
+    },
+    {
+      "section": "TActivity",
+      "name": "generalComment",
+      "field_id": "120",
+      "local_path": "TActivity/generalComment",
+      "page": "ecospold2/activity.md",
+      "anchor": "field-120",
+      "metadata": {
+        "type": "TTextAndImage",
+        "size": "",
+        "required": "No",
+        "multiple": "No",
+        "multilingual": "Yes",
+        "redundant_master_data": "No",
+        "spold1_id": "492"
+      },
+      "source_blocks": [
+        "TActivity.120.description.0",
+        "TActivity.120.description.1"
+      ]
+    },
+    {
+      "section": "TActivity",
+      "name": "@parentActivityId",
+      "field_id": "130",
+      "local_path": "TActivity/@parentActivityId",
+      "page": "ecospold2/activity.md",
+      "anchor": "field-130",
+      "metadata": {
+        "type": "TUuid",
+        "size": "36",
+        "required": "No",
+        "multiple": "No",
+        "multilingual": "No",
+        "redundant_master_data": "No",
+        "spold1_id": "new"
+      },
+      "source_blocks": [
+        "TActivity.130.description.0",
+        "TActivity.130.description.1",
+        "TActivity.130.description.2",
+        "TActivity.130.description.3",
+        "TActivity.130.description.4",
+        "TActivity.130.description.5",
+        "TActivity.130.description.6",
+        "TActivity.130.description.7"
+      ]
+    },
+    {
+      "section": "TActivity",
+      "name": "@parentActivityContextId",
+      "field_id": "131",
+      "local_path": "TActivity/@parentActivityContextId",
+      "page": "ecospold2/activity.md",
+      "anchor": "field-131",
+      "metadata": {
+        "type": "TUuid",
+        "size": "36",
+        "required": "No",
+        "multiple": "No",
+        "multilingual": "No",
+        "redundant_master_data": "No",
+        "spold1_id": "new"
+      },
+      "source_blocks": [
+        "TActivity.131.description.0",
+        "TActivity.131.description.1"
+      ]
+    },
+    {
+      "section": "TActivity",
+      "name": "@inheritanceDepth",
+      "field_id": "135",
+      "local_path": "TActivity/@inheritanceDepth",
+      "page": "ecospold2/activity.md",
+      "anchor": "field-135",
+      "metadata": {
+        "type": "integer",
+        "size": "",
+        "required": "No",
+        "multiple": "No",
+        "multilingual": "No",
+        "redundant_master_data": "No",
+        "spold1_id": "new"
+      },
+      "source_blocks": [
+        "TActivity.135.description.0"
+      ]
+    },
+    {
+      "section": "TActivity",
+      "name": "includedActivitiesStart",
+      "field_id": "145",
+      "local_path": "TActivity/includedActivitiesStart",
+      "page": "ecospold2/activity.md",
+      "anchor": "field-145",
+      "metadata": {
+        "type": "TString32000",
+        "size": "32000",
+        "required": "No",
+        "multiple": "No",
+        "multilingual": "Yes",
+        "redundant_master_data": "No",
+        "spold1_id": "402-type"
+      },
+      "source_blocks": [
+        "TActivity.145.description.0"
+      ]
+    },
+    {
+      "section": "TActivity",
+      "name": "includedActivitiesEnd",
+      "field_id": "150",
+      "local_path": "TActivity/includedActivitiesEnd",
+      "page": "ecospold2/activity.md",
+      "anchor": "field-150",
+      "metadata": {
+        "type": "TString32000",
+        "size": "32000",
+        "required": "No",
+        "multiple": "No",
+        "multilingual": "Yes",
+        "redundant_master_data": "No",
+        "spold1_id": "402-type"
+      },
+      "source_blocks": [
+        "TActivity.150.description.0"
+      ]
+    },
+    {
+      "section": "TActivity",
+      "name": "synonym",
+      "field_id": "170",
+      "local_path": "TActivity/synonym",
+      "page": "ecospold2/activity.md",
+      "anchor": "field-170",
+      "metadata": {
+        "type": "TSynonym",
+        "size": "80",
+        "required": "No",
+        "multiple": "Yes",
+        "multilingual": "Yes",
+        "redundant_master_data": "No",
+        "spold1_id": "491-type"
+      },
+      "source_blocks": [
+        "TActivity.170.description.0",
+        "TActivity.170.description.1"
+      ]
+    },
+    {
+      "section": "TActivity",
+      "name": "tag",
+      "field_id": "175",
+      "local_path": "TActivity/tag",
+      "page": "ecospold2/activity.md",
+      "anchor": "field-175",
+      "metadata": {
+        "type": "TTag",
+        "size": "40",
+        "required": "No",
+        "multiple": "Yes",
+        "multilingual": "No",
+        "redundant_master_data": "No",
+        "spold1_id": "new"
+      },
+      "source_blocks": [
+        "TActivity.175.description.0"
+      ]
+    },
+    {
+      "section": "TActivity",
+      "name": "@energyValues",
+      "field_id": "180",
+      "local_path": "TActivity/@energyValues",
+      "page": "ecospold2/activity.md",
+      "anchor": "field-180",
+      "metadata": {
+        "type": "integer",
+        "size": "",
+        "required": "No",
+        "multiple": "No",
+        "multilingual": "No",
+        "redundant_master_data": "No",
+        "spold1_id": "203"
+      },
+      "source_blocks": [
+        "TActivity.180.description.0",
+        "TActivity.180.description.1",
+        "TActivity.180.options"
+      ]
+    },
+    {
+      "section": "TActivity",
+      "name": "@masterAllocationPropertyId",
+      "field_id": "190",
+      "local_path": "TActivity/@masterAllocationPropertyId",
+      "page": "ecospold2/activity.md",
+      "anchor": "field-190",
+      "metadata": {
+        "type": "TUuid",
+        "size": "36",
+        "required": "No",
+        "multiple": "No",
+        "multilingual": "No",
+        "redundant_master_data": "No",
+        "spold1_id": "new"
+      },
+      "source_blocks": [
+        "TActivity.190.description.0",
+        "TActivity.190.description.1"
+      ]
+    },
+    {
+      "section": "TActivity",
+      "name": "@masterAllocationPropertyContextId",
+      "field_id": "191",
+      "local_path": "TActivity/@masterAllocationPropertyContextId",
+      "page": "ecospold2/activity.md",
+      "anchor": "field-191",
+      "metadata": {
+        "type": "TUuid",
+        "size": "36",
+        "required": "No",
+        "multiple": "No",
+        "multilingual": "No",
+        "redundant_master_data": "No",
+        "spold1_id": "new"
+      },
+      "source_blocks": [
+        "TActivity.191.description.0",
+        "TActivity.191.description.1"
+      ]
+    },
+    {
+      "section": "TActivity",
+      "name": "@masterAllocationPropertyIdOverwrittenByChild",
+      "field_id": "192",
+      "local_path": "TActivity/@masterAllocationPropertyIdOverwrittenByChild",
+      "page": "ecospold2/activity.md",
+      "anchor": "field-192",
+      "metadata": {
+        "type": "boolean",
+        "size": "",
+        "required": "No",
+        "multiple": "No",
+        "multilingual": "No",
+        "redundant_master_data": "No",
+        "spold1_id": "new"
+      },
+      "source_blocks": [
+        "TActivity.192.description.0"
+      ]
+    },
+    {
+      "section": "TActivity",
+      "name": "allocationComment",
+      "field_id": "195",
+      "local_path": "TActivity/allocationComment",
+      "page": "ecospold2/activity.md",
+      "anchor": "field-195",
+      "metadata": {
+        "type": "TTextAndImage",
+        "size": "",
+        "required": "No",
+        "multiple": "No",
+        "multilingual": "Yes",
+        "redundant_master_data": "No",
+        "spold1_id": "2407"
+      },
+      "source_blocks": [
+        "TActivity.195.description.0",
+        "TActivity.195.description.1"
+      ]
+    },
+    {
+      "section": "TActivity",
+      "name": "@datasetIcon",
+      "field_id": "200",
+      "local_path": "TActivity/@datasetIcon",
+      "page": "ecospold2/activity.md",
+      "anchor": "field-200",
+      "metadata": {
+        "type": "anyURI",
+        "size": "",
+        "required": "No",
+        "multiple": "No",
+        "multilingual": "No",
+        "redundant_master_data": "No",
+        "spold1_id": "new"
+      },
+      "source_blocks": [
+        "TActivity.200.description.0"
+      ]
+    },
+    {
+      "section": "TClassification",
+      "name": "classificationSystem",
+      "field_id": "300",
+      "local_path": "TClassification/classificationSystem",
+      "page": "ecospold2/classification.md",
+      "anchor": "field-300",
+      "metadata": {
+        "type": "TString255",
+        "size": "255",
+        "required": "Yes",
+        "multiple": "No",
+        "multilingual": "Yes",
+        "redundant_master_data": "Yes",
+        "spold1_id": "501"
+      },
+      "source_blocks": [
+        "TClassification.300.description.0"
+      ]
+    },
+    {
+      "section": "TClassification",
+      "name": "classificationValue",
+      "field_id": "310",
+      "local_path": "TClassification/classificationValue",
+      "page": "ecospold2/classification.md",
+      "anchor": "field-310",
+      "metadata": {
+        "type": "TString120",
+        "size": "120",
+        "required": "Yes",
+        "multiple": "No",
+        "multilingual": "Yes",
+        "redundant_master_data": "Yes",
+        "spold1_id": "new"
+      },
+      "source_blocks": [
+        "TClassification.310.description.0"
+      ]
+    },
+    {
+      "section": "TClassification",
+      "name": "@classificationId",
+      "field_id": "320",
+      "local_path": "TClassification/@classificationId",
+      "page": "ecospold2/classification.md",
+      "anchor": "field-320",
+      "metadata": {
+        "type": "TUuid",
+        "size": "36",
+        "required": "Yes",
+        "multiple": "No",
+        "multilingual": "No",
+        "redundant_master_data": "No",
+        "spold1_id": "new"
+      },
+      "source_blocks": [
+        "TClassification.320.description.0"
+      ]
+    },
+    {
+      "section": "TClassification",
+      "name": "@classificationContextId",
+      "field_id": "321",
+      "local_path": "TClassification/@classificationContextId",
+      "page": "ecospold2/classification.md",
+      "anchor": "field-321",
+      "metadata": {
+        "type": "TUuid",
+        "size": "36",
+        "required": "No",
+        "multiple": "No",
+        "multilingual": "No",
+        "redundant_master_data": "No",
+        "spold1_id": "new"
+      },
+      "source_blocks": [
+        "TClassification.321.description.0",
+        "TClassification.321.description.1"
+      ]
+    },
+    {
+      "section": "TGeography",
+      "name": "@geographyId",
+      "field_id": "400",
+      "local_path": "TGeography/@geographyId",
+      "page": "ecospold2/geography.md",
+      "anchor": "field-400",
+      "metadata": {
+        "type": "TUuid",
+        "size": "36",
+        "required": "Yes",
+        "multiple": "No",
+        "multilingual": "No",
+        "redundant_master_data": "No",
+        "spold1_id": "new"
+      },
+      "source_blocks": [
+        "TGeography.400.description.0"
+      ]
+    },
+    {
+      "section": "TGeography",
+      "name": "@geographyContextId",
+      "field_id": "401",
+      "local_path": "TGeography/@geographyContextId",
+      "page": "ecospold2/geography.md",
+      "anchor": "field-401",
+      "metadata": {
+        "type": "TUuid",
+        "size": "36",
+        "required": "No",
+        "multiple": "No",
+        "multilingual": "No",
+        "redundant_master_data": "No",
+        "spold1_id": "new"
+      },
+      "source_blocks": [
+        "TGeography.401.description.0",
+        "TGeography.401.description.1"
+      ]
+    },
+    {
+      "section": "TGeography",
+      "name": "shortname",
+      "field_id": "410",
+      "local_path": "TGeography/shortname",
+      "page": "ecospold2/geography.md",
+      "anchor": "field-410",
+      "metadata": {
+        "type": "TString40",
+        "size": "40",
+        "required": "Yes",
+        "multiple": "No",
+        "multilingual": "Yes",
+        "redundant_master_data": "Yes",
+        "spold1_id": "662"
+      },
+      "source_blocks": [
+        "TGeography.410.description.0"
+      ]
+    },
+    {
+      "section": "TGeography",
+      "name": "comment",
+      "field_id": "420",
+      "local_path": "TGeography/comment",
+      "page": "ecospold2/geography.md",
+      "anchor": "field-420",
+      "metadata": {
+        "type": "TTextAndImage",
+        "size": "",
+        "required": "No",
+        "multiple": "No",
+        "multilingual": "Yes",
+        "redundant_master_data": "No",
+        "spold1_id": "663"
+      },
+      "source_blocks": [
+        "TGeography.420.description.0",
+        "TGeography.420.description.1"
+      ]
+    },
+    {
+      "section": "TTechnology",
+      "name": "@technologyLevel",
+      "field_id": "500",
+      "local_path": "TTechnology/@technologyLevel",
+      "page": "ecospold2/technology.md",
+      "anchor": "field-500",
+      "metadata": {
+        "type": "integer",
+        "size": "",
+        "required": "No",
+        "multiple": "No",
+        "multilingual": "No",
+        "redundant_master_data": "No",
+        "spold1_id": "new"
+      },
+      "source_blocks": [
+        "TTechnology.500.description.0",
+        "TTechnology.500.options"
+      ]
+    },
+    {
+      "section": "TTechnology",
+      "name": "comment",
+      "field_id": "510",
+      "local_path": "TTechnology/comment",
+      "page": "ecospold2/technology.md",
+      "anchor": "field-510",
+      "metadata": {
+        "type": "TTextAndImage",
+        "size": "",
+        "required": "No",
+        "multiple": "No",
+        "multilingual": "Yes",
+        "redundant_master_data": "No",
+        "spold1_id": "692"
+      },
+      "source_blocks": [
+        "TTechnology.510.description.0",
+        "TTechnology.510.description.1"
+      ]
+    },
+    {
+      "section": "TTimePeriod",
+      "name": "@startDate",
+      "field_id": "600",
+      "local_path": "TTimePeriod/@startDate",
+      "page": "ecospold2/time-period.md",
+      "anchor": "field-600",
+      "metadata": {
+        "type": "date",
+        "size": "",
+        "required": "Yes",
+        "multiple": "No",
+        "multilingual": "No",
+        "redundant_master_data": "No",
+        "spold1_id": "601"
+      },
+      "source_blocks": [
+        "TTimePeriod.600.description.0"
+      ]
+    },
+    {
+      "section": "TTimePeriod",
+      "name": "@endDate",
+      "field_id": "610",
+      "local_path": "TTimePeriod/@endDate",
+      "page": "ecospold2/time-period.md",
+      "anchor": "field-610",
+      "metadata": {
+        "type": "date",
+        "size": "",
+        "required": "Yes",
+        "multiple": "No",
+        "multilingual": "No",
+        "redundant_master_data": "No",
+        "spold1_id": "602"
+      },
+      "source_blocks": [
+        "TTimePeriod.610.description.0"
+      ]
+    },
+    {
+      "section": "TTimePeriod",
+      "name": "@isDataValidForEntirePeriod",
+      "field_id": "620",
+      "local_path": "TTimePeriod/@isDataValidForEntirePeriod",
+      "page": "ecospold2/time-period.md",
+      "anchor": "field-620",
+      "metadata": {
+        "type": "boolean",
+        "size": "",
+        "required": "Yes",
+        "multiple": "No",
+        "multilingual": "No",
+        "redundant_master_data": "No",
+        "spold1_id": "603"
+      },
+      "source_blocks": [
+        "TTimePeriod.620.description.0"
+      ]
+    },
+    {
+      "section": "TTimePeriod",
+      "name": "comment",
+      "field_id": "630",
+      "local_path": "TTimePeriod/comment",
+      "page": "ecospold2/time-period.md",
+      "anchor": "field-630",
+      "metadata": {
+        "type": "TTextAndImage",
+        "size": "",
+        "required": "No",
+        "multiple": "No",
+        "multilingual": "Yes",
+        "redundant_master_data": "No",
+        "spold1_id": "611"
+      },
+      "source_blocks": [
+        "TTimePeriod.630.description.0",
+        "TTimePeriod.630.description.1"
+      ]
+    },
+    {
+      "section": "TMacroEconomicScenario",
+      "name": "@macroEconomicScenarioId",
+      "field_id": "700",
+      "local_path": "TMacroEconomicScenario/@macroEconomicScenarioId",
+      "page": "ecospold2/macro-economic-scenario.md",
+      "anchor": "field-700",
+      "metadata": {
+        "type": "TUuid",
+        "size": "36",
+        "required": "Yes",
+        "multiple": "No",
+        "multilingual": "No",
+        "redundant_master_data": "No",
+        "spold1_id": "new"
+      },
+      "source_blocks": [
+        "TMacroEconomicScenario.700.description.0"
+      ]
+    },
+    {
+      "section": "TMacroEconomicScenario",
+      "name": "@macroEconomicScenarioContextId",
+      "field_id": "701",
+      "local_path": "TMacroEconomicScenario/@macroEconomicScenarioContextId",
+      "page": "ecospold2/macro-economic-scenario.md",
+      "anchor": "field-701",
+      "metadata": {
+        "type": "TUuid",
+        "size": "36",
+        "required": "No",
+        "multiple": "No",
+        "multilingual": "No",
+        "redundant_master_data": "No",
+        "spold1_id": "new"
+      },
+      "source_blocks": [
+        "TMacroEconomicScenario.701.description.0"
+      ]
+    },
+    {
+      "section": "TMacroEconomicScenario",
+      "name": "name",
+      "field_id": "720",
+      "local_path": "TMacroEconomicScenario/name",
+      "page": "ecospold2/macro-economic-scenario.md",
+      "anchor": "field-720",
+      "metadata": {
+        "type": "TString80",
+        "size": "80",
+        "required": "Yes",
+        "multiple": "No",
+        "multilingual": "Yes",
+        "redundant_master_data": "Yes",
+        "spold1_id": "new"
+      },
+      "source_blocks": [
+        "TMacroEconomicScenario.720.description.0"
+      ]
+    },
+    {
+      "section": "TMacroEconomicScenario",
+      "name": "comment",
+      "field_id": "740",
+      "local_path": "TMacroEconomicScenario/comment",
+      "page": "ecospold2/macro-economic-scenario.md",
+      "anchor": "field-740",
+      "metadata": {
+        "type": "TString32000",
+        "size": "32000",
+        "required": "No",
+        "multiple": "No",
+        "multilingual": "Yes",
+        "redundant_master_data": "No",
+        "spold1_id": "new"
+      },
+      "source_blocks": [
+        "TMacroEconomicScenario.740.description.0"
+      ]
+    },
+    {
+      "section": "TCustomExchange",
+      "name": "name",
+      "field_id": "1000",
+      "local_path": "TCustomExchange/name",
+      "page": "ecospold2/exchanges.md",
+      "anchor": "field-1000",
+      "metadata": {
+        "type": "TString120",
+        "size": "120",
+        "required": "Yes",
+        "multiple": "No",
+        "multilingual": "Yes",
+        "redundant_master_data": "Yes",
+        "spold1_id": "3702"
+      },
+      "source_blocks": [
+        "TCustomExchange.1000.description.0"
+      ]
+    },
+    {
+      "section": "TCustomExchange",
+      "name": "@id",
+      "field_id": "1005",
+      "local_path": "TCustomExchange/@id",
+      "page": "ecospold2/exchanges.md",
+      "anchor": "field-1005",
+      "metadata": {
+        "type": "TUuid",
+        "size": "36",
+        "required": "Yes",
+        "multiple": "No",
+        "multilingual": "No",
+        "redundant_master_data": "No",
+        "spold1_id": "new"
+      },
+      "source_blocks": [
+        "TCustomExchange.1005.description.0"
+      ]
+    },
+    {
+      "section": "TCustomExchange",
+      "name": "@amount",
+      "field_id": "1020",
+      "local_path": "TCustomExchange/@amount",
+      "page": "ecospold2/exchanges.md",
+      "anchor": "field-1020",
+      "metadata": {
+        "type": "TFloatNumber",
+        "size": "",
+        "required": "Yes",
+        "multiple": "No",
+        "multilingual": "No",
+        "redundant_master_data": "No",
+        "spold1_id": "3707"
+      },
+      "source_blocks": [
+        "TCustomExchange.1020.description.0"
+      ]
+    },
+    {
+      "section": "TCustomExchange",
+      "name": "@unitId",
+      "field_id": "1030",
+      "local_path": "TCustomExchange/@unitId",
+      "page": "ecospold2/exchanges.md",
+      "anchor": "field-1030",
+      "metadata": {
+        "type": "TUuid",
+        "size": "36",
+        "required": "Yes",
+        "multiple": "No",
+        "multilingual": "No",
+        "redundant_master_data": "Yes",
+        "spold1_id": "3706"
+      },
+      "source_blocks": [
+        "TCustomExchange.1030.description.0"
+      ]
+    },
+    {
+      "section": "TCustomExchange",
+      "name": "@unitContextId",
+      "field_id": "1031",
+      "local_path": "TCustomExchange/@unitContextId",
+      "page": "ecospold2/exchanges.md",
+      "anchor": "field-1031",
+      "metadata": {
+        "type": "TUuid",
+        "size": "36",
+        "required": "No",
+        "multiple": "No",
+        "multilingual": "No",
+        "redundant_master_data": "Yes",
+        "spold1_id": "new"
+      },
+      "source_blocks": [
+        "TCustomExchange.1031.description.0",
+        "TCustomExchange.1031.description.1"
+      ]
+    },
+    {
+      "section": "TCustomExchange",
+      "name": "unitName",
+      "field_id": "1035",
+      "local_path": "TCustomExchange/unitName",
+      "page": "ecospold2/exchanges.md",
+      "anchor": "field-1035",
+      "metadata": {
+        "type": "TString40",
+        "size": "40",
+        "required": "Yes",
+        "multiple": "No",
+        "multilingual": "Yes",
+        "redundant_master_data": "Yes",
+        "spold1_id": "3706"
+      },
+      "source_blocks": [
+        "TCustomExchange.1035.description.0"
+      ]
+    },
+    {
+      "section": "TCustomExchange",
+      "name": "@variableName",
+      "field_id": "1040",
+      "local_path": "TCustomExchange/@variableName",
+      "page": "ecospold2/exchanges.md",
+      "anchor": "field-1040",
+      "metadata": {
+        "type": "TVariableName",
+        "size": "40",
+        "required": "No",
+        "multiple": "No",
+        "multilingual": "No",
+        "redundant_master_data": "No",
+        "spold1_id": "new"
+      },
+      "source_blocks": [
+        "TCustomExchange.1040.description.0"
+      ]
+    },
+    {
+      "section": "TCustomExchange",
+      "name": "@isCalculatedAmount",
+      "field_id": "1050",
+      "local_path": "TCustomExchange/@isCalculatedAmount",
+      "page": "ecospold2/exchanges.md",
+      "anchor": "field-1050",
+      "metadata": {
+        "type": "boolean",
+        "size": "",
+        "required": "No",
+        "multiple": "No",
+        "multilingual": "No",
+        "redundant_master_data": "No",
+        "spold1_id": "new"
+      },
+      "source_blocks": [
+        "TCustomExchange.1050.description.0"
+      ]
+    },
+    {
+      "section": "TCustomExchange",
+      "name": "@mathematicalRelation",
+      "field_id": "1060",
+      "local_path": "TCustomExchange/@mathematicalRelation",
+      "page": "ecospold2/exchanges.md",
+      "anchor": "field-1060",
+      "metadata": {
+        "type": "TBaseString32000",
+        "size": "32000",
+        "required": "No",
+        "multiple": "No",
+        "multilingual": "No",
+        "redundant_master_data": "No",
+        "spold1_id": "new"
+      },
+      "source_blocks": [
+        "TCustomExchange.1060.description.0",
+        "TCustomExchange.1060.description.1"
+      ]
+    },
+    {
+      "section": "TCustomExchange",
+      "name": "@casNumber",
+      "field_id": "1100",
+      "local_path": "TCustomExchange/@casNumber",
+      "page": "ecospold2/exchanges.md",
+      "anchor": "field-1100",
+      "metadata": {
+        "type": "TCasNumber",
+        "size": "11",
+        "required": "No",
+        "multiple": "No",
+        "multilingual": "No",
+        "redundant_master_data": "Yes",
+        "spold1_id": "3701"
+      },
+      "source_blocks": [
+        "TCustomExchange.1100.description.0"
+      ]
+    },
+    {
+      "section": "TCustomExchange",
+      "name": "comment",
+      "field_id": "1110",
+      "local_path": "TCustomExchange/comment",
+      "page": "ecospold2/exchanges.md",
+      "anchor": "field-1110",
+      "metadata": {
+        "type": "TString32000",
+        "size": "32000",
+        "required": "No",
+        "multiple": "No",
+        "multilingual": "Yes",
+        "redundant_master_data": "No",
+        "spold1_id": "3792"
+      },
+      "source_blocks": [
+        "TCustomExchange.1110.description.0"
+      ]
+    },
+    {
+      "section": "TCustomExchange",
+      "name": "@sourceId",
+      "field_id": "1120",
+      "local_path": "TCustomExchange/@sourceId",
+      "page": "ecospold2/exchanges.md",
+      "anchor": "field-1120",
+      "metadata": {
+        "type": "TUuid",
+        "size": "36",
+        "required": "No",
+        "multiple": "No",
+        "multilingual": "No",
+        "redundant_master_data": "No",
+        "spold1_id": "3715"
+      },
+      "source_blocks": [
+        "TCustomExchange.1120.description.0",
+        "TCustomExchange.1120.options"
+      ]
+    },
+    {
+      "section": "TCustomExchange",
+      "name": "@sourceContextId",
+      "field_id": "1121",
+      "local_path": "TCustomExchange/@sourceContextId",
+      "page": "ecospold2/exchanges.md",
+      "anchor": "field-1121",
+      "metadata": {
+        "type": "TUuid",
+        "size": "36",
+        "required": "No",
+        "multiple": "No",
+        "multilingual": "No",
+        "redundant_master_data": "No",
+        "spold1_id": "new"
+      },
+      "source_blocks": [
+        "TCustomExchange.1121.description.0",
+        "TCustomExchange.1121.description.1"
+      ]
+    },
+    {
+      "section": "TCustomExchange",
+      "name": "@sourceIdOverwrittenByChild",
+      "field_id": "1122",
+      "local_path": "TCustomExchange/@sourceIdOverwrittenByChild",
+      "page": "ecospold2/exchanges.md",
+      "anchor": "field-1122",
+      "metadata": {
+        "type": "boolean",
+        "size": "",
+        "required": "No",
+        "multiple": "No",
+        "multilingual": "No",
+        "redundant_master_data": "No",
+        "spold1_id": "new"
+      },
+      "source_blocks": [
+        "TCustomExchange.1122.description.0"
+      ]
+    },
+    {
+      "section": "TCustomExchange",
+      "name": "@sourceYear",
+      "field_id": "1125",
+      "local_path": "TCustomExchange/@sourceYear",
+      "page": "ecospold2/exchanges.md",
+      "anchor": "field-1125",
+      "metadata": {
+        "type": "TBaseString30",
+        "size": "30",
+        "required": "No",
+        "multiple": "No",
+        "multilingual": "No",
+        "redundant_master_data": "Yes",
+        "spold1_id": "new"
+      },
+      "source_blocks": [
+        "TCustomExchange.1125.description.0"
+      ]
+    },
+    {
+      "section": "TCustomExchange",
+      "name": "@sourceFirstAuthor",
+      "field_id": "1126",
+      "local_path": "TCustomExchange/@sourceFirstAuthor",
+      "page": "ecospold2/exchanges.md",
+      "anchor": "field-1126",
+      "metadata": {
+        "type": "TBaseString40",
+        "size": "40",
+        "required": "No",
+        "multiple": "No",
+        "multilingual": "No",
+        "redundant_master_data": "Yes",
+        "spold1_id": "new"
+      },
+      "source_blocks": [
+        "TCustomExchange.1126.description.0"
+      ]
+    },
+    {
+      "section": "TCustomExchange",
+      "name": "@pageNumbers",
+      "field_id": "1130",
+      "local_path": "TCustomExchange/@pageNumbers",
+      "page": "ecospold2/exchanges.md",
+      "anchor": "field-1130",
+      "metadata": {
+        "type": "TBaseString30",
+        "size": "30",
+        "required": "No",
+        "multiple": "No",
+        "multilingual": "No",
+        "redundant_master_data": "No",
+        "spold1_id": "3716"
+      },
+      "source_blocks": [
+        "TCustomExchange.1130.description.0"
+      ]
+    },
+    {
+      "section": "TCustomExchange",
+      "name": "@specificAllocationPropertyId",
+      "field_id": "1150",
+      "local_path": "TCustomExchange/@specificAllocationPropertyId",
+      "page": "ecospold2/exchanges.md",
+      "anchor": "field-1150",
+      "metadata": {
+        "type": "TUuid",
+        "size": "36",
+        "required": "No",
+        "multiple": "No",
+        "multilingual": "No",
+        "redundant_master_data": "No",
+        "spold1_id": "new"
+      },
+      "source_blocks": [
+        "TCustomExchange.1150.description.0"
+      ]
+    },
+    {
+      "section": "TCustomExchange",
+      "name": "@specificAllocationPropertyContextId",
+      "field_id": "1151",
+      "local_path": "TCustomExchange/@specificAllocationPropertyContextId",
+      "page": "ecospold2/exchanges.md",
+      "anchor": "field-1151",
+      "metadata": {
+        "type": "TUuid",
+        "size": "36",
+        "required": "No",
+        "multiple": "No",
+        "multilingual": "No",
+        "redundant_master_data": "No",
+        "spold1_id": "new"
+      },
+      "source_blocks": [
+        "TCustomExchange.1151.description.0",
+        "TCustomExchange.1151.description.1"
+      ]
+    },
+    {
+      "section": "TCustomExchange",
+      "name": "@specificAllocationPropertyIdOverwrittenByChild",
+      "field_id": "1152",
+      "local_path": "TCustomExchange/@specificAllocationPropertyIdOverwrittenByChild",
+      "page": "ecospold2/exchanges.md",
+      "anchor": "field-1152",
+      "metadata": {
+        "type": "boolean",
+        "size": "",
+        "required": "No",
+        "multiple": "No",
+        "multilingual": "No",
+        "redundant_master_data": "No",
+        "spold1_id": "new"
+      },
+      "source_blocks": [
+        "TCustomExchange.1152.description.0"
+      ]
+    },
+    {
+      "section": "TCustomExchange",
+      "name": "transferCoefficient",
+      "field_id": "1200",
+      "local_path": "TCustomExchange/transferCoefficient",
+      "page": "ecospold2/exchanges.md",
+      "anchor": "field-1200",
+      "metadata": {
+        "type": "TTransferCoefficient",
+        "size": "",
+        "required": "No",
+        "multiple": "Yes",
+        "multilingual": "No",
+        "redundant_master_data": "No",
+        "spold1_id": "new"
+      },
+      "source_blocks": [
+        "TCustomExchange.1200.description.0",
+        "TCustomExchange.1200.description.1"
+      ]
+    },
+    {
+      "section": "TCustomExchange",
+      "name": "uncertainty",
+      "field_id": "1300",
+      "local_path": "TCustomExchange/uncertainty",
+      "page": "ecospold2/exchanges.md",
+      "anchor": "field-1300",
+      "metadata": {
+        "type": "TUncertainty",
+        "size": "",
+        "required": "No",
+        "multiple": "No",
+        "multilingual": "No",
+        "redundant_master_data": "No",
+        "spold1_id": "3708"
+      },
+      "source_blocks": [
+        "TCustomExchange.1300.description.0",
+        "TCustomExchange.1300.description.1"
+      ]
+    },
+    {
+      "section": "TCustomExchange",
+      "name": "property",
+      "field_id": "1400",
+      "local_path": "TCustomExchange/property",
+      "page": "ecospold2/exchanges.md",
+      "anchor": "field-1400",
+      "metadata": {
+        "type": "TProperty",
+        "size": "",
+        "required": "No",
+        "multiple": "Yes",
+        "multilingual": "No",
+        "redundant_master_data": "No",
+        "spold1_id": "new"
+      },
+      "source_blocks": [
+        "TCustomExchange.1400.description.0",
+        "TCustomExchange.1400.description.1"
+      ]
+    },
+    {
+      "section": "TCustomExchange",
+      "name": "tag",
+      "field_id": "1450",
+      "local_path": "TCustomExchange/tag",
+      "page": "ecospold2/exchanges.md",
+      "anchor": "field-1450",
+      "metadata": {
+        "type": "TTag",
+        "size": "40",
+        "required": "No",
+        "multiple": "Yes",
+        "multilingual": "No",
+        "redundant_master_data": "No",
+        "spold1_id": "new"
+      },
+      "source_blocks": [
+        "TCustomExchange.1450.description.0"
+      ]
+    },
+    {
+      "section": "TCustomExchange",
+      "name": "synonym",
+      "field_id": "1470",
+      "local_path": "TCustomExchange/synonym",
+      "page": "ecospold2/exchanges.md",
+      "anchor": "field-1470",
+      "metadata": {
+        "type": "TSynonym",
+        "size": "80",
+        "required": "No",
+        "multiple": "Yes",
+        "multilingual": "Yes",
+        "redundant_master_data": "Yes",
+        "spold1_id": "new"
+      },
+      "source_blocks": [
+        "TCustomExchange.1470.description.0",
+        "TCustomExchange.1470.description.1"
+      ]
+    },
+    {
+      "section": "TIntermediateExchange",
+      "name": "inputGroup",
+      "field_id": "1500",
+      "local_path": "TIntermediateExchange/inputGroup",
+      "page": "ecospold2/intermediate-exchanges.md",
+      "anchor": "field-1500",
+      "metadata": {
+        "type": "integer",
+        "size": "",
+        "required": "Yes",
+        "multiple": "No",
+        "multilingual": "No",
+        "redundant_master_data": "No",
+        "spold1_id": "3503"
+      },
+      "source_blocks": [
+        "TIntermediateExchange.1500.description.0",
+        "TIntermediateExchange.1500.description.1",
+        "TIntermediateExchange.1500.options"
+      ]
+    },
+    {
+      "section": "TIntermediateExchange",
+      "name": "outputGroup",
+      "field_id": "1510",
+      "local_path": "TIntermediateExchange/outputGroup",
+      "page": "ecospold2/intermediate-exchanges.md",
+      "anchor": "field-1510",
+      "metadata": {
+        "type": "integer",
+        "size": "",
+        "required": "Yes",
+        "multiple": "No",
+        "multilingual": "No",
+        "redundant_master_data": "No",
+        "spold1_id": "3504"
+      },
+      "source_blocks": [
+        "TIntermediateExchange.1510.description.0",
+        "TIntermediateExchange.1510.description.1",
+        "TIntermediateExchange.1510.options"
+      ]
+    },
+    {
+      "section": "TIntermediateExchange",
+      "name": "@intermediateExchangeId",
+      "field_id": "1515",
+      "local_path": "TIntermediateExchange/@intermediateExchangeId",
+      "page": "ecospold2/intermediate-exchanges.md",
+      "anchor": "field-1515",
+      "metadata": {
+        "type": "TUuid",
+        "size": "36",
+        "required": "Yes",
+        "multiple": "No",
+        "multilingual": "No",
+        "redundant_master_data": "No",
+        "spold1_id": "3793"
+      },
+      "source_blocks": [
+        "TIntermediateExchange.1515.description.0"
+      ]
+    },
+    {
+      "section": "TIntermediateExchange",
+      "name": "@intermediateExchangeContextId",
+      "field_id": "1516",
+      "local_path": "TIntermediateExchange/@intermediateExchangeContextId",
+      "page": "ecospold2/intermediate-exchanges.md",
+      "anchor": "field-1516",
+      "metadata": {
+        "type": "TUuid",
+        "size": "36",
+        "required": "No",
+        "multiple": "No",
+        "multilingual": "No",
+        "redundant_master_data": "No",
+        "spold1_id": "new"
+      },
+      "source_blocks": [
+        "TIntermediateExchange.1516.description.0",
+        "TIntermediateExchange.1516.description.1"
+      ]
+    },
+    {
+      "section": "TIntermediateExchange",
+      "name": "@activityLinkId",
+      "field_id": "1520",
+      "local_path": "TIntermediateExchange/@activityLinkId",
+      "page": "ecospold2/intermediate-exchanges.md",
+      "anchor": "field-1520",
+      "metadata": {
+        "type": "TUuid",
+        "size": "36",
+        "required": "No",
+        "multiple": "No",
+        "multilingual": "No",
+        "redundant_master_data": "No",
+        "spold1_id": "3715"
+      },
+      "source_blocks": [
+        "TIntermediateExchange.1520.description.0",
+        "TIntermediateExchange.1520.options"
+      ]
+    },
+    {
+      "section": "TIntermediateExchange",
+      "name": "@activityLinkContextId",
+      "field_id": "1521",
+      "local_path": "TIntermediateExchange/@activityLinkContextId",
+      "page": "ecospold2/intermediate-exchanges.md",
+      "anchor": "field-1521",
+      "metadata": {
+        "type": "TUuid",
+        "size": "36",
+        "required": "No",
+        "multiple": "No",
+        "multilingual": "No",
+        "redundant_master_data": "No",
+        "spold1_id": "new"
+      },
+      "source_blocks": [
+        "TIntermediateExchange.1521.description.0",
+        "TIntermediateExchange.1521.description.1"
+      ]
+    },
+    {
+      "section": "TIntermediateExchange",
+      "name": "@activityLinkIdOverwrittenByChild",
+      "field_id": "1522",
+      "local_path": "TIntermediateExchange/@activityLinkIdOverwrittenByChild",
+      "page": "ecospold2/intermediate-exchanges.md",
+      "anchor": "field-1522",
+      "metadata": {
+        "type": "boolean",
+        "size": "",
+        "required": "No",
+        "multiple": "No",
+        "multilingual": "No",
+        "redundant_master_data": "No",
+        "spold1_id": "new"
+      },
+      "source_blocks": [
+        "TIntermediateExchange.1522.description.0"
+      ]
+    },
+    {
+      "section": "TIntermediateExchange",
+      "name": "@productionVolumeAmount",
+      "field_id": "1530",
+      "local_path": "TIntermediateExchange/@productionVolumeAmount",
+      "page": "ecospold2/intermediate-exchanges.md",
+      "anchor": "field-1530",
+      "metadata": {
+        "type": "TFloatNumber",
+        "size": "",
+        "required": "No",
+        "multiple": "No",
+        "multilingual": "No",
+        "redundant_master_data": "No",
+        "spold1_id": "new"
+      },
+      "source_blocks": [
+        "TIntermediateExchange.1530.description.0"
+      ]
+    },
+    {
+      "section": "TIntermediateExchange",
+      "name": "@productionVolumeSourceIdOverwrittenByChild",
+      "field_id": "1531",
+      "local_path": "TIntermediateExchange/@productionVolumeSourceIdOverwrittenByChild",
+      "page": "ecospold2/intermediate-exchanges.md",
+      "anchor": "field-1531",
+      "metadata": {
+        "type": "boolean",
+        "size": "",
+        "required": "No",
+        "multiple": "No",
+        "multilingual": "No",
+        "redundant_master_data": "No",
+        "spold1_id": "new"
+      },
+      "source_blocks": [
+        "TIntermediateExchange.1531.description.0"
+      ]
+    },
+    {
+      "section": "TIntermediateExchange",
+      "name": "@productionVolumeVariableName",
+      "field_id": "1532",
+      "local_path": "TIntermediateExchange/@productionVolumeVariableName",
+      "page": "ecospold2/intermediate-exchanges.md",
+      "anchor": "field-1532",
+      "metadata": {
+        "type": "TVariableName",
+        "size": "40",
+        "required": "No",
+        "multiple": "No",
+        "multilingual": "No",
+        "redundant_master_data": "No",
+        "spold1_id": "new"
+      },
+      "source_blocks": [
+        "TIntermediateExchange.1532.description.0"
+      ]
+    },
+    {
+      "section": "TIntermediateExchange",
+      "name": "@productionVolumeSourceId",
+      "field_id": "1533",
+      "local_path": "TIntermediateExchange/@productionVolumeSourceId",
+      "page": "ecospold2/intermediate-exchanges.md",
+      "anchor": "field-1533",
+      "metadata": {
+        "type": "TUuid",
+        "size": "36",
+        "required": "No",
+        "multiple": "No",
+        "multilingual": "No",
+        "redundant_master_data": "No",
+        "spold1_id": "new"
+      },
+      "source_blocks": [
+        "TIntermediateExchange.1533.description.0",
+        "TIntermediateExchange.1533.options"
+      ]
+    },
+    {
+      "section": "TIntermediateExchange",
+      "name": "@productionVolumeMathematicalRelation",
+      "field_id": "1534",
+      "local_path": "TIntermediateExchange/@productionVolumeMathematicalRelation",
+      "page": "ecospold2/intermediate-exchanges.md",
+      "anchor": "field-1534",
+      "metadata": {
+        "type": "TBaseString32000",
+        "size": "32000",
+        "required": "No",
+        "multiple": "No",
+        "multilingual": "No",
+        "redundant_master_data": "No",
+        "spold1_id": "new"
+      },
+      "source_blocks": [
+        "TIntermediateExchange.1534.description.0",
+        "TIntermediateExchange.1534.description.1"
+      ]
+    },
+    {
+      "section": "TIntermediateExchange",
+      "name": "productionVolumeComment",
+      "field_id": "1535",
+      "local_path": "TIntermediateExchange/productionVolumeComment",
+      "page": "ecospold2/intermediate-exchanges.md",
+      "anchor": "field-1535",
+      "metadata": {
+        "type": "TString32000",
+        "size": "32000",
+        "required": "No",
+        "multiple": "No",
+        "multilingual": "Yes",
+        "redundant_master_data": "No",
+        "spold1_id": "724"
+      },
+      "source_blocks": [
+        "TIntermediateExchange.1535.description.0"
+      ]
+    },
+    {
+      "section": "TIntermediateExchange",
+      "name": "@productionVolumeSourceContextId",
+      "field_id": "1536",
+      "local_path": "TIntermediateExchange/@productionVolumeSourceContextId",
+      "page": "ecospold2/intermediate-exchanges.md",
+      "anchor": "field-1536",
+      "metadata": {
+        "type": "TUuid",
+        "size": "36",
+        "required": "No",
+        "multiple": "No",
+        "multilingual": "No",
+        "redundant_master_data": "No",
+        "spold1_id": "new"
+      },
+      "source_blocks": [
+        "TIntermediateExchange.1536.description.0",
+        "TIntermediateExchange.1536.description.1"
+      ]
+    },
+    {
+      "section": "TIntermediateExchange",
+      "name": "@productionVolumeSourceYear",
+      "field_id": "1537",
+      "local_path": "TIntermediateExchange/@productionVolumeSourceYear",
+      "page": "ecospold2/intermediate-exchanges.md",
+      "anchor": "field-1537",
+      "metadata": {
+        "type": "TBaseString30",
+        "size": "30",
+        "required": "No",
+        "multiple": "No",
+        "multilingual": "No",
+        "redundant_master_data": "Yes",
+        "spold1_id": "new"
+      },
+      "source_blocks": [
+        "TIntermediateExchange.1537.description.0"
+      ]
+    },
+    {
+      "section": "TIntermediateExchange",
+      "name": "@productionVolumeSourceFirstAuthor",
+      "field_id": "1538",
+      "local_path": "TIntermediateExchange/@productionVolumeSourceFirstAuthor",
+      "page": "ecospold2/intermediate-exchanges.md",
+      "anchor": "field-1538",
+      "metadata": {
+        "type": "TBaseString40",
+        "size": "40",
+        "required": "No",
+        "multiple": "No",
+        "multilingual": "No",
+        "redundant_master_data": "Yes",
+        "spold1_id": "new"
+      },
+      "source_blocks": [
+        "TIntermediateExchange.1538.description.0"
+      ]
+    },
+    {
+      "section": "TIntermediateExchange",
+      "name": "productionVolumeUncertainty",
+      "field_id": "1539",
+      "local_path": "TIntermediateExchange/productionVolumeUncertainty",
+      "page": "ecospold2/intermediate-exchanges.md",
+      "anchor": "field-1539",
+      "metadata": {
+        "type": "TUncertainty",
+        "size": "",
+        "required": "No",
+        "multiple": "No",
+        "multilingual": "No",
+        "redundant_master_data": "No",
+        "spold1_id": "new"
+      },
+      "source_blocks": [
+        "TIntermediateExchange.1539.description.0",
+        "TIntermediateExchange.1539.description.1"
+      ]
+    },
+    {
+      "section": "TIntermediateExchange",
+      "name": "classification",
+      "field_id": "1540",
+      "local_path": "TIntermediateExchange/classification",
+      "page": "ecospold2/intermediate-exchanges.md",
+      "anchor": "field-1540",
+      "metadata": {
+        "type": "TClassification",
+        "size": "",
+        "required": "No",
+        "multiple": "Yes",
+        "multilingual": "No",
+        "redundant_master_data": "Yes",
+        "spold1_id": "new"
+      },
+      "source_blocks": [
+        "TIntermediateExchange.1540.description.0"
+      ]
+    },
+    {
+      "section": "TElementaryExchange",
+      "name": "inputGroup",
+      "field_id": "1600",
+      "local_path": "TElementaryExchange/inputGroup",
+      "page": "ecospold2/elementary-exchanges.md",
+      "anchor": "field-1600",
+      "metadata": {
+        "type": "integer",
+        "size": "",
+        "required": "Yes",
+        "multiple": "No",
+        "multilingual": "No",
+        "redundant_master_data": "No",
+        "spold1_id": "3503"
+      },
+      "source_blocks": [
+        "TElementaryExchange.1600.description.0",
+        "TElementaryExchange.1600.description.1",
+        "TElementaryExchange.1600.description.2",
+        "TElementaryExchange.1600.options"
+      ]
+    },
+    {
+      "section": "TElementaryExchange",
+      "name": "outputGroup",
+      "field_id": "1610",
+      "local_path": "TElementaryExchange/outputGroup",
+      "page": "ecospold2/elementary-exchanges.md",
+      "anchor": "field-1610",
+      "metadata": {
+        "type": "integer",
+        "size": "",
+        "required": "Yes",
+        "multiple": "No",
+        "multilingual": "No",
+        "redundant_master_data": "No",
+        "spold1_id": "3504"
+      },
+      "source_blocks": [
+        "TElementaryExchange.1610.description.0",
+        "TElementaryExchange.1610.description.1",
+        "TElementaryExchange.1610.description.2",
+        "TElementaryExchange.1610.options"
+      ]
+    },
+    {
+      "section": "TElementaryExchange",
+      "name": "@elementaryExchangeId",
+      "field_id": "1615",
+      "local_path": "TElementaryExchange/@elementaryExchangeId",
+      "page": "ecospold2/elementary-exchanges.md",
+      "anchor": "field-1615",
+      "metadata": {
+        "type": "TUuid",
+        "size": "36",
+        "required": "Yes",
+        "multiple": "No",
+        "multilingual": "No",
+        "redundant_master_data": "No",
+        "spold1_id": "3793"
+      },
+      "source_blocks": [
+        "TElementaryExchange.1615.description.0"
+      ]
+    },
+    {
+      "section": "TElementaryExchange",
+      "name": "@elementaryExchangeContextId",
+      "field_id": "1616",
+      "local_path": "TElementaryExchange/@elementaryExchangeContextId",
+      "page": "ecospold2/elementary-exchanges.md",
+      "anchor": "field-1616",
+      "metadata": {
+        "type": "TUuid",
+        "size": "36",
+        "required": "No",
+        "multiple": "No",
+        "multilingual": "No",
+        "redundant_master_data": "No",
+        "spold1_id": "new"
+      },
+      "source_blocks": [
+        "TElementaryExchange.1616.description.0",
+        "TElementaryExchange.1616.description.1"
+      ]
+    },
+    {
+      "section": "TElementaryExchange",
+      "name": "compartment",
+      "field_id": "1660",
+      "local_path": "TElementaryExchange/compartment",
+      "page": "ecospold2/elementary-exchanges.md",
+      "anchor": "field-1660",
+      "metadata": {
+        "type": "TCompartment",
+        "size": "",
+        "required": "Yes",
+        "multiple": "No",
+        "multilingual": "No",
+        "redundant_master_data": "Yes",
+        "spold1_id": "new"
+      },
+      "source_blocks": [
+        "TElementaryExchange.1660.description.0"
+      ]
+    },
+    {
+      "section": "TElementaryExchange",
+      "name": "@formula",
+      "field_id": "1670",
+      "local_path": "TElementaryExchange/@formula",
+      "page": "ecospold2/elementary-exchanges.md",
+      "anchor": "field-1670",
+      "metadata": {
+        "type": "TBaseString40",
+        "size": "40",
+        "required": "No",
+        "multiple": "No",
+        "multilingual": "No",
+        "redundant_master_data": "Yes",
+        "spold1_id": "3711"
+      },
+      "source_blocks": [
+        "TElementaryExchange.1670.description.0"
+      ]
+    },
+    {
+      "section": "TParameter",
+      "name": "name",
+      "field_id": "1700",
+      "local_path": "TParameter/name",
+      "page": "ecospold2/parameters.md",
+      "anchor": "field-1700",
+      "metadata": {
+        "type": "TString80",
+        "size": "80",
+        "required": "Yes",
+        "multiple": "No",
+        "multilingual": "Yes",
+        "redundant_master_data": "Yes",
+        "spold1_id": "new"
+      },
+      "source_blocks": [
+        "TParameter.1700.description.0"
+      ]
+    },
+    {
+      "section": "TParameter",
+      "name": "@parameterId",
+      "field_id": "1705",
+      "local_path": "TParameter/@parameterId",
+      "page": "ecospold2/parameters.md",
+      "anchor": "field-1705",
+      "metadata": {
+        "type": "TUuid",
+        "size": "36",
+        "required": "Yes",
+        "multiple": "No",
+        "multilingual": "No",
+        "redundant_master_data": "No",
+        "spold1_id": "new"
+      },
+      "source_blocks": [
+        "TParameter.1705.description.0"
+      ]
+    },
+    {
+      "section": "TParameter",
+      "name": "@parameterContextId",
+      "field_id": "1706",
+      "local_path": "TParameter/@parameterContextId",
+      "page": "ecospold2/parameters.md",
+      "anchor": "field-1706",
+      "metadata": {
+        "type": "TUuid",
+        "size": "36",
+        "required": "No",
+        "multiple": "No",
+        "multilingual": "No",
+        "redundant_master_data": "No",
+        "spold1_id": "new"
+      },
+      "source_blocks": [
+        "TParameter.1706.description.0",
+        "TParameter.1706.description.1"
+      ]
+    },
+    {
+      "section": "TParameter",
+      "name": "@amount",
+      "field_id": "1710",
+      "local_path": "TParameter/@amount",
+      "page": "ecospold2/parameters.md",
+      "anchor": "field-1710",
+      "metadata": {
+        "type": "TFloatNumber",
+        "size": "",
+        "required": "Yes",
+        "multiple": "No",
+        "multilingual": "No",
+        "redundant_master_data": "No",
+        "spold1_id": "new"
+      },
+      "source_blocks": [
+        "TParameter.1710.description.0"
+      ]
+    },
+    {
+      "section": "TParameter",
+      "name": "@unitId",
+      "field_id": "1712",
+      "local_path": "TParameter/@unitId",
+      "page": "ecospold2/parameters.md",
+      "anchor": "field-1712",
+      "metadata": {
+        "type": "TUuid",
+        "size": "36",
+        "required": "No",
+        "multiple": "No",
+        "multilingual": "No",
+        "redundant_master_data": "Yes",
+        "spold1_id": "3706"
+      },
+      "source_blocks": [
+        "TParameter.1712.description.0"
+      ]
+    },
+    {
+      "section": "TParameter",
+      "name": "@unitContextId",
+      "field_id": "1713",
+      "local_path": "TParameter/@unitContextId",
+      "page": "ecospold2/parameters.md",
+      "anchor": "field-1713",
+      "metadata": {
+        "type": "TUuid",
+        "size": "36",
+        "required": "No",
+        "multiple": "No",
+        "multilingual": "No",
+        "redundant_master_data": "Yes",
+        "spold1_id": "new"
+      },
+      "source_blocks": [
+        "TParameter.1713.description.0"
+      ]
+    },
+    {
+      "section": "TParameter",
+      "name": "unitName",
+      "field_id": "1714",
+      "local_path": "TParameter/unitName",
+      "page": "ecospold2/parameters.md",
+      "anchor": "field-1714",
+      "metadata": {
+        "type": "TString40",
+        "size": "40",
+        "required": "No",
+        "multiple": "No",
+        "multilingual": "Yes",
+        "redundant_master_data": "Yes",
+        "spold1_id": "3706"
+      },
+      "source_blocks": [
+        "TParameter.1714.description.0"
+      ]
+    },
+    {
+      "section": "TParameter",
+      "name": "@variableName",
+      "field_id": "1715",
+      "local_path": "TParameter/@variableName",
+      "page": "ecospold2/parameters.md",
+      "anchor": "field-1715",
+      "metadata": {
+        "type": "TVariableName",
+        "size": "40",
+        "required": "No",
+        "multiple": "No",
+        "multilingual": "No",
+        "redundant_master_data": "No",
+        "spold1_id": "new"
+      },
+      "source_blocks": [
+        "TParameter.1715.description.0"
+      ]
+    },
+    {
+      "section": "TParameter",
+      "name": "@mathematicalRelation",
+      "field_id": "1720",
+      "local_path": "TParameter/@mathematicalRelation",
+      "page": "ecospold2/parameters.md",
+      "anchor": "field-1720",
+      "metadata": {
+        "type": "TBaseString32000",
+        "size": "32000",
+        "required": "No",
+        "multiple": "No",
+        "multilingual": "No",
+        "redundant_master_data": "No",
+        "spold1_id": "new"
+      },
+      "source_blocks": [
+        "TParameter.1720.description.0",
+        "TParameter.1720.description.1"
+      ]
+    },
+    {
+      "section": "TParameter",
+      "name": "@isCalculatedAmount",
+      "field_id": "1725",
+      "local_path": "TParameter/@isCalculatedAmount",
+      "page": "ecospold2/parameters.md",
+      "anchor": "field-1725",
+      "metadata": {
+        "type": "boolean",
+        "size": "",
+        "required": "No",
+        "multiple": "No",
+        "multilingual": "No",
+        "redundant_master_data": "No",
+        "spold1_id": "new"
+      },
+      "source_blocks": [
+        "TParameter.1725.description.0"
+      ]
+    },
+    {
+      "section": "TParameter",
+      "name": "uncertainty",
+      "field_id": "1730",
+      "local_path": "TParameter/uncertainty",
+      "page": "ecospold2/parameters.md",
+      "anchor": "field-1730",
+      "metadata": {
+        "type": "TUncertainty",
+        "size": "",
+        "required": "No",
+        "multiple": "No",
+        "multilingual": "No",
+        "redundant_master_data": "No",
+        "spold1_id": "new"
+      },
+      "source_blocks": [
+        "TParameter.1730.description.0"
+      ]
+    },
+    {
+      "section": "TParameter",
+      "name": "comment",
+      "field_id": "1740",
+      "local_path": "TParameter/comment",
+      "page": "ecospold2/parameters.md",
+      "anchor": "field-1740",
+      "metadata": {
+        "type": "TString32000",
+        "size": "32000",
+        "required": "No",
+        "multiple": "No",
+        "multilingual": "Yes",
+        "redundant_master_data": "No",
+        "spold1_id": "new"
+      },
+      "source_blocks": [
+        "TParameter.1740.description.0"
+      ]
+    },
+    {
+      "section": "TImpactIndicatorResult",
+      "name": "@impactIndicatorId",
+      "field_id": "1800",
+      "local_path": "TImpactIndicatorResult/@impactIndicatorId",
+      "page": "ecospold2/impact-indicators.md",
+      "anchor": "field-1800",
+      "metadata": {
+        "type": "TUuid",
+        "size": "36",
+        "required": "Yes",
+        "multiple": "No",
+        "multilingual": "No",
+        "redundant_master_data": "No",
+        "spold1_id": "new"
+      },
+      "source_blocks": [
+        "TImpactIndicatorResult.1800.description.0"
+      ]
+    },
+    {
+      "section": "TImpactIndicatorResult",
+      "name": "@impactIndicatorContextId",
+      "field_id": "1801",
+      "local_path": "TImpactIndicatorResult/@impactIndicatorContextId",
+      "page": "ecospold2/impact-indicators.md",
+      "anchor": "field-1801",
+      "metadata": {
+        "type": "TUuid",
+        "size": "36",
+        "required": "No",
+        "multiple": "No",
+        "multilingual": "No",
+        "redundant_master_data": "No",
+        "spold1_id": "new"
+      },
+      "source_blocks": [
+        "TImpactIndicatorResult.1801.description.0"
+      ]
+    },
+    {
+      "section": "TImpactIndicatorResult",
+      "name": "@impactMethodId",
+      "field_id": "1810",
+      "local_path": "TImpactIndicatorResult/@impactMethodId",
+      "page": "ecospold2/impact-indicators.md",
+      "anchor": "field-1810",
+      "metadata": {
+        "type": "TUuid",
+        "size": "36",
+        "required": "Yes",
+        "multiple": "No",
+        "multilingual": "No",
+        "redundant_master_data": "No",
+        "spold1_id": "new"
+      },
+      "source_blocks": [
+        "TImpactIndicatorResult.1810.description.0"
+      ]
+    },
+    {
+      "section": "TImpactIndicatorResult",
+      "name": "@impactMethodContextId",
+      "field_id": "1811",
+      "local_path": "TImpactIndicatorResult/@impactMethodContextId",
+      "page": "ecospold2/impact-indicators.md",
+      "anchor": "field-1811",
+      "metadata": {
+        "type": "TUuid",
+        "size": "36",
+        "required": "No",
+        "multiple": "No",
+        "multilingual": "No",
+        "redundant_master_data": "No",
+        "spold1_id": "new"
+      },
+      "source_blocks": [
+        "TImpactIndicatorResult.1811.description.0"
+      ]
+    },
+    {
+      "section": "TImpactIndicatorResult",
+      "name": "impactMethodName",
+      "field_id": "1815",
+      "local_path": "TImpactIndicatorResult/impactMethodName",
+      "page": "ecospold2/impact-indicators.md",
+      "anchor": "field-1815",
+      "metadata": {
+        "type": "TString120",
+        "size": "120",
+        "required": "Yes",
+        "multiple": "No",
+        "multilingual": "Yes",
+        "redundant_master_data": "Yes",
+        "spold1_id": "new"
+      },
+      "source_blocks": [
+        "TImpactIndicatorResult.1815.description.0"
+      ]
+    },
+    {
+      "section": "TImpactIndicatorResult",
+      "name": "@impactCategoryId",
+      "field_id": "1820",
+      "local_path": "TImpactIndicatorResult/@impactCategoryId",
+      "page": "ecospold2/impact-indicators.md",
+      "anchor": "field-1820",
+      "metadata": {
+        "type": "TUuid",
+        "size": "36",
+        "required": "Yes",
+        "multiple": "No",
+        "multilingual": "No",
+        "redundant_master_data": "No",
+        "spold1_id": "new"
+      },
+      "source_blocks": [
+        "TImpactIndicatorResult.1820.description.0"
+      ]
+    },
+    {
+      "section": "TImpactIndicatorResult",
+      "name": "@impactCategoryContextId",
+      "field_id": "1821",
+      "local_path": "TImpactIndicatorResult/@impactCategoryContextId",
+      "page": "ecospold2/impact-indicators.md",
+      "anchor": "field-1821",
+      "metadata": {
+        "type": "TUuid",
+        "size": "36",
+        "required": "No",
+        "multiple": "No",
+        "multilingual": "No",
+        "redundant_master_data": "No",
+        "spold1_id": "new"
+      },
+      "source_blocks": [
+        "TImpactIndicatorResult.1821.description.0"
+      ]
+    },
+    {
+      "section": "TImpactIndicatorResult",
+      "name": "impactCategoryName",
+      "field_id": "1825",
+      "local_path": "TImpactIndicatorResult/impactCategoryName",
+      "page": "ecospold2/impact-indicators.md",
+      "anchor": "field-1825",
+      "metadata": {
+        "type": "TString120",
+        "size": "120",
+        "required": "Yes",
+        "multiple": "No",
+        "multilingual": "Yes",
+        "redundant_master_data": "Yes",
+        "spold1_id": "new"
+      },
+      "source_blocks": [
+        "TImpactIndicatorResult.1825.description.0"
+      ]
+    },
+    {
+      "section": "TImpactIndicatorResult",
+      "name": "@amount",
+      "field_id": "1830",
+      "local_path": "TImpactIndicatorResult/@amount",
+      "page": "ecospold2/impact-indicators.md",
+      "anchor": "field-1830",
+      "metadata": {
+        "type": "TFloatNumber",
+        "size": "",
+        "required": "Yes",
+        "multiple": "No",
+        "multilingual": "No",
+        "redundant_master_data": "No",
+        "spold1_id": "new"
+      },
+      "source_blocks": [
+        "TImpactIndicatorResult.1830.description.0"
+      ]
+    },
+    {
+      "section": "TImpactIndicatorResult",
+      "name": "name",
+      "field_id": "1840",
+      "local_path": "TImpactIndicatorResult/name",
+      "page": "ecospold2/impact-indicators.md",
+      "anchor": "field-1840",
+      "metadata": {
+        "type": "TString120",
+        "size": "120",
+        "required": "Yes",
+        "multiple": "No",
+        "multilingual": "Yes",
+        "redundant_master_data": "Yes",
+        "spold1_id": "new"
+      },
+      "source_blocks": [
+        "TImpactIndicatorResult.1840.description.0"
+      ]
+    },
+    {
+      "section": "TImpactIndicatorResult",
+      "name": "unitName",
+      "field_id": "1850",
+      "local_path": "TImpactIndicatorResult/unitName",
+      "page": "ecospold2/impact-indicators.md",
+      "anchor": "field-1850",
+      "metadata": {
+        "type": "TString40",
+        "size": "40",
+        "required": "Yes",
+        "multiple": "No",
+        "multilingual": "Yes",
+        "redundant_master_data": "Yes",
+        "spold1_id": "new"
+      },
+      "source_blocks": [
+        "TImpactIndicatorResult.1850.description.0"
+      ]
+    },
+    {
+      "section": "TCompartment",
+      "name": "compartment",
+      "field_id": "330",
+      "local_path": "TCompartment/compartment",
+      "page": "ecospold2/compartments.md",
+      "anchor": "field-330",
+      "metadata": {
+        "type": "TCompartmentName",
+        "size": "40",
+        "required": "Yes",
+        "multiple": "No",
+        "multilingual": "Yes",
+        "redundant_master_data": "Yes",
+        "spold1_id": "new"
+      },
+      "source_blocks": [
+        "TCompartment.330.description.0"
+      ]
+    },
+    {
+      "section": "TCompartment",
+      "name": "subcompartment",
+      "field_id": "340",
+      "local_path": "TCompartment/subcompartment",
+      "page": "ecospold2/compartments.md",
+      "anchor": "field-340",
+      "metadata": {
+        "type": "TCompartmentName",
+        "size": "40",
+        "required": "Yes",
+        "multiple": "No",
+        "multilingual": "Yes",
+        "redundant_master_data": "Yes",
+        "spold1_id": "new"
+      },
+      "source_blocks": [
+        "TCompartment.340.description.0"
+      ]
+    },
+    {
+      "section": "TCompartment",
+      "name": "@subcompartmentId",
+      "field_id": "350",
+      "local_path": "TCompartment/@subcompartmentId",
+      "page": "ecospold2/compartments.md",
+      "anchor": "field-350",
+      "metadata": {
+        "type": "TUuid",
+        "size": "36",
+        "required": "Yes",
+        "multiple": "No",
+        "multilingual": "No",
+        "redundant_master_data": "No",
+        "spold1_id": "new"
+      },
+      "source_blocks": [
+        "TCompartment.350.description.0"
+      ]
+    },
+    {
+      "section": "TCompartment",
+      "name": "@subcompartmentContextId",
+      "field_id": "351",
+      "local_path": "TCompartment/@subcompartmentContextId",
+      "page": "ecospold2/compartments.md",
+      "anchor": "field-351",
+      "metadata": {
+        "type": "TUuid",
+        "size": "36",
+        "required": "No",
+        "multiple": "No",
+        "multilingual": "No",
+        "redundant_master_data": "No",
+        "spold1_id": "new"
+      },
+      "source_blocks": [
+        "TCompartment.351.description.0",
+        "TCompartment.351.description.1"
+      ]
+    },
+    {
+      "section": "TUncertainty",
+      "name": "comment",
+      "field_id": "2010",
+      "local_path": "TUncertainty/comment",
+      "page": "ecospold2/uncertainty.md",
+      "anchor": "field-2010",
+      "metadata": {
+        "type": "TString32000",
+        "size": "32000",
+        "required": "No",
+        "multiple": "No",
+        "multilingual": "Yes",
+        "redundant_master_data": "No",
+        "spold1_id": "3792"
+      },
+      "source_blocks": [
+        "TUncertainty.2010.description.0"
+      ]
+    },
+    {
+      "section": "TUncertainty",
+      "name": "lognormal",
+      "field_id": "2100",
+      "local_path": "TUncertainty/lognormal",
+      "page": "ecospold2/uncertainty.md",
+      "anchor": "field-2100",
+      "metadata": {
+        "type": "",
+        "size": "",
+        "required": "Yes",
+        "multiple": "No",
+        "multilingual": "No",
+        "redundant_master_data": "No",
+        "spold1_id": "new"
+      },
+      "source_blocks": [
+        "TUncertainty.2100.description.0"
+      ]
+    },
+    {
+      "section": "TUncertainty",
+      "name": "@meanValue",
+      "field_id": "2101",
+      "local_path": "TUncertainty/lognormal/@meanValue",
+      "page": "ecospold2/uncertainty.md",
+      "anchor": "field-2101",
+      "metadata": {
+        "type": "TFloatNumber",
+        "size": "",
+        "required": "Yes",
+        "multiple": "No",
+        "multilingual": "No",
+        "redundant_master_data": "No",
+        "spold1_id": "new"
+      },
+      "source_blocks": [
+        "TUncertainty.2101.description.0"
+      ]
+    },
+    {
+      "section": "TUncertainty",
+      "name": "@mu",
+      "field_id": "2102",
+      "local_path": "TUncertainty/lognormal/@mu",
+      "page": "ecospold2/uncertainty.md",
+      "anchor": "field-2102",
+      "metadata": {
+        "type": "TFloatNumber",
+        "size": "",
+        "required": "Yes",
+        "multiple": "No",
+        "multilingual": "No",
+        "redundant_master_data": "No",
+        "spold1_id": "new"
+      },
+      "source_blocks": [
+        "TUncertainty.2102.description.0"
+      ]
+    },
+    {
+      "section": "TUncertainty",
+      "name": "@variance",
+      "field_id": "2103",
+      "local_path": "TUncertainty/lognormal/@variance",
+      "page": "ecospold2/uncertainty.md",
+      "anchor": "field-2103",
+      "metadata": {
+        "type": "TFloatNumber",
+        "size": "",
+        "required": "No",
+        "multiple": "No",
+        "multilingual": "No",
+        "redundant_master_data": "No",
+        "spold1_id": "new"
+      },
+      "source_blocks": [
+        "TUncertainty.2103.description.0"
+      ]
+    },
+    {
+      "section": "TUncertainty",
+      "name": "@varianceWithPedigreeUncertainty",
+      "field_id": "2104",
+      "local_path": "TUncertainty/lognormal/@varianceWithPedigreeUncertainty",
+      "page": "ecospold2/uncertainty.md",
+      "anchor": "field-2104",
+      "metadata": {
+        "type": "TFloatNumber",
+        "size": "",
+        "required": "Yes",
+        "multiple": "No",
+        "multilingual": "No",
+        "redundant_master_data": "No",
+        "spold1_id": "new"
+      },
+      "source_blocks": [
+        "TUncertainty.2104.description.0"
+      ]
+    },
+    {
+      "section": "TUncertainty",
+      "name": "normal",
+      "field_id": "2110",
+      "local_path": "TUncertainty/normal",
+      "page": "ecospold2/uncertainty.md",
+      "anchor": "field-2110",
+      "metadata": {
+        "type": "",
+        "size": "",
+        "required": "Yes",
+        "multiple": "No",
+        "multilingual": "No",
+        "redundant_master_data": "No",
+        "spold1_id": "new"
+      },
+      "source_blocks": [
+        "TUncertainty.2110.description.0"
+      ]
+    },
+    {
+      "section": "TUncertainty",
+      "name": "@meanValue",
+      "field_id": "2111",
+      "local_path": "TUncertainty/normal/@meanValue",
+      "page": "ecospold2/uncertainty.md",
+      "anchor": "field-2111",
+      "metadata": {
+        "type": "TFloatNumber",
+        "size": "",
+        "required": "Yes",
+        "multiple": "No",
+        "multilingual": "No",
+        "redundant_master_data": "No",
+        "spold1_id": "new"
+      },
+      "source_blocks": [
+        "TUncertainty.2111.description.0"
+      ]
+    },
+    {
+      "section": "TUncertainty",
+      "name": "@variance",
+      "field_id": "2112",
+      "local_path": "TUncertainty/normal/@variance",
+      "page": "ecospold2/uncertainty.md",
+      "anchor": "field-2112",
+      "metadata": {
+        "type": "TFloatNumber",
+        "size": "",
+        "required": "No",
+        "multiple": "No",
+        "multilingual": "No",
+        "redundant_master_data": "No",
+        "spold1_id": "new"
+      },
+      "source_blocks": [
+        "TUncertainty.2112.description.0"
+      ]
+    },
+    {
+      "section": "TUncertainty",
+      "name": "@varianceWithPedigreeUncertainty",
+      "field_id": "2113",
+      "local_path": "TUncertainty/normal/@varianceWithPedigreeUncertainty",
+      "page": "ecospold2/uncertainty.md",
+      "anchor": "field-2113",
+      "metadata": {
+        "type": "TFloatNumber",
+        "size": "",
+        "required": "Yes",
+        "multiple": "No",
+        "multilingual": "No",
+        "redundant_master_data": "No",
+        "spold1_id": "new"
+      },
+      "source_blocks": [
+        "TUncertainty.2113.description.0"
+      ]
+    },
+    {
+      "section": "TUncertainty",
+      "name": "triangular",
+      "field_id": "2120",
+      "local_path": "TUncertainty/triangular",
+      "page": "ecospold2/uncertainty.md",
+      "anchor": "field-2120",
+      "metadata": {
+        "type": "",
+        "size": "",
+        "required": "Yes",
+        "multiple": "No",
+        "multilingual": "No",
+        "redundant_master_data": "No",
+        "spold1_id": "new"
+      },
+      "source_blocks": [
+        "TUncertainty.2120.description.0",
+        "TUncertainty.2120.description.1"
+      ]
+    },
+    {
+      "section": "TUncertainty",
+      "name": "@minValue",
+      "field_id": "2121",
+      "local_path": "TUncertainty/triangular/@minValue",
+      "page": "ecospold2/uncertainty.md",
+      "anchor": "field-2121",
+      "metadata": {
+        "type": "TFloatNumber",
+        "size": "",
+        "required": "Yes",
+        "multiple": "No",
+        "multilingual": "No",
+        "redundant_master_data": "No",
+        "spold1_id": "new"
+      },
+      "source_blocks": [
+        "TUncertainty.2121.description.0"
+      ]
+    },
+    {
+      "section": "TUncertainty",
+      "name": "@mostLikelyValue",
+      "field_id": "2122",
+      "local_path": "TUncertainty/triangular/@mostLikelyValue",
+      "page": "ecospold2/uncertainty.md",
+      "anchor": "field-2122",
+      "metadata": {
+        "type": "TFloatNumber",
+        "size": "",
+        "required": "Yes",
+        "multiple": "No",
+        "multilingual": "No",
+        "redundant_master_data": "No",
+        "spold1_id": "new"
+      },
+      "source_blocks": [
+        "TUncertainty.2122.description.0"
+      ]
+    },
+    {
+      "section": "TUncertainty",
+      "name": "@maxValue",
+      "field_id": "2123",
+      "local_path": "TUncertainty/triangular/@maxValue",
+      "page": "ecospold2/uncertainty.md",
+      "anchor": "field-2123",
+      "metadata": {
+        "type": "TFloatNumber",
+        "size": "",
+        "required": "Yes",
+        "multiple": "No",
+        "multilingual": "No",
+        "redundant_master_data": "No",
+        "spold1_id": "new"
+      },
+      "source_blocks": [
+        "TUncertainty.2123.description.0"
+      ]
+    },
+    {
+      "section": "TUncertainty",
+      "name": "uniform",
+      "field_id": "2130",
+      "local_path": "TUncertainty/uniform",
+      "page": "ecospold2/uncertainty.md",
+      "anchor": "field-2130",
+      "metadata": {
+        "type": "",
+        "size": "",
+        "required": "Yes",
+        "multiple": "No",
+        "multilingual": "No",
+        "redundant_master_data": "No",
+        "spold1_id": "new"
+      },
+      "source_blocks": [
+        "TUncertainty.2130.description.0"
+      ]
+    },
+    {
+      "section": "TUncertainty",
+      "name": "@minValue",
+      "field_id": "2131",
+      "local_path": "TUncertainty/uniform/@minValue",
+      "page": "ecospold2/uncertainty.md",
+      "anchor": "field-2131",
+      "metadata": {
+        "type": "TFloatNumber",
+        "size": "",
+        "required": "Yes",
+        "multiple": "No",
+        "multilingual": "No",
+        "redundant_master_data": "No",
+        "spold1_id": "new"
+      },
+      "source_blocks": [
+        "TUncertainty.2131.description.0"
+      ]
+    },
+    {
+      "section": "TUncertainty",
+      "name": "@maxValue",
+      "field_id": "2132",
+      "local_path": "TUncertainty/uniform/@maxValue",
+      "page": "ecospold2/uncertainty.md",
+      "anchor": "field-2132",
+      "metadata": {
+        "type": "TFloatNumber",
+        "size": "",
+        "required": "Yes",
+        "multiple": "No",
+        "multilingual": "No",
+        "redundant_master_data": "No",
+        "spold1_id": "new"
+      },
+      "source_blocks": [
+        "TUncertainty.2132.description.0"
+      ]
+    },
+    {
+      "section": "TUncertainty",
+      "name": "beta",
+      "field_id": "2140",
+      "local_path": "TUncertainty/beta",
+      "page": "ecospold2/uncertainty.md",
+      "anchor": "field-2140",
+      "metadata": {
+        "type": "",
+        "size": "",
+        "required": "Yes",
+        "multiple": "No",
+        "multilingual": "No",
+        "redundant_master_data": "No",
+        "spold1_id": "new"
+      },
+      "source_blocks": [
+        "TUncertainty.2140.description.0"
+      ]
+    },
+    {
+      "section": "TUncertainty",
+      "name": "@minValue",
+      "field_id": "2141",
+      "local_path": "TUncertainty/beta/@minValue",
+      "page": "ecospold2/uncertainty.md",
+      "anchor": "field-2141",
+      "metadata": {
+        "type": "TFloatNumber",
+        "size": "",
+        "required": "Yes",
+        "multiple": "No",
+        "multilingual": "No",
+        "redundant_master_data": "No",
+        "spold1_id": "new"
+      },
+      "source_blocks": [
+        "TUncertainty.2141.description.0"
+      ]
+    },
+    {
+      "section": "TUncertainty",
+      "name": "@mostFrequentValue",
+      "field_id": "2142",
+      "local_path": "TUncertainty/beta/@mostFrequentValue",
+      "page": "ecospold2/uncertainty.md",
+      "anchor": "field-2142",
+      "metadata": {
+        "type": "TFloatNumber",
+        "size": "",
+        "required": "Yes",
+        "multiple": "No",
+        "multilingual": "No",
+        "redundant_master_data": "No",
+        "spold1_id": "new"
+      },
+      "source_blocks": [
+        "TUncertainty.2142.description.0"
+      ]
+    },
+    {
+      "section": "TUncertainty",
+      "name": "@maxValue",
+      "field_id": "2143",
+      "local_path": "TUncertainty/beta/@maxValue",
+      "page": "ecospold2/uncertainty.md",
+      "anchor": "field-2143",
+      "metadata": {
+        "type": "TFloatNumber",
+        "size": "",
+        "required": "Yes",
+        "multiple": "No",
+        "multilingual": "No",
+        "redundant_master_data": "No",
+        "spold1_id": "new"
+      },
+      "source_blocks": [
+        "TUncertainty.2143.description.0"
+      ]
+    },
+    {
+      "section": "TUncertainty",
+      "name": "gamma",
+      "field_id": "2150",
+      "local_path": "TUncertainty/gamma",
+      "page": "ecospold2/uncertainty.md",
+      "anchor": "field-2150",
+      "metadata": {
+        "type": "",
+        "size": "",
+        "required": "Yes",
+        "multiple": "No",
+        "multilingual": "No",
+        "redundant_master_data": "No",
+        "spold1_id": "new"
+      },
+      "source_blocks": [
+        "TUncertainty.2150.description.0"
+      ]
+    },
+    {
+      "section": "TUncertainty",
+      "name": "@shape",
+      "field_id": "2151",
+      "local_path": "TUncertainty/gamma/@shape",
+      "page": "ecospold2/uncertainty.md",
+      "anchor": "field-2151",
+      "metadata": {
+        "type": "TFloatNumber",
+        "size": "",
+        "required": "Yes",
+        "multiple": "No",
+        "multilingual": "No",
+        "redundant_master_data": "No",
+        "spold1_id": "new"
+      },
+      "source_blocks": [
+        "TUncertainty.2151.description.0"
+      ]
+    },
+    {
+      "section": "TUncertainty",
+      "name": "@scale",
+      "field_id": "2152",
+      "local_path": "TUncertainty/gamma/@scale",
+      "page": "ecospold2/uncertainty.md",
+      "anchor": "field-2152",
+      "metadata": {
+        "type": "TFloatNumber",
+        "size": "",
+        "required": "Yes",
+        "multiple": "No",
+        "multilingual": "No",
+        "redundant_master_data": "No",
+        "spold1_id": "new"
+      },
+      "source_blocks": [
+        "TUncertainty.2152.description.0"
+      ]
+    },
+    {
+      "section": "TUncertainty",
+      "name": "@minValue",
+      "field_id": "2153",
+      "local_path": "TUncertainty/gamma/@minValue",
+      "page": "ecospold2/uncertainty.md",
+      "anchor": "field-2153",
+      "metadata": {
+        "type": "TFloatNumber",
+        "size": "",
+        "required": "Yes",
+        "multiple": "No",
+        "multilingual": "No",
+        "redundant_master_data": "No",
+        "spold1_id": "new"
+      },
+      "source_blocks": [
+        "TUncertainty.2153.description.0"
+      ]
+    },
+    {
+      "section": "TUncertainty",
+      "name": "binomial",
+      "field_id": "2160",
+      "local_path": "TUncertainty/binomial",
+      "page": "ecospold2/uncertainty.md",
+      "anchor": "field-2160",
+      "metadata": {
+        "type": "",
+        "size": "",
+        "required": "Yes",
+        "multiple": "No",
+        "multilingual": "No",
+        "redundant_master_data": "No",
+        "spold1_id": "new"
+      },
+      "source_blocks": [
+        "TUncertainty.2160.description.0"
+      ]
+    },
+    {
+      "section": "TUncertainty",
+      "name": "@n",
+      "field_id": "2161",
+      "local_path": "TUncertainty/binomial/@n",
+      "page": "ecospold2/uncertainty.md",
+      "anchor": "field-2161",
+      "metadata": {
+        "type": "integer",
+        "size": "",
+        "required": "Yes",
+        "multiple": "No",
+        "multilingual": "No",
+        "redundant_master_data": "No",
+        "spold1_id": "new"
+      },
+      "source_blocks": [
+        "TUncertainty.2161.description.0"
+      ]
+    },
+    {
+      "section": "TUncertainty",
+      "name": "@p",
+      "field_id": "2162",
+      "local_path": "TUncertainty/binomial/@p",
+      "page": "ecospold2/uncertainty.md",
+      "anchor": "field-2162",
+      "metadata": {
+        "type": "TFloatNumber",
+        "size": "",
+        "required": "Yes",
+        "multiple": "No",
+        "multilingual": "No",
+        "redundant_master_data": "No",
+        "spold1_id": "new"
+      },
+      "source_blocks": [
+        "TUncertainty.2162.description.0"
+      ]
+    },
+    {
+      "section": "TUncertainty",
+      "name": "undefined",
+      "field_id": "2170",
+      "local_path": "TUncertainty/undefined",
+      "page": "ecospold2/uncertainty.md",
+      "anchor": "field-2170",
+      "metadata": {
+        "type": "",
+        "size": "",
+        "required": "Yes",
+        "multiple": "No",
+        "multilingual": "No",
+        "redundant_master_data": "No",
+        "spold1_id": "new"
+      },
+      "source_blocks": [
+        "TUncertainty.2170.description.0"
+      ]
+    },
+    {
+      "section": "TUncertainty",
+      "name": "@minValue",
+      "field_id": "2171",
+      "local_path": "TUncertainty/undefined/@minValue",
+      "page": "ecospold2/uncertainty.md",
+      "anchor": "field-2171",
+      "metadata": {
+        "type": "TFloatNumber",
+        "size": "",
+        "required": "Yes",
+        "multiple": "No",
+        "multilingual": "No",
+        "redundant_master_data": "No",
+        "spold1_id": "new"
+      },
+      "source_blocks": [
+        "TUncertainty.2171.description.0"
+      ]
+    },
+    {
+      "section": "TUncertainty",
+      "name": "@maxValue",
+      "field_id": "2172",
+      "local_path": "TUncertainty/undefined/@maxValue",
+      "page": "ecospold2/uncertainty.md",
+      "anchor": "field-2172",
+      "metadata": {
+        "type": "TFloatNumber",
+        "size": "",
+        "required": "Yes",
+        "multiple": "No",
+        "multilingual": "No",
+        "redundant_master_data": "No",
+        "spold1_id": "new"
+      },
+      "source_blocks": [
+        "TUncertainty.2172.description.0"
+      ]
+    },
+    {
+      "section": "TUncertainty",
+      "name": "@standardDeviation95",
+      "field_id": "2173",
+      "local_path": "TUncertainty/undefined/@standardDeviation95",
+      "page": "ecospold2/uncertainty.md",
+      "anchor": "field-2173",
+      "metadata": {
+        "type": "TFloatNumber",
+        "size": "",
+        "required": "Yes",
+        "multiple": "No",
+        "multilingual": "No",
+        "redundant_master_data": "No",
+        "spold1_id": "new"
+      },
+      "source_blocks": [
+        "TUncertainty.2173.description.0"
+      ]
+    },
+    {
+      "section": "TUncertainty",
+      "name": "pedigreeMatrix",
+      "field_id": "2270",
+      "local_path": "TUncertainty/pedigreeMatrix",
+      "page": "ecospold2/uncertainty.md",
+      "anchor": "field-2270",
+      "metadata": {
+        "type": "integer",
+        "size": "",
+        "required": "No",
+        "multiple": "No",
+        "multilingual": "No",
+        "redundant_master_data": "No",
+        "spold1_id": "new"
+      },
+      "source_blocks": [
+        "TUncertainty.2270.description.0"
+      ]
+    },
+    {
+      "section": "TUncertainty",
+      "name": "@reliability",
+      "field_id": "2271",
+      "local_path": "TUncertainty/pedigreeMatrix/@reliability",
+      "page": "ecospold2/uncertainty.md",
+      "anchor": "field-2271",
+      "metadata": {
+        "type": "integer",
+        "size": "",
+        "required": "Yes",
+        "multiple": "No",
+        "multilingual": "No",
+        "redundant_master_data": "No",
+        "spold1_id": "new"
+      },
+      "source_blocks": [
+        "TUncertainty.2271.description.0",
+        "TUncertainty.2271.description.1",
+        "TUncertainty.2271.description.2",
+        "TUncertainty.2271.description.3",
+        "TUncertainty.2271.description.4"
+      ]
+    },
+    {
+      "section": "TUncertainty",
+      "name": "@completeness",
+      "field_id": "2272",
+      "local_path": "TUncertainty/pedigreeMatrix/@completeness",
+      "page": "ecospold2/uncertainty.md",
+      "anchor": "field-2272",
+      "metadata": {
+        "type": "integer",
+        "size": "",
+        "required": "Yes",
+        "multiple": "No",
+        "multilingual": "No",
+        "redundant_master_data": "No",
+        "spold1_id": "new"
+      },
+      "source_blocks": [
+        "TUncertainty.2272.description.0",
+        "TUncertainty.2272.description.1",
+        "TUncertainty.2272.description.2",
+        "TUncertainty.2272.description.3",
+        "TUncertainty.2272.description.4"
+      ]
+    },
+    {
+      "section": "TUncertainty",
+      "name": "@temporalCorrelation",
+      "field_id": "2273",
+      "local_path": "TUncertainty/pedigreeMatrix/@temporalCorrelation",
+      "page": "ecospold2/uncertainty.md",
+      "anchor": "field-2273",
+      "metadata": {
+        "type": "integer",
+        "size": "",
+        "required": "Yes",
+        "multiple": "No",
+        "multilingual": "No",
+        "redundant_master_data": "No",
+        "spold1_id": "new"
+      },
+      "source_blocks": [
+        "TUncertainty.2273.description.0",
+        "TUncertainty.2273.description.1",
+        "TUncertainty.2273.description.2",
+        "TUncertainty.2273.description.3",
+        "TUncertainty.2273.description.4"
+      ]
+    },
+    {
+      "section": "TUncertainty",
+      "name": "@geographicalCorrelation",
+      "field_id": "2274",
+      "local_path": "TUncertainty/pedigreeMatrix/@geographicalCorrelation",
+      "page": "ecospold2/uncertainty.md",
+      "anchor": "field-2274",
+      "metadata": {
+        "type": "integer",
+        "size": "",
+        "required": "Yes",
+        "multiple": "No",
+        "multilingual": "No",
+        "redundant_master_data": "No",
+        "spold1_id": "new"
+      },
+      "source_blocks": [
+        "TUncertainty.2274.description.0",
+        "TUncertainty.2274.description.1",
+        "TUncertainty.2274.description.2",
+        "TUncertainty.2274.description.3",
+        "TUncertainty.2274.description.4"
+      ]
+    },
+    {
+      "section": "TUncertainty",
+      "name": "@furtherTechnologyCorrelation",
+      "field_id": "2275",
+      "local_path": "TUncertainty/pedigreeMatrix/@furtherTechnologyCorrelation",
+      "page": "ecospold2/uncertainty.md",
+      "anchor": "field-2275",
+      "metadata": {
+        "type": "integer",
+        "size": "",
+        "required": "Yes",
+        "multiple": "No",
+        "multilingual": "No",
+        "redundant_master_data": "No",
+        "spold1_id": "new"
+      },
+      "source_blocks": [
+        "TUncertainty.2275.description.0",
+        "TUncertainty.2275.description.1",
+        "TUncertainty.2275.description.2",
+        "TUncertainty.2275.description.3",
+        "TUncertainty.2275.description.4"
+      ]
+    },
+    {
+      "section": "TProperty",
+      "name": "@propertyId",
+      "field_id": "2300",
+      "local_path": "TProperty/@propertyId",
+      "page": "ecospold2/properties.md",
+      "anchor": "field-2300",
+      "metadata": {
+        "type": "TUuid",
+        "size": "36",
+        "required": "Yes",
+        "multiple": "No",
+        "multilingual": "No",
+        "redundant_master_data": "No",
+        "spold1_id": "new"
+      },
+      "source_blocks": [
+        "TProperty.2300.description.0"
+      ]
+    },
+    {
+      "section": "TProperty",
+      "name": "@propertyContextId",
+      "field_id": "2301",
+      "local_path": "TProperty/@propertyContextId",
+      "page": "ecospold2/properties.md",
+      "anchor": "field-2301",
+      "metadata": {
+        "type": "TUuid",
+        "size": "36",
+        "required": "No",
+        "multiple": "No",
+        "multilingual": "No",
+        "redundant_master_data": "No",
+        "spold1_id": "new"
+      },
+      "source_blocks": [
+        "TProperty.2301.description.0",
+        "TProperty.2301.description.1"
+      ]
+    },
+    {
+      "section": "TProperty",
+      "name": "name",
+      "field_id": "2310",
+      "local_path": "TProperty/name",
+      "page": "ecospold2/properties.md",
+      "anchor": "field-2310",
+      "metadata": {
+        "type": "TString80",
+        "size": "80",
+        "required": "Yes",
+        "multiple": "No",
+        "multilingual": "Yes",
+        "redundant_master_data": "Yes",
+        "spold1_id": "new"
+      },
+      "source_blocks": [
+        "TProperty.2310.description.0"
+      ]
+    },
+    {
+      "section": "TProperty",
+      "name": "@unitId",
+      "field_id": "2320",
+      "local_path": "TProperty/@unitId",
+      "page": "ecospold2/properties.md",
+      "anchor": "field-2320",
+      "metadata": {
+        "type": "TUuid",
+        "size": "36",
+        "required": "No",
+        "multiple": "No",
+        "multilingual": "No",
+        "redundant_master_data": "Yes",
+        "spold1_id": "3706"
+      },
+      "source_blocks": [
+        "TProperty.2320.description.0"
+      ]
+    },
+    {
+      "section": "TProperty",
+      "name": "@unitContextId",
+      "field_id": "2321",
+      "local_path": "TProperty/@unitContextId",
+      "page": "ecospold2/properties.md",
+      "anchor": "field-2321",
+      "metadata": {
+        "type": "TUuid",
+        "size": "36",
+        "required": "No",
+        "multiple": "No",
+        "multilingual": "No",
+        "redundant_master_data": "Yes",
+        "spold1_id": "new"
+      },
+      "source_blocks": [
+        "TProperty.2321.description.0",
+        "TProperty.2321.description.1"
+      ]
+    },
+    {
+      "section": "TProperty",
+      "name": "unitName",
+      "field_id": "2325",
+      "local_path": "TProperty/unitName",
+      "page": "ecospold2/properties.md",
+      "anchor": "field-2325",
+      "metadata": {
+        "type": "TString40",
+        "size": "40",
+        "required": "No",
+        "multiple": "No",
+        "multilingual": "Yes",
+        "redundant_master_data": "Yes",
+        "spold1_id": "3706"
+      },
+      "source_blocks": [
+        "TProperty.2325.description.0"
+      ]
+    },
+    {
+      "section": "TProperty",
+      "name": "@amount",
+      "field_id": "2330",
+      "local_path": "TProperty/@amount",
+      "page": "ecospold2/properties.md",
+      "anchor": "field-2330",
+      "metadata": {
+        "type": "TFloatNumber",
+        "size": "",
+        "required": "Yes",
+        "multiple": "No",
+        "multilingual": "No",
+        "redundant_master_data": "No",
+        "spold1_id": "new"
+      },
+      "source_blocks": [
+        "TProperty.2330.description.0"
+      ]
+    },
+    {
+      "section": "TProperty",
+      "name": "@isDefiningValue",
+      "field_id": "2335",
+      "local_path": "TProperty/@isDefiningValue",
+      "page": "ecospold2/properties.md",
+      "anchor": "field-2335",
+      "metadata": {
+        "type": "boolean",
+        "size": "",
+        "required": "No",
+        "multiple": "No",
+        "multilingual": "No",
+        "redundant_master_data": "No",
+        "spold1_id": "new"
+      },
+      "source_blocks": [
+        "TProperty.2335.description.0"
+      ]
+    },
+    {
+      "section": "TProperty",
+      "name": "@mathematicalRelation",
+      "field_id": "2340",
+      "local_path": "TProperty/@mathematicalRelation",
+      "page": "ecospold2/properties.md",
+      "anchor": "field-2340",
+      "metadata": {
+        "type": "TBaseString32000",
+        "size": "32000",
+        "required": "No",
+        "multiple": "No",
+        "multilingual": "No",
+        "redundant_master_data": "No",
+        "spold1_id": "new"
+      },
+      "source_blocks": [
+        "TProperty.2340.description.0",
+        "TProperty.2340.description.1"
+      ]
+    },
+    {
+      "section": "TProperty",
+      "name": "@isCalculatedAmount",
+      "field_id": "2345",
+      "local_path": "TProperty/@isCalculatedAmount",
+      "page": "ecospold2/properties.md",
+      "anchor": "field-2345",
+      "metadata": {
+        "type": "boolean",
+        "size": "",
+        "required": "No",
+        "multiple": "No",
+        "multilingual": "No",
+        "redundant_master_data": "No",
+        "spold1_id": "new"
+      },
+      "source_blocks": [
+        "TProperty.2345.description.0"
+      ]
+    },
+    {
+      "section": "TProperty",
+      "name": "@variableName",
+      "field_id": "2350",
+      "local_path": "TProperty/@variableName",
+      "page": "ecospold2/properties.md",
+      "anchor": "field-2350",
+      "metadata": {
+        "type": "TVariableName",
+        "size": "40",
+        "required": "No",
+        "multiple": "No",
+        "multilingual": "No",
+        "redundant_master_data": "No",
+        "spold1_id": "new"
+      },
+      "source_blocks": [
+        "TProperty.2350.description.0",
+        "TProperty.2350.description.1"
+      ]
+    },
+    {
+      "section": "TProperty",
+      "name": "uncertainty",
+      "field_id": "2360",
+      "local_path": "TProperty/uncertainty",
+      "page": "ecospold2/properties.md",
+      "anchor": "field-2360",
+      "metadata": {
+        "type": "TUncertainty",
+        "size": "",
+        "required": "No",
+        "multiple": "No",
+        "multilingual": "No",
+        "redundant_master_data": "No",
+        "spold1_id": "new"
+      },
+      "source_blocks": [
+        "TProperty.2360.description.0"
+      ]
+    },
+    {
+      "section": "TProperty",
+      "name": "@sourceId",
+      "field_id": "2370",
+      "local_path": "TProperty/@sourceId",
+      "page": "ecospold2/properties.md",
+      "anchor": "field-2370",
+      "metadata": {
+        "type": "TUuid",
+        "size": "36",
+        "required": "No",
+        "multiple": "No",
+        "multilingual": "No",
+        "redundant_master_data": "No",
+        "spold1_id": "new"
+      },
+      "source_blocks": [
+        "TProperty.2370.description.0"
+      ]
+    },
+    {
+      "section": "TProperty",
+      "name": "@sourceContextId",
+      "field_id": "2371",
+      "local_path": "TProperty/@sourceContextId",
+      "page": "ecospold2/properties.md",
+      "anchor": "field-2371",
+      "metadata": {
+        "type": "TUuid",
+        "size": "36",
+        "required": "No",
+        "multiple": "No",
+        "multilingual": "No",
+        "redundant_master_data": "No",
+        "spold1_id": "new"
+      },
+      "source_blocks": [
+        "TProperty.2371.description.0",
+        "TProperty.2371.description.1"
+      ]
+    },
+    {
+      "section": "TProperty",
+      "name": "@sourceIdOverwrittenByChild",
+      "field_id": "2372",
+      "local_path": "TProperty/@sourceIdOverwrittenByChild",
+      "page": "ecospold2/properties.md",
+      "anchor": "field-2372",
+      "metadata": {
+        "type": "boolean",
+        "size": "",
+        "required": "No",
+        "multiple": "No",
+        "multilingual": "No",
+        "redundant_master_data": "No",
+        "spold1_id": "new"
+      },
+      "source_blocks": [
+        "TProperty.2372.description.0"
+      ]
+    },
+    {
+      "section": "TProperty",
+      "name": "@sourceYear",
+      "field_id": "2375",
+      "local_path": "TProperty/@sourceYear",
+      "page": "ecospold2/properties.md",
+      "anchor": "field-2375",
+      "metadata": {
+        "type": "TBaseString30",
+        "size": "30",
+        "required": "No",
+        "multiple": "No",
+        "multilingual": "No",
+        "redundant_master_data": "Yes",
+        "spold1_id": "new"
+      },
+      "source_blocks": [
+        "TProperty.2375.description.0"
+      ]
+    },
+    {
+      "section": "TProperty",
+      "name": "@sourceFirstAuthor",
+      "field_id": "2376",
+      "local_path": "TProperty/@sourceFirstAuthor",
+      "page": "ecospold2/properties.md",
+      "anchor": "field-2376",
+      "metadata": {
+        "type": "TBaseString40",
+        "size": "40",
+        "required": "No",
+        "multiple": "No",
+        "multilingual": "No",
+        "redundant_master_data": "Yes",
+        "spold1_id": "new"
+      },
+      "source_blocks": [
+        "TProperty.2376.description.0"
+      ]
+    },
+    {
+      "section": "TProperty",
+      "name": "comment",
+      "field_id": "2380",
+      "local_path": "TProperty/comment",
+      "page": "ecospold2/properties.md",
+      "anchor": "field-2380",
+      "metadata": {
+        "type": "TString32000",
+        "size": "32000",
+        "required": "No",
+        "multiple": "No",
+        "multilingual": "Yes",
+        "redundant_master_data": "No",
+        "spold1_id": "new"
+      },
+      "source_blocks": [
+        "TProperty.2380.description.0"
+      ]
+    },
+    {
+      "section": "TTransferCoefficient",
+      "name": "@exchangeId",
+      "field_id": "2400",
+      "local_path": "TTransferCoefficient/@exchangeId",
+      "page": "ecospold2/transfer-coefficients.md",
+      "anchor": "field-2400",
+      "metadata": {
+        "type": "TUuid",
+        "size": "36",
+        "required": "Yes",
+        "multiple": "No",
+        "multilingual": "No",
+        "redundant_master_data": "No",
+        "spold1_id": "new"
+      },
+      "source_blocks": [
+        "TTransferCoefficient.2400.description.0"
+      ]
+    },
+    {
+      "section": "TTransferCoefficient",
+      "name": "@amount",
+      "field_id": "2410",
+      "local_path": "TTransferCoefficient/@amount",
+      "page": "ecospold2/transfer-coefficients.md",
+      "anchor": "field-2410",
+      "metadata": {
+        "type": "TFloatNumber",
+        "size": "",
+        "required": "Yes",
+        "multiple": "No",
+        "multilingual": "No",
+        "redundant_master_data": "No",
+        "spold1_id": "new"
+      },
+      "source_blocks": [
+        "TTransferCoefficient.2410.description.0"
+      ]
+    },
+    {
+      "section": "TTransferCoefficient",
+      "name": "@mathematicalRelation",
+      "field_id": "2420",
+      "local_path": "TTransferCoefficient/@mathematicalRelation",
+      "page": "ecospold2/transfer-coefficients.md",
+      "anchor": "field-2420",
+      "metadata": {
+        "type": "TBaseString32000",
+        "size": "32000",
+        "required": "No",
+        "multiple": "No",
+        "multilingual": "No",
+        "redundant_master_data": "No",
+        "spold1_id": "new"
+      },
+      "source_blocks": [
+        "TTransferCoefficient.2420.description.0",
+        "TTransferCoefficient.2420.description.1"
+      ]
+    },
+    {
+      "section": "TTransferCoefficient",
+      "name": "@isCalculatedAmount",
+      "field_id": "2425",
+      "local_path": "TTransferCoefficient/@isCalculatedAmount",
+      "page": "ecospold2/transfer-coefficients.md",
+      "anchor": "field-2425",
+      "metadata": {
+        "type": "boolean",
+        "size": "",
+        "required": "No",
+        "multiple": "No",
+        "multilingual": "No",
+        "redundant_master_data": "No",
+        "spold1_id": "new"
+      },
+      "source_blocks": [
+        "TTransferCoefficient.2425.description.0"
+      ]
+    },
+    {
+      "section": "TTransferCoefficient",
+      "name": "uncertainty",
+      "field_id": "2430",
+      "local_path": "TTransferCoefficient/uncertainty",
+      "page": "ecospold2/transfer-coefficients.md",
+      "anchor": "field-2430",
+      "metadata": {
+        "type": "TUncertainty",
+        "size": "",
+        "required": "No",
+        "multiple": "No",
+        "multilingual": "No",
+        "redundant_master_data": "No",
+        "spold1_id": "new"
+      },
+      "source_blocks": [
+        "TTransferCoefficient.2430.description.0"
+      ]
+    },
+    {
+      "section": "TTransferCoefficient",
+      "name": "@sourceId",
+      "field_id": "2440",
+      "local_path": "TTransferCoefficient/@sourceId",
+      "page": "ecospold2/transfer-coefficients.md",
+      "anchor": "field-2440",
+      "metadata": {
+        "type": "TUuid",
+        "size": "36",
+        "required": "No",
+        "multiple": "No",
+        "multilingual": "No",
+        "redundant_master_data": "No",
+        "spold1_id": "new"
+      },
+      "source_blocks": [
+        "TTransferCoefficient.2440.description.0",
+        "TTransferCoefficient.2440.options"
+      ]
+    },
+    {
+      "section": "TTransferCoefficient",
+      "name": "@sourceContextId",
+      "field_id": "2441",
+      "local_path": "TTransferCoefficient/@sourceContextId",
+      "page": "ecospold2/transfer-coefficients.md",
+      "anchor": "field-2441",
+      "metadata": {
+        "type": "TUuid",
+        "size": "36",
+        "required": "No",
+        "multiple": "No",
+        "multilingual": "No",
+        "redundant_master_data": "No",
+        "spold1_id": "new"
+      },
+      "source_blocks": [
+        "TTransferCoefficient.2441.description.0",
+        "TTransferCoefficient.2441.description.1"
+      ]
+    },
+    {
+      "section": "TTransferCoefficient",
+      "name": "@sourceIdOverwrittenByChild",
+      "field_id": "2442",
+      "local_path": "TTransferCoefficient/@sourceIdOverwrittenByChild",
+      "page": "ecospold2/transfer-coefficients.md",
+      "anchor": "field-2442",
+      "metadata": {
+        "type": "boolean",
+        "size": "",
+        "required": "No",
+        "multiple": "No",
+        "multilingual": "No",
+        "redundant_master_data": "No",
+        "spold1_id": "new"
+      },
+      "source_blocks": [
+        "TTransferCoefficient.2442.description.0"
+      ]
+    },
+    {
+      "section": "TTransferCoefficient",
+      "name": "@sourceYear",
+      "field_id": "2445",
+      "local_path": "TTransferCoefficient/@sourceYear",
+      "page": "ecospold2/transfer-coefficients.md",
+      "anchor": "field-2445",
+      "metadata": {
+        "type": "TBaseString30",
+        "size": "30",
+        "required": "No",
+        "multiple": "No",
+        "multilingual": "No",
+        "redundant_master_data": "Yes",
+        "spold1_id": "new"
+      },
+      "source_blocks": [
+        "TTransferCoefficient.2445.description.0"
+      ]
+    },
+    {
+      "section": "TTransferCoefficient",
+      "name": "@sourceFirstAuthor",
+      "field_id": "2446",
+      "local_path": "TTransferCoefficient/@sourceFirstAuthor",
+      "page": "ecospold2/transfer-coefficients.md",
+      "anchor": "field-2446",
+      "metadata": {
+        "type": "TBaseString40",
+        "size": "40",
+        "required": "No",
+        "multiple": "No",
+        "multilingual": "No",
+        "redundant_master_data": "Yes",
+        "spold1_id": "new"
+      },
+      "source_blocks": [
+        "TTransferCoefficient.2446.description.0"
+      ]
+    },
+    {
+      "section": "TTransferCoefficient",
+      "name": "comment",
+      "field_id": "2450",
+      "local_path": "TTransferCoefficient/comment",
+      "page": "ecospold2/transfer-coefficients.md",
+      "anchor": "field-2450",
+      "metadata": {
+        "type": "TString32000",
+        "size": "32000",
+        "required": "No",
+        "multiple": "No",
+        "multilingual": "Yes",
+        "redundant_master_data": "No",
+        "spold1_id": "3792"
+      },
+      "source_blocks": [
+        "TTransferCoefficient.2450.description.0"
+      ]
+    },
+    {
+      "section": "TTextAndImage",
+      "name": "text",
+      "field_id": "3900",
+      "local_path": "TTextAndImage/text",
+      "page": "ecospold2/text-and-image.md",
+      "anchor": "field-3900",
+      "metadata": {
+        "type": "TIndexedString32000",
+        "size": "32000",
+        "required": "No",
+        "multiple": "Yes",
+        "multilingual": "No",
+        "redundant_master_data": "No",
+        "spold1_id": "new"
+      },
+      "source_blocks": [
+        "TTextAndImage.3900.description.0"
+      ]
+    },
+    {
+      "section": "TTextAndImage",
+      "name": "imageUrl",
+      "field_id": "3910",
+      "local_path": "TTextAndImage/imageUrl",
+      "page": "ecospold2/text-and-image.md",
+      "anchor": "field-3910",
+      "metadata": {
+        "type": "anyURI",
+        "size": "",
+        "required": "No",
+        "multiple": "Yes",
+        "multilingual": "No",
+        "redundant_master_data": "No",
+        "spold1_id": "new"
+      },
+      "source_blocks": [
+        "TTextAndImage.3910.description.0"
+      ]
+    },
+    {
+      "section": "TTextAndImage",
+      "name": "variable",
+      "field_id": "3920",
+      "local_path": "TTextAndImage/variable",
+      "page": "ecospold2/text-and-image.md",
+      "anchor": "field-3920",
+      "metadata": {
+        "type": "TNamedString32000",
+        "size": "32000",
+        "required": "No",
+        "multiple": "Yes",
+        "multilingual": "No",
+        "redundant_master_data": "No",
+        "spold1_id": "new"
+      },
+      "source_blocks": [
+        "TTextAndImage.3920.description.0"
+      ]
+    },
+    {
+      "section": "TRepresentativeness",
+      "name": "@systemModelId",
+      "field_id": "3000",
+      "local_path": "TRepresentativeness/@systemModelId",
+      "page": "ecospold2/representativeness.md",
+      "anchor": "field-3000",
+      "metadata": {
+        "type": "TUuid",
+        "size": "36",
+        "required": "Yes",
+        "multiple": "No",
+        "multilingual": "No",
+        "redundant_master_data": "No",
+        "spold1_id": "new"
+      },
+      "source_blocks": [
+        "TRepresentativeness.3000.description.0"
+      ]
+    },
+    {
+      "section": "TRepresentativeness",
+      "name": "@systemModelContextId",
+      "field_id": "3001",
+      "local_path": "TRepresentativeness/@systemModelContextId",
+      "page": "ecospold2/representativeness.md",
+      "anchor": "field-3001",
+      "metadata": {
+        "type": "TUuid",
+        "size": "36",
+        "required": "No",
+        "multiple": "No",
+        "multilingual": "No",
+        "redundant_master_data": "No",
+        "spold1_id": "new"
+      },
+      "source_blocks": [
+        "TRepresentativeness.3001.description.0",
+        "TRepresentativeness.3001.description.1"
+      ]
+    },
+    {
+      "section": "TRepresentativeness",
+      "name": "systemModelName",
+      "field_id": "3005",
+      "local_path": "TRepresentativeness/systemModelName",
+      "page": "ecospold2/representativeness.md",
+      "anchor": "field-3005",
+      "metadata": {
+        "type": "TString120",
+        "size": "120",
+        "required": "Yes",
+        "multiple": "No",
+        "multilingual": "Yes",
+        "redundant_master_data": "Yes",
+        "spold1_id": "new"
+      },
+      "source_blocks": [
+        "TRepresentativeness.3005.description.0"
+      ]
+    },
+    {
+      "section": "TRepresentativeness",
+      "name": "@percent",
+      "field_id": "3010",
+      "local_path": "TRepresentativeness/@percent",
+      "page": "ecospold2/representativeness.md",
+      "anchor": "field-3010",
+      "metadata": {
+        "type": "TPercent",
+        "size": "",
+        "required": "No",
+        "multiple": "No",
+        "multilingual": "No",
+        "redundant_master_data": "No",
+        "spold1_id": "722"
+      },
+      "source_blocks": [
+        "TRepresentativeness.3010.description.0",
+        "TRepresentativeness.3010.options"
+      ]
+    },
+    {
+      "section": "TRepresentativeness",
+      "name": "samplingProcedure",
+      "field_id": "3030",
+      "local_path": "TRepresentativeness/samplingProcedure",
+      "page": "ecospold2/representativeness.md",
+      "anchor": "field-3030",
+      "metadata": {
+        "type": "TString32000",
+        "size": "32000",
+        "required": "No",
+        "multiple": "No",
+        "multilingual": "Yes",
+        "redundant_master_data": "No",
+        "spold1_id": "725"
+      },
+      "source_blocks": [
+        "TRepresentativeness.3030.description.0"
+      ]
+    },
+    {
+      "section": "TRepresentativeness",
+      "name": "extrapolations",
+      "field_id": "3040",
+      "local_path": "TRepresentativeness/extrapolations",
+      "page": "ecospold2/representativeness.md",
+      "anchor": "field-3040",
+      "metadata": {
+        "type": "TString32000",
+        "size": "32000",
+        "required": "No",
+        "multiple": "No",
+        "multilingual": "Yes",
+        "redundant_master_data": "No",
+        "spold1_id": "726"
+      },
+      "source_blocks": [
+        "TRepresentativeness.3040.description.0",
+        "TRepresentativeness.3040.description.1",
+        "TRepresentativeness.3040.description.2",
+        "TRepresentativeness.3040.description.3"
+      ]
+    },
+    {
+      "section": "TReview",
+      "name": "@reviewerId",
+      "field_id": "3300",
+      "local_path": "TReview/@reviewerId",
+      "page": "ecospold2/review.md",
+      "anchor": "field-3300",
+      "metadata": {
+        "type": "TUuid",
+        "size": "36",
+        "required": "Yes",
+        "multiple": "No",
+        "multilingual": "No",
+        "redundant_master_data": "No",
+        "spold1_id": "5616"
+      },
+      "source_blocks": [
+        "TReview.3300.description.0",
+        "TReview.3300.options"
+      ]
+    },
+    {
+      "section": "TReview",
+      "name": "@reviewerContextId",
+      "field_id": "3301",
+      "local_path": "TReview/@reviewerContextId",
+      "page": "ecospold2/review.md",
+      "anchor": "field-3301",
+      "metadata": {
+        "type": "TUuid",
+        "size": "36",
+        "required": "No",
+        "multiple": "No",
+        "multilingual": "No",
+        "redundant_master_data": "No",
+        "spold1_id": "new"
+      },
+      "source_blocks": [
+        "TReview.3301.description.0",
+        "TReview.3301.description.1"
+      ]
+    },
+    {
+      "section": "TReview",
+      "name": "@reviewerName",
+      "field_id": "3305",
+      "local_path": "TReview/@reviewerName",
+      "page": "ecospold2/review.md",
+      "anchor": "field-3305",
+      "metadata": {
+        "type": "TBaseString40",
+        "size": "40",
+        "required": "Yes",
+        "multiple": "No",
+        "multilingual": "No",
+        "redundant_master_data": "Yes",
+        "spold1_id": "new"
+      },
+      "source_blocks": [
+        "TReview.3305.description.0"
+      ]
+    },
+    {
+      "section": "TReview",
+      "name": "@reviewerEmail",
+      "field_id": "3306",
+      "local_path": "TReview/@reviewerEmail",
+      "page": "ecospold2/review.md",
+      "anchor": "field-3306",
+      "metadata": {
+        "type": "TBaseString80",
+        "size": "80",
+        "required": "Yes",
+        "multiple": "No",
+        "multilingual": "No",
+        "redundant_master_data": "Yes",
+        "spold1_id": "new"
+      },
+      "source_blocks": [
+        "TReview.3306.description.0"
+      ]
+    },
+    {
+      "section": "TReview",
+      "name": "@reviewDate",
+      "field_id": "3310",
+      "local_path": "TReview/@reviewDate",
+      "page": "ecospold2/review.md",
+      "anchor": "field-3310",
+      "metadata": {
+        "type": "date",
+        "size": "",
+        "required": "Yes",
+        "multiple": "No",
+        "multilingual": "No",
+        "redundant_master_data": "No",
+        "spold1_id": "new"
+      },
+      "source_blocks": [
+        "TReview.3310.description.0"
+      ]
+    },
+    {
+      "section": "TReview",
+      "name": "@reviewedMajorRelease",
+      "field_id": "3320",
+      "local_path": "TReview/@reviewedMajorRelease",
+      "page": "ecospold2/review.md",
+      "anchor": "field-3320",
+      "metadata": {
+        "type": "integer",
+        "size": "",
+        "required": "Yes",
+        "multiple": "No",
+        "multilingual": "No",
+        "redundant_master_data": "No",
+        "spold1_id": "new"
+      },
+      "source_blocks": [
+        "TReview.3320.description.0"
+      ]
+    },
+    {
+      "section": "TReview",
+      "name": "@reviewedMinorRelease",
+      "field_id": "3325",
+      "local_path": "TReview/@reviewedMinorRelease",
+      "page": "ecospold2/review.md",
+      "anchor": "field-3325",
+      "metadata": {
+        "type": "integer",
+        "size": "",
+        "required": "Yes",
+        "multiple": "No",
+        "multilingual": "No",
+        "redundant_master_data": "No",
+        "spold1_id": "new"
+      },
+      "source_blocks": [
+        "TReview.3325.description.0"
+      ]
+    },
+    {
+      "section": "TReview",
+      "name": "@reviewedMajorRevision",
+      "field_id": "3330",
+      "local_path": "TReview/@reviewedMajorRevision",
+      "page": "ecospold2/review.md",
+      "anchor": "field-3330",
+      "metadata": {
+        "type": "integer",
+        "size": "",
+        "required": "Yes",
+        "multiple": "No",
+        "multilingual": "No",
+        "redundant_master_data": "No",
+        "spold1_id": "new"
+      },
+      "source_blocks": [
+        "TReview.3330.description.0"
+      ]
+    },
+    {
+      "section": "TReview",
+      "name": "@reviewedMinorRevision",
+      "field_id": "3335",
+      "local_path": "TReview/@reviewedMinorRevision",
+      "page": "ecospold2/review.md",
+      "anchor": "field-3335",
+      "metadata": {
+        "type": "integer",
+        "size": "",
+        "required": "Yes",
+        "multiple": "No",
+        "multilingual": "No",
+        "redundant_master_data": "No",
+        "spold1_id": "new"
+      },
+      "source_blocks": [
+        "TReview.3335.description.0"
+      ]
+    },
+    {
+      "section": "TReview",
+      "name": "details",
+      "field_id": "3340",
+      "local_path": "TReview/details",
+      "page": "ecospold2/review.md",
+      "anchor": "field-3340",
+      "metadata": {
+        "type": "TTextAndImage",
+        "size": "",
+        "required": "No",
+        "multiple": "No",
+        "multilingual": "Yes",
+        "redundant_master_data": "No",
+        "spold1_id": "5615"
+      },
+      "source_blocks": [
+        "TReview.3340.description.0",
+        "TReview.3340.description.1"
+      ]
+    },
+    {
+      "section": "TReview",
+      "name": "otherDetails",
+      "field_id": "3350",
+      "local_path": "TReview/otherDetails",
+      "page": "ecospold2/review.md",
+      "anchor": "field-3350",
+      "metadata": {
+        "type": "TString32000",
+        "size": "32000",
+        "required": "No",
+        "multiple": "No",
+        "multilingual": "Yes",
+        "redundant_master_data": "No",
+        "spold1_id": "5619"
+      },
+      "source_blocks": [
+        "TReview.3350.description.0"
+      ]
+    },
+    {
+      "section": "TDataEntryBy",
+      "name": "@personId",
+      "field_id": "3400",
+      "local_path": "TDataEntryBy/@personId",
+      "page": "ecospold2/data-entry.md",
+      "anchor": "field-3400",
+      "metadata": {
+        "type": "TUuid",
+        "size": "36",
+        "required": "Yes",
+        "multiple": "No",
+        "multilingual": "No",
+        "redundant_master_data": "No",
+        "spold1_id": "302"
+      },
+      "source_blocks": [
+        "TDataEntryBy.3400.description.0",
+        "TDataEntryBy.3400.options"
+      ]
+    },
+    {
+      "section": "TDataEntryBy",
+      "name": "@personContextId",
+      "field_id": "3401",
+      "local_path": "TDataEntryBy/@personContextId",
+      "page": "ecospold2/data-entry.md",
+      "anchor": "field-3401",
+      "metadata": {
+        "type": "TUuid",
+        "size": "36",
+        "required": "No",
+        "multiple": "No",
+        "multilingual": "No",
+        "redundant_master_data": "No",
+        "spold1_id": "new"
+      },
+      "source_blocks": [
+        "TDataEntryBy.3401.description.0",
+        "TDataEntryBy.3401.description.1"
+      ]
+    },
+    {
+      "section": "TDataEntryBy",
+      "name": "@isActiveAuthor",
+      "field_id": "3403",
+      "local_path": "TDataEntryBy/@isActiveAuthor",
+      "page": "ecospold2/data-entry.md",
+      "anchor": "field-3403",
+      "metadata": {
+        "type": "boolean",
+        "size": "",
+        "required": "No",
+        "multiple": "No",
+        "multilingual": "No",
+        "redundant_master_data": "No",
+        "spold1_id": "new"
+      },
+      "source_blocks": [
+        "TDataEntryBy.3403.description.0"
+      ]
+    },
+    {
+      "section": "TDataEntryBy",
+      "name": "@personName",
+      "field_id": "3405",
+      "local_path": "TDataEntryBy/@personName",
+      "page": "ecospold2/data-entry.md",
+      "anchor": "field-3405",
+      "metadata": {
+        "type": "TBaseString40",
+        "size": "40",
+        "required": "Yes",
+        "multiple": "No",
+        "multilingual": "No",
+        "redundant_master_data": "Yes",
+        "spold1_id": "new"
+      },
+      "source_blocks": [
+        "TDataEntryBy.3405.description.0"
+      ]
+    },
+    {
+      "section": "TDataEntryBy",
+      "name": "@personEmail",
+      "field_id": "3406",
+      "local_path": "TDataEntryBy/@personEmail",
+      "page": "ecospold2/data-entry.md",
+      "anchor": "field-3406",
+      "metadata": {
+        "type": "TBaseString80",
+        "size": "80",
+        "required": "Yes",
+        "multiple": "No",
+        "multilingual": "No",
+        "redundant_master_data": "Yes",
+        "spold1_id": "new"
+      },
+      "source_blocks": [
+        "TDataEntryBy.3406.description.0"
+      ]
+    },
+    {
+      "section": "TDataGeneratorAndPublication",
+      "name": "@personId",
+      "field_id": "3500",
+      "local_path": "TDataGeneratorAndPublication/@personId",
+      "page": "ecospold2/publication.md",
+      "anchor": "field-3500",
+      "metadata": {
+        "type": "TUuid",
+        "size": "36",
+        "required": "Yes",
+        "multiple": "No",
+        "multilingual": "No",
+        "redundant_master_data": "No",
+        "spold1_id": "751"
+      },
+      "source_blocks": [
+        "TDataGeneratorAndPublication.3500.description.0",
+        "TDataGeneratorAndPublication.3500.options"
+      ]
+    },
+    {
+      "section": "TDataGeneratorAndPublication",
+      "name": "@personContextId",
+      "field_id": "3501",
+      "local_path": "TDataGeneratorAndPublication/@personContextId",
+      "page": "ecospold2/publication.md",
+      "anchor": "field-3501",
+      "metadata": {
+        "type": "TUuid",
+        "size": "36",
+        "required": "No",
+        "multiple": "No",
+        "multilingual": "No",
+        "redundant_master_data": "No",
+        "spold1_id": "new"
+      },
+      "source_blocks": [
+        "TDataGeneratorAndPublication.3501.description.0",
+        "TDataGeneratorAndPublication.3501.description.1"
+      ]
+    },
+    {
+      "section": "TDataGeneratorAndPublication",
+      "name": "@personName",
+      "field_id": "3505",
+      "local_path": "TDataGeneratorAndPublication/@personName",
+      "page": "ecospold2/publication.md",
+      "anchor": "field-3505",
+      "metadata": {
+        "type": "TBaseString40",
+        "size": "40",
+        "required": "Yes",
+        "multiple": "No",
+        "multilingual": "No",
+        "redundant_master_data": "Yes",
+        "spold1_id": "new"
+      },
+      "source_blocks": [
+        "TDataGeneratorAndPublication.3505.description.0"
+      ]
+    },
+    {
+      "section": "TDataGeneratorAndPublication",
+      "name": "@personEmail",
+      "field_id": "3506",
+      "local_path": "TDataGeneratorAndPublication/@personEmail",
+      "page": "ecospold2/publication.md",
+      "anchor": "field-3506",
+      "metadata": {
+        "type": "TBaseString80",
+        "size": "80",
+        "required": "Yes",
+        "multiple": "No",
+        "multilingual": "No",
+        "redundant_master_data": "Yes",
+        "spold1_id": "new"
+      },
+      "source_blocks": [
+        "TDataGeneratorAndPublication.3506.description.0"
+      ]
+    },
+    {
+      "section": "TDataGeneratorAndPublication",
+      "name": "@dataPublishedIn",
+      "field_id": "3510",
+      "local_path": "TDataGeneratorAndPublication/@dataPublishedIn",
+      "page": "ecospold2/publication.md",
+      "anchor": "field-3510",
+      "metadata": {
+        "type": "integer",
+        "size": "",
+        "required": "No",
+        "multiple": "No",
+        "multilingual": "No",
+        "redundant_master_data": "No",
+        "spold1_id": "756"
+      },
+      "source_blocks": [
+        "TDataGeneratorAndPublication.3510.description.0",
+        "TDataGeneratorAndPublication.3510.description.1",
+        "TDataGeneratorAndPublication.3510.options"
+      ]
+    },
+    {
+      "section": "TDataGeneratorAndPublication",
+      "name": "@publishedSourceId",
+      "field_id": "3520",
+      "local_path": "TDataGeneratorAndPublication/@publishedSourceId",
+      "page": "ecospold2/publication.md",
+      "anchor": "field-3520",
+      "metadata": {
+        "type": "TUuid",
+        "size": "36",
+        "required": "No",
+        "multiple": "No",
+        "multilingual": "No",
+        "redundant_master_data": "No",
+        "spold1_id": "757"
+      },
+      "source_blocks": [
+        "TDataGeneratorAndPublication.3520.description.0",
+        "TDataGeneratorAndPublication.3520.options"
+      ]
+    },
+    {
+      "section": "TDataGeneratorAndPublication",
+      "name": "@publishedSourceContextId",
+      "field_id": "3521",
+      "local_path": "TDataGeneratorAndPublication/@publishedSourceContextId",
+      "page": "ecospold2/publication.md",
+      "anchor": "field-3521",
+      "metadata": {
+        "type": "TUuid",
+        "size": "36",
+        "required": "No",
+        "multiple": "No",
+        "multilingual": "No",
+        "redundant_master_data": "No",
+        "spold1_id": "new"
+      },
+      "source_blocks": [
+        "TDataGeneratorAndPublication.3521.description.0",
+        "TDataGeneratorAndPublication.3521.description.1"
+      ]
+    },
+    {
+      "section": "TDataGeneratorAndPublication",
+      "name": "@publishedSourceIdOverwrittenByChild",
+      "field_id": "3522",
+      "local_path": "TDataGeneratorAndPublication/@publishedSourceIdOverwrittenByChild",
+      "page": "ecospold2/publication.md",
+      "anchor": "field-3522",
+      "metadata": {
+        "type": "boolean",
+        "size": "",
+        "required": "No",
+        "multiple": "No",
+        "multilingual": "No",
+        "redundant_master_data": "No",
+        "spold1_id": "new"
+      },
+      "source_blocks": [
+        "TDataGeneratorAndPublication.3522.description.0"
+      ]
+    },
+    {
+      "section": "TDataGeneratorAndPublication",
+      "name": "@publishedSourceYear",
+      "field_id": "3525",
+      "local_path": "TDataGeneratorAndPublication/@publishedSourceYear",
+      "page": "ecospold2/publication.md",
+      "anchor": "field-3525",
+      "metadata": {
+        "type": "TBaseString30",
+        "size": "30",
+        "required": "No",
+        "multiple": "No",
+        "multilingual": "No",
+        "redundant_master_data": "Yes",
+        "spold1_id": "new"
+      },
+      "source_blocks": [
+        "TDataGeneratorAndPublication.3525.description.0"
+      ]
+    },
+    {
+      "section": "TDataGeneratorAndPublication",
+      "name": "@publishedSourceFirstAuthor",
+      "field_id": "3526",
+      "local_path": "TDataGeneratorAndPublication/@publishedSourceFirstAuthor",
+      "page": "ecospold2/publication.md",
+      "anchor": "field-3526",
+      "metadata": {
+        "type": "TBaseString40",
+        "size": "40",
+        "required": "No",
+        "multiple": "No",
+        "multilingual": "No",
+        "redundant_master_data": "Yes",
+        "spold1_id": "new"
+      },
+      "source_blocks": [
+        "TDataGeneratorAndPublication.3526.description.0"
+      ]
+    },
+    {
+      "section": "TDataGeneratorAndPublication",
+      "name": "@pageNumbers",
+      "field_id": "3530",
+      "local_path": "TDataGeneratorAndPublication/@pageNumbers",
+      "page": "ecospold2/publication.md",
+      "anchor": "field-3530",
+      "metadata": {
+        "type": "TBaseString30",
+        "size": "30",
+        "required": "No",
+        "multiple": "No",
+        "multilingual": "No",
+        "redundant_master_data": "No",
+        "spold1_id": "762"
+      },
+      "source_blocks": [
+        "TDataGeneratorAndPublication.3530.description.0"
+      ]
+    },
+    {
+      "section": "TDataGeneratorAndPublication",
+      "name": "@isCopyrightProtected",
+      "field_id": "3540",
+      "local_path": "TDataGeneratorAndPublication/@isCopyrightProtected",
+      "page": "ecospold2/publication.md",
+      "anchor": "field-3540",
+      "metadata": {
+        "type": "boolean",
+        "size": "",
+        "required": "Yes",
+        "multiple": "No",
+        "multilingual": "No",
+        "redundant_master_data": "No",
+        "spold1_id": "758"
+      },
+      "source_blocks": [
+        "TDataGeneratorAndPublication.3540.description.0"
+      ]
+    },
+    {
+      "section": "TDataGeneratorAndPublication",
+      "name": "@accessRestrictedTo",
+      "field_id": "3550",
+      "local_path": "TDataGeneratorAndPublication/@accessRestrictedTo",
+      "page": "ecospold2/publication.md",
+      "anchor": "field-3550",
+      "metadata": {
+        "type": "integer",
+        "size": "",
+        "required": "No",
+        "multiple": "No",
+        "multilingual": "No",
+        "redundant_master_data": "No",
+        "spold1_id": "759"
+      },
+      "source_blocks": [
+        "TDataGeneratorAndPublication.3550.description.0",
+        "TDataGeneratorAndPublication.3550.description.1",
+        "TDataGeneratorAndPublication.3550.description.2",
+        "TDataGeneratorAndPublication.3550.description.3",
+        "TDataGeneratorAndPublication.3550.description.4",
+        "TDataGeneratorAndPublication.3550.description.5",
+        "TDataGeneratorAndPublication.3550.options"
+      ]
+    },
+    {
+      "section": "TDataGeneratorAndPublication",
+      "name": "@companyId",
+      "field_id": "3560",
+      "local_path": "TDataGeneratorAndPublication/@companyId",
+      "page": "ecospold2/publication.md",
+      "anchor": "field-3560",
+      "metadata": {
+        "type": "TUuid",
+        "size": "36",
+        "required": "No",
+        "multiple": "No",
+        "multilingual": "No",
+        "redundant_master_data": "No",
+        "spold1_id": "760"
+      },
+      "source_blocks": [
+        "TDataGeneratorAndPublication.3560.description.0",
+        "TDataGeneratorAndPublication.3560.options"
+      ]
+    },
+    {
+      "section": "TDataGeneratorAndPublication",
+      "name": "@companyContextId",
+      "field_id": "3561",
+      "local_path": "TDataGeneratorAndPublication/@companyContextId",
+      "page": "ecospold2/publication.md",
+      "anchor": "field-3561",
+      "metadata": {
+        "type": "TUuid",
+        "size": "36",
+        "required": "No",
+        "multiple": "No",
+        "multilingual": "No",
+        "redundant_master_data": "No",
+        "spold1_id": "new"
+      },
+      "source_blocks": [
+        "TDataGeneratorAndPublication.3561.description.0",
+        "TDataGeneratorAndPublication.3561.description.1"
+      ]
+    },
+    {
+      "section": "TDataGeneratorAndPublication",
+      "name": "@companyCode",
+      "field_id": "3562",
+      "local_path": "TDataGeneratorAndPublication/@companyCode",
+      "page": "ecospold2/publication.md",
+      "anchor": "field-3562",
+      "metadata": {
+        "type": "TCompanyCode",
+        "size": "7",
+        "required": "No",
+        "multiple": "No",
+        "multilingual": "No",
+        "redundant_master_data": "Yes",
+        "spold1_id": "760"
+      },
+      "source_blocks": [
+        "TDataGeneratorAndPublication.3562.description.0",
+        "TDataGeneratorAndPublication.3562.options"
+      ]
+    },
+    {
+      "section": "TDataGeneratorAndPublication",
+      "name": "@companyIdOverwrittenByChild",
+      "field_id": "3563",
+      "local_path": "TDataGeneratorAndPublication/@companyIdOverwrittenByChild",
+      "page": "ecospold2/publication.md",
+      "anchor": "field-3563",
+      "metadata": {
+        "type": "boolean",
+        "size": "",
+        "required": "No",
+        "multiple": "No",
+        "multilingual": "No",
+        "redundant_master_data": "No",
+        "spold1_id": "new"
+      },
+      "source_blocks": [
+        "TDataGeneratorAndPublication.3563.description.0"
+      ]
+    },
+    {
+      "section": "TFileAttributes",
+      "name": "@majorRelease",
+      "field_id": "3800",
+      "local_path": "TFileAttributes/@majorRelease",
+      "page": "ecospold2/file-attributes.md",
+      "anchor": "field-3800",
+      "metadata": {
+        "type": "integer",
+        "size": "",
+        "required": "Yes",
+        "multiple": "No",
+        "multilingual": "No",
+        "redundant_master_data": "No",
+        "spold1_id": "202"
+      },
+      "source_blocks": [
+        "TFileAttributes.3800.description.0"
+      ]
+    },
+    {
+      "section": "TFileAttributes",
+      "name": "@minorRelease",
+      "field_id": "3805",
+      "local_path": "TFileAttributes/@minorRelease",
+      "page": "ecospold2/file-attributes.md",
+      "anchor": "field-3805",
+      "metadata": {
+        "type": "integer",
+        "size": "",
+        "required": "Yes",
+        "multiple": "No",
+        "multilingual": "No",
+        "redundant_master_data": "No",
+        "spold1_id": "202"
+      },
+      "source_blocks": [
+        "TFileAttributes.3805.description.0"
+      ]
+    },
+    {
+      "section": "TFileAttributes",
+      "name": "@majorRevision",
+      "field_id": "3810",
+      "local_path": "TFileAttributes/@majorRevision",
+      "page": "ecospold2/file-attributes.md",
+      "anchor": "field-3810",
+      "metadata": {
+        "type": "integer",
+        "size": "",
+        "required": "Yes",
+        "multiple": "No",
+        "multilingual": "No",
+        "redundant_master_data": "No",
+        "spold1_id": "207"
+      },
+      "source_blocks": [
+        "TFileAttributes.3810.description.0"
+      ]
+    },
+    {
+      "section": "TFileAttributes",
+      "name": "@minorRevision",
+      "field_id": "3815",
+      "local_path": "TFileAttributes/@minorRevision",
+      "page": "ecospold2/file-attributes.md",
+      "anchor": "field-3815",
+      "metadata": {
+        "type": "integer",
+        "size": "",
+        "required": "Yes",
+        "multiple": "No",
+        "multilingual": "No",
+        "redundant_master_data": "No",
+        "spold1_id": "207"
+      },
+      "source_blocks": [
+        "TFileAttributes.3815.description.0"
+      ]
+    },
+    {
+      "section": "TFileAttributes",
+      "name": "@defaultLanguage",
+      "field_id": "3820",
+      "local_path": "TFileAttributes/@defaultLanguage",
+      "page": "ecospold2/file-attributes.md",
+      "anchor": "field-3820",
+      "metadata": {
+        "type": "string",
+        "size": "",
+        "required": "No",
+        "multiple": "No",
+        "multilingual": "No",
+        "redundant_master_data": "No",
+        "spold1_id": "new"
+      },
+      "source_blocks": [
+        "TFileAttributes.3820.description.0"
+      ]
+    },
+    {
+      "section": "TFileAttributes",
+      "name": "@creationTimestamp",
+      "field_id": "3830",
+      "local_path": "TFileAttributes/@creationTimestamp",
+      "page": "ecospold2/file-attributes.md",
+      "anchor": "field-3830",
+      "metadata": {
+        "type": "dateTime",
+        "size": "",
+        "required": "No",
+        "multiple": "No",
+        "multilingual": "No",
+        "redundant_master_data": "No",
+        "spold1_id": "204a"
+      },
+      "source_blocks": [
+        "TFileAttributes.3830.description.0",
+        "TFileAttributes.3830.options"
+      ]
+    },
+    {
+      "section": "TFileAttributes",
+      "name": "@lastEditTimestamp",
+      "field_id": "3840",
+      "local_path": "TFileAttributes/@lastEditTimestamp",
+      "page": "ecospold2/file-attributes.md",
+      "anchor": "field-3840",
+      "metadata": {
+        "type": "dateTime",
+        "size": "",
+        "required": "No",
+        "multiple": "No",
+        "multilingual": "No",
+        "redundant_master_data": "No",
+        "spold1_id": "204b"
+      },
+      "source_blocks": [
+        "TFileAttributes.3840.description.0",
+        "TFileAttributes.3840.options"
+      ]
+    },
+    {
+      "section": "TFileAttributes",
+      "name": "@internalSchemaVersion",
+      "field_id": "3850",
+      "local_path": "TFileAttributes/@internalSchemaVersion",
+      "page": "ecospold2/file-attributes.md",
+      "anchor": "field-3850",
+      "metadata": {
+        "type": "TBaseString80",
+        "size": "80",
+        "required": "No",
+        "multiple": "No",
+        "multilingual": "No",
+        "redundant_master_data": "No",
+        "spold1_id": "new"
+      },
+      "source_blocks": [
+        "TFileAttributes.3850.description.0"
+      ]
+    },
+    {
+      "section": "TFileAttributes",
+      "name": "@fileGenerator",
+      "field_id": "3860",
+      "local_path": "TFileAttributes/@fileGenerator",
+      "page": "ecospold2/file-attributes.md",
+      "anchor": "field-3860",
+      "metadata": {
+        "type": "TBaseString255",
+        "size": "255",
+        "required": "No",
+        "multiple": "No",
+        "multilingual": "No",
+        "redundant_master_data": "No",
+        "spold1_id": "new"
+      },
+      "source_blocks": [
+        "TFileAttributes.3860.description.0"
+      ]
+    },
+    {
+      "section": "TFileAttributes",
+      "name": "@fileTimestamp",
+      "field_id": "3870",
+      "local_path": "TFileAttributes/@fileTimestamp",
+      "page": "ecospold2/file-attributes.md",
+      "anchor": "field-3870",
+      "metadata": {
+        "type": "dateTime",
+        "size": "",
+        "required": "No",
+        "multiple": "No",
+        "multilingual": "No",
+        "redundant_master_data": "No",
+        "spold1_id": "new"
+      },
+      "source_blocks": [
+        "TFileAttributes.3870.description.0"
+      ]
+    },
+    {
+      "section": "TFileAttributes",
+      "name": "@contextId",
+      "field_id": "3880",
+      "local_path": "TFileAttributes/@contextId",
+      "page": "ecospold2/file-attributes.md",
+      "anchor": "field-3880",
+      "metadata": {
+        "type": "TUuid",
+        "size": "36",
+        "required": "No",
+        "multiple": "No",
+        "multilingual": "No",
+        "redundant_master_data": "No",
+        "spold1_id": "new"
+      },
+      "source_blocks": [
+        "TFileAttributes.3880.description.0",
+        "TFileAttributes.3880.description.1"
+      ]
+    },
+    {
+      "section": "TFileAttributes",
+      "name": "contextName",
+      "field_id": "3885",
+      "local_path": "TFileAttributes/contextName",
+      "page": "ecospold2/file-attributes.md",
+      "anchor": "field-3885",
+      "metadata": {
+        "type": "TString80",
+        "size": "80",
+        "required": "No",
+        "multiple": "No",
+        "multilingual": "Yes",
+        "redundant_master_data": "Yes",
+        "spold1_id": "new"
+      },
+      "source_blocks": [
+        "TFileAttributes.3885.description.0",
+        "TFileAttributes.3885.description.1"
+      ]
+    },
+    {
+      "section": "TFileAttributes",
+      "name": "requiredContext",
+      "field_id": "3890",
+      "local_path": "TFileAttributes/requiredContext",
+      "page": "ecospold2/file-attributes.md",
+      "anchor": "field-3890",
+      "metadata": {
+        "type": "TRequiredContextReference",
+        "size": "",
+        "required": "No",
+        "multiple": "Yes",
+        "multilingual": "No",
+        "redundant_master_data": "No",
+        "spold1_id": "new"
+      },
+      "source_blocks": [
+        "TFileAttributes.3890.description.0"
+      ]
+    },
+    {
+      "section": "TRequiredContextReference",
+      "name": "@majorRelease",
+      "field_id": "7810",
+      "local_path": "TRequiredContextReference/@majorRelease",
+      "page": "ecospold2/required-contexts.md",
+      "anchor": "field-7810",
+      "metadata": {
+        "type": "integer",
+        "size": "",
+        "required": "Yes",
+        "multiple": "No",
+        "multilingual": "No",
+        "redundant_master_data": "No",
+        "spold1_id": "new"
+      },
+      "source_blocks": [
+        "TRequiredContextReference.7810.description.0"
+      ]
+    },
+    {
+      "section": "TRequiredContextReference",
+      "name": "@minorRelease",
+      "field_id": "7820",
+      "local_path": "TRequiredContextReference/@minorRelease",
+      "page": "ecospold2/required-contexts.md",
+      "anchor": "field-7820",
+      "metadata": {
+        "type": "integer",
+        "size": "",
+        "required": "Yes",
+        "multiple": "No",
+        "multilingual": "No",
+        "redundant_master_data": "No",
+        "spold1_id": "new"
+      },
+      "source_blocks": [
+        "TRequiredContextReference.7820.description.0"
+      ]
+    },
+    {
+      "section": "TRequiredContextReference",
+      "name": "@majorRevision",
+      "field_id": "7830",
+      "local_path": "TRequiredContextReference/@majorRevision",
+      "page": "ecospold2/required-contexts.md",
+      "anchor": "field-7830",
+      "metadata": {
+        "type": "integer",
+        "size": "",
+        "required": "No",
+        "multiple": "No",
+        "multilingual": "No",
+        "redundant_master_data": "No",
+        "spold1_id": "new"
+      },
+      "source_blocks": [
+        "TRequiredContextReference.7830.description.0"
+      ]
+    },
+    {
+      "section": "TRequiredContextReference",
+      "name": "@minorRevision",
+      "field_id": "7840",
+      "local_path": "TRequiredContextReference/@minorRevision",
+      "page": "ecospold2/required-contexts.md",
+      "anchor": "field-7840",
+      "metadata": {
+        "type": "integer",
+        "size": "",
+        "required": "No",
+        "multiple": "No",
+        "multilingual": "No",
+        "redundant_master_data": "No",
+        "spold1_id": "new"
+      },
+      "source_blocks": [
+        "TRequiredContextReference.7840.description.0"
+      ]
+    },
+    {
+      "section": "TRequiredContextReference",
+      "name": "@requiredContextId",
+      "field_id": "7850",
+      "local_path": "TRequiredContextReference/@requiredContextId",
+      "page": "ecospold2/required-contexts.md",
+      "anchor": "field-7850",
+      "metadata": {
+        "type": "TUuid",
+        "size": "36",
+        "required": "Yes",
+        "multiple": "No",
+        "multilingual": "No",
+        "redundant_master_data": "No",
+        "spold1_id": "new"
+      },
+      "source_blocks": [
+        "TRequiredContextReference.7850.description.0",
+        "TRequiredContextReference.7850.description.1"
+      ]
+    },
+    {
+      "section": "TRequiredContextReference",
+      "name": "requiredContextName",
+      "field_id": "7855",
+      "local_path": "TRequiredContextReference/requiredContextName",
+      "page": "ecospold2/required-contexts.md",
+      "anchor": "field-7855",
+      "metadata": {
+        "type": "TString80",
+        "size": "80",
+        "required": "Yes",
+        "multiple": "No",
+        "multilingual": "Yes",
+        "redundant_master_data": "Yes",
+        "spold1_id": "new"
+      },
+      "source_blocks": [
+        "TRequiredContextReference.7855.description.0"
+      ]
+    },
+    {
+      "section": "TRequiredContextReference",
+      "name": "@requiredContextFileLocation",
+      "field_id": "7860",
+      "local_path": "TRequiredContextReference/@requiredContextFileLocation",
+      "page": "ecospold2/required-contexts.md",
+      "anchor": "field-7860",
+      "metadata": {
+        "type": "anyURI",
+        "size": "",
+        "required": "No",
+        "multiple": "No",
+        "multilingual": "No",
+        "redundant_master_data": "No",
+        "spold1_id": "new"
+      },
+      "source_blocks": [
+        "TRequiredContextReference.7860.description.0"
+      ]
+    }
+  ],
+  "source_blocks": 388,
+  "notes": [
+    {
+      "block": "TActivity.110.description.0",
+      "status": "resolved",
+      "reason_zh": "System terminated 在此指已沿中间交换纳入全部上游活动并汇总的产品系统，不是停运或生命周期终结的系统。",
+      "recommendation_zh": "译为“已汇总的完整产品系统”，并在枚举中保留 System terminated 对照；全文保留仅有环境交换及累积影响结果的限定。"
+    },
+    {
+      "block": "TActivity.130.description.1",
+      "status": "resolved",
+      "reason_zh": "原文限制是子活动数据集不能用 EcoSpold02 模式验证，不是数据集不能被任何方式验证；子过程仅存储相对父过程变化的内容。",
+      "recommendation_zh": "译文明确保留模式名称、验证限制及仅存储差异的范围，不推断继承展开后的验证行为。"
+    },
+    {
+      "block": "TActivity.135.description.0",
+      "status": "needs_expert_review",
+      "reason_zh": "原文先把 inheritance depth 定义为父数据集最大数量，随后又以地理、时间和宏观经济情景子数据集类型说明 1、2、3，层数与类型之间的对应关系需核对继承规范。",
+      "recommendation_zh": "保持原文定义和全部枚举编号，请依据继承专门文档确认各层级的允许嵌套关系。"
+    },
+    {
+      "block": "TParameter.1715.description.0",
+      "status": "needs_expert_review",
+      "reason_zh": "该说明位于 TParameter 下，却将变量名描述为 exchange 的简称，可能沿用了交换字段说明；不能据此认定它仅能引用交换。",
+      "recommendation_zh": "译文忠实保留“交换”措辞，请对照参数变量名字段及公式语言规范确认此处是否应为 parameter。"
+    },
+    {
+      "block": "TImpactIndicatorResult.1820.description.0",
+      "status": "needs_expert_review",
+      "reason_zh": "原文写“对影响类别所属方法的引用”，但 EcoSpold02FlowData.xsd 约第 1039–1048 行明确本字段为 impactCategoryId、类型 TUuid、referenceToComplexType=TImpactMethodCategory，区别于字段 1810 的 impactMethodId（TImpactMethod）。译文忠实保留原文方法措辞，源文说明与引用对象存在矛盾。",
+      "recommendation_zh": "请确认应将官方说明修正为对影响类别的引用；实现时以 impactCategoryId 与 TImpactMethodCategory 的模式定义为依据。"
+    },
+    {
+      "block": "TActivity.180.options",
+      "status": "resolved",
+      "reason_zh": "原译枚举“净值/总值”容易被理解为一般净总数值；同字段说明明确 Net/Gross 指低位/高位热值。已改为具体热值名称，保留 0、1、2 及默认值对应关系，并补充原英文标签。",
+      "recommendation_zh": "采用修正后的热值枚举中文说明。"
+    },
+    {
+      "block": "TActivity.120.description.0",
+      "status": "needs_expert_review",
+      "reason_zh": "本块及 TActivity.120.description.1、TActivity.195.description.0/.1、TTimePeriod.630.description.0/.1 的复用说明使用 imageUri，但 EcoSpold02DataTypes.xsd 的 TTextAndImage 实际元素名为 imageUrl（约第 940 行）。译文忠实保留 imageUri，未静默改变原文 XML 名。",
+      "recommendation_zh": "请依据 TTextAndImage 的实际 XSD 元素定义统一官方说明中的 imageUri/imageUrl 命名。"
+    },
+    {
+      "block": "TParameter.1715.description.0",
+      "status": "needs_expert_review",
+      "reason_zh": "文档要求变量名以字母（a-z）开头，并描述字母、数字、下划线字符规则；EcoSpold02DataTypes.xsd 的 TVariableName 仅声明 maxLength=40 与 pattern=\\w\\S*（约第 858–862 行），该模式未直接表达与文字说明完全等价的规则。可能另有语义验证或公式解析约束。",
+      "recommendation_zh": "保留原文变量规则；请核对公式解析及语义验证规范，不应将 XSD 验证通过等同于满足全部变量名规则。"
+    },
+    {
+      "block": "TUncertainty.2100.description.0",
+      "status": "needs_expert_review",
+      "reason_zh": "原文将 σ 称为 variance（方差），而常见对数正态分布记号以 σ 为底层正态分布标准差、σ²为方差；同组字段则明确为 variance。译文忠实保留原符号及“方差”，不能据此自动将参数平方或开方。",
+      "recommendation_zh": "以对应 XSD 字段定义及读取软件实际实现确认 Mu/Variance 参数的尺度；请技术编辑澄清原文 σ 的定义。"
+    },
+    {
+      "block": "TUncertainty.2120.description.1",
+      "status": "needs_expert_review",
+      "reason_zh": "原文要求从 mostLikelyValue 计算 meanValue，同时禁止在 ecoinvent 上下文使用 mostLikelyValue（#3797）。官方 EcoSpold02DataTypes.xsd 的 triangular 类型却将当前 @mostLikelyValue（fieldId=2122）设为 required；#3797 与当前编号不同，禁令适用对象及与模式必填要求的关系尚不清楚。三角分布均值也不能仅由众数单独确定。正文保留 shall/must not 及 #3797，不擅自撤销禁令。",
+      "recommendation_zh": "请向数据方确认 #3797 是否仅指旧格式字段、当前 @mostLikelyValue 的提交规则及 meanValue 的具体含义；勿将众数直接当作三角分布均值。证据：Schemas/datasets/EcoSpold02DataTypes.xsd 的 triangular 定义。"
+    },
+    {
+      "block": "TUncertainty.2140.description.0",
+      "status": "needs_expert_review",
+      "reason_zh": "原文允许退化条件 a=b，但所列 Shape1 公式含分母 b-a，此条件下会出现除零；原文未说明退化分布如何处理。译文完整保留条件和公式。",
+      "recommendation_zh": "核实实现是否对 a=b 单独生成常数样本，或是否应要求 a<b；确认前不要直接按常规形状公式计算该边界情况。"
+    },
+    {
+      "block": "TUncertainty.2173.description.0",
+      "status": "needs_expert_review",
+      "reason_zh": "原文仅将旧格式 standardDeviation95 描述为从均值两侧扩展、覆盖总体95%所需的值，未说明它是加性半宽度、乘性因子或其他量，不能一概理解成普通标准差。译文不额外指定计算形式。",
+      "recommendation_zh": "读取 EcoSpold01 遗留数据时核对具体旧分布及字段约定，勿无条件将该值作为算术标准差。"
+    },
+    {
+      "block": "TDataGeneratorAndPublication.3560.options",
+      "status": "resolved",
+      "reason_zh": "已对照官方 XSD 确认，这些编号是旧 SpoldID 引用：accessRestrictedTo 的 spoldID=759、fieldId=3550；publishedSourceId 的 spoldID=757、fieldId=3520；TValidSource/@id 的 spoldID=801、fieldId=3110。原文条件与编号映射一致。",
+      "recommendation_zh": "保留原文 759=3、757 和 801；在按新版 fieldId 查找时使用上述对应关系。证据：Schemas/datasets/EcoSpold02MetaInformation.xsd 及 Schemas/MasterData/EcoSpold02Sources.xsd。"
+    },
+    {
+      "block": "TDataGeneratorAndPublication.3522.description.0",
+      "status": "resolved",
+      "reason_zh": "已明确翻译子数据集删除引用与未提供引用的继承语义：必须将xxxOverwrittenByChild设为true，否则仍解释为保留父数据集值；不将删除引用误译为自动覆盖。",
+      "recommendation_zh": "该规则同样适用于3563字段，译文已保持一致。"
+    },
+    {
+      "block": "TElementaryExchange.1660.description.0",
+      "status": "resolved",
+      "reason_zh": "将 compartment/subcompartment 统一为站内数据结构用语“区室／子区室”；这些分类不仅表示空气、水、土壤等环境介质，还可包含自然资源区室。",
+      "recommendation_zh": "已修正术语，保留全部 XML 标识与引用编号。"
+    },
+    {
+      "block": "TCompartment.intro.0",
+      "status": "resolved",
+      "reason_zh": "将 compartment/subcompartment 统一为站内数据结构用语“区室／子区室”；这些分类不仅表示空气、水、土壤等环境介质，还可包含自然资源区室。",
+      "recommendation_zh": "已修正术语，保留全部 XML 标识与引用编号。"
+    },
+    {
+      "block": "TCompartment.330.description.0",
+      "status": "resolved",
+      "reason_zh": "将 compartment/subcompartment 统一为站内数据结构用语“区室／子区室”；这些分类不仅表示空气、水、土壤等环境介质，还可包含自然资源区室。",
+      "recommendation_zh": "已修正术语，保留全部 XML 标识与引用编号。"
+    },
+    {
+      "block": "TCompartment.340.description.0",
+      "status": "resolved",
+      "reason_zh": "将 compartment/subcompartment 统一为站内数据结构用语“区室／子区室”；这些分类不仅表示空气、水、土壤等环境介质，还可包含自然资源区室。",
+      "recommendation_zh": "已修正术语，保留全部 XML 标识与引用编号。"
+    },
+    {
+      "block": "TCompartment.350.description.0",
+      "status": "resolved",
+      "reason_zh": "将 compartment/subcompartment 统一为站内数据结构用语“区室／子区室”；这些分类不仅表示空气、水、土壤等环境介质，还可包含自然资源区室。",
+      "recommendation_zh": "已修正术语，保留全部 XML 标识与引用编号。"
+    },
+    {
+      "block": "TCompartment.351.description.0",
+      "status": "resolved",
+      "reason_zh": "将 compartment/subcompartment 统一为站内数据结构用语“区室／子区室”；这些分类不仅表示空气、水、土壤等环境介质，还可包含自然资源区室。",
+      "recommendation_zh": "已修正术语，保留全部 XML 标识与引用编号。"
+    },
+    {
+      "block": "TUncertainty.2110.description.0",
+      "status": "needs_expert_review",
+      "reason_zh": "原文将正态分布参数称为 MeanValue 和 Deviation，但官方 XSD 中当前 normal 类型的属性为 meanValue、variance 和 varianceWithPedigreeUncertainty，没有 Deviation。原文的标准差概念说明不等同于当前字段的方差存储约定。",
+      "recommendation_zh": "正文保留原文参数名称；实现时对照 fieldId=2111/2112/2113 的 XSD 定义，不将标准差直接写入 variance 字段。请数据方澄清旧参数名称与当前属性的关系。"
+    },
+    {
+      "block": "TTextAndImage.intro.0",
+      "status": "needs_expert_review",
+      "reason_zh": "源文开头将图像元素称为 imageUri，后文却称为 imageUrl；相同 imageUri 表述也出现于 TTechnology.510 和 TReview.3340 的复用说明。独立核查官方 Schemas/datasets/EcoSpold02DataTypes.xsd 的 TTextAndImage 定义，实际子元素为 text、imageUrl、variable，而没有 imageUri。译文忠实保留原文两种名称，文档说明与XSD元素定义存在冲突。",
+      "recommendation_zh": "生成或解析XML时以该XSD中的 imageUrl 为准；原英文说明的 imageUri 应由技术编辑确认统一。译文原有名称不静默替换。"
+    },
+    {
+      "block": "TIntermediateExchange.1534.description.1",
+      "status": "needs_expert_review",
+      "reason_zh": "此说明隶属于 @productionVolumeMathematicalRelation，但原文称公式结果写入 amount，可能为通用说明复制残留。官方 EcoSpold02FlowData.xsd 包含同样说明，同时将产量数值字段定义为 productionVolumeAmount；普通交换数值字段为 amount。仅凭XSD说明无法确认软件实际求值目标。译文保留原文 amount。",
+      "recommendation_zh": "核对产量公式的实际求值实现，确认目标是否应为 productionVolumeAmount，并由技术编辑同步修正文档；不要据此把产量公式值写入普通交换 amount。"
+    },
+    {
+      "block": "TIntermediateExchange.1530.description.0",
+      "status": "resolved",
+      "reason_zh": "将 production volume 的“生产量”统一为指南规定的“产量”，保留按年计量、单位与公式引用等全部原条件。",
+      "recommendation_zh": "已修正为产量。"
+    },
+    {
+      "block": "TIntermediateExchange.1532.description.0",
+      "status": "resolved",
+      "reason_zh": "将 production volume 的“生产量”统一为指南规定的“产量”，保留按年计量、单位与公式引用等全部原条件。",
+      "recommendation_zh": "已修正为产量。"
+    },
+    {
+      "block": "TIntermediateExchange.1535.description.0",
+      "status": "resolved",
+      "reason_zh": "将 production volume 的“生产量”统一为指南规定的“产量”，保留按年计量、单位与公式引用等全部原条件。",
+      "recommendation_zh": "已修正为产量。"
+    },
+    {
+      "block": "TCustomExchange.1200.description.0",
+      "status": "resolved",
+      "reason_zh": "原译文“输入对输出的贡献份额”可能被理解为输入占输出的比例。原文明确是该输入中分配到特定输出的份额，且 TTransferCoefficient.2410 要求将系数乘以被引用交换量。",
+      "recommendation_zh": "已明确为“该特定输入中流向该特定输出的份额”，避免比例分母及流向歧义。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "translator_c",
+      "status": "passed_with_notes",
+      "reviewed_blocks": [
+        "TActivity.intro.0",
+        "TActivity.100.description.0",
+        "TActivity.102.description.0",
+        "TActivity.105.description.0",
+        "TActivity.106.description.0",
+        "TActivity.106.description.1",
+        "TActivity.110.options",
+        "TActivity.110.description.0",
+        "TActivity.115.options",
+        "TActivity.115.description.0",
+        "TActivity.120.description.0",
+        "TActivity.120.description.1",
+        "TActivity.130.description.0",
+        "TActivity.130.description.1",
+        "TActivity.130.description.2",
+        "TActivity.130.description.3",
+        "TActivity.130.description.4",
+        "TActivity.130.description.5",
+        "TActivity.130.description.6",
+        "TActivity.130.description.7",
+        "TActivity.131.description.0",
+        "TActivity.131.description.1",
+        "TActivity.135.description.0",
+        "TActivity.145.description.0",
+        "TActivity.150.description.0",
+        "TActivity.170.description.0",
+        "TActivity.170.description.1",
+        "TActivity.175.description.0",
+        "TActivity.180.options",
+        "TActivity.180.description.0",
+        "TActivity.180.description.1",
+        "TActivity.190.description.0",
+        "TActivity.190.description.1",
+        "TActivity.191.description.0",
+        "TActivity.191.description.1",
+        "TActivity.192.description.0",
+        "TActivity.195.description.0",
+        "TActivity.195.description.1",
+        "TActivity.200.description.0",
+        "TClassification.intro.0",
+        "TClassification.300.description.0",
+        "TClassification.310.description.0",
+        "TClassification.320.description.0",
+        "TClassification.321.description.0",
+        "TClassification.321.description.1",
+        "TTimePeriod.intro.0",
+        "TTimePeriod.600.description.0",
+        "TTimePeriod.610.description.0",
+        "TTimePeriod.620.description.0",
+        "TTimePeriod.630.description.0",
+        "TTimePeriod.630.description.1",
+        "TMacroEconomicScenario.intro.0",
+        "TMacroEconomicScenario.700.description.0",
+        "TMacroEconomicScenario.701.description.0",
+        "TMacroEconomicScenario.720.description.0",
+        "TMacroEconomicScenario.740.description.0",
+        "TParameter.intro.0",
+        "TParameter.1700.description.0",
+        "TParameter.1705.description.0",
+        "TParameter.1706.description.0",
+        "TParameter.1706.description.1",
+        "TParameter.1710.description.0",
+        "TParameter.1712.description.0",
+        "TParameter.1713.description.0",
+        "TParameter.1714.description.0",
+        "TParameter.1715.description.0",
+        "TParameter.1720.description.0",
+        "TParameter.1720.description.1",
+        "TParameter.1725.description.0",
+        "TParameter.1730.description.0",
+        "TParameter.1740.description.0",
+        "TImpactIndicatorResult.intro.0",
+        "TImpactIndicatorResult.1800.description.0",
+        "TImpactIndicatorResult.1801.description.0",
+        "TImpactIndicatorResult.1810.description.0",
+        "TImpactIndicatorResult.1811.description.0",
+        "TImpactIndicatorResult.1815.description.0",
+        "TImpactIndicatorResult.1820.description.0",
+        "TImpactIndicatorResult.1821.description.0",
+        "TImpactIndicatorResult.1825.description.0",
+        "TImpactIndicatorResult.1830.description.0",
+        "TImpactIndicatorResult.1840.description.0",
+        "TImpactIndicatorResult.1850.description.0",
+        "overview.0",
+        "overview.1",
+        "overview.2",
+        "overview.3",
+        "overview.4",
+        "overview.5"
+      ],
+      "source_sha256": "5b298e280ba70a2f05111c76bb2af9a42a3c855a29be06600f4d7127b920c952",
+      "translation_sha256": "dae64388852912a1ccf9bb5972f24cd3ac5f0313690090484b0871e406a9222e",
+      "summary_zh": "已独立逐块对照全部 89 块，核对活动类型全部 0–10 编号、数据类型 1/2、热值 0/1/2、UUID 与字段编号引用、默认上下文、父子继承五种方式、PARENTVALUE*0.5、{{PARENTTEXT}}、文本变量、分配因子的乘积求和分母、参数与影响指标字段。将 1 处热值枚举“净值/总值”明确为低位/高位热值并保留英文标签；数字、公式和关键 XML 标识保留检查通过。结合官方原件 XSD 新增 imageUri/imageUrl 与变量名正则约束 2 条源文疑点，并为既有 impactCategoryId 注记补充实际引用类型证据。沿用继承深度及参数变量说明的已有疑点，译稿共保留 5 条 needs_expert_review、3 条 resolved；未发现未解决的明确译文错误。本记录为 AI 交叉审校，不代表人工专家或官方签核。",
+      "corrections": [
+        {
+          "block": "TActivity.180.options",
+          "status": "resolved",
+          "reason_zh": "原译枚举“净值/总值”容易被理解为一般净总数值；同字段说明明确 Net/Gross 指低位/高位热值。已改为具体热值名称，保留 0、1、2 及默认值对应关系，并补充原英文标签。",
+          "recommendation_zh": "采用修正后的热值枚举中文说明。",
+          "before_zh": "0 = 未指定（默认）；1 = 净值；2 = 总值",
+          "after_zh": "0 = 未指定（Undefined，默认）；1 = 低位热值（Net values）；2 = 高位热值（Gross values）"
+        },
+        {
+          "block": "TActivity.120.description.0",
+          "status": "needs_expert_review",
+          "reason_zh": "本块及 TActivity.120.description.1、TActivity.195.description.0/.1、TTimePeriod.630.description.0/.1 的复用说明使用 imageUri，但 EcoSpold02DataTypes.xsd 的 TTextAndImage 实际元素名为 imageUrl（约第 940 行）。译文忠实保留 imageUri，未静默改变原文 XML 名。",
+          "recommendation_zh": "请依据 TTextAndImage 的实际 XSD 元素定义统一官方说明中的 imageUri/imageUrl 命名。"
+        },
+        {
+          "block": "TParameter.1715.description.0",
+          "status": "needs_expert_review",
+          "reason_zh": "文档要求变量名以字母（a-z）开头，并描述字母、数字、下划线字符规则；EcoSpold02DataTypes.xsd 的 TVariableName 仅声明 maxLength=40 与 pattern=\\w\\S*（约第 858–862 行），该模式未直接表达与文字说明完全等价的规则。可能另有语义验证或公式解析约束。",
+          "recommendation_zh": "保留原文变量规则；请核对公式解析及语义验证规范，不应将 XSD 验证通过等同于满足全部变量名规则。"
+        },
+        {
+          "block": "TImpactIndicatorResult.1820.description.0",
+          "status": "needs_expert_review",
+          "reason_zh": "原文写“对影响类别所属方法的引用”，但 EcoSpold02FlowData.xsd 约第 1039–1048 行明确本字段为 impactCategoryId、类型 TUuid、referenceToComplexType=TImpactMethodCategory，区别于字段 1810 的 impactMethodId（TImpactMethod）。译文忠实保留原文方法措辞，源文说明与引用对象存在矛盾。",
+          "recommendation_zh": "请确认应将官方说明修正为对影响类别的引用；实现时以 impactCategoryId 与 TImpactMethodCategory 的模式定义为依据。",
+          "change_zh": "补充本地官方 XSD 引用对象证据，原译正文未改动。"
+        }
+      ]
+    },
+    {
+      "reviewer": "translator_a",
+      "status": "passed_with_notes",
+      "reviewed_blocks": [
+        "TGeography.intro.0",
+        "TGeography.400.description.0",
+        "TGeography.401.description.0",
+        "TGeography.401.description.1",
+        "TGeography.410.description.0",
+        "TGeography.420.description.0",
+        "TGeography.420.description.1",
+        "TElementaryExchange.intro.0",
+        "TElementaryExchange.intro.1",
+        "TElementaryExchange.1600.options",
+        "TElementaryExchange.1600.description.0",
+        "TElementaryExchange.1600.description.1",
+        "TElementaryExchange.1600.description.2",
+        "TElementaryExchange.1610.options",
+        "TElementaryExchange.1610.description.0",
+        "TElementaryExchange.1610.description.1",
+        "TElementaryExchange.1610.description.2",
+        "TElementaryExchange.1615.description.0",
+        "TElementaryExchange.1616.description.0",
+        "TElementaryExchange.1616.description.1",
+        "TElementaryExchange.1660.description.0",
+        "TElementaryExchange.1670.description.0",
+        "TCompartment.intro.0",
+        "TCompartment.330.description.0",
+        "TCompartment.340.description.0",
+        "TCompartment.350.description.0",
+        "TCompartment.351.description.0",
+        "TCompartment.351.description.1",
+        "TUncertainty.intro.0",
+        "TUncertainty.2010.description.0",
+        "TUncertainty.2100.description.0",
+        "TUncertainty.2101.description.0",
+        "TUncertainty.2102.description.0",
+        "TUncertainty.2103.description.0",
+        "TUncertainty.2104.description.0",
+        "TUncertainty.2110.description.0",
+        "TUncertainty.2111.description.0",
+        "TUncertainty.2112.description.0",
+        "TUncertainty.2113.description.0",
+        "TUncertainty.2120.description.0",
+        "TUncertainty.2120.description.1",
+        "TUncertainty.2121.description.0",
+        "TUncertainty.2122.description.0",
+        "TUncertainty.2123.description.0",
+        "TUncertainty.2130.description.0",
+        "TUncertainty.2131.description.0",
+        "TUncertainty.2132.description.0",
+        "TUncertainty.2140.description.0",
+        "TUncertainty.2141.description.0",
+        "TUncertainty.2142.description.0",
+        "TUncertainty.2143.description.0",
+        "TUncertainty.2150.description.0",
+        "TUncertainty.2151.description.0",
+        "TUncertainty.2152.description.0",
+        "TUncertainty.2153.description.0",
+        "TUncertainty.2160.description.0",
+        "TUncertainty.2161.description.0",
+        "TUncertainty.2162.description.0",
+        "TUncertainty.2170.description.0",
+        "TUncertainty.2171.description.0",
+        "TUncertainty.2172.description.0",
+        "TUncertainty.2173.description.0",
+        "TUncertainty.2270.description.0",
+        "TUncertainty.2271.description.0",
+        "TUncertainty.2271.description.1",
+        "TUncertainty.2271.description.2",
+        "TUncertainty.2271.description.3",
+        "TUncertainty.2271.description.4",
+        "TUncertainty.2272.description.0",
+        "TUncertainty.2272.description.1",
+        "TUncertainty.2272.description.2",
+        "TUncertainty.2272.description.3",
+        "TUncertainty.2272.description.4",
+        "TUncertainty.2273.description.0",
+        "TUncertainty.2273.description.1",
+        "TUncertainty.2273.description.2",
+        "TUncertainty.2273.description.3",
+        "TUncertainty.2273.description.4",
+        "TUncertainty.2274.description.0",
+        "TUncertainty.2274.description.1",
+        "TUncertainty.2274.description.2",
+        "TUncertainty.2274.description.3",
+        "TUncertainty.2274.description.4",
+        "TUncertainty.2275.description.0",
+        "TUncertainty.2275.description.1",
+        "TUncertainty.2275.description.2",
+        "TUncertainty.2275.description.3",
+        "TUncertainty.2275.description.4",
+        "TRepresentativeness.intro.0",
+        "TRepresentativeness.3000.description.0",
+        "TRepresentativeness.3001.description.0",
+        "TRepresentativeness.3001.description.1",
+        "TRepresentativeness.3005.description.0",
+        "TRepresentativeness.3010.options",
+        "TRepresentativeness.3010.description.0",
+        "TRepresentativeness.3030.description.0",
+        "TRepresentativeness.3040.description.0",
+        "TRepresentativeness.3040.description.1",
+        "TRepresentativeness.3040.description.2",
+        "TRepresentativeness.3040.description.3",
+        "TDataGeneratorAndPublication.intro.0",
+        "TDataGeneratorAndPublication.3500.options",
+        "TDataGeneratorAndPublication.3500.description.0",
+        "TDataGeneratorAndPublication.3501.description.0",
+        "TDataGeneratorAndPublication.3501.description.1",
+        "TDataGeneratorAndPublication.3505.description.0",
+        "TDataGeneratorAndPublication.3506.description.0",
+        "TDataGeneratorAndPublication.3510.options",
+        "TDataGeneratorAndPublication.3510.description.0",
+        "TDataGeneratorAndPublication.3510.description.1",
+        "TDataGeneratorAndPublication.3520.options",
+        "TDataGeneratorAndPublication.3520.description.0",
+        "TDataGeneratorAndPublication.3521.description.0",
+        "TDataGeneratorAndPublication.3521.description.1",
+        "TDataGeneratorAndPublication.3522.description.0",
+        "TDataGeneratorAndPublication.3525.description.0",
+        "TDataGeneratorAndPublication.3526.description.0",
+        "TDataGeneratorAndPublication.3530.description.0",
+        "TDataGeneratorAndPublication.3540.description.0",
+        "TDataGeneratorAndPublication.3550.options",
+        "TDataGeneratorAndPublication.3550.description.0",
+        "TDataGeneratorAndPublication.3550.description.1",
+        "TDataGeneratorAndPublication.3550.description.2",
+        "TDataGeneratorAndPublication.3550.description.3",
+        "TDataGeneratorAndPublication.3550.description.4",
+        "TDataGeneratorAndPublication.3550.description.5",
+        "TDataGeneratorAndPublication.3560.options",
+        "TDataGeneratorAndPublication.3560.description.0",
+        "TDataGeneratorAndPublication.3561.description.0",
+        "TDataGeneratorAndPublication.3561.description.1",
+        "TDataGeneratorAndPublication.3562.options",
+        "TDataGeneratorAndPublication.3562.description.0",
+        "TDataGeneratorAndPublication.3563.description.0",
+        "TFileAttributes.intro.0",
+        "TFileAttributes.3800.description.0",
+        "TFileAttributes.3805.description.0",
+        "TFileAttributes.3810.description.0",
+        "TFileAttributes.3815.description.0",
+        "TFileAttributes.3820.description.0",
+        "TFileAttributes.3830.options",
+        "TFileAttributes.3830.description.0",
+        "TFileAttributes.3840.options",
+        "TFileAttributes.3840.description.0",
+        "TFileAttributes.3850.description.0",
+        "TFileAttributes.3860.description.0",
+        "TFileAttributes.3870.description.0",
+        "TFileAttributes.3880.description.0",
+        "TFileAttributes.3880.description.1",
+        "TFileAttributes.3885.description.0",
+        "TFileAttributes.3885.description.1",
+        "TFileAttributes.3890.description.0",
+        "TRequiredContextReference.intro.0",
+        "TRequiredContextReference.intro.1",
+        "TRequiredContextReference.7810.description.0",
+        "TRequiredContextReference.7820.description.0",
+        "TRequiredContextReference.7830.description.0",
+        "TRequiredContextReference.7840.description.0",
+        "TRequiredContextReference.7850.description.0",
+        "TRequiredContextReference.7850.description.1",
+        "TRequiredContextReference.7855.description.0",
+        "TRequiredContextReference.7860.description.0"
+      ],
+      "source_sha256": "986d9bd428546700efe106f48531a3dc45ed7fdc282bb35ad4e96156c4ebc98a",
+      "translation_sha256": "191f5444b7294e34a1a93c90110c7a813a040cdeae89f74d39a2ba423bc517ba",
+      "summary_zh": "已独立逐块对照全部 161 块源文与译文，检查完整性、输入输出方向、否定和限定、枚举、字段编号、XML 标识、公式、不确定性分布与继承规则。统一 6 处 compartment 术语为区室／子区室；官方 XSD 已确认旧 SpoldID 759/757/801 的引用映射。保留三角分布 #3797 的 must not 禁令，补充其与当前 XSD 必填字段的矛盾，并注明正态分布描述中的 Deviation 与当前 variance 字段差异。所有源文数字、公式和关键程序标识核验通过，未发现未解决的译文错误。源文概率分布歧义单独留注。本次为 AI 交叉审阅。",
+      "corrections": [
+        {
+          "block": "TElementaryExchange.1660.description.0",
+          "status": "resolved",
+          "reason_zh": "将 compartment/subcompartment 统一为站内数据结构用语“区室／子区室”；这些分类不仅表示空气、水、土壤等环境介质，还可包含自然资源区室。",
+          "recommendation_zh": "已修正术语，保留全部 XML 标识与引用编号。",
+          "before": "交换的环境介质及子环境介质名称。validCompartments 所引用的 XML 文档包含给定语言下有效的环境介质／子环境介质配对的定义。",
+          "after": "交换的区室及子区室名称。validCompartments 所引用的 XML 文档包含给定语言下有效的区室／子区室配对的定义。"
+        },
+        {
+          "block": "TCompartment.intro.0",
+          "status": "resolved",
+          "reason_zh": "将 compartment/subcompartment 统一为站内数据结构用语“区室／子区室”；这些分类不仅表示空气、水、土壤等环境介质，还可包含自然资源区室。",
+          "recommendation_zh": "已修正术语，保留全部 XML 标识与引用编号。",
+          "before": "包含用于指定交换的环境介质配对。",
+          "after": "包含用于指定交换的区室配对。"
+        },
+        {
+          "block": "TCompartment.330.description.0",
+          "status": "resolved",
+          "reason_zh": "将 compartment/subcompartment 统一为站内数据结构用语“区室／子区室”；这些分类不仅表示空气、水、土壤等环境介质，还可包含自然资源区室。",
+          "recommendation_zh": "已修正术语，保留全部 XML 标识与引用编号。",
+          "before": "环境介质名称。这是所引用环境介质（字段 5315）的纯文本值。",
+          "after": "区室名称。这是所引用区室（字段 5315）的纯文本值。"
+        },
+        {
+          "block": "TCompartment.340.description.0",
+          "status": "resolved",
+          "reason_zh": "将 compartment/subcompartment 统一为站内数据结构用语“区室／子区室”；这些分类不仅表示空气、水、土壤等环境介质，还可包含自然资源区室。",
+          "recommendation_zh": "已修正术语，保留全部 XML 标识与引用编号。",
+          "before": "子环境介质名称。这是所引用子环境介质（字段 5325）的纯文本值。",
+          "after": "子区室名称。这是所引用子区室（字段 5325）的纯文本值。"
+        },
+        {
+          "block": "TCompartment.350.description.0",
+          "status": "resolved",
+          "reason_zh": "将 compartment/subcompartment 统一为站内数据结构用语“区室／子区室”；这些分类不仅表示空气、水、土壤等环境介质，还可包含自然资源区室。",
+          "recommendation_zh": "已修正术语，保留全部 XML 标识与引用编号。",
+          "before": "引用环境介质／子环境介质配对。该配对必须在有效环境介质列表中定义（见字段 5330）。",
+          "after": "引用区室／子区室配对。该配对必须在有效区室列表中定义（见字段 5330）。"
+        },
+        {
+          "block": "TCompartment.351.description.0",
+          "status": "resolved",
+          "reason_zh": "将 compartment/subcompartment 统一为站内数据结构用语“区室／子区室”；这些分类不仅表示空气、水、土壤等环境介质，还可包含自然资源区室。",
+          "recommendation_zh": "已修正术语，保留全部 XML 标识与引用编号。",
+          "before": "引用该子环境介质所属的上下文。",
+          "after": "引用该子区室所属的上下文。"
+        },
+        {
+          "block": "TDataGeneratorAndPublication.3560.options",
+          "status": "resolved",
+          "reason_zh": "已对照官方 XSD 确认，这些编号是旧 SpoldID 引用：accessRestrictedTo 的 spoldID=759、fieldId=3550；publishedSourceId 的 spoldID=757、fieldId=3520；TValidSource/@id 的 spoldID=801、fieldId=3110。原文条件与编号映射一致。",
+          "recommendation_zh": "保留原文 759=3、757 和 801；在按新版 fieldId 查找时使用上述对应关系。证据：Schemas/datasets/EcoSpold02MetaInformation.xsd 及 Schemas/MasterData/EcoSpold02Sources.xsd。",
+          "before": "原文条件引用 759=3，与本节当前 accessRestrictedTo 的字段编号3550不一致；同节3510.options引用757，3520.options引用801，可能沿用旧版编号。译文全部保留原编号，不擅自替换。",
+          "after": "已对照官方 XSD 确认，这些编号是旧 SpoldID 引用：accessRestrictedTo 的 spoldID=759、fieldId=3550；publishedSourceId 的 spoldID=757、fieldId=3520；TValidSource/@id 的 spoldID=801、fieldId=3110。原文条件与编号映射一致。",
+          "kind": "note_clarification"
+        },
+        {
+          "block": "TUncertainty.2110.description.0",
+          "status": "needs_expert_review",
+          "reason_zh": "原文将正态分布参数称为 MeanValue 和 Deviation，但官方 XSD 中当前 normal 类型的属性为 meanValue、variance 和 varianceWithPedigreeUncertainty，没有 Deviation。原文的标准差概念说明不等同于当前字段的方差存储约定。",
+          "recommendation_zh": "正文保留原文参数名称；实现时对照 fieldId=2111/2112/2113 的 XSD 定义，不将标准差直接写入 variance 字段。请数据方澄清旧参数名称与当前属性的关系。"
+        },
+        {
+          "block": "TUncertainty.2120.description.1",
+          "status": "needs_expert_review",
+          "reason_zh": "原文要求从 mostLikelyValue 计算 meanValue，同时禁止在 ecoinvent 上下文使用 mostLikelyValue（#3797）。官方 EcoSpold02DataTypes.xsd 的 triangular 类型却将当前 @mostLikelyValue（fieldId=2122）设为 required；#3797 与当前编号不同，禁令适用对象及与模式必填要求的关系尚不清楚。三角分布均值也不能仅由众数单独确定。正文保留 shall/must not 及 #3797，不擅自撤销禁令。",
+          "recommendation_zh": "请向数据方确认 #3797 是否仅指旧格式字段、当前 @mostLikelyValue 的提交规则及 meanValue 的具体含义；勿将众数直接当作三角分布均值。证据：Schemas/datasets/EcoSpold02DataTypes.xsd 的 triangular 定义。",
+          "kind": "note_clarification",
+          "after": "原文要求从 mostLikelyValue 计算 meanValue，同时禁止在 ecoinvent 上下文使用 mostLikelyValue（#3797）。官方 EcoSpold02DataTypes.xsd 的 triangular 类型却将当前 @mostLikelyValue（fieldId=2122）设为 required；#3797 与当前编号不同，禁令适用对象及与模式必填要求的关系尚不清楚。三角分布均值也不能仅由众数单独确定。正文保留 shall/must not 及 #3797，不擅自撤销禁令。"
+        }
+      ]
+    },
+    {
+      "reviewer": "translator_b",
+      "status": "passed_with_notes",
+      "reviewed_blocks": [
+        "TTechnology.intro.0",
+        "TTechnology.500.options",
+        "TTechnology.500.description.0",
+        "TTechnology.510.description.0",
+        "TTechnology.510.description.1",
+        "TCustomExchange.intro.0",
+        "TCustomExchange.1000.description.0",
+        "TCustomExchange.1005.description.0",
+        "TCustomExchange.1020.description.0",
+        "TCustomExchange.1030.description.0",
+        "TCustomExchange.1031.description.0",
+        "TCustomExchange.1031.description.1",
+        "TCustomExchange.1035.description.0",
+        "TCustomExchange.1040.description.0",
+        "TCustomExchange.1050.description.0",
+        "TCustomExchange.1060.description.0",
+        "TCustomExchange.1060.description.1",
+        "TCustomExchange.1100.description.0",
+        "TCustomExchange.1110.description.0",
+        "TCustomExchange.1120.options",
+        "TCustomExchange.1120.description.0",
+        "TCustomExchange.1121.description.0",
+        "TCustomExchange.1121.description.1",
+        "TCustomExchange.1122.description.0",
+        "TCustomExchange.1125.description.0",
+        "TCustomExchange.1126.description.0",
+        "TCustomExchange.1130.description.0",
+        "TCustomExchange.1150.description.0",
+        "TCustomExchange.1151.description.0",
+        "TCustomExchange.1151.description.1",
+        "TCustomExchange.1152.description.0",
+        "TCustomExchange.1200.description.0",
+        "TCustomExchange.1200.description.1",
+        "TCustomExchange.1300.description.0",
+        "TCustomExchange.1300.description.1",
+        "TCustomExchange.1400.description.0",
+        "TCustomExchange.1400.description.1",
+        "TCustomExchange.1450.description.0",
+        "TCustomExchange.1470.description.0",
+        "TCustomExchange.1470.description.1",
+        "TIntermediateExchange.intro.0",
+        "TIntermediateExchange.intro.1",
+        "TIntermediateExchange.1500.options",
+        "TIntermediateExchange.1500.description.0",
+        "TIntermediateExchange.1500.description.1",
+        "TIntermediateExchange.1510.options",
+        "TIntermediateExchange.1510.description.0",
+        "TIntermediateExchange.1510.description.1",
+        "TIntermediateExchange.1515.description.0",
+        "TIntermediateExchange.1516.description.0",
+        "TIntermediateExchange.1516.description.1",
+        "TIntermediateExchange.1520.options",
+        "TIntermediateExchange.1520.description.0",
+        "TIntermediateExchange.1521.description.0",
+        "TIntermediateExchange.1521.description.1",
+        "TIntermediateExchange.1522.description.0",
+        "TIntermediateExchange.1530.description.0",
+        "TIntermediateExchange.1531.description.0",
+        "TIntermediateExchange.1532.description.0",
+        "TIntermediateExchange.1533.options",
+        "TIntermediateExchange.1533.description.0",
+        "TIntermediateExchange.1534.description.0",
+        "TIntermediateExchange.1534.description.1",
+        "TIntermediateExchange.1535.description.0",
+        "TIntermediateExchange.1536.description.0",
+        "TIntermediateExchange.1536.description.1",
+        "TIntermediateExchange.1537.description.0",
+        "TIntermediateExchange.1538.description.0",
+        "TIntermediateExchange.1539.description.0",
+        "TIntermediateExchange.1539.description.1",
+        "TIntermediateExchange.1540.description.0",
+        "TProperty.intro.0",
+        "TProperty.2300.description.0",
+        "TProperty.2301.description.0",
+        "TProperty.2301.description.1",
+        "TProperty.2310.description.0",
+        "TProperty.2320.description.0",
+        "TProperty.2321.description.0",
+        "TProperty.2321.description.1",
+        "TProperty.2325.description.0",
+        "TProperty.2330.description.0",
+        "TProperty.2335.description.0",
+        "TProperty.2340.description.0",
+        "TProperty.2340.description.1",
+        "TProperty.2345.description.0",
+        "TProperty.2350.description.0",
+        "TProperty.2350.description.1",
+        "TProperty.2360.description.0",
+        "TProperty.2370.description.0",
+        "TProperty.2371.description.0",
+        "TProperty.2371.description.1",
+        "TProperty.2372.description.0",
+        "TProperty.2375.description.0",
+        "TProperty.2376.description.0",
+        "TProperty.2380.description.0",
+        "TTransferCoefficient.intro.0",
+        "TTransferCoefficient.2400.description.0",
+        "TTransferCoefficient.2410.description.0",
+        "TTransferCoefficient.2420.description.0",
+        "TTransferCoefficient.2420.description.1",
+        "TTransferCoefficient.2425.description.0",
+        "TTransferCoefficient.2430.description.0",
+        "TTransferCoefficient.2440.options",
+        "TTransferCoefficient.2440.description.0",
+        "TTransferCoefficient.2441.description.0",
+        "TTransferCoefficient.2441.description.1",
+        "TTransferCoefficient.2442.description.0",
+        "TTransferCoefficient.2445.description.0",
+        "TTransferCoefficient.2446.description.0",
+        "TTransferCoefficient.2450.description.0",
+        "TTextAndImage.intro.0",
+        "TTextAndImage.3900.description.0",
+        "TTextAndImage.3910.description.0",
+        "TTextAndImage.3920.description.0",
+        "TReview.intro.0",
+        "TReview.intro.1",
+        "TReview.3300.options",
+        "TReview.3300.description.0",
+        "TReview.3301.description.0",
+        "TReview.3301.description.1",
+        "TReview.3305.description.0",
+        "TReview.3306.description.0",
+        "TReview.3310.description.0",
+        "TReview.3320.description.0",
+        "TReview.3325.description.0",
+        "TReview.3330.description.0",
+        "TReview.3335.description.0",
+        "TReview.3340.description.0",
+        "TReview.3340.description.1",
+        "TReview.3350.description.0",
+        "TDataEntryBy.intro.0",
+        "TDataEntryBy.3400.options",
+        "TDataEntryBy.3400.description.0",
+        "TDataEntryBy.3401.description.0",
+        "TDataEntryBy.3401.description.1",
+        "TDataEntryBy.3403.description.0",
+        "TDataEntryBy.3405.description.0",
+        "TDataEntryBy.3406.description.0"
+      ],
+      "source_sha256": "f23ce6634ccbce081124a7e280adbebb67b7407b2ebf2fdfd73fe9bbb12ad570",
+      "translation_sha256": "58a7c2e296bcf55bce1b28794c5dbd8ef2c95c8c8dd728fe3854aca497eb6a9b",
+      "summary_zh": "已独立逐块对照全部138块，涵盖技术水平0—5、通用交换、输入/输出分组、直接活动链接、产量、属性、转移系数、文本图像、评审和数据录入。核对否定与限定条件、原枚举数字、CAS格式、UUID唯一性、REF与变量大小写、按年计量和单位、子数据集删除引用须显式xxxOverwrittenByChild=true的继承规则。已修正3处产量术语，并明确转移系数的输入份额与流向。与官方XSD对照确认imageUri/imageUrl原文冲突；产量公式目标amount/productionVolumeAmount的源文歧义继续保留具体注记。全部块、XML名称、数字和变量模板检查通过，无未解决译文错误。",
+      "corrections": [
+        {
+          "block": "TIntermediateExchange.1530.description.0",
+          "status": "resolved",
+          "reason_zh": "将 production volume 的“生产量”统一为指南规定的“产量”，保留按年计量、单位与公式引用等全部原条件。",
+          "recommendation_zh": "已修正为产量。",
+          "before": "按年表示的产品生产量，单位与该交换相同。",
+          "after": "按年表示的产品产量，单位与该交换相同。",
+          "kind": "translation_correction"
+        },
+        {
+          "block": "TIntermediateExchange.1532.description.0",
+          "status": "resolved",
+          "reason_zh": "将 production volume 的“生产量”统一为指南规定的“产量”，保留按年计量、单位与公式引用等全部原条件。",
+          "recommendation_zh": "已修正为产量。",
+          "before": "变量名是交换生产量的简称，用于在数学关系（公式）中引用生产量数值。变量可包含字母、数字和下划线（_）。变量名必须以字母（a-z）开头。变量名不区分大小写（calorific_Value 与 Calorific_value 等同）。",
+          "after": "变量名是交换产量的简称，用于在数学关系（公式）中引用产量数值。变量可包含字母、数字和下划线（_）。变量名必须以字母（a-z）开头。变量名不区分大小写（calorific_Value 与 Calorific_value 等同）。",
+          "kind": "translation_correction"
+        },
+        {
+          "block": "TIntermediateExchange.1535.description.0",
+          "status": "resolved",
+          "reason_zh": "将 production volume 的“生产量”统一为指南规定的“产量”，保留按年计量、单位与公式引用等全部原条件。",
+          "recommendation_zh": "已修正为产量。",
+          "before": "可对生产量数据的数据来源、假设和计算添加一般注释。",
+          "after": "可对产量数据的数据来源、假设和计算添加一般注释。",
+          "kind": "translation_correction"
+        },
+        {
+          "block": "TCustomExchange.1200.description.0",
+          "status": "resolved",
+          "reason_zh": "原译文“输入对输出的贡献份额”可能被理解为输入占输出的比例。原文明确是该输入中分配到特定输出的份额，且 TTransferCoefficient.2410 要求将系数乘以被引用交换量。",
+          "recommendation_zh": "已明确为“该特定输入中流向该特定输出的份额”，避免比例分母及流向歧义。",
+          "before": "转移系数将特定投入与特定输出关联，并记录该特定投入对该特定输出的贡献份额。",
+          "after": "转移系数将特定输入与特定输出关联，并记录该特定输入中流向该特定输出的份额。",
+          "kind": "translation_clarification"
+        },
+        {
+          "block": "TTextAndImage.intro.0",
+          "status": "needs_expert_review",
+          "reason_zh": "源文开头将图像元素称为 imageUri，后文却称为 imageUrl；相同 imageUri 表述也出现于 TTechnology.510 和 TReview.3340 的复用说明。独立核查官方 Schemas/datasets/EcoSpold02DataTypes.xsd 的 TTextAndImage 定义，实际子元素为 text、imageUrl、variable，而没有 imageUri。译文忠实保留原文两种名称，文档说明与XSD元素定义存在冲突。",
+          "recommendation_zh": "生成或解析XML时以该XSD中的 imageUrl 为准；原英文说明的 imageUri 应由技术编辑确认统一。译文原有名称不静默替换。",
+          "kind": "source_issue_verified_against_xsd"
+        },
+        {
+          "block": "TIntermediateExchange.1534.description.1",
+          "status": "needs_expert_review",
+          "reason_zh": "此说明隶属于 @productionVolumeMathematicalRelation，但原文称公式结果写入 amount，可能为通用说明复制残留。官方 EcoSpold02FlowData.xsd 包含同样说明，同时将产量数值字段定义为 productionVolumeAmount；普通交换数值字段为 amount。仅凭XSD说明无法确认软件实际求值目标。译文保留原文 amount。",
+          "recommendation_zh": "核对产量公式的实际求值实现，确认目标是否应为 productionVolumeAmount，并由技术编辑同步修正文档；不要据此把产量公式值写入普通交换 amount。",
+          "kind": "source_issue_cross_checked"
+        }
+      ]
+    }
+  ],
+  "pages": [
+    {
+      "path": "ecospold2/README.md",
+      "sha256": "b1e97efc7af7f87aec2231b0a0b88d9476e0b0db53df0332fdb68b58842859a1"
+    },
+    {
+      "path": "ecospold2/activity-description.md",
+      "sha256": "e9d0d82e693600fcf883f1939cb1100a22cc92bc24e3357e7335b182cc842132"
+    },
+    {
+      "path": "ecospold2/activity.md",
+      "sha256": "18b133a67c1674f86a571495579cbac4e4b8dc8a9291f8439df6ea33374ae3f5"
+    },
+    {
+      "path": "ecospold2/administrative-information.md",
+      "sha256": "511dc545190de12a4f9b75df54c3aba2688584ceab7f213d4042cd997f9a9fc1"
+    },
+    {
+      "path": "ecospold2/classification.md",
+      "sha256": "456ae914a8c701b7865914795956e8dd69f111f2409f49e329a508df1a33da92"
+    },
+    {
+      "path": "ecospold2/compartments.md",
+      "sha256": "ddf325ac1aa815c8c142b3b95984894617877c87733a5dd4b924f91a950ed273"
+    },
+    {
+      "path": "ecospold2/complex-types.md",
+      "sha256": "dc9351112a4a0a379877fad3f8d49109025ebd324bafebd43aae7a9af77462dc"
+    },
+    {
+      "path": "ecospold2/data-entry.md",
+      "sha256": "f3647bd7436cce5d0c6e54bd28fd3bd922ad0295307ed46895f696915fff61f2"
+    },
+    {
+      "path": "ecospold2/elementary-exchanges.md",
+      "sha256": "d0b3c7e526e9a7dbd6ba0948fc503ec38018daafe8882bafab0a48218ad04ff5"
+    },
+    {
+      "path": "ecospold2/exchanges.md",
+      "sha256": "1c4face0ebd0e9cb182d2c02aeaa0d2397a845bea1d79c0681f79be8f4bd5800"
+    },
+    {
+      "path": "ecospold2/field-index.md",
+      "sha256": "ad7fbf28fe5827a5aef87dfdeb917fc61a8e43dda4d386ce640e37599cd94317"
+    },
+    {
+      "path": "ecospold2/file-attributes.md",
+      "sha256": "e9985cc1a12c31c28a89df6c355c04e096932a5565b797cbd817c45fea04de20"
+    },
+    {
+      "path": "ecospold2/flow-data.md",
+      "sha256": "889cc19c02e83fcd8997dd965cb351af73e716d8d6197ac53febffe6415081ab"
+    },
+    {
+      "path": "ecospold2/geography.md",
+      "sha256": "91263f016f4c01cdb963dd311a6cb0d277b0c3918c383d1be9dd77f9a6a6c6ae"
+    },
+    {
+      "path": "ecospold2/impact-indicators.md",
+      "sha256": "6ee192f4178caac602384faf3a8d8fbd301a1877fa795a8c5cc3813aa1033f2f"
+    },
+    {
+      "path": "ecospold2/intermediate-exchanges.md",
+      "sha256": "230239155fbce7e8799e9c99e434f30d08f0312cfdd9164199c3c116abb56bdc"
+    },
+    {
+      "path": "ecospold2/macro-economic-scenario.md",
+      "sha256": "bb72c9ddf13eb50ae43f7b872878238028abe28a18378f6e61ce5918ad6c54f0"
+    },
+    {
+      "path": "ecospold2/modelling-validation.md",
+      "sha256": "1542257b6f606d1b6cc0421419a9f2ab3d433c4af1b23d8152c989e6e67b2621"
+    },
+    {
+      "path": "ecospold2/parameters.md",
+      "sha256": "6dc0b2acb562d012b0045699e00ba190825691cc788f92f5f60c8806be97c7e7"
+    },
+    {
+      "path": "ecospold2/properties.md",
+      "sha256": "0d8f86b5ad3f89aa88b0c0ba81daeb53acabfad2382a2854d430955463f69ffe"
+    },
+    {
+      "path": "ecospold2/publication.md",
+      "sha256": "80557ff56b9ab441c8abfec4248767ca890010913d96df8acdcbbf6578dd67f2"
+    },
+    {
+      "path": "ecospold2/reading-guide.md",
+      "sha256": "03c84c27e484422fdfa06b0e678528f8288597cf19f50730f28e6acb11619fae"
+    },
+    {
+      "path": "ecospold2/representativeness.md",
+      "sha256": "40ca01654d29b15b38a4afb8f5fc59cc06696c92ffe8913f2b7cfa03dc03f560"
+    },
+    {
+      "path": "ecospold2/required-contexts.md",
+      "sha256": "2366eece9e23c82cc97fb265565f9db55f0279d86a877825272e229c255eae31"
+    },
+    {
+      "path": "ecospold2/review.md",
+      "sha256": "cd299ba18751a0307908bc3f9c32e35e3cea9a6e8ee4c365c8bc027ac126f6e2"
+    },
+    {
+      "path": "ecospold2/technology.md",
+      "sha256": "187dad88de61d92c95e125c4381da97fab3c2add100e4fd115771e0d186db96e"
+    },
+    {
+      "path": "ecospold2/text-and-image.md",
+      "sha256": "b0f9e7cde95cdf35bcae6a6d297eca8d091cd36c4f29cd7cf4830c18d9853800"
+    },
+    {
+      "path": "ecospold2/time-period.md",
+      "sha256": "3e16712f9686b7d33935af55a9544eb1d11a32d2f97cd4ddf9fa1867575837af"
+    },
+    {
+      "path": "ecospold2/transfer-coefficients.md",
+      "sha256": "6ebd05622f3f34867f601aba76f4be6fe020e04567148672e9797b91717a2ecf"
+    },
+    {
+      "path": "ecospold2/translation-review.md",
+      "sha256": "2661c6a6842aeba8cdc0630f59ddeb2ebbfdb6b394925eecb9dd8a3228c92796"
+    },
+    {
+      "path": "ecospold2/uncertainty.md",
+      "sha256": "b08e44ff2ab741b877770def0d49019473231090a6caaa9824e4b7ec9be62ba3"
+    }
+  ],
+  "original_files": [
+    {
+      "path": "ecospold2/original/Format description/EcoSpold02.html",
+      "sha256": "3f03c496b83ac15afb08d6e4ea60381603e14b89804324bc465d12c474a605ce"
+    },
+    {
+      "path": "ecospold2/original/Format description/EcoSpold02ActivityNames.html",
+      "sha256": "b193d9230bb84193f434e29e9a21864915ffa4e714c32bdb05e985fb1a10ea0f"
+    },
+    {
+      "path": "ecospold2/original/Format description/EcoSpold02Classifications.html",
+      "sha256": "3b7938656c757e9cf66ed8b0fc565fd1bd6e6146bd812c9a4c6eb20c63af04fa"
+    },
+    {
+      "path": "ecospold2/original/Format description/EcoSpold02Companies.html",
+      "sha256": "3ced221d24c5c21f857704d0c076afdfa3c20d1b1c80c2f3d7732b31132d4b6e"
+    },
+    {
+      "path": "ecospold2/original/Format description/EcoSpold02Compartments.html",
+      "sha256": "17adf577d0ba874c78098c03354bb98963b88279aed4f581cff30edcefff5074"
+    },
+    {
+      "path": "ecospold2/original/Format description/EcoSpold02Context.html",
+      "sha256": "a8385eadfdd1cb76e400ada60b90aedbf8d31248459e2b0239d28158b5fb3727"
+    },
+    {
+      "path": "ecospold2/original/Format description/EcoSpold02ElementaryExchanges.html",
+      "sha256": "83df30af496e789990798476676c3178d10fa5fdf574933e4957f03489b13868"
+    },
+    {
+      "path": "ecospold2/original/Format description/EcoSpold02Geographies.html",
+      "sha256": "b3b0ceb6a58bda81549c142cb747b543822c1003ef6a244be300d367c15f050e"
+    },
+    {
+      "path": "ecospold2/original/Format description/EcoSpold02IntermediateExchanges.html",
+      "sha256": "f8db31b344f3606994eb65d2db18f6035f5f33c7f82c1698cc0fa78fc9f3e0de"
+    },
+    {
+      "path": "ecospold2/original/Format description/EcoSpold02Languages.html",
+      "sha256": "a8922d035868d949cfdaf547bff13a8a2fcd6d1830ce7e88b598fb972b8d486a"
+    },
+    {
+      "path": "ecospold2/original/Format description/EcoSpold02MacroEconomicScenarios.html",
+      "sha256": "a55e098c5c3d4f304c4f2605c1ca2cc103c9cacbab0c4c5f32bf144dd2a9f107"
+    },
+    {
+      "path": "ecospold2/original/Format description/EcoSpold02Parameters.html",
+      "sha256": "05cc547c5f0111840962433b56deb4e51980b17d2f80d1a1dc62c5c4f5772e50"
+    },
+    {
+      "path": "ecospold2/original/Format description/EcoSpold02Persons.html",
+      "sha256": "f4c7c529c7ccae4ed0acf3dd2e6e32829d4f2eda2143af647b66412797ee90c9"
+    },
+    {
+      "path": "ecospold2/original/Format description/EcoSpold02Properties.html",
+      "sha256": "b22cae076e53539ec44997b87e58de5439ac3b977f10c04382c3f14f0455cb76"
+    },
+    {
+      "path": "ecospold2/original/Format description/EcoSpold02Sources.html",
+      "sha256": "a2e4dcb4436443895707c4496bad2f524dacc3bcdbdd5795e6dde69c8e34f80c"
+    },
+    {
+      "path": "ecospold2/original/Format description/EcoSpold02SystemModels.html",
+      "sha256": "efec6ffaa4f358e3151baab1f35a9d8b13dcef27eaf5d210571433ec5e3b7139"
+    },
+    {
+      "path": "ecospold2/original/Format description/EcoSpold02Tags.html",
+      "sha256": "03a4082210450716fae47e4eecfc41be9193c1d4d349a02489abc8989d54f9cc"
+    },
+    {
+      "path": "ecospold2/original/Format description/EcoSpold02Units.html",
+      "sha256": "8130f5a1536fb3312417af113777c83af61109ffa757c673d431ff969c3326dc"
+    },
+    {
+      "path": "ecospold2/original/Schemas/MasterData/EcoSpold02ActivityNames.xsd",
+      "sha256": "a259817058262bd1b865a58ccafacc541c2c4fe1047ef694cb950b8affe4ef52"
+    },
+    {
+      "path": "ecospold2/original/Schemas/MasterData/EcoSpold02Classification.xsd",
+      "sha256": "6881fc3f635488cd8ff8b4820a1c1cd07c4e26ac875e3e95c07055f3dc1b5117"
+    },
+    {
+      "path": "ecospold2/original/Schemas/MasterData/EcoSpold02Companies.xsd",
+      "sha256": "c1e862c1336d2e4cbbc4488dcde1d2e22339974b056438eb4602cd728eb1355d"
+    },
+    {
+      "path": "ecospold2/original/Schemas/MasterData/EcoSpold02Compartments.xsd",
+      "sha256": "533252f944919d48fa2ce5ee4623aa427dc8b275f056dc051e6f3a6cff16eae7"
+    },
+    {
+      "path": "ecospold2/original/Schemas/MasterData/EcoSpold02Context.xsd",
+      "sha256": "3065cee8fe50d4e5d6d5919be30bf80addb305117e98a07f615f29bb7b17f99b"
+    },
+    {
+      "path": "ecospold2/original/Schemas/MasterData/EcoSpold02ElementaryExchanges.xsd",
+      "sha256": "484ca25c5fc83d0ef2b494bffa63e6f9a93192ac46648370d241977dabb4d5b3"
+    },
+    {
+      "path": "ecospold2/original/Schemas/MasterData/EcoSpold02Geographies.xsd",
+      "sha256": "36f7aba1b9578aca27f9c573dd836e66538c9f1dcf9eaef87e361f1d90493e9e"
+    },
+    {
+      "path": "ecospold2/original/Schemas/MasterData/EcoSpold02IntermediateExchanges.xsd",
+      "sha256": "5215c5da9f445f81d73a55f35b12d2815062aebb3d9b1f9c04a3935d9faf4062"
+    },
+    {
+      "path": "ecospold2/original/Schemas/MasterData/EcoSpold02Languages.xsd",
+      "sha256": "549acea8de549409f012b084f36506e597cf6d8ba7caf276ae8c7df6d6ead657"
+    },
+    {
+      "path": "ecospold2/original/Schemas/MasterData/EcoSpold02MacroEconomicScenarios.xsd",
+      "sha256": "929ac8c5b7d0fb7f7b3a54b978a84e034cb137051cfff674e953f3a1a20da785"
+    },
+    {
+      "path": "ecospold2/original/Schemas/MasterData/EcoSpold02Parameters.xsd",
+      "sha256": "d401f4a37f327aa906fc80222c6a67515c842e3807bf78bf4c38a67c226408de"
+    },
+    {
+      "path": "ecospold2/original/Schemas/MasterData/EcoSpold02Persons.xsd",
+      "sha256": "11fab4402616c8b071cc279f27744706f6b848816d78fba5c08a7265cc981192"
+    },
+    {
+      "path": "ecospold2/original/Schemas/MasterData/EcoSpold02Properties.xsd",
+      "sha256": "6e1e31f884171905a21adb841bc43a80cee2deaa9d8a08bf6e256f32195bc5c3"
+    },
+    {
+      "path": "ecospold2/original/Schemas/MasterData/EcoSpold02Sources.xsd",
+      "sha256": "343ab3e2695b8b3aad12fad47b0079221efbc5dd7bae240bd366f69edec0041b"
+    },
+    {
+      "path": "ecospold2/original/Schemas/MasterData/EcoSpold02SystemModels.xsd",
+      "sha256": "53868dfb95212298b4dd013eeb6a36304187a03f9f0b0461a2899e8da2abcef0"
+    },
+    {
+      "path": "ecospold2/original/Schemas/MasterData/EcoSpold02Tags.xsd",
+      "sha256": "1fc65262496b0816ea48c472f7f7b9bde88819c974bbbbe23d2cf69d55301bfb"
+    },
+    {
+      "path": "ecospold2/original/Schemas/MasterData/EcoSpold02Units.xsd",
+      "sha256": "f1c84524d6e17c0ba5a795ec6081b604dfca4ec64853e43b3346f362e4320902"
+    },
+    {
+      "path": "ecospold2/original/Schemas/XmlNamespace.xsd",
+      "sha256": "1811f2ea32c1b5ecbe2c8e8da80af504cf068c85e0e2221ecbc0b5dafa66eb86"
+    },
+    {
+      "path": "ecospold2/original/Schemas/datasets/EcoSpold02.xsd",
+      "sha256": "5adb71ccf8a4122fd801cdbbe1c51b24bc1e856871abde9bcd4fde931de81825"
+    },
+    {
+      "path": "ecospold2/original/Schemas/datasets/EcoSpold02Activity.xsd",
+      "sha256": "6a75cf9a262df945fb0f5e7b269f2cfbbb4456dd4497beb29adb0f7602d9993c"
+    },
+    {
+      "path": "ecospold2/original/Schemas/datasets/EcoSpold02ChildActivity.xsd",
+      "sha256": "6f27f8ed983e8b55bc2de1417f420169e4bfea1f56ab72c5c0bdbad6c87297fd"
+    },
+    {
+      "path": "ecospold2/original/Schemas/datasets/EcoSpold02ChildDataTypes.xsd",
+      "sha256": "74605588a2a9bcf2bdad2c7d43a4d89446e4f715007dd3bfe3da3e1d6696cc8d"
+    },
+    {
+      "path": "ecospold2/original/Schemas/datasets/EcoSpold02ChildFlowData.xsd",
+      "sha256": "a6f29c198f263a9dafb05c74a3b45eb99d57966c82f8cb4841f53656ae9fbd0f"
+    },
+    {
+      "path": "ecospold2/original/Schemas/datasets/EcoSpold02ChildMetaInformation.xsd",
+      "sha256": "20e2ecf4f9acd471ca6f091647877e882a0490b321f0ffce7a5cfdfeaf130851"
+    },
+    {
+      "path": "ecospold2/original/Schemas/datasets/EcoSpold02DataTypes.xsd",
+      "sha256": "eaa84a482dd1ebde73198431ded9f0fde5f9ed775608e7865955cdfc8860606c"
+    },
+    {
+      "path": "ecospold2/original/Schemas/datasets/EcoSpold02FlowData.xsd",
+      "sha256": "c1b97c1da029fcb916a0127cec6581c78bf457af58b249e3a21f288f9470689c"
+    },
+    {
+      "path": "ecospold2/original/Schemas/datasets/EcoSpold02MetaInformation.xsd",
+      "sha256": "1b03a26293b8cf789641767363eddc57a86bde7fb12c91e3a30e0a2116b91262"
+    },
+    {
+      "path": "ecospold2/original/Stylesheets/EcoSpold02SchemaDocumentation.Emit.xsl",
+      "sha256": "9cd3a8522f9f114b873f2c11e935c59d563315999e98f386153cc815d8a23fa7"
+    },
+    {
+      "path": "ecospold2/original/Stylesheets/EcoSpold02SchemaDocumentation.Master.xsl",
+      "sha256": "9cf9d8f3941bdb47c3abfad1ed93356f7668cf572d28e69523db2b6d62d68ecf"
+    },
+    {
+      "path": "ecospold2/original/Stylesheets/EcoSpold02SchemaDocumentation.xsl",
+      "sha256": "aa0e6655180f8742132bbad50afd8854cdad9bb0d6652811225a577069a0245e"
+    },
+    {
+      "path": "ecospold2/original/Stylesheets/EcoSpold02SchemaDocumentationData.External.xsl",
+      "sha256": "5f8c236439bff445d2729ea7cd81a0b9c5dc1fed48589465be748a85c10b1578"
+    },
+    {
+      "path": "ecospold2/original/Stylesheets/EcoSpold02SchemaDocumentationTOC.xsl",
+      "sha256": "246bdf1ef33cc6002eb899ae566b3ce16b6c50cb8fc673ce749cc6e82c3d2cb0"
+    },
+    {
+      "path": "ecospold2/original/documentation_on_ecospold2_format.v1.0.13.zip",
+      "sha256": "0670b9dfe85cf10f608d016d4e0e583204301e7934b01297ca00f747fd5799c1"
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "pages": 150,
+  "articles": 99,
+  "topics": 11,
+  "source_blocks": 4583,
+  "assets": 213,
+  "references": 7582,
+  "review_annotations": 170,
+  "pending_expert_review": 40,
+  "snapshot_hashes_checked": false,
+  "errors": [],
+  "gitbook_import_preview_verified": false,
+  "ecospold2_fields": {
+    "sections": 22,
+    "fields": 243,
+    "source_blocks": 388,
+    "pages": 31,
+    "original_files": 51,
+    "review_annotations": 27,
+    "pending_expert_review": 12,
+    "errors": []
+  }
+}

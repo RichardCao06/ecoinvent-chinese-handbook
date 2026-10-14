@@ -1,0 +1,25 @@
+{
+  "reviewer": "translator_c",
+  "status": "passed_with_notes",
+  "scope": [
+    "overview",
+    "reading-guide",
+    "five group pages",
+    "XML location mappings"
+  ],
+  "corrections": [
+    {
+      "status": "resolved",
+      "file": "content/ecospold2/reading-guide.md",
+      "reason_zh": "明确区分数据集容器元素命名空间与类型及内部子元素命名空间；activityDataset和childActivityDataset都属于EcoSpold02，后者的类型和内部元素属于EcoSpold02Child。",
+      "evidence": "original/Schemas/datasets/EcoSpold02.xsd, TEcoSpold choice"
+    }
+  ],
+  "verified_zh": [
+    "impactIndicator实际元素名",
+    "两类交换继承TCustomExchange",
+    "转移系数可用于两种交换类型",
+    "主HTML22分组243条范围",
+    "多语言重复性与局部必填条件"
+  ]
+}

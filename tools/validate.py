@@ -119,6 +119,10 @@ report = {'pages': len(content_pages), 'articles': len(snapshot), 'topics': len(
           'pending_expert_review': sum(n['status'] == 'needs_expert_review' for n in issues),
           'snapshot_hashes_checked': args.snapshot, 'errors': errors,
           'gitbook_import_preview_verified': False}
+if (ROOT / 'audit/ecospold2/manifest.json').exists():
+    from validate_ecospold import validate as validate_ecospold
+    report['ecospold2_fields'] = validate_ecospold()
+    errors.extend(report['ecospold2_fields']['errors'])
 print(json.dumps(report, ensure_ascii=False, indent=2))
 if args.snapshot:
     (ROOT / 'audit/validation.json').write_text(json.dumps(report, ensure_ascii=False, indent=2) + '\n')
