@@ -28,9 +28,11 @@ XML 位置：`…/uncertainty`。以 `activityDescription/`、`flowData/`、`mod
 
 局部 XML 位置：`TUncertainty/comment`；ecoSpold1 对照编号：`3792`。
 
-| 类型 | 长度 | 必填 | 可重复 | 多语言 | 主数据冗余字段 |
-| --- | --- | --- | --- | --- | --- |
-| `TString32000` | 32000 | 否 | 否 | 是 | 否 |
+| 类型 | 必填 | 可重复 |
+| --- | --- | --- |
+| `TString32000` | 否 | 否 |
+
+长度：32000；多语言：是；主数据冗余字段：否。
 
 可对每项不确定性信息填写一般说明。
 
@@ -42,9 +44,11 @@ XML 位置：`…/uncertainty`。以 `activityDescription/`、`flowData/`、`mod
 
 局部 XML 位置：`TUncertainty/lognormal`；ecoSpold1 对照编号：`new`。
 
-| 类型 | 长度 | 必填 | 可重复 | 多语言 | 主数据冗余字段 |
-| --- | --- | --- | --- | --- | --- |
-| — | — | 是 | 否 | 否 | 否 |
+| 类型 | 必填 | 可重复 |
+| --- | --- | --- |
+| — | 是 | 否 |
+
+长度：—；多语言：否；主数据冗余字段：否。
 
 具有平均值 μ（Mu 参数）和方差 σ（Variance 参数）的对数正态分布，是对特征值的自然对数 ln(x) 而非 x 值进行描述的正态分布。
 
@@ -56,9 +60,11 @@ XML 位置：`…/uncertainty`。以 `activityDescription/`、`flowData/`、`mod
 
 局部 XML 位置：`TUncertainty/lognormal/@meanValue`；ecoSpold1 对照编号：`new`。
 
-| 类型 | 长度 | 必填 | 可重复 | 多语言 | 主数据冗余字段 |
-| --- | --- | --- | --- | --- | --- |
-| `TFloatNumber` | — | 是 | 否 | 否 | 否 |
+| 类型 | 必填 | 可重复 |
+| --- | --- | --- |
+| `TFloatNumber` | 是 | 否 |
+
+长度：—；多语言：否；主数据冗余字段：否。
 
 几何平均值。
 
@@ -70,9 +76,11 @@ XML 位置：`…/uncertainty`。以 `activityDescription/`、`flowData/`、`mod
 
 局部 XML 位置：`TUncertainty/lognormal/@mu`；ecoSpold1 对照编号：`new`。
 
-| 类型 | 长度 | 必填 | 可重复 | 多语言 | 主数据冗余字段 |
-| --- | --- | --- | --- | --- | --- |
-| `TFloatNumber` | — | 是 | 否 | 否 | 否 |
+| 类型 | 必填 | 可重复 |
+| --- | --- | --- |
+| `TFloatNumber` | 是 | 否 |
+
+长度：—；多语言：否；主数据冗余字段：否。
 
 底层正态分布的算术平均值。
 
@@ -84,9 +92,11 @@ XML 位置：`…/uncertainty`。以 `activityDescription/`、`flowData/`、`mod
 
 局部 XML 位置：`TUncertainty/lognormal/@variance`；ecoSpold1 对照编号：`new`。
 
-| 类型 | 长度 | 必填 | 可重复 | 多语言 | 主数据冗余字段 |
-| --- | --- | --- | --- | --- | --- |
-| `TFloatNumber` | — | 否 | 否 | 否 | 否 |
+| 类型 | 必填 | 可重复 |
+| --- | --- | --- |
+| `TFloatNumber` | 否 | 否 |
+
+长度：—；多语言：否；主数据冗余字段：否。
 
 底层正态分布的无偏方差。
 
@@ -98,9 +108,11 @@ XML 位置：`…/uncertainty`。以 `activityDescription/`、`flowData/`、`mod
 
 局部 XML 位置：`TUncertainty/lognormal/@varianceWithPedigreeUncertainty`；ecoSpold1 对照编号：`new`。
 
-| 类型 | 长度 | 必填 | 可重复 | 多语言 | 主数据冗余字段 |
-| --- | --- | --- | --- | --- | --- |
-| `TFloatNumber` | — | 是 | 否 | 否 | 否 |
+| 类型 | 必填 | 可重复 |
+| --- | --- | --- |
+| `TFloatNumber` | 是 | 否 |
+
+长度：—；多语言：否；主数据冗余字段：否。
 
 底层正态分布的无偏方差，包括基础不确定性和谱系不确定性。
 
@@ -112,9 +124,11 @@ XML 位置：`…/uncertainty`。以 `activityDescription/`、`flowData/`、`mod
 
 局部 XML 位置：`TUncertainty/normal`；ecoSpold1 对照编号：`new`。
 
-| 类型 | 长度 | 必填 | 可重复 | 多语言 | 主数据冗余字段 |
-| --- | --- | --- | --- | --- | --- |
-| — | — | 是 | 否 | 否 | 否 |
+| 类型 | 必填 | 可重复 |
+| --- | --- | --- |
+| — | 是 | 否 |
+
+长度：—；多语言：否；主数据冗余字段：否。
 
 正态分布，也称“高斯”分布。它是一族具有相同一般形式的分布，其位置参数和尺度参数不同，分别为均值（MeanValue）和标准差（Deviation）。
 
@@ -126,9 +140,11 @@ XML 位置：`…/uncertainty`。以 `activityDescription/`、`flowData/`、`mod
 
 局部 XML 位置：`TUncertainty/normal/@meanValue`；ecoSpold1 对照编号：`new`。
 
-| 类型 | 长度 | 必填 | 可重复 | 多语言 | 主数据冗余字段 |
-| --- | --- | --- | --- | --- | --- |
-| `TFloatNumber` | — | 是 | 否 | 否 | 否 |
+| 类型 | 必填 | 可重复 |
+| --- | --- | --- |
+| `TFloatNumber` | 是 | 否 |
+
+长度：—；多语言：否；主数据冗余字段：否。
 
 算术平均值。
 
@@ -140,9 +156,11 @@ XML 位置：`…/uncertainty`。以 `activityDescription/`、`flowData/`、`mod
 
 局部 XML 位置：`TUncertainty/normal/@variance`；ecoSpold1 对照编号：`new`。
 
-| 类型 | 长度 | 必填 | 可重复 | 多语言 | 主数据冗余字段 |
-| --- | --- | --- | --- | --- | --- |
-| `TFloatNumber` | — | 否 | 否 | 否 | 否 |
+| 类型 | 必填 | 可重复 |
+| --- | --- | --- |
+| `TFloatNumber` | 否 | 否 |
+
+长度：—；多语言：否；主数据冗余字段：否。
 
 无偏方差。
 
@@ -154,9 +172,11 @@ XML 位置：`…/uncertainty`。以 `activityDescription/`、`flowData/`、`mod
 
 局部 XML 位置：`TUncertainty/normal/@varianceWithPedigreeUncertainty`；ecoSpold1 对照编号：`new`。
 
-| 类型 | 长度 | 必填 | 可重复 | 多语言 | 主数据冗余字段 |
-| --- | --- | --- | --- | --- | --- |
-| `TFloatNumber` | — | 是 | 否 | 否 | 否 |
+| 类型 | 必填 | 可重复 |
+| --- | --- | --- |
+| `TFloatNumber` | 是 | 否 |
+
+长度：—；多语言：否；主数据冗余字段：否。
 
 无偏方差，包括基础不确定性和谱系不确定性。
 
@@ -168,9 +188,11 @@ XML 位置：`…/uncertainty`。以 `activityDescription/`、`flowData/`、`mod
 
 局部 XML 位置：`TUncertainty/triangular`；ecoSpold1 对照编号：`new`。
 
-| 类型 | 长度 | 必填 | 可重复 | 多语言 | 主数据冗余字段 |
-| --- | --- | --- | --- | --- | --- |
-| — | — | 是 | 否 | 否 | 否 |
+| 类型 | 必填 | 可重复 |
+| --- | --- | --- |
+| — | 是 | 否 |
+
+长度：—；多语言：否；主数据冗余字段：否。
 
 参数为 minValue、mostLikelyValue 和 maxValue。
 
@@ -184,9 +206,11 @@ XML 位置：`…/uncertainty`。以 `activityDescription/`、`flowData/`、`mod
 
 局部 XML 位置：`TUncertainty/triangular/@minValue`；ecoSpold1 对照编号：`new`。
 
-| 类型 | 长度 | 必填 | 可重复 | 多语言 | 主数据冗余字段 |
-| --- | --- | --- | --- | --- | --- |
-| `TFloatNumber` | — | 是 | 否 | 否 | 否 |
+| 类型 | 必填 | 可重复 |
+| --- | --- | --- |
+| `TFloatNumber` | 是 | 否 |
+
+长度：—；多语言：否；主数据冗余字段：否。
 
 最小值。
 
@@ -198,9 +222,11 @@ XML 位置：`…/uncertainty`。以 `activityDescription/`、`flowData/`、`mod
 
 局部 XML 位置：`TUncertainty/triangular/@mostLikelyValue`；ecoSpold1 对照编号：`new`。
 
-| 类型 | 长度 | 必填 | 可重复 | 多语言 | 主数据冗余字段 |
-| --- | --- | --- | --- | --- | --- |
-| `TFloatNumber` | — | 是 | 否 | 否 | 否 |
+| 类型 | 必填 | 可重复 |
+| --- | --- | --- |
+| `TFloatNumber` | 是 | 否 |
+
+长度：—；多语言：否；主数据冗余字段：否。
 
 众数。
 
@@ -212,9 +238,11 @@ XML 位置：`…/uncertainty`。以 `activityDescription/`、`flowData/`、`mod
 
 局部 XML 位置：`TUncertainty/triangular/@maxValue`；ecoSpold1 对照编号：`new`。
 
-| 类型 | 长度 | 必填 | 可重复 | 多语言 | 主数据冗余字段 |
-| --- | --- | --- | --- | --- | --- |
-| `TFloatNumber` | — | 是 | 否 | 否 | 否 |
+| 类型 | 必填 | 可重复 |
+| --- | --- | --- |
+| `TFloatNumber` | 是 | 否 |
+
+长度：—；多语言：否；主数据冗余字段：否。
 
 最大值。
 
@@ -226,9 +254,11 @@ XML 位置：`…/uncertainty`。以 `activityDescription/`、`flowData/`、`mod
 
 局部 XML 位置：`TUncertainty/uniform`；ecoSpold1 对照编号：`new`。
 
-| 类型 | 长度 | 必填 | 可重复 | 多语言 | 主数据冗余字段 |
-| --- | --- | --- | --- | --- | --- |
-| — | — | 是 | 否 | 否 | 否 |
+| 类型 | 必填 | 可重复 |
+| --- | --- | --- |
+| — | 是 | 否 |
+
+长度：—；多语言：否；主数据冗余字段：否。
 
 minValue 与 maxValue 参数之间的均匀分布。如果 maxValue 参数小于 minValue 参数，则交换两者的值。
 
@@ -240,9 +270,11 @@ minValue 与 maxValue 参数之间的均匀分布。如果 maxValue 参数小于
 
 局部 XML 位置：`TUncertainty/uniform/@minValue`；ecoSpold1 对照编号：`new`。
 
-| 类型 | 长度 | 必填 | 可重复 | 多语言 | 主数据冗余字段 |
-| --- | --- | --- | --- | --- | --- |
-| `TFloatNumber` | — | 是 | 否 | 否 | 否 |
+| 类型 | 必填 | 可重复 |
+| --- | --- | --- |
+| `TFloatNumber` | 是 | 否 |
+
+长度：—；多语言：否；主数据冗余字段：否。
 
 最小值。
 
@@ -254,9 +286,11 @@ minValue 与 maxValue 参数之间的均匀分布。如果 maxValue 参数小于
 
 局部 XML 位置：`TUncertainty/uniform/@maxValue`；ecoSpold1 对照编号：`new`。
 
-| 类型 | 长度 | 必填 | 可重复 | 多语言 | 主数据冗余字段 |
-| --- | --- | --- | --- | --- | --- |
-| `TFloatNumber` | — | 是 | 否 | 否 | 否 |
+| 类型 | 必填 | 可重复 |
+| --- | --- | --- |
+| `TFloatNumber` | 是 | 否 |
+
+长度：—；多语言：否；主数据冗余字段：否。
 
 最大值。
 
@@ -268,9 +302,11 @@ minValue 与 maxValue 参数之间的均匀分布。如果 maxValue 参数小于
 
 局部 XML 位置：`TUncertainty/beta`；ecoSpold1 对照编号：`new`。
 
-| 类型 | 长度 | 必填 | 可重复 | 多语言 | 主数据冗余字段 |
-| --- | --- | --- | --- | --- | --- |
-| — | — | 是 | 否 | 否 | 否 |
+| 类型 | 必填 | 可重复 |
+| --- | --- | --- |
+| — | 是 | 否 |
+
+长度：—；多语言：否；主数据冗余字段：否。
 
 Beta 分布使用 minValue（a）、maxValue（b）和 mostFrequentValue（m）参数，计算底层 Gamma 分布的两个形状参数。参数必须满足条件：((a &lt;= m) and (m &lt;= b)) or (a = b)。形状参数按以下公式计算：Shape1 = 1 + 4 \* ((m-a) / (b-a))。Shape2 = 6 - Shape1。
 
@@ -282,9 +318,11 @@ Beta 分布使用 minValue（a）、maxValue（b）和 mostFrequentValue（m）�
 
 局部 XML 位置：`TUncertainty/beta/@minValue`；ecoSpold1 对照编号：`new`。
 
-| 类型 | 长度 | 必填 | 可重复 | 多语言 | 主数据冗余字段 |
-| --- | --- | --- | --- | --- | --- |
-| `TFloatNumber` | — | 是 | 否 | 否 | 否 |
+| 类型 | 必填 | 可重复 |
+| --- | --- | --- |
+| `TFloatNumber` | 是 | 否 |
+
+长度：—；多语言：否；主数据冗余字段：否。
 
 最小值（a）。
 
@@ -296,9 +334,11 @@ Beta 分布使用 minValue（a）、maxValue（b）和 mostFrequentValue（m）�
 
 局部 XML 位置：`TUncertainty/beta/@mostFrequentValue`；ecoSpold1 对照编号：`new`。
 
-| 类型 | 长度 | 必填 | 可重复 | 多语言 | 主数据冗余字段 |
-| --- | --- | --- | --- | --- | --- |
-| `TFloatNumber` | — | 是 | 否 | 否 | 否 |
+| 类型 | 必填 | 可重复 |
+| --- | --- | --- |
+| `TFloatNumber` | 是 | 否 |
+
+长度：—；多语言：否；主数据冗余字段：否。
 
 最常出现的值（m）。
 
@@ -310,9 +350,11 @@ Beta 分布使用 minValue（a）、maxValue（b）和 mostFrequentValue（m）�
 
 局部 XML 位置：`TUncertainty/beta/@maxValue`；ecoSpold1 对照编号：`new`。
 
-| 类型 | 长度 | 必填 | 可重复 | 多语言 | 主数据冗余字段 |
-| --- | --- | --- | --- | --- | --- |
-| `TFloatNumber` | — | 是 | 否 | 否 | 否 |
+| 类型 | 必填 | 可重复 |
+| --- | --- | --- |
+| `TFloatNumber` | 是 | 否 |
+
+长度：—；多语言：否；主数据冗余字段：否。
 
 最大值（b）。
 
@@ -324,9 +366,11 @@ Beta 分布使用 minValue（a）、maxValue（b）和 mostFrequentValue（m）�
 
 局部 XML 位置：`TUncertainty/gamma`；ecoSpold1 对照编号：`new`。
 
-| 类型 | 长度 | 必填 | 可重复 | 多语言 | 主数据冗余字段 |
-| --- | --- | --- | --- | --- | --- |
-| — | — | 是 | 否 | 否 | 否 |
+| 类型 | 必填 | 可重复 |
+| --- | --- | --- |
+| — | 是 | 否 |
+
+长度：—；多语言：否；主数据冗余字段：否。
 
 Gamma 分布使用尺度参数和形状参数。这里输入的值将取绝对值使用。minimum 参数的值将加到所有抽样值上。
 
@@ -338,9 +382,11 @@ Gamma 分布使用尺度参数和形状参数。这里输入的值将取绝对�
 
 局部 XML 位置：`TUncertainty/gamma/@shape`；ecoSpold1 对照编号：`new`。
 
-| 类型 | 长度 | 必填 | 可重复 | 多语言 | 主数据冗余字段 |
-| --- | --- | --- | --- | --- | --- |
-| `TFloatNumber` | — | 是 | 否 | 否 | 否 |
+| 类型 | 必填 | 可重复 |
+| --- | --- | --- |
+| `TFloatNumber` | 是 | 否 |
+
+长度：—；多语言：否；主数据冗余字段：否。
 
 形状参数。
 
@@ -352,9 +398,11 @@ Gamma 分布使用尺度参数和形状参数。这里输入的值将取绝对�
 
 局部 XML 位置：`TUncertainty/gamma/@scale`；ecoSpold1 对照编号：`new`。
 
-| 类型 | 长度 | 必填 | 可重复 | 多语言 | 主数据冗余字段 |
-| --- | --- | --- | --- | --- | --- |
-| `TFloatNumber` | — | 是 | 否 | 否 | 否 |
+| 类型 | 必填 | 可重复 |
+| --- | --- | --- |
+| `TFloatNumber` | 是 | 否 |
+
+长度：—；多语言：否；主数据冗余字段：否。
 
 尺度参数。
 
@@ -366,9 +414,11 @@ Gamma 分布使用尺度参数和形状参数。这里输入的值将取绝对�
 
 局部 XML 位置：`TUncertainty/gamma/@minValue`；ecoSpold1 对照编号：`new`。
 
-| 类型 | 长度 | 必填 | 可重复 | 多语言 | 主数据冗余字段 |
-| --- | --- | --- | --- | --- | --- |
-| `TFloatNumber` | — | 是 | 否 | 否 | 否 |
+| 类型 | 必填 | 可重复 |
+| --- | --- | --- |
+| `TFloatNumber` | 是 | 否 |
+
+长度：—；多语言：否；主数据冗余字段：否。
 
 最小值（位置参数）。
 
@@ -380,9 +430,11 @@ Gamma 分布使用尺度参数和形状参数。这里输入的值将取绝对�
 
 局部 XML 位置：`TUncertainty/binomial`；ecoSpold1 对照编号：`new`。
 
-| 类型 | 长度 | 必填 | 可重复 | 多语言 | 主数据冗余字段 |
-| --- | --- | --- | --- | --- | --- |
-| — | — | 是 | 否 | 否 | 否 |
+| 类型 | 必填 | 可重复 |
+| --- | --- | --- |
+| — | 是 | 否 |
+
+长度：—；多语言：否；主数据冗余字段：否。
 
 二项分布使用 n 和 p 参数。
 
@@ -394,9 +446,11 @@ Gamma 分布使用尺度参数和形状参数。这里输入的值将取绝对�
 
 局部 XML 位置：`TUncertainty/binomial/@n`；ecoSpold1 对照编号：`new`。
 
-| 类型 | 长度 | 必填 | 可重复 | 多语言 | 主数据冗余字段 |
-| --- | --- | --- | --- | --- | --- |
-| `integer` | — | 是 | 否 | 否 | 否 |
+| 类型 | 必填 | 可重复 |
+| --- | --- | --- |
+| `integer` | 是 | 否 |
+
+长度：—；多语言：否；主数据冗余字段：否。
 
 独立试验次数。
 
@@ -408,9 +462,11 @@ Gamma 分布使用尺度参数和形状参数。这里输入的值将取绝对�
 
 局部 XML 位置：`TUncertainty/binomial/@p`；ecoSpold1 对照编号：`new`。
 
-| 类型 | 长度 | 必填 | 可重复 | 多语言 | 主数据冗余字段 |
-| --- | --- | --- | --- | --- | --- |
-| `TFloatNumber` | — | 是 | 否 | 否 | 否 |
+| 类型 | 必填 | 可重复 |
+| --- | --- | --- |
+| `TFloatNumber` | 是 | 否 |
+
+长度：—；多语言：否；主数据冗余字段：否。
 
 每次试验的成功概率。
 
@@ -422,9 +478,11 @@ Gamma 分布使用尺度参数和形状参数。这里输入的值将取绝对�
 
 局部 XML 位置：`TUncertainty/undefined`；ecoSpold1 对照编号：`new`。
 
-| 类型 | 长度 | 必填 | 可重复 | 多语言 | 主数据冗余字段 |
-| --- | --- | --- | --- | --- | --- |
-| — | — | 是 | 否 | 否 | 否 |
+| 类型 | 必填 | 可重复 |
+| --- | --- | --- |
+| — | 是 | 否 |
+
+长度：—；多语言：否；主数据冗余字段：否。
 
 此“分布”可用于保存 EcoSpold01 格式的旧数据；该格式复用 minValue、maxValue 和 standardDeviation95 字段，存储未定义分布的数据。
 
@@ -436,9 +494,11 @@ Gamma 分布使用尺度参数和形状参数。这里输入的值将取绝对�
 
 局部 XML 位置：`TUncertainty/undefined/@minValue`；ecoSpold1 对照编号：`new`。
 
-| 类型 | 长度 | 必填 | 可重复 | 多语言 | 主数据冗余字段 |
-| --- | --- | --- | --- | --- | --- |
-| `TFloatNumber` | — | 是 | 否 | 否 | 否 |
+| 类型 | 必填 | 可重复 |
+| --- | --- | --- |
+| `TFloatNumber` | 是 | 否 |
+
+长度：—；多语言：否；主数据冗余字段：否。
 
 最小值。
 
@@ -450,9 +510,11 @@ Gamma 分布使用尺度参数和形状参数。这里输入的值将取绝对�
 
 局部 XML 位置：`TUncertainty/undefined/@maxValue`；ecoSpold1 对照编号：`new`。
 
-| 类型 | 长度 | 必填 | 可重复 | 多语言 | 主数据冗余字段 |
-| --- | --- | --- | --- | --- | --- |
-| `TFloatNumber` | — | 是 | 否 | 否 | 否 |
+| 类型 | 必填 | 可重复 |
+| --- | --- | --- |
+| `TFloatNumber` | 是 | 否 |
+
+长度：—；多语言：否；主数据冗余字段：否。
 
 最大值。
 
@@ -464,9 +526,11 @@ Gamma 分布使用尺度参数和形状参数。这里输入的值将取绝对�
 
 局部 XML 位置：`TUncertainty/undefined/@standardDeviation95`；ecoSpold1 对照编号：`new`。
 
-| 类型 | 长度 | 必填 | 可重复 | 多语言 | 主数据冗余字段 |
-| --- | --- | --- | --- | --- | --- |
-| `TFloatNumber` | — | 是 | 否 | 否 | 否 |
+| 类型 | 必填 | 可重复 |
+| --- | --- | --- |
+| `TFloatNumber` | 是 | 否 |
+
+长度：—；多语言：否；主数据冗余字段：否。
 
 从均值向两侧延伸、为覆盖总体 95% 所需的值。
 
@@ -478,9 +542,11 @@ Gamma 分布使用尺度参数和形状参数。这里输入的值将取绝对�
 
 局部 XML 位置：`TUncertainty/pedigreeMatrix`；ecoSpold1 对照编号：`new`。
 
-| 类型 | 长度 | 必填 | 可重复 | 多语言 | 主数据冗余字段 |
-| --- | --- | --- | --- | --- | --- |
-| `integer` | — | 否 | 否 | 否 | 否 |
+| 类型 | 必填 | 可重复 |
+| --- | --- | --- |
+| `integer` | 否 | 否 |
+
+长度：—；多语言：否；主数据冗余字段：否。
 
 数据质量指标提供数据质量的定性评价。该评价可转换为定量的附加不确定性，并加到基础不确定性上。pedigreeMatrix 元素将 5 个数据质量指标分组，其自身不包含数据。
 
@@ -492,9 +558,11 @@ Gamma 分布使用尺度参数和形状参数。这里输入的值将取绝对�
 
 局部 XML 位置：`TUncertainty/pedigreeMatrix/@reliability`；ecoSpold1 对照编号：`new`。
 
-| 类型 | 长度 | 必填 | 可重复 | 多语言 | 主数据冗余字段 |
-| --- | --- | --- | --- | --- | --- |
-| `integer` | — | 是 | 否 | 否 | 否 |
+| 类型 | 必填 | 可重复 |
+| --- | --- | --- |
+| `integer` | 是 | 否 |
+
+长度：—；多语言：否；主数据冗余字段：否。
 
 1=基于测量且经过验证的数据。
 
@@ -514,9 +582,11 @@ Gamma 分布使用尺度参数和形状参数。这里输入的值将取绝对�
 
 局部 XML 位置：`TUncertainty/pedigreeMatrix/@completeness`；ecoSpold1 对照编号：`new`。
 
-| 类型 | 长度 | 必填 | 可重复 | 多语言 | 主数据冗余字段 |
-| --- | --- | --- | --- | --- | --- |
-| `integer` | — | 是 | 否 | 否 | 否 |
+| 类型 | 必填 | 可重复 |
+| --- | --- | --- |
+| `integer` | 是 | 否 |
+
+长度：—；多语言：否；主数据冗余字段：否。
 
 1=来自所考察市场相关全部场所的代表性数据，时间跨度足以平滑正常波动。
 
@@ -536,9 +606,11 @@ Gamma 分布使用尺度参数和形状参数。这里输入的值将取绝对�
 
 局部 XML 位置：`TUncertainty/pedigreeMatrix/@temporalCorrelation`；ecoSpold1 对照编号：`new`。
 
-| 类型 | 长度 | 必填 | 可重复 | 多语言 | 主数据冗余字段 |
-| --- | --- | --- | --- | --- | --- |
-| `integer` | — | 是 | 否 | 否 | 否 |
+| 类型 | 必填 | 可重复 |
+| --- | --- | --- |
+| `integer` | 是 | 否 |
+
+长度：—；多语言：否；主数据冗余字段：否。
 
 1=与数据集的时间期间（字段 600-610）相差不足 3 年。
 
@@ -558,9 +630,11 @@ Gamma 分布使用尺度参数和形状参数。这里输入的值将取绝对�
 
 局部 XML 位置：`TUncertainty/pedigreeMatrix/@geographicalCorrelation`；ecoSpold1 对照编号：`new`。
 
-| 类型 | 长度 | 必填 | 可重复 | 多语言 | 主数据冗余字段 |
-| --- | --- | --- | --- | --- | --- |
-| `integer` | — | 是 | 否 | 否 | 否 |
+| 类型 | 必填 | 可重复 |
+| --- | --- | --- |
+| `integer` | 是 | 否 |
+
+长度：—；多语言：否；主数据冗余字段：否。
 
 1=来自研究区域的数据。
 
@@ -580,9 +654,11 @@ Gamma 分布使用尺度参数和形状参数。这里输入的值将取绝对�
 
 局部 XML 位置：`TUncertainty/pedigreeMatrix/@furtherTechnologyCorrelation`；ecoSpold1 对照编号：`new`。
 
-| 类型 | 长度 | 必填 | 可重复 | 多语言 | 主数据冗余字段 |
-| --- | --- | --- | --- | --- | --- |
-| `integer` | — | 是 | 否 | 否 | 否 |
+| 类型 | 必填 | 可重复 |
+| --- | --- | --- |
+| `integer` | 是 | 否 |
+
+长度：—；多语言：否；主数据冗余字段：否。
 
 1=来自所研究企业、过程和材料的数据。
 
@@ -614,9 +690,11 @@ Of the following uncertainty methods (lognormal, normal, ..., undefined) exactly
 
 Local XML path：`TUncertainty/comment`；ecoSpold1 mapping：`3792`。
 
-| Type | Size | Required | Multiple occurrence | Multi language | Redundant master data |
-| --- | --- | --- | --- | --- | --- |
-| `TString32000` | 32000 | No | No | Yes | No |
+| Type | Required | Multiple occurrence |
+| --- | --- | --- |
+| `TString32000` | No | No |
+
+Size：32000；Multi language：Yes；Redundant master data：No。
 
 A general comment can be made about each uncertainty information
 
@@ -628,9 +706,11 @@ Schema source：[EcoSpold02DataTypes.xsd](original/Schemas/datasets/EcoSpold02Da
 
 Local XML path：`TUncertainty/lognormal`；ecoSpold1 mapping：`new`。
 
-| Type | Size | Required | Multiple occurrence | Multi language | Redundant master data |
-| --- | --- | --- | --- | --- | --- |
-| — | — | Yes | No | No | No |
+| Type | Required | Multiple occurrence |
+| --- | --- | --- |
+| — | Yes | No |
+
+Size：—；Multi language：No；Redundant master data：No。
 
 The Lognormal-distribution with average value μ (Mu parameter) and variance σ (Variance parameter) is a Normal-distribution, shaping the natural logarithm of the characteristic values ln(x) instead of x-values.
 
@@ -642,9 +722,11 @@ Schema source：[EcoSpold02DataTypes.xsd](original/Schemas/datasets/EcoSpold02Da
 
 Local XML path：`TUncertainty/lognormal/@meanValue`；ecoSpold1 mapping：`new`。
 
-| Type | Size | Required | Multiple occurrence | Multi language | Redundant master data |
-| --- | --- | --- | --- | --- | --- |
-| `TFloatNumber` | — | Yes | No | No | No |
+| Type | Required | Multiple occurrence |
+| --- | --- | --- |
+| `TFloatNumber` | Yes | No |
+
+Size：—；Multi language：No；Redundant master data：No。
 
 Geometric mean
 
@@ -656,9 +738,11 @@ Schema source：[EcoSpold02DataTypes.xsd](original/Schemas/datasets/EcoSpold02Da
 
 Local XML path：`TUncertainty/lognormal/@mu`；ecoSpold1 mapping：`new`。
 
-| Type | Size | Required | Multiple occurrence | Multi language | Redundant master data |
-| --- | --- | --- | --- | --- | --- |
-| `TFloatNumber` | — | Yes | No | No | No |
+| Type | Required | Multiple occurrence |
+| --- | --- | --- |
+| `TFloatNumber` | Yes | No |
+
+Size：—；Multi language：No；Redundant master data：No。
 
 Arithmetic mean of the underlying normal distribution
 
@@ -670,9 +754,11 @@ Schema source：[EcoSpold02DataTypes.xsd](original/Schemas/datasets/EcoSpold02Da
 
 Local XML path：`TUncertainty/lognormal/@variance`；ecoSpold1 mapping：`new`。
 
-| Type | Size | Required | Multiple occurrence | Multi language | Redundant master data |
-| --- | --- | --- | --- | --- | --- |
-| `TFloatNumber` | — | No | No | No | No |
+| Type | Required | Multiple occurrence |
+| --- | --- | --- |
+| `TFloatNumber` | No | No |
+
+Size：—；Multi language：No；Redundant master data：No。
 
 Unbiased variance of the underlying normal distribution
 
@@ -684,9 +770,11 @@ Schema source：[EcoSpold02DataTypes.xsd](original/Schemas/datasets/EcoSpold02Da
 
 Local XML path：`TUncertainty/lognormal/@varianceWithPedigreeUncertainty`；ecoSpold1 mapping：`new`。
 
-| Type | Size | Required | Multiple occurrence | Multi language | Redundant master data |
-| --- | --- | --- | --- | --- | --- |
-| `TFloatNumber` | — | Yes | No | No | No |
+| Type | Required | Multiple occurrence |
+| --- | --- | --- |
+| `TFloatNumber` | Yes | No |
+
+Size：—；Multi language：No；Redundant master data：No。
 
 Unbiased variance of the underlying normal distribution, basic uncertainty with pedigree uncertainty
 
@@ -698,9 +786,11 @@ Schema source：[EcoSpold02DataTypes.xsd](original/Schemas/datasets/EcoSpold02Da
 
 Local XML path：`TUncertainty/normal`；ecoSpold1 mapping：`new`。
 
-| Type | Size | Required | Multiple occurrence | Multi language | Redundant master data |
-| --- | --- | --- | --- | --- | --- |
-| — | — | Yes | No | No | No |
+| Type | Required | Multiple occurrence |
+| --- | --- | --- |
+| — | Yes | No |
+
+Size：—；Multi language：No；Redundant master data：No。
 
 Normal (also known as "Gaussian") distribution. It is a family of distributions of the same general form, differing in their location and scale parameters: the mean ("MeanValue") and standard deviation ("Deviation"), respectively.
 
@@ -712,9 +802,11 @@ Schema source：[EcoSpold02DataTypes.xsd](original/Schemas/datasets/EcoSpold02Da
 
 Local XML path：`TUncertainty/normal/@meanValue`；ecoSpold1 mapping：`new`。
 
-| Type | Size | Required | Multiple occurrence | Multi language | Redundant master data |
-| --- | --- | --- | --- | --- | --- |
-| `TFloatNumber` | — | Yes | No | No | No |
+| Type | Required | Multiple occurrence |
+| --- | --- | --- |
+| `TFloatNumber` | Yes | No |
+
+Size：—；Multi language：No；Redundant master data：No。
 
 Arithemtic mean
 
@@ -726,9 +818,11 @@ Schema source：[EcoSpold02DataTypes.xsd](original/Schemas/datasets/EcoSpold02Da
 
 Local XML path：`TUncertainty/normal/@variance`；ecoSpold1 mapping：`new`。
 
-| Type | Size | Required | Multiple occurrence | Multi language | Redundant master data |
-| --- | --- | --- | --- | --- | --- |
-| `TFloatNumber` | — | No | No | No | No |
+| Type | Required | Multiple occurrence |
+| --- | --- | --- |
+| `TFloatNumber` | No | No |
+
+Size：—；Multi language：No；Redundant master data：No。
 
 Unbiased variance
 
@@ -740,9 +834,11 @@ Schema source：[EcoSpold02DataTypes.xsd](original/Schemas/datasets/EcoSpold02Da
 
 Local XML path：`TUncertainty/normal/@varianceWithPedigreeUncertainty`；ecoSpold1 mapping：`new`。
 
-| Type | Size | Required | Multiple occurrence | Multi language | Redundant master data |
-| --- | --- | --- | --- | --- | --- |
-| `TFloatNumber` | — | Yes | No | No | No |
+| Type | Required | Multiple occurrence |
+| --- | --- | --- |
+| `TFloatNumber` | Yes | No |
+
+Size：—；Multi language：No；Redundant master data：No。
 
 Unbiased variance, basic uncertainty with pedigree uncertainty
 
@@ -754,9 +850,11 @@ Schema source：[EcoSpold02DataTypes.xsd](original/Schemas/datasets/EcoSpold02Da
 
 Local XML path：`TUncertainty/triangular`；ecoSpold1 mapping：`new`。
 
-| Type | Size | Required | Multiple occurrence | Multi language | Redundant master data |
-| --- | --- | --- | --- | --- | --- |
-| — | — | Yes | No | No | No |
+| Type | Required | Multiple occurrence |
+| --- | --- | --- |
+| — | Yes | No |
+
+Size：—；Multi language：No；Redundant master data：No。
 
 Parameter are minValue, mostLikelyValue, maxValue.
 
@@ -770,9 +868,11 @@ Schema source：[EcoSpold02DataTypes.xsd](original/Schemas/datasets/EcoSpold02Da
 
 Local XML path：`TUncertainty/triangular/@minValue`；ecoSpold1 mapping：`new`。
 
-| Type | Size | Required | Multiple occurrence | Multi language | Redundant master data |
-| --- | --- | --- | --- | --- | --- |
-| `TFloatNumber` | — | Yes | No | No | No |
+| Type | Required | Multiple occurrence |
+| --- | --- | --- |
+| `TFloatNumber` | Yes | No |
+
+Size：—；Multi language：No；Redundant master data：No。
 
 Minimum value
 
@@ -784,9 +884,11 @@ Schema source：[EcoSpold02DataTypes.xsd](original/Schemas/datasets/EcoSpold02Da
 
 Local XML path：`TUncertainty/triangular/@mostLikelyValue`；ecoSpold1 mapping：`new`。
 
-| Type | Size | Required | Multiple occurrence | Multi language | Redundant master data |
-| --- | --- | --- | --- | --- | --- |
-| `TFloatNumber` | — | Yes | No | No | No |
+| Type | Required | Multiple occurrence |
+| --- | --- | --- |
+| `TFloatNumber` | Yes | No |
+
+Size：—；Multi language：No；Redundant master data：No。
 
 Mode
 
@@ -798,9 +900,11 @@ Schema source：[EcoSpold02DataTypes.xsd](original/Schemas/datasets/EcoSpold02Da
 
 Local XML path：`TUncertainty/triangular/@maxValue`；ecoSpold1 mapping：`new`。
 
-| Type | Size | Required | Multiple occurrence | Multi language | Redundant master data |
-| --- | --- | --- | --- | --- | --- |
-| `TFloatNumber` | — | Yes | No | No | No |
+| Type | Required | Multiple occurrence |
+| --- | --- | --- |
+| `TFloatNumber` | Yes | No |
+
+Size：—；Multi language：No；Redundant master data：No。
 
 Maximum value
 
@@ -812,9 +916,11 @@ Schema source：[EcoSpold02DataTypes.xsd](original/Schemas/datasets/EcoSpold02Da
 
 Local XML path：`TUncertainty/uniform`；ecoSpold1 mapping：`new`。
 
-| Type | Size | Required | Multiple occurrence | Multi language | Redundant master data |
-| --- | --- | --- | --- | --- | --- |
-| — | — | Yes | No | No | No |
+| Type | Required | Multiple occurrence |
+| --- | --- | --- |
+| — | Yes | No |
+
+Size：—；Multi language：No；Redundant master data：No。
 
 Uniform distribution of values between the minValue and the maxValue parameter. If the maxValue parameter is smaller than the minValue parameter their values will be swapped.
 
@@ -826,9 +932,11 @@ Schema source：[EcoSpold02DataTypes.xsd](original/Schemas/datasets/EcoSpold02Da
 
 Local XML path：`TUncertainty/uniform/@minValue`；ecoSpold1 mapping：`new`。
 
-| Type | Size | Required | Multiple occurrence | Multi language | Redundant master data |
-| --- | --- | --- | --- | --- | --- |
-| `TFloatNumber` | — | Yes | No | No | No |
+| Type | Required | Multiple occurrence |
+| --- | --- | --- |
+| `TFloatNumber` | Yes | No |
+
+Size：—；Multi language：No；Redundant master data：No。
 
 Minimum value
 
@@ -840,9 +948,11 @@ Schema source：[EcoSpold02DataTypes.xsd](original/Schemas/datasets/EcoSpold02Da
 
 Local XML path：`TUncertainty/uniform/@maxValue`；ecoSpold1 mapping：`new`。
 
-| Type | Size | Required | Multiple occurrence | Multi language | Redundant master data |
-| --- | --- | --- | --- | --- | --- |
-| `TFloatNumber` | — | Yes | No | No | No |
+| Type | Required | Multiple occurrence |
+| --- | --- | --- |
+| `TFloatNumber` | Yes | No |
+
+Size：—；Multi language：No；Redundant master data：No。
 
 Maximum value
 
@@ -854,9 +964,11 @@ Schema source：[EcoSpold02DataTypes.xsd](original/Schemas/datasets/EcoSpold02Da
 
 Local XML path：`TUncertainty/beta`；ecoSpold1 mapping：`new`。
 
-| Type | Size | Required | Multiple occurrence | Multi language | Redundant master data |
-| --- | --- | --- | --- | --- | --- |
-| — | — | Yes | No | No | No |
+| Type | Required | Multiple occurrence |
+| --- | --- | --- |
+| — | Yes | No |
+
+Size：—；Multi language：No；Redundant master data：No。
 
 Beta distribution using minValue (a), maxValue (b) and mostFrequentValue (m) parameters to calculate the two shape parameters of the underlying Gamma distributions. The parameters must follow this condition: ((a &lt;= m) and (m &lt;= b)) or (a = b). The shape values will be calculated by these formulas: Shape1 = 1 + 4 \* ((m-a) / (b-a)). Shape2 = 6 - Shape1.
 
@@ -868,9 +980,11 @@ Schema source：[EcoSpold02DataTypes.xsd](original/Schemas/datasets/EcoSpold02Da
 
 Local XML path：`TUncertainty/beta/@minValue`；ecoSpold1 mapping：`new`。
 
-| Type | Size | Required | Multiple occurrence | Multi language | Redundant master data |
-| --- | --- | --- | --- | --- | --- |
-| `TFloatNumber` | — | Yes | No | No | No |
+| Type | Required | Multiple occurrence |
+| --- | --- | --- |
+| `TFloatNumber` | Yes | No |
+
+Size：—；Multi language：No；Redundant master data：No。
 
 Minimum value (a)
 
@@ -882,9 +996,11 @@ Schema source：[EcoSpold02DataTypes.xsd](original/Schemas/datasets/EcoSpold02Da
 
 Local XML path：`TUncertainty/beta/@mostFrequentValue`；ecoSpold1 mapping：`new`。
 
-| Type | Size | Required | Multiple occurrence | Multi language | Redundant master data |
-| --- | --- | --- | --- | --- | --- |
-| `TFloatNumber` | — | Yes | No | No | No |
+| Type | Required | Multiple occurrence |
+| --- | --- | --- |
+| `TFloatNumber` | Yes | No |
+
+Size：—；Multi language：No；Redundant master data：No。
 
 Most Frequent value (m)
 
@@ -896,9 +1012,11 @@ Schema source：[EcoSpold02DataTypes.xsd](original/Schemas/datasets/EcoSpold02Da
 
 Local XML path：`TUncertainty/beta/@maxValue`；ecoSpold1 mapping：`new`。
 
-| Type | Size | Required | Multiple occurrence | Multi language | Redundant master data |
-| --- | --- | --- | --- | --- | --- |
-| `TFloatNumber` | — | Yes | No | No | No |
+| Type | Required | Multiple occurrence |
+| --- | --- | --- |
+| `TFloatNumber` | Yes | No |
+
+Size：—；Multi language：No；Redundant master data：No。
 
 Maximum value (b)
 
@@ -910,9 +1028,11 @@ Schema source：[EcoSpold02DataTypes.xsd](original/Schemas/datasets/EcoSpold02Da
 
 Local XML path：`TUncertainty/gamma`；ecoSpold1 mapping：`new`。
 
-| Type | Size | Required | Multiple occurrence | Multi language | Redundant master data |
-| --- | --- | --- | --- | --- | --- |
-| — | — | Yes | No | No | No |
+| Type | Required | Multiple occurrence |
+| --- | --- | --- |
+| — | Yes | No |
+
+Size：—；Multi language：No；Redundant master data：No。
 
 Gamma distribution using scale and shape parameter. Absolute values of the values entered here will be used. The value of the minimum parameter will be added to all samples.
 
@@ -924,9 +1044,11 @@ Schema source：[EcoSpold02DataTypes.xsd](original/Schemas/datasets/EcoSpold02Da
 
 Local XML path：`TUncertainty/gamma/@shape`；ecoSpold1 mapping：`new`。
 
-| Type | Size | Required | Multiple occurrence | Multi language | Redundant master data |
-| --- | --- | --- | --- | --- | --- |
-| `TFloatNumber` | — | Yes | No | No | No |
+| Type | Required | Multiple occurrence |
+| --- | --- | --- |
+| `TFloatNumber` | Yes | No |
+
+Size：—；Multi language：No；Redundant master data：No。
 
 Shape parameter
 
@@ -938,9 +1060,11 @@ Schema source：[EcoSpold02DataTypes.xsd](original/Schemas/datasets/EcoSpold02Da
 
 Local XML path：`TUncertainty/gamma/@scale`；ecoSpold1 mapping：`new`。
 
-| Type | Size | Required | Multiple occurrence | Multi language | Redundant master data |
-| --- | --- | --- | --- | --- | --- |
-| `TFloatNumber` | — | Yes | No | No | No |
+| Type | Required | Multiple occurrence |
+| --- | --- | --- |
+| `TFloatNumber` | Yes | No |
+
+Size：—；Multi language：No；Redundant master data：No。
 
 Scale parameter
 
@@ -952,9 +1076,11 @@ Schema source：[EcoSpold02DataTypes.xsd](original/Schemas/datasets/EcoSpold02Da
 
 Local XML path：`TUncertainty/gamma/@minValue`；ecoSpold1 mapping：`new`。
 
-| Type | Size | Required | Multiple occurrence | Multi language | Redundant master data |
-| --- | --- | --- | --- | --- | --- |
-| `TFloatNumber` | — | Yes | No | No | No |
+| Type | Required | Multiple occurrence |
+| --- | --- | --- |
+| `TFloatNumber` | Yes | No |
+
+Size：—；Multi language：No；Redundant master data：No。
 
 Minimum value (location parameter)
 
@@ -966,9 +1092,11 @@ Schema source：[EcoSpold02DataTypes.xsd](original/Schemas/datasets/EcoSpold02Da
 
 Local XML path：`TUncertainty/binomial`；ecoSpold1 mapping：`new`。
 
-| Type | Size | Required | Multiple occurrence | Multi language | Redundant master data |
-| --- | --- | --- | --- | --- | --- |
-| — | — | Yes | No | No | No |
+| Type | Required | Multiple occurrence |
+| --- | --- | --- |
+| — | Yes | No |
+
+Size：—；Multi language：No；Redundant master data：No。
 
 Binomial distribution using n and p parameter.
 
@@ -980,9 +1108,11 @@ Schema source：[EcoSpold02DataTypes.xsd](original/Schemas/datasets/EcoSpold02Da
 
 Local XML path：`TUncertainty/binomial/@n`；ecoSpold1 mapping：`new`。
 
-| Type | Size | Required | Multiple occurrence | Multi language | Redundant master data |
-| --- | --- | --- | --- | --- | --- |
-| `integer` | — | Yes | No | No | No |
+| Type | Required | Multiple occurrence |
+| --- | --- | --- |
+| `integer` | Yes | No |
+
+Size：—；Multi language：No；Redundant master data：No。
 
 Number of independant trials
 
@@ -994,9 +1124,11 @@ Schema source：[EcoSpold02DataTypes.xsd](original/Schemas/datasets/EcoSpold02Da
 
 Local XML path：`TUncertainty/binomial/@p`；ecoSpold1 mapping：`new`。
 
-| Type | Size | Required | Multiple occurrence | Multi language | Redundant master data |
-| --- | --- | --- | --- | --- | --- |
-| `TFloatNumber` | — | Yes | No | No | No |
+| Type | Required | Multiple occurrence |
+| --- | --- | --- |
+| `TFloatNumber` | Yes | No |
+
+Size：—；Multi language：No；Redundant master data：No。
 
 Probability of success in each trial
 
@@ -1008,9 +1140,11 @@ Schema source：[EcoSpold02DataTypes.xsd](original/Schemas/datasets/EcoSpold02Da
 
 Local XML path：`TUncertainty/undefined`；ecoSpold1 mapping：`new`。
 
-| Type | Size | Required | Multiple occurrence | Multi language | Redundant master data |
-| --- | --- | --- | --- | --- | --- |
-| — | — | Yes | No | No | No |
+| Type | Required | Multiple occurrence |
+| --- | --- | --- |
+| — | Yes | No |
+
+Size：—；Multi language：No；Redundant master data：No。
 
 This "distribution" can be used to hold legacy data of the EcoSpold01 format which reused the minValue, maxValue and standardDeviation95 fields to store undefined distribution data.
 
@@ -1022,9 +1156,11 @@ Schema source：[EcoSpold02DataTypes.xsd](original/Schemas/datasets/EcoSpold02Da
 
 Local XML path：`TUncertainty/undefined/@minValue`；ecoSpold1 mapping：`new`。
 
-| Type | Size | Required | Multiple occurrence | Multi language | Redundant master data |
-| --- | --- | --- | --- | --- | --- |
-| `TFloatNumber` | — | Yes | No | No | No |
+| Type | Required | Multiple occurrence |
+| --- | --- | --- |
+| `TFloatNumber` | Yes | No |
+
+Size：—；Multi language：No；Redundant master data：No。
 
 Minimum value
 
@@ -1036,9 +1172,11 @@ Schema source：[EcoSpold02DataTypes.xsd](original/Schemas/datasets/EcoSpold02Da
 
 Local XML path：`TUncertainty/undefined/@maxValue`；ecoSpold1 mapping：`new`。
 
-| Type | Size | Required | Multiple occurrence | Multi language | Redundant master data |
-| --- | --- | --- | --- | --- | --- |
-| `TFloatNumber` | — | Yes | No | No | No |
+| Type | Required | Multiple occurrence |
+| --- | --- | --- |
+| `TFloatNumber` | Yes | No |
+
+Size：—；Multi language：No；Redundant master data：No。
 
 Maximum value
 
@@ -1050,9 +1188,11 @@ Schema source：[EcoSpold02DataTypes.xsd](original/Schemas/datasets/EcoSpold02Da
 
 Local XML path：`TUncertainty/undefined/@standardDeviation95`；ecoSpold1 mapping：`new`。
 
-| Type | Size | Required | Multiple occurrence | Multi language | Redundant master data |
-| --- | --- | --- | --- | --- | --- |
-| `TFloatNumber` | — | Yes | No | No | No |
+| Type | Required | Multiple occurrence |
+| --- | --- | --- |
+| `TFloatNumber` | Yes | No |
+
+Size：—；Multi language：No；Redundant master data：No。
 
 The value, extended from both sides of the mean, that would be necessary to cover 95% of the population
 
@@ -1064,9 +1204,11 @@ Schema source：[EcoSpold02DataTypes.xsd](original/Schemas/datasets/EcoSpold02Da
 
 Local XML path：`TUncertainty/pedigreeMatrix`；ecoSpold1 mapping：`new`。
 
-| Type | Size | Required | Multiple occurrence | Multi language | Redundant master data |
-| --- | --- | --- | --- | --- | --- |
-| `integer` | — | No | No | No | No |
+| Type | Required | Multiple occurrence |
+| --- | --- | --- |
+| `integer` | No | No |
+
+Size：—；Multi language：No；Redundant master data：No。
 
 The data quality indicators provides a qualitative assessment of data quality. This can be converted to a quantitative additional uncertainty, which can be added to the basic uncertainty. The pedigreeMatrix element groups the 5 data quality indicators and contains no data itself.
 
@@ -1078,9 +1220,11 @@ Schema source：[EcoSpold02DataTypes.xsd](original/Schemas/datasets/EcoSpold02Da
 
 Local XML path：`TUncertainty/pedigreeMatrix/@reliability`；ecoSpold1 mapping：`new`。
 
-| Type | Size | Required | Multiple occurrence | Multi language | Redundant master data |
-| --- | --- | --- | --- | --- | --- |
-| `integer` | — | Yes | No | No | No |
+| Type | Required | Multiple occurrence |
+| --- | --- | --- |
+| `integer` | Yes | No |
+
+Size：—；Multi language：No；Redundant master data：No。
 
 1=Verified data based on measurements
 
@@ -1100,9 +1244,11 @@ Schema source：[EcoSpold02DataTypes.xsd](original/Schemas/datasets/EcoSpold02Da
 
 Local XML path：`TUncertainty/pedigreeMatrix/@completeness`；ecoSpold1 mapping：`new`。
 
-| Type | Size | Required | Multiple occurrence | Multi language | Redundant master data |
-| --- | --- | --- | --- | --- | --- |
-| `integer` | — | Yes | No | No | No |
+| Type | Required | Multiple occurrence |
+| --- | --- | --- |
+| `integer` | Yes | No |
+
+Size：—；Multi language：No；Redundant master data：No。
 
 1=Representative data from all sites relevant for the market considered over an adequate period to even out normal fluctuations
 
@@ -1122,9 +1268,11 @@ Schema source：[EcoSpold02DataTypes.xsd](original/Schemas/datasets/EcoSpold02Da
 
 Local XML path：`TUncertainty/pedigreeMatrix/@temporalCorrelation`；ecoSpold1 mapping：`new`。
 
-| Type | Size | Required | Multiple occurrence | Multi language | Redundant master data |
-| --- | --- | --- | --- | --- | --- |
-| `integer` | — | Yes | No | No | No |
+| Type | Required | Multiple occurrence |
+| --- | --- | --- |
+| `integer` | Yes | No |
+
+Size：—；Multi language：No；Redundant master data：No。
 
 1=Less than 3 years of difference to the time period of the dataset (fields 600-610)
 
@@ -1144,9 +1292,11 @@ Schema source：[EcoSpold02DataTypes.xsd](original/Schemas/datasets/EcoSpold02Da
 
 Local XML path：`TUncertainty/pedigreeMatrix/@geographicalCorrelation`；ecoSpold1 mapping：`new`。
 
-| Type | Size | Required | Multiple occurrence | Multi language | Redundant master data |
-| --- | --- | --- | --- | --- | --- |
-| `integer` | — | Yes | No | No | No |
+| Type | Required | Multiple occurrence |
+| --- | --- | --- |
+| `integer` | Yes | No |
+
+Size：—；Multi language：No；Redundant master data：No。
 
 1=Data from area under study
 
@@ -1166,9 +1316,11 @@ Schema source：[EcoSpold02DataTypes.xsd](original/Schemas/datasets/EcoSpold02Da
 
 Local XML path：`TUncertainty/pedigreeMatrix/@furtherTechnologyCorrelation`；ecoSpold1 mapping：`new`。
 
-| Type | Size | Required | Multiple occurrence | Multi language | Redundant master data |
-| --- | --- | --- | --- | --- | --- |
-| `integer` | — | Yes | No | No | No |
+| Type | Required | Multiple occurrence |
+| --- | --- | --- |
+| `integer` | Yes | No |
+
+Size：—；Multi language：No；Redundant master data：No。
 
 1=Data from enterprises, processes and materials under study
 

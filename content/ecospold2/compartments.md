@@ -22,9 +22,11 @@ XML 位置：`…/elementaryExchange/compartment`。以 `activityDescription/`�
 
 局部 XML 位置：`TCompartment/compartment`；ecoSpold1 对照编号：`new`。
 
-| 类型 | 长度 | 必填 | 可重复 | 多语言 | 主数据冗余字段 |
-| --- | --- | --- | --- | --- | --- |
-| `TCompartmentName` | 40 | 是 | 否 | 是 | 是 |
+| 类型 | 必填 | 可重复 |
+| --- | --- | --- |
+| `TCompartmentName` | 是 | 否 |
+
+长度：40；多语言：是；主数据冗余字段：是。
 
 区室名称。这是所引用区室（字段 5315）的纯文本值。
 
@@ -36,9 +38,11 @@ XML 位置：`…/elementaryExchange/compartment`。以 `activityDescription/`�
 
 局部 XML 位置：`TCompartment/subcompartment`；ecoSpold1 对照编号：`new`。
 
-| 类型 | 长度 | 必填 | 可重复 | 多语言 | 主数据冗余字段 |
-| --- | --- | --- | --- | --- | --- |
-| `TCompartmentName` | 40 | 是 | 否 | 是 | 是 |
+| 类型 | 必填 | 可重复 |
+| --- | --- | --- |
+| `TCompartmentName` | 是 | 否 |
+
+长度：40；多语言：是；主数据冗余字段：是。
 
 子区室名称。这是所引用子区室（字段 5325）的纯文本值。
 
@@ -50,9 +54,11 @@ XML 位置：`…/elementaryExchange/compartment`。以 `activityDescription/`�
 
 局部 XML 位置：`TCompartment/@subcompartmentId`；ecoSpold1 对照编号：`new`。
 
-| 类型 | 长度 | 必填 | 可重复 | 多语言 | 主数据冗余字段 |
-| --- | --- | --- | --- | --- | --- |
-| `TUuid` | 36 | 是 | 否 | 否 | 否 |
+| 类型 | 必填 | 可重复 |
+| --- | --- | --- |
+| `TUuid` | 是 | 否 |
+
+长度：36；多语言：否；主数据冗余字段：否。
 
 引用区室／子区室配对。该配对必须在有效区室列表中定义（见字段 5330）。
 
@@ -64,9 +70,11 @@ XML 位置：`…/elementaryExchange/compartment`。以 `activityDescription/`�
 
 局部 XML 位置：`TCompartment/@subcompartmentContextId`；ecoSpold1 对照编号：`new`。
 
-| 类型 | 长度 | 必填 | 可重复 | 多语言 | 主数据冗余字段 |
-| --- | --- | --- | --- | --- | --- |
-| `TUuid` | 36 | 否 | 否 | 否 | 否 |
+| 类型 | 必填 | 可重复 |
+| --- | --- | --- |
+| `TUuid` | 否 | 否 |
+
+长度：36；多语言：否；主数据冗余字段：否。
 
 引用该子区室所属的上下文。
 
@@ -90,9 +98,11 @@ Contains compartment pairs to specify an exchange.
 
 Local XML path：`TCompartment/compartment`；ecoSpold1 mapping：`new`。
 
-| Type | Size | Required | Multiple occurrence | Multi language | Redundant master data |
-| --- | --- | --- | --- | --- | --- |
-| `TCompartmentName` | 40 | Yes | No | Yes | Yes |
+| Type | Required | Multiple occurrence |
+| --- | --- | --- |
+| `TCompartmentName` | Yes | No |
+
+Size：40；Multi language：Yes；Redundant master data：Yes。
 
 The name of the compartment.This is the plaintext value of the referenced compartment (field 5315).
 
@@ -104,9 +114,11 @@ Schema source：[EcoSpold02DataTypes.xsd](original/Schemas/datasets/EcoSpold02Da
 
 Local XML path：`TCompartment/subcompartment`；ecoSpold1 mapping：`new`。
 
-| Type | Size | Required | Multiple occurrence | Multi language | Redundant master data |
-| --- | --- | --- | --- | --- | --- |
-| `TCompartmentName` | 40 | Yes | No | Yes | Yes |
+| Type | Required | Multiple occurrence |
+| --- | --- | --- |
+| `TCompartmentName` | Yes | No |
+
+Size：40；Multi language：Yes；Redundant master data：Yes。
 
 The name of the subcompartment.This is the plaintext value of the referenced subcompartment (field 5325).
 
@@ -118,9 +130,11 @@ Schema source：[EcoSpold02DataTypes.xsd](original/Schemas/datasets/EcoSpold02Da
 
 Local XML path：`TCompartment/@subcompartmentId`；ecoSpold1 mapping：`new`。
 
-| Type | Size | Required | Multiple occurrence | Multi language | Redundant master data |
-| --- | --- | --- | --- | --- | --- |
-| `TUuid` | 36 | Yes | No | No | No |
+| Type | Required | Multiple occurrence |
+| --- | --- | --- |
+| `TUuid` | Yes | No |
+
+Size：36；Multi language：No；Redundant master data：No。
 
 Reference to the compartment/subcompartment pair. Must be defined in list of valid compartments (see field 5330).
 
@@ -132,9 +146,11 @@ Schema source：[EcoSpold02DataTypes.xsd](original/Schemas/datasets/EcoSpold02Da
 
 Local XML path：`TCompartment/@subcompartmentContextId`；ecoSpold1 mapping：`new`。
 
-| Type | Size | Required | Multiple occurrence | Multi language | Redundant master data |
-| --- | --- | --- | --- | --- | --- |
-| `TUuid` | 36 | No | No | No | No |
+| Type | Required | Multiple occurrence |
+| --- | --- | --- |
+| `TUuid` | No | No |
+
+Size：36；Multi language：No；Redundant master data：No。
 
 Reference to the context of the subcompartment
 

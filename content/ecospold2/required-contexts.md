@@ -24,9 +24,11 @@ XML 位置：`administrativeInformation/fileAttributes/requiredContext`。以 `a
 
 局部 XML 位置：`TRequiredContextReference/@majorRelease`；ecoSpold1 对照编号：`new`。
 
-| 类型 | 长度 | 必填 | 可重复 | 多语言 | 主数据冗余字段 |
-| --- | --- | --- | --- | --- | --- |
-| `integer` | — | 是 | 否 | 否 | 否 |
+| 类型 | 必填 | 可重复 |
+| --- | --- | --- |
+| `integer` | 是 | 否 |
+
+长度：—；多语言：否；主数据冗余字段：否。
 
 此版本号可用于确保某活动所需的主数据条目已经存在。
 
@@ -38,9 +40,11 @@ XML 位置：`administrativeInformation/fileAttributes/requiredContext`。以 `a
 
 局部 XML 位置：`TRequiredContextReference/@minorRelease`；ecoSpold1 对照编号：`new`。
 
-| 类型 | 长度 | 必填 | 可重复 | 多语言 | 主数据冗余字段 |
-| --- | --- | --- | --- | --- | --- |
-| `integer` | — | 是 | 否 | 否 | 否 |
+| 类型 | 必填 | 可重复 |
+| --- | --- | --- |
+| `integer` | 是 | 否 |
+
+长度：—；多语言：否；主数据冗余字段：否。
 
 此版本号可用于确保某活动所需的主数据条目已经存在。
 
@@ -52,9 +56,11 @@ XML 位置：`administrativeInformation/fileAttributes/requiredContext`。以 `a
 
 局部 XML 位置：`TRequiredContextReference/@majorRevision`；ecoSpold1 对照编号：`new`。
 
-| 类型 | 长度 | 必填 | 可重复 | 多语言 | 主数据冗余字段 |
-| --- | --- | --- | --- | --- | --- |
-| `integer` | — | 否 | 否 | 否 | 否 |
+| 类型 | 必填 | 可重复 |
+| --- | --- | --- |
+| `integer` | 否 | 否 |
+
+长度：—；多语言：否；主数据冗余字段：否。
 
 此版本号可用于确保某活动所需的主数据条目已经存在。
 
@@ -66,9 +72,11 @@ XML 位置：`administrativeInformation/fileAttributes/requiredContext`。以 `a
 
 局部 XML 位置：`TRequiredContextReference/@minorRevision`；ecoSpold1 对照编号：`new`。
 
-| 类型 | 长度 | 必填 | 可重复 | 多语言 | 主数据冗余字段 |
-| --- | --- | --- | --- | --- | --- |
-| `integer` | — | 否 | 否 | 否 | 否 |
+| 类型 | 必填 | 可重复 |
+| --- | --- | --- |
+| `integer` | 否 | 否 |
+
+长度：—；多语言：否；主数据冗余字段：否。
 
 此版本号可用于确保某活动所需的主数据条目已经存在。
 
@@ -80,9 +88,11 @@ XML 位置：`administrativeInformation/fileAttributes/requiredContext`。以 `a
 
 局部 XML 位置：`TRequiredContextReference/@requiredContextId`；ecoSpold1 对照编号：`new`。
 
-| 类型 | 长度 | 必填 | 可重复 | 多语言 | 主数据冗余字段 |
-| --- | --- | --- | --- | --- | --- |
-| `TUuid` | 36 | 是 | 否 | 否 | 否 |
+| 类型 | 必填 | 可重复 |
+| --- | --- | --- |
+| `TUuid` | 是 | 否 |
+
+长度：36；多语言：否；主数据冗余字段：否。
 
 引用该主数据文件所属的上下文。
 
@@ -96,9 +106,11 @@ XML 位置：`administrativeInformation/fileAttributes/requiredContext`。以 `a
 
 局部 XML 位置：`TRequiredContextReference/requiredContextName`；ecoSpold1 对照编号：`new`。
 
-| 类型 | 长度 | 必填 | 可重复 | 多语言 | 主数据冗余字段 |
-| --- | --- | --- | --- | --- | --- |
-| `TString80` | 80 | 是 | 否 | 是 | 是 |
+| 类型 | 必填 | 可重复 |
+| --- | --- | --- |
+| `TString80` | 是 | 否 |
+
+长度：80；多语言：是；主数据冗余字段：是。
 
 字段 7850 所引用上下文的名称。
 
@@ -110,9 +122,11 @@ XML 位置：`administrativeInformation/fileAttributes/requiredContext`。以 `a
 
 局部 XML 位置：`TRequiredContextReference/@requiredContextFileLocation`；ecoSpold1 对照编号：`new`。
 
-| 类型 | 长度 | 必填 | 可重复 | 多语言 | 主数据冗余字段 |
-| --- | --- | --- | --- | --- | --- |
-| `anyURI` | — | 否 | 否 | 否 | 否 |
+| 类型 | 必填 | 可重复 |
+| --- | --- | --- |
+| `anyURI` | 否 | 否 |
+
+长度：—；多语言：否；主数据冗余字段：否。
 
 指向包含此上下文主数据文件的目录的可选 URI 引用。
 
@@ -136,9 +150,11 @@ It can be used signal that master data entries from different contexts are neede
 
 Local XML path：`TRequiredContextReference/@majorRelease`；ecoSpold1 mapping：`new`。
 
-| Type | Size | Required | Multiple occurrence | Multi language | Redundant master data |
-| --- | --- | --- | --- | --- | --- |
-| `integer` | — | Yes | No | No | No |
+| Type | Required | Multiple occurrence |
+| --- | --- | --- |
+| `integer` | Yes | No |
+
+Size：—；Multi language：No；Redundant master data：No。
 
 This version number can be used to make sure that the necessary master data entries are present for an activity.
 
@@ -150,9 +166,11 @@ Schema source：[EcoSpold02DataTypes.xsd](original/Schemas/datasets/EcoSpold02Da
 
 Local XML path：`TRequiredContextReference/@minorRelease`；ecoSpold1 mapping：`new`。
 
-| Type | Size | Required | Multiple occurrence | Multi language | Redundant master data |
-| --- | --- | --- | --- | --- | --- |
-| `integer` | — | Yes | No | No | No |
+| Type | Required | Multiple occurrence |
+| --- | --- | --- |
+| `integer` | Yes | No |
+
+Size：—；Multi language：No；Redundant master data：No。
 
 This version number can be used to make sure that the necessary master data entries are present for an activity.
 
@@ -164,9 +182,11 @@ Schema source：[EcoSpold02DataTypes.xsd](original/Schemas/datasets/EcoSpold02Da
 
 Local XML path：`TRequiredContextReference/@majorRevision`；ecoSpold1 mapping：`new`。
 
-| Type | Size | Required | Multiple occurrence | Multi language | Redundant master data |
-| --- | --- | --- | --- | --- | --- |
-| `integer` | — | No | No | No | No |
+| Type | Required | Multiple occurrence |
+| --- | --- | --- |
+| `integer` | No | No |
+
+Size：—；Multi language：No；Redundant master data：No。
 
 This version number can be used to make sure that the necessary master data entries are present for an activity.
 
@@ -178,9 +198,11 @@ Schema source：[EcoSpold02DataTypes.xsd](original/Schemas/datasets/EcoSpold02Da
 
 Local XML path：`TRequiredContextReference/@minorRevision`；ecoSpold1 mapping：`new`。
 
-| Type | Size | Required | Multiple occurrence | Multi language | Redundant master data |
-| --- | --- | --- | --- | --- | --- |
-| `integer` | — | No | No | No | No |
+| Type | Required | Multiple occurrence |
+| --- | --- | --- |
+| `integer` | No | No |
+
+Size：—；Multi language：No；Redundant master data：No。
 
 This version number can be used to make sure that the necessary master data entries are present for an activity.
 
@@ -192,9 +214,11 @@ Schema source：[EcoSpold02DataTypes.xsd](original/Schemas/datasets/EcoSpold02Da
 
 Local XML path：`TRequiredContextReference/@requiredContextId`；ecoSpold1 mapping：`new`。
 
-| Type | Size | Required | Multiple occurrence | Multi language | Redundant master data |
-| --- | --- | --- | --- | --- | --- |
-| `TUuid` | 36 | Yes | No | No | No |
+| Type | Required | Multiple occurrence |
+| --- | --- | --- |
+| `TUuid` | Yes | No |
+
+Size：36；Multi language：No；Redundant master data：No。
 
 Reference to the context of the master data file.
 
@@ -208,9 +232,11 @@ Schema source：[EcoSpold02DataTypes.xsd](original/Schemas/datasets/EcoSpold02Da
 
 Local XML path：`TRequiredContextReference/requiredContextName`；ecoSpold1 mapping：`new`。
 
-| Type | Size | Required | Multiple occurrence | Multi language | Redundant master data |
-| --- | --- | --- | --- | --- | --- |
-| `TString80` | 80 | Yes | No | Yes | Yes |
+| Type | Required | Multiple occurrence |
+| --- | --- | --- |
+| `TString80` | Yes | No |
+
+Size：80；Multi language：Yes；Redundant master data：Yes。
 
 The name of the context referenced by field 7850.
 
@@ -222,9 +248,11 @@ Schema source：[EcoSpold02DataTypes.xsd](original/Schemas/datasets/EcoSpold02Da
 
 Local XML path：`TRequiredContextReference/@requiredContextFileLocation`；ecoSpold1 mapping：`new`。
 
-| Type | Size | Required | Multiple occurrence | Multi language | Redundant master data |
-| --- | --- | --- | --- | --- | --- |
-| `anyURI` | — | No | No | No | No |
+| Type | Required | Multiple occurrence |
+| --- | --- | --- |
+| `anyURI` | No | No |
+
+Size：—；Multi language：No；Redundant master data：No。
 
 Optional URI reference to the directory containing the master data files of this context.
 

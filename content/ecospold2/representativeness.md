@@ -22,9 +22,11 @@ XML 位置：`modellingAndValidation/representativeness`。以 `activityDescript
 
 局部 XML 位置：`TRepresentativeness/@systemModelId`；ecoSpold1 对照编号：`new`。
 
-| 类型 | 长度 | 必填 | 可重复 | 多语言 | 主数据冗余字段 |
-| --- | --- | --- | --- | --- | --- |
-| `TUuid` | 36 | 是 | 否 | 否 | 否 |
+| 类型 | 必填 | 可重复 |
+| --- | --- | --- |
+| `TUuid` | 是 | 否 |
+
+长度：36；多语言：否；主数据冗余字段：否。
 
 系统模型描述如何将活动数据集链接成产品系统。ecoinvent 网络中的部分选项为：'undefined'（未指定系统模型）、'attributional, average current suppliers, revenue allocation'（归因型、当前供应商平均组合、按收入分配）、'consequential, small-scale, long-term decisions'（后果型、小规模、长期决策）。
 
@@ -36,9 +38,11 @@ XML 位置：`modellingAndValidation/representativeness`。以 `activityDescript
 
 局部 XML 位置：`TRepresentativeness/@systemModelContextId`；ecoSpold1 对照编号：`new`。
 
-| 类型 | 长度 | 必填 | 可重复 | 多语言 | 主数据冗余字段 |
-| --- | --- | --- | --- | --- | --- |
-| `TUuid` | 36 | 否 | 否 | 否 | 否 |
+| 类型 | 必填 | 可重复 |
+| --- | --- | --- |
+| `TUuid` | 否 | 否 |
+
+长度：36；多语言：否；主数据冗余字段：否。
 
 引用该系统模型所属的上下文。
 
@@ -52,9 +56,11 @@ XML 位置：`modellingAndValidation/representativeness`。以 `activityDescript
 
 局部 XML 位置：`TRepresentativeness/systemModelName`；ecoSpold1 对照编号：`new`。
 
-| 类型 | 长度 | 必填 | 可重复 | 多语言 | 主数据冗余字段 |
-| --- | --- | --- | --- | --- | --- |
-| `TString120` | 120 | 是 | 否 | 是 | 是 |
+| 类型 | 必填 | 可重复 |
+| --- | --- | --- |
+| `TString120` | 是 | 否 |
+
+长度：120；多语言：是；主数据冗余字段：是。
 
 所引用系统模型（字段 3000）的纯文本值。
 
@@ -66,9 +72,11 @@ XML 位置：`modellingAndValidation/representativeness`。以 `activityDescript
 
 局部 XML 位置：`TRepresentativeness/@percent`；ecoSpold1 对照编号：`722`。
 
-| 类型 | 长度 | 必填 | 可重复 | 多语言 | 主数据冗余字段 |
-| --- | --- | --- | --- | --- | --- |
-| `TPercent` | — | 否 | 否 | 否 | 否 |
+| 类型 | 必填 | 可重复 |
+| --- | --- | --- |
+| `TPercent` | 否 | 否 |
+
+长度：—；多语言：否；主数据冗余字段：否。
 
 所采样数据占该活动拟代表总体的百分比；该总体由 Geography、Technology 和 Time Period 下的字段确定。
 
@@ -82,9 +90,11 @@ XML 位置：`modellingAndValidation/representativeness`。以 `activityDescript
 
 局部 XML 位置：`TRepresentativeness/samplingProcedure`；ecoSpold1 对照编号：`725`。
 
-| 类型 | 长度 | 必填 | 可重复 | 多语言 | 主数据冗余字段 |
-| --- | --- | --- | --- | --- | --- |
-| `TString32000` | 32000 | 否 | 否 | 是 | 否 |
+| 类型 | 必填 | 可重复 |
+| --- | --- | --- |
+| `TString32000` | 否 | 否 |
+
+长度：32000；多语言：是；主数据冗余字段：否。
 
 描述用于量化交换的采样和计算程序的文本。应说明特定基本流交换和中间交换的采样程序是否不同于一般程序，并指出组合不同采样程序可能产生的问题。文本和图像字段由 text、imageUri 和 variable 元素列表组成。text 和 imageUri 元素可用于描述当前部分，并可按照其 index 属性确定的顺序任意组合。文本变量由 variable 元素定义，可在文本中以 {{variablename}} 形式使用。如果父文本字段包含变量，子活动数据集可以重新定义该变量，同时保持父文本的其余内容不变。这样便可轻松修改子过程中的部分文本。
 
@@ -96,9 +106,11 @@ XML 位置：`modellingAndValidation/representativeness`。以 `activityDescript
 
 局部 XML 位置：`TRepresentativeness/extrapolations`；ecoSpold1 对照编号：`726`。
 
-| 类型 | 长度 | 必填 | 可重复 | 多语言 | 主数据冗余字段 |
-| --- | --- | --- | --- | --- | --- |
-| `TString32000` | 32000 | 否 | 否 | 是 | 否 |
+| 类型 | 必填 | 可重复 |
+| --- | --- | --- |
+| `TString32000` | 否 | 否 |
+
+长度：32000；多语言：是；主数据冗余字段：否。
 
 描述从另一时间期间、另一地理区域或另一技术外推数据的情况，以及这些外推的具体实施方式。
 
@@ -126,9 +138,11 @@ Contains information about the representativeness of the information in the data
 
 Local XML path：`TRepresentativeness/@systemModelId`；ecoSpold1 mapping：`new`。
 
-| Type | Size | Required | Multiple occurrence | Multi language | Redundant master data |
-| --- | --- | --- | --- | --- | --- |
-| `TUuid` | 36 | Yes | No | No | No |
+| Type | Required | Multiple occurrence |
+| --- | --- | --- |
+| `TUuid` | Yes | No |
+
+Size：36；Multi language：No；Redundant master data：No。
 
 The system model describes how activity datasets are linked to form product systems. Some options in the ecoinvent network are 'undefined', 'attributional, average current suppliers, revenue allocation', 'consequential, small-scale, long-term decisions'.
 
@@ -140,9 +154,11 @@ Schema source：[EcoSpold02MetaInformation.xsd](original/Schemas/datasets/EcoSpo
 
 Local XML path：`TRepresentativeness/@systemModelContextId`；ecoSpold1 mapping：`new`。
 
-| Type | Size | Required | Multiple occurrence | Multi language | Redundant master data |
-| --- | --- | --- | --- | --- | --- |
-| `TUuid` | 36 | No | No | No | No |
+| Type | Required | Multiple occurrence |
+| --- | --- | --- |
+| `TUuid` | No | No |
+
+Size：36；Multi language：No；Redundant master data：No。
 
 Reference to the context of the system model.
 
@@ -156,9 +172,11 @@ Schema source：[EcoSpold02MetaInformation.xsd](original/Schemas/datasets/EcoSpo
 
 Local XML path：`TRepresentativeness/systemModelName`；ecoSpold1 mapping：`new`。
 
-| Type | Size | Required | Multiple occurrence | Multi language | Redundant master data |
-| --- | --- | --- | --- | --- | --- |
-| `TString120` | 120 | Yes | No | Yes | Yes |
+| Type | Required | Multiple occurrence |
+| --- | --- | --- |
+| `TString120` | Yes | No |
+
+Size：120；Multi language：Yes；Redundant master data：Yes。
 
 This is the plaintext value of the referenced system model (field 3000).
 
@@ -170,9 +188,11 @@ Schema source：[EcoSpold02MetaInformation.xsd](original/Schemas/datasets/EcoSpo
 
 Local XML path：`TRepresentativeness/@percent`；ecoSpold1 mapping：`722`。
 
-| Type | Size | Required | Multiple occurrence | Multi language | Redundant master data |
-| --- | --- | --- | --- | --- | --- |
-| `TPercent` | — | No | No | No | No |
+| Type | Required | Multiple occurrence |
+| --- | --- | --- |
+| `TPercent` | No | No |
+
+Size：—；Multi language：No；Redundant master data：No。
 
 Percent of data sampled out of the total that the activity is intended to represent (as given by the fields under Geography, Technology and Time Period).
 
@@ -186,9 +206,11 @@ Schema source：[EcoSpold02MetaInformation.xsd](original/Schemas/datasets/EcoSpo
 
 Local XML path：`TRepresentativeness/samplingProcedure`；ecoSpold1 mapping：`725`。
 
-| Type | Size | Required | Multiple occurrence | Multi language | Redundant master data |
-| --- | --- | --- | --- | --- | --- |
-| `TString32000` | 32000 | No | No | Yes | No |
+| Type | Required | Multiple occurrence |
+| --- | --- | --- |
+| `TString32000` | No | No |
+
+Size：32000；Multi language：Yes；Redundant master data：No。
 
 Text describing the sampling and calculation procedures applied for quantifying the exchanges. Reports whether the sampling procedure for particular elementary and intermediate exchanges differ from the general procedure. Mentions possible problems in combining different sampling procedures.Text and image fields are list of text, imageUri and variable elements. The text and imageUri elements can used to describe the current section and they can be combined in any order given by their index attribute. Text variables are defined by the variable elements, which may be used in the text as {{variablename}}. If a parent text field includes a variable, this variable may be redefined by the child activity dataset while keeping the rest of the parent text intact. This allows easy changes of text parts in child processes.
 
@@ -200,9 +222,11 @@ Schema source：[EcoSpold02MetaInformation.xsd](original/Schemas/datasets/EcoSpo
 
 Local XML path：`TRepresentativeness/extrapolations`；ecoSpold1 mapping：`726`。
 
-| Type | Size | Required | Multiple occurrence | Multi language | Redundant master data |
-| --- | --- | --- | --- | --- | --- |
-| `TString32000` | 32000 | No | No | Yes | No |
+| Type | Required | Multiple occurrence |
+| --- | --- | --- |
+| `TString32000` | No | No |
+
+Size：32000；Multi language：Yes；Redundant master data：No。
 
 Describes extrapolations of data from another time period, another geographical area or another technology and the way these extrapolations have been carried out.
 

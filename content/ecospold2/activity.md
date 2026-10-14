@@ -26,9 +26,11 @@ XML 位置：`activityDescription/activity`。以 `activityDescription/`、`flow
 
 局部 XML 位置：`TActivity/activityName`；ecoSpold1 对照编号：`401-rename`。
 
-| 类型 | 长度 | 必填 | 可重复 | 多语言 | 主数据冗余字段 |
-| --- | --- | --- | --- | --- | --- |
-| `TString120` | 120 | 是 | 否 | 是 | 是 |
+| 类型 | 必填 | 可重复 |
+| --- | --- | --- |
+| `TString120` | 是 | 否 |
+
+长度：120；多语言：是；主数据冗余字段：是。
 
 本数据集所表示活动的名称。
 
@@ -40,9 +42,11 @@ XML 位置：`activityDescription/activity`。以 `activityDescription/`、`flow
 
 局部 XML 位置：`TActivity/@id`；ecoSpold1 对照编号：`200-type`。
 
-| 类型 | 长度 | 必填 | 可重复 | 多语言 | 主数据冗余字段 |
-| --- | --- | --- | --- | --- | --- |
-| `TUuid` | 36 | 是 | 否 | 否 | 否 |
+| 类型 | 必填 | 可重复 |
+| --- | --- | --- |
+| `TUuid` | 是 | 否 |
+
+长度：36；多语言：否；主数据冗余字段：否。
 
 该活动的唯一标识符。UUID 数据类型是包含十六进制字符的 36 个字符长字符串，可确保标识符在全球范围内唯一。新条目的 UUID 必须由外部软件提供。网上有多种 UUID 生成器，大多数编程语言中也有相应实现。
 
@@ -54,9 +58,11 @@ XML 位置：`activityDescription/activity`。以 `activityDescription/`、`flow
 
 局部 XML 位置：`TActivity/@activityNameId`；ecoSpold1 对照编号：`new`。
 
-| 类型 | 长度 | 必填 | 可重复 | 多语言 | 主数据冗余字段 |
-| --- | --- | --- | --- | --- | --- |
-| `TUuid` | 36 | 是 | 否 | 否 | 否 |
+| 类型 | 必填 | 可重复 |
+| --- | --- | --- |
+| `TUuid` | 是 | 否 |
+
+长度：36；多语言：否；主数据冗余字段：否。
 
 对该活动的活动名称主数据条目的引用。
 
@@ -68,9 +74,11 @@ XML 位置：`activityDescription/activity`。以 `activityDescription/`、`flow
 
 局部 XML 位置：`TActivity/@activityNameContextId`；ecoSpold1 对照编号：`new`。
 
-| 类型 | 长度 | 必填 | 可重复 | 多语言 | 主数据冗余字段 |
-| --- | --- | --- | --- | --- | --- |
-| `TUuid` | 36 | 否 | 否 | 否 | 否 |
+| 类型 | 必填 | 可重复 |
+| --- | --- | --- |
+| `TUuid` | 否 | 否 |
+
+长度：36；多语言：否；主数据冗余字段：否。
 
 对活动名称所属上下文的引用。
 
@@ -84,9 +92,11 @@ XML 位置：`activityDescription/activity`。以 `activityDescription/`、`flow
 
 局部 XML 位置：`TActivity/@type`；ecoSpold1 对照编号：`201-type`。
 
-| 类型 | 长度 | 必填 | 可重复 | 多语言 | 主数据冗余字段 |
-| --- | --- | --- | --- | --- | --- |
-| `integer` | — | 是 | 否 | 否 | 否 |
+| 类型 | 必填 | 可重复 |
+| --- | --- | --- |
+| `integer` | 是 | 否 |
+
+长度：—；多语言：否；主数据冗余字段：否。
 
 表示本数据集所包含的数据种类（1 = 单元过程；2 = 已汇总的完整产品系统（System terminated））。数据提供方始终以单元过程形式录入数据。数据库生成的归因型和后果型数据集，既可按单元过程层级提供，也可作为汇总的完整系统数据集（即生命周期清单结果）提供；后者包含与该单元过程某一特定产品相关的产品系统中汇总的基本流交换和影响。完整产品系统包括通过中间交换链接的全部上游活动数据集，因此其自身不再包含任何中间交换，而仅包含环境交换和累积的影响评价结果。
 
@@ -100,9 +110,11 @@ XML 位置：`activityDescription/activity`。以 `activityDescription/`、`flow
 
 局部 XML 位置：`TActivity/@specialActivityType`；ecoSpold1 对照编号：`new`。
 
-| 类型 | 长度 | 必填 | 可重复 | 多语言 | 主数据冗余字段 |
-| --- | --- | --- | --- | --- | --- |
-| `integer` | — | 是 | 否 | 否 | 否 |
+| 类型 | 必填 | 可重复 |
+| --- | --- | --- |
+| `integer` | 是 | 否 |
+
+长度：—；多语言：否；主数据冗余字段：否。
 
 特殊活动类型如下：
 0 = “普通”转化活动。转化活动是将输入转化为不同输出的人类活动，例如硬煤矿将地下硬煤转化为可销售产品硬煤。此处采用最广义的转化活动概念，包括开采、生产、运输、消费和废物处理活动，即任何中间输出不同于中间输入的人类活动。引入“转化活动”这一概念，仅用于在后续活动建模和链接中，将这些“普通”活动与市场活动、生产及供应组合、进出口活动和修正数据集区分开。
@@ -127,9 +139,11 @@ XML 位置：`activityDescription/activity`。以 `activityDescription/`、`flow
 
 局部 XML 位置：`TActivity/generalComment`；ecoSpold1 对照编号：`492`。
 
-| 类型 | 长度 | 必填 | 可重复 | 多语言 | 主数据冗余字段 |
-| --- | --- | --- | --- | --- | --- |
-| `TTextAndImage` | — | 否 | 否 | 是 | 否 |
+| 类型 | 必填 | 可重复 |
+| --- | --- | --- |
+| `TTextAndImage` | 否 | 否 |
+
+长度：—；多语言：是；主数据冗余字段：否。
 
 用于提供数据集一般信息的文本和图像字段。这里只应填写性质较为一般、无法放入其他更具体说明字段的说明和引用。总体上，数据集中的信息应足以判断其是否适合某项特定应用。文本和图像字段为 text、imageUri 和 variable 元素的列表。text 和 imageUri 元素可用于描述当前章节，并可按其 index 属性指定的顺序任意组合。文本变量通过 variable 元素定义，可在文本中以 {{variablename}} 的形式使用。若父数据集的文本字段包含变量，子活动数据集可重新定义该变量，同时保持父文本的其余部分不变。这样便于修改子过程中的部分文本。
 
@@ -145,9 +159,11 @@ text、imageUri 和 variable 元素的列表。text 和 imageUri 元素可用于
 
 局部 XML 位置：`TActivity/@parentActivityId`；ecoSpold1 对照编号：`new`。
 
-| 类型 | 长度 | 必填 | 可重复 | 多语言 | 主数据冗余字段 |
-| --- | --- | --- | --- | --- | --- |
-| `TUuid` | 36 | 否 | 否 | 否 | 否 |
+| 类型 | 必填 | 可重复 |
+| --- | --- | --- |
+| `TUuid` | 否 | 否 |
+
+长度：36；多语言：否；主数据冗余字段：否。
 
 parentActivityId 是指向父活动数据集的 UUID。此字段填入 UUID 时，父活动数据集的全部字段内容均由子活动数据集承接；子活动数据集即通过 UUID 调用父数据集的活动。
 
@@ -173,9 +189,11 @@ parentActivityId 是指向父活动数据集的 UUID。此字段填入 UUID 时�
 
 局部 XML 位置：`TActivity/@parentActivityContextId`；ecoSpold1 对照编号：`new`。
 
-| 类型 | 长度 | 必填 | 可重复 | 多语言 | 主数据冗余字段 |
-| --- | --- | --- | --- | --- | --- |
-| `TUuid` | 36 | 否 | 否 | 否 | 否 |
+| 类型 | 必填 | 可重复 |
+| --- | --- | --- |
+| `TUuid` | 否 | 否 |
+
+长度：36；多语言：否；主数据冗余字段：否。
 
 对父活动所属上下文的引用。
 
@@ -189,9 +207,11 @@ parentActivityId 是指向父活动数据集的 UUID。此字段填入 UUID 时�
 
 局部 XML 位置：`TActivity/@inheritanceDepth`；ecoSpold1 对照编号：`new`。
 
-| 类型 | 长度 | 必填 | 可重复 | 多语言 | 主数据冗余字段 |
-| --- | --- | --- | --- | --- | --- |
-| `integer` | — | 否 | 否 | 否 | 否 |
+| 类型 | 必填 | 可重复 |
+| --- | --- | --- |
+| `integer` | 否 | 否 |
+
+长度：—；多语言：否；主数据冗余字段：否。
 
 继承深度表示当前数据集可具有的父数据集最大数量。ecoinvent 上下文采用以下值：0 = 不是子数据集；1 = 地理子数据集；2 = 时间子数据集；3 = 宏观经济情景子数据集。
 
@@ -203,9 +223,11 @@ parentActivityId 是指向父活动数据集的 UUID。此字段填入 UUID 时�
 
 局部 XML 位置：`TActivity/includedActivitiesStart`；ecoSpold1 对照编号：`402-type`。
 
-| 类型 | 长度 | 必填 | 可重复 | 多语言 | 主数据冗余字段 |
-| --- | --- | --- | --- | --- | --- |
-| `TString32000` | 32000 | 否 | 否 | 是 | 否 |
+| 类型 | 必填 | 可重复 |
+| --- | --- | --- |
+| `TString32000` | 否 | 否 |
+
+长度：32000；多语言：是；主数据冗余字段：否。
 
 描述活动的起点。对于“system terminated”（已汇总的完整产品系统），起点始终是“从摇篮开始，即包含全部上游活动”（From cradle, i.e. including all upstream activities）。对于单元过程，可根据输入的性质描述起点，例如“从接收［如原材料 X］开始……”或“以［如劳动力和能源］输入为起点的服务”。
 
@@ -217,9 +239,11 @@ parentActivityId 是指向父活动数据集的 UUID。此字段填入 UUID 时�
 
 局部 XML 位置：`TActivity/includedActivitiesEnd`；ecoSpold1 对照编号：`402-type`。
 
-| 类型 | 长度 | 必填 | 可重复 | 多语言 | 主数据冗余字段 |
-| --- | --- | --- | --- | --- | --- |
-| `TString32000` | 32000 | 否 | 否 | 是 | 否 |
+| 类型 | 必填 | 可重复 |
+| --- | --- | --- |
+| `TString32000` | 否 | 否 |
+
+长度：32000；多语言：是；主数据冗余字段：否。
 
 描述活动名称中未能不言自明的所包含活动，以及有意排除的活动或输入。例如，“application of pesticides”（农药施用）活动作为一项服务时排除农药本身，以便适用于多种有效成分。说明应以最后一个活动和／或交付点结束，例如“直至并包括将产品装载到货车上”。
 
@@ -231,9 +255,11 @@ parentActivityId 是指向父活动数据集的 UUID。此字段填入 UUID 时�
 
 局部 XML 位置：`TActivity/synonym`；ecoSpold1 对照编号：`491-type`。
 
-| 类型 | 长度 | 必填 | 可重复 | 多语言 | 主数据冗余字段 |
-| --- | --- | --- | --- | --- | --- |
-| `TSynonym` | 80 | 否 | 是 | 是 | 否 |
+| 类型 | 必填 | 可重复 |
+| --- | --- | --- |
+| `TSynonym` | 否 | 是 |
+
+长度：80；多语言：是；主数据冗余字段：否。
 
 名称的同义词列表。与一般多语言字符串不同，同义词可包含多个 xml:lang 属性值相同的元素。
 
@@ -247,9 +273,11 @@ parentActivityId 是指向父活动数据集的 UUID。此字段填入 UUID 时�
 
 局部 XML 位置：`TActivity/tag`；ecoSpold1 对照编号：`new`。
 
-| 类型 | 长度 | 必填 | 可重复 | 多语言 | 主数据冗余字段 |
-| --- | --- | --- | --- | --- | --- |
-| `TTag` | 40 | 否 | 是 | 否 | 否 |
+| 类型 | 必填 | 可重复 |
+| --- | --- | --- |
+| `TTag` | 否 | 是 |
+
+长度：40；多语言：否；主数据冗余字段：否。
 
 tag 字段允许使用开放的关键词列表描述活动，可用于筛选、分组和搜索。validTags 文件引用提供预定义标签的列表；但若在 validTags 主文件中找不到某标签条目，语义验证程序应仅显示提示信息，而非错误。
 
@@ -261,9 +289,11 @@ tag 字段允许使用开放的关键词列表描述活动，可用于筛选、�
 
 局部 XML 位置：`TActivity/@energyValues`；ecoSpold1 对照编号：`203`。
 
-| 类型 | 长度 | 必填 | 可重复 | 多语言 | 主数据冗余字段 |
-| --- | --- | --- | --- | --- | --- |
-| `integer` | — | 否 | 否 | 否 | 否 |
+| 类型 | 必填 | 可重复 |
+| --- | --- | --- |
+| `integer` | 否 | 否 |
+
+长度：—；多语言：否；主数据冗余字段：否。
 
 表示数据集中采用能源数值的方式。代码为：0 = 未指定（默认）；1 = 净（低位）热值；2 = 总（高位）热值。
 
@@ -279,9 +309,11 @@ tag 字段允许使用开放的关键词列表描述活动，可用于筛选、�
 
 局部 XML 位置：`TActivity/@masterAllocationPropertyId`；ecoSpold1 对照编号：`new`。
 
-| 类型 | 长度 | 必填 | 可重复 | 多语言 | 主数据冗余字段 |
-| --- | --- | --- | --- | --- | --- |
-| `TUuid` | 36 | 否 | 否 | 否 | 否 |
+| 类型 | 必填 | 可重复 |
+| --- | --- | --- |
+| `TUuid` | 否 | 否 |
+
+长度：36；多语言：否；主数据冗余字段：否。
 
 通过 UUID 引用本数据集所有交换的默认分配属性。可为每项交换覆盖该分配属性（见字段 1150：specificAllocationPropertyId）。
 
@@ -295,9 +327,11 @@ tag 字段允许使用开放的关键词列表描述活动，可用于筛选、�
 
 局部 XML 位置：`TActivity/@masterAllocationPropertyContextId`；ecoSpold1 对照编号：`new`。
 
-| 类型 | 长度 | 必填 | 可重复 | 多语言 | 主数据冗余字段 |
-| --- | --- | --- | --- | --- | --- |
-| `TUuid` | 36 | 否 | 否 | 否 | 否 |
+| 类型 | 必填 | 可重复 |
+| --- | --- | --- |
+| `TUuid` | 否 | 否 |
+
+长度：36；多语言：否；主数据冗余字段：否。
 
 对主分配属性所属上下文的引用。
 
@@ -311,9 +345,11 @@ tag 字段允许使用开放的关键词列表描述活动，可用于筛选、�
 
 局部 XML 位置：`TActivity/@masterAllocationPropertyIdOverwrittenByChild`；ecoSpold1 对照编号：`new`。
 
-| 类型 | 长度 | 必填 | 可重复 | 多语言 | 主数据冗余字段 |
-| --- | --- | --- | --- | --- | --- |
-| `boolean` | — | 否 | 否 | 否 | 否 |
+| 类型 | 必填 | 可重复 |
+| --- | --- | --- |
+| `boolean` | 否 | 否 |
+
+长度：—；多语言：否；主数据冗余字段：否。
 
 若必须在子数据集中移除对某主数据实体的引用，则必须将相应的 xxxOverwrittenByChild 属性设为 true。否则，移除引用会被解释为“保留父数据集的值”（Keep the Parent Value）。
 
@@ -325,9 +361,11 @@ tag 字段允许使用开放的关键词列表描述活动，可用于筛选、�
 
 局部 XML 位置：`TActivity/allocationComment`；ecoSpold1 对照编号：`2407`。
 
-| 类型 | 长度 | 必填 | 可重复 | 多语言 | 主数据冗余字段 |
-| --- | --- | --- | --- | --- | --- |
-| `TTextAndImage` | — | 否 | 否 | 是 | 否 |
+| 类型 | 必填 | 可重复 |
+| --- | --- | --- |
+| `TTextAndImage` | 否 | 否 |
+
+长度：—；多语言：是；主数据冗余字段：否。
 
 用于进一步说明分配程序及所选分配属性的文本和图像字段。比较不同分配参数（如物理参数和经济参数）时，若分配因子恰好相同，也可在此报告。文本和图像字段为 text、imageUri 和 variable 元素的列表。text 和 imageUri 元素可用于描述当前章节，并可按其 index 属性指定的顺序任意组合。文本变量通过 variable 元素定义，可在文本中以 {{variablename}} 的形式使用。若父数据集的文本字段包含变量，子活动数据集可重新定义该变量，同时保持父文本的其余部分不变。这样便于修改子过程中的部分文本。
 
@@ -343,9 +381,11 @@ text、imageUri 和 variable 元素的列表。text 和 imageUri 元素可用于
 
 局部 XML 位置：`TActivity/@datasetIcon`；ecoSpold1 对照编号：`new`。
 
-| 类型 | 长度 | 必填 | 可重复 | 多语言 | 主数据冗余字段 |
-| --- | --- | --- | --- | --- | --- |
-| `anyURI` | — | 否 | 否 | 否 | 否 |
+| 类型 | 必填 | 可重复 |
+| --- | --- | --- |
+| `anyURI` | 否 | 否 |
+
+长度：—；多语言：否；主数据冗余字段：否。
 
 数据集图标的 URL。图标用于快速识别特定数据集，也可用于产品品牌和公司徽标。图标并非数据集的直接组成部分，而是存储于本地或 ecoinvent 网络服务器，可通过 Http 协议获取。
 
@@ -367,9 +407,11 @@ Contains the identifying information of an activity dataset including name and c
 
 Local XML path：`TActivity/activityName`；ecoSpold1 mapping：`401-rename`。
 
-| Type | Size | Required | Multiple occurrence | Multi language | Redundant master data |
-| --- | --- | --- | --- | --- | --- |
-| `TString120` | 120 | Yes | No | Yes | Yes |
+| Type | Required | Multiple occurrence |
+| --- | --- | --- |
+| `TString120` | Yes | No |
+
+Size：120；Multi language：Yes；Redundant master data：Yes。
 
 A name for the activity that is represented by this dataset.
 
@@ -381,9 +423,11 @@ Schema source：[EcoSpold02MetaInformation.xsd](original/Schemas/datasets/EcoSpo
 
 Local XML path：`TActivity/@id`；ecoSpold1 mapping：`200-type`。
 
-| Type | Size | Required | Multiple occurrence | Multi language | Redundant master data |
-| --- | --- | --- | --- | --- | --- |
-| `TUuid` | 36 | Yes | No | No | No |
+| Type | Required | Multiple occurrence |
+| --- | --- | --- |
+| `TUuid` | Yes | No |
+
+Size：36；Multi language：No；Redundant master data：No。
 
 Unique identifier for this activity. The datat type UUID is a 36 characters string with hexadecimal characters and ensures a world-wide unique identifier. A UUID for a new item must be supplied by external software. There are several UUID generators on the web and implementations in most programming languages.
 
@@ -395,9 +439,11 @@ Schema source：[EcoSpold02MetaInformation.xsd](original/Schemas/datasets/EcoSpo
 
 Local XML path：`TActivity/@activityNameId`；ecoSpold1 mapping：`new`。
 
-| Type | Size | Required | Multiple occurrence | Multi language | Redundant master data |
-| --- | --- | --- | --- | --- | --- |
-| `TUuid` | 36 | Yes | No | No | No |
+| Type | Required | Multiple occurrence |
+| --- | --- | --- |
+| `TUuid` | Yes | No |
+
+Size：36；Multi language：No；Redundant master data：No。
 
 Reference to the activity name master data entry for this activity.
 
@@ -409,9 +455,11 @@ Schema source：[EcoSpold02MetaInformation.xsd](original/Schemas/datasets/EcoSpo
 
 Local XML path：`TActivity/@activityNameContextId`；ecoSpold1 mapping：`new`。
 
-| Type | Size | Required | Multiple occurrence | Multi language | Redundant master data |
-| --- | --- | --- | --- | --- | --- |
-| `TUuid` | 36 | No | No | No | No |
+| Type | Required | Multiple occurrence |
+| --- | --- | --- |
+| `TUuid` | No | No |
+
+Size：36；Multi language：No；Redundant master data：No。
 
 Reference to the context of the activity name.
 
@@ -425,9 +473,11 @@ Schema source：[EcoSpold02MetaInformation.xsd](original/Schemas/datasets/EcoSpo
 
 Local XML path：`TActivity/@type`；ecoSpold1 mapping：`201-type`。
 
-| Type | Size | Required | Multiple occurrence | Multi language | Redundant master data |
-| --- | --- | --- | --- | --- | --- |
-| `integer` | — | Yes | No | No | No |
+| Type | Required | Multiple occurrence |
+| --- | --- | --- |
+| `integer` | Yes | No |
+
+Size：—；Multi language：No；Redundant master data：No。
 
 Indicates the kind of data (1 = Unit process; 2 = System terminated) that is represented by this dataset. Data are always entered by the data providers as Unit process. The database-generated, attributional and consequential datasets are available both at the unit process level and as aggregated (terminated) system dataset (i.e. the life cycle inventory results) containing the aggregated elementary exchanges and impacts of the product system related to one specific product from the unit process. The terminated product systems include all upstream activity datasets, as linked by the intermediate exchanges, and therefore do not themselves have any intermediate exchanges, only environmental exchanges and accumulated impact assessment results.
 
@@ -441,9 +491,11 @@ Schema source：[EcoSpold02MetaInformation.xsd](original/Schemas/datasets/EcoSpo
 
 Local XML path：`TActivity/@specialActivityType`；ecoSpold1 mapping：`new`。
 
-| Type | Size | Required | Multiple occurrence | Multi language | Redundant master data |
-| --- | --- | --- | --- | --- | --- |
-| `integer` | — | Yes | No | No | No |
+| Type | Required | Multiple occurrence |
+| --- | --- | --- |
+| `integer` | Yes | No |
+
+Size：—；Multi language：No；Redundant master data：No。
 
 The special activity types are: 0 = “ordinary” transforming activities. Transforming activities are human activities that transform inputs, so that the output of the activity is different from the inputs, e.g. a hard coal mine that transforms hard coal in ground to the marketable product hard coal. Transforming activities are here understood in the widest possible sense, including extraction, production, transport, consumption and waste treatment activities, i.e. any human activity where the intermediate output is different from the intermediate input. The concept “transforming activities” is introduced here simply to distinguish – in the further modelling and linking of activities – these “ordinary” activities from the market activities, production and supply mixes, import and export activities, and correction datasets.1 = market activity. Market activities do not transform their inputs, but simply transfer the intermediate output from a transforming activity to the transforming activities that consume this intermediate output as an input, e.g. from hard coal at the supplier to hard coal at the consumer. Market activities typically mix similar intermediate outputs from different transforming activities. Market activities therefore supply consumption mixes of the intermediate outputs.10 = market group. Market groups are to markets what markets are to transforming activities. In the undefined system model a market group only contains a reference product. The linking algorithm will add supplying markets as inputs which are contained in the location of the market group and have the same reference product.2 = IO activity. An IO activity represents an activity dataset from a national supply-use table, i.e. typically the supply and use of one specific industry.3 = Residual activity. A residual activity is the resulting activity when subtracting all available unit processes within an activity class from the supply-use data (IO activity) of the same activity class, for the same year and geo-graphical area. 4 = production mix. A production mix represents the production-volume-weighted average of the suppliers of a specific product within a geographical area.5 = import activity. An import activity represents the import of a specified product to a specified geographical area, solely for use in national balancing (not contributing to any auto-generated consumption mixes). Imports to administratively constrained markets and from partly isolated markets are modelled as ordinary transforming activities in order to be included in the relevant market activities (consumption mixes).6 = supply mix. A supply mix is a production mix with the addition of the import of a specified product to a specified geographical area.7 = export activity. An export activity represents the export volume of a national production mix that has the national area as its geographical location and does not contribute to any auto-generated consumption mixes. To give the correct value of the export, the same activities and data that are included with the market activities are added directly to the export activity. This includes transport activities, production losses, wholesaler and retailer activities, and product taxes and subsidies.8 = re-export activity. A re-export activity represents the re-export volume of a geographical area and does not contribute to any auto-generated consumption mixes.9 = correction activity. A correction activity is an activity that is added twice to a product system, one with a positive and once with a negative flow, in order to move one or more exchanges from one part of the system to another, e.g. to correct for downstream effects of an upstream activity, or to correct a bias in the mass-balance introduced by an allocation. More details on this is provided in the Chapters on "Downstream changes caused by differences in product quality" and "Allocation corrections" in the ecoinvent Data Quality Guidelines.
 
@@ -457,9 +509,11 @@ Schema source：[EcoSpold02MetaInformation.xsd](original/Schemas/datasets/EcoSpo
 
 Local XML path：`TActivity/generalComment`；ecoSpold1 mapping：`492`。
 
-| Type | Size | Required | Multiple occurrence | Multi language | Redundant master data |
-| --- | --- | --- | --- | --- | --- |
-| `TTextAndImage` | — | No | No | Yes | No |
+| Type | Required | Multiple occurrence |
+| --- | --- | --- |
+| `TTextAndImage` | No | No |
+
+Size：—；Multi language：Yes；Redundant master data：No。
 
 Text and image field for general information about the dataset. Only comments and references of more general nature that cannot be placed in any of the more specific comment fields, should be placed here. In general, the information in the dataset should be sufficient to judge the appropriateness of a dataset for a specific application.Text and image fields are list of text, imageUri and variable elements. The text and imageUri elements can used to describe the current section and they can be combined in any order given by their index attribute. Text variables are defined by the variable elements, which may be used in the text as {{variablename}}. If a parent text field includes a variable, this variable may be redefined by the child activity dataset while keeping the rest of the parent text intact. This allows easy changes of text parts in child processes.
 
@@ -475,9 +529,11 @@ Schema source：[EcoSpold02MetaInformation.xsd](original/Schemas/datasets/EcoSpo
 
 Local XML path：`TActivity/@parentActivityId`；ecoSpold1 mapping：`new`。
 
-| Type | Size | Required | Multiple occurrence | Multi language | Redundant master data |
-| --- | --- | --- | --- | --- | --- |
-| `TUuid` | 36 | No | No | No | No |
+| Type | Required | Multiple occurrence |
+| --- | --- | --- |
+| `TUuid` | No | No |
+
+Size：36；Multi language：No；Redundant master data：No。
 
 The parentActivityId is a UUID to the parent activity dataset. When this field is filled with a UUID, all the field content from the parent activity dataset is taken over by the child activity dataset (the activity that calls the parent via the UUID).
 
@@ -503,9 +559,11 @@ Schema source：[EcoSpold02MetaInformation.xsd](original/Schemas/datasets/EcoSpo
 
 Local XML path：`TActivity/@parentActivityContextId`；ecoSpold1 mapping：`new`。
 
-| Type | Size | Required | Multiple occurrence | Multi language | Redundant master data |
-| --- | --- | --- | --- | --- | --- |
-| `TUuid` | 36 | No | No | No | No |
+| Type | Required | Multiple occurrence |
+| --- | --- | --- |
+| `TUuid` | No | No |
+
+Size：36；Multi language：No；Redundant master data：No。
 
 Reference to the context of the parent activity.
 
@@ -519,9 +577,11 @@ Schema source：[EcoSpold02MetaInformation.xsd](original/Schemas/datasets/EcoSpo
 
 Local XML path：`TActivity/@inheritanceDepth`；ecoSpold1 mapping：`new`。
 
-| Type | Size | Required | Multiple occurrence | Multi language | Redundant master data |
-| --- | --- | --- | --- | --- | --- |
-| `integer` | — | No | No | No | No |
+| Type | Required | Multiple occurrence |
+| --- | --- | --- |
+| `integer` | No | No |
+
+Size：—；Multi language：No；Redundant master data：No。
 
 The inheritance depth expresses the maximum number of parent datasets for the current dataset. The following values are used in the ecoinvent context: 0 = not a child, 1 = a geography child, 2 = a temporal child, 3 = a macro-economic scenario child.
 
@@ -533,9 +593,11 @@ Schema source：[EcoSpold02MetaInformation.xsd](original/Schemas/datasets/EcoSpo
 
 Local XML path：`TActivity/includedActivitiesStart`；ecoSpold1 mapping：`402-type`。
 
-| Type | Size | Required | Multiple occurrence | Multi language | Redundant master data |
-| --- | --- | --- | --- | --- | --- |
-| `TString32000` | 32000 | No | No | Yes | No |
+| Type | Required | Multiple occurrence |
+| --- | --- | --- |
+| `TString32000` | No | No |
+
+Size：32000；Multi language：Yes；Redundant master data：No。
 
 Describes the starting point of the activity. For "system terminated"  the starting point is always "From cradle, i.e. including all upstream activities". For unit processes, the starting point may be described in terms of the nature of the inputs, e.g. "From reception of \[e.g. raw material X\]..." or "Service starting with the input of \[e.g. labour and energy\].
 
@@ -547,9 +609,11 @@ Schema source：[EcoSpold02MetaInformation.xsd](original/Schemas/datasets/EcoSpo
 
 Local XML path：`TActivity/includedActivitiesEnd`；ecoSpold1 mapping：`402-type`。
 
-| Type | Size | Required | Multiple occurrence | Multi language | Redundant master data |
-| --- | --- | --- | --- | --- | --- |
-| `TString32000` | 32000 | No | No | Yes | No |
+| Type | Required | Multiple occurrence |
+| --- | --- | --- |
+| `TString32000` | No | No |
+
+Size：32000；Multi language：Yes；Redundant master data：No。
 
 Describes the included activities to the extent that this is not self-explanatory from the activity name, as well as activities or inputs that are intentionally excluded, e.g. if the activity “application of pesticides” as a service excludes the pesticide, in order to be applicable for many different active ingredients. The description ends by mentioning the last activity and/or point of delivery, e.g. “until and including loading of the product on lorries”.
 
@@ -561,9 +625,11 @@ Schema source：[EcoSpold02MetaInformation.xsd](original/Schemas/datasets/EcoSpo
 
 Local XML path：`TActivity/synonym`；ecoSpold1 mapping：`491-type`。
 
-| Type | Size | Required | Multiple occurrence | Multi language | Redundant master data |
-| --- | --- | --- | --- | --- | --- |
-| `TSynonym` | 80 | No | Yes | Yes | No |
+| Type | Required | Multiple occurrence |
+| --- | --- | --- |
+| `TSynonym` | No | Yes |
+
+Size：80；Multi language：Yes；Redundant master data：No。
 
 List of synonyms for the name. Contrary to normal multi language strings, synonyms may contain more than one element with the same xml:lang attribute value.
 
@@ -577,9 +643,11 @@ Schema source：[EcoSpold02MetaInformation.xsd](original/Schemas/datasets/EcoSpo
 
 Local XML path：`TActivity/tag`；ecoSpold1 mapping：`new`。
 
-| Type | Size | Required | Multiple occurrence | Multi language | Redundant master data |
-| --- | --- | --- | --- | --- | --- |
-| `TTag` | 40 | No | Yes | No | No |
+| Type | Required | Multiple occurrence |
+| --- | --- | --- |
+| `TTag` | No | Yes |
+
+Size：40；Multi language：No；Redundant master data：No。
 
 The tag field allows an open list of keywords which describes the activity and can be used for filtering, grouping and searching. The validTags file reference provides a list of predefined tags, but the semantic validation procedure should only display an information (not an error) if a tag entry cannot be found in the validTags master file.
 
@@ -591,9 +659,11 @@ Schema source：[EcoSpold02MetaInformation.xsd](original/Schemas/datasets/EcoSpo
 
 Local XML path：`TActivity/@energyValues`；ecoSpold1 mapping：`203`。
 
-| Type | Size | Required | Multiple occurrence | Multi language | Redundant master data |
-| --- | --- | --- | --- | --- | --- |
-| `integer` | — | No | No | No | No |
+| Type | Required | Multiple occurrence |
+| --- | --- | --- |
+| `integer` | No | No |
+
+Size：—；Multi language：No；Redundant master data：No。
 
 Indicates the way energy values are applied in the dataset. The codes are: 0=Undefined (default). 1=Net (lower) heating value. 2=Gross (higher) heating value.
 
@@ -609,9 +679,11 @@ Schema source：[EcoSpold02MetaInformation.xsd](original/Schemas/datasets/EcoSpo
 
 Local XML path：`TActivity/@masterAllocationPropertyId`；ecoSpold1 mapping：`new`。
 
-| Type | Size | Required | Multiple occurrence | Multi language | Redundant master data |
-| --- | --- | --- | --- | --- | --- |
-| `TUuid` | 36 | No | No | No | No |
+| Type | Required | Multiple occurrence |
+| --- | --- | --- |
+| `TUuid` | No | No |
+
+Size：36；Multi language：No；Redundant master data：No。
 
 References the default Allocation Property (via UUID) for all exchanges of this dataset. The Allocation Property can be overwritten for each exchange (see field 1150 specificAllocationPropertyId).
 
@@ -625,9 +697,11 @@ Schema source：[EcoSpold02MetaInformation.xsd](original/Schemas/datasets/EcoSpo
 
 Local XML path：`TActivity/@masterAllocationPropertyContextId`；ecoSpold1 mapping：`new`。
 
-| Type | Size | Required | Multiple occurrence | Multi language | Redundant master data |
-| --- | --- | --- | --- | --- | --- |
-| `TUuid` | 36 | No | No | No | No |
+| Type | Required | Multiple occurrence |
+| --- | --- | --- |
+| `TUuid` | No | No |
+
+Size：36；Multi language：No；Redundant master data：No。
 
 Reference to the context of the master allocation property.
 
@@ -641,9 +715,11 @@ Schema source：[EcoSpold02MetaInformation.xsd](original/Schemas/datasets/EcoSpo
 
 Local XML path：`TActivity/@masterAllocationPropertyIdOverwrittenByChild`；ecoSpold1 mapping：`new`。
 
-| Type | Size | Required | Multiple occurrence | Multi language | Redundant master data |
-| --- | --- | --- | --- | --- | --- |
-| `boolean` | — | No | No | No | No |
+| Type | Required | Multiple occurrence |
+| --- | --- | --- |
+| `boolean` | No | No |
+
+Size：—；Multi language：No；Redundant master data：No。
 
 If a reference to a master data entity must be removed in a child dataset it is required to set the corresponding xxxOverwrittenByChild attribute to true. Otherwise the removed referenced will be interpreted as "Keep the Parent Value".
 
@@ -655,9 +731,11 @@ Schema source：[EcoSpold02MetaInformation.xsd](original/Schemas/datasets/EcoSpo
 
 Local XML path：`TActivity/allocationComment`；ecoSpold1 mapping：`2407`。
 
-| Type | Size | Required | Multiple occurrence | Multi language | Redundant master data |
-| --- | --- | --- | --- | --- | --- |
-| `TTextAndImage` | — | No | No | Yes | No |
+| Type | Required | Multiple occurrence |
+| --- | --- | --- |
+| `TTextAndImage` | No | No |
+
+Size：—；Multi language：Yes；Redundant master data：No。
 
 Text and image field for further information about the allocation procedure and the allocation properties chosen. An eventual coincidence in allocation factors when comparing different allocation parameters (like physical and economic ones) may be reported here as well.Text and image fields are list of text, imageUri and variable elements. The text and imageUri elements can used to describe the current section and they can be combined in any order given by their index attribute. Text variables are defined by the variable elements, which may be used in the text as {{variablename}}. If a parent text field includes a variable, this variable may be redefined by the child activity dataset while keeping the rest of the parent text intact. This allows easy changes of text parts in child processes.
 
@@ -673,9 +751,11 @@ Schema source：[EcoSpold02MetaInformation.xsd](original/Schemas/datasets/EcoSpo
 
 Local XML path：`TActivity/@datasetIcon`；ecoSpold1 mapping：`new`。
 
-| Type | Size | Required | Multiple occurrence | Multi language | Redundant master data |
-| --- | --- | --- | --- | --- | --- |
-| `anyURI` | — | No | No | No | No |
+| Type | Required | Multiple occurrence |
+| --- | --- | --- |
+| `anyURI` | No | No |
+
+Size：—；Multi language：No；Redundant master data：No。
 
 The URL of the dataset icon. A dataset icon serves a quick identification of the specific dataset, and may also be used for product brands and company logos. The icon is not directly part of the dataset, but is stored locally or on the ecoinvent web-server, from where it is retrievable via the Http protocol.
 

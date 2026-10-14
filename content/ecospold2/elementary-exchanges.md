@@ -26,9 +26,11 @@ XML 位置：`flowData/elementaryExchange`。以 `activityDescription/`、`flowD
 
 局部 XML 位置：`TElementaryExchange/inputGroup`；ecoSpold1 对照编号：`3503`。
 
-| 类型 | 长度 | 必填 | 可重复 | 多语言 | 主数据冗余字段 |
-| --- | --- | --- | --- | --- | --- |
-| `integer` | — | 是 | 否 | 否 | 否 |
+| 类型 | 必填 | 可重复 |
+| --- | --- | --- |
+| `integer` | 是 | 否 |
+
+长度：—；多语言：否；主数据冗余字段：否。
 
 表示输入流的类型。代码为：4=来自环境（From Environment）。
 
@@ -46,9 +48,11 @@ XML 位置：`flowData/elementaryExchange`。以 `activityDescription/`、`flowD
 
 局部 XML 位置：`TElementaryExchange/outputGroup`；ecoSpold1 对照编号：`3504`。
 
-| 类型 | 长度 | 必填 | 可重复 | 多语言 | 主数据冗余字段 |
-| --- | --- | --- | --- | --- | --- |
-| `integer` | — | 是 | 否 | 否 | 否 |
+| 类型 | 必填 | 可重复 |
+| --- | --- | --- |
+| `integer` | 是 | 否 |
+
+长度：—；多语言：否；主数据冗余字段：否。
 
 表示输出流的类型。代码为：4=流向环境（ToEnvironment）。
 
@@ -66,9 +70,11 @@ XML 位置：`flowData/elementaryExchange`。以 `activityDescription/`、`flowD
 
 局部 XML 位置：`TElementaryExchange/@elementaryExchangeId`；ecoSpold1 对照编号：`3793`。
 
-| 类型 | 长度 | 必填 | 可重复 | 多语言 | 主数据冗余字段 |
-| --- | --- | --- | --- | --- | --- |
-| `TUuid` | 36 | 是 | 否 | 否 | 否 |
+| 类型 | 必填 | 可重复 |
+| --- | --- | --- |
+| `TUuid` | 是 | 否 |
+
+长度：36；多语言：否；主数据冗余字段：否。
 
 引用此基本流交换的主数据条目。
 
@@ -80,9 +86,11 @@ XML 位置：`flowData/elementaryExchange`。以 `activityDescription/`、`flowD
 
 局部 XML 位置：`TElementaryExchange/@elementaryExchangeContextId`；ecoSpold1 对照编号：`new`。
 
-| 类型 | 长度 | 必填 | 可重复 | 多语言 | 主数据冗余字段 |
-| --- | --- | --- | --- | --- | --- |
-| `TUuid` | 36 | 否 | 否 | 否 | 否 |
+| 类型 | 必填 | 可重复 |
+| --- | --- | --- |
+| `TUuid` | 否 | 否 |
+
+长度：36；多语言：否；主数据冗余字段：否。
 
 引用该基本流交换所属的上下文。
 
@@ -96,9 +104,11 @@ XML 位置：`flowData/elementaryExchange`。以 `activityDescription/`、`flowD
 
 局部 XML 位置：`TElementaryExchange/compartment`；ecoSpold1 对照编号：`new`。
 
-| 类型 | 长度 | 必填 | 可重复 | 多语言 | 主数据冗余字段 |
-| --- | --- | --- | --- | --- | --- |
-| `TCompartment` | — | 是 | 否 | 否 | 是 |
+| 类型 | 必填 | 可重复 |
+| --- | --- | --- |
+| `TCompartment` | 是 | 否 |
+
+长度：—；多语言：否；主数据冗余字段：是。
 
 交换的区室及子区室名称。validCompartments 所引用的 XML 文档包含给定语言下有效的区室／子区室配对的定义。
 
@@ -112,9 +122,11 @@ XML 位置：`flowData/elementaryExchange`。以 `activityDescription/`、`flowD
 
 局部 XML 位置：`TElementaryExchange/@formula`；ecoSpold1 对照编号：`3711`。
 
-| 类型 | 长度 | 必填 | 可重复 | 多语言 | 主数据冗余字段 |
-| --- | --- | --- | --- | --- | --- |
-| `TBaseString40` | 40 | 否 | 否 | 否 | 是 |
+| 类型 | 必填 | 可重复 |
+| --- | --- | --- |
+| `TBaseString40` | 否 | 否 |
+
+长度：40；多语言：否；主数据冗余字段：是。
 
 可以填写化学式，例如分子式。
 
@@ -140,9 +152,11 @@ This section extends the exchanges section in case of exchanges with environment
 
 Local XML path：`TElementaryExchange/inputGroup`；ecoSpold1 mapping：`3503`。
 
-| Type | Size | Required | Multiple occurrence | Multi language | Redundant master data |
-| --- | --- | --- | --- | --- | --- |
-| `integer` | — | Yes | No | No | No |
+| Type | Required | Multiple occurrence |
+| --- | --- | --- |
+| `integer` | Yes | No |
+
+Size：—；Multi language：No；Redundant master data：No。
 
 Indicates the kind of input flow. The codes are: 4=From Environment
 
@@ -160,9 +174,11 @@ Schema source：[EcoSpold02FlowData.xsd](original/Schemas/datasets/EcoSpold02Flo
 
 Local XML path：`TElementaryExchange/outputGroup`；ecoSpold1 mapping：`3504`。
 
-| Type | Size | Required | Multiple occurrence | Multi language | Redundant master data |
-| --- | --- | --- | --- | --- | --- |
-| `integer` | — | Yes | No | No | No |
+| Type | Required | Multiple occurrence |
+| --- | --- | --- |
+| `integer` | Yes | No |
+
+Size：—；Multi language：No；Redundant master data：No。
 
 Indicates the kind of output flow. The codes are: 4=ToEnvironment
 
@@ -180,9 +196,11 @@ Schema source：[EcoSpold02FlowData.xsd](original/Schemas/datasets/EcoSpold02Flo
 
 Local XML path：`TElementaryExchange/@elementaryExchangeId`；ecoSpold1 mapping：`3793`。
 
-| Type | Size | Required | Multiple occurrence | Multi language | Redundant master data |
-| --- | --- | --- | --- | --- | --- |
-| `TUuid` | 36 | Yes | No | No | No |
+| Type | Required | Multiple occurrence |
+| --- | --- | --- |
+| `TUuid` | Yes | No |
+
+Size：36；Multi language：No；Redundant master data：No。
 
 Reference to the master data entry for this elementary exchange
 
@@ -194,9 +212,11 @@ Schema source：[EcoSpold02FlowData.xsd](original/Schemas/datasets/EcoSpold02Flo
 
 Local XML path：`TElementaryExchange/@elementaryExchangeContextId`；ecoSpold1 mapping：`new`。
 
-| Type | Size | Required | Multiple occurrence | Multi language | Redundant master data |
-| --- | --- | --- | --- | --- | --- |
-| `TUuid` | 36 | No | No | No | No |
+| Type | Required | Multiple occurrence |
+| --- | --- | --- |
+| `TUuid` | No | No |
+
+Size：36；Multi language：No；Redundant master data：No。
 
 Reference to the context of the elementary exchange.
 
@@ -210,9 +230,11 @@ Schema source：[EcoSpold02FlowData.xsd](original/Schemas/datasets/EcoSpold02Flo
 
 Local XML path：`TElementaryExchange/compartment`；ecoSpold1 mapping：`new`。
 
-| Type | Size | Required | Multiple occurrence | Multi language | Redundant master data |
-| --- | --- | --- | --- | --- | --- |
-| `TCompartment` | — | Yes | No | No | Yes |
+| Type | Required | Multiple occurrence |
+| --- | --- | --- |
+| `TCompartment` | Yes | No |
+
+Size：—；Multi language：No；Redundant master data：Yes。
 
 Name of the compartment and subcompartment of the exchange. The xml document referenced by validCompartments contains definitions of valid compartment/subcompartment pairs for a given language.
 
@@ -226,9 +248,11 @@ Schema source：[EcoSpold02FlowData.xsd](original/Schemas/datasets/EcoSpold02Flo
 
 Local XML path：`TElementaryExchange/@formula`；ecoSpold1 mapping：`3711`。
 
-| Type | Size | Required | Multiple occurrence | Multi language | Redundant master data |
-| --- | --- | --- | --- | --- | --- |
-| `TBaseString40` | 40 | No | No | No | Yes |
+| Type | Required | Multiple occurrence |
+| --- | --- | --- |
+| `TBaseString40` | No | No |
+
+Size：40；Multi language：No；Redundant master data：Yes。
 
 Chemical formula (e.g. sum formula) may be entered.
 

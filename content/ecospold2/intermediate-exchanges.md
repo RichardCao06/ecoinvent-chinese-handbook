@@ -30,9 +30,11 @@ XML 位置：`flowData/intermediateExchange`。以 `activityDescription/`、`flo
 
 局部 XML 位置：`TIntermediateExchange/inputGroup`；ecoSpold1 对照编号：`3503`。
 
-| 类型 | 长度 | 必填 | 可重复 | 多语言 | 主数据冗余字段 |
-| --- | --- | --- | --- | --- | --- |
-| `integer` | — | 是 | 否 | 否 | 否 |
+| 类型 | 必填 | 可重复 |
+| --- | --- | --- |
+| `integer` | 是 | 否 |
+
+长度：—；多语言：否；主数据冗余字段：否。
 
 注明输入流的种类。代码如下：1=材料/燃料（Materials/Fuels），2=电力/热（Electricity/Heat），3=服务（Services），5=来自技术圈，未指定（From Technosphere (unspecified)）。
 
@@ -48,9 +50,11 @@ XML 位置：`flowData/intermediateExchange`。以 `activityDescription/`、`flo
 
 局部 XML 位置：`TIntermediateExchange/outputGroup`；ecoSpold1 对照编号：`3504`。
 
-| 类型 | 长度 | 必填 | 可重复 | 多语言 | 主数据冗余字段 |
-| --- | --- | --- | --- | --- | --- |
-| `integer` | — | 是 | 否 | 否 | 否 |
+| 类型 | 必填 | 可重复 |
+| --- | --- | --- |
+| `integer` | 是 | 否 |
+
+长度：—；多语言：否；主数据冗余字段：否。
 
 注明输出流的种类。代码如下：0=参考产品（ReferenceProduct），2=副产品（By-product），3=待处理材料（MaterialForTreatment），5=存量增加（Stock Additions）。
 
@@ -66,9 +70,11 @@ XML 位置：`flowData/intermediateExchange`。以 `activityDescription/`、`flo
 
 局部 XML 位置：`TIntermediateExchange/@intermediateExchangeId`；ecoSpold1 对照编号：`3793`。
 
-| 类型 | 长度 | 必填 | 可重复 | 多语言 | 主数据冗余字段 |
-| --- | --- | --- | --- | --- | --- |
-| `TUuid` | 36 | 是 | 否 | 否 | 否 |
+| 类型 | 必填 | 可重复 |
+| --- | --- | --- |
+| `TUuid` | 是 | 否 |
+
+长度：36；多语言：否；主数据冗余字段：否。
 
 引用该中间交换的主数据条目。
 
@@ -80,9 +86,11 @@ XML 位置：`flowData/intermediateExchange`。以 `activityDescription/`、`flo
 
 局部 XML 位置：`TIntermediateExchange/@intermediateExchangeContextId`；ecoSpold1 对照编号：`new`。
 
-| 类型 | 长度 | 必填 | 可重复 | 多语言 | 主数据冗余字段 |
-| --- | --- | --- | --- | --- | --- |
-| `TUuid` | 36 | 否 | 否 | 否 | 否 |
+| 类型 | 必填 | 可重复 |
+| --- | --- | --- |
+| `TUuid` | 否 | 否 |
+
+长度：36；多语言：否；主数据冗余字段：否。
 
 对中间交换所属上下文的引用。
 
@@ -96,9 +104,11 @@ XML 位置：`flowData/intermediateExchange`。以 `activityDescription/`、`flo
 
 局部 XML 位置：`TIntermediateExchange/@activityLinkId`；ecoSpold1 对照编号：`3715`。
 
-| 类型 | 长度 | 必填 | 可重复 | 多语言 | 主数据冗余字段 |
-| --- | --- | --- | --- | --- | --- |
-| `TUuid` | 36 | 否 | 否 | 否 | 否 |
+| 类型 | 必填 | 可重复 |
+| --- | --- | --- |
+| `TUuid` | 否 | 否 |
+
+长度：36；多语言：否；主数据冗余字段：否。
 
 显式引用供应该中间产品的活动。如果此字段为空，则由链接规则确定该活动；该规则使用本活动的地理和时间信息。
 
@@ -112,9 +122,11 @@ XML 位置：`flowData/intermediateExchange`。以 `activityDescription/`、`flo
 
 局部 XML 位置：`TIntermediateExchange/@activityLinkContextId`；ecoSpold1 对照编号：`new`。
 
-| 类型 | 长度 | 必填 | 可重复 | 多语言 | 主数据冗余字段 |
-| --- | --- | --- | --- | --- | --- |
-| `TUuid` | 36 | 否 | 否 | 否 | 否 |
+| 类型 | 必填 | 可重复 |
+| --- | --- | --- |
+| `TUuid` | 否 | 否 |
+
+长度：36；多语言：否；主数据冗余字段：否。
 
 对活动链接所属上下文的引用。
 
@@ -128,9 +140,11 @@ XML 位置：`flowData/intermediateExchange`。以 `activityDescription/`、`flo
 
 局部 XML 位置：`TIntermediateExchange/@activityLinkIdOverwrittenByChild`；ecoSpold1 对照编号：`new`。
 
-| 类型 | 长度 | 必填 | 可重复 | 多语言 | 主数据冗余字段 |
-| --- | --- | --- | --- | --- | --- |
-| `boolean` | — | 否 | 否 | 否 | 否 |
+| 类型 | 必填 | 可重复 |
+| --- | --- | --- |
+| `boolean` | 否 | 否 |
+
+长度：—；多语言：否；主数据冗余字段：否。
 
 如果必须在子数据集中移除对某个主数据实体的引用，则必须将相应的 xxxOverwrittenByChild 属性设置为 true。否则，移除该引用会被解释为“保留父数据集的值”（Keep the Parent Value）。
 
@@ -142,9 +156,11 @@ XML 位置：`flowData/intermediateExchange`。以 `activityDescription/`、`flo
 
 局部 XML 位置：`TIntermediateExchange/@productionVolumeAmount`；ecoSpold1 对照编号：`new`。
 
-| 类型 | 长度 | 必填 | 可重复 | 多语言 | 主数据冗余字段 |
-| --- | --- | --- | --- | --- | --- |
-| `TFloatNumber` | — | 否 | 否 | 否 | 否 |
+| 类型 | 必填 | 可重复 |
+| --- | --- | --- |
+| `TFloatNumber` | 否 | 否 |
+
+长度：—；多语言：否；主数据冗余字段：否。
 
 按年表示的产品产量，单位与该交换相同。
 
@@ -156,9 +172,11 @@ XML 位置：`flowData/intermediateExchange`。以 `activityDescription/`、`flo
 
 局部 XML 位置：`TIntermediateExchange/@productionVolumeSourceIdOverwrittenByChild`；ecoSpold1 对照编号：`new`。
 
-| 类型 | 长度 | 必填 | 可重复 | 多语言 | 主数据冗余字段 |
-| --- | --- | --- | --- | --- | --- |
-| `boolean` | — | 否 | 否 | 否 | 否 |
+| 类型 | 必填 | 可重复 |
+| --- | --- | --- |
+| `boolean` | 否 | 否 |
+
+长度：—；多语言：否；主数据冗余字段：否。
 
 如果必须在子数据集中移除对某个主数据实体的引用，则必须将相应的 xxxOverwrittenByChild 属性设置为 true。否则，移除该引用会被解释为“保留父数据集的值”（Keep the Parent Value）。
 
@@ -170,9 +188,11 @@ XML 位置：`flowData/intermediateExchange`。以 `activityDescription/`、`flo
 
 局部 XML 位置：`TIntermediateExchange/@productionVolumeVariableName`；ecoSpold1 对照编号：`new`。
 
-| 类型 | 长度 | 必填 | 可重复 | 多语言 | 主数据冗余字段 |
-| --- | --- | --- | --- | --- | --- |
-| `TVariableName` | 40 | 否 | 否 | 否 | 否 |
+| 类型 | 必填 | 可重复 |
+| --- | --- | --- |
+| `TVariableName` | 否 | 否 |
+
+长度：40；多语言：否；主数据冗余字段：否。
 
 变量名是交换产量的简称，用于在数学关系（公式）中引用产量数值。变量可包含字母、数字和下划线（\_）。变量名必须以字母（a-z）开头。变量名不区分大小写（calorific\_Value 与 Calorific\_value 等同）。
 
@@ -184,9 +204,11 @@ XML 位置：`flowData/intermediateExchange`。以 `activityDescription/`、`flo
 
 局部 XML 位置：`TIntermediateExchange/@productionVolumeSourceId`；ecoSpold1 对照编号：`new`。
 
-| 类型 | 长度 | 必填 | 可重复 | 多语言 | 主数据冗余字段 |
-| --- | --- | --- | --- | --- | --- |
-| `TUuid` | 36 | 否 | 否 | 否 | 否 |
+| 类型 | 必填 | 可重复 |
+| --- | --- | --- |
+| `TUuid` | 否 | 否 |
+
+长度：36；多语言：否；主数据冗余字段：否。
 
 对有效来源的引用。
 
@@ -200,9 +222,11 @@ XML 位置：`flowData/intermediateExchange`。以 `activityDescription/`、`flo
 
 局部 XML 位置：`TIntermediateExchange/@productionVolumeMathematicalRelation`；ecoSpold1 对照编号：`new`。
 
-| 类型 | 长度 | 必填 | 可重复 | 多语言 | 主数据冗余字段 |
-| --- | --- | --- | --- | --- | --- |
-| `TBaseString32000` | 32000 | 否 | 否 | 否 | 否 |
+| 类型 | 必填 | 可重复 |
+| --- | --- | --- |
+| `TBaseString32000` | 否 | 否 |
+
+长度：32000；多语言：否；主数据冗余字段：否。
 
 定义一个数学公式，通过变量名或 REF 函数引用流、参数或属性的数值。
 
@@ -216,9 +240,11 @@ XML 位置：`flowData/intermediateExchange`。以 `activityDescription/`、`flo
 
 局部 XML 位置：`TIntermediateExchange/productionVolumeComment`；ecoSpold1 对照编号：`724`。
 
-| 类型 | 长度 | 必填 | 可重复 | 多语言 | 主数据冗余字段 |
-| --- | --- | --- | --- | --- | --- |
-| `TString32000` | 32000 | 否 | 否 | 是 | 否 |
+| 类型 | 必填 | 可重复 |
+| --- | --- | --- |
+| `TString32000` | 否 | 否 |
+
+长度：32000；多语言：是；主数据冗余字段：否。
 
 可对产量数据的数据来源、假设和计算添加一般注释。
 
@@ -230,9 +256,11 @@ XML 位置：`flowData/intermediateExchange`。以 `activityDescription/`、`flo
 
 局部 XML 位置：`TIntermediateExchange/@productionVolumeSourceContextId`；ecoSpold1 对照编号：`new`。
 
-| 类型 | 长度 | 必填 | 可重复 | 多语言 | 主数据冗余字段 |
-| --- | --- | --- | --- | --- | --- |
-| `TUuid` | 36 | 否 | 否 | 否 | 否 |
+| 类型 | 必填 | 可重复 |
+| --- | --- | --- |
+| `TUuid` | 否 | 否 |
+
+长度：36；多语言：否；主数据冗余字段：否。
 
 对来源所属上下文的引用。
 
@@ -246,9 +274,11 @@ XML 位置：`flowData/intermediateExchange`。以 `activityDescription/`、`flo
 
 局部 XML 位置：`TIntermediateExchange/@productionVolumeSourceYear`；ecoSpold1 对照编号：`new`。
 
-| 类型 | 长度 | 必填 | 可重复 | 多语言 | 主数据冗余字段 |
-| --- | --- | --- | --- | --- | --- |
-| `TBaseString30` | 30 | 否 | 否 | 否 | 是 |
+| 类型 | 必填 | 可重复 |
+| --- | --- | --- |
+| `TBaseString30` | 否 | 否 |
+
+长度：30；多语言：否；主数据冗余字段：是。
 
 分别注明出版年份或信息交流年份。对于网站，填写最后访问的年份。
 
@@ -260,9 +290,11 @@ XML 位置：`flowData/intermediateExchange`。以 `activityDescription/`、`flo
 
 局部 XML 位置：`TIntermediateExchange/@productionVolumeSourceFirstAuthor`；ecoSpold1 对照编号：`new`。
 
-| 类型 | 长度 | 必填 | 可重复 | 多语言 | 主数据冗余字段 |
-| --- | --- | --- | --- | --- | --- |
-| `TBaseString40` | 40 | 否 | 否 | 否 | 是 |
+| 类型 | 必填 | 可重复 |
+| --- | --- | --- |
+| `TBaseString40` | 否 | 否 |
+
+长度：40；多语言：否；主数据冗余字段：是。
 
 以姓氏和名字缩写注明第一作者（例如 Einstein A.）。对于现场测量、口头交流、个人书面交流和问卷调查（sourceType=4, 5, 6, 7），此处填写提供信息的人员姓名。
 
@@ -274,9 +306,11 @@ XML 位置：`flowData/intermediateExchange`。以 `activityDescription/`、`flo
 
 局部 XML 位置：`TIntermediateExchange/productionVolumeUncertainty`；ecoSpold1 对照编号：`new`。
 
-| 类型 | 长度 | 必填 | 可重复 | 多语言 | 主数据冗余字段 |
-| --- | --- | --- | --- | --- | --- |
-| `TUncertainty` | — | 否 | 否 | 否 | 否 |
+| 类型 | 必填 | 可重复 |
+| --- | --- | --- |
+| `TUncertainty` | 否 | 否 |
+
+长度：—；多语言：否；主数据冗余字段：否。
 
 以分布函数及其参数和/或数据质量谱系数据的形式提供不确定性信息。
 
@@ -292,9 +326,11 @@ XML 位置：`flowData/intermediateExchange`。以 `activityDescription/`、`flo
 
 局部 XML 位置：`TIntermediateExchange/classification`；ecoSpold1 对照编号：`new`。
 
-| 类型 | 长度 | 必填 | 可重复 | 多语言 | 主数据冗余字段 |
-| --- | --- | --- | --- | --- | --- |
-| `TClassification` | — | 否 | 是 | 否 | 是 |
+| 类型 | 必填 | 可重复 |
+| --- | --- | --- |
+| `TClassification` | 否 | 是 |
+
+长度：—；多语言：否；主数据冗余字段：是。
 
 包含用于界定产品的分类配对。
 
@@ -323,9 +359,11 @@ This section extends the exchanges section in case of intermediate exchanges.
 
 Local XML path：`TIntermediateExchange/inputGroup`；ecoSpold1 mapping：`3503`。
 
-| Type | Size | Required | Multiple occurrence | Multi language | Redundant master data |
-| --- | --- | --- | --- | --- | --- |
-| `integer` | — | Yes | No | No | No |
+| Type | Required | Multiple occurrence |
+| --- | --- | --- |
+| `integer` | Yes | No |
+
+Size：—；Multi language：No；Redundant master data：No。
 
 Indicates the kind of input flow. 
 The codes are: 1=Materials/Fuels, 2=Electricity/Heat, 3=Services, 5=From Technosphere (unspecified).
@@ -342,9 +380,11 @@ Schema source：[EcoSpold02FlowData.xsd](original/Schemas/datasets/EcoSpold02Flo
 
 Local XML path：`TIntermediateExchange/outputGroup`；ecoSpold1 mapping：`3504`。
 
-| Type | Size | Required | Multiple occurrence | Multi language | Redundant master data |
-| --- | --- | --- | --- | --- | --- |
-| `integer` | — | Yes | No | No | No |
+| Type | Required | Multiple occurrence |
+| --- | --- | --- |
+| `integer` | Yes | No |
+
+Size：—；Multi language：No；Redundant master data：No。
 
 Indicates the kind of output flow. 
 The codes are: 0=ReferenceProduct, 2=By-product, 3=MaterialForTreatment, 5=Stock Additions
@@ -361,9 +401,11 @@ Schema source：[EcoSpold02FlowData.xsd](original/Schemas/datasets/EcoSpold02Flo
 
 Local XML path：`TIntermediateExchange/@intermediateExchangeId`；ecoSpold1 mapping：`3793`。
 
-| Type | Size | Required | Multiple occurrence | Multi language | Redundant master data |
-| --- | --- | --- | --- | --- | --- |
-| `TUuid` | 36 | Yes | No | No | No |
+| Type | Required | Multiple occurrence |
+| --- | --- | --- |
+| `TUuid` | Yes | No |
+
+Size：36；Multi language：No；Redundant master data：No。
 
 Reference to the master data entry for this intermediate exchange
 
@@ -375,9 +417,11 @@ Schema source：[EcoSpold02FlowData.xsd](original/Schemas/datasets/EcoSpold02Flo
 
 Local XML path：`TIntermediateExchange/@intermediateExchangeContextId`；ecoSpold1 mapping：`new`。
 
-| Type | Size | Required | Multiple occurrence | Multi language | Redundant master data |
-| --- | --- | --- | --- | --- | --- |
-| `TUuid` | 36 | No | No | No | No |
+| Type | Required | Multiple occurrence |
+| --- | --- | --- |
+| `TUuid` | No | No |
+
+Size：36；Multi language：No；Redundant master data：No。
 
 Reference to the context of the intermediate exchange.
 
@@ -391,9 +435,11 @@ Schema source：[EcoSpold02FlowData.xsd](original/Schemas/datasets/EcoSpold02Flo
 
 Local XML path：`TIntermediateExchange/@activityLinkId`；ecoSpold1 mapping：`3715`。
 
-| Type | Size | Required | Multiple occurrence | Multi language | Redundant master data |
-| --- | --- | --- | --- | --- | --- |
-| `TUuid` | 36 | No | No | No | No |
+| Type | Required | Multiple occurrence |
+| --- | --- | --- |
+| `TUuid` | No | No |
+
+Size：36；Multi language：No；Redundant master data：No。
 
 Explicit reference to the activity which supplies the intermediate product. If this field is empty the activity will determined by a linking rule, which uses geographical and temporal information of this activity.
 
@@ -407,9 +453,11 @@ Schema source：[EcoSpold02FlowData.xsd](original/Schemas/datasets/EcoSpold02Flo
 
 Local XML path：`TIntermediateExchange/@activityLinkContextId`；ecoSpold1 mapping：`new`。
 
-| Type | Size | Required | Multiple occurrence | Multi language | Redundant master data |
-| --- | --- | --- | --- | --- | --- |
-| `TUuid` | 36 | No | No | No | No |
+| Type | Required | Multiple occurrence |
+| --- | --- | --- |
+| `TUuid` | No | No |
+
+Size：36；Multi language：No；Redundant master data：No。
 
 Reference to the context of the activity link.
 
@@ -423,9 +471,11 @@ Schema source：[EcoSpold02FlowData.xsd](original/Schemas/datasets/EcoSpold02Flo
 
 Local XML path：`TIntermediateExchange/@activityLinkIdOverwrittenByChild`；ecoSpold1 mapping：`new`。
 
-| Type | Size | Required | Multiple occurrence | Multi language | Redundant master data |
-| --- | --- | --- | --- | --- | --- |
-| `boolean` | — | No | No | No | No |
+| Type | Required | Multiple occurrence |
+| --- | --- | --- |
+| `boolean` | No | No |
+
+Size：—；Multi language：No；Redundant master data：No。
 
 If a reference to a master data entity must be removed in a child dataset it is required to set the corresponding xxxOverwrittenByChild attribute to true. Otherwise the removed referenced will be interpreted as "Keep the Parent Value".
 
@@ -437,9 +487,11 @@ Schema source：[EcoSpold02FlowData.xsd](original/Schemas/datasets/EcoSpold02Flo
 
 Local XML path：`TIntermediateExchange/@productionVolumeAmount`；ecoSpold1 mapping：`new`。
 
-| Type | Size | Required | Multiple occurrence | Multi language | Redundant master data |
-| --- | --- | --- | --- | --- | --- |
-| `TFloatNumber` | — | No | No | No | No |
+| Type | Required | Multiple occurrence |
+| --- | --- | --- |
+| `TFloatNumber` | No | No |
+
+Size：—；Multi language：No；Redundant master data：No。
 
 The product volume expressed per year in the same unit as the exchange.
 
@@ -451,9 +503,11 @@ Schema source：[EcoSpold02FlowData.xsd](original/Schemas/datasets/EcoSpold02Flo
 
 Local XML path：`TIntermediateExchange/@productionVolumeSourceIdOverwrittenByChild`；ecoSpold1 mapping：`new`。
 
-| Type | Size | Required | Multiple occurrence | Multi language | Redundant master data |
-| --- | --- | --- | --- | --- | --- |
-| `boolean` | — | No | No | No | No |
+| Type | Required | Multiple occurrence |
+| --- | --- | --- |
+| `boolean` | No | No |
+
+Size：—；Multi language：No；Redundant master data：No。
 
 If a reference to a master data entity must be removed in a child dataset it is required to set the corresponding xxxOverwrittenByChild attribute to true. Otherwise the removed referenced will be interpreted as "Keep the Parent Value".
 
@@ -465,9 +519,11 @@ Schema source：[EcoSpold02FlowData.xsd](original/Schemas/datasets/EcoSpold02Flo
 
 Local XML path：`TIntermediateExchange/@productionVolumeVariableName`；ecoSpold1 mapping：`new`。
 
-| Type | Size | Required | Multiple occurrence | Multi language | Redundant master data |
-| --- | --- | --- | --- | --- | --- |
-| `TVariableName` | 40 | No | No | No | No |
+| Type | Required | Multiple occurrence |
+| --- | --- | --- |
+| `TVariableName` | No | No |
+
+Size：40；Multi language：No；Redundant master data：No。
 
 The variable name is a short name for the production volume of the exchange, used when refering to the production volume amount in mathematical relations (formulas). Variables may contain characters, numbers and underscores (\_). Variable names must start with a character (a-z). Variable names are not case sensitive (calorific\_Value equals Calorific\_value).
 
@@ -479,9 +535,11 @@ Schema source：[EcoSpold02FlowData.xsd](original/Schemas/datasets/EcoSpold02Flo
 
 Local XML path：`TIntermediateExchange/@productionVolumeSourceId`；ecoSpold1 mapping：`new`。
 
-| Type | Size | Required | Multiple occurrence | Multi language | Redundant master data |
-| --- | --- | --- | --- | --- | --- |
-| `TUuid` | 36 | No | No | No | No |
+| Type | Required | Multiple occurrence |
+| --- | --- | --- |
+| `TUuid` | No | No |
+
+Size：36；Multi language：No；Redundant master data：No。
 
 A reference to a valid source.
 
@@ -495,9 +553,11 @@ Schema source：[EcoSpold02FlowData.xsd](original/Schemas/datasets/EcoSpold02Flo
 
 Local XML path：`TIntermediateExchange/@productionVolumeMathematicalRelation`；ecoSpold1 mapping：`new`。
 
-| Type | Size | Required | Multiple occurrence | Multi language | Redundant master data |
-| --- | --- | --- | --- | --- | --- |
-| `TBaseString32000` | 32000 | No | No | No | No |
+| Type | Required | Multiple occurrence |
+| --- | --- | --- |
+| `TBaseString32000` | No | No |
+
+Size：32000；Multi language：No；Redundant master data：No。
 
 Defines a mathematical formula which references to values of flows, parameters or properties by variable names or REF function.
 
@@ -511,9 +571,11 @@ Schema source：[EcoSpold02FlowData.xsd](original/Schemas/datasets/EcoSpold02Flo
 
 Local XML path：`TIntermediateExchange/productionVolumeComment`；ecoSpold1 mapping：`724`。
 
-| Type | Size | Required | Multiple occurrence | Multi language | Redundant master data |
-| --- | --- | --- | --- | --- | --- |
-| `TString32000` | 32000 | No | No | Yes | No |
+| Type | Required | Multiple occurrence |
+| --- | --- | --- |
+| `TString32000` | No | No |
+
+Size：32000；Multi language：Yes；Redundant master data：No。
 
 A general comment can be made on the data source, assumptions and calculations for the production volume data.
 
@@ -525,9 +587,11 @@ Schema source：[EcoSpold02FlowData.xsd](original/Schemas/datasets/EcoSpold02Flo
 
 Local XML path：`TIntermediateExchange/@productionVolumeSourceContextId`；ecoSpold1 mapping：`new`。
 
-| Type | Size | Required | Multiple occurrence | Multi language | Redundant master data |
-| --- | --- | --- | --- | --- | --- |
-| `TUuid` | 36 | No | No | No | No |
+| Type | Required | Multiple occurrence |
+| --- | --- | --- |
+| `TUuid` | No | No |
+
+Size：36；Multi language：No；Redundant master data：No。
 
 Reference to the context of the source.
 
@@ -541,9 +605,11 @@ Schema source：[EcoSpold02FlowData.xsd](original/Schemas/datasets/EcoSpold02Flo
 
 Local XML path：`TIntermediateExchange/@productionVolumeSourceYear`；ecoSpold1 mapping：`new`。
 
-| Type | Size | Required | Multiple occurrence | Multi language | Redundant master data |
-| --- | --- | --- | --- | --- | --- |
-| `TBaseString30` | 30 | No | No | No | Yes |
+| Type | Required | Multiple occurrence |
+| --- | --- | --- |
+| `TBaseString30` | No | No |
+
+Size：30；Multi language：No；Redundant master data：Yes。
 
 Indicates the year of publication and communication, respectively. For web-sites: last visited.
 
@@ -555,9 +621,11 @@ Schema source：[EcoSpold02FlowData.xsd](original/Schemas/datasets/EcoSpold02Flo
 
 Local XML path：`TIntermediateExchange/@productionVolumeSourceFirstAuthor`；ecoSpold1 mapping：`new`。
 
-| Type | Size | Required | Multiple occurrence | Multi language | Redundant master data |
-| --- | --- | --- | --- | --- | --- |
-| `TBaseString40` | 40 | No | No | No | Yes |
+| Type | Required | Multiple occurrence |
+| --- | --- | --- |
+| `TBaseString40` | No | No |
+
+Size：40；Multi language：No；Redundant master data：Yes。
 
 Indicates the first author by surname and abbreviated name (e.g., Einstein A.). In case of measurement on site, oral communication, personal written communication and questionnaries ('sourceType'=4, 5, 6, 7) the name of the communicating person is mentioned here.
 
@@ -569,9 +637,11 @@ Schema source：[EcoSpold02FlowData.xsd](original/Schemas/datasets/EcoSpold02Flo
 
 Local XML path：`TIntermediateExchange/productionVolumeUncertainty`；ecoSpold1 mapping：`new`。
 
-| Type | Size | Required | Multiple occurrence | Multi language | Redundant master data |
-| --- | --- | --- | --- | --- | --- |
-| `TUncertainty` | — | No | No | No | No |
+| Type | Required | Multiple occurrence |
+| --- | --- | --- |
+| `TUncertainty` | No | No |
+
+Size：—；Multi language：No；Redundant master data：No。
 
 Uncertainty information in the form of distribution functions and their parameters and/or pedigree data.
 
@@ -587,9 +657,11 @@ Schema source：[EcoSpold02FlowData.xsd](original/Schemas/datasets/EcoSpold02Flo
 
 Local XML path：`TIntermediateExchange/classification`；ecoSpold1 mapping：`new`。
 
-| Type | Size | Required | Multiple occurrence | Multi language | Redundant master data |
-| --- | --- | --- | --- | --- | --- |
-| `TClassification` | — | No | Yes | No | Yes |
+| Type | Required | Multiple occurrence |
+| --- | --- | --- |
+| `TClassification` | No | Yes |
+
+Size：—；Multi language：No；Redundant master data：Yes。
 
 Contains classification pairs to specify the product.
 

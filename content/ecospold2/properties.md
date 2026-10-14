@@ -22,9 +22,11 @@ XML 位置：`…/property`。以 `activityDescription/`、`flowData/`、`modell
 
 局部 XML 位置：`TProperty/@propertyId`；ecoSpold1 对照编号：`new`。
 
-| 类型 | 长度 | 必填 | 可重复 | 多语言 | 主数据冗余字段 |
-| --- | --- | --- | --- | --- | --- |
-| `TUuid` | 36 | 是 | 否 | 否 | 否 |
+| 类型 | 必填 | 可重复 |
+| --- | --- | --- |
+| `TUuid` | 是 | 否 |
+
+长度：36；多语言：否；主数据冗余字段：否。
 
 引用该属性的主数据条目。
 
@@ -36,9 +38,11 @@ XML 位置：`…/property`。以 `activityDescription/`、`flowData/`、`modell
 
 局部 XML 位置：`TProperty/@propertyContextId`；ecoSpold1 对照编号：`new`。
 
-| 类型 | 长度 | 必填 | 可重复 | 多语言 | 主数据冗余字段 |
-| --- | --- | --- | --- | --- | --- |
-| `TUuid` | 36 | 否 | 否 | 否 | 否 |
+| 类型 | 必填 | 可重复 |
+| --- | --- | --- |
+| `TUuid` | 否 | 否 |
+
+长度：36；多语言：否；主数据冗余字段：否。
 
 对属性所属上下文的引用。
 
@@ -52,9 +56,11 @@ XML 位置：`…/property`。以 `activityDescription/`、`flowData/`、`modell
 
 局部 XML 位置：`TProperty/name`；ecoSpold1 对照编号：`new`。
 
-| 类型 | 长度 | 必填 | 可重复 | 多语言 | 主数据冗余字段 |
-| --- | --- | --- | --- | --- | --- |
-| `TString80` | 80 | 是 | 否 | 是 | 是 |
+| 类型 | 必填 | 可重复 |
+| --- | --- | --- |
+| `TString80` | 是 | 否 |
+
+长度：80；多语言：是；主数据冗余字段：是。
 
 属性的描述性名称。
 
@@ -66,9 +72,11 @@ XML 位置：`…/property`。以 `activityDescription/`、`flowData/`、`modell
 
 局部 XML 位置：`TProperty/@unitId`；ecoSpold1 对照编号：`3706`。
 
-| 类型 | 长度 | 必填 | 可重复 | 多语言 | 主数据冗余字段 |
-| --- | --- | --- | --- | --- | --- |
-| `TUuid` | 36 | 否 | 否 | 否 | 是 |
+| 类型 | 必填 | 可重复 |
+| --- | --- | --- |
+| `TUuid` | 否 | 否 |
+
+长度：36；多语言：否；主数据冗余字段：是。
 
 对该数量所用单位的引用。
 
@@ -80,9 +88,11 @@ XML 位置：`…/property`。以 `activityDescription/`、`flowData/`、`modell
 
 局部 XML 位置：`TProperty/@unitContextId`；ecoSpold1 对照编号：`new`。
 
-| 类型 | 长度 | 必填 | 可重复 | 多语言 | 主数据冗余字段 |
-| --- | --- | --- | --- | --- | --- |
-| `TUuid` | 36 | 否 | 否 | 否 | 是 |
+| 类型 | 必填 | 可重复 |
+| --- | --- | --- |
+| `TUuid` | 否 | 否 |
+
+长度：36；多语言：否；主数据冗余字段：是。
 
 对单位所属上下文的引用。
 
@@ -96,9 +106,11 @@ XML 位置：`…/property`。以 `activityDescription/`、`flowData/`、`modell
 
 局部 XML 位置：`TProperty/unitName`；ecoSpold1 对照编号：`3706`。
 
-| 类型 | 长度 | 必填 | 可重复 | 多语言 | 主数据冗余字段 |
-| --- | --- | --- | --- | --- | --- |
-| `TString40` | 40 | 否 | 否 | 是 | 是 |
+| 类型 | 必填 | 可重复 |
+| --- | --- | --- |
+| `TString40` | 否 | 否 |
+
+长度：40；多语言：是；主数据冗余字段：是。
 
 属性量所用单位的名称。
 
@@ -110,9 +122,11 @@ XML 位置：`…/property`。以 `activityDescription/`、`flowData/`、`modell
 
 局部 XML 位置：`TProperty/@amount`；ecoSpold1 对照编号：`new`。
 
-| 类型 | 长度 | 必填 | 可重复 | 多语言 | 主数据冗余字段 |
-| --- | --- | --- | --- | --- | --- |
-| `TFloatNumber` | — | 是 | 否 | 否 | 否 |
+| 类型 | 必填 | 可重复 |
+| --- | --- | --- |
+| `TFloatNumber` | 是 | 否 |
+
+长度：—；多语言：否；主数据冗余字段：否。
 
 属性的值。
 
@@ -124,9 +138,11 @@ XML 位置：`…/property`。以 `activityDescription/`、`flowData/`、`modell
 
 局部 XML 位置：`TProperty/@isDefiningValue`；ecoSpold1 对照编号：`new`。
 
-| 类型 | 长度 | 必填 | 可重复 | 多语言 | 主数据冗余字段 |
-| --- | --- | --- | --- | --- | --- |
-| `boolean` | — | 否 | 否 | 否 | 否 |
+| 类型 | 必填 | 可重复 |
+| --- | --- | --- |
+| `boolean` | 否 | 否 |
+
+长度：—；多语言：否；主数据冗余字段：否。
 
 如果此字段为 true，则该属性值是交换定义的一部分，因此与交换量之间具有固定关系；不能针对该交换在不同数据集中的个别实例改变这一关系。
 
@@ -138,9 +154,11 @@ XML 位置：`…/property`。以 `activityDescription/`、`flowData/`、`modell
 
 局部 XML 位置：`TProperty/@mathematicalRelation`；ecoSpold1 对照编号：`new`。
 
-| 类型 | 长度 | 必填 | 可重复 | 多语言 | 主数据冗余字段 |
-| --- | --- | --- | --- | --- | --- |
-| `TBaseString32000` | 32000 | 否 | 否 | 否 | 否 |
+| 类型 | 必填 | 可重复 |
+| --- | --- | --- |
+| `TBaseString32000` | 否 | 否 |
+
+长度：32000；多语言：否；主数据冗余字段：否。
 
 定义一个数学公式，通过变量名或 REF 函数引用流、参数或属性的数值。
 
@@ -154,9 +172,11 @@ XML 位置：`…/property`。以 `activityDescription/`、`flowData/`、`modell
 
 局部 XML 位置：`TProperty/@isCalculatedAmount`；ecoSpold1 对照编号：`new`。
 
-| 类型 | 长度 | 必填 | 可重复 | 多语言 | 主数据冗余字段 |
-| --- | --- | --- | --- | --- | --- |
-| `boolean` | — | 否 | 否 | 否 | 否 |
+| 类型 | 必填 | 可重复 |
+| --- | --- | --- |
+| `boolean` | 否 | 否 |
+
+长度：—；多语言：否；主数据冗余字段：否。
 
 如果为 true，则 amount 字段的值为 mathematicalRelation 的计算值。
 
@@ -168,9 +188,11 @@ XML 位置：`…/property`。以 `activityDescription/`、`flowData/`、`modell
 
 局部 XML 位置：`TProperty/@variableName`；ecoSpold1 对照编号：`new`。
 
-| 类型 | 长度 | 必填 | 可重复 | 多语言 | 主数据冗余字段 |
-| --- | --- | --- | --- | --- | --- |
-| `TVariableName` | 40 | 否 | 否 | 否 | 否 |
+| 类型 | 必填 | 可重复 |
+| --- | --- | --- |
+| `TVariableName` | 否 | 否 |
+
+长度：40；多语言：否；主数据冗余字段：否。
 
 定义变量名，以便在 mathematicalrelation（数学关系）中引用属性量。
 
@@ -184,9 +206,11 @@ XML 位置：`…/property`。以 `activityDescription/`、`flowData/`、`modell
 
 局部 XML 位置：`TProperty/uncertainty`；ecoSpold1 对照编号：`new`。
 
-| 类型 | 长度 | 必填 | 可重复 | 多语言 | 主数据冗余字段 |
-| --- | --- | --- | --- | --- | --- |
-| `TUncertainty` | — | 否 | 否 | 否 | 否 |
+| 类型 | 必填 | 可重复 |
+| --- | --- | --- |
+| `TUncertainty` | 否 | 否 |
+
+长度：—；多语言：否；主数据冗余字段：否。
 
 属性值的不确定性。
 
@@ -200,9 +224,11 @@ XML 位置：`…/property`。以 `activityDescription/`、`flowData/`、`modell
 
 局部 XML 位置：`TProperty/@sourceId`；ecoSpold1 对照编号：`new`。
 
-| 类型 | 长度 | 必填 | 可重复 | 多语言 | 主数据冗余字段 |
-| --- | --- | --- | --- | --- | --- |
-| `TUuid` | 36 | 否 | 否 | 否 | 否 |
+| 类型 | 必填 | 可重复 |
+| --- | --- | --- |
+| `TUuid` | 否 | 否 |
+
+长度：36；多语言：否；主数据冗余字段：否。
 
 对有效来源的引用，指明记录该属性的出版物。
 
@@ -214,9 +240,11 @@ XML 位置：`…/property`。以 `activityDescription/`、`flowData/`、`modell
 
 局部 XML 位置：`TProperty/@sourceContextId`；ecoSpold1 对照编号：`new`。
 
-| 类型 | 长度 | 必填 | 可重复 | 多语言 | 主数据冗余字段 |
-| --- | --- | --- | --- | --- | --- |
-| `TUuid` | 36 | 否 | 否 | 否 | 否 |
+| 类型 | 必填 | 可重复 |
+| --- | --- | --- |
+| `TUuid` | 否 | 否 |
+
+长度：36；多语言：否；主数据冗余字段：否。
 
 对来源所属上下文的引用。
 
@@ -230,9 +258,11 @@ XML 位置：`…/property`。以 `activityDescription/`、`flowData/`、`modell
 
 局部 XML 位置：`TProperty/@sourceIdOverwrittenByChild`；ecoSpold1 对照编号：`new`。
 
-| 类型 | 长度 | 必填 | 可重复 | 多语言 | 主数据冗余字段 |
-| --- | --- | --- | --- | --- | --- |
-| `boolean` | — | 否 | 否 | 否 | 否 |
+| 类型 | 必填 | 可重复 |
+| --- | --- | --- |
+| `boolean` | 否 | 否 |
+
+长度：—；多语言：否；主数据冗余字段：否。
 
 如果必须在子数据集中移除对某个主数据实体的引用，则必须将相应的 xxxOverwrittenByChild 属性设置为 true。否则，移除该引用会被解释为“保留父数据集的值”（Keep the Parent Value）。
 
@@ -244,9 +274,11 @@ XML 位置：`…/property`。以 `activityDescription/`、`flowData/`、`modell
 
 局部 XML 位置：`TProperty/@sourceYear`；ecoSpold1 对照编号：`new`。
 
-| 类型 | 长度 | 必填 | 可重复 | 多语言 | 主数据冗余字段 |
-| --- | --- | --- | --- | --- | --- |
-| `TBaseString30` | 30 | 否 | 否 | 否 | 是 |
+| 类型 | 必填 | 可重复 |
+| --- | --- | --- |
+| `TBaseString30` | 否 | 否 |
+
+长度：30；多语言：否；主数据冗余字段：是。
 
 分别注明出版年份或信息交流年份。对于网站，填写最后访问的年份。
 
@@ -258,9 +290,11 @@ XML 位置：`…/property`。以 `activityDescription/`、`flowData/`、`modell
 
 局部 XML 位置：`TProperty/@sourceFirstAuthor`；ecoSpold1 对照编号：`new`。
 
-| 类型 | 长度 | 必填 | 可重复 | 多语言 | 主数据冗余字段 |
-| --- | --- | --- | --- | --- | --- |
-| `TBaseString40` | 40 | 否 | 否 | 否 | 是 |
+| 类型 | 必填 | 可重复 |
+| --- | --- | --- |
+| `TBaseString40` | 否 | 否 |
+
+长度：40；多语言：否；主数据冗余字段：是。
 
 以姓氏和名字缩写注明第一作者（例如 Einstein A.）。对于现场测量、口头交流、个人书面交流和问卷调查（sourceType=4, 5, 6, 7），此处填写提供信息的人员姓名。
 
@@ -272,9 +306,11 @@ XML 位置：`…/property`。以 `activityDescription/`、`flowData/`、`modell
 
 局部 XML 位置：`TProperty/comment`；ecoSpold1 对照编号：`new`。
 
-| 类型 | 长度 | 必填 | 可重复 | 多语言 | 主数据冗余字段 |
-| --- | --- | --- | --- | --- | --- |
-| `TString32000` | 32000 | 否 | 否 | 是 | 否 |
+| 类型 | 必填 | 可重复 |
+| --- | --- | --- |
+| `TString32000` | 否 | 否 |
+
+长度：32000；多语言：是；主数据冗余字段：否。
 
 可对某个特定交换的每项单独属性添加一般注释。
 
@@ -296,9 +332,11 @@ Format to specify properties of exchanges.
 
 Local XML path：`TProperty/@propertyId`；ecoSpold1 mapping：`new`。
 
-| Type | Size | Required | Multiple occurrence | Multi language | Redundant master data |
-| --- | --- | --- | --- | --- | --- |
-| `TUuid` | 36 | Yes | No | No | No |
+| Type | Required | Multiple occurrence |
+| --- | --- | --- |
+| `TUuid` | Yes | No |
+
+Size：36；Multi language：No；Redundant master data：No。
 
 Reference to the master data entry for this property.
 
@@ -310,9 +348,11 @@ Schema source：[EcoSpold02DataTypes.xsd](original/Schemas/datasets/EcoSpold02Da
 
 Local XML path：`TProperty/@propertyContextId`；ecoSpold1 mapping：`new`。
 
-| Type | Size | Required | Multiple occurrence | Multi language | Redundant master data |
-| --- | --- | --- | --- | --- | --- |
-| `TUuid` | 36 | No | No | No | No |
+| Type | Required | Multiple occurrence |
+| --- | --- | --- |
+| `TUuid` | No | No |
+
+Size：36；Multi language：No；Redundant master data：No。
 
 Reference to the context of the property.
 
@@ -326,9 +366,11 @@ Schema source：[EcoSpold02DataTypes.xsd](original/Schemas/datasets/EcoSpold02Da
 
 Local XML path：`TProperty/name`；ecoSpold1 mapping：`new`。
 
-| Type | Size | Required | Multiple occurrence | Multi language | Redundant master data |
-| --- | --- | --- | --- | --- | --- |
-| `TString80` | 80 | Yes | No | Yes | Yes |
+| Type | Required | Multiple occurrence |
+| --- | --- | --- |
+| `TString80` | Yes | No |
+
+Size：80；Multi language：Yes；Redundant master data：Yes。
 
 Descriptive name of the property.
 
@@ -340,9 +382,11 @@ Schema source：[EcoSpold02DataTypes.xsd](original/Schemas/datasets/EcoSpold02Da
 
 Local XML path：`TProperty/@unitId`；ecoSpold1 mapping：`3706`。
 
-| Type | Size | Required | Multiple occurrence | Multi language | Redundant master data |
-| --- | --- | --- | --- | --- | --- |
-| `TUuid` | 36 | No | No | No | Yes |
+| Type | Required | Multiple occurrence |
+| --- | --- | --- |
+| `TUuid` | No | No |
+
+Size：36；Multi language：No；Redundant master data：Yes。
 
 Reference to the unit of the amount.
 
@@ -354,9 +398,11 @@ Schema source：[EcoSpold02DataTypes.xsd](original/Schemas/datasets/EcoSpold02Da
 
 Local XML path：`TProperty/@unitContextId`；ecoSpold1 mapping：`new`。
 
-| Type | Size | Required | Multiple occurrence | Multi language | Redundant master data |
-| --- | --- | --- | --- | --- | --- |
-| `TUuid` | 36 | No | No | No | Yes |
+| Type | Required | Multiple occurrence |
+| --- | --- | --- |
+| `TUuid` | No | No |
+
+Size：36；Multi language：No；Redundant master data：Yes。
 
 Reference to the context of the unit.
 
@@ -370,9 +416,11 @@ Schema source：[EcoSpold02DataTypes.xsd](original/Schemas/datasets/EcoSpold02Da
 
 Local XML path：`TProperty/unitName`；ecoSpold1 mapping：`3706`。
 
-| Type | Size | Required | Multiple occurrence | Multi language | Redundant master data |
-| --- | --- | --- | --- | --- | --- |
-| `TString40` | 40 | No | No | Yes | Yes |
+| Type | Required | Multiple occurrence |
+| --- | --- | --- |
+| `TString40` | No | No |
+
+Size：40；Multi language：Yes；Redundant master data：Yes。
 
 Unit name of the property amount.
 
@@ -384,9 +432,11 @@ Schema source：[EcoSpold02DataTypes.xsd](original/Schemas/datasets/EcoSpold02Da
 
 Local XML path：`TProperty/@amount`；ecoSpold1 mapping：`new`。
 
-| Type | Size | Required | Multiple occurrence | Multi language | Redundant master data |
-| --- | --- | --- | --- | --- | --- |
-| `TFloatNumber` | — | Yes | No | No | No |
+| Type | Required | Multiple occurrence |
+| --- | --- | --- |
+| `TFloatNumber` | Yes | No |
+
+Size：—；Multi language：No；Redundant master data：No。
 
 The value of the property.
 
@@ -398,9 +448,11 @@ Schema source：[EcoSpold02DataTypes.xsd](original/Schemas/datasets/EcoSpold02Da
 
 Local XML path：`TProperty/@isDefiningValue`；ecoSpold1 mapping：`new`。
 
-| Type | Size | Required | Multiple occurrence | Multi language | Redundant master data |
-| --- | --- | --- | --- | --- | --- |
-| `boolean` | — | No | No | No | No |
+| Type | Required | Multiple occurrence |
+| --- | --- | --- |
+| `boolean` | No | No |
+
+Size：—；Multi language：No；Redundant master data：No。
 
 If this field is true, the value of this property is a part of the definition of the exchange and therefore has a fixed relation to the amount of the exchange that cannot be changed for individual instances of the exchange in different datasets.
 
@@ -412,9 +464,11 @@ Schema source：[EcoSpold02DataTypes.xsd](original/Schemas/datasets/EcoSpold02Da
 
 Local XML path：`TProperty/@mathematicalRelation`；ecoSpold1 mapping：`new`。
 
-| Type | Size | Required | Multiple occurrence | Multi language | Redundant master data |
-| --- | --- | --- | --- | --- | --- |
-| `TBaseString32000` | 32000 | No | No | No | No |
+| Type | Required | Multiple occurrence |
+| --- | --- | --- |
+| `TBaseString32000` | No | No |
+
+Size：32000；Multi language：No；Redundant master data：No。
 
 Defines a mathematical formula with references to values of flows, parameters or properties by variable names or REF function.
 
@@ -428,9 +482,11 @@ Schema source：[EcoSpold02DataTypes.xsd](original/Schemas/datasets/EcoSpold02Da
 
 Local XML path：`TProperty/@isCalculatedAmount`；ecoSpold1 mapping：`new`。
 
-| Type | Size | Required | Multiple occurrence | Multi language | Redundant master data |
-| --- | --- | --- | --- | --- | --- |
-| `boolean` | — | No | No | No | No |
+| Type | Required | Multiple occurrence |
+| --- | --- | --- |
+| `boolean` | No | No |
+
+Size：—；Multi language：No；Redundant master data：No。
 
 If true the value of the amount field is the calculated value of the mathematicalRelation.
 
@@ -442,9 +498,11 @@ Schema source：[EcoSpold02DataTypes.xsd](original/Schemas/datasets/EcoSpold02Da
 
 Local XML path：`TProperty/@variableName`；ecoSpold1 mapping：`new`。
 
-| Type | Size | Required | Multiple occurrence | Multi language | Redundant master data |
-| --- | --- | --- | --- | --- | --- |
-| `TVariableName` | 40 | No | No | No | No |
+| Type | Required | Multiple occurrence |
+| --- | --- | --- |
+| `TVariableName` | No | No |
+
+Size：40；Multi language：No；Redundant master data：No。
 
 Defines a variable name for referencing the property amount in a mathematicalrelation.
 
@@ -458,9 +516,11 @@ Schema source：[EcoSpold02DataTypes.xsd](original/Schemas/datasets/EcoSpold02Da
 
 Local XML path：`TProperty/uncertainty`；ecoSpold1 mapping：`new`。
 
-| Type | Size | Required | Multiple occurrence | Multi language | Redundant master data |
-| --- | --- | --- | --- | --- | --- |
-| `TUncertainty` | — | No | No | No | No |
+| Type | Required | Multiple occurrence |
+| --- | --- | --- |
+| `TUncertainty` | No | No |
+
+Size：—；Multi language：No；Redundant master data：No。
 
 Uncertainty of the property value.
 
@@ -474,9 +534,11 @@ Schema source：[EcoSpold02DataTypes.xsd](original/Schemas/datasets/EcoSpold02Da
 
 Local XML path：`TProperty/@sourceId`；ecoSpold1 mapping：`new`。
 
-| Type | Size | Required | Multiple occurrence | Multi language | Redundant master data |
-| --- | --- | --- | --- | --- | --- |
-| `TUuid` | 36 | No | No | No | No |
+| Type | Required | Multiple occurrence |
+| --- | --- | --- |
+| `TUuid` | No | No |
+
+Size：36；Multi language：No；Redundant master data：No。
 
 A reference to a valid source. It indicates the publication where the property is documented.
 
@@ -488,9 +550,11 @@ Schema source：[EcoSpold02DataTypes.xsd](original/Schemas/datasets/EcoSpold02Da
 
 Local XML path：`TProperty/@sourceContextId`；ecoSpold1 mapping：`new`。
 
-| Type | Size | Required | Multiple occurrence | Multi language | Redundant master data |
-| --- | --- | --- | --- | --- | --- |
-| `TUuid` | 36 | No | No | No | No |
+| Type | Required | Multiple occurrence |
+| --- | --- | --- |
+| `TUuid` | No | No |
+
+Size：36；Multi language：No；Redundant master data：No。
 
 Reference to the context of the source.
 
@@ -504,9 +568,11 @@ Schema source：[EcoSpold02DataTypes.xsd](original/Schemas/datasets/EcoSpold02Da
 
 Local XML path：`TProperty/@sourceIdOverwrittenByChild`；ecoSpold1 mapping：`new`。
 
-| Type | Size | Required | Multiple occurrence | Multi language | Redundant master data |
-| --- | --- | --- | --- | --- | --- |
-| `boolean` | — | No | No | No | No |
+| Type | Required | Multiple occurrence |
+| --- | --- | --- |
+| `boolean` | No | No |
+
+Size：—；Multi language：No；Redundant master data：No。
 
 If a reference to a master data entity must be removed in a child dataset it is required to set the corresponding xxxOverwrittenByChild attribute to true. Otherwise the removed referenced will be interpreted as "Keep the Parent Value".
 
@@ -518,9 +584,11 @@ Schema source：[EcoSpold02DataTypes.xsd](original/Schemas/datasets/EcoSpold02Da
 
 Local XML path：`TProperty/@sourceYear`；ecoSpold1 mapping：`new`。
 
-| Type | Size | Required | Multiple occurrence | Multi language | Redundant master data |
-| --- | --- | --- | --- | --- | --- |
-| `TBaseString30` | 30 | No | No | No | Yes |
+| Type | Required | Multiple occurrence |
+| --- | --- | --- |
+| `TBaseString30` | No | No |
+
+Size：30；Multi language：No；Redundant master data：Yes。
 
 Indicates the year of publication and communication, respectively. For web-sites: last visited.
 
@@ -532,9 +600,11 @@ Schema source：[EcoSpold02DataTypes.xsd](original/Schemas/datasets/EcoSpold02Da
 
 Local XML path：`TProperty/@sourceFirstAuthor`；ecoSpold1 mapping：`new`。
 
-| Type | Size | Required | Multiple occurrence | Multi language | Redundant master data |
-| --- | --- | --- | --- | --- | --- |
-| `TBaseString40` | 40 | No | No | No | Yes |
+| Type | Required | Multiple occurrence |
+| --- | --- | --- |
+| `TBaseString40` | No | No |
+
+Size：40；Multi language：No；Redundant master data：Yes。
 
 Indicates the first author by surname and abbreviated name (e.g., Einstein A.). In case of measurement on site, oral communication, personal written communication and questionnaries ('sourceType'=4, 5, 6, 7) the name of the communicating person is mentioned here.
 
@@ -546,9 +616,11 @@ Schema source：[EcoSpold02DataTypes.xsd](original/Schemas/datasets/EcoSpold02Da
 
 Local XML path：`TProperty/comment`；ecoSpold1 mapping：`new`。
 
-| Type | Size | Required | Multiple occurrence | Multi language | Redundant master data |
-| --- | --- | --- | --- | --- | --- |
-| `TString32000` | 32000 | No | No | Yes | No |
+| Type | Required | Multiple occurrence |
+| --- | --- | --- |
+| `TString32000` | No | No |
+
+Size：32000；Multi language：Yes；Redundant master data：No。
 
 A general comment can be made about each individual property of a particular exchange.
 

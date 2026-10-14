@@ -22,9 +22,11 @@ XML 位置：`administrativeInformation/dataGeneratorAndPublication`。以 `acti
 
 局部 XML 位置：`TDataGeneratorAndPublication/@personId`；ecoSpold1 对照编号：`751`。
 
-| 类型 | 长度 | 必填 | 可重复 | 多语言 | 主数据冗余字段 |
-| --- | --- | --- | --- | --- | --- |
-| `TUuid` | 36 | 是 | 否 | 否 | 否 |
+| 类型 | 必填 | 可重复 |
+| --- | --- | --- |
+| `TUuid` | 是 | 否 |
+
+长度：36；多语言：否；主数据冗余字段：否。
 
 生成数据集的个人的 ID 编号。该编号必须对应于相应数据集中所列某个人的 ID 编号。
 
@@ -38,9 +40,11 @@ XML 位置：`administrativeInformation/dataGeneratorAndPublication`。以 `acti
 
 局部 XML 位置：`TDataGeneratorAndPublication/@personContextId`；ecoSpold1 对照编号：`new`。
 
-| 类型 | 长度 | 必填 | 可重复 | 多语言 | 主数据冗余字段 |
-| --- | --- | --- | --- | --- | --- |
-| `TUuid` | 36 | 否 | 否 | 否 | 否 |
+| 类型 | 必填 | 可重复 |
+| --- | --- | --- |
+| `TUuid` | 否 | 否 |
+
+长度：36；多语言：否；主数据冗余字段：否。
 
 引用该人员所属的上下文。
 
@@ -54,9 +58,11 @@ XML 位置：`administrativeInformation/dataGeneratorAndPublication`。以 `acti
 
 局部 XML 位置：`TDataGeneratorAndPublication/@personName`；ecoSpold1 对照编号：`new`。
 
-| 类型 | 长度 | 必填 | 可重复 | 多语言 | 主数据冗余字段 |
-| --- | --- | --- | --- | --- | --- |
-| `TBaseString40` | 40 | 是 | 否 | 否 | 是 |
+| 类型 | 必填 | 可重复 |
+| --- | --- | --- |
+| `TBaseString40` | 是 | 否 |
+
+长度：40；多语言：否；主数据冗余字段：是。
 
 人员的名和姓。
 
@@ -68,9 +74,11 @@ XML 位置：`administrativeInformation/dataGeneratorAndPublication`。以 `acti
 
 局部 XML 位置：`TDataGeneratorAndPublication/@personEmail`；ecoSpold1 对照编号：`new`。
 
-| 类型 | 长度 | 必填 | 可重复 | 多语言 | 主数据冗余字段 |
-| --- | --- | --- | --- | --- | --- |
-| `TBaseString80` | 80 | 是 | 否 | 否 | 是 |
+| 类型 | 必填 | 可重复 |
+| --- | --- | --- |
+| `TBaseString80` | 是 | 否 |
+
+长度：80；多语言：否；主数据冗余字段：是。
 
 人员的完整电子邮件地址。
 
@@ -82,9 +90,11 @@ XML 位置：`administrativeInformation/dataGeneratorAndPublication`。以 `acti
 
 局部 XML 位置：`TDataGeneratorAndPublication/@dataPublishedIn`；ecoSpold1 对照编号：`756`。
 
-| 类型 | 长度 | 必填 | 可重复 | 多语言 | 主数据冗余字段 |
-| --- | --- | --- | --- | --- | --- |
-| `integer` | — | 否 | 否 | 否 | 否 |
+| 类型 | 必填 | 可重复 |
+| --- | --- | --- |
+| `integer` | 否 | 否 |
+
+长度：—；多语言：否；主数据冗余字段：否。
 
 表示数据集是否已发布：未发布、部分发布或完整发布。
 
@@ -100,9 +110,11 @@ XML 位置：`administrativeInformation/dataGeneratorAndPublication`。以 `acti
 
 局部 XML 位置：`TDataGeneratorAndPublication/@publishedSourceId`；ecoSpold1 对照编号：`757`。
 
-| 类型 | 长度 | 必填 | 可重复 | 多语言 | 主数据冗余字段 |
-| --- | --- | --- | --- | --- | --- |
-| `TUuid` | 36 | 否 | 否 | 否 | 否 |
+| 类型 | 必填 | 可重复 |
+| --- | --- | --- |
+| `TUuid` | 否 | 否 |
+
+长度：36；多语言：否；主数据冗余字段：否。
 
 记录该数据集的报告的 ID 编号。
 
@@ -116,9 +128,11 @@ XML 位置：`administrativeInformation/dataGeneratorAndPublication`。以 `acti
 
 局部 XML 位置：`TDataGeneratorAndPublication/@publishedSourceContextId`；ecoSpold1 对照编号：`new`。
 
-| 类型 | 长度 | 必填 | 可重复 | 多语言 | 主数据冗余字段 |
-| --- | --- | --- | --- | --- | --- |
-| `TUuid` | 36 | 否 | 否 | 否 | 否 |
+| 类型 | 必填 | 可重复 |
+| --- | --- | --- |
+| `TUuid` | 否 | 否 |
+
+长度：36；多语言：否；主数据冗余字段：否。
 
 引用该已发布来源所属的上下文。
 
@@ -132,9 +146,11 @@ XML 位置：`administrativeInformation/dataGeneratorAndPublication`。以 `acti
 
 局部 XML 位置：`TDataGeneratorAndPublication/@publishedSourceIdOverwrittenByChild`；ecoSpold1 对照编号：`new`。
 
-| 类型 | 长度 | 必填 | 可重复 | 多语言 | 主数据冗余字段 |
-| --- | --- | --- | --- | --- | --- |
-| `boolean` | — | 否 | 否 | 否 | 否 |
+| 类型 | 必填 | 可重复 |
+| --- | --- | --- |
+| `boolean` | 否 | 否 |
+
+长度：—；多语言：否；主数据冗余字段：否。
 
 如果必须在子数据集中移除对某个主数据实体的引用，则必须将相应的 xxxOverwrittenByChild 属性设置为 true。否则，移除该引用将被解释为“保留父数据集的值”（Keep the Parent Value）。
 
@@ -146,9 +162,11 @@ XML 位置：`administrativeInformation/dataGeneratorAndPublication`。以 `acti
 
 局部 XML 位置：`TDataGeneratorAndPublication/@publishedSourceYear`；ecoSpold1 对照编号：`new`。
 
-| 类型 | 长度 | 必填 | 可重复 | 多语言 | 主数据冗余字段 |
-| --- | --- | --- | --- | --- | --- |
-| `TBaseString30` | 30 | 否 | 否 | 否 | 是 |
+| 类型 | 必填 | 可重复 |
+| --- | --- | --- |
+| `TBaseString30` | 否 | 否 |
+
+长度：30；多语言：否；主数据冗余字段：是。
 
 分别表示出版年份或沟通年份。对于网站，表示最后访问年份。
 
@@ -160,9 +178,11 @@ XML 位置：`administrativeInformation/dataGeneratorAndPublication`。以 `acti
 
 局部 XML 位置：`TDataGeneratorAndPublication/@publishedSourceFirstAuthor`；ecoSpold1 对照编号：`new`。
 
-| 类型 | 长度 | 必填 | 可重复 | 多语言 | 主数据冗余字段 |
-| --- | --- | --- | --- | --- | --- |
-| `TBaseString40` | 40 | 否 | 否 | 否 | 是 |
+| 类型 | 必填 | 可重复 |
+| --- | --- | --- |
+| `TBaseString40` | 否 | 否 |
+
+长度：40；多语言：否；主数据冗余字段：是。
 
 以姓和名字缩写标明第一作者，例如 Einstein A.。对于现场测量、口头沟通、个人书面沟通和问卷（'sourceType'=4, 5, 6, 7），这里填写沟通人员的姓名。
 
@@ -174,9 +194,11 @@ XML 位置：`administrativeInformation/dataGeneratorAndPublication`。以 `acti
 
 局部 XML 位置：`TDataGeneratorAndPublication/@pageNumbers`；ecoSpold1 对照编号：`762`。
 
-| 类型 | 长度 | 必填 | 可重复 | 多语言 | 主数据冗余字段 |
-| --- | --- | --- | --- | --- | --- |
-| `TBaseString30` | 30 | 否 | 否 | 否 | 否 |
+| 类型 | 必填 | 可重复 |
+| --- | --- | --- |
+| `TBaseString30` | 否 | 否 |
+
+长度：30；多语言：否；主数据冗余字段：否。
 
 若数据取自文章或较大型出版物的特定页面，则填写相关页码。
 
@@ -188,9 +210,11 @@ XML 位置：`administrativeInformation/dataGeneratorAndPublication`。以 `acti
 
 局部 XML 位置：`TDataGeneratorAndPublication/@isCopyrightProtected`；ecoSpold1 对照编号：`758`。
 
-| 类型 | 长度 | 必填 | 可重复 | 多语言 | 主数据冗余字段 |
-| --- | --- | --- | --- | --- | --- |
-| `boolean` | — | 是 | 否 | 否 | 否 |
+| 类型 | 必填 | 可重复 |
+| --- | --- | --- |
+| `boolean` | 是 | 否 |
+
+长度：—；多语言：否；主数据冗余字段：否。
 
 表示是否存在著作权。应相应填写 '1'（是）或 '0'（否）。
 
@@ -202,9 +226,11 @@ XML 位置：`administrativeInformation/dataGeneratorAndPublication`。以 `acti
 
 局部 XML 位置：`TDataGeneratorAndPublication/@accessRestrictedTo`；ecoSpold1 对照编号：`759`。
 
-| 类型 | 长度 | 必填 | 可重复 | 多语言 | 主数据冗余字段 |
-| --- | --- | --- | --- | --- | --- |
-| `integer` | — | 否 | 否 | 否 | 否 |
+| 类型 | 必填 | 可重复 |
+| --- | --- | --- |
+| `integer` | 否 | 否 |
+
+长度：—；多语言：否；主数据冗余字段：否。
 
 表示数据集可能存在的访问限制。
 
@@ -228,9 +254,11 @@ accessRestrictedTo=3：只有 'companyCode' 指定的组织和数据库管理员
 
 局部 XML 位置：`TDataGeneratorAndPublication/@companyId`；ecoSpold1 对照编号：`760`。
 
-| 类型 | 长度 | 必填 | 可重复 | 多语言 | 主数据冗余字段 |
-| --- | --- | --- | --- | --- | --- |
-| `TUuid` | 36 | 否 | 否 | 否 | 否 |
+| 类型 | 必填 | 可重复 |
+| --- | --- | --- |
+| `TUuid` | 否 | 否 |
+
+长度：36；多语言：否；主数据冗余字段：否。
 
 引用允许使用此数据集的组织／机构；数据集使用限于该组织／机构。
 
@@ -244,9 +272,11 @@ accessRestrictedTo=3：只有 'companyCode' 指定的组织和数据库管理员
 
 局部 XML 位置：`TDataGeneratorAndPublication/@companyContextId`；ecoSpold1 对照编号：`new`。
 
-| 类型 | 长度 | 必填 | 可重复 | 多语言 | 主数据冗余字段 |
-| --- | --- | --- | --- | --- | --- |
-| `TUuid` | 36 | 否 | 否 | 否 | 否 |
+| 类型 | 必填 | 可重复 |
+| --- | --- | --- |
+| `TUuid` | 否 | 否 |
+
+长度：36；多语言：否；主数据冗余字段：否。
 
 引用该公司所属的上下文。
 
@@ -260,9 +290,11 @@ accessRestrictedTo=3：只有 'companyCode' 指定的组织和数据库管理员
 
 局部 XML 位置：`TDataGeneratorAndPublication/@companyCode`；ecoSpold1 对照编号：`760`。
 
-| 类型 | 长度 | 必填 | 可重复 | 多语言 | 主数据冗余字段 |
-| --- | --- | --- | --- | --- | --- |
-| `TCompanyCode` | 7 | 否 | 否 | 否 | 是 |
+| 类型 | 必填 | 可重复 |
+| --- | --- | --- |
+| `TCompanyCode` | 否 | 否 |
+
+长度：7；多语言：否；主数据冗余字段：是。
 
 所引用公司（字段 3560）的可选 7 字母代码的纯文本值。
 
@@ -276,9 +308,11 @@ accessRestrictedTo=3：只有 'companyCode' 指定的组织和数据库管理员
 
 局部 XML 位置：`TDataGeneratorAndPublication/@companyIdOverwrittenByChild`；ecoSpold1 对照编号：`new`。
 
-| 类型 | 长度 | 必填 | 可重复 | 多语言 | 主数据冗余字段 |
-| --- | --- | --- | --- | --- | --- |
-| `boolean` | — | 否 | 否 | 否 | 否 |
+| 类型 | 必填 | 可重复 |
+| --- | --- | --- |
+| `boolean` | 否 | 否 |
+
+长度：—；多语言：否；主数据冗余字段：否。
 
 如果必须在子数据集中移除对某个主数据实体的引用，则必须将相应的 xxxOverwrittenByChild 属性设置为 true。否则，移除该引用将被解释为“保留父数据集的值”（Keep the Parent Value）。
 
@@ -300,9 +334,11 @@ Contains information about who collected, compiled or published the orginal data
 
 Local XML path：`TDataGeneratorAndPublication/@personId`；ecoSpold1 mapping：`751`。
 
-| Type | Size | Required | Multiple occurrence | Multi language | Redundant master data |
-| --- | --- | --- | --- | --- | --- |
-| `TUuid` | 36 | Yes | No | No | No |
+| Type | Required | Multiple occurrence |
+| --- | --- | --- |
+| `TUuid` | Yes | No |
+
+Size：36；Multi language：No；Redundant master data：No。
 
 ID number for the person that generated the dataset. It must correspond to an ID number of a person listed in the respective dataset.
 
@@ -316,9 +352,11 @@ Schema source：[EcoSpold02MetaInformation.xsd](original/Schemas/datasets/EcoSpo
 
 Local XML path：`TDataGeneratorAndPublication/@personContextId`；ecoSpold1 mapping：`new`。
 
-| Type | Size | Required | Multiple occurrence | Multi language | Redundant master data |
-| --- | --- | --- | --- | --- | --- |
-| `TUuid` | 36 | No | No | No | No |
+| Type | Required | Multiple occurrence |
+| --- | --- | --- |
+| `TUuid` | No | No |
+
+Size：36；Multi language：No；Redundant master data：No。
 
 Reference to the context of the person.
 
@@ -332,9 +370,11 @@ Schema source：[EcoSpold02MetaInformation.xsd](original/Schemas/datasets/EcoSpo
 
 Local XML path：`TDataGeneratorAndPublication/@personName`；ecoSpold1 mapping：`new`。
 
-| Type | Size | Required | Multiple occurrence | Multi language | Redundant master data |
-| --- | --- | --- | --- | --- | --- |
-| `TBaseString40` | 40 | Yes | No | No | Yes |
+| Type | Required | Multiple occurrence |
+| --- | --- | --- |
+| `TBaseString40` | Yes | No |
+
+Size：40；Multi language：No；Redundant master data：Yes。
 
 Name and surname of the person.
 
@@ -346,9 +386,11 @@ Schema source：[EcoSpold02MetaInformation.xsd](original/Schemas/datasets/EcoSpo
 
 Local XML path：`TDataGeneratorAndPublication/@personEmail`；ecoSpold1 mapping：`new`。
 
-| Type | Size | Required | Multiple occurrence | Multi language | Redundant master data |
-| --- | --- | --- | --- | --- | --- |
-| `TBaseString80` | 80 | Yes | No | No | Yes |
+| Type | Required | Multiple occurrence |
+| --- | --- | --- |
+| `TBaseString80` | Yes | No |
+
+Size：80；Multi language：No；Redundant master data：Yes。
 
 Complete email address of the person.
 
@@ -360,9 +402,11 @@ Schema source：[EcoSpold02MetaInformation.xsd](original/Schemas/datasets/EcoSpo
 
 Local XML path：`TDataGeneratorAndPublication/@dataPublishedIn`；ecoSpold1 mapping：`756`。
 
-| Type | Size | Required | Multiple occurrence | Multi language | Redundant master data |
-| --- | --- | --- | --- | --- | --- |
-| `integer` | — | No | No | No | No |
+| Type | Required | Multiple occurrence |
+| --- | --- | --- |
+| `integer` | No | No |
+
+Size：—；Multi language：No；Redundant master data：No。
 
 Indicates whether the dataset has been published (not, partly, entirely).
 
@@ -378,9 +422,11 @@ Schema source：[EcoSpold02MetaInformation.xsd](original/Schemas/datasets/EcoSpo
 
 Local XML path：`TDataGeneratorAndPublication/@publishedSourceId`；ecoSpold1 mapping：`757`。
 
-| Type | Size | Required | Multiple occurrence | Multi language | Redundant master data |
-| --- | --- | --- | --- | --- | --- |
-| `TUuid` | 36 | No | No | No | No |
+| Type | Required | Multiple occurrence |
+| --- | --- | --- |
+| `TUuid` | No | No |
+
+Size：36；Multi language：No；Redundant master data：No。
 
 ID number for the report in which the dataset is documented.
 
@@ -394,9 +440,11 @@ Schema source：[EcoSpold02MetaInformation.xsd](original/Schemas/datasets/EcoSpo
 
 Local XML path：`TDataGeneratorAndPublication/@publishedSourceContextId`；ecoSpold1 mapping：`new`。
 
-| Type | Size | Required | Multiple occurrence | Multi language | Redundant master data |
-| --- | --- | --- | --- | --- | --- |
-| `TUuid` | 36 | No | No | No | No |
+| Type | Required | Multiple occurrence |
+| --- | --- | --- |
+| `TUuid` | No | No |
+
+Size：36；Multi language：No；Redundant master data：No。
 
 Reference to the context of the published source.
 
@@ -410,9 +458,11 @@ Schema source：[EcoSpold02MetaInformation.xsd](original/Schemas/datasets/EcoSpo
 
 Local XML path：`TDataGeneratorAndPublication/@publishedSourceIdOverwrittenByChild`；ecoSpold1 mapping：`new`。
 
-| Type | Size | Required | Multiple occurrence | Multi language | Redundant master data |
-| --- | --- | --- | --- | --- | --- |
-| `boolean` | — | No | No | No | No |
+| Type | Required | Multiple occurrence |
+| --- | --- | --- |
+| `boolean` | No | No |
+
+Size：—；Multi language：No；Redundant master data：No。
 
 If a reference to a master data entity must be removed in a child dataset it is required to set the corresponding xxxOverwrittenByChild attribute to true. Otherwise the removed referenced will be interpreted as "Keep the Parent Value".
 
@@ -424,9 +474,11 @@ Schema source：[EcoSpold02MetaInformation.xsd](original/Schemas/datasets/EcoSpo
 
 Local XML path：`TDataGeneratorAndPublication/@publishedSourceYear`；ecoSpold1 mapping：`new`。
 
-| Type | Size | Required | Multiple occurrence | Multi language | Redundant master data |
-| --- | --- | --- | --- | --- | --- |
-| `TBaseString30` | 30 | No | No | No | Yes |
+| Type | Required | Multiple occurrence |
+| --- | --- | --- |
+| `TBaseString30` | No | No |
+
+Size：30；Multi language：No；Redundant master data：Yes。
 
 Indicates the year of publication and communication, respectively. For web-sites: last visited.
 
@@ -438,9 +490,11 @@ Schema source：[EcoSpold02MetaInformation.xsd](original/Schemas/datasets/EcoSpo
 
 Local XML path：`TDataGeneratorAndPublication/@publishedSourceFirstAuthor`；ecoSpold1 mapping：`new`。
 
-| Type | Size | Required | Multiple occurrence | Multi language | Redundant master data |
-| --- | --- | --- | --- | --- | --- |
-| `TBaseString40` | 40 | No | No | No | Yes |
+| Type | Required | Multiple occurrence |
+| --- | --- | --- |
+| `TBaseString40` | No | No |
+
+Size：40；Multi language：No；Redundant master data：Yes。
 
 Indicates the first author by surname and abbreviated name (e.g., Einstein A.). In case of measurement on site, oral communication, personal written communication and questionnaries ('sourceType'=4, 5, 6, 7) the name of the communicating person is mentioned here.
 
@@ -452,9 +506,11 @@ Schema source：[EcoSpold02MetaInformation.xsd](original/Schemas/datasets/EcoSpo
 
 Local XML path：`TDataGeneratorAndPublication/@pageNumbers`；ecoSpold1 mapping：`762`。
 
-| Type | Size | Required | Multiple occurrence | Multi language | Redundant master data |
-| --- | --- | --- | --- | --- | --- |
-| `TBaseString30` | 30 | No | No | No | No |
+| Type | Required | Multiple occurrence |
+| --- | --- | --- |
+| `TBaseString30` | No | No |
+
+Size：30；Multi language：No；Redundant master data：No。
 
 The relevant page numbers if the data are sourced on specific pages in an article or larger publication.
 
@@ -466,9 +522,11 @@ Schema source：[EcoSpold02MetaInformation.xsd](original/Schemas/datasets/EcoSpo
 
 Local XML path：`TDataGeneratorAndPublication/@isCopyrightProtected`；ecoSpold1 mapping：`758`。
 
-| Type | Size | Required | Multiple occurrence | Multi language | Redundant master data |
-| --- | --- | --- | --- | --- | --- |
-| `boolean` | — | Yes | No | No | No |
+| Type | Required | Multiple occurrence |
+| --- | --- | --- |
+| `boolean` | Yes | No |
+
+Size：—；Multi language：No；Redundant master data：No。
 
 Indicates whether or not a copyright exists. '1' (Yes) or '0' (No) should be entered correspondingly.
 
@@ -480,9 +538,11 @@ Schema source：[EcoSpold02MetaInformation.xsd](original/Schemas/datasets/EcoSpo
 
 Local XML path：`TDataGeneratorAndPublication/@accessRestrictedTo`；ecoSpold1 mapping：`759`。
 
-| Type | Size | Required | Multiple occurrence | Multi language | Redundant master data |
-| --- | --- | --- | --- | --- | --- |
-| `integer` | — | No | No | No | No |
+| Type | Required | Multiple occurrence |
+| --- | --- | --- |
+| `integer` | No | No |
+
+Size：—；Multi language：No；Redundant master data：No。
 
 Indicates possible access restrictions for the dataset.
 
@@ -506,9 +566,11 @@ Schema source：[EcoSpold02MetaInformation.xsd](original/Schemas/datasets/EcoSpo
 
 Local XML path：`TDataGeneratorAndPublication/@companyId`；ecoSpold1 mapping：`760`。
 
-| Type | Size | Required | Multiple occurrence | Multi language | Redundant master data |
-| --- | --- | --- | --- | --- | --- |
-| `TUuid` | 36 | No | No | No | No |
+| Type | Required | Multiple occurrence |
+| --- | --- | --- |
+| `TUuid` | No | No |
+
+Size：36；Multi language：No；Redundant master data：No。
 
 Reference to an organisation/institute that the use of this dataset is restricted to.
 
@@ -522,9 +584,11 @@ Schema source：[EcoSpold02MetaInformation.xsd](original/Schemas/datasets/EcoSpo
 
 Local XML path：`TDataGeneratorAndPublication/@companyContextId`；ecoSpold1 mapping：`new`。
 
-| Type | Size | Required | Multiple occurrence | Multi language | Redundant master data |
-| --- | --- | --- | --- | --- | --- |
-| `TUuid` | 36 | No | No | No | No |
+| Type | Required | Multiple occurrence |
+| --- | --- | --- |
+| `TUuid` | No | No |
+
+Size：36；Multi language：No；Redundant master data：No。
 
 Reference to the context of the company.
 
@@ -538,9 +602,11 @@ Schema source：[EcoSpold02MetaInformation.xsd](original/Schemas/datasets/EcoSpo
 
 Local XML path：`TDataGeneratorAndPublication/@companyCode`；ecoSpold1 mapping：`760`。
 
-| Type | Size | Required | Multiple occurrence | Multi language | Redundant master data |
-| --- | --- | --- | --- | --- | --- |
-| `TCompanyCode` | 7 | No | No | No | Yes |
+| Type | Required | Multiple occurrence |
+| --- | --- | --- |
+| `TCompanyCode` | No | No |
+
+Size：7；Multi language：No；Redundant master data：Yes。
 
 Optional 7 letter code plaintext of the referenced company (field 3560)
 
@@ -554,9 +620,11 @@ Schema source：[EcoSpold02MetaInformation.xsd](original/Schemas/datasets/EcoSpo
 
 Local XML path：`TDataGeneratorAndPublication/@companyIdOverwrittenByChild`；ecoSpold1 mapping：`new`。
 
-| Type | Size | Required | Multiple occurrence | Multi language | Redundant master data |
-| --- | --- | --- | --- | --- | --- |
-| `boolean` | — | No | No | No | No |
+| Type | Required | Multiple occurrence |
+| --- | --- | --- |
+| `boolean` | No | No |
+
+Size：—；Multi language：No；Redundant master data：No。
 
 If a reference to a master data entity must be removed in a child dataset it is required to set the corresponding xxxOverwrittenByChild attribute to true. Otherwise the removed referenced will be interpreted as "Keep the Parent Value".
 

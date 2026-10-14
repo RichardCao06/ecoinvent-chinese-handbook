@@ -26,9 +26,11 @@ XML 位置：`flowData/parameter`。以 `activityDescription/`、`flowData/`、`
 
 局部 XML 位置：`TParameter/name`；ecoSpold1 对照编号：`new`。
 
-| 类型 | 长度 | 必填 | 可重复 | 多语言 | 主数据冗余字段 |
-| --- | --- | --- | --- | --- | --- |
-| `TString80` | 80 | 是 | 否 | 是 | 是 |
+| 类型 | 必填 | 可重复 |
+| --- | --- | --- |
+| `TString80` | 是 | 否 |
+
+长度：80；多语言：是；主数据冗余字段：是。
 
 参数的描述性名称。
 
@@ -40,9 +42,11 @@ XML 位置：`flowData/parameter`。以 `activityDescription/`、`flowData/`、`
 
 局部 XML 位置：`TParameter/@parameterId`；ecoSpold1 对照编号：`new`。
 
-| 类型 | 长度 | 必填 | 可重复 | 多语言 | 主数据冗余字段 |
-| --- | --- | --- | --- | --- | --- |
-| `TUuid` | 36 | 是 | 否 | 否 | 否 |
+| 类型 | 必填 | 可重复 |
+| --- | --- | --- |
+| `TUuid` | 是 | 否 |
+
+长度：36；多语言：否；主数据冗余字段：否。
 
 对有效主数据参数的引用。
 
@@ -54,9 +58,11 @@ XML 位置：`flowData/parameter`。以 `activityDescription/`、`flowData/`、`
 
 局部 XML 位置：`TParameter/@parameterContextId`；ecoSpold1 对照编号：`new`。
 
-| 类型 | 长度 | 必填 | 可重复 | 多语言 | 主数据冗余字段 |
-| --- | --- | --- | --- | --- | --- |
-| `TUuid` | 36 | 否 | 否 | 否 | 否 |
+| 类型 | 必填 | 可重复 |
+| --- | --- | --- |
+| `TUuid` | 否 | 否 |
+
+长度：36；多语言：否；主数据冗余字段：否。
 
 对参数所属上下文的引用。
 
@@ -70,9 +76,11 @@ XML 位置：`flowData/parameter`。以 `activityDescription/`、`flowData/`、`
 
 局部 XML 位置：`TParameter/@amount`；ecoSpold1 对照编号：`new`。
 
-| 类型 | 长度 | 必填 | 可重复 | 多语言 | 主数据冗余字段 |
-| --- | --- | --- | --- | --- | --- |
-| `TFloatNumber` | — | 是 | 否 | 否 | 否 |
+| 类型 | 必填 | 可重复 |
+| --- | --- | --- |
+| `TFloatNumber` | 是 | 否 |
+
+长度：—；多语言：否；主数据冗余字段：否。
 
 参数的当前值。
 
@@ -84,9 +92,11 @@ XML 位置：`flowData/parameter`。以 `activityDescription/`、`flowData/`、`
 
 局部 XML 位置：`TParameter/@unitId`；ecoSpold1 对照编号：`3706`。
 
-| 类型 | 长度 | 必填 | 可重复 | 多语言 | 主数据冗余字段 |
-| --- | --- | --- | --- | --- | --- |
-| `TUuid` | 36 | 否 | 否 | 否 | 是 |
+| 类型 | 必填 | 可重复 |
+| --- | --- | --- |
+| `TUuid` | 否 | 否 |
+
+长度：36；多语言：否；主数据冗余字段：是。
 
 对参数数量单位的引用。
 
@@ -98,9 +108,11 @@ XML 位置：`flowData/parameter`。以 `activityDescription/`、`flowData/`、`
 
 局部 XML 位置：`TParameter/@unitContextId`；ecoSpold1 对照编号：`new`。
 
-| 类型 | 长度 | 必填 | 可重复 | 多语言 | 主数据冗余字段 |
-| --- | --- | --- | --- | --- | --- |
-| `TUuid` | 36 | 否 | 否 | 否 | 是 |
+| 类型 | 必填 | 可重复 |
+| --- | --- | --- |
+| `TUuid` | 否 | 否 |
+
+长度：36；多语言：否；主数据冗余字段：是。
 
 对单位所属上下文的引用。若省略此属性，则改用数据集自身的上下文。
 
@@ -112,9 +124,11 @@ XML 位置：`flowData/parameter`。以 `activityDescription/`、`flowData/`、`
 
 局部 XML 位置：`TParameter/unitName`；ecoSpold1 对照编号：`3706`。
 
-| 类型 | 长度 | 必填 | 可重复 | 多语言 | 主数据冗余字段 |
-| --- | --- | --- | --- | --- | --- |
-| `TString40` | 40 | 否 | 否 | 是 | 是 |
+| 类型 | 必填 | 可重复 |
+| --- | --- | --- |
+| `TString40` | 否 | 否 |
+
+长度：40；多语言：是；主数据冗余字段：是。
 
 参数数量的单位名称。
 
@@ -126,9 +140,11 @@ XML 位置：`flowData/parameter`。以 `activityDescription/`、`flowData/`、`
 
 局部 XML 位置：`TParameter/@variableName`；ecoSpold1 对照编号：`new`。
 
-| 类型 | 长度 | 必填 | 可重复 | 多语言 | 主数据冗余字段 |
-| --- | --- | --- | --- | --- | --- |
-| `TVariableName` | 40 | 否 | 否 | 否 | 否 |
+| 类型 | 必填 | 可重复 |
+| --- | --- | --- |
+| `TVariableName` | 否 | 否 |
+
+长度：40；多语言：否；主数据冗余字段：否。
 
 变量名是交换的简短名称，用于在数学关系（公式）中引用交换量。变量可包含字母、数字和下划线（\_）。变量名必须以字母（a-z）开头。变量名不区分大小写（calorific\_Value 与 Calorific\_value 相同）。
 
@@ -140,9 +156,11 @@ XML 位置：`flowData/parameter`。以 `activityDescription/`、`flowData/`、`
 
 局部 XML 位置：`TParameter/@mathematicalRelation`；ecoSpold1 对照编号：`new`。
 
-| 类型 | 长度 | 必填 | 可重复 | 多语言 | 主数据冗余字段 |
-| --- | --- | --- | --- | --- | --- |
-| `TBaseString32000` | 32000 | 否 | 否 | 否 | 否 |
+| 类型 | 必填 | 可重复 |
+| --- | --- | --- |
+| `TBaseString32000` | 否 | 否 |
+
+长度：32000；多语言：否；主数据冗余字段：否。
 
 定义数学公式，通过变量名或 REF 函数引用流、参数或属性的值。
 
@@ -156,9 +174,11 @@ XML 位置：`flowData/parameter`。以 `activityDescription/`、`flowData/`、`
 
 局部 XML 位置：`TParameter/@isCalculatedAmount`；ecoSpold1 对照编号：`new`。
 
-| 类型 | 长度 | 必填 | 可重复 | 多语言 | 主数据冗余字段 |
-| --- | --- | --- | --- | --- | --- |
-| `boolean` | — | 否 | 否 | 否 | 否 |
+| 类型 | 必填 | 可重复 |
+| --- | --- | --- |
+| `boolean` | 否 | 否 |
+
+长度：—；多语言：否；主数据冗余字段：否。
 
 若为 true，则 amount 字段的值为 mathematicalRelation 的计算值。
 
@@ -170,9 +190,11 @@ XML 位置：`flowData/parameter`。以 `activityDescription/`、`flowData/`、`
 
 局部 XML 位置：`TParameter/uncertainty`；ecoSpold1 对照编号：`new`。
 
-| 类型 | 长度 | 必填 | 可重复 | 多语言 | 主数据冗余字段 |
-| --- | --- | --- | --- | --- | --- |
-| `TUncertainty` | — | 否 | 否 | 否 | 否 |
+| 类型 | 必填 | 可重复 |
+| --- | --- | --- |
+| `TUncertainty` | 否 | 否 |
+
+长度：—；多语言：否；主数据冗余字段：否。
 
 参数数量的不确定性。
 
@@ -186,9 +208,11 @@ XML 位置：`flowData/parameter`。以 `activityDescription/`、`flowData/`、`
 
 局部 XML 位置：`TParameter/comment`；ecoSpold1 对照编号：`new`。
 
-| 类型 | 长度 | 必填 | 可重复 | 多语言 | 主数据冗余字段 |
-| --- | --- | --- | --- | --- | --- |
-| `TString32000` | 32000 | 否 | 否 | 是 | 否 |
+| 类型 | 必填 | 可重复 |
+| --- | --- | --- |
+| `TString32000` | 否 | 否 |
+
+长度：32000；多语言：是；主数据冗余字段：否。
 
 可对每个单独参数填写一般说明。
 
@@ -210,9 +234,11 @@ Dataset parameters for use in formulas.
 
 Local XML path：`TParameter/name`；ecoSpold1 mapping：`new`。
 
-| Type | Size | Required | Multiple occurrence | Multi language | Redundant master data |
-| --- | --- | --- | --- | --- | --- |
-| `TString80` | 80 | Yes | No | Yes | Yes |
+| Type | Required | Multiple occurrence |
+| --- | --- | --- |
+| `TString80` | Yes | No |
+
+Size：80；Multi language：Yes；Redundant master data：Yes。
 
 Descriptive name of the parameter.
 
@@ -224,9 +250,11 @@ Schema source：[EcoSpold02FlowData.xsd](original/Schemas/datasets/EcoSpold02Flo
 
 Local XML path：`TParameter/@parameterId`；ecoSpold1 mapping：`new`。
 
-| Type | Size | Required | Multiple occurrence | Multi language | Redundant master data |
-| --- | --- | --- | --- | --- | --- |
-| `TUuid` | 36 | Yes | No | No | No |
+| Type | Required | Multiple occurrence |
+| --- | --- | --- |
+| `TUuid` | Yes | No |
+
+Size：36；Multi language：No；Redundant master data：No。
 
 A reference to a valid master data parameter.
 
@@ -238,9 +266,11 @@ Schema source：[EcoSpold02FlowData.xsd](original/Schemas/datasets/EcoSpold02Flo
 
 Local XML path：`TParameter/@parameterContextId`；ecoSpold1 mapping：`new`。
 
-| Type | Size | Required | Multiple occurrence | Multi language | Redundant master data |
-| --- | --- | --- | --- | --- | --- |
-| `TUuid` | 36 | No | No | No | No |
+| Type | Required | Multiple occurrence |
+| --- | --- | --- |
+| `TUuid` | No | No |
+
+Size：36；Multi language：No；Redundant master data：No。
 
 Reference to the context of the parameter.
 
@@ -254,9 +284,11 @@ Schema source：[EcoSpold02FlowData.xsd](original/Schemas/datasets/EcoSpold02Flo
 
 Local XML path：`TParameter/@amount`；ecoSpold1 mapping：`new`。
 
-| Type | Size | Required | Multiple occurrence | Multi language | Redundant master data |
-| --- | --- | --- | --- | --- | --- |
-| `TFloatNumber` | — | Yes | No | No | No |
+| Type | Required | Multiple occurrence |
+| --- | --- | --- |
+| `TFloatNumber` | Yes | No |
+
+Size：—；Multi language：No；Redundant master data：No。
 
 The current value of the parameter.
 
@@ -268,9 +300,11 @@ Schema source：[EcoSpold02FlowData.xsd](original/Schemas/datasets/EcoSpold02Flo
 
 Local XML path：`TParameter/@unitId`；ecoSpold1 mapping：`3706`。
 
-| Type | Size | Required | Multiple occurrence | Multi language | Redundant master data |
-| --- | --- | --- | --- | --- | --- |
-| `TUuid` | 36 | No | No | No | Yes |
+| Type | Required | Multiple occurrence |
+| --- | --- | --- |
+| `TUuid` | No | No |
+
+Size：36；Multi language：No；Redundant master data：Yes。
 
 Reference to the unit of the parameter amount.
 
@@ -282,9 +316,11 @@ Schema source：[EcoSpold02FlowData.xsd](original/Schemas/datasets/EcoSpold02Flo
 
 Local XML path：`TParameter/@unitContextId`；ecoSpold1 mapping：`new`。
 
-| Type | Size | Required | Multiple occurrence | Multi language | Redundant master data |
-| --- | --- | --- | --- | --- | --- |
-| `TUuid` | 36 | No | No | No | Yes |
+| Type | Required | Multiple occurrence |
+| --- | --- | --- |
+| `TUuid` | No | No |
+
+Size：36；Multi language：No；Redundant master data：Yes。
 
 Reference to the context of the unit. If this attribute is omitted the context of the dataset itself will be used instead.
 
@@ -296,9 +332,11 @@ Schema source：[EcoSpold02FlowData.xsd](original/Schemas/datasets/EcoSpold02Flo
 
 Local XML path：`TParameter/unitName`；ecoSpold1 mapping：`3706`。
 
-| Type | Size | Required | Multiple occurrence | Multi language | Redundant master data |
-| --- | --- | --- | --- | --- | --- |
-| `TString40` | 40 | No | No | Yes | Yes |
+| Type | Required | Multiple occurrence |
+| --- | --- | --- |
+| `TString40` | No | No |
+
+Size：40；Multi language：Yes；Redundant master data：Yes。
 
 Unit name of the parameter amount.
 
@@ -310,9 +348,11 @@ Schema source：[EcoSpold02FlowData.xsd](original/Schemas/datasets/EcoSpold02Flo
 
 Local XML path：`TParameter/@variableName`；ecoSpold1 mapping：`new`。
 
-| Type | Size | Required | Multiple occurrence | Multi language | Redundant master data |
-| --- | --- | --- | --- | --- | --- |
-| `TVariableName` | 40 | No | No | No | No |
+| Type | Required | Multiple occurrence |
+| --- | --- | --- |
+| `TVariableName` | No | No |
+
+Size：40；Multi language：No；Redundant master data：No。
 
 The variable name is a short name for the exchange, used when refering to the exchange amount in mathematical relations (formulas). Variables may contain characters, numbers and underscores (\_). Variable names must start with a character (a-z). Variable names are not case sensitive (calorific\_Value equals Calorific\_value).
 
@@ -324,9 +364,11 @@ Schema source：[EcoSpold02FlowData.xsd](original/Schemas/datasets/EcoSpold02Flo
 
 Local XML path：`TParameter/@mathematicalRelation`；ecoSpold1 mapping：`new`。
 
-| Type | Size | Required | Multiple occurrence | Multi language | Redundant master data |
-| --- | --- | --- | --- | --- | --- |
-| `TBaseString32000` | 32000 | No | No | No | No |
+| Type | Required | Multiple occurrence |
+| --- | --- | --- |
+| `TBaseString32000` | No | No |
+
+Size：32000；Multi language：No；Redundant master data：No。
 
 Defines a mathematical formula with references to values of flows, parameters or properties by variable names or REF function.
 
@@ -340,9 +382,11 @@ Schema source：[EcoSpold02FlowData.xsd](original/Schemas/datasets/EcoSpold02Flo
 
 Local XML path：`TParameter/@isCalculatedAmount`；ecoSpold1 mapping：`new`。
 
-| Type | Size | Required | Multiple occurrence | Multi language | Redundant master data |
-| --- | --- | --- | --- | --- | --- |
-| `boolean` | — | No | No | No | No |
+| Type | Required | Multiple occurrence |
+| --- | --- | --- |
+| `boolean` | No | No |
+
+Size：—；Multi language：No；Redundant master data：No。
 
 If true the value of the amount field is the calculated value of the mathematicalRelation.
 
@@ -354,9 +398,11 @@ Schema source：[EcoSpold02FlowData.xsd](original/Schemas/datasets/EcoSpold02Flo
 
 Local XML path：`TParameter/uncertainty`；ecoSpold1 mapping：`new`。
 
-| Type | Size | Required | Multiple occurrence | Multi language | Redundant master data |
-| --- | --- | --- | --- | --- | --- |
-| `TUncertainty` | — | No | No | No | No |
+| Type | Required | Multiple occurrence |
+| --- | --- | --- |
+| `TUncertainty` | No | No |
+
+Size：—；Multi language：No；Redundant master data：No。
 
 Uncertainty of the parameter amount.
 
@@ -370,9 +416,11 @@ Schema source：[EcoSpold02FlowData.xsd](original/Schemas/datasets/EcoSpold02Flo
 
 Local XML path：`TParameter/comment`；ecoSpold1 mapping：`new`。
 
-| Type | Size | Required | Multiple occurrence | Multi language | Redundant master data |
-| --- | --- | --- | --- | --- | --- |
-| `TString32000` | 32000 | No | No | Yes | No |
+| Type | Required | Multiple occurrence |
+| --- | --- | --- |
+| `TString32000` | No | No |
+
+Size：32000；Multi language：Yes；Redundant master data：No。
 
 A general comment can be made about each individual parameter.
 

@@ -146,9 +146,10 @@ for section in SOURCE['sections']:
             local = '/'.join([sid] + s['nested'] + [f['name']])
             page += [f'### `{f["name"]}` · FieldID {fid} <a href="#{anchor}" id="{anchor}"></a>', '',
                      f'{"局部 XML 位置" if zh else "Local XML path"}：`{local}`；{"ecoSpold1 对照编号" if zh else "ecoSpold1 mapping"}：{code(f["spold1_id"])}。', '',
-                     '| ' + ('类型 | 长度 | 必填 | 可重复 | 多语言 | 主数据冗余字段' if zh else 'Type | Size | Required | Multiple occurrence | Multi language | Redundant master data') + ' |',
-                     '| --- | --- | --- | --- | --- | --- |',
-                     '| ' + ' | '.join(cell(v) for v in [code(f['type']), f['size'] or '—', yn(f['required'], zh), yn(f['multiple'], zh), yn(f['multilingual'], zh), yn(f['redundant_master_data'], zh)]) + ' |', '']
+                     '| ' + ('类型 | 必填 | 可重复' if zh else 'Type | Required | Multiple occurrence') + ' |',
+                     '| --- | --- | --- |',
+                     '| ' + ' | '.join(cell(v) for v in [code(f['type']), yn(f['required'], zh), yn(f['multiple'], zh)]) + ' |', '',
+                     f'{"长度" if zh else "Size"}：{f["size"] or "—"}；{"多语言" if zh else "Multi language"}：{yn(f["multilingual"], zh)}；{"主数据冗余字段" if zh else "Redundant master data"}：{yn(f["redundant_master_data"], zh)}。', '']
             for key in f['description_blocks']:
                 page += [prose(text_map[key]), '']
             if f.get('options_block'):

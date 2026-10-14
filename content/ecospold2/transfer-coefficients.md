@@ -22,9 +22,11 @@ XML 位置：`…/transferCoefficient`。以 `activityDescription/`、`flowData/
 
 局部 XML 位置：`TTransferCoefficient/@exchangeId`；ecoSpold1 对照编号：`new`。
 
-| 类型 | 长度 | 必填 | 可重复 | 多语言 | 主数据冗余字段 |
-| --- | --- | --- | --- | --- | --- |
-| `TUuid` | 36 | 是 | 否 | 否 | 否 |
+| 类型 | 必填 | 可重复 |
+| --- | --- | --- |
+| `TUuid` | 是 | 否 |
+
+长度：36；多语言：否；主数据冗余字段：否。
 
 引用某个交换的 UUID。
 
@@ -36,9 +38,11 @@ XML 位置：`…/transferCoefficient`。以 `activityDescription/`、`flowData/
 
 局部 XML 位置：`TTransferCoefficient/@amount`；ecoSpold1 对照编号：`new`。
 
-| 类型 | 长度 | 必填 | 可重复 | 多语言 | 主数据冗余字段 |
-| --- | --- | --- | --- | --- | --- |
-| `TFloatNumber` | — | 是 | 否 | 否 | 否 |
+| 类型 | 必填 | 可重复 |
+| --- | --- | --- |
+| `TFloatNumber` | 是 | 否 |
+
+长度：—；多语言：否；主数据冗余字段：否。
 
 应将转移系数的数值与所引用交换的数量相乘。
 
@@ -50,9 +54,11 @@ XML 位置：`…/transferCoefficient`。以 `activityDescription/`、`flowData/
 
 局部 XML 位置：`TTransferCoefficient/@mathematicalRelation`；ecoSpold1 对照编号：`new`。
 
-| 类型 | 长度 | 必填 | 可重复 | 多语言 | 主数据冗余字段 |
-| --- | --- | --- | --- | --- | --- |
-| `TBaseString32000` | 32000 | 否 | 否 | 否 | 否 |
+| 类型 | 必填 | 可重复 |
+| --- | --- | --- |
+| `TBaseString32000` | 否 | 否 |
+
+长度：32000；多语言：否；主数据冗余字段：否。
 
 定义一个数学公式，通过变量名或 REF 函数引用流、参数或属性的数值。
 
@@ -66,9 +72,11 @@ XML 位置：`…/transferCoefficient`。以 `activityDescription/`、`flowData/
 
 局部 XML 位置：`TTransferCoefficient/@isCalculatedAmount`；ecoSpold1 对照编号：`new`。
 
-| 类型 | 长度 | 必填 | 可重复 | 多语言 | 主数据冗余字段 |
-| --- | --- | --- | --- | --- | --- |
-| `boolean` | — | 否 | 否 | 否 | 否 |
+| 类型 | 必填 | 可重复 |
+| --- | --- | --- |
+| `boolean` | 否 | 否 |
+
+长度：—；多语言：否；主数据冗余字段：否。
 
 如果为 true，则 amount 字段的值为 mathematicalRelation 的计算值。
 
@@ -80,9 +88,11 @@ XML 位置：`…/transferCoefficient`。以 `activityDescription/`、`flowData/
 
 局部 XML 位置：`TTransferCoefficient/uncertainty`；ecoSpold1 对照编号：`new`。
 
-| 类型 | 长度 | 必填 | 可重复 | 多语言 | 主数据冗余字段 |
-| --- | --- | --- | --- | --- | --- |
-| `TUncertainty` | — | 否 | 否 | 否 | 否 |
+| 类型 | 必填 | 可重复 |
+| --- | --- | --- |
+| `TUncertainty` | 否 | 否 |
+
+长度：—；多语言：否；主数据冗余字段：否。
 
 转移系数数值的不确定性。
 
@@ -96,9 +106,11 @@ XML 位置：`…/transferCoefficient`。以 `activityDescription/`、`flowData/
 
 局部 XML 位置：`TTransferCoefficient/@sourceId`；ecoSpold1 对照编号：`new`。
 
-| 类型 | 长度 | 必填 | 可重复 | 多语言 | 主数据冗余字段 |
-| --- | --- | --- | --- | --- | --- |
-| `TUuid` | 36 | 否 | 否 | 否 | 否 |
+| 类型 | 必填 | 可重复 |
+| --- | --- | --- |
+| `TUuid` | 否 | 否 |
+
+长度：36；多语言：否；主数据冗余字段：否。
 
 对有效来源的引用。
 
@@ -112,9 +124,11 @@ XML 位置：`…/transferCoefficient`。以 `activityDescription/`、`flowData/
 
 局部 XML 位置：`TTransferCoefficient/@sourceContextId`；ecoSpold1 对照编号：`new`。
 
-| 类型 | 长度 | 必填 | 可重复 | 多语言 | 主数据冗余字段 |
-| --- | --- | --- | --- | --- | --- |
-| `TUuid` | 36 | 否 | 否 | 否 | 否 |
+| 类型 | 必填 | 可重复 |
+| --- | --- | --- |
+| `TUuid` | 否 | 否 |
+
+长度：36；多语言：否；主数据冗余字段：否。
 
 对来源所属上下文的引用。
 
@@ -128,9 +142,11 @@ XML 位置：`…/transferCoefficient`。以 `activityDescription/`、`flowData/
 
 局部 XML 位置：`TTransferCoefficient/@sourceIdOverwrittenByChild`；ecoSpold1 对照编号：`new`。
 
-| 类型 | 长度 | 必填 | 可重复 | 多语言 | 主数据冗余字段 |
-| --- | --- | --- | --- | --- | --- |
-| `boolean` | — | 否 | 否 | 否 | 否 |
+| 类型 | 必填 | 可重复 |
+| --- | --- | --- |
+| `boolean` | 否 | 否 |
+
+长度：—；多语言：否；主数据冗余字段：否。
 
 如果必须在子数据集中移除对某个主数据实体的引用，则必须将相应的 xxxOverwrittenByChild 属性设置为 true。否则，移除该引用会被解释为“保留父数据集的值”（Keep the Parent Value）。
 
@@ -142,9 +158,11 @@ XML 位置：`…/transferCoefficient`。以 `activityDescription/`、`flowData/
 
 局部 XML 位置：`TTransferCoefficient/@sourceYear`；ecoSpold1 对照编号：`new`。
 
-| 类型 | 长度 | 必填 | 可重复 | 多语言 | 主数据冗余字段 |
-| --- | --- | --- | --- | --- | --- |
-| `TBaseString30` | 30 | 否 | 否 | 否 | 是 |
+| 类型 | 必填 | 可重复 |
+| --- | --- | --- |
+| `TBaseString30` | 否 | 否 |
+
+长度：30；多语言：否；主数据冗余字段：是。
 
 分别注明出版年份或信息交流年份。对于网站，填写最后访问的年份。
 
@@ -156,9 +174,11 @@ XML 位置：`…/transferCoefficient`。以 `activityDescription/`、`flowData/
 
 局部 XML 位置：`TTransferCoefficient/@sourceFirstAuthor`；ecoSpold1 对照编号：`new`。
 
-| 类型 | 长度 | 必填 | 可重复 | 多语言 | 主数据冗余字段 |
-| --- | --- | --- | --- | --- | --- |
-| `TBaseString40` | 40 | 否 | 否 | 否 | 是 |
+| 类型 | 必填 | 可重复 |
+| --- | --- | --- |
+| `TBaseString40` | 否 | 否 |
+
+长度：40；多语言：否；主数据冗余字段：是。
 
 以姓氏和名字缩写注明第一作者（例如 Einstein A.）。对于现场测量、口头交流、个人书面交流和问卷调查（sourceType=4, 5, 6, 7），此处填写提供信息的人员姓名。
 
@@ -170,9 +190,11 @@ XML 位置：`…/transferCoefficient`。以 `activityDescription/`、`flowData/
 
 局部 XML 位置：`TTransferCoefficient/comment`；ecoSpold1 对照编号：`3792`。
 
-| 类型 | 长度 | 必填 | 可重复 | 多语言 | 主数据冗余字段 |
-| --- | --- | --- | --- | --- | --- |
-| `TString32000` | 32000 | 否 | 否 | 是 | 否 |
+| 类型 | 必填 | 可重复 |
+| --- | --- | --- |
+| `TString32000` | 否 | 否 |
+
+长度：32000；多语言：是；主数据冗余字段：否。
 
 可对每个单独的转移系数添加一般注释。
 
@@ -194,9 +216,11 @@ Transfer coefficients for calculating amounts of outputs from amounts of inputs.
 
 Local XML path：`TTransferCoefficient/@exchangeId`；ecoSpold1 mapping：`new`。
 
-| Type | Size | Required | Multiple occurrence | Multi language | Redundant master data |
-| --- | --- | --- | --- | --- | --- |
-| `TUuid` | 36 | Yes | No | No | No |
+| Type | Required | Multiple occurrence |
+| --- | --- | --- |
+| `TUuid` | Yes | No |
+
+Size：36；Multi language：No；Redundant master data：No。
 
 Reference to the UUID of an exchange.
 
@@ -208,9 +232,11 @@ Schema source：[EcoSpold02FlowData.xsd](original/Schemas/datasets/EcoSpold02Flo
 
 Local XML path：`TTransferCoefficient/@amount`；ecoSpold1 mapping：`new`。
 
-| Type | Size | Required | Multiple occurrence | Multi language | Redundant master data |
-| --- | --- | --- | --- | --- | --- |
-| `TFloatNumber` | — | Yes | No | No | No |
+| Type | Required | Multiple occurrence |
+| --- | --- | --- |
+| `TFloatNumber` | Yes | No |
+
+Size：—；Multi language：No；Redundant master data：No。
 
 The amount of the transfer coefficient is to be multiplied with the amount of this referenced exchange.
 
@@ -222,9 +248,11 @@ Schema source：[EcoSpold02FlowData.xsd](original/Schemas/datasets/EcoSpold02Flo
 
 Local XML path：`TTransferCoefficient/@mathematicalRelation`；ecoSpold1 mapping：`new`。
 
-| Type | Size | Required | Multiple occurrence | Multi language | Redundant master data |
-| --- | --- | --- | --- | --- | --- |
-| `TBaseString32000` | 32000 | No | No | No | No |
+| Type | Required | Multiple occurrence |
+| --- | --- | --- |
+| `TBaseString32000` | No | No |
+
+Size：32000；Multi language：No；Redundant master data：No。
 
 defines a mathematical formula with references to values of flows, parameters or properties by variable names or REF function
 
@@ -238,9 +266,11 @@ Schema source：[EcoSpold02FlowData.xsd](original/Schemas/datasets/EcoSpold02Flo
 
 Local XML path：`TTransferCoefficient/@isCalculatedAmount`；ecoSpold1 mapping：`new`。
 
-| Type | Size | Required | Multiple occurrence | Multi language | Redundant master data |
-| --- | --- | --- | --- | --- | --- |
-| `boolean` | — | No | No | No | No |
+| Type | Required | Multiple occurrence |
+| --- | --- | --- |
+| `boolean` | No | No |
+
+Size：—；Multi language：No；Redundant master data：No。
 
 If true the value of the amount field is the calculated value of the mathematicalRelation.
 
@@ -252,9 +282,11 @@ Schema source：[EcoSpold02FlowData.xsd](original/Schemas/datasets/EcoSpold02Flo
 
 Local XML path：`TTransferCoefficient/uncertainty`；ecoSpold1 mapping：`new`。
 
-| Type | Size | Required | Multiple occurrence | Multi language | Redundant master data |
-| --- | --- | --- | --- | --- | --- |
-| `TUncertainty` | — | No | No | No | No |
+| Type | Required | Multiple occurrence |
+| --- | --- | --- |
+| `TUncertainty` | No | No |
+
+Size：—；Multi language：No；Redundant master data：No。
 
 Uncertainty of the transfer coefficient amount.
 
@@ -268,9 +300,11 @@ Schema source：[EcoSpold02FlowData.xsd](original/Schemas/datasets/EcoSpold02Flo
 
 Local XML path：`TTransferCoefficient/@sourceId`；ecoSpold1 mapping：`new`。
 
-| Type | Size | Required | Multiple occurrence | Multi language | Redundant master data |
-| --- | --- | --- | --- | --- | --- |
-| `TUuid` | 36 | No | No | No | No |
+| Type | Required | Multiple occurrence |
+| --- | --- | --- |
+| `TUuid` | No | No |
+
+Size：36；Multi language：No；Redundant master data：No。
 
 A reference to a valid source.
 
@@ -284,9 +318,11 @@ Schema source：[EcoSpold02FlowData.xsd](original/Schemas/datasets/EcoSpold02Flo
 
 Local XML path：`TTransferCoefficient/@sourceContextId`；ecoSpold1 mapping：`new`。
 
-| Type | Size | Required | Multiple occurrence | Multi language | Redundant master data |
-| --- | --- | --- | --- | --- | --- |
-| `TUuid` | 36 | No | No | No | No |
+| Type | Required | Multiple occurrence |
+| --- | --- | --- |
+| `TUuid` | No | No |
+
+Size：36；Multi language：No；Redundant master data：No。
 
 Reference to the context of the source.
 
@@ -300,9 +336,11 @@ Schema source：[EcoSpold02FlowData.xsd](original/Schemas/datasets/EcoSpold02Flo
 
 Local XML path：`TTransferCoefficient/@sourceIdOverwrittenByChild`；ecoSpold1 mapping：`new`。
 
-| Type | Size | Required | Multiple occurrence | Multi language | Redundant master data |
-| --- | --- | --- | --- | --- | --- |
-| `boolean` | — | No | No | No | No |
+| Type | Required | Multiple occurrence |
+| --- | --- | --- |
+| `boolean` | No | No |
+
+Size：—；Multi language：No；Redundant master data：No。
 
 If a reference to a master data entity must be removed in a child dataset it is required to set the corresponding xxxOverwrittenByChild attribute to true. Otherwise the removed referenced will be interpreted as "Keep the Parent Value".
 
@@ -314,9 +352,11 @@ Schema source：[EcoSpold02FlowData.xsd](original/Schemas/datasets/EcoSpold02Flo
 
 Local XML path：`TTransferCoefficient/@sourceYear`；ecoSpold1 mapping：`new`。
 
-| Type | Size | Required | Multiple occurrence | Multi language | Redundant master data |
-| --- | --- | --- | --- | --- | --- |
-| `TBaseString30` | 30 | No | No | No | Yes |
+| Type | Required | Multiple occurrence |
+| --- | --- | --- |
+| `TBaseString30` | No | No |
+
+Size：30；Multi language：No；Redundant master data：Yes。
 
 Indicates the year of publication and communication, respectively. For web-sites: last visited.
 
@@ -328,9 +368,11 @@ Schema source：[EcoSpold02FlowData.xsd](original/Schemas/datasets/EcoSpold02Flo
 
 Local XML path：`TTransferCoefficient/@sourceFirstAuthor`；ecoSpold1 mapping：`new`。
 
-| Type | Size | Required | Multiple occurrence | Multi language | Redundant master data |
-| --- | --- | --- | --- | --- | --- |
-| `TBaseString40` | 40 | No | No | No | Yes |
+| Type | Required | Multiple occurrence |
+| --- | --- | --- |
+| `TBaseString40` | No | No |
+
+Size：40；Multi language：No；Redundant master data：Yes。
 
 Indicates the first author by surname and abbreviated name (e.g., Einstein A.). In case of measurement on site, oral communication, personal written communication and questionnaries ('sourceType'=4, 5, 6, 7) the name of the communicating person is mentioned here.
 
@@ -342,9 +384,11 @@ Schema source：[EcoSpold02FlowData.xsd](original/Schemas/datasets/EcoSpold02Flo
 
 Local XML path：`TTransferCoefficient/comment`；ecoSpold1 mapping：`3792`。
 
-| Type | Size | Required | Multiple occurrence | Multi language | Redundant master data |
-| --- | --- | --- | --- | --- | --- |
-| `TString32000` | 32000 | No | No | Yes | No |
+| Type | Required | Multiple occurrence |
+| --- | --- | --- |
+| `TString32000` | No | No |
+
+Size：32000；Multi language：Yes；Redundant master data：No。
 
 A general comment can be made about each individual transfer coefficient.
 

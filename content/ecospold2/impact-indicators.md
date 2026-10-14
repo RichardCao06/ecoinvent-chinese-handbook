@@ -26,9 +26,11 @@ XML 位置：`flowData/impactIndicator`。以 `activityDescription/`、`flowData
 
 局部 XML 位置：`TImpactIndicatorResult/@impactIndicatorId`；ecoSpold1 对照编号：`new`。
 
-| 类型 | 长度 | 必填 | 可重复 | 多语言 | 主数据冗余字段 |
-| --- | --- | --- | --- | --- | --- |
-| `TUuid` | 36 | 是 | 否 | 否 | 否 |
+| 类型 | 必填 | 可重复 |
+| --- | --- | --- |
+| `TUuid` | 是 | 否 |
+
+长度：36；多语言：否；主数据冗余字段：否。
 
 对影响指标的引用。
 
@@ -40,9 +42,11 @@ XML 位置：`flowData/impactIndicator`。以 `activityDescription/`、`flowData
 
 局部 XML 位置：`TImpactIndicatorResult/@impactIndicatorContextId`；ecoSpold1 对照编号：`new`。
 
-| 类型 | 长度 | 必填 | 可重复 | 多语言 | 主数据冗余字段 |
-| --- | --- | --- | --- | --- | --- |
-| `TUuid` | 36 | 否 | 否 | 否 | 否 |
+| 类型 | 必填 | 可重复 |
+| --- | --- | --- |
+| `TUuid` | 否 | 否 |
+
+长度：36；多语言：否；主数据冗余字段：否。
 
 对影响指标所属上下文的引用。若省略此属性，则改用数据集自身的上下文。
 
@@ -54,9 +58,11 @@ XML 位置：`flowData/impactIndicator`。以 `activityDescription/`、`flowData
 
 局部 XML 位置：`TImpactIndicatorResult/@impactMethodId`；ecoSpold1 对照编号：`new`。
 
-| 类型 | 长度 | 必填 | 可重复 | 多语言 | 主数据冗余字段 |
-| --- | --- | --- | --- | --- | --- |
-| `TUuid` | 36 | 是 | 否 | 否 | 否 |
+| 类型 | 必填 | 可重复 |
+| --- | --- | --- |
+| `TUuid` | 是 | 否 |
+
+长度：36；多语言：否；主数据冗余字段：否。
 
 对影响指标所属方法的引用。
 
@@ -68,9 +74,11 @@ XML 位置：`flowData/impactIndicator`。以 `activityDescription/`、`flowData
 
 局部 XML 位置：`TImpactIndicatorResult/@impactMethodContextId`；ecoSpold1 对照编号：`new`。
 
-| 类型 | 长度 | 必填 | 可重复 | 多语言 | 主数据冗余字段 |
-| --- | --- | --- | --- | --- | --- |
-| `TUuid` | 36 | 否 | 否 | 否 | 否 |
+| 类型 | 必填 | 可重复 |
+| --- | --- | --- |
+| `TUuid` | 否 | 否 |
+
+长度：36；多语言：否；主数据冗余字段：否。
 
 对影响评价方法所属上下文的引用。若省略此属性，则改用数据集自身的上下文。
 
@@ -82,9 +90,11 @@ XML 位置：`flowData/impactIndicator`。以 `activityDescription/`、`flowData
 
 局部 XML 位置：`TImpactIndicatorResult/impactMethodName`；ecoSpold1 对照编号：`new`。
 
-| 类型 | 长度 | 必填 | 可重复 | 多语言 | 主数据冗余字段 |
-| --- | --- | --- | --- | --- | --- |
-| `TString120` | 120 | 是 | 否 | 是 | 是 |
+| 类型 | 必填 | 可重复 |
+| --- | --- | --- |
+| `TString120` | 是 | 否 |
+
+长度：120；多语言：是；主数据冗余字段：是。
 
 影响评价方法的名称。
 
@@ -96,9 +106,11 @@ XML 位置：`flowData/impactIndicator`。以 `activityDescription/`、`flowData
 
 局部 XML 位置：`TImpactIndicatorResult/@impactCategoryId`；ecoSpold1 对照编号：`new`。
 
-| 类型 | 长度 | 必填 | 可重复 | 多语言 | 主数据冗余字段 |
-| --- | --- | --- | --- | --- | --- |
-| `TUuid` | 36 | 是 | 否 | 否 | 否 |
+| 类型 | 必填 | 可重复 |
+| --- | --- | --- |
+| `TUuid` | 是 | 否 |
+
+长度：36；多语言：否；主数据冗余字段：否。
 
 对影响类别所属方法的引用。
 
@@ -110,9 +122,11 @@ XML 位置：`flowData/impactIndicator`。以 `activityDescription/`、`flowData
 
 局部 XML 位置：`TImpactIndicatorResult/@impactCategoryContextId`；ecoSpold1 对照编号：`new`。
 
-| 类型 | 长度 | 必填 | 可重复 | 多语言 | 主数据冗余字段 |
-| --- | --- | --- | --- | --- | --- |
-| `TUuid` | 36 | 否 | 否 | 否 | 否 |
+| 类型 | 必填 | 可重复 |
+| --- | --- | --- |
+| `TUuid` | 否 | 否 |
+
+长度：36；多语言：否；主数据冗余字段：否。
 
 对影响类别所属上下文的引用。若省略此属性，则改用数据集自身的上下文。
 
@@ -124,9 +138,11 @@ XML 位置：`flowData/impactIndicator`。以 `activityDescription/`、`flowData
 
 局部 XML 位置：`TImpactIndicatorResult/impactCategoryName`；ecoSpold1 对照编号：`new`。
 
-| 类型 | 长度 | 必填 | 可重复 | 多语言 | 主数据冗余字段 |
-| --- | --- | --- | --- | --- | --- |
-| `TString120` | 120 | 是 | 否 | 是 | 是 |
+| 类型 | 必填 | 可重复 |
+| --- | --- | --- |
+| `TString120` | 是 | 否 |
+
+长度：120；多语言：是；主数据冗余字段：是。
 
 影响类别的名称。
 
@@ -138,9 +154,11 @@ XML 位置：`flowData/impactIndicator`。以 `activityDescription/`、`flowData
 
 局部 XML 位置：`TImpactIndicatorResult/@amount`；ecoSpold1 对照编号：`new`。
 
-| 类型 | 长度 | 必填 | 可重复 | 多语言 | 主数据冗余字段 |
-| --- | --- | --- | --- | --- | --- |
-| `TFloatNumber` | — | 是 | 否 | 否 | 否 |
+| 类型 | 必填 | 可重复 |
+| --- | --- | --- |
+| `TFloatNumber` | 是 | 否 |
+
+长度：—；多语言：否；主数据冗余字段：否。
 
 影响指标的值。
 
@@ -152,9 +170,11 @@ XML 位置：`flowData/impactIndicator`。以 `activityDescription/`、`flowData
 
 局部 XML 位置：`TImpactIndicatorResult/name`；ecoSpold1 对照编号：`new`。
 
-| 类型 | 长度 | 必填 | 可重复 | 多语言 | 主数据冗余字段 |
-| --- | --- | --- | --- | --- | --- |
-| `TString120` | 120 | 是 | 否 | 是 | 是 |
+| 类型 | 必填 | 可重复 |
+| --- | --- | --- |
+| `TString120` | 是 | 否 |
+
+长度：120；多语言：是；主数据冗余字段：是。
 
 影响指标的名称。
 
@@ -166,9 +186,11 @@ XML 位置：`flowData/impactIndicator`。以 `activityDescription/`、`flowData
 
 局部 XML 位置：`TImpactIndicatorResult/unitName`；ecoSpold1 对照编号：`new`。
 
-| 类型 | 长度 | 必填 | 可重复 | 多语言 | 主数据冗余字段 |
-| --- | --- | --- | --- | --- | --- |
-| `TString40` | 40 | 是 | 否 | 是 | 是 |
+| 类型 | 必填 | 可重复 |
+| --- | --- | --- |
+| `TString40` | 是 | 否 |
+
+长度：40；多语言：是；主数据冗余字段：是。
 
 影响指标数量的单位名称。
 
@@ -190,9 +212,11 @@ Calculated impact indicators
 
 Local XML path：`TImpactIndicatorResult/@impactIndicatorId`；ecoSpold1 mapping：`new`。
 
-| Type | Size | Required | Multiple occurrence | Multi language | Redundant master data |
-| --- | --- | --- | --- | --- | --- |
-| `TUuid` | 36 | Yes | No | No | No |
+| Type | Required | Multiple occurrence |
+| --- | --- | --- |
+| `TUuid` | Yes | No |
+
+Size：36；Multi language：No；Redundant master data：No。
 
 Reference to the impact indicator.
 
@@ -204,9 +228,11 @@ Schema source：[EcoSpold02FlowData.xsd](original/Schemas/datasets/EcoSpold02Flo
 
 Local XML path：`TImpactIndicatorResult/@impactIndicatorContextId`；ecoSpold1 mapping：`new`。
 
-| Type | Size | Required | Multiple occurrence | Multi language | Redundant master data |
-| --- | --- | --- | --- | --- | --- |
-| `TUuid` | 36 | No | No | No | No |
+| Type | Required | Multiple occurrence |
+| --- | --- | --- |
+| `TUuid` | No | No |
+
+Size：36；Multi language：No；Redundant master data：No。
 
 Reference to the context of the impact indicator. If this attribute is omitted the context of the dataset itself will be used instead.
 
@@ -218,9 +244,11 @@ Schema source：[EcoSpold02FlowData.xsd](original/Schemas/datasets/EcoSpold02Flo
 
 Local XML path：`TImpactIndicatorResult/@impactMethodId`；ecoSpold1 mapping：`new`。
 
-| Type | Size | Required | Multiple occurrence | Multi language | Redundant master data |
-| --- | --- | --- | --- | --- | --- |
-| `TUuid` | 36 | Yes | No | No | No |
+| Type | Required | Multiple occurrence |
+| --- | --- | --- |
+| `TUuid` | Yes | No |
+
+Size：36；Multi language：No；Redundant master data：No。
 
 Reference to the method of the impact indicator.
 
@@ -232,9 +260,11 @@ Schema source：[EcoSpold02FlowData.xsd](original/Schemas/datasets/EcoSpold02Flo
 
 Local XML path：`TImpactIndicatorResult/@impactMethodContextId`；ecoSpold1 mapping：`new`。
 
-| Type | Size | Required | Multiple occurrence | Multi language | Redundant master data |
-| --- | --- | --- | --- | --- | --- |
-| `TUuid` | 36 | No | No | No | No |
+| Type | Required | Multiple occurrence |
+| --- | --- | --- |
+| `TUuid` | No | No |
+
+Size：36；Multi language：No；Redundant master data：No。
 
 Reference to the context of the impact method. If this attribute is omitted the context of the dataset itself will be used instead.
 
@@ -246,9 +276,11 @@ Schema source：[EcoSpold02FlowData.xsd](original/Schemas/datasets/EcoSpold02Flo
 
 Local XML path：`TImpactIndicatorResult/impactMethodName`；ecoSpold1 mapping：`new`。
 
-| Type | Size | Required | Multiple occurrence | Multi language | Redundant master data |
-| --- | --- | --- | --- | --- | --- |
-| `TString120` | 120 | Yes | No | Yes | Yes |
+| Type | Required | Multiple occurrence |
+| --- | --- | --- |
+| `TString120` | Yes | No |
+
+Size：120；Multi language：Yes；Redundant master data：Yes。
 
 Name of the impact method.
 
@@ -260,9 +292,11 @@ Schema source：[EcoSpold02FlowData.xsd](original/Schemas/datasets/EcoSpold02Flo
 
 Local XML path：`TImpactIndicatorResult/@impactCategoryId`；ecoSpold1 mapping：`new`。
 
-| Type | Size | Required | Multiple occurrence | Multi language | Redundant master data |
-| --- | --- | --- | --- | --- | --- |
-| `TUuid` | 36 | Yes | No | No | No |
+| Type | Required | Multiple occurrence |
+| --- | --- | --- |
+| `TUuid` | Yes | No |
+
+Size：36；Multi language：No；Redundant master data：No。
 
 Reference to the method of the impact category.
 
@@ -274,9 +308,11 @@ Schema source：[EcoSpold02FlowData.xsd](original/Schemas/datasets/EcoSpold02Flo
 
 Local XML path：`TImpactIndicatorResult/@impactCategoryContextId`；ecoSpold1 mapping：`new`。
 
-| Type | Size | Required | Multiple occurrence | Multi language | Redundant master data |
-| --- | --- | --- | --- | --- | --- |
-| `TUuid` | 36 | No | No | No | No |
+| Type | Required | Multiple occurrence |
+| --- | --- | --- |
+| `TUuid` | No | No |
+
+Size：36；Multi language：No；Redundant master data：No。
 
 Reference to the context of the impact category. If this attribute is omitted the context of the dataset itself will be used instead.
 
@@ -288,9 +324,11 @@ Schema source：[EcoSpold02FlowData.xsd](original/Schemas/datasets/EcoSpold02Flo
 
 Local XML path：`TImpactIndicatorResult/impactCategoryName`；ecoSpold1 mapping：`new`。
 
-| Type | Size | Required | Multiple occurrence | Multi language | Redundant master data |
-| --- | --- | --- | --- | --- | --- |
-| `TString120` | 120 | Yes | No | Yes | Yes |
+| Type | Required | Multiple occurrence |
+| --- | --- | --- |
+| `TString120` | Yes | No |
+
+Size：120；Multi language：Yes；Redundant master data：Yes。
 
 Name of the impact category.
 
@@ -302,9 +340,11 @@ Schema source：[EcoSpold02FlowData.xsd](original/Schemas/datasets/EcoSpold02Flo
 
 Local XML path：`TImpactIndicatorResult/@amount`；ecoSpold1 mapping：`new`。
 
-| Type | Size | Required | Multiple occurrence | Multi language | Redundant master data |
-| --- | --- | --- | --- | --- | --- |
-| `TFloatNumber` | — | Yes | No | No | No |
+| Type | Required | Multiple occurrence |
+| --- | --- | --- |
+| `TFloatNumber` | Yes | No |
+
+Size：—；Multi language：No；Redundant master data：No。
 
 The value of the impact indicator.
 
@@ -316,9 +356,11 @@ Schema source：[EcoSpold02FlowData.xsd](original/Schemas/datasets/EcoSpold02Flo
 
 Local XML path：`TImpactIndicatorResult/name`；ecoSpold1 mapping：`new`。
 
-| Type | Size | Required | Multiple occurrence | Multi language | Redundant master data |
-| --- | --- | --- | --- | --- | --- |
-| `TString120` | 120 | Yes | No | Yes | Yes |
+| Type | Required | Multiple occurrence |
+| --- | --- | --- |
+| `TString120` | Yes | No |
+
+Size：120；Multi language：Yes；Redundant master data：Yes。
 
 Name of the impact indicator.
 
@@ -330,9 +372,11 @@ Schema source：[EcoSpold02FlowData.xsd](original/Schemas/datasets/EcoSpold02Flo
 
 Local XML path：`TImpactIndicatorResult/unitName`；ecoSpold1 mapping：`new`。
 
-| Type | Size | Required | Multiple occurrence | Multi language | Redundant master data |
-| --- | --- | --- | --- | --- | --- |
-| `TString40` | 40 | Yes | No | Yes | Yes |
+| Type | Required | Multiple occurrence |
+| --- | --- | --- |
+| `TString40` | Yes | No |
+
+Size：40；Multi language：Yes；Redundant master data：Yes。
 
 Unit name of the impact indicator amount.
 

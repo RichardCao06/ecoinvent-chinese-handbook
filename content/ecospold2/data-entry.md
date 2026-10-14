@@ -22,9 +22,11 @@ XML 位置：`administrativeInformation/dataEntryBy`。以 `activityDescription/
 
 局部 XML 位置：`TDataEntryBy/@personId`；ecoSpold1 对照编号：`302`。
 
-| 类型 | 长度 | 必填 | 可重复 | 多语言 | 主数据冗余字段 |
-| --- | --- | --- | --- | --- | --- |
-| `TUuid` | 36 | 是 | 否 | 否 | 否 |
+| 类型 | 必填 | 可重复 |
+| --- | --- | --- |
+| `TUuid` | 是 | 否 |
+
+长度：36；多语言：否；主数据冗余字段：否。
 
 编制数据集并将其录入数据库的人员的 ID 编号。
 
@@ -38,9 +40,11 @@ XML 位置：`administrativeInformation/dataEntryBy`。以 `activityDescription/
 
 局部 XML 位置：`TDataEntryBy/@personContextId`；ecoSpold1 对照编号：`new`。
 
-| 类型 | 长度 | 必填 | 可重复 | 多语言 | 主数据冗余字段 |
-| --- | --- | --- | --- | --- | --- |
-| `TUuid` | 36 | 否 | 否 | 否 | 否 |
+| 类型 | 必填 | 可重复 |
+| --- | --- | --- |
+| `TUuid` | 否 | 否 |
+
+长度：36；多语言：否；主数据冗余字段：否。
 
 对人员所属上下文的引用。
 
@@ -54,9 +58,11 @@ XML 位置：`administrativeInformation/dataEntryBy`。以 `activityDescription/
 
 局部 XML 位置：`TDataEntryBy/@isActiveAuthor`；ecoSpold1 对照编号：`new`。
 
-| 类型 | 长度 | 必填 | 可重复 | 多语言 | 主数据冗余字段 |
-| --- | --- | --- | --- | --- | --- |
-| `boolean` | — | 否 | 否 | 否 | 否 |
+| 类型 | 必填 | 可重复 |
+| --- | --- | --- |
+| `boolean` | 否 | 否 |
+
+长度：—；多语言：否；主数据冗余字段：否。
 
 此字段定义字段 3400 指定的人员是否为本数据集的活跃作者（active author）。其他数据提供者今后修改数据集时，将征询该活跃作者的意见。
 
@@ -68,9 +74,11 @@ XML 位置：`administrativeInformation/dataEntryBy`。以 `activityDescription/
 
 局部 XML 位置：`TDataEntryBy/@personName`；ecoSpold1 对照编号：`new`。
 
-| 类型 | 长度 | 必填 | 可重复 | 多语言 | 主数据冗余字段 |
-| --- | --- | --- | --- | --- | --- |
-| `TBaseString40` | 40 | 是 | 否 | 否 | 是 |
+| 类型 | 必填 | 可重复 |
+| --- | --- | --- |
+| `TBaseString40` | 是 | 否 |
+
+长度：40；多语言：否；主数据冗余字段：是。
 
 人员的名字和姓氏。
 
@@ -82,9 +90,11 @@ XML 位置：`administrativeInformation/dataEntryBy`。以 `activityDescription/
 
 局部 XML 位置：`TDataEntryBy/@personEmail`；ecoSpold1 对照编号：`new`。
 
-| 类型 | 长度 | 必填 | 可重复 | 多语言 | 主数据冗余字段 |
-| --- | --- | --- | --- | --- | --- |
-| `TBaseString80` | 80 | 是 | 否 | 否 | 是 |
+| 类型 | 必填 | 可重复 |
+| --- | --- | --- |
+| `TBaseString80` | 是 | 否 |
+
+长度：80；多语言：否；主数据冗余字段：是。
 
 人员的完整电子邮件地址。
 
@@ -106,9 +116,11 @@ Contains information about the author of the dataset, i.e. the person that enter
 
 Local XML path：`TDataEntryBy/@personId`；ecoSpold1 mapping：`302`。
 
-| Type | Size | Required | Multiple occurrence | Multi language | Redundant master data |
-| --- | --- | --- | --- | --- | --- |
-| `TUuid` | 36 | Yes | No | No | No |
+| Type | Required | Multiple occurrence |
+| --- | --- | --- |
+| `TUuid` | Yes | No |
+
+Size：36；Multi language：No；Redundant master data：No。
 
 ID number for the person that prepared the dataset and enters the dataset into the database.
 
@@ -122,9 +134,11 @@ Schema source：[EcoSpold02MetaInformation.xsd](original/Schemas/datasets/EcoSpo
 
 Local XML path：`TDataEntryBy/@personContextId`；ecoSpold1 mapping：`new`。
 
-| Type | Size | Required | Multiple occurrence | Multi language | Redundant master data |
-| --- | --- | --- | --- | --- | --- |
-| `TUuid` | 36 | No | No | No | No |
+| Type | Required | Multiple occurrence |
+| --- | --- | --- |
+| `TUuid` | No | No |
+
+Size：36；Multi language：No；Redundant master data：No。
 
 Reference to the context of the person.
 
@@ -138,9 +152,11 @@ Schema source：[EcoSpold02MetaInformation.xsd](original/Schemas/datasets/EcoSpo
 
 Local XML path：`TDataEntryBy/@isActiveAuthor`；ecoSpold1 mapping：`new`。
 
-| Type | Size | Required | Multiple occurrence | Multi language | Redundant master data |
-| --- | --- | --- | --- | --- | --- |
-| `boolean` | — | No | No | No | No |
+| Type | Required | Multiple occurrence |
+| --- | --- | --- |
+| `boolean` | No | No |
+
+Size：—；Multi language：No；Redundant master data：No。
 
 This field defines if the person specified by field 3400 is the active author for this dataset. The active author will be consulted in case of future changes to the dataset by different data providers.
 
@@ -152,9 +168,11 @@ Schema source：[EcoSpold02MetaInformation.xsd](original/Schemas/datasets/EcoSpo
 
 Local XML path：`TDataEntryBy/@personName`；ecoSpold1 mapping：`new`。
 
-| Type | Size | Required | Multiple occurrence | Multi language | Redundant master data |
-| --- | --- | --- | --- | --- | --- |
-| `TBaseString40` | 40 | Yes | No | No | Yes |
+| Type | Required | Multiple occurrence |
+| --- | --- | --- |
+| `TBaseString40` | Yes | No |
+
+Size：40；Multi language：No；Redundant master data：Yes。
 
 Name and surname of the person.
 
@@ -166,9 +184,11 @@ Schema source：[EcoSpold02MetaInformation.xsd](original/Schemas/datasets/EcoSpo
 
 Local XML path：`TDataEntryBy/@personEmail`；ecoSpold1 mapping：`new`。
 
-| Type | Size | Required | Multiple occurrence | Multi language | Redundant master data |
-| --- | --- | --- | --- | --- | --- |
-| `TBaseString80` | 80 | Yes | No | No | Yes |
+| Type | Required | Multiple occurrence |
+| --- | --- | --- |
+| `TBaseString80` | Yes | No |
+
+Size：80；Multi language：No；Redundant master data：Yes。
 
 Complete email address of the person.
 

@@ -22,9 +22,11 @@ XML 位置：`activityDescription/macroEconomicScenario`。以 `activityDescript
 
 局部 XML 位置：`TMacroEconomicScenario/@macroEconomicScenarioId`；ecoSpold1 对照编号：`new`。
 
-| 类型 | 长度 | 必填 | 可重复 | 多语言 | 主数据冗余字段 |
-| --- | --- | --- | --- | --- | --- |
-| `TUuid` | 36 | 是 | 否 | 否 | 否 |
+| 类型 | 必填 | 可重复 |
+| --- | --- | --- |
+| `TUuid` | 是 | 否 |
+
+长度：36；多语言：否；主数据冗余字段：否。
 
 对有效情景列表中定义的某宏观经济情景的引用（见字段 3715）。
 
@@ -36,9 +38,11 @@ XML 位置：`activityDescription/macroEconomicScenario`。以 `activityDescript
 
 局部 XML 位置：`TMacroEconomicScenario/@macroEconomicScenarioContextId`；ecoSpold1 对照编号：`new`。
 
-| 类型 | 长度 | 必填 | 可重复 | 多语言 | 主数据冗余字段 |
-| --- | --- | --- | --- | --- | --- |
-| `TUuid` | 36 | 否 | 否 | 否 | 否 |
+| 类型 | 必填 | 可重复 |
+| --- | --- | --- |
+| `TUuid` | 否 | 否 |
+
+长度：36；多语言：否；主数据冗余字段：否。
 
 对宏观经济情景所属上下文的引用。若省略此属性，则改用数据集自身的上下文。
 
@@ -50,9 +54,11 @@ XML 位置：`activityDescription/macroEconomicScenario`。以 `activityDescript
 
 局部 XML 位置：`TMacroEconomicScenario/name`；ecoSpold1 对照编号：`new`。
 
-| 类型 | 长度 | 必填 | 可重复 | 多语言 | 主数据冗余字段 |
-| --- | --- | --- | --- | --- | --- |
-| `TString80` | 80 | 是 | 否 | 是 | 是 |
+| 类型 | 必填 | 可重复 |
+| --- | --- | --- |
+| `TString80` | 是 | 否 |
+
+长度：80；多语言：是；主数据冗余字段：是。
 
 本数据集所属宏观经济情景的名称。
 
@@ -64,9 +70,11 @@ XML 位置：`activityDescription/macroEconomicScenario`。以 `activityDescript
 
 局部 XML 位置：`TMacroEconomicScenario/comment`；ecoSpold1 对照编号：`new`。
 
-| 类型 | 长度 | 必填 | 可重复 | 多语言 | 主数据冗余字段 |
-| --- | --- | --- | --- | --- | --- |
-| `TString32000` | 32000 | 否 | 否 | 是 | 否 |
+| 类型 | 必填 | 可重复 |
+| --- | --- | --- |
+| `TString32000` | 否 | 否 |
+
+长度：32000；多语言：是；主数据冗余字段：否。
 
 描述宏观经济子数据集与父数据集默认情景的差异。
 
@@ -88,9 +96,11 @@ References the macro-economic scenario used in this dataset.
 
 Local XML path：`TMacroEconomicScenario/@macroEconomicScenarioId`；ecoSpold1 mapping：`new`。
 
-| Type | Size | Required | Multiple occurrence | Multi language | Redundant master data |
-| --- | --- | --- | --- | --- | --- |
-| `TUuid` | 36 | Yes | No | No | No |
+| Type | Required | Multiple occurrence |
+| --- | --- | --- |
+| `TUuid` | Yes | No |
+
+Size：36；Multi language：No；Redundant master data：No。
 
 A reference to a macro-economic scenario defined in the list of valid scenarios (see field 3715).
 
@@ -102,9 +112,11 @@ Schema source：[EcoSpold02MetaInformation.xsd](original/Schemas/datasets/EcoSpo
 
 Local XML path：`TMacroEconomicScenario/@macroEconomicScenarioContextId`；ecoSpold1 mapping：`new`。
 
-| Type | Size | Required | Multiple occurrence | Multi language | Redundant master data |
-| --- | --- | --- | --- | --- | --- |
-| `TUuid` | 36 | No | No | No | No |
+| Type | Required | Multiple occurrence |
+| --- | --- | --- |
+| `TUuid` | No | No |
+
+Size：36；Multi language：No；Redundant master data：No。
 
 Reference to the context of the macro-economic scenario. If this attribute is omitted the context of the dataset itself will be used instead.
 
@@ -116,9 +128,11 @@ Schema source：[EcoSpold02MetaInformation.xsd](original/Schemas/datasets/EcoSpo
 
 Local XML path：`TMacroEconomicScenario/name`；ecoSpold1 mapping：`new`。
 
-| Type | Size | Required | Multiple occurrence | Multi language | Redundant master data |
-| --- | --- | --- | --- | --- | --- |
-| `TString80` | 80 | Yes | No | Yes | Yes |
+| Type | Required | Multiple occurrence |
+| --- | --- | --- |
+| `TString80` | Yes | No |
+
+Size：80；Multi language：Yes；Redundant master data：Yes。
 
 Name of the macro-economic scenario that this dataset belongs to.
 
@@ -130,9 +144,11 @@ Schema source：[EcoSpold02MetaInformation.xsd](original/Schemas/datasets/EcoSpo
 
 Local XML path：`TMacroEconomicScenario/comment`；ecoSpold1 mapping：`new`。
 
-| Type | Size | Required | Multiple occurrence | Multi language | Redundant master data |
-| --- | --- | --- | --- | --- | --- |
-| `TString32000` | 32000 | No | No | Yes | No |
+| Type | Required | Multiple occurrence |
+| --- | --- | --- |
+| `TString32000` | No | No |
+
+Size：32000；Multi language：Yes；Redundant master data：No。
 
 Description of how a macro-economic child dataset deviates from the default scenario of the parent dataset.
 

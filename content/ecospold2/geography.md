@@ -22,9 +22,11 @@ XML 位置：`activityDescription/geography`。以 `activityDescription/`、`flo
 
 局部 XML 位置：`TGeography/@geographyId`；ecoSpold1 对照编号：`new`。
 
-| 类型 | 长度 | 必填 | 可重复 | 多语言 | 主数据冗余字段 |
-| --- | --- | --- | --- | --- | --- |
-| `TUuid` | 36 | 是 | 否 | 否 | 否 |
+| 类型 | 必填 | 可重复 |
+| --- | --- | --- |
+| `TUuid` | 是 | 否 |
+
+长度：36；多语言：否；主数据冗余字段：否。
 
 引用有效地点文件，该文件包含详细的地理区域信息。
 
@@ -36,9 +38,11 @@ XML 位置：`activityDescription/geography`。以 `activityDescription/`、`flo
 
 局部 XML 位置：`TGeography/@geographyContextId`；ecoSpold1 对照编号：`new`。
 
-| 类型 | 长度 | 必填 | 可重复 | 多语言 | 主数据冗余字段 |
-| --- | --- | --- | --- | --- | --- |
-| `TUuid` | 36 | 否 | 否 | 否 | 否 |
+| 类型 | 必填 | 可重复 |
+| --- | --- | --- |
+| `TUuid` | 否 | 否 |
+
+长度：36；多语言：否；主数据冗余字段：否。
 
 引用该地理区域所属的上下文。
 
@@ -52,9 +56,11 @@ XML 位置：`activityDescription/geography`。以 `activityDescription/`、`flo
 
 局部 XML 位置：`TGeography/shortname`；ecoSpold1 对照编号：`662`。
 
-| 类型 | 长度 | 必填 | 可重复 | 多语言 | 主数据冗余字段 |
-| --- | --- | --- | --- | --- | --- |
-| `TString40` | 40 | 是 | 否 | 是 | 是 |
+| 类型 | 必填 | 可重复 |
+| --- | --- | --- |
+| `TString40` | 是 | 否 |
+
+长度：40；多语言：是；主数据冗余字段：是。
 
 geographyId 所引用地点的描述性简称，例如 EcoSpold 第 1 版的地区代码。
 
@@ -66,9 +72,11 @@ geographyId 所引用地点的描述性简称，例如 EcoSpold 第 1 版的地�
 
 局部 XML 位置：`TGeography/comment`；ecoSpold1 对照编号：`663`。
 
-| 类型 | 长度 | 必填 | 可重复 | 多语言 | 主数据冗余字段 |
-| --- | --- | --- | --- | --- | --- |
-| `TTextAndImage` | — | 否 | 否 | 是 | 否 |
+| 类型 | 必填 | 可重复 |
+| --- | --- | --- |
+| `TTextAndImage` | 否 | 否 |
+
+长度：—；多语言：是；主数据冗余字段：否。
 
 用于进一步解释地理区域的文本和图像字段。尤其在描述区域时，可以说明地理边界划定的性质，特别是在该区域不是行政区的情况下。这里也可提供市场边界的划定依据。文本和图像字段由 text、imageUri 和 variable 元素列表组成。text 和 imageUri 元素可用于描述当前部分，并可按照其 index 属性确定的顺序任意组合。文本变量由 variable 元素定义，可在文本中以 {{variablename}} 形式使用。如果父文本字段包含变量，子活动数据集可以重新定义该变量，同时保持父文本的其余内容不变。这样便可轻松修改子过程中的部分文本。
 
@@ -94,9 +102,11 @@ Contains information about the geographic validity of the process. The geography
 
 Local XML path：`TGeography/@geographyId`；ecoSpold1 mapping：`new`。
 
-| Type | Size | Required | Multiple occurrence | Multi language | Redundant master data |
-| --- | --- | --- | --- | --- | --- |
-| `TUuid` | 36 | Yes | No | No | No |
+| Type | Required | Multiple occurrence |
+| --- | --- | --- |
+| `TUuid` | Yes | No |
+
+Size：36；Multi language：No；Redundant master data：No。
 
 Reference to valid locations file with detailed geography information.
 
@@ -108,9 +118,11 @@ Schema source：[EcoSpold02MetaInformation.xsd](original/Schemas/datasets/EcoSpo
 
 Local XML path：`TGeography/@geographyContextId`；ecoSpold1 mapping：`new`。
 
-| Type | Size | Required | Multiple occurrence | Multi language | Redundant master data |
-| --- | --- | --- | --- | --- | --- |
-| `TUuid` | 36 | No | No | No | No |
+| Type | Required | Multiple occurrence |
+| --- | --- | --- |
+| `TUuid` | No | No |
+
+Size：36；Multi language：No；Redundant master data：No。
 
 Reference to the context of the geography.
 
@@ -124,9 +136,11 @@ Schema source：[EcoSpold02MetaInformation.xsd](original/Schemas/datasets/EcoSpo
 
 Local XML path：`TGeography/shortname`；ecoSpold1 mapping：`662`。
 
-| Type | Size | Required | Multiple occurrence | Multi language | Redundant master data |
-| --- | --- | --- | --- | --- | --- |
-| `TString40` | 40 | Yes | No | Yes | Yes |
+| Type | Required | Multiple occurrence |
+| --- | --- | --- |
+| `TString40` | Yes | No |
+
+Size：40；Multi language：Yes；Redundant master data：Yes。
 
 Descriptive shortname of the location referenced by geographyId, e.g. the regional codes of EcoSpold version 1.
 
@@ -138,9 +152,11 @@ Schema source：[EcoSpold02MetaInformation.xsd](original/Schemas/datasets/EcoSpo
 
 Local XML path：`TGeography/comment`；ecoSpold1 mapping：`663`。
 
-| Type | Size | Required | Multiple occurrence | Multi language | Redundant master data |
-| --- | --- | --- | --- | --- | --- |
-| `TTextAndImage` | — | No | No | Yes | No |
+| Type | Required | Multiple occurrence |
+| --- | --- | --- |
+| `TTextAndImage` | No | No |
+
+Size：—；Multi language：Yes；Redundant master data：No。
 
 Text and image field for further explanations of the geography. Especially for area descriptions, the nature of the geographical delimitation may be given, especially when this is not an administrative area. Justifications for market boundaries may also be provided here.Text and image fields are list of text, imageUri and variable elements. The text and imageUri elements can used to describe the current section and they can be combined in any order given by their index attribute. Text variables are defined by the variable elements, which may be used in the text as {{variablename}}. If a parent text field includes a variable, this variable may be redefined by the child activity dataset while keeping the rest of the parent text intact. This allows easy changes of text parts in child processes.
 

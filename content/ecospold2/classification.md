@@ -22,9 +22,11 @@ XML 位置：`activityDescription/classification`。以 `activityDescription/`�
 
 局部 XML 位置：`TClassification/classificationSystem`；ecoSpold1 对照编号：`501`。
 
-| 类型 | 长度 | 必填 | 可重复 | 多语言 | 主数据冗余字段 |
-| --- | --- | --- | --- | --- | --- |
-| `TString255` | 255 | 是 | 否 | 是 | 是 |
+| 类型 | 必填 | 可重复 |
+| --- | --- | --- |
+| `TString255` | 是 | 否 |
+
+长度：255；多语言：是；主数据冗余字段：是。
 
 所用分类体系的名称，例如 ISIC Rev. 4。这是所引用分类体系（字段 320）的可选纯文本值。
 
@@ -36,9 +38,11 @@ XML 位置：`activityDescription/classification`。以 `activityDescription/`�
 
 局部 XML 位置：`TClassification/classificationValue`；ecoSpold1 对照编号：`new`。
 
-| 类型 | 长度 | 必填 | 可重复 | 多语言 | 主数据冗余字段 |
-| --- | --- | --- | --- | --- | --- |
-| `TString120` | 120 | 是 | 否 | 是 | 是 |
+| 类型 | 必填 | 可重复 |
+| --- | --- | --- |
+| `TString120` | 是 | 否 |
+
+长度：120；多语言：是；主数据冗余字段：是。
 
 活动在所指定分类体系中所属的类别。这是所引用分类值（字段 320）的可选纯文本值。
 
@@ -50,9 +54,11 @@ XML 位置：`activityDescription/classification`。以 `activityDescription/`�
 
 局部 XML 位置：`TClassification/@classificationId`；ecoSpold1 对照编号：`new`。
 
-| 类型 | 长度 | 必填 | 可重复 | 多语言 | 主数据冗余字段 |
-| --- | --- | --- | --- | --- | --- |
-| `TUuid` | 36 | 是 | 否 | 否 | 否 |
+| 类型 | 必填 | 可重复 |
+| --- | --- | --- |
+| `TUuid` | 是 | 否 |
+
+长度：36；多语言：否；主数据冗余字段：否。
 
 对分类体系中某分类值的引用。该值必须在有效分类列表中定义（见字段 5160）。
 
@@ -64,9 +70,11 @@ XML 位置：`activityDescription/classification`。以 `activityDescription/`�
 
 局部 XML 位置：`TClassification/@classificationContextId`；ecoSpold1 对照编号：`new`。
 
-| 类型 | 长度 | 必填 | 可重复 | 多语言 | 主数据冗余字段 |
-| --- | --- | --- | --- | --- | --- |
-| `TUuid` | 36 | 否 | 否 | 否 | 否 |
+| 类型 | 必填 | 可重复 |
+| --- | --- | --- |
+| `TUuid` | 否 | 否 |
+
+长度：36；多语言：否；主数据冗余字段：否。
 
 对分类所属上下文的引用。
 
@@ -90,9 +98,11 @@ Contains classification pairs to specify the activity.
 
 Local XML path：`TClassification/classificationSystem`；ecoSpold1 mapping：`501`。
 
-| Type | Size | Required | Multiple occurrence | Multi language | Redundant master data |
-| --- | --- | --- | --- | --- | --- |
-| `TString255` | 255 | Yes | No | Yes | Yes |
+| Type | Required | Multiple occurrence |
+| --- | --- | --- |
+| `TString255` | Yes | No |
+
+Size：255；Multi language：Yes；Redundant master data：Yes。
 
 The name of the classification system used, e.g. ISIC Rev. 4. This is an optional plaintext value of the referenced classification system (field 320).
 
@@ -104,9 +114,11 @@ Schema source：[EcoSpold02DataTypes.xsd](original/Schemas/datasets/EcoSpold02Da
 
 Local XML path：`TClassification/classificationValue`；ecoSpold1 mapping：`new`。
 
-| Type | Size | Required | Multiple occurrence | Multi language | Redundant master data |
-| --- | --- | --- | --- | --- | --- |
-| `TString120` | 120 | Yes | No | Yes | Yes |
+| Type | Required | Multiple occurrence |
+| --- | --- | --- |
+| `TString120` | Yes | No |
+
+Size：120；Multi language：Yes；Redundant master data：Yes。
 
 The class that the activity belongs to within the specified classification system.  This is an optional plaintext value of the referenced classification value (field 320).
 
@@ -118,9 +130,11 @@ Schema source：[EcoSpold02DataTypes.xsd](original/Schemas/datasets/EcoSpold02Da
 
 Local XML path：`TClassification/@classificationId`；ecoSpold1 mapping：`new`。
 
-| Type | Size | Required | Multiple occurrence | Multi language | Redundant master data |
-| --- | --- | --- | --- | --- | --- |
-| `TUuid` | 36 | Yes | No | No | No |
+| Type | Required | Multiple occurrence |
+| --- | --- | --- |
+| `TUuid` | Yes | No |
+
+Size：36；Multi language：No；Redundant master data：No。
 
 Reference to the value of a classification system. Must be defined in list of valid classifications (see field 5160).
 
@@ -132,9 +146,11 @@ Schema source：[EcoSpold02DataTypes.xsd](original/Schemas/datasets/EcoSpold02Da
 
 Local XML path：`TClassification/@classificationContextId`；ecoSpold1 mapping：`new`。
 
-| Type | Size | Required | Multiple occurrence | Multi language | Redundant master data |
-| --- | --- | --- | --- | --- | --- |
-| `TUuid` | 36 | No | No | No | No |
+| Type | Required | Multiple occurrence |
+| --- | --- | --- |
+| `TUuid` | No | No |
+
+Size：36；Multi language：No；Redundant master data：No。
 
 Reference to the context of the classification.
 

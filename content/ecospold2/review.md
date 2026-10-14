@@ -24,9 +24,11 @@ XML 位置：`modellingAndValidation/review`。以 `activityDescription/`、`flo
 
 局部 XML 位置：`TReview/@reviewerId`；ecoSpold1 对照编号：`5616`。
 
-| 类型 | 长度 | 必填 | 可重复 | 多语言 | 主数据冗余字段 |
-| --- | --- | --- | --- | --- | --- |
-| `TUuid` | 36 | 是 | 否 | 否 | 否 |
+| 类型 | 必填 | 可重复 |
+| --- | --- | --- |
+| `TUuid` | 是 | 否 |
+
+长度：36；多语言：否；主数据冗余字段：否。
 
 注明开展评审的人员。
 
@@ -40,9 +42,11 @@ XML 位置：`modellingAndValidation/review`。以 `activityDescription/`、`flo
 
 局部 XML 位置：`TReview/@reviewerContextId`；ecoSpold1 对照编号：`new`。
 
-| 类型 | 长度 | 必填 | 可重复 | 多语言 | 主数据冗余字段 |
-| --- | --- | --- | --- | --- | --- |
-| `TUuid` | 36 | 否 | 否 | 否 | 否 |
+| 类型 | 必填 | 可重复 |
+| --- | --- | --- |
+| `TUuid` | 否 | 否 |
+
+长度：36；多语言：否；主数据冗余字段：否。
 
 对评审者所属上下文的引用。
 
@@ -56,9 +60,11 @@ XML 位置：`modellingAndValidation/review`。以 `activityDescription/`、`flo
 
 局部 XML 位置：`TReview/@reviewerName`；ecoSpold1 对照编号：`new`。
 
-| 类型 | 长度 | 必填 | 可重复 | 多语言 | 主数据冗余字段 |
-| --- | --- | --- | --- | --- | --- |
-| `TBaseString40` | 40 | 是 | 否 | 否 | 是 |
+| 类型 | 必填 | 可重复 |
+| --- | --- | --- |
+| `TBaseString40` | 是 | 否 |
+
+长度：40；多语言：否；主数据冗余字段：是。
 
 人员的名字和姓氏。
 
@@ -70,9 +76,11 @@ XML 位置：`modellingAndValidation/review`。以 `activityDescription/`、`flo
 
 局部 XML 位置：`TReview/@reviewerEmail`；ecoSpold1 对照编号：`new`。
 
-| 类型 | 长度 | 必填 | 可重复 | 多语言 | 主数据冗余字段 |
-| --- | --- | --- | --- | --- | --- |
-| `TBaseString80` | 80 | 是 | 否 | 否 | 是 |
+| 类型 | 必填 | 可重复 |
+| --- | --- | --- |
+| `TBaseString80` | 是 | 否 |
+
+长度：80；多语言：否；主数据冗余字段：是。
 
 人员的完整电子邮件地址。
 
@@ -84,9 +92,11 @@ XML 位置：`modellingAndValidation/review`。以 `activityDescription/`、`flo
 
 局部 XML 位置：`TReview/@reviewDate`；ecoSpold1 对照编号：`new`。
 
-| 类型 | 长度 | 必填 | 可重复 | 多语言 | 主数据冗余字段 |
-| --- | --- | --- | --- | --- | --- |
-| `date` | — | 是 | 否 | 否 | 否 |
+| 类型 | 必填 | 可重复 |
+| --- | --- | --- |
+| `date` | 是 | 否 |
+
+长度：—；多语言：否；主数据冗余字段：否。
 
 验证或评审日期。
 
@@ -98,9 +108,11 @@ XML 位置：`modellingAndValidation/review`。以 `activityDescription/`、`flo
 
 局部 XML 位置：`TReview/@reviewedMajorRelease`；ecoSpold1 对照编号：`new`。
 
-| 类型 | 长度 | 必填 | 可重复 | 多语言 | 主数据冗余字段 |
-| --- | --- | --- | --- | --- | --- |
-| `integer` | — | 是 | 否 | 否 | 否 |
+| 类型 | 必填 | 可重复 |
+| --- | --- | --- |
+| `integer` | 是 | 否 |
+
+长度：—；多语言：否；主数据冗余字段：否。
 
 经验证或评审的数据集版本。引用字段 3800。
 
@@ -112,9 +124,11 @@ XML 位置：`modellingAndValidation/review`。以 `activityDescription/`、`flo
 
 局部 XML 位置：`TReview/@reviewedMinorRelease`；ecoSpold1 对照编号：`new`。
 
-| 类型 | 长度 | 必填 | 可重复 | 多语言 | 主数据冗余字段 |
-| --- | --- | --- | --- | --- | --- |
-| `integer` | — | 是 | 否 | 否 | 否 |
+| 类型 | 必填 | 可重复 |
+| --- | --- | --- |
+| `integer` | 是 | 否 |
+
+长度：—；多语言：否；主数据冗余字段：否。
 
 经验证或评审的数据集版本。引用字段 3805。
 
@@ -126,9 +140,11 @@ XML 位置：`modellingAndValidation/review`。以 `activityDescription/`、`flo
 
 局部 XML 位置：`TReview/@reviewedMajorRevision`；ecoSpold1 对照编号：`new`。
 
-| 类型 | 长度 | 必填 | 可重复 | 多语言 | 主数据冗余字段 |
-| --- | --- | --- | --- | --- | --- |
-| `integer` | — | 是 | 否 | 否 | 否 |
+| 类型 | 必填 | 可重复 |
+| --- | --- | --- |
+| `integer` | 是 | 否 |
+
+长度：—；多语言：否；主数据冗余字段：否。
 
 经验证或评审的数据集版本。引用字段 3810。
 
@@ -140,9 +156,11 @@ XML 位置：`modellingAndValidation/review`。以 `activityDescription/`、`flo
 
 局部 XML 位置：`TReview/@reviewedMinorRevision`；ecoSpold1 对照编号：`new`。
 
-| 类型 | 长度 | 必填 | 可重复 | 多语言 | 主数据冗余字段 |
-| --- | --- | --- | --- | --- | --- |
-| `integer` | — | 是 | 否 | 否 | 否 |
+| 类型 | 必填 | 可重复 |
+| --- | --- | --- |
+| `integer` | 是 | 否 |
+
+长度：—；多语言：否；主数据冗余字段：否。
 
 经验证或评审的数据集版本。引用字段 3815。
 
@@ -154,9 +172,11 @@ XML 位置：`modellingAndValidation/review`。以 `activityDescription/`、`flo
 
 局部 XML 位置：`TReview/details`；ecoSpold1 对照编号：`5615`。
 
-| 类型 | 长度 | 必填 | 可重复 | 多语言 | 主数据冗余字段 |
-| --- | --- | --- | --- | --- | --- |
-| `TTextAndImage` | — | 否 | 否 | 是 | 否 |
+| 类型 | 必填 | 可重复 |
+| --- | --- | --- |
+| `TTextAndImage` | 否 | 否 |
+
+长度：—；多语言：是；主数据冗余字段：否。
 
 用于记录数据集评审者注释的文本和图像字段。文本和图像字段是 text、imageUri 和 variable 元素的列表。text 和 imageUri 元素可用于描述当前部分，并可按照各自 index 属性指定的任意顺序组合。文本变量由 variable 元素定义，可在文本中以 {{variablename}} 的形式使用。如果父数据集的文本字段包含变量，子活动数据集可重新定义该变量，同时保持父数据集其余文本不变。这样便于修改子过程中的局部文本。
 
@@ -172,9 +192,11 @@ text、imageUri 和 variable 元素的列表。text 和 imageUri 元素可用于
 
 局部 XML 位置：`TReview/otherDetails`；ecoSpold1 对照编号：`5619`。
 
-| 类型 | 长度 | 必填 | 可重复 | 多语言 | 主数据冗余字段 |
-| --- | --- | --- | --- | --- | --- |
-| `TString32000` | 32000 | 否 | 否 | 是 | 否 |
+| 类型 | 必填 | 可重复 |
+| --- | --- | --- |
+| `TString32000` | 否 | 否 |
+
+长度：32000；多语言：是；主数据冗余字段：否。
 
 包含评审过程的进一步信息，例如数据集首次发布后补充的小幅修正。
 
@@ -198,9 +220,11 @@ Multiple reviewers allowed
 
 Local XML path：`TReview/@reviewerId`；ecoSpold1 mapping：`5616`。
 
-| Type | Size | Required | Multiple occurrence | Multi language | Redundant master data |
-| --- | --- | --- | --- | --- | --- |
-| `TUuid` | 36 | Yes | No | No | No |
+| Type | Required | Multiple occurrence |
+| --- | --- | --- |
+| `TUuid` | Yes | No |
+
+Size：36；Multi language：No；Redundant master data：No。
 
 Indicates the person who carried out the review.
 
@@ -214,9 +238,11 @@ Schema source：[EcoSpold02MetaInformation.xsd](original/Schemas/datasets/EcoSpo
 
 Local XML path：`TReview/@reviewerContextId`；ecoSpold1 mapping：`new`。
 
-| Type | Size | Required | Multiple occurrence | Multi language | Redundant master data |
-| --- | --- | --- | --- | --- | --- |
-| `TUuid` | 36 | No | No | No | No |
+| Type | Required | Multiple occurrence |
+| --- | --- | --- |
+| `TUuid` | No | No |
+
+Size：36；Multi language：No；Redundant master data：No。
 
 Reference to the context of the reviewer.
 
@@ -230,9 +256,11 @@ Schema source：[EcoSpold02MetaInformation.xsd](original/Schemas/datasets/EcoSpo
 
 Local XML path：`TReview/@reviewerName`；ecoSpold1 mapping：`new`。
 
-| Type | Size | Required | Multiple occurrence | Multi language | Redundant master data |
-| --- | --- | --- | --- | --- | --- |
-| `TBaseString40` | 40 | Yes | No | No | Yes |
+| Type | Required | Multiple occurrence |
+| --- | --- | --- |
+| `TBaseString40` | Yes | No |
+
+Size：40；Multi language：No；Redundant master data：Yes。
 
 Name and surname of the person.
 
@@ -244,9 +272,11 @@ Schema source：[EcoSpold02MetaInformation.xsd](original/Schemas/datasets/EcoSpo
 
 Local XML path：`TReview/@reviewerEmail`；ecoSpold1 mapping：`new`。
 
-| Type | Size | Required | Multiple occurrence | Multi language | Redundant master data |
-| --- | --- | --- | --- | --- | --- |
-| `TBaseString80` | 80 | Yes | No | No | Yes |
+| Type | Required | Multiple occurrence |
+| --- | --- | --- |
+| `TBaseString80` | Yes | No |
+
+Size：80；Multi language：No；Redundant master data：Yes。
 
 Complete email address of the person.
 
@@ -258,9 +288,11 @@ Schema source：[EcoSpold02MetaInformation.xsd](original/Schemas/datasets/EcoSpo
 
 Local XML path：`TReview/@reviewDate`；ecoSpold1 mapping：`new`。
 
-| Type | Size | Required | Multiple occurrence | Multi language | Redundant master data |
-| --- | --- | --- | --- | --- | --- |
-| `date` | — | Yes | No | No | No |
+| Type | Required | Multiple occurrence |
+| --- | --- | --- |
+| `date` | Yes | No |
+
+Size：—；Multi language：No；Redundant master data：No。
 
 Date of validation or review.
 
@@ -272,9 +304,11 @@ Schema source：[EcoSpold02MetaInformation.xsd](original/Schemas/datasets/EcoSpo
 
 Local XML path：`TReview/@reviewedMajorRelease`；ecoSpold1 mapping：`new`。
 
-| Type | Size | Required | Multiple occurrence | Multi language | Redundant master data |
-| --- | --- | --- | --- | --- | --- |
-| `integer` | — | Yes | No | No | No |
+| Type | Required | Multiple occurrence |
+| --- | --- | --- |
+| `integer` | Yes | No |
+
+Size：—；Multi language：No；Redundant master data：No。
 
 The dataset version validated or reviewed. Refers to 3800.
 
@@ -286,9 +320,11 @@ Schema source：[EcoSpold02MetaInformation.xsd](original/Schemas/datasets/EcoSpo
 
 Local XML path：`TReview/@reviewedMinorRelease`；ecoSpold1 mapping：`new`。
 
-| Type | Size | Required | Multiple occurrence | Multi language | Redundant master data |
-| --- | --- | --- | --- | --- | --- |
-| `integer` | — | Yes | No | No | No |
+| Type | Required | Multiple occurrence |
+| --- | --- | --- |
+| `integer` | Yes | No |
+
+Size：—；Multi language：No；Redundant master data：No。
 
 The dataset version validated or reviewed. Refers to 3805.
 
@@ -300,9 +336,11 @@ Schema source：[EcoSpold02MetaInformation.xsd](original/Schemas/datasets/EcoSpo
 
 Local XML path：`TReview/@reviewedMajorRevision`；ecoSpold1 mapping：`new`。
 
-| Type | Size | Required | Multiple occurrence | Multi language | Redundant master data |
-| --- | --- | --- | --- | --- | --- |
-| `integer` | — | Yes | No | No | No |
+| Type | Required | Multiple occurrence |
+| --- | --- | --- |
+| `integer` | Yes | No |
+
+Size：—；Multi language：No；Redundant master data：No。
 
 The dataset version validated or reviewed. Refers to 3810.
 
@@ -314,9 +352,11 @@ Schema source：[EcoSpold02MetaInformation.xsd](original/Schemas/datasets/EcoSpo
 
 Local XML path：`TReview/@reviewedMinorRevision`；ecoSpold1 mapping：`new`。
 
-| Type | Size | Required | Multiple occurrence | Multi language | Redundant master data |
-| --- | --- | --- | --- | --- | --- |
-| `integer` | — | Yes | No | No | No |
+| Type | Required | Multiple occurrence |
+| --- | --- | --- |
+| `integer` | Yes | No |
+
+Size：—；Multi language：No；Redundant master data：No。
 
 The dataset version validated or reviewed. Refers to 3815.
 
@@ -328,9 +368,11 @@ Schema source：[EcoSpold02MetaInformation.xsd](original/Schemas/datasets/EcoSpo
 
 Local XML path：`TReview/details`；ecoSpold1 mapping：`5615`。
 
-| Type | Size | Required | Multiple occurrence | Multi language | Redundant master data |
-| --- | --- | --- | --- | --- | --- |
-| `TTextAndImage` | — | No | No | Yes | No |
+| Type | Required | Multiple occurrence |
+| --- | --- | --- |
+| `TTextAndImage` | No | No |
+
+Size：—；Multi language：Yes；Redundant master data：No。
 
 Text and image field for the comment of the reviewer of the dataset. Text and image fields are list of text, imageUri and variable elements. The text and imageUri elements can used to describe the current section and they can be combined in any order given by their index attribute. Text variables are defined by the variable elements, which may be used in the text as {{variablename}}. If a parent text field includes a variable, this variable may be redefined by the child activity dataset while keeping the rest of the parent text intact. This allows easy changes of text parts in child processes.
 
@@ -346,9 +388,11 @@ Schema source：[EcoSpold02MetaInformation.xsd](original/Schemas/datasets/EcoSpo
 
 Local XML path：`TReview/otherDetails`；ecoSpold1 mapping：`5619`。
 
-| Type | Size | Required | Multiple occurrence | Multi language | Redundant master data |
-| --- | --- | --- | --- | --- | --- |
-| `TString32000` | 32000 | No | No | Yes | No |
+| Type | Required | Multiple occurrence |
+| --- | --- | --- |
+| `TString32000` | No | No |
+
+Size：32000；Multi language：Yes；Redundant master data：No。
 
 Contains further information from the review process, e.g. on smaller corrections added after the first publication of the dataset.
 

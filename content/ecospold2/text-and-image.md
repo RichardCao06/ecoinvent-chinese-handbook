@@ -26,9 +26,11 @@ text、imageUri 和 variable 元素的列表。这些元素可按任意顺序组
 
 局部 XML 位置：`TTextAndImage/text`；ecoSpold1 对照编号：`new`。
 
-| 类型 | 长度 | 必填 | 可重复 | 多语言 | 主数据冗余字段 |
-| --- | --- | --- | --- | --- | --- |
-| `TIndexedString32000` | 32000 | 否 | 是 | 否 | 否 |
+| 类型 | 必填 | 可重复 |
+| --- | --- | --- |
+| `TIndexedString32000` | 否 | 是 |
+
+长度：32000；多语言：否；主数据冗余字段：否。
 
 用于描述当前部分的自由文本。其 index 属性用于规定文本和图像元素的特定顺序。
 
@@ -40,9 +42,11 @@ text、imageUri 和 variable 元素的列表。这些元素可按任意顺序组
 
 局部 XML 位置：`TTextAndImage/imageUrl`；ecoSpold1 对照编号：`new`。
 
-| 类型 | 长度 | 必填 | 可重复 | 多语言 | 主数据冗余字段 |
-| --- | --- | --- | --- | --- | --- |
-| `anyURI` | — | 否 | 是 | 否 | 否 |
+| 类型 | 必填 | 可重复 |
+| --- | --- | --- |
+| `anyURI` | 否 | 是 |
+
+长度：—；多语言：否；主数据冗余字段：否。
 
 可用于在文本之间插入图像。其 index 属性用于规定文本和图像元素的特定顺序。
 
@@ -54,9 +58,11 @@ text、imageUri 和 variable 元素的列表。这些元素可按任意顺序组
 
 局部 XML 位置：`TTextAndImage/variable`；ecoSpold1 对照编号：`new`。
 
-| 类型 | 长度 | 必填 | 可重复 | 多语言 | 主数据冗余字段 |
-| --- | --- | --- | --- | --- | --- |
-| `TNamedString32000` | 32000 | 否 | 是 | 否 | 否 |
+| 类型 | 必填 | 可重复 |
+| --- | --- | --- |
+| `TNamedString32000` | 否 | 是 |
+
+长度：32000；多语言：否；主数据冗余字段：否。
 
 定义本部分 text 元素中使用的变量名及其值。派生数据集可以覆盖这些定义，以改变变量值。
 
@@ -78,9 +84,11 @@ List of text, imageUri and variable elements. These can be combined in any order
 
 Local XML path：`TTextAndImage/text`；ecoSpold1 mapping：`new`。
 
-| Type | Size | Required | Multiple occurrence | Multi language | Redundant master data |
-| --- | --- | --- | --- | --- | --- |
-| `TIndexedString32000` | 32000 | No | Yes | No | No |
+| Type | Required | Multiple occurrence |
+| --- | --- | --- |
+| `TIndexedString32000` | No | Yes |
+
+Size：32000；Multi language：No；Redundant master data：No。
 
 Free text used to describe the current section. Its index attribute is used to enforce a specific order of text and image elements.
 
@@ -92,9 +100,11 @@ Schema source：[EcoSpold02DataTypes.xsd](original/Schemas/datasets/EcoSpold02Da
 
 Local XML path：`TTextAndImage/imageUrl`；ecoSpold1 mapping：`new`。
 
-| Type | Size | Required | Multiple occurrence | Multi language | Redundant master data |
-| --- | --- | --- | --- | --- | --- |
-| `anyURI` | — | No | Yes | No | No |
+| Type | Required | Multiple occurrence |
+| --- | --- | --- |
+| `anyURI` | No | Yes |
+
+Size：—；Multi language：No；Redundant master data：No。
 
 Can be used to mix images between texts. Its index attribute is used to enforce a specific order of text and image elements.
 
@@ -106,9 +116,11 @@ Schema source：[EcoSpold02DataTypes.xsd](original/Schemas/datasets/EcoSpold02Da
 
 Local XML path：`TTextAndImage/variable`；ecoSpold1 mapping：`new`。
 
-| Type | Size | Required | Multiple occurrence | Multi language | Redundant master data |
-| --- | --- | --- | --- | --- | --- |
-| `TNamedString32000` | 32000 | No | Yes | No | No |
+| Type | Required | Multiple occurrence |
+| --- | --- | --- |
+| `TNamedString32000` | No | Yes |
+
+Size：32000；Multi language：No；Redundant master data：No。
 
 Defines a varible name and its value used in a text element in this section. These can be overriden by derived datasets to change the value of variables.
 
