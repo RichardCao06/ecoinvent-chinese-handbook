@@ -1,5 +1,5 @@
 {
-  "scope": "A continuous Chinese tutorial, complete 243-field narrative, runnable synthetic demo and faithful original-table translation",
+  "scope": "A chaptered Chinese reading tutorial, 22 narrative field chapters, runnable synthetic demos and a single final translated-table appendix",
   "coverage": [
     {
       "section": "TActivity",
@@ -1221,14 +1221,72 @@
       "snippet_sha256": "b576cb51b6bd9f24541005d49c0c17a8b7450c580cdf3b064dd818530a0600fc"
     }
   ],
+  "layout": "chaptered-narrative",
+  "chapter_pages": {
+    "TActivity": "ecospold2/activity.md",
+    "TClassification": "ecospold2/classification.md",
+    "TGeography": "ecospold2/geography.md",
+    "TTechnology": "ecospold2/technology.md",
+    "TTimePeriod": "ecospold2/time-period.md",
+    "TMacroEconomicScenario": "ecospold2/macro-economic-scenario.md",
+    "TCustomExchange": "ecospold2/exchanges.md",
+    "TIntermediateExchange": "ecospold2/intermediate-exchanges.md",
+    "TElementaryExchange": "ecospold2/elementary-exchanges.md",
+    "TParameter": "ecospold2/parameters.md",
+    "TImpactIndicatorResult": "ecospold2/impact-indicators.md",
+    "TCompartment": "ecospold2/compartments.md",
+    "TUncertainty": "ecospold2/uncertainty.md",
+    "TProperty": "ecospold2/properties.md",
+    "TTransferCoefficient": "ecospold2/transfer-coefficients.md",
+    "TTextAndImage": "ecospold2/text-and-image.md",
+    "TRepresentativeness": "ecospold2/representativeness.md",
+    "TReview": "ecospold2/review.md",
+    "TDataEntryBy": "ecospold2/data-entry.md",
+    "TDataGeneratorAndPublication": "ecospold2/publication.md",
+    "TFileAttributes": "ecospold2/file-attributes.md",
+    "TRequiredContextReference": "ecospold2/required-contexts.md"
+  },
+  "appendix_page": "ecospold2/format-reference.md",
   "outputs": [
     {
       "path": "content/ecospold2/README.md",
-      "sha256": "cb6c6e522edc7bc78e166adcc4f97a7303460284bb4f8182ff988bd93f835307"
+      "sha256": "e3a0a8690d1d79c988b3b0f4ef51e93deca2399d0321ac9c1ec21709e2b92824"
+    },
+    {
+      "path": "content/ecospold2/activity-description.md",
+      "sha256": "8a5861103e2e47301bfcedd50fcb3db213beab391d79ee06c624c32c2a7b2515"
+    },
+    {
+      "path": "content/ecospold2/activity.md",
+      "sha256": "f8d5eccecc45ceb3027a19bd86bf5c18bd204ea4ba0fc300ced05e0b0710f00b"
+    },
+    {
+      "path": "content/ecospold2/administrative-information.md",
+      "sha256": "bda4e3e03b268dd3fb95d222335f2228772090829e9bcf887f7030fdef4920b5"
     },
     {
       "path": "content/ecospold2/attachments/EcoSpold02.zh.html",
       "sha256": "f27d3bdef42095ff5876934b78a56ef1f3f744277ef28ad3755626f1789ca848"
+    },
+    {
+      "path": "content/ecospold2/classification.md",
+      "sha256": "99f2e2072deef2fb2329a33da203027700b83450c6d189c4eb87722b44164876"
+    },
+    {
+      "path": "content/ecospold2/compartments.md",
+      "sha256": "b91f3c1d7e6e40d6557bb9c42818f0564fea52bf370a3ec73746f2282dcbdf1e"
+    },
+    {
+      "path": "content/ecospold2/complex-types.md",
+      "sha256": "6180cdf1ce3a1c8e288d96fe6d9070df4acb2997fd31d8ef167f248fdcee0a28"
+    },
+    {
+      "path": "content/ecospold2/data-entry.md",
+      "sha256": "abb8495a32b64d6afcf18e7babaf02858e62c8aa07d969ef1172bf3f63d425b4"
+    },
+    {
+      "path": "content/ecospold2/data-levels.md",
+      "sha256": "9b55ee543f2e97f1a40ff415808eb133b42b3291b3b734e5fa573e44cc6471a6"
     },
     {
       "path": "content/ecospold2/demo/README.txt",
@@ -1248,7 +1306,7 @@
     },
     {
       "path": "content/ecospold2/demo/ecospold2-tutorial-demo.zip",
-      "sha256": "586bff0f9fcfdb6e9fe13f86fa5be0877bd820e4bb2eaa01c4591aaa3f004310"
+      "sha256": "1ad9127aefb7c6d9e042167cefd2135d62650d7fdd551e23c6ff48550c22b033"
     },
     {
       "path": "content/ecospold2/demo/extract_ecospold.py",
@@ -1263,11 +1321,123 @@
       "sha256": "edb45ce31768fad8f929ac7d044909db36307325632481f67d7a8703a594118b"
     },
     {
+      "path": "content/ecospold2/demo/read_section.py",
+      "sha256": "e7310c0fdc6d6830556095050f784a3b9249be6f72c793d1f11521e4e2aa5e3b"
+    },
+    {
+      "path": "content/ecospold2/demo-walkthrough.md",
+      "sha256": "98fe52f527e2bd74f872699b41a419433aa8ef8eef80c30139cf53715971b090"
+    },
+    {
+      "path": "content/ecospold2/elementary-exchanges.md",
+      "sha256": "3a1fd1610332385151b3efef54a0271d933840ae507e0e7f3b7c97260b1b4f92"
+    },
+    {
+      "path": "content/ecospold2/exchanges.md",
+      "sha256": "cfece74f6e2dce65876e386acc174633b8f7fa19e525546d97a90bb95eb2231d"
+    },
+    {
+      "path": "content/ecospold2/extraction-practice.md",
+      "sha256": "c35261563967645f2c9e95b435275d5fece19d1acf75b8497623c15fc6e917dd"
+    },
+    {
+      "path": "content/ecospold2/file-attributes.md",
+      "sha256": "cd92d0dc88414a5cf5f0b750f30f066549838a75ba32521102e995c7b0d57be7"
+    },
+    {
+      "path": "content/ecospold2/flow-data.md",
+      "sha256": "5e4e7c7d57aec7acb38e2f4a865df328246e71e1a949ef7aa285bf590585a5d4"
+    },
+    {
+      "path": "content/ecospold2/format-reference.md",
+      "sha256": "9c3b083084104ef424970c01292a990a927f1e60725cf87ac1a5b287bf4e8593"
+    },
+    {
+      "path": "content/ecospold2/geography.md",
+      "sha256": "eabb9e57e10a312fddbd5beb753210b9c255ef5173fcc65067e769cfb9c4be0e"
+    },
+    {
+      "path": "content/ecospold2/impact-indicators.md",
+      "sha256": "1dd06055e24fd19714c02c9ddf55d1d4a8665191c3b3dac14d99246b9c1b4da7"
+    },
+    {
+      "path": "content/ecospold2/intermediate-exchanges.md",
+      "sha256": "156eaf6db4ea3e9999ee6bd44814b47311ae32385961a3a68d607b6e057441b7"
+    },
+    {
+      "path": "content/ecospold2/macro-economic-scenario.md",
+      "sha256": "7a023aac503ec092ddc7b9c8a56f038048ccfc958a993bebdcaaaece7dacd664"
+    },
+    {
+      "path": "content/ecospold2/modelling-validation.md",
+      "sha256": "41e5b11a018cf7ab785b80cdb444eb61e99200009630eee8997c7fb47960ceb7"
+    },
+    {
+      "path": "content/ecospold2/parameters.md",
+      "sha256": "4ae4c4415207f39e32d0c6ce93f77bff455d51ffb0a052449e4d62e4924b9a4a"
+    },
+    {
+      "path": "content/ecospold2/properties.md",
+      "sha256": "168efd29e2cb0db41e373b76b9877de8b0c4b7ecbd95a9b355521d810a003bad"
+    },
+    {
+      "path": "content/ecospold2/provenance.md",
+      "sha256": "9edce0609142d8b1c63541b98593aca5063e3ed4526db69109cb32b270ecbe59"
+    },
+    {
+      "path": "content/ecospold2/publication.md",
+      "sha256": "ac4d81da884aa49f2e29894d043c3f144a808f2183e36dde9e2b881c2926870e"
+    },
+    {
+      "path": "content/ecospold2/representativeness.md",
+      "sha256": "222f6f76decfad5cb5eef6bd9c0237e671afa0dabd40c5c37f688cc4c4d2bdab"
+    },
+    {
+      "path": "content/ecospold2/required-contexts.md",
+      "sha256": "b0ae1ea8f915aab99c7d6c62ece4acc57857e5883f65d5b84dfa914935c36dda"
+    },
+    {
+      "path": "content/ecospold2/review.md",
+      "sha256": "8afeaa4e317fabb579426db2f32b13b1241a35c91f6d844253b45128557e0978"
+    },
+    {
+      "path": "content/ecospold2/technology.md",
+      "sha256": "b1bf2ef9170401363a7bd6ec0972ee0ed99b6bdf6d39fd6948d63cea87620437"
+    },
+    {
+      "path": "content/ecospold2/text-and-image.md",
+      "sha256": "b3c9bad8cff62d68ee562158ac96a6da5ab17c4829d33b4660be88e7dd3cccc1"
+    },
+    {
+      "path": "content/ecospold2/time-period.md",
+      "sha256": "3bc2d64b187ed15acb41b0dba701815dc31acb614547ea6dcb845312d27a8dce"
+    },
+    {
+      "path": "content/ecospold2/transfer-coefficients.md",
+      "sha256": "b04f17b5fa035c4342a3328a31d7cfc8c8d053ffeacbfe4e1d2ac2b4040f6ea8"
+    },
+    {
+      "path": "content/ecospold2/translation-review.md",
+      "sha256": "6153d05ac627f9b2bd1efae7eeeb271a5a7c7662702f3d302e54ae919d9e184e"
+    },
+    {
       "path": "content/ecospold2/tutorial-review.md",
-      "sha256": "abd9e99a5ba3c01a2d3eb8e368d5ae522a734217c2bb97354ad20fe3eb775d67"
+      "sha256": "178fefb775b7afff1f1b229c6396c52d55c4d90522780f85d72aab5f46b61688"
+    },
+    {
+      "path": "content/ecospold2/uncertainty.md",
+      "sha256": "125a609ce17a3b914006ca816d10d2878cd1058073b6d6c4f5faae727b2a2f3e"
+    },
+    {
+      "path": "content/ecospold2/xml-structure.md",
+      "sha256": "12cf418aaa50af7c52ef3159469d9ba433626f73af550d16dcef497461466f0a"
     }
   ],
   "review_files": [
+    {
+      "path": "audit/ecospold2/tutorial/chapter-layout-review.json",
+      "sha256": "2052765bb310283ecffe4085a67983502e6e0eceaf6a88b93a4431b52920b387"
+    },
     {
       "path": "audit/ecospold2/tutorial/narrative-review-a.json",
       "sha256": "07beddf75f5749a398e6cec63a64e677fdd7fcfb232ebcc319f0b66bc5f0d5ec"

@@ -1,109 +1,49 @@
-# 技术（TTechnology）
+# 技术
 
-源文分组：Technology。本章完整收录 **2 条字段定义**。
+对应官方格式类型：`TTechnology`。本篇以文章解释该类型的 2 条字段；复合类型也会说明它们依附在哪个对象上。
 
-XML 位置：`activityDescription/technology`。以 `activityDescription/`、`flowData/`、`modellingAndValidation/` 或 `administrativeInformation/` 开头的位置，均相对于 `/ecoSpold/activityDataset/`；`…` 表示可复用结构。
+## 技术水平要结合有效年份和地点阅读 <a href="#read-ttechnology" id="read-ttechnology"></a>
 
-[阅读约定与 XSD 约束](reading-guide.md) · [全部字段索引](field-index.md) · [审校记录](translation-review.md)
+`activityDescription/technology` 采用 `TTechnology`。属性 `technologyLevel` 是粗粒度的技术分类，默认值为 `3`，可用于建模时选择特定技术水平的过程。值 `0` 为未指定，适用于没有技术水平的市场活动；`1` 为新兴技术，在某些方面技术性能优于现代技术，但纯按经济考虑投资时尚未成为最常安装的选择；`2` 为现代技术，是纯按经济考虑新增产能时采用的、竞争力最强的技术；`3` 为当前技术，介于现代与旧有之间；`4` 为旧有技术，是纯按经济考虑退役时正在退出使用、竞争力最低的技术；`5` 为过时技术，已经不再使用。
 
-> 本参考译自官方格式包 v1.0.13（所附 XSD version 为 2.0.13）。必填性和重复性先忠实保留原表，再单列 XSD 结构约束；不自动代表所有后续版本的模式。
+这些标签不是设备年龄。技术即使已存在很久，只要仍最有竞争力，就可以标为现代；技术即使出现较晚，也可能很快被更有竞争力的技术取代而标为旧有。同一技术可随数据有效年份变化等级，也可在同一年、不同地区具有不同等级。因此，读取 `technologyLevel` 时应同时读取时间和地理信息，不能将某地区某年的等级外推为全球永久属性。
 
-{% tabs %}
+元素 `comment` 采用 `TTextAndImage`，说明技术的性质、特征及单元过程的技术属性。若活动包含多个子活动，也应描述对应技术，并使用专业工艺名称。提取这段说明，是理解技术差异及决定是否采用数据的步骤；仅用技术等级整数无法替代工艺文档。
 
-{% tab title="中文" %}
+## 怎样定位、使用与提取
 
-## 结构说明
+比较工艺与技术先进程度时，同时阅读 technologyLevel 和 comment。技术等级是适用性信息，不能作为交换量的系数；缺失或“未定义”也不等于零技术投入。
 
-分组可重复：否；分组必填：是。
+定位路径相对于完整的 `/ecoSpold/activityDataset`：`activityDescription/technology`。其中 `.//` 表示在当前数据集的后代中检索；返回结果会保留实际父路径，以区分不同交换或参数。
 
-描述已收集数据所对应的技术。文本应包含识别活动数据所依据技术的属性和特征所需的信息。
+下载[教学 demo 与读取脚本 ZIP](demo/ecospold2-tutorial-demo.zip)，解压后在同一目录运行下面代码。`read_section.py` 使用 Python 标准库，返回全部匹配节点的属性和完整子节点树；它保留 UUID、原始数值字符串、语言标签和子节点顺序。代码仅展示前两条，变量 `records` 保留全部匹配记录。文件有多个普通数据集时，显式选择 `index`，或逐个遍历；子数据集应先展开继承。
 
-### `@technologyLevel` · FieldID 500 <a href="#field-500" id="field-500"></a>
+原表名称前带 `@` 的是 XML 属性，去掉 `@` 后在返回记录的 `attributes` 中取值，例如 `record["attributes"].get("amount")`。没有 `@` 的字段是子元素，在 `children` 中按完整 `tag` 匹配；名称前的 `{http://www.EcoInvent.org/EcoSpold02}` 是命名空间。多语言字段保留多个子节点，`xml:lang` 在属性字典中写为 `{http://www.w3.org/XML/1998/namespace}lang`。更深的字段继续进入相应子节点的 `children`；缺失属性返回 `None`，不要补成零。
 
-局部 XML 位置：`TTechnology/@technologyLevel`；ecoSpold1 对照编号：`new`。
+```python
+import json
+from read_section import load_dataset, read_section
 
-| 类型 | 必填 | 可重复 |
-| --- | --- | --- |
-| `integer` | 否 | 否 |
+dataset = load_dataset("demo-product.spold", index=0)
+records = read_section(dataset, "TTechnology")
+print("匹配节点数：", len(records))
+print(json.dumps(records[:2], ensure_ascii=False, indent=2))
+```
 
-长度：—；多语言：否；主数据冗余字段：否。
+## 对照 demo 理解读取结果
 
-对所描述活动的技术进行大致分类的标签，可在建模时用于选择具有特定技术水平的过程。所用代码如下：0=未指定（Undefined）。用于没有技术水平的市场活动。1=新兴（New）。用于在某些方面被认为技术上优于现代技术，但在投资纯粹依据经济考虑时尚未成为最普遍安装选择的技术。2=现代（Modern）。用于在投资纯粹依据经济考虑时，当前新增产能所采用的技术（最有竞争力的技术）。3=当前（Current，默认）。用于介于现代和旧有之间的技术。4=旧有（Old）。用于在退役纯粹依据经济考虑时，当前正在退出使用的技术（竞争力最低的技术）。5=过时（Outdated）。用于已不再使用的技术。这些术语并不一定反映技术的年代。如果一项技术仍最有竞争力，即使已有百年历史，也可以属于现代技术；如果一项技术很快被其他更有竞争力的技术取代，即使出现时间相对较短，也可以属于旧有技术。技术水平是相对于“时间段”（Time Period）所给数据有效年份而言的。在时间序列中，同一技术的技术水平可随时间改变。即使在同一年，同一技术在不同地理位置也可被赋予不同技术水平。
+在 `demo-product.spold` 中实际匹配 **1 个节点**。下面是第一个节点的属性与前两个子节点的精选片段；子节点内部结构和其他节点仍保存在代码的完整返回值中。路径带有同级序号，便于回到原文件定位，序号不是主数据 UUID。
 
-**取值选项（原表）：** 0 = 未指定（undefined）, 1 = 新兴（New）, 2 = 现代（Modern）, 3 = 当前（Current，默认）, 4 = 旧有（Old）, 5 = 过时（Outdated）
+```json
+{
+  "path": "/ecoSpold/activityDataset/activityDescription[1]/technology[1]",
+  "attributes": {
+    "technologyLevel": "3"
+  },
+  "children_excerpt": []
+}
+```
 
-**XSD 结构约束：** `use="optional"`；`default="3"`。
+## 继续阅读
 
-模式出处：[EcoSpold02MetaInformation.xsd](original/Schemas/datasets/EcoSpold02MetaInformation.xsd)，`TTechnology`。
-
-### `comment` · FieldID 510 <a href="#field-510" id="field-510"></a>
-
-局部 XML 位置：`TTechnology/comment`；ecoSpold1 对照编号：`692`。
-
-| 类型 | 必填 | 可重复 |
-| --- | --- | --- |
-| `TTextAndImage` | 否 | 否 |
-
-长度：—；多语言：是；主数据冗余字段：否。
-
-用于描述活动技术的文本和图像字段。文本应包含识别活动数据所依据技术的属性和特征所需的信息，描述该单元过程的技术属性。如果活动包含多个子活动，也应报告相应技术。描述应使用专业命名。文本和图像字段是 text、imageUri 和 variable 元素的列表。text 和 imageUri 元素可用于描述当前部分，并可按照各自 index 属性指定的任意顺序组合。文本变量由 variable 元素定义，可在文本中以 {{variablename}} 的形式使用。如果父数据集的文本字段包含变量，子活动数据集可重新定义该变量，同时保持父数据集其余文本不变。这样便于修改子过程中的局部文本。
-
-text、imageUri 和 variable 元素的列表。text 和 imageUri 元素可用于描述当前部分，并可按照各自 index 属性指定的任意顺序组合。文本变量由 variable 元素定义，可在文本中以 {{variablename}} 的形式使用。如果父数据集的文本字段包含变量，子活动数据集可重新定义该变量，同时保持父数据集其余文本不变。这样便于修改子过程中的局部文本。
-
-复合类型详情：[ `TTextAndImage` ](text-and-image.md)。
-
-**XSD 结构约束：** `minOccurs="0"`，`maxOccurs="1"`（未显式声明的值按 XSD 默认值列出）。
-
-模式出处：[EcoSpold02MetaInformation.xsd](original/Schemas/datasets/EcoSpold02MetaInformation.xsd)，`TTechnology`。
-
-{% endtab %}
-
-{% tab title="English 原文" %}
-
-## Structure
-
-Group multiple occurrences：No；Group required：Yes。
-
-Contains a description of the technology for which data has been collected. The text should cover information necessary to identify the properties and particularities of the technology(ies) underlying the activity data.
-
-### `@technologyLevel` · FieldID 500 <a href="#en-field-500" id="en-field-500"></a>
-
-Local XML path：`TTechnology/@technologyLevel`；ecoSpold1 mapping：`new`。
-
-| Type | Required | Multiple occurrence |
-| --- | --- | --- |
-| `integer` | No | No |
-
-Size：—；Multi language：No；Redundant master data：No。
-
-Label that grossly classifies the technology of the described activity and can be used in modelling to select processes with a specific technological level. The codes used are:0=Undefined. For market activities that do not have a technology level.1=New. For a technology assumed to be on some aspects technically superior to modern technology, but not yet the most commonly installed when investment is based on purely economic considerations.2=Modern. For a technology currently used when installing new capacity, when investment is based on purely economic considerations (most competitive technology). 3=Current (default). For a technology in between modern and old.4=Old. For a technology that is currently taken out of use, when decommissioning is based on purely economic considerations (least competitive technology).5=Outdated. For a technology no longer in use.The terms used does not necessarily reflect the age of the technologies. A modern technology can be a century old, if it is still the most competitive technology, and an old technology can be relatively young, if it is one that has quickly become superseded by other more competitive ones. The technology level is relative to the year for which the data are valid, as given under Time Period. In a time series, the same technology can move between different technology levels over time. The same technology can also be given different technology levels in different geographical locations, even in the same year.
-
-**Options (original table)：** 0 = undefined, 1 = New, 2 = Modern, 3 = Current (default), 4 = Old, 5 = Outdated
-
-**XSD structural constraints：** `use="optional"`；`default="3"`。
-
-Schema source：[EcoSpold02MetaInformation.xsd](original/Schemas/datasets/EcoSpold02MetaInformation.xsd)，`TTechnology`。
-
-### `comment` · FieldID 510 <a href="#en-field-510" id="en-field-510"></a>
-
-Local XML path：`TTechnology/comment`；ecoSpold1 mapping：`692`。
-
-| Type | Required | Multiple occurrence |
-| --- | --- | --- |
-| `TTextAndImage` | No | No |
-
-Size：—；Multi language：Yes；Redundant master data：No。
-
-Text and image field to describe the technology of the activity. The text should cover information necessary to identify the properties and particularities of the technology(ies) underlying the activity data. Describes the technological properties of the unit process. If the activity comprises several subactivities, the corresponding technologies should be reported as well. Professional nomenclature should be used for the description.Text and image fields are list of text, imageUri and variable elements. The text and imageUri elements can used to describe the current section and they can be combined in any order given by their index attribute. Text variables are defined by the variable elements, which may be used in the text as {{variablename}}. If a parent text field includes a variable, this variable may be redefined by the child activity dataset while keeping the rest of the parent text intact. This allows easy changes of text parts in child processes.
-
-List of text, imageUri and variable elements. The text and imageUri elements can used to describe the current section and they can be combined in any order given by their index attribute. Text variables are defined by the variable elements, which may be used in the text as {{variablename}}. If a parent text field includes a variable, this variable may be redefined by the child activity dataset while keeping the rest of the parent text intact. This allows easy changes of text parts in child processes.
-
-Complex type details：[ `TTextAndImage` ](text-and-image.md)。
-
-**XSD structural constraints：** `minOccurs="0"`，`maxOccurs="1"` (undeclared values use XSD defaults)。
-
-Schema source：[EcoSpold02MetaInformation.xsd](original/Schemas/datasets/EcoSpold02MetaInformation.xsd)，`TTechnology`。
-
-{% endtab %}
-
-{% endtabs %}
+[提取与查询实践](extraction-practice.md)把数量读取、身份筛选与参考产品归一化连起来；[完整中文格式译表](format-reference.md#appendix-ttechnology)用于核对本类型的字段次序、类型和原表标记。原文疑点见[审校记录](translation-review.md)。

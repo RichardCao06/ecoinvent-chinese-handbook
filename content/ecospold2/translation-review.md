@@ -10,7 +10,7 @@
 
 ### 1. 已处理／已说明 · `TActivity.110.description.0`
 
-相关章节：[活动](activity.md#field-110)
+相关章节：[活动](activity.md)
 
 **原文：** Indicates the kind of data (1 = Unit process; 2 = System terminated) that is represented by this dataset. Data are always entered by the data providers as Unit process. The database-generated, attributional and consequential datasets are available both at the unit process level and as aggregated (terminated) system dataset (i.e. the life cycle inventory results) containing the aggregated elementary exchanges and impacts of the product system related to one specific product from the unit process. The terminated product systems include all upstream activity datasets, as linked by the intermediate exchanges, and therefore do not themselves have any intermediate exchanges, only environmental exchanges and accumulated impact assessment results.
 
@@ -22,7 +22,7 @@
 
 ### 2. 已处理／已说明 · `TActivity.130.description.1`
 
-相关章节：[活动](activity.md#field-130)
+相关章节：[活动](activity.md)
 
 **原文：** Child activity is derived (inherited) from its parent activity and only the content changes in comparison to its parent are stored in the child process. Child activity datasets cannot be validated using the EcoSpold02 schema, since most of the required fields will not be filled. Please refer to the additional documentation regarding inheritance of datasets in the ecoinvent database for further details.
 
@@ -34,7 +34,7 @@
 
 ### 3. 待专家复核 · `TActivity.135.description.0`
 
-相关章节：[活动](activity.md#field-135)
+相关章节：[活动](activity.md)
 
 **原文：** The inheritance depth expresses the maximum number of parent datasets for the current dataset. The following values are used in the ecoinvent context: 0 = not a child, 1 = a geography child, 2 = a temporal child, 3 = a macro-economic scenario child.
 
@@ -46,7 +46,7 @@
 
 ### 4. 待专家复核 · `TParameter.1715.description.0`
 
-相关章节：[参数](parameters.md#field-1715)
+相关章节：[参数](parameters.md)
 
 **原文：** The variable name is a short name for the exchange, used when refering to the exchange amount in mathematical relations (formulas). Variables may contain characters, numbers and underscores (\_). Variable names must start with a character (a-z). Variable names are not case sensitive (calorific\_Value equals Calorific\_value).
 
@@ -58,7 +58,7 @@
 
 ### 5. 待专家复核 · `TImpactIndicatorResult.1820.description.0`
 
-相关章节：[影响指标结果](impact-indicators.md#field-1820)
+相关章节：[影响指标结果](impact-indicators.md)
 
 **原文：** Reference to the method of the impact category.
 
@@ -70,7 +70,7 @@
 
 ### 6. 已处理／已说明 · `TActivity.180.options`
 
-相关章节：[活动](activity.md#field-180)
+相关章节：[活动](activity.md)
 
 **原文：** 0 = Undefined (default); 1 = Net values; 2 = Gross values
 
@@ -82,7 +82,7 @@
 
 ### 7. 待专家复核 · `TActivity.120.description.0`
 
-相关章节：[活动](activity.md#field-120)
+相关章节：[活动](activity.md)
 
 **原文：** Text and image field for general information about the dataset. Only comments and references of more general nature that cannot be placed in any of the more specific comment fields, should be placed here. In general, the information in the dataset should be sufficient to judge the appropriateness of a dataset for a specific application.Text and image fields are list of text, imageUri and variable elements. The text and imageUri elements can used to describe the current section and they can be combined in any order given by their index attribute. Text variables are defined by the variable elements, which may be used in the text as {{variablename}}. If a parent text field includes a variable, this variable may be redefined by the child activity dataset while keeping the rest of the parent text intact. This allows easy changes of text parts in child processes.
 
@@ -94,7 +94,7 @@
 
 ### 8. 待专家复核 · `TParameter.1715.description.0`
 
-相关章节：[参数](parameters.md#field-1715)
+相关章节：[参数](parameters.md)
 
 **原文：** The variable name is a short name for the exchange, used when refering to the exchange amount in mathematical relations (formulas). Variables may contain characters, numbers and underscores (\_). Variable names must start with a character (a-z). Variable names are not case sensitive (calorific\_Value equals Calorific\_value).
 
@@ -106,7 +106,7 @@
 
 ### 9. 待专家复核 · `TUncertainty.2100.description.0`
 
-相关章节：[不确定性与分布参数](uncertainty.md#field-2100)
+相关章节：[不确定性与分布参数](uncertainty.md)
 
 **原文：** The Lognormal-distribution with average value μ (Mu parameter) and variance σ (Variance parameter) is a Normal-distribution, shaping the natural logarithm of the characteristic values ln(x) instead of x-values.
 
@@ -118,7 +118,7 @@
 
 ### 10. 待专家复核 · `TUncertainty.2120.description.1`
 
-相关章节：[不确定性与分布参数](uncertainty.md#field-2120)
+相关章节：[不确定性与分布参数](uncertainty.md)
 
 **原文：** In case of triangular uncertainty distribution, the meanValue shall be calculated from the mostLikelyValue. The field mostLikelyValue (#3797) must not be used in the ecoinvent context.
 
@@ -130,7 +130,7 @@
 
 ### 11. 待专家复核 · `TUncertainty.2140.description.0`
 
-相关章节：[不确定性与分布参数](uncertainty.md#field-2140)
+相关章节：[不确定性与分布参数](uncertainty.md)
 
 **原文：** Beta distribution using minValue (a), maxValue (b) and mostFrequentValue (m) parameters to calculate the two shape parameters of the underlying Gamma distributions. The parameters must follow this condition: ((a &lt;= m) and (m &lt;= b)) or (a = b). The shape values will be calculated by these formulas: Shape1 = 1 + 4 \* ((m-a) / (b-a)). Shape2 = 6 - Shape1.
 
@@ -142,7 +142,7 @@
 
 ### 12. 待专家复核 · `TUncertainty.2173.description.0`
 
-相关章节：[不确定性与分布参数](uncertainty.md#field-2173)
+相关章节：[不确定性与分布参数](uncertainty.md)
 
 **原文：** The value, extended from both sides of the mean, that would be necessary to cover 95% of the population
 
@@ -154,7 +154,7 @@
 
 ### 13. 已处理／已说明 · `TDataGeneratorAndPublication.3560.options`
 
-相关章节：[数据生成者与发布](publication.md#field-3560)
+相关章节：[数据生成者与发布](publication.md)
 
 **原文：** If 759=3
 
@@ -166,7 +166,7 @@
 
 ### 14. 已处理／已说明 · `TDataGeneratorAndPublication.3522.description.0`
 
-相关章节：[数据生成者与发布](publication.md#field-3522)
+相关章节：[数据生成者与发布](publication.md)
 
 **原文：** If a reference to a master data entity must be removed in a child dataset it is required to set the corresponding xxxOverwrittenByChild attribute to true. Otherwise the removed referenced will be interpreted as "Keep the Parent Value".
 
@@ -178,7 +178,7 @@
 
 ### 15. 已处理／已说明 · `TElementaryExchange.1660.description.0`
 
-相关章节：[基本流交换专用字段](elementary-exchanges.md#field-1660)
+相关章节：[基本流交换专用字段](elementary-exchanges.md)
 
 **原文：** Name of the compartment and subcompartment of the exchange. The xml document referenced by validCompartments contains definitions of valid compartment/subcompartment pairs for a given language.
 
@@ -202,7 +202,7 @@
 
 ### 17. 已处理／已说明 · `TCompartment.330.description.0`
 
-相关章节：[区室与子区室](compartments.md#field-330)
+相关章节：[区室与子区室](compartments.md)
 
 **原文：** The name of the compartment.This is the plaintext value of the referenced compartment (field 5315).
 
@@ -214,7 +214,7 @@
 
 ### 18. 已处理／已说明 · `TCompartment.340.description.0`
 
-相关章节：[区室与子区室](compartments.md#field-340)
+相关章节：[区室与子区室](compartments.md)
 
 **原文：** The name of the subcompartment.This is the plaintext value of the referenced subcompartment (field 5325).
 
@@ -226,7 +226,7 @@
 
 ### 19. 已处理／已说明 · `TCompartment.350.description.0`
 
-相关章节：[区室与子区室](compartments.md#field-350)
+相关章节：[区室与子区室](compartments.md)
 
 **原文：** Reference to the compartment/subcompartment pair. Must be defined in list of valid compartments (see field 5330).
 
@@ -238,7 +238,7 @@
 
 ### 20. 已处理／已说明 · `TCompartment.351.description.0`
 
-相关章节：[区室与子区室](compartments.md#field-351)
+相关章节：[区室与子区室](compartments.md)
 
 **原文：** Reference to the context of the subcompartment
 
@@ -250,7 +250,7 @@
 
 ### 21. 待专家复核 · `TUncertainty.2110.description.0`
 
-相关章节：[不确定性与分布参数](uncertainty.md#field-2110)
+相关章节：[不确定性与分布参数](uncertainty.md)
 
 **原文：** Normal (also known as "Gaussian") distribution. It is a family of distributions of the same general form, differing in their location and scale parameters: the mean ("MeanValue") and standard deviation ("Deviation"), respectively.
 
@@ -274,7 +274,7 @@
 
 ### 23. 待专家复核 · `TIntermediateExchange.1534.description.1`
 
-相关章节：[中间交换专用字段](intermediate-exchanges.md#field-1534)
+相关章节：[中间交换专用字段](intermediate-exchanges.md)
 
 **原文：** The result of the formula with a specific set of variable values is written into the amount field.
 
@@ -286,7 +286,7 @@
 
 ### 24. 已处理／已说明 · `TIntermediateExchange.1530.description.0`
 
-相关章节：[中间交换专用字段](intermediate-exchanges.md#field-1530)
+相关章节：[中间交换专用字段](intermediate-exchanges.md)
 
 **原文：** The product volume expressed per year in the same unit as the exchange.
 
@@ -298,7 +298,7 @@
 
 ### 25. 已处理／已说明 · `TIntermediateExchange.1532.description.0`
 
-相关章节：[中间交换专用字段](intermediate-exchanges.md#field-1532)
+相关章节：[中间交换专用字段](intermediate-exchanges.md)
 
 **原文：** The variable name is a short name for the production volume of the exchange, used when refering to the production volume amount in mathematical relations (formulas). Variables may contain characters, numbers and underscores (\_). Variable names must start with a character (a-z). Variable names are not case sensitive (calorific\_Value equals Calorific\_value).
 
@@ -310,7 +310,7 @@
 
 ### 26. 已处理／已说明 · `TIntermediateExchange.1535.description.0`
 
-相关章节：[中间交换专用字段](intermediate-exchanges.md#field-1535)
+相关章节：[中间交换专用字段](intermediate-exchanges.md)
 
 **原文：** A general comment can be made on the data source, assumptions and calculations for the production volume data.
 
@@ -322,7 +322,7 @@
 
 ### 27. 已处理／已说明 · `TCustomExchange.1200.description.0`
 
-相关章节：[交换的通用字段](exchanges.md#field-1200)
+相关章节：[交换的通用字段](exchanges.md)
 
 **原文：** Transfer coefficients relate specific inputs to specific outputs and record the share of this specific input that contributes to this specific output.
 

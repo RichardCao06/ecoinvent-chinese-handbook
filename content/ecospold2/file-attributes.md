@@ -1,469 +1,78 @@
-# 文件属性（TFileAttributes）
-
-源文分组：File attributes。本章完整收录 **13 条字段定义**。
-
-XML 位置：`administrativeInformation/fileAttributes`。以 `activityDescription/`、`flowData/`、`modellingAndValidation/` 或 `administrativeInformation/` 开头的位置，均相对于 `/ecoSpold/activityDataset/`；`…` 表示可复用结构。
-
-[阅读约定与 XSD 约束](reading-guide.md) · [全部字段索引](field-index.md) · [审校记录](translation-review.md)
-
-> 本参考译自官方格式包 v1.0.13（所附 XSD version 为 2.0.13）。必填性和重复性先忠实保留原表，再单列 XSD 结构约束；不自动代表所有后续版本的模式。
-
-{% tabs %}
-
-{% tab title="中文" %}
-
-## 结构说明
-
-分组可重复：否；分组必填：是。
-
-包含关于整个文件的元信息。
-
-### `@majorRelease` · FieldID 3800 <a href="#field-3800" id="field-3800"></a>
-
-局部 XML 位置：`TFileAttributes/@majorRelease`；ecoSpold1 对照编号：`202`。
-
-| 类型 | 必填 | 可重复 |
-| --- | --- | --- |
-| `integer` | 是 | 否 |
-
-长度：—；多语言：否；主数据冗余字段：否。
-
-每次重大更新时，主发布版本号加一，例如每两年一次。
-
-**XSD 结构约束：** `use="required"`。
-
-模式出处：[EcoSpold02MetaInformation.xsd](original/Schemas/datasets/EcoSpold02MetaInformation.xsd)，`TFileAttributes`。
-
-### `@minorRelease` · FieldID 3805 <a href="#field-3805" id="field-3805"></a>
-
-局部 XML 位置：`TFileAttributes/@minorRelease`；ecoSpold1 对照编号：`202`。
-
-| 类型 | 必填 | 可重复 |
-| --- | --- | --- |
-| `integer` | 是 | 否 |
-
-长度：—；多语言：否；主数据冗余字段：否。
-
-在两次重大更新之间，每次发布时次发布版本号加一。
-
-**XSD 结构约束：** `use="required"`。
-
-模式出处：[EcoSpold02MetaInformation.xsd](original/Schemas/datasets/EcoSpold02MetaInformation.xsd)，`TFileAttributes`。
-
-### `@majorRevision` · FieldID 3810 <a href="#field-3810" id="field-3810"></a>
-
-局部 XML 位置：`TFileAttributes/@majorRevision`；ecoSpold1 对照编号：`207`。
-
-| 类型 | 必填 | 可重复 |
-| --- | --- | --- |
-| `integer` | 是 | 否 |
-
-长度：—；多语言：否；主数据冗余字段：否。
-
-修订号针对每个数据集单独设定，独立于整个数据库的发布版本，用于区分数据库主／次发布版本内的数据集不同版本。主修订号反映数据集已接受变更的数量，只能随时间增加，不得手动更改。在 ecoinvent 上下文中，每当活动变更加入数据库（即通过审查流程后），主修订号都会增加，同时将次修订号重置为 1。
-
-**XSD 结构约束：** `use="required"`。
-
-模式出处：[EcoSpold02MetaInformation.xsd](original/Schemas/datasets/EcoSpold02MetaInformation.xsd)，`TFileAttributes`。
-
-### `@minorRevision` · FieldID 3815 <a href="#field-3815" id="field-3815"></a>
-
-局部 XML 位置：`TFileAttributes/@minorRevision`；ecoSpold1 对照编号：`207`。
-
-| 类型 | 必填 | 可重复 |
-| --- | --- | --- |
-| `integer` | 是 | 否 |
-
-长度：—；多语言：否；主数据冗余字段：否。
-
-次修订号描述数据集在提交审查前编辑过程中的版本。在 ecoinvent 上下文中，每当数据提供者将对数据集的修改保存到本地，或作为草稿保存到 ecoinvent 服务器时，次修订号都会自动增加。每当主修订号增加（即数据集变更被审查者接受）时，次修订号重置为“1”。
-
-**XSD 结构约束：** `use="required"`。
-
-模式出处：[EcoSpold02MetaInformation.xsd](original/Schemas/datasets/EcoSpold02MetaInformation.xsd)，`TFileAttributes`。
-
-### `@defaultLanguage` · FieldID 3820 <a href="#field-3820" id="field-3820"></a>
-
-局部 XML 位置：`TFileAttributes/@defaultLanguage`；ecoSpold1 对照编号：`new`。
-
-| 类型 | 必填 | 可重复 |
-| --- | --- | --- |
-| `string` | 否 | 否 |
-
-长度：—；多语言：否；主数据冗余字段：否。
-
-该数据集所有多语言字段的默认语言。每个多语言字段至少应包含默认语言的值。如果未提供 defaultLanguage，则使用默认值（"en"）。
-
-**XSD 结构约束：** `use="optional"`；`default="en"`。
-
-模式出处：[EcoSpold02MetaInformation.xsd](original/Schemas/datasets/EcoSpold02MetaInformation.xsd)，`TFileAttributes`。
-
-### `@creationTimestamp` · FieldID 3830 <a href="#field-3830" id="field-3830"></a>
-
-局部 XML 位置：`TFileAttributes/@creationTimestamp`；ecoSpold1 对照编号：`204a`。
-
-| 类型 | 必填 | 可重复 |
-| --- | --- | --- |
-| `dateTime` | 否 | 否 |
-
-长度：—；多语言：否；主数据冗余字段：否。
-
-数据集创建时自动生成的日期。
-
-**取值选项（原表）：** 数据集创建时间。
-
-**XSD 结构约束：** `use="optional"`。
-
-模式出处：[EcoSpold02MetaInformation.xsd](original/Schemas/datasets/EcoSpold02MetaInformation.xsd)，`TFileAttributes`。
-
-### `@lastEditTimestamp` · FieldID 3840 <a href="#field-3840" id="field-3840"></a>
-
-局部 XML 位置：`TFileAttributes/@lastEditTimestamp`；ecoSpold1 对照编号：`204b`。
-
-| 类型 | 必填 | 可重复 |
-| --- | --- | --- |
-| `dateTime` | 否 | 否 |
-
-长度：—；多语言：否；主数据冗余字段：否。
-
-数据集保存时自动生成的日期。
-
-**取值选项（原表）：** 数据集最后编辑时间。
-
-**XSD 结构约束：** `use="optional"`。
-
-模式出处：[EcoSpold02MetaInformation.xsd](original/Schemas/datasets/EcoSpold02MetaInformation.xsd)，`TFileAttributes`。
-
-### `@internalSchemaVersion` · FieldID 3850 <a href="#field-3850" id="field-3850"></a>
-
-局部 XML 位置：`TFileAttributes/@internalSchemaVersion`；ecoSpold1 对照编号：`new`。
-
-| 类型 | 必填 | 可重复 |
-| --- | --- | --- |
-| `TBaseString80` | 否 | 否 |
-
-长度：80；多语言：否；主数据冗余字段：否。
-
-数据集基于此内部模式版本生成。
-
-**XSD 结构约束：** `use="optional"`。
-
-模式出处：[EcoSpold02MetaInformation.xsd](original/Schemas/datasets/EcoSpold02MetaInformation.xsd)，`TFileAttributes`。
-
-### `@fileGenerator` · FieldID 3860 <a href="#field-3860" id="field-3860"></a>
-
-局部 XML 位置：`TFileAttributes/@fileGenerator`；ecoSpold1 对照编号：`new`。
-
-| 类型 | 必填 | 可重复 |
-| --- | --- | --- |
-| `TBaseString255` | 否 | 否 |
-
-长度：255；多语言：否；主数据冗余字段：否。
-
-对创建此文件的程序的描述，最好包含版本。
-
-**XSD 结构约束：** `use="optional"`（XSD 默认值）。
-
-模式出处：[EcoSpold02MetaInformation.xsd](original/Schemas/datasets/EcoSpold02MetaInformation.xsd)，`TFileAttributes`。
-
-### `@fileTimestamp` · FieldID 3870 <a href="#field-3870" id="field-3870"></a>
-
-局部 XML 位置：`TFileAttributes/@fileTimestamp`；ecoSpold1 对照编号：`new`。
-
-| 类型 | 必填 | 可重复 |
-| --- | --- | --- |
-| `dateTime` | 否 | 否 |
-
-长度：—；多语言：否；主数据冗余字段：否。
-
-此文件创建的时间和日期。
-
-**XSD 结构约束：** `use="optional"`（XSD 默认值）。
-
-模式出处：[EcoSpold02MetaInformation.xsd](original/Schemas/datasets/EcoSpold02MetaInformation.xsd)，`TFileAttributes`。
-
-### `@contextId` · FieldID 3880 <a href="#field-3880" id="field-3880"></a>
-
-局部 XML 位置：`TFileAttributes/@contextId`；ecoSpold1 对照编号：`new`。
-
-| 类型 | 必填 | 可重复 |
-| --- | --- | --- |
-| `TUuid` | 否 | 否 |
-
-长度：36；多语言：否；主数据冗余字段：否。
-
-表示此数据集所面向的上下文。该信息例如用于将数据集信息的可访问性限制在一个特定上下文内，并确定访问它所需的主数据文件。如果省略此属性，则假定该数据集为独立数据集，且无法解析主数据引用以取得所引用内容。
-
-上下文取代 ecoSpold01 的质量网络（字段 id 304）。ecoinvent 质量网络的上下文 ID 可在 Context.xml 主数据文件中找到。
-
-**XSD 结构约束：** `use="optional"`（XSD 默认值）。
-
-模式出处：[EcoSpold02MetaInformation.xsd](original/Schemas/datasets/EcoSpold02MetaInformation.xsd)，`TFileAttributes`。
-
-### `contextName` · FieldID 3885 <a href="#field-3885" id="field-3885"></a>
-
-局部 XML 位置：`TFileAttributes/contextName`；ecoSpold1 对照编号：`new`。
-
-| 类型 | 必填 | 可重复 |
-| --- | --- | --- |
-| `TString80` | 否 | 否 |
-
-长度：80；多语言：是；主数据冗余字段：是。
-
-字段 3880 所引用上下文的名称。
-
-上下文取代 ecoSpold01 的质量网络（字段 id 304）。ecoinvent 质量网络的上下文 ID 可在 Context.xml 主数据文件中找到。
-
-**XSD 结构约束：** `minOccurs="0"`，`maxOccurs="unbounded"`。
-
-模式出处：[EcoSpold02MetaInformation.xsd](original/Schemas/datasets/EcoSpold02MetaInformation.xsd)，`TFileAttributes`。
-
-### `requiredContext` · FieldID 3890 <a href="#field-3890" id="field-3890"></a>
-
-局部 XML 位置：`TFileAttributes/requiredContext`；ecoSpold1 对照编号：`new`。
-
-| 类型 | 必填 | 可重复 |
-| --- | --- | --- |
-| `TRequiredContextReference` | 否 | 是 |
-
-长度：—；多语言：否；主数据冗余字段：否。
-
-引用加载本文档所必需的上下文，以完整保留文档中的所有主数据引用。
-
-复合类型详情：[ `TRequiredContextReference` ](required-contexts.md)。
-
-**XSD 结构约束：** `minOccurs="0"`，`maxOccurs="unbounded"`。
-
-模式出处：[EcoSpold02MetaInformation.xsd](original/Schemas/datasets/EcoSpold02MetaInformation.xsd)，`TFileAttributes`。
-
-{% endtab %}
-
-{% tab title="English 原文" %}
-
-## Structure
-
-Group multiple occurrences：No；Group required：Yes。
-
-Contains metainformation regarding the file as a whole.
-
-### `@majorRelease` · FieldID 3800 <a href="#en-field-3800" id="en-field-3800"></a>
-
-Local XML path：`TFileAttributes/@majorRelease`；ecoSpold1 mapping：`202`。
-
-| Type | Required | Multiple occurrence |
-| --- | --- | --- |
-| `integer` | Yes | No |
-
-Size：—；Multi language：No；Redundant master data：No。
-
-The major release number is increased by one with each major update (e.g. every second year).
-
-**XSD structural constraints：** `use="required"`。
-
-Schema source：[EcoSpold02MetaInformation.xsd](original/Schemas/datasets/EcoSpold02MetaInformation.xsd)，`TFileAttributes`。
-
-### `@minorRelease` · FieldID 3805 <a href="#en-field-3805" id="en-field-3805"></a>
-
-Local XML path：`TFileAttributes/@minorRelease`；ecoSpold1 mapping：`202`。
-
-| Type | Required | Multiple occurrence |
-| --- | --- | --- |
-| `integer` | Yes | No |
-
-Size：—；Multi language：No；Redundant master data：No。
-
-The minor release number is increased by one for each release within the period of two major updates.
-
-**XSD structural constraints：** `use="required"`。
-
-Schema source：[EcoSpold02MetaInformation.xsd](original/Schemas/datasets/EcoSpold02MetaInformation.xsd)，`TFileAttributes`。
-
-### `@majorRevision` · FieldID 3810 <a href="#en-field-3810" id="en-field-3810"></a>
-
-Local XML path：`TFileAttributes/@majorRevision`；ecoSpold1 mapping：`207`。
-
-| Type | Required | Multiple occurrence |
-| --- | --- | --- |
-| `integer` | Yes | No |
-
-Size：—；Multi language：No；Redundant master data：No。
-
-The revision number is specific to each dataset and is independent of the overall database release version and is used to discern different versions of the dataset within the database major/minor release versions. The major revision number reflects the amount of accepted changes to the dataset. It will only increase over time and must not be changed manually. In the ecoinvent context the major revision is increased each time changes to an activity are added to the database (i.e. after they passed the review process). This also resets the minor revision to 1.
-
-**XSD structural constraints：** `use="required"`。
-
-Schema source：[EcoSpold02MetaInformation.xsd](original/Schemas/datasets/EcoSpold02MetaInformation.xsd)，`TFileAttributes`。
-
-### `@minorRevision` · FieldID 3815 <a href="#en-field-3815" id="en-field-3815"></a>
-
-Local XML path：`TFileAttributes/@minorRevision`；ecoSpold1 mapping：`207`。
-
-| Type | Required | Multiple occurrence |
-| --- | --- | --- |
-| `integer` | Yes | No |
-
-Size：—；Multi language：No；Redundant master data：No。
-
-The minor revision number describes versions of the dataset during the editing process before it is submitted for review. In th eecoinvent context it is increased automatically every time the data provider saves changes made to the dataset either locally or as a draft on the ecoinvent server. The minor revision number is reset to “1” each time the major revision number is increased (when changes to a dataset are accepted by a reviewer).
-
-**XSD structural constraints：** `use="required"`。
-
-Schema source：[EcoSpold02MetaInformation.xsd](original/Schemas/datasets/EcoSpold02MetaInformation.xsd)，`TFileAttributes`。
-
-### `@defaultLanguage` · FieldID 3820 <a href="#en-field-3820" id="en-field-3820"></a>
-
-Local XML path：`TFileAttributes/@defaultLanguage`；ecoSpold1 mapping：`new`。
-
-| Type | Required | Multiple occurrence |
-| --- | --- | --- |
-| `string` | No | No |
-
-Size：—；Multi language：No；Redundant master data：No。
-
-Default language for all multi language fields of this dataset. Any multi language field should contain a value at least for the default language. If no defaultLanguage is given, the default value ("en") will be used.
-
-**XSD structural constraints：** `use="optional"`；`default="en"`。
-
-Schema source：[EcoSpold02MetaInformation.xsd](original/Schemas/datasets/EcoSpold02MetaInformation.xsd)，`TFileAttributes`。
-
-### `@creationTimestamp` · FieldID 3830 <a href="#en-field-3830" id="en-field-3830"></a>
-
-Local XML path：`TFileAttributes/@creationTimestamp`；ecoSpold1 mapping：`204a`。
-
-| Type | Required | Multiple occurrence |
-| --- | --- | --- |
-| `dateTime` | No | No |
-
-Size：—；Multi language：No；Redundant master data：No。
-
-Automatically generated date when dataset is created.
-
-**Options (original table)：** Time of creation of dataset
-
-**XSD structural constraints：** `use="optional"`。
-
-Schema source：[EcoSpold02MetaInformation.xsd](original/Schemas/datasets/EcoSpold02MetaInformation.xsd)，`TFileAttributes`。
-
-### `@lastEditTimestamp` · FieldID 3840 <a href="#en-field-3840" id="en-field-3840"></a>
-
-Local XML path：`TFileAttributes/@lastEditTimestamp`；ecoSpold1 mapping：`204b`。
-
-| Type | Required | Multiple occurrence |
-| --- | --- | --- |
-| `dateTime` | No | No |
-
-Size：—；Multi language：No；Redundant master data：No。
-
-Automatically generated date when dataset is saved.
-
-**Options (original table)：** Time of last editing of dataset
-
-**XSD structural constraints：** `use="optional"`。
-
-Schema source：[EcoSpold02MetaInformation.xsd](original/Schemas/datasets/EcoSpold02MetaInformation.xsd)，`TFileAttributes`。
-
-### `@internalSchemaVersion` · FieldID 3850 <a href="#en-field-3850" id="en-field-3850"></a>
-
-Local XML path：`TFileAttributes/@internalSchemaVersion`；ecoSpold1 mapping：`new`。
-
-| Type | Required | Multiple occurrence |
-| --- | --- | --- |
-| `TBaseString80` | No | No |
-
-Size：80；Multi language：No；Redundant master data：No。
-
-Dataset is generated based on this internal schema version.
-
-**XSD structural constraints：** `use="optional"`。
-
-Schema source：[EcoSpold02MetaInformation.xsd](original/Schemas/datasets/EcoSpold02MetaInformation.xsd)，`TFileAttributes`。
-
-### `@fileGenerator` · FieldID 3860 <a href="#en-field-3860" id="en-field-3860"></a>
-
-Local XML path：`TFileAttributes/@fileGenerator`；ecoSpold1 mapping：`new`。
-
-| Type | Required | Multiple occurrence |
-| --- | --- | --- |
-| `TBaseString255` | No | No |
-
-Size：255；Multi language：No；Redundant master data：No。
-
-Description of the program which created this file. Preferably including version.
-
-**XSD structural constraints：** `use="optional"` (XSD default)。
-
-Schema source：[EcoSpold02MetaInformation.xsd](original/Schemas/datasets/EcoSpold02MetaInformation.xsd)，`TFileAttributes`。
-
-### `@fileTimestamp` · FieldID 3870 <a href="#en-field-3870" id="en-field-3870"></a>
-
-Local XML path：`TFileAttributes/@fileTimestamp`；ecoSpold1 mapping：`new`。
-
-| Type | Required | Multiple occurrence |
-| --- | --- | --- |
-| `dateTime` | No | No |
-
-Size：—；Multi language：No；Redundant master data：No。
-
-Time and date this file was created.
-
-**XSD structural constraints：** `use="optional"` (XSD default)。
-
-Schema source：[EcoSpold02MetaInformation.xsd](original/Schemas/datasets/EcoSpold02MetaInformation.xsd)，`TFileAttributes`。
-
-### `@contextId` · FieldID 3880 <a href="#en-field-3880" id="en-field-3880"></a>
-
-Local XML path：`TFileAttributes/@contextId`；ecoSpold1 mapping：`new`。
-
-| Type | Required | Multiple occurrence |
-| --- | --- | --- |
-| `TUuid` | No | No |
-
-Size：36；Multi language：No；Redundant master data：No。
-
-Indicates the context for which this dataset is designed. The information is used, e.g. for restricting the accessibility of dataset information to one particular context and to determine which master data files are needed to access it. If this attribute is omitted the dataset is assumed to be a standalone dataset and masterdata references can not be dereferenced.
-
-The context replaces the ecoSpold01 quality network (field id 304). The context id for the ecoinvent quality network can be found in the Context.xml master data file.
-
-**XSD structural constraints：** `use="optional"` (XSD default)。
-
-Schema source：[EcoSpold02MetaInformation.xsd](original/Schemas/datasets/EcoSpold02MetaInformation.xsd)，`TFileAttributes`。
-
-### `contextName` · FieldID 3885 <a href="#en-field-3885" id="en-field-3885"></a>
-
-Local XML path：`TFileAttributes/contextName`；ecoSpold1 mapping：`new`。
-
-| Type | Required | Multiple occurrence |
-| --- | --- | --- |
-| `TString80` | No | No |
-
-Size：80；Multi language：Yes；Redundant master data：Yes。
-
-The name of the context referenced by field 3880.
-
-The context replaces the ecoSpold01 quality network (field id 304). The context id for the ecoinvent quality network can be found in the Context.xml master data file.
-
-**XSD structural constraints：** `minOccurs="0"`，`maxOccurs="unbounded"`。
-
-Schema source：[EcoSpold02MetaInformation.xsd](original/Schemas/datasets/EcoSpold02MetaInformation.xsd)，`TFileAttributes`。
-
-### `requiredContext` · FieldID 3890 <a href="#en-field-3890" id="en-field-3890"></a>
-
-Local XML path：`TFileAttributes/requiredContext`；ecoSpold1 mapping：`new`。
-
-| Type | Required | Multiple occurrence |
-| --- | --- | --- |
-| `TRequiredContextReference` | No | Yes |
-
-Size：—；Multi language：No；Redundant master data：No。
-
-Reference to a context required to load this document with all its master data references intact.
-
-Complex type details：[ `TRequiredContextReference` ](required-contexts.md)。
-
-**XSD structural constraints：** `minOccurs="0"`，`maxOccurs="unbounded"`。
-
-Schema source：[EcoSpold02MetaInformation.xsd](original/Schemas/datasets/EcoSpold02MetaInformation.xsd)，`TFileAttributes`。
-
-{% endtab %}
-
-{% endtabs %}
+# 文件属性
+
+对应官方格式类型：`TFileAttributes`。本篇以文章解释该类型的 13 条字段；复合类型也会说明它们依附在哪个对象上。
+
+## 区分数据库发布版本、数据集修订版本和文件时间 <a href="#read-tfileattributes" id="read-tfileattributes"></a>
+
+`administrativeInformation/fileAttributes` 采用 `TFileAttributes`，描述文件整体信息。属性 `majorRelease` 和 `minorRelease` 属于发布版本：主发布号在重大更新时加一，次发布号在两次重大更新之间的每次发布时加一。原文以每两年一次为重大更新的例子，但这不是由格式规定的固定发布日程。属性 `majorRevision` 和 `minorRevision` 则区分某个数据集本身的修订，独立于数据库发布版本。因此，程序应将发布版本和数据集修订版本分别保存，而不是拼成一个失去角色区分的版本字段。
+
+`majorRevision` 反映数据集已获接受的变更，只能随时间增加，不得手动更改。在 ecoinvent 上下文中，活动变更通过审查并加入数据库后，它增加，同时将 `minorRevision` 重置为 `1`。`minorRevision` 描述提交审查前编辑过程中的版本；数据提供者每次将修改保存到本地或作为服务器草稿保存时，它自动增加。读取一份草稿与已接受版本时，应据此理解修订状态，不能把文件较新的时间戳直接等同于已接受的内容变更。
+
+时间属性同样需要分开。`creationTimestamp` 是数据集创建时自动生成的日期时间，`lastEditTimestamp` 是保存数据集时自动生成的日期时间；`fileTimestamp` 是当前文件创建的日期时间。前两者描述数据集的创建和编辑，后者描述文件生成，它们都不替代 `timePeriod` 的数据有效日期。`fileGenerator` 说明创建文件的程序，最好包括软件版本；`internalSchemaVersion` 说明生成数据集所依据的内部模式版本。记录这些信息，有助于判断解析环境和追踪导出来源。
+
+属性 `defaultLanguage` 为多语言字段指定默认语言，在完整数据 XSD 中省略时为 `en`；子差异文件省略该属性时应先处理继承，不能绕过父值直接取 `en`。每个多语言字段至少应有默认语言的值。提取活动名称等多语言元素时，应先选择相应语言内容，并保留语言标识，而不是把不同语言的重复元素当成重复数据。元素 `contextName` 是上下文名称，属性 `contextId` 是数据集所面向上下文的 UUID。上下文可用于限制信息访问范围，并决定解析引用时需要哪些主数据文件；它取代旧 ecoSpold01 的 quality network，ecoinvent 质量网络对应的上下文 ID 可在 `Context.xml` 中查找。
+
+缺少 `contextId` 时，说明将文件视为独立数据集，主数据引用不能被解析为实际主数据内容。这与缺少某个可选的 `…ContextId` 属性不同：后者通常沿用数据集上下文，但前提是这个上下文已经可知。元素 `requiredContext` 可重复出现，采用 `TRequiredContextReference`，用于列明完整读取主数据引用所需的其他上下文。真正取数前，应先识别本文件的上下文及所需上下文，再尝试连接各个名称、地点、人员、来源和属性的 UUID。
+
+## 怎样定位、使用与提取
+
+需要记录导出来源或匹配供应候选时，读取 fileAttributes，把数据库发布版本、数据集修订版本、contextId 及时间信息分别保存。不要用最新编辑时间替代研究年份，也不要把两个不同系统模型或发布版本里的同一活动 UUID 当成唯一同一候选。
+
+定位路径相对于完整的 `/ecoSpold/activityDataset`：`administrativeInformation/fileAttributes`。其中 `.//` 表示在当前数据集的后代中检索；返回结果会保留实际父路径，以区分不同交换或参数。
+
+下载[教学 demo 与读取脚本 ZIP](demo/ecospold2-tutorial-demo.zip)，解压后在同一目录运行下面代码。`read_section.py` 使用 Python 标准库，返回全部匹配节点的属性和完整子节点树；它保留 UUID、原始数值字符串、语言标签和子节点顺序。代码仅展示前两条，变量 `records` 保留全部匹配记录。文件有多个普通数据集时，显式选择 `index`，或逐个遍历；子数据集应先展开继承。
+
+原表名称前带 `@` 的是 XML 属性，去掉 `@` 后在返回记录的 `attributes` 中取值，例如 `record["attributes"].get("amount")`。没有 `@` 的字段是子元素，在 `children` 中按完整 `tag` 匹配；名称前的 `{http://www.EcoInvent.org/EcoSpold02}` 是命名空间。多语言字段保留多个子节点，`xml:lang` 在属性字典中写为 `{http://www.w3.org/XML/1998/namespace}lang`。更深的字段继续进入相应子节点的 `children`；缺失属性返回 `None`，不要补成零。
+
+```python
+import json
+from read_section import load_dataset, read_section
+
+dataset = load_dataset("demo-product.spold", index=0)
+records = read_section(dataset, "TFileAttributes")
+print("匹配节点数：", len(records))
+print(json.dumps(records[:2], ensure_ascii=False, indent=2))
+```
+
+## 对照 demo 理解读取结果
+
+在 `demo-product.spold` 中实际匹配 **1 个节点**。下面是第一个节点的属性与前两个子节点的精选片段；子节点内部结构和其他节点仍保存在代码的完整返回值中。路径带有同级序号，便于回到原文件定位，序号不是主数据 UUID。
+
+```json
+{
+  "path": "/ecoSpold/activityDataset/administrativeInformation[1]/fileAttributes[1]",
+  "attributes": {
+    "majorRelease": "1",
+    "minorRelease": "0",
+    "majorRevision": "1",
+    "minorRevision": "1",
+    "internalSchemaVersion": "2.0.13",
+    "defaultLanguage": "zh",
+    "creationTimestamp": "2025-01-01T00:00:00Z",
+    "lastEditTimestamp": "2025-01-01T00:00:00Z",
+    "fileTimestamp": "2025-01-01T00:00:00Z",
+    "fileGenerator": "Synthetic tutorial generator",
+    "contextId": "f71ac544-3bc8-5c15-8ea4-072d907663f1"
+  },
+  "children_excerpt": [
+    {
+      "tag": "{http://www.EcoInvent.org/EcoSpold02}contextName",
+      "attributes": {
+        "{http://www.w3.org/XML/1998/namespace}lang": "zh"
+      },
+      "text": "教学主数据上下文（虚构UUID）"
+    },
+    {
+      "tag": "{http://www.EcoInvent.org/EcoSpold02}contextName",
+      "attributes": {
+        "{http://www.w3.org/XML/1998/namespace}lang": "en"
+      },
+      "text": "Teaching master-data context (synthetic UUIDs)"
+    }
+  ]
+}
+```
+
+## 继续阅读
+
+[提取与查询实践](extraction-practice.md)把数量读取、身份筛选与参考产品归一化连起来；[完整中文格式译表](format-reference.md#appendix-tfileattributes)用于核对本类型的字段次序、类型和原表标记。原文疑点见[审校记录](translation-review.md)。

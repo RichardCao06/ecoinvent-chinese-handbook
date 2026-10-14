@@ -1,12 +1,11 @@
 # 管理信息
 
-本组按官方 XML 结构组织。字段章节同时保留中文说明与英文原文。
+本组把相关 XML 结构分为下面的文章章节。每篇先解释字段及其相互关系，再说明使用和提取，最后对照教学 demo。
 
-| 字段章节 | 模式类型 | 字段条目数 |
-| --- | --- | --- |
-| [数据录入者](data-entry.md) | `TDataEntryBy` | 5 |
-| [数据生成者与发布](publication.md) | `TDataGeneratorAndPublication` | 17 |
-| [文件属性](file-attributes.md) | `TFileAttributes` | 13 |
-| [所需上下文引用](required-contexts.md) | `TRequiredContextReference` | 7 |
+[数据录入者](data-entry.md)：录入者说明谁编制并提交了这份记录
 
-[全部字段索引](field-index.md) · [阅读约定与 XSD 约束](reading-guide.md)
+[数据生成者与发布](publication.md)：原始数据来源、出版物与访问限制构成另一组管理信息
+
+[文件属性](file-attributes.md)：区分数据库发布版本、数据集修订版本和文件时间
+
+[所需上下文引用](required-contexts.md)：解析跨上下文引用前，先核对主数据依赖

@@ -4,14 +4,14 @@
 
 本知识库包含 **99 篇完整正文、11 个主题章节**。译文基于 2026 年 10 月 13 日的公开支持文档快照；每篇提供中文与英文原文标签页。PDF、Excel 和原图保留原件。
 
-新增 [完整教程：读懂 ecoSpold2 XML 并提取数据](ecospold2/README.md)：先用教学 demo 讲清文件结构、参考产品、交换量与取数，再以连续文章解释 **22 个分组、243 条字段**。配套三个 XML、提取与查询脚本；原始十列表的完整中文译表放在文末，并可独立下载 HTML。逐字段中英参考、字段索引和原件继续保留。
+新增 [完整教程：读懂 ecoSpold2 XML 并提取数据](ecospold2/README.md)：先用教学 demo 讲清文件结构、参考产品、交换量与取数，再以连续文章解释 **22 个分组、243 条字段**。配套三个 XML、提取与查询脚本；五组 22 篇文章分别讲解字段含义、使用和提取方法；最后的查询附录保留完整中文译表，并可独立下载 HTML。英文原件继续保留。
 
 ## 从这里开始
 
 - [数据库简介](articles/introduction-to-the-database.md)
 - [系统模型：Cut-off、APOS 与 Consequential](articles/system-models.md)
 - [数据集类型：UPR、LCI 与 LCIA](articles/upr-lci-lcia.md)
-- [ecoSpold2 XML 字段含义与索引](ecospold2/field-index.md)
+- [ecoSpold2 分章阅读与取数教程](ecospold2/README.md)
 - [版本发布索引](releases.md)
 - [核心术语对照](terminology.md)
 

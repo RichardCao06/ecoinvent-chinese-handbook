@@ -1,439 +1,69 @@
-# 参数（TParameter）
+# 参数
 
-源文分组：Parameters。本章完整收录 **12 条字段定义**。
+对应官方格式类型：`TParameter`。本篇以文章解释该类型的 12 条字段；复合类型也会说明它们依附在哪个对象上。
 
-XML 位置：`flowData/parameter`。以 `activityDescription/`、`flowData/`、`modellingAndValidation/` 或 `administrativeInformation/` 开头的位置，均相对于 `/ecoSpold/activityDataset/`；`…` 表示可复用结构。
+## 参数为交换公式提供可追溯的数值 <a href="#read-tparameter" id="read-tparameter"></a>
 
-[阅读约定与 XSD 约束](reading-guide.md) · [全部字段索引](field-index.md) · [审校记录](translation-review.md)
+`TParameter` 保存供公式使用的数据集参数。参数不是物质输入或排放记录，即使也具有 `amount`，也不能混入基本流或中间交换的清单总量。必需的 `name` 是可多语言填写的描述性名称，必需的 `parameterId` 引用有效参数主数据；可选的 `parameterContextId` 指明参数所属上下文，省略时使用数据集上下文。必需的 `amount` 保存参数当前数值，是阅读公式时可用的已保存值，而非参数名称或 UUID。
 
-> 本参考译自官方格式包 v1.0.13（所附 XSD version 为 2.0.13）。必填性和重复性先忠实保留原表，再单列 XSD 结构约束；不自动代表所有后续版本的模式。
+参数的单位信息均为可选：`unitId` 引用参数数值的单位，`unitContextId` 指明单位上下文，省略时使用数据集上下文，`unitName` 是可多语言填写的单位名称。未提供单位时，不应自动补成质量单位，也不能仅凭字段名认定参数无量纲；应结合参数主数据和用途理解。可选的多语言 `comment` 提供针对该参数的一般说明，可选的 `uncertainty` 描述参数数值的不确定性，读参数值时可将这些解释和质量信息一起保存。
 
-{% hint style="warning" %}
-本章含原文疑点；请阅读文末审校注记，尤其不要据此擅自修正字段名或数值定义。
-{% endhint %}
+`variableName` 是可选的公式变量名。官方原说明在这一参数字段下沿用了“交换简称”和“交换量”的措辞，这项疑点已记录；从 `TParameter` 的用途看，不能据此认定它只能引用交换。文档列出的规则仍是以字母 a-z 开头，可含字母、数字和下划线，并不区分大小写；`calorific_Value` 与 `Calorific_value` 为相同变量名。另一项已记录差异是，`TVariableName` 的 XSD 限制为最大长度 40，并使用 `\w\S*` 模式，并未直接表达与这些文字规则完全等价的限制。XSD 验证通过，不意味着已经满足公式解析器或语义验证的全部命名要求。
 
-{% tabs %}
+可选的 `mathematicalRelation` 通过变量名或 `REF` 函数引用流、参数和属性的值，在给定变量值后，将结果写入参数自身的 `amount`。可选的 `isCalculatedAmount` 为 `true` 时，说明该数值由该数学关系计算得到；这一参数标记的 XSD 没有声明默认值，不能套用共同交换类型的默认设置。阅读现有文件时应区分直接记录的当前数值与其计算依据，只有在正确理解公式语言和依赖关系后，才重新计算参数。
 
-{% tab title="中文" %}
+## 怎样定位、使用与提取
 
-## 结构说明
+要查看公式输入值，读取 parameter 的 amount、variableName、单位及数学关系。参数可供多个交换使用，并非一笔新增投入；公式作为文本保留，不执行 eval，也不要把参数量归一化为参考产品的额外交换。
 
-分组可重复：是；分组必填：否。
+定位路径相对于完整的 `/ecoSpold/activityDataset`：`flowData/parameter`。其中 `.//` 表示在当前数据集的后代中检索；返回结果会保留实际父路径，以区分不同交换或参数。
 
-供公式使用的数据集参数。
+下载[教学 demo 与读取脚本 ZIP](demo/ecospold2-tutorial-demo.zip)，解压后在同一目录运行下面代码。`read_section.py` 使用 Python 标准库，返回全部匹配节点的属性和完整子节点树；它保留 UUID、原始数值字符串、语言标签和子节点顺序。代码仅展示前两条，变量 `records` 保留全部匹配记录。文件有多个普通数据集时，显式选择 `index`，或逐个遍历；子数据集应先展开继承。
 
-### `name` · FieldID 1700 <a href="#field-1700" id="field-1700"></a>
+原表名称前带 `@` 的是 XML 属性，去掉 `@` 后在返回记录的 `attributes` 中取值，例如 `record["attributes"].get("amount")`。没有 `@` 的字段是子元素，在 `children` 中按完整 `tag` 匹配；名称前的 `{http://www.EcoInvent.org/EcoSpold02}` 是命名空间。多语言字段保留多个子节点，`xml:lang` 在属性字典中写为 `{http://www.w3.org/XML/1998/namespace}lang`。更深的字段继续进入相应子节点的 `children`；缺失属性返回 `None`，不要补成零。
 
-局部 XML 位置：`TParameter/name`；ecoSpold1 对照编号：`new`。
+```python
+import json
+from read_section import load_dataset, read_section
 
-| 类型 | 必填 | 可重复 |
-| --- | --- | --- |
-| `TString80` | 是 | 否 |
+dataset = load_dataset("demo-product.spold", index=0)
+records = read_section(dataset, "TParameter")
+print("匹配节点数：", len(records))
+print(json.dumps(records[:2], ensure_ascii=False, indent=2))
+```
 
-长度：80；多语言：是；主数据冗余字段：是。
+## 对照 demo 理解读取结果
 
-参数的描述性名称。
+在 `demo-product.spold` 中实际匹配 **1 个节点**。下面是第一个节点的属性与前两个子节点的精选片段；子节点内部结构和其他节点仍保存在代码的完整返回值中。路径带有同级序号，便于回到原文件定位，序号不是主数据 UUID。
 
-**XSD 结构约束：** `minOccurs="1"`，`maxOccurs="unbounded"`（未显式声明的值按 XSD 默认值列出）。
+```json
+{
+  "path": "/ecoSpold/activityDataset/flowData[1]/parameter[1]",
+  "attributes": {
+    "parameterId": "0c72e7c0-a190-5ba6-85ae-0b15236cc19d",
+    "amount": "2.5",
+    "unitId": "0489b6ee-11b9-577d-b8e0-1e45b6b2fcc1",
+    "variableName": "electricity_intensity"
+  },
+  "children_excerpt": [
+    {
+      "tag": "{http://www.EcoInvent.org/EcoSpold02}name",
+      "attributes": {
+        "{http://www.w3.org/XML/1998/namespace}lang": "zh"
+      },
+      "text": "电力强度（教学）"
+    },
+    {
+      "tag": "{http://www.EcoInvent.org/EcoSpold02}name",
+      "attributes": {
+        "{http://www.w3.org/XML/1998/namespace}lang": "en"
+      },
+      "text": "Electricity intensity (synthetic)"
+    }
+  ]
+}
+```
 
-模式出处：[EcoSpold02FlowData.xsd](original/Schemas/datasets/EcoSpold02FlowData.xsd)，`TParameter`。
+## 继续阅读
 
-### `@parameterId` · FieldID 1705 <a href="#field-1705" id="field-1705"></a>
-
-局部 XML 位置：`TParameter/@parameterId`；ecoSpold1 对照编号：`new`。
-
-| 类型 | 必填 | 可重复 |
-| --- | --- | --- |
-| `TUuid` | 是 | 否 |
-
-长度：36；多语言：否；主数据冗余字段：否。
-
-对有效主数据参数的引用。
-
-**XSD 结构约束：** `use="required"`。
-
-模式出处：[EcoSpold02FlowData.xsd](original/Schemas/datasets/EcoSpold02FlowData.xsd)，`TParameter`。
-
-### `@parameterContextId` · FieldID 1706 <a href="#field-1706" id="field-1706"></a>
-
-局部 XML 位置：`TParameter/@parameterContextId`；ecoSpold1 对照编号：`new`。
-
-| 类型 | 必填 | 可重复 |
-| --- | --- | --- |
-| `TUuid` | 否 | 否 |
-
-长度：36；多语言：否；主数据冗余字段：否。
-
-对参数所属上下文的引用。
-
-若省略此属性，则改用数据集自身的上下文。
-
-**XSD 结构约束：** `use="optional"`。
-
-模式出处：[EcoSpold02FlowData.xsd](original/Schemas/datasets/EcoSpold02FlowData.xsd)，`TParameter`。
-
-### `@amount` · FieldID 1710 <a href="#field-1710" id="field-1710"></a>
-
-局部 XML 位置：`TParameter/@amount`；ecoSpold1 对照编号：`new`。
-
-| 类型 | 必填 | 可重复 |
-| --- | --- | --- |
-| `TFloatNumber` | 是 | 否 |
-
-长度：—；多语言：否；主数据冗余字段：否。
-
-参数的当前值。
-
-**XSD 结构约束：** `use="required"`。
-
-模式出处：[EcoSpold02FlowData.xsd](original/Schemas/datasets/EcoSpold02FlowData.xsd)，`TParameter`。
-
-### `@unitId` · FieldID 1712 <a href="#field-1712" id="field-1712"></a>
-
-局部 XML 位置：`TParameter/@unitId`；ecoSpold1 对照编号：`3706`。
-
-| 类型 | 必填 | 可重复 |
-| --- | --- | --- |
-| `TUuid` | 否 | 否 |
-
-长度：36；多语言：否；主数据冗余字段：是。
-
-对参数数量单位的引用。
-
-**XSD 结构约束：** `use="optional"`。
-
-模式出处：[EcoSpold02FlowData.xsd](original/Schemas/datasets/EcoSpold02FlowData.xsd)，`TParameter`。
-
-### `@unitContextId` · FieldID 1713 <a href="#field-1713" id="field-1713"></a>
-
-局部 XML 位置：`TParameter/@unitContextId`；ecoSpold1 对照编号：`new`。
-
-| 类型 | 必填 | 可重复 |
-| --- | --- | --- |
-| `TUuid` | 否 | 否 |
-
-长度：36；多语言：否；主数据冗余字段：是。
-
-对单位所属上下文的引用。若省略此属性，则改用数据集自身的上下文。
-
-**XSD 结构约束：** `use="optional"`。
-
-模式出处：[EcoSpold02FlowData.xsd](original/Schemas/datasets/EcoSpold02FlowData.xsd)，`TParameter`。
-
-### `unitName` · FieldID 1714 <a href="#field-1714" id="field-1714"></a>
-
-局部 XML 位置：`TParameter/unitName`；ecoSpold1 对照编号：`3706`。
-
-| 类型 | 必填 | 可重复 |
-| --- | --- | --- |
-| `TString40` | 否 | 否 |
-
-长度：40；多语言：是；主数据冗余字段：是。
-
-参数数量的单位名称。
-
-**XSD 结构约束：** `minOccurs="0"`，`maxOccurs="unbounded"`。
-
-模式出处：[EcoSpold02FlowData.xsd](original/Schemas/datasets/EcoSpold02FlowData.xsd)，`TParameter`。
-
-### `@variableName` · FieldID 1715 <a href="#field-1715" id="field-1715"></a>
-
-局部 XML 位置：`TParameter/@variableName`；ecoSpold1 对照编号：`new`。
-
-| 类型 | 必填 | 可重复 |
-| --- | --- | --- |
-| `TVariableName` | 否 | 否 |
-
-长度：40；多语言：否；主数据冗余字段：否。
-
-变量名是交换的简短名称，用于在数学关系（公式）中引用交换量。变量可包含字母、数字和下划线（\_）。变量名必须以字母（a-z）开头。变量名不区分大小写（calorific\_Value 与 Calorific\_value 相同）。
-
-**XSD 结构约束：** `use="optional"`。
-
-模式出处：[EcoSpold02FlowData.xsd](original/Schemas/datasets/EcoSpold02FlowData.xsd)，`TParameter`。
-
-### `@mathematicalRelation` · FieldID 1720 <a href="#field-1720" id="field-1720"></a>
-
-局部 XML 位置：`TParameter/@mathematicalRelation`；ecoSpold1 对照编号：`new`。
-
-| 类型 | 必填 | 可重复 |
-| --- | --- | --- |
-| `TBaseString32000` | 否 | 否 |
-
-长度：32000；多语言：否；主数据冗余字段：否。
-
-定义数学公式，通过变量名或 REF 函数引用流、参数或属性的值。
-
-将采用一组特定变量值计算得到的公式结果写入 amount 字段。
-
-**XSD 结构约束：** `use="optional"`。
-
-模式出处：[EcoSpold02FlowData.xsd](original/Schemas/datasets/EcoSpold02FlowData.xsd)，`TParameter`。
-
-### `@isCalculatedAmount` · FieldID 1725 <a href="#field-1725" id="field-1725"></a>
-
-局部 XML 位置：`TParameter/@isCalculatedAmount`；ecoSpold1 对照编号：`new`。
-
-| 类型 | 必填 | 可重复 |
-| --- | --- | --- |
-| `boolean` | 否 | 否 |
-
-长度：—；多语言：否；主数据冗余字段：否。
-
-若为 true，则 amount 字段的值为 mathematicalRelation 的计算值。
-
-**XSD 结构约束：** `use="optional"`。
-
-模式出处：[EcoSpold02FlowData.xsd](original/Schemas/datasets/EcoSpold02FlowData.xsd)，`TParameter`。
-
-### `uncertainty` · FieldID 1730 <a href="#field-1730" id="field-1730"></a>
-
-局部 XML 位置：`TParameter/uncertainty`；ecoSpold1 对照编号：`new`。
-
-| 类型 | 必填 | 可重复 |
-| --- | --- | --- |
-| `TUncertainty` | 否 | 否 |
-
-长度：—；多语言：否；主数据冗余字段：否。
-
-参数数量的不确定性。
-
-复合类型详情：[ `TUncertainty` ](uncertainty.md)。
-
-**XSD 结构约束：** `minOccurs="0"`，`maxOccurs="1"`（未显式声明的值按 XSD 默认值列出）。
-
-模式出处：[EcoSpold02FlowData.xsd](original/Schemas/datasets/EcoSpold02FlowData.xsd)，`TParameter`。
-
-### `comment` · FieldID 1740 <a href="#field-1740" id="field-1740"></a>
-
-局部 XML 位置：`TParameter/comment`；ecoSpold1 对照编号：`new`。
-
-| 类型 | 必填 | 可重复 |
-| --- | --- | --- |
-| `TString32000` | 否 | 否 |
-
-长度：32000；多语言：是；主数据冗余字段：否。
-
-可对每个单独参数填写一般说明。
-
-**XSD 结构约束：** `minOccurs="0"`，`maxOccurs="unbounded"`。
-
-模式出处：[EcoSpold02FlowData.xsd](original/Schemas/datasets/EcoSpold02FlowData.xsd)，`TParameter`。
-
-{% endtab %}
-
-{% tab title="English 原文" %}
-
-## Structure
-
-Group multiple occurrences：Yes；Group required：No。
-
-Dataset parameters for use in formulas.
-
-### `name` · FieldID 1700 <a href="#en-field-1700" id="en-field-1700"></a>
-
-Local XML path：`TParameter/name`；ecoSpold1 mapping：`new`。
-
-| Type | Required | Multiple occurrence |
-| --- | --- | --- |
-| `TString80` | Yes | No |
-
-Size：80；Multi language：Yes；Redundant master data：Yes。
-
-Descriptive name of the parameter.
-
-**XSD structural constraints：** `minOccurs="1"`，`maxOccurs="unbounded"` (undeclared values use XSD defaults)。
-
-Schema source：[EcoSpold02FlowData.xsd](original/Schemas/datasets/EcoSpold02FlowData.xsd)，`TParameter`。
-
-### `@parameterId` · FieldID 1705 <a href="#en-field-1705" id="en-field-1705"></a>
-
-Local XML path：`TParameter/@parameterId`；ecoSpold1 mapping：`new`。
-
-| Type | Required | Multiple occurrence |
-| --- | --- | --- |
-| `TUuid` | Yes | No |
-
-Size：36；Multi language：No；Redundant master data：No。
-
-A reference to a valid master data parameter.
-
-**XSD structural constraints：** `use="required"`。
-
-Schema source：[EcoSpold02FlowData.xsd](original/Schemas/datasets/EcoSpold02FlowData.xsd)，`TParameter`。
-
-### `@parameterContextId` · FieldID 1706 <a href="#en-field-1706" id="en-field-1706"></a>
-
-Local XML path：`TParameter/@parameterContextId`；ecoSpold1 mapping：`new`。
-
-| Type | Required | Multiple occurrence |
-| --- | --- | --- |
-| `TUuid` | No | No |
-
-Size：36；Multi language：No；Redundant master data：No。
-
-Reference to the context of the parameter.
-
-If this attribute is omitted the context of the dataset itself will be used instead.
-
-**XSD structural constraints：** `use="optional"`。
-
-Schema source：[EcoSpold02FlowData.xsd](original/Schemas/datasets/EcoSpold02FlowData.xsd)，`TParameter`。
-
-### `@amount` · FieldID 1710 <a href="#en-field-1710" id="en-field-1710"></a>
-
-Local XML path：`TParameter/@amount`；ecoSpold1 mapping：`new`。
-
-| Type | Required | Multiple occurrence |
-| --- | --- | --- |
-| `TFloatNumber` | Yes | No |
-
-Size：—；Multi language：No；Redundant master data：No。
-
-The current value of the parameter.
-
-**XSD structural constraints：** `use="required"`。
-
-Schema source：[EcoSpold02FlowData.xsd](original/Schemas/datasets/EcoSpold02FlowData.xsd)，`TParameter`。
-
-### `@unitId` · FieldID 1712 <a href="#en-field-1712" id="en-field-1712"></a>
-
-Local XML path：`TParameter/@unitId`；ecoSpold1 mapping：`3706`。
-
-| Type | Required | Multiple occurrence |
-| --- | --- | --- |
-| `TUuid` | No | No |
-
-Size：36；Multi language：No；Redundant master data：Yes。
-
-Reference to the unit of the parameter amount.
-
-**XSD structural constraints：** `use="optional"`。
-
-Schema source：[EcoSpold02FlowData.xsd](original/Schemas/datasets/EcoSpold02FlowData.xsd)，`TParameter`。
-
-### `@unitContextId` · FieldID 1713 <a href="#en-field-1713" id="en-field-1713"></a>
-
-Local XML path：`TParameter/@unitContextId`；ecoSpold1 mapping：`new`。
-
-| Type | Required | Multiple occurrence |
-| --- | --- | --- |
-| `TUuid` | No | No |
-
-Size：36；Multi language：No；Redundant master data：Yes。
-
-Reference to the context of the unit. If this attribute is omitted the context of the dataset itself will be used instead.
-
-**XSD structural constraints：** `use="optional"`。
-
-Schema source：[EcoSpold02FlowData.xsd](original/Schemas/datasets/EcoSpold02FlowData.xsd)，`TParameter`。
-
-### `unitName` · FieldID 1714 <a href="#en-field-1714" id="en-field-1714"></a>
-
-Local XML path：`TParameter/unitName`；ecoSpold1 mapping：`3706`。
-
-| Type | Required | Multiple occurrence |
-| --- | --- | --- |
-| `TString40` | No | No |
-
-Size：40；Multi language：Yes；Redundant master data：Yes。
-
-Unit name of the parameter amount.
-
-**XSD structural constraints：** `minOccurs="0"`，`maxOccurs="unbounded"`。
-
-Schema source：[EcoSpold02FlowData.xsd](original/Schemas/datasets/EcoSpold02FlowData.xsd)，`TParameter`。
-
-### `@variableName` · FieldID 1715 <a href="#en-field-1715" id="en-field-1715"></a>
-
-Local XML path：`TParameter/@variableName`；ecoSpold1 mapping：`new`。
-
-| Type | Required | Multiple occurrence |
-| --- | --- | --- |
-| `TVariableName` | No | No |
-
-Size：40；Multi language：No；Redundant master data：No。
-
-The variable name is a short name for the exchange, used when refering to the exchange amount in mathematical relations (formulas). Variables may contain characters, numbers and underscores (\_). Variable names must start with a character (a-z). Variable names are not case sensitive (calorific\_Value equals Calorific\_value).
-
-**XSD structural constraints：** `use="optional"`。
-
-Schema source：[EcoSpold02FlowData.xsd](original/Schemas/datasets/EcoSpold02FlowData.xsd)，`TParameter`。
-
-### `@mathematicalRelation` · FieldID 1720 <a href="#en-field-1720" id="en-field-1720"></a>
-
-Local XML path：`TParameter/@mathematicalRelation`；ecoSpold1 mapping：`new`。
-
-| Type | Required | Multiple occurrence |
-| --- | --- | --- |
-| `TBaseString32000` | No | No |
-
-Size：32000；Multi language：No；Redundant master data：No。
-
-Defines a mathematical formula with references to values of flows, parameters or properties by variable names or REF function.
-
-The result of the formula with a specific set of variable values is written into the amount field.
-
-**XSD structural constraints：** `use="optional"`。
-
-Schema source：[EcoSpold02FlowData.xsd](original/Schemas/datasets/EcoSpold02FlowData.xsd)，`TParameter`。
-
-### `@isCalculatedAmount` · FieldID 1725 <a href="#en-field-1725" id="en-field-1725"></a>
-
-Local XML path：`TParameter/@isCalculatedAmount`；ecoSpold1 mapping：`new`。
-
-| Type | Required | Multiple occurrence |
-| --- | --- | --- |
-| `boolean` | No | No |
-
-Size：—；Multi language：No；Redundant master data：No。
-
-If true the value of the amount field is the calculated value of the mathematicalRelation.
-
-**XSD structural constraints：** `use="optional"`。
-
-Schema source：[EcoSpold02FlowData.xsd](original/Schemas/datasets/EcoSpold02FlowData.xsd)，`TParameter`。
-
-### `uncertainty` · FieldID 1730 <a href="#en-field-1730" id="en-field-1730"></a>
-
-Local XML path：`TParameter/uncertainty`；ecoSpold1 mapping：`new`。
-
-| Type | Required | Multiple occurrence |
-| --- | --- | --- |
-| `TUncertainty` | No | No |
-
-Size：—；Multi language：No；Redundant master data：No。
-
-Uncertainty of the parameter amount.
-
-Complex type details：[ `TUncertainty` ](uncertainty.md)。
-
-**XSD structural constraints：** `minOccurs="0"`，`maxOccurs="1"` (undeclared values use XSD defaults)。
-
-Schema source：[EcoSpold02FlowData.xsd](original/Schemas/datasets/EcoSpold02FlowData.xsd)，`TParameter`。
-
-### `comment` · FieldID 1740 <a href="#en-field-1740" id="en-field-1740"></a>
-
-Local XML path：`TParameter/comment`；ecoSpold1 mapping：`new`。
-
-| Type | Required | Multiple occurrence |
-| --- | --- | --- |
-| `TString32000` | No | No |
-
-Size：32000；Multi language：Yes；Redundant master data：No。
-
-A general comment can be made about each individual parameter.
-
-**XSD structural constraints：** `minOccurs="0"`，`maxOccurs="unbounded"`。
-
-Schema source：[EcoSpold02FlowData.xsd](original/Schemas/datasets/EcoSpold02FlowData.xsd)，`TParameter`。
-
-{% endtab %}
-
-{% endtabs %}
-
-## 翻译与审校注记
-
-- **待专家复核 · `TParameter.1715.description.0`**：该说明位于 TParameter 下，却将变量名描述为 exchange 的简称，可能沿用了交换字段说明；不能据此认定它仅能引用交换。 译文忠实保留“交换”措辞，请对照参数变量名字段及公式语言规范确认此处是否应为 parameter。
-
-- **待专家复核 · `TParameter.1715.description.0`**：文档要求变量名以字母（a-z）开头，并描述字母、数字、下划线字符规则；EcoSpold02DataTypes.xsd 的 TVariableName 仅声明 maxLength=40 与 pattern=\w\S*（约第 858–862 行），该模式未直接表达与文字说明完全等价的规则。可能另有语义验证或公式解析约束。 保留原文变量规则；请核对公式解析及语义验证规范，不应将 XSD 验证通过等同于满足全部变量名规则。
+[提取与查询实践](extraction-practice.md)把数量读取、身份筛选与参考产品归一化连起来；[完整中文格式译表](format-reference.md#appendix-tparameter)用于核对本类型的字段次序、类型和原表标记。原文疑点见[审校记录](translation-review.md)。

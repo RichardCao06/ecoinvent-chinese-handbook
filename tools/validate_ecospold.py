@@ -130,24 +130,38 @@ def validate():
         translations.update(tr['blocks'])
     if set(translations) != set(source['blocks']) or reviewed != set(source['blocks']):
         errors.append('Merged coverage differs')
-    for section in source['sections']:
-        entries = [f for f in manifest['fields'] if f['section'] == section['id']]
-        text = (CONTENT / entries[0]['page']).read_text()
-        rendered = visible(text)
-        for marker in ['{% tabs %}', '{% endtabs %}', '{% tab title="中文" %}', '{% tab title="English 原文" %}']:
-            if text.count(marker) != 1:
-                errors.append(f'Incorrect bilingual tabs: {section["id"]} {marker}')
-        for field in entries:
-            if text.count(f'id="{field["anchor"]}"') != 1 or text.count(f'id="en-{field["anchor"]}"') != 1:
-                errors.append(f'Field anchors missing/duplicated: {field["field_id"]}')
-        keys = [k for k in source['blocks'] if k.startswith(section['id'] + '.')]
-        for key in keys:
-            if norm(translations[key]) not in rendered or norm(source['blocks'][key]) not in rendered:
-                errors.append(f'Export text missing: {key}')
-    overview_text = visible((CONTENT / 'ecospold2/README.md').read_text())
-    for key in source['overview_blocks']:
-        if norm(translations[key]) not in overview_text or norm(source['blocks'][key]) not in overview_text:
-            errors.append(f'Overview text missing: {key}')
+    if manifest.get('presentation') == 'chaptered-narrative':
+        appendix = visible((CONTENT / 'ecospold2/format-reference.md').read_text())
+        for key,value in translations.items():
+            if norm(value) not in appendix:
+                errors.append('Chinese appendix source block missing: ' + key)
+        for section in source['sections']:
+            entries = [f for f in manifest['fields'] if f['section'] == section['id']]
+            text = (CONTENT / entries[0]['page']).read_text()
+            if text.count('id="read-'+section['id'].lower()+'"') != 1:
+                errors.append('Missing narrative chapter anchor: ' + section['id'])
+            for field in section['fields']:
+                if not re.search(r'`@?' + re.escape(field['name'].lstrip('@')) + r'`',text):
+                    errors.append('Field absent from chapter prose: ' + field['field_id'])
+    else:
+        for section in source['sections']:
+            entries = [f for f in manifest['fields'] if f['section'] == section['id']]
+            text = (CONTENT / entries[0]['page']).read_text()
+            rendered = visible(text)
+            for marker in ['{% tabs %}', '{% endtabs %}', '{% tab title="中文" %}', '{% tab title="English 原文" %}']:
+                if text.count(marker) != 1:
+                    errors.append(f'Incorrect bilingual tabs: {section["id"]} {marker}')
+            for field in entries:
+                if text.count(f'id="{field["anchor"]}"') != 1 or text.count(f'id="en-{field["anchor"]}"') != 1:
+                    errors.append(f'Field anchors missing/duplicated: {field["field_id"]}')
+            keys = [k for k in source['blocks'] if k.startswith(section['id'] + '.')]
+            for key in keys:
+                if norm(translations[key]) not in rendered or norm(source['blocks'][key]) not in rendered:
+                    errors.append(f'Export text missing: {key}')
+        overview_text = visible((CONTENT / 'ecospold2/README.md').read_text())
+        for key in source['overview_blocks']:
+            if norm(translations[key]) not in overview_text or norm(source['blocks'][key]) not in overview_text:
+                errors.append(f'Overview text missing: {key}')
     for page in manifest['pages']:
         if sha(CONTENT / page['path']) != page['sha256']:
             errors.append('Field page modified without audit update: ' + page['path'])

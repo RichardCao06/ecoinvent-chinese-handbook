@@ -1,0 +1,112 @@
+{
+  "TActivity": {
+    "slug": "activity",
+    "title": "活动",
+    "use_zh": "需要确认活动身份、单元过程或汇总结果、边界和继承关系时，先读取本节。显示名称用 activityName，关联对象用 id 与有效上下文；不要把 activityNameId 当成活动 UUID。遇到 parentActivityId 时先处理继承，再取数量。"
+  },
+  "TClassification": {
+    "slug": "classification",
+    "title": "活动分类",
+    "use_zh": "需要按行业或某个分类体系筛选活动时，把同一 classification 节点内的 classificationSystem 和 classificationValue 成对保存。不同体系的同名类别不能直接合并；应连同相应标识和上下文核对。这个类型也用于中间交换的产品分类，位置为 flowData/intermediateExchange/classification；返回的父路径用于区分活动分类与产品分类，按行业筛选活动时只取 activityDescription 下的记录。"
+  },
+  "TGeography": {
+    "slug": "geography",
+    "title": "地理区域",
+    "use_zh": "需要筛选地区或解释市场范围时，使用 geographyId 与有效上下文定位地理主数据，shortname 用作展示。不要把一个全球范围的数据集默认为具体国家；地区的适用解释还要结合 comment。"
+  },
+  "TTechnology": {
+    "slug": "technology",
+    "title": "技术",
+    "use_zh": "比较工艺与技术先进程度时，同时阅读 technologyLevel 和 comment。技术等级是适用性信息，不能作为交换量的系数；缺失或“未定义”也不等于零技术投入。"
+  },
+  "TTimePeriod": {
+    "slug": "time-period",
+    "title": "时间范围",
+    "use_zh": "按年份选择数据时，读取 startDate、endDate 和 isDataValidForEntirePeriod。日期范围覆盖目标年份，并不自动说明该段内每一天的数据都同样适用；不要把文件编辑时间当作清单年份。"
+  },
+  "TMacroEconomicScenario": {
+    "slug": "macro-economic-scenario",
+    "title": "宏观经济情景",
+    "use_zh": "提取情景名称或对比情景数据时，保留情景主数据引用及有效上下文，并阅读 comment。情景字段不是一项投入，不能直接用情景名称推导数量变化；有继承时仍须先展开。"
+  },
+  "TCustomExchange": {
+    "slug": "exchanges",
+    "title": "交换的通用字段",
+    "use_zh": "先统一读取交换实例 id、amount、unitId、name、unitName 及计算标记，再结合具体中间交换或基本流节点读取方向与对象身份。这里读取的 property、uncertainty 等仍属于当前交换，不能把子结构里的 amount 混进交换量总和。"
+  },
+  "TIntermediateExchange": {
+    "slug": "intermediate-exchanges",
+    "title": "中间交换专用字段",
+    "use_zh": "要拿电力、材料、服务或参考产品，遍历 intermediateExchange，依据 inputGroup/outputGroup 确定方向，再匹配 intermediateExchangeId 与有效上下文。参考输出用 outputGroup=0；原始 quantity 保留符号，相对于参考量的比例见实践章。沿供应链查询还要核对 activityLinkId、模型和数据库发布版本。"
+  },
+  "TElementaryExchange": {
+    "slug": "elementary-exchanges",
+    "title": "基本流交换专用字段",
+    "use_zh": "要拿环境取水或污染物排放，遍历 elementaryExchange，并同时保留 elementaryExchangeId、有效上下文、inputGroup/outputGroup、compartment 和单位。负 amount 不会自动把输出变成输入；同名、不同区室或不同流 UUID 的记录不能直接相加。"
+  },
+  "TParameter": {
+    "slug": "parameters",
+    "title": "参数",
+    "use_zh": "要查看公式输入值，读取 parameter 的 amount、variableName、单位及数学关系。参数可供多个交换使用，并非一笔新增投入；公式作为文本保留，不执行 eval，也不要把参数量归一化为参考产品的额外交换。"
+  },
+  "TImpactIndicatorResult": {
+    "slug": "impact-indicators",
+    "title": "影响指标结果",
+    "use_zh": "要拿已有碳足迹等结果，读取 impactIndicator，以方法、类别、指标三层 UUID 及有效上下文筛选，再保留 amount 与 unitName。该类型没有独立 unitId 字段，不能凭名称补出 UUID；文件没提供指标时应返回缺失，不能用 CO2 质量冒充影响结果。"
+  },
+  "TCompartment": {
+    "slug": "compartments",
+    "title": "区室与子区室",
+    "use_zh": "要统计某环境介质的排放，定位 elementaryExchange/compartment，配对读取 compartment 与 subcompartment。提取时保留外层基本流的 UUID、单位与方向；区室节点本身没有一笔可加入总量的交换 amount。"
+  },
+  "TUncertainty": {
+    "slug": "uncertainty",
+    "title": "不确定性与分布参数",
+    "use_zh": "需要保留分布或开展抽样前，先读取分布子节点名称，再取其参数和 pedigreeMatrix。普通 uncertainty 与 productionVolumeUncertainty 的父节点不同，必须用路径区分；读取平均量不会自动开展抽样，方差也不能直接当标准差使用。"
+  },
+  "TProperty": {
+    "slug": "properties",
+    "title": "交换属性",
+    "use_zh": "需要干质量、含水率、价格或组成等信息，读取每个交换下的 property，同时保留所属交换实例路径、propertyId、单位和 amount。只有明确属性定义与计量基准后，才能决定是否与交换量相乘；属性不是额外物质流。"
+  },
+  "TTransferCoefficient": {
+    "slug": "transfer-coefficients",
+    "title": "转移系数",
+    "use_zh": "需要追踪某投入对某输出的贡献时，读取交换下的 transferCoefficient，保留外层交换 id 及内部 exchangeId 等引用。这个读取例子保存系数与表达式，不执行贡献计算；先弄清它引用的是哪个交换实例，而非把主数据 UUID 当成实例 id。"
+  },
+  "TTextAndImage": {
+    "slug": "text-and-image",
+    "title": "文本、图像与文本变量",
+    "use_zh": "需要提取说明正文时，遍历同一父节点的 children 读取 text、imageUrl 和 variable 等内容，同时保留 index、xml:lang 与变量名。children 保留原始 XML 顺序；组织展示内容时，应按 index 与语言关联和排序。这里只读取字段内容，不访问图像链接；继承的 PARENTTEXT 或文本变量要在解析继承之后展开。"
+  },
+  "TRepresentativeness": {
+    "slug": "representativeness",
+    "title": "代表性",
+    "use_zh": "需要解释系统模型、样本总体或外推依据时，读取 representativeness 的全部字段，尤其保留 systemModelId 与上下文。比较数量之前先核对模型；百分比或外推描述是代表性元数据，不是清单中另一项数量。"
+  },
+  "TReview": {
+    "slug": "review",
+    "title": "审查",
+    "use_zh": "需要判断谁审查了哪个版本时，遍历每条 review，把审查人员、日期、被审版本和 details 放在同一记录中。不能以存在 review 节点就认定所有后续版本都被审过；具体审查结论要读意见文本。"
+  },
+  "TDataEntryBy": {
+    "slug": "data-entry",
+    "title": "数据录入者",
+    "use_zh": "需要追溯数据录入人员时，读取 dataEntryBy 的人员 UUID、有效上下文及主数据冗余信息。录入者与原始数据生成者是不同角色；只凭人名不宜关联或去重人员记录。生成工具则读取文件属性的 fileGenerator。"
+  },
+  "TDataGeneratorAndPublication": {
+    "slug": "publication",
+    "title": "数据生成者与发布",
+    "use_zh": "需要追溯原始来源、文献和访问限制时，读取 dataGeneratorAndPublication，并分别保留人员、文献引用和访问相关标记。引用 UUID 须通过相应上下文解析；读取脚本不会凭这些标记判定你拥有传播原始数据库数据的权限。"
+  },
+  "TFileAttributes": {
+    "slug": "file-attributes",
+    "title": "文件属性",
+    "use_zh": "需要记录导出来源或匹配供应候选时，读取 fileAttributes，把数据库发布版本、数据集修订版本、contextId 及时间信息分别保存。不要用最新编辑时间替代研究年份，也不要把两个不同系统模型或发布版本里的同一活动 UUID 当成唯一同一候选。"
+  },
+  "TRequiredContextReference": {
+    "slug": "required-contexts",
+    "title": "所需上下文引用",
+    "use_zh": "需要解析跨上下文的主数据 UUID 时，遍历 requiredContext，每条保留引用 UUID、描述和完整版本标记。它列出依赖，不会把外部主数据内容自动嵌入 XML；缺少所需上下文时应报告无法完整解析，而不是编造名称或覆盖为当前上下文。"
+  }
+}

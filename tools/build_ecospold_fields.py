@@ -47,6 +47,38 @@ CONFIG = [
 LOOKUP = {item[0]: item for _, _, items in CONFIG for item in items}
 assert set(LOOKUP) == {s['id'] for s in SOURCE['sections']}
 
+# The current handbook publishes narrative chapters and one faithful source-table appendix.
+# Keep the older export path below only for archives without reviewed narrative inputs.
+if (AUDIT / 'tutorial/guide.json').exists():
+    sys.path.insert(0,str(REPO / 'tools'))
+    from build_ecospold_tutorial import build_content
+    from ecospold_layout import CHAPTERS
+    build_content()
+    records = []
+    for section in SOURCE['sections']:
+        sid = section['id']
+        for field in section['fields']:
+            records.append({'section':sid,'name':field['name'],'field_id':field['field_id'],
+                            'local_path':'/'.join([sid]+field['schema']['nested']+[field['name']]),
+                            'page':'ecospold2/'+CHAPTERS[sid][0]+'.md','anchor':'read-'+sid.lower(),
+                            'metadata':{k:field[k] for k in ['type','size','required','multiple','multilingual','redundant_master_data','spold1_id']},
+                            'source_blocks':field['description_blocks']})
+    notes = []
+    reviews = []
+    for shard in 'abc':
+        notes.extend(json.loads((AUDIT / f'translation-{shard}.json').read_text()).get('notes',[]))
+        reviews.append(json.loads((AUDIT / f'review-{shard}.json').read_text()))
+    manifest = {'presentation':'chaptered-narrative','source_sha256':SOURCE['source_sha256'],
+                'package_sha256':hashlib.sha256((OUT / 'original/documentation_on_ecospold2_format.v1.0.13.zip').read_bytes()).hexdigest(),
+                'source_file':SOURCE['source_file'],'source_url':SOURCE['source_url'],
+                'sections':len(SOURCE['sections']),'fields':records,'source_blocks':len(BLOCKS),
+                'notes':notes,'reviews':reviews,
+                'pages':[{'path':f.relative_to(CONTENT).as_posix(),'sha256':hashlib.sha256(f.read_bytes()).hexdigest()} for f in sorted(OUT.glob('*.md'))],
+                'original_files':[{'path':f.relative_to(CONTENT).as_posix(),'sha256':hashlib.sha256(f.read_bytes()).hexdigest()} for f in sorted((OUT/'original').rglob('*')) if f.is_file()]}
+    (AUDIT/'manifest.json').write_text(json.dumps(manifest,ensure_ascii=False,indent=2)+'\n')
+    print(json.dumps({'pages':len(manifest['pages']),'fields':len(records),'source_blocks':len(BLOCKS),'notes':len(notes)},ensure_ascii=False))
+    sys.exit(0)
+
 def sha(path):
     return hashlib.sha256(path.read_bytes()).hexdigest()
 

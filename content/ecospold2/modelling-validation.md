@@ -1,10 +1,7 @@
 # 建模与审查
 
-本组按官方 XML 结构组织。字段章节同时保留中文说明与英文原文。
+本组把相关 XML 结构分为下面的文章章节。每篇先解释字段及其相互关系，再说明使用和提取，最后对照教学 demo。
 
-| 字段章节 | 模式类型 | 字段条目数 |
-| --- | --- | --- |
-| [代表性](representativeness.md) | `TRepresentativeness` | 6 |
-| [审查](review.md) | `TReview` | 11 |
+[代表性](representativeness.md)：代表性：理解数据代表的总体，以及样本如何形成
 
-[全部字段索引](field-index.md) · [阅读约定与 XSD 约束](reading-guide.md)
+[审查](review.md)：审查记录：把意见、人员和所审版本对应起来

@@ -94,24 +94,41 @@ def validate():
     expected_headers = ['名称','FieldID','SpoldID（第 1 版）','取值选项','类型','长度','可重复','必填','多语言','主数据冗余字段']
     if descriptions.heads != expected_headers * 22:
         errors.append('Original ten-column structure not preserved')
-    article = (BASE / 'README.md').read_text()
-    before, marker, after = article.partition('## 附录：原始 HTML 格式表的中文翻译')
-    if not marker:
-        errors.append('Missing final translated-table appendix')
-    tokens = MarkdownIt('commonmark',{'html':True}).enable('table').parse(before)
-    if any(t.type == 'table_open' or (t.type in ['html_block','html_inline'] and '<table' in t.content) for t in tokens):
-        errors.append('A table appears in the narrative before the appendix')
-    rendered = visible(article)
+    article = (BASE / 'format-reference.md').read_text()
+    if manifest.get('layout') != 'chaptered-narrative':
+        errors.append('Tutorial is not split into narrative chapters')
+    rendered = ''
+    tokens = []
+    for page in BASE.glob('*.md'):
+        if page.name in ['format-reference.md','translation-review.md','tutorial-review.md']:
+            continue
+        text = page.read_text()
+        page_tokens = MarkdownIt('commonmark',{'html':True}).enable('table').parse(text)
+        tokens.extend(page_tokens)
+        if any(t.type == 'table_open' or (t.type in ['html_block','html_inline'] and '<table' in t.content) for t in page_tokens):
+            errors.append('A table appears outside the single appendix: '+page.name)
+        rendered += ' '+visible(text)
     for shard in 'abc':
         narrative = json.loads((WORK / f'narrative-{shard}.json').read_text())
         for section,text in narrative['sections'].items():
             for para in text.split('\n\n')[1:]:
                 if visible(para) not in rendered:
                     errors.append('Narrative paragraph lost: ' + section)
+            chapter = ROOT / 'content' / manifest['chapter_pages'][section]
+            value = chapter.read_text()
+            for heading in ['## 怎样定位、使用与提取','## 对照 demo 理解读取结果']:
+                if heading not in value:
+                    errors.append('Chapter missing reading/extraction example: '+section)
     appendix_rows = OriginalRows()
-    appendix_rows.feed(after)
+    appendix_rows.feed(article)
     if appendix_rows.fields != wanted:
-        errors.append('Inline GitBook appendix differs from translated HTML metadata')
+        errors.append('Single GitBook appendix differs from translated HTML metadata')
+    layout_review = json.loads((WORK / 'chapter-layout-review.json').read_text())
+    if layout_review['status'] not in ['passed','passed_with_notes']:
+        errors.append('Chapter layout review not passed')
+    for filename, reviewed_sha in layout_review['files'].items():
+        if sha(ROOT / filename) != reviewed_sha:
+            errors.append('Reviewed chapter/helper changed: '+filename)
     for record in manifest['outputs'] + manifest['review_files']:
         path = ROOT / record['path']
         if not path.exists() or sha(path) != record['sha256']:
@@ -130,11 +147,11 @@ def validate():
     if len(blocks) != 1 or blocks[0].strip() != (BASE / 'demo/query_demo.py').read_text().strip():
         errors.append('Query code in article differs from runnable file')
     with zipfile.ZipFile(BASE / 'demo/ecospold2-tutorial-demo.zip') as z:
-        for name in ['demo-product.spold','demo-electricity.spold','demo-lcia.spold','extract_ecospold.py','query_demo.py','README.txt']:
+        for name in ['read_section.py','demo-product.spold','demo-electricity.spold','demo-lcia.spold','extract_ecospold.py','query_demo.py','README.txt']:
             if name not in z.namelist() or z.read(name) != (BASE / 'demo' / name).read_bytes():
                 errors.append('Demo ZIP missing or stale: ' + name)
     return {'narrative_fields':len(coverage),'translated_table_fields':len(parser.fields),
-            'translated_description_rows':len(descriptions.blocks),'article_characters':len(article),
+            'translated_description_rows':len(descriptions.blocks),'chapter_pages':len(manifest['chapter_pages']),'appendix_characters':len(article),
             'tables_only_in_appendix':not any(t.type=='table_open' for t in tokens),'errors':errors}
 
 if __name__ == '__main__':

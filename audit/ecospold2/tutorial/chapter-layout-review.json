@@ -1,0 +1,243 @@
+{
+  "reviewer": "translator_c",
+  "status": "passed_with_notes",
+  "files": {
+    "audit/ecospold2/tutorial/chapter-extraction.json": "5d1c51b702b77327cf29f9595120c3e112137b9658e4d0f7f9b3470fc7ed91c7",
+    "content/ecospold2/README.md": "e3a0a8690d1d79c988b3b0f4ef51e93deca2399d0321ac9c1ec21709e2b92824",
+    "content/ecospold2/activity-description.md": "8a5861103e2e47301bfcedd50fcb3db213beab391d79ee06c624c32c2a7b2515",
+    "content/ecospold2/activity.md": "f8d5eccecc45ceb3027a19bd86bf5c18bd204ea4ba0fc300ced05e0b0710f00b",
+    "content/ecospold2/administrative-information.md": "bda4e3e03b268dd3fb95d222335f2228772090829e9bcf887f7030fdef4920b5",
+    "content/ecospold2/attachments/EcoSpold02.zh.html": "f27d3bdef42095ff5876934b78a56ef1f3f744277ef28ad3755626f1789ca848",
+    "content/ecospold2/classification.md": "99f2e2072deef2fb2329a33da203027700b83450c6d189c4eb87722b44164876",
+    "content/ecospold2/compartments.md": "b91f3c1d7e6e40d6557bb9c42818f0564fea52bf370a3ec73746f2282dcbdf1e",
+    "content/ecospold2/complex-types.md": "6180cdf1ce3a1c8e288d96fe6d9070df4acb2997fd31d8ef167f248fdcee0a28",
+    "content/ecospold2/data-entry.md": "abb8495a32b64d6afcf18e7babaf02858e62c8aa07d969ef1172bf3f63d425b4",
+    "content/ecospold2/data-levels.md": "9b55ee543f2e97f1a40ff415808eb133b42b3291b3b734e5fa573e44cc6471a6",
+    "content/ecospold2/demo/read_section.py": "e7310c0fdc6d6830556095050f784a3b9249be6f72c793d1f11521e4e2aa5e3b",
+    "content/ecospold2/demo-walkthrough.md": "98fe52f527e2bd74f872699b41a419433aa8ef8eef80c30139cf53715971b090",
+    "content/ecospold2/elementary-exchanges.md": "3a1fd1610332385151b3efef54a0271d933840ae507e0e7f3b7c97260b1b4f92",
+    "content/ecospold2/exchanges.md": "cfece74f6e2dce65876e386acc174633b8f7fa19e525546d97a90bb95eb2231d",
+    "content/ecospold2/extraction-practice.md": "c35261563967645f2c9e95b435275d5fece19d1acf75b8497623c15fc6e917dd",
+    "content/ecospold2/file-attributes.md": "cd92d0dc88414a5cf5f0b750f30f066549838a75ba32521102e995c7b0d57be7",
+    "content/ecospold2/flow-data.md": "5e4e7c7d57aec7acb38e2f4a865df328246e71e1a949ef7aa285bf590585a5d4",
+    "content/ecospold2/format-reference.md": "9c3b083084104ef424970c01292a990a927f1e60725cf87ac1a5b287bf4e8593",
+    "content/ecospold2/geography.md": "eabb9e57e10a312fddbd5beb753210b9c255ef5173fcc65067e769cfb9c4be0e",
+    "content/ecospold2/impact-indicators.md": "1dd06055e24fd19714c02c9ddf55d1d4a8665191c3b3dac14d99246b9c1b4da7",
+    "content/ecospold2/intermediate-exchanges.md": "156eaf6db4ea3e9999ee6bd44814b47311ae32385961a3a68d607b6e057441b7",
+    "content/ecospold2/macro-economic-scenario.md": "7a023aac503ec092ddc7b9c8a56f038048ccfc958a993bebdcaaaece7dacd664",
+    "content/ecospold2/modelling-validation.md": "41e5b11a018cf7ab785b80cdb444eb61e99200009630eee8997c7fb47960ceb7",
+    "content/ecospold2/parameters.md": "4ae4c4415207f39e32d0c6ce93f77bff455d51ffb0a052449e4d62e4924b9a4a",
+    "content/ecospold2/properties.md": "168efd29e2cb0db41e373b76b9877de8b0c4b7ecbd95a9b355521d810a003bad",
+    "content/ecospold2/provenance.md": "9edce0609142d8b1c63541b98593aca5063e3ed4526db69109cb32b270ecbe59",
+    "content/ecospold2/publication.md": "ac4d81da884aa49f2e29894d043c3f144a808f2183e36dde9e2b881c2926870e",
+    "content/ecospold2/representativeness.md": "222f6f76decfad5cb5eef6bd9c0237e671afa0dabd40c5c37f688cc4c4d2bdab",
+    "content/ecospold2/required-contexts.md": "b0ae1ea8f915aab99c7d6c62ece4acc57857e5883f65d5b84dfa914935c36dda",
+    "content/ecospold2/review.md": "8afeaa4e317fabb579426db2f32b13b1241a35c91f6d844253b45128557e0978",
+    "content/ecospold2/technology.md": "b1bf2ef9170401363a7bd6ec0972ee0ed99b6bdf6d39fd6948d63cea87620437",
+    "content/ecospold2/text-and-image.md": "b3c9bad8cff62d68ee562158ac96a6da5ab17c4829d33b4660be88e7dd3cccc1",
+    "content/ecospold2/time-period.md": "3bc2d64b187ed15acb41b0dba701815dc31acb614547ea6dcb845312d27a8dce",
+    "content/ecospold2/transfer-coefficients.md": "b04f17b5fa035c4342a3328a31d7cfc8c8d053ffeacbfe4e1d2ac2b4040f6ea8",
+    "content/ecospold2/translation-review.md": "6153d05ac627f9b2bd1efae7eeeb271a5a7c7662702f3d302e54ae919d9e184e",
+    "content/ecospold2/tutorial-review.md": "178fefb775b7afff1f1b229c6396c52d55c4d90522780f85d72aab5f46b61688",
+    "content/ecospold2/uncertainty.md": "125a609ce17a3b914006ca816d10d2878cd1058073b6d6c4f5faae727b2a2f3e",
+    "content/ecospold2/xml-structure.md": "12cf418aaa50af7c52ef3159469d9ba433626f73af550d16dcef497461466f0a",
+    "tools/build_ecospold_tutorial.py": "ad4bce2d573bf83ef511a1ba7b0114c72d3c6b6650422b52985fdbe92940bc57",
+    "tools/ecospold_layout.py": "23a4e9dae02758c6f7a08f1c7a240fb2f23287f389af2f2e15513637e1c607c9"
+  },
+  "reviewed_sections": [
+    "TActivity",
+    "TClassification",
+    "TGeography",
+    "TTechnology",
+    "TTimePeriod",
+    "TMacroEconomicScenario",
+    "TCustomExchange",
+    "TIntermediateExchange",
+    "TElementaryExchange",
+    "TParameter",
+    "TImpactIndicatorResult",
+    "TCompartment",
+    "TUncertainty",
+    "TProperty",
+    "TTransferCoefficient",
+    "TTextAndImage",
+    "TRepresentativeness",
+    "TReview",
+    "TDataEntryBy",
+    "TDataGeneratorAndPublication",
+    "TFileAttributes",
+    "TRequiredContextReference"
+  ],
+  "field_coverage_count": 243,
+  "tests_run": [
+    {
+      "scope": "实际以标准库运行全部22章Markdown原样Python示例，逐章比较返回节点数和前2记录及JSON片段。",
+      "results": [
+        {
+          "section": "TActivity",
+          "page": "content/ecospold2/activity.md",
+          "nodes": 1,
+          "result": "passed"
+        },
+        {
+          "section": "TClassification",
+          "page": "content/ecospold2/classification.md",
+          "nodes": 0,
+          "result": "passed"
+        },
+        {
+          "section": "TGeography",
+          "page": "content/ecospold2/geography.md",
+          "nodes": 1,
+          "result": "passed"
+        },
+        {
+          "section": "TTechnology",
+          "page": "content/ecospold2/technology.md",
+          "nodes": 1,
+          "result": "passed"
+        },
+        {
+          "section": "TTimePeriod",
+          "page": "content/ecospold2/time-period.md",
+          "nodes": 1,
+          "result": "passed"
+        },
+        {
+          "section": "TMacroEconomicScenario",
+          "page": "content/ecospold2/macro-economic-scenario.md",
+          "nodes": 1,
+          "result": "passed"
+        },
+        {
+          "section": "TCustomExchange",
+          "page": "content/ecospold2/exchanges.md",
+          "nodes": 6,
+          "result": "passed"
+        },
+        {
+          "section": "TIntermediateExchange",
+          "page": "content/ecospold2/intermediate-exchanges.md",
+          "nodes": 2,
+          "result": "passed"
+        },
+        {
+          "section": "TElementaryExchange",
+          "page": "content/ecospold2/elementary-exchanges.md",
+          "nodes": 4,
+          "result": "passed"
+        },
+        {
+          "section": "TParameter",
+          "page": "content/ecospold2/parameters.md",
+          "nodes": 1,
+          "result": "passed"
+        },
+        {
+          "section": "TImpactIndicatorResult",
+          "page": "content/ecospold2/impact-indicators.md",
+          "nodes": 1,
+          "result": "passed"
+        },
+        {
+          "section": "TCompartment",
+          "page": "content/ecospold2/compartments.md",
+          "nodes": 4,
+          "result": "passed"
+        },
+        {
+          "section": "TUncertainty",
+          "page": "content/ecospold2/uncertainty.md",
+          "nodes": 1,
+          "result": "passed"
+        },
+        {
+          "section": "TProperty",
+          "page": "content/ecospold2/properties.md",
+          "nodes": 1,
+          "result": "passed"
+        },
+        {
+          "section": "TTransferCoefficient",
+          "page": "content/ecospold2/transfer-coefficients.md",
+          "nodes": 0,
+          "result": "passed"
+        },
+        {
+          "section": "TTextAndImage",
+          "page": "content/ecospold2/text-and-image.md",
+          "nodes": 1,
+          "result": "passed"
+        },
+        {
+          "section": "TRepresentativeness",
+          "page": "content/ecospold2/representativeness.md",
+          "nodes": 1,
+          "result": "passed"
+        },
+        {
+          "section": "TReview",
+          "page": "content/ecospold2/review.md",
+          "nodes": 0,
+          "result": "passed"
+        },
+        {
+          "section": "TDataEntryBy",
+          "page": "content/ecospold2/data-entry.md",
+          "nodes": 1,
+          "result": "passed"
+        },
+        {
+          "section": "TDataGeneratorAndPublication",
+          "page": "content/ecospold2/publication.md",
+          "nodes": 1,
+          "result": "passed"
+        },
+        {
+          "section": "TFileAttributes",
+          "page": "content/ecospold2/file-attributes.md",
+          "nodes": 1,
+          "result": "passed"
+        },
+        {
+          "section": "TRequiredContextReference",
+          "page": "content/ecospold2/required-contexts.md",
+          "nodes": 0,
+          "result": "passed"
+        }
+      ],
+      "result": "passed"
+    },
+    {
+      "scope": "官方完整XSD类型图核对22类型位置，TCustomExchange两类派生交换，TUncertainty所有8种实际父路径，TTextAndImage仅6个真实位置。",
+      "result": "passed"
+    },
+    {
+      "scope": "独立内存边界：中间与基本交换的转移系数、属性、参数、产量不确定性7个独立路径；六个富文本位置与普通字符串排除；错误命名空间/类型/未知section；同UUID活动分类与产品分类仍保留不同父路径。",
+      "result": "passed",
+      "qualification_zh": "人工节点只检查读取行为，未声称它们是完整XSD合法实例。"
+    },
+    {
+      "scope": "既有22段审阅正文完整保留、覆盖243字段、非附录所有MD无表格；中文附录22表243字段及全部source description块；最新附录无英文概述tab。",
+      "result": "passed"
+    }
+  ],
+  "findings": [
+    {
+      "id": "classification-product-parent",
+      "status": "resolved",
+      "reason_zh": "起初遗漏中间产品classification路径，root按报告补入第二路径；两种父对象现均读取，父路径区分。"
+    },
+    {
+      "id": "entry-software-owner",
+      "status": "resolved",
+      "reason_zh": "起初将工具归于dataEntryBy，root修正为仅人员；工具定位到文件属性的fileGenerator，最终config及页面均正确。"
+    },
+    {
+      "id": "rich-text-render-order",
+      "status": "resolved",
+      "reason_zh": "root补明children保持原XML顺序，显示需按index与语言组织；与正文保持一致。"
+    }
+  ],
+  "summary_zh": "独立审閱五组6/5/5/2/4篇共22章、chapter-extraction配置、read_section辅助和构建器；实际运行每章标准库示例，节点数/JSON片段均吻合。全部243字段原审阅叙述未丢，非附录页面无表格，最后中文查询附录完整22表243字段。原始属性值、完整子树、语言、节点序号与父路径保留，空结果不解释为零，公式不执行；普通容器/复合类型的所有真实路径与XSD一致。三处发现已由root修正并独立核验，无未解决实现错误。原文与模式歧义仍留痕，不代表人工或官方认证；未修改源码、配置、页面或操作浏览器，唯一写入为本审閱记录。"
+}

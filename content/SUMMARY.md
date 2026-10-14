@@ -119,8 +119,9 @@
 ## ecoSpold2 XML 字段参考
 
 - [完整教程：读懂 XML 并提取数据](ecospold2/README.md)
-  - [阅读约定与 XSD 约束](ecospold2/reading-guide.md)
-  - [全部字段索引](ecospold2/field-index.md)
+  - [判断 UPR、LCI 与 LCIA](ecospold2/data-levels.md)
+  - [XML 结构、命名空间与继承](ecospold2/xml-structure.md)
+  - [用 demo 走通读取过程](ecospold2/demo-walkthrough.md)
   - [活动描述](ecospold2/activity-description.md)
     - [活动](ecospold2/activity.md)
     - [活动分类](ecospold2/classification.md)
@@ -148,8 +149,11 @@
     - [数据生成者与发布](ecospold2/publication.md)
     - [文件属性](ecospold2/file-attributes.md)
     - [所需上下文引用](ecospold2/required-contexts.md)
+  - [提取与查询实践](ecospold2/extraction-practice.md)
+  - [保留数据解释与追溯信息](ecospold2/provenance.md)
   - [完整教程的编写与运行审阅](ecospold2/tutorial-review.md)
   - [字段翻译与审校记录](ecospold2/translation-review.md)
+  - [附录：官方 EcoSpold02.html 中文版本](ecospold2/format-reference.md)
 
 ## 参考与审核
 

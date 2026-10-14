@@ -1,172 +1,49 @@
-# 时间范围（TTimePeriod）
+# 时间范围
 
-源文分组：Time period。本章完整收录 **4 条字段定义**。
+对应官方格式类型：`TTimePeriod`。本篇以文章解释该类型的 4 条字段；复合类型也会说明它们依附在哪个对象上。
 
-XML 位置：`activityDescription/timePeriod`。以 `activityDescription/`、`flowData/`、`modellingAndValidation/` 或 `administrativeInformation/` 开头的位置，均相对于 `/ecoSpold/activityDataset/`；`…` 表示可复用结构。
+## 时间段与整段有效性要分开判断 <a href="#read-ttimeperiod" id="read-ttimeperiod"></a>
 
-[阅读约定与 XSD 约束](reading-guide.md) · [全部字段索引](field-index.md) · [审校记录](translation-review.md)
+`activityDescription/timePeriod` 采用 `TTimePeriod`。属性 `startDate` 和 `endDate` 是数据集有效时间段的完整日期，采用年-月-日；它们与文件创建、编辑和导出时间不同。属性 `isDataValidForEntirePeriod` 说明该活动的基本流交换和中间交换是否对所列整个时间段都有效，不能仅根据起止日期推定整段有效。
 
-> 本参考译自官方格式包 v1.0.13（所附 XSD version 为 2.0.13）。必填性和重复性先忠实保留原表，再单列 XSD 结构约束；不自动代表所有后续版本的模式。
+当 `isDataValidForEntirePeriod` 不为真时，可在元素 `comment` 中解释。这个 `TTextAndImage` 字段也可说明单元过程的时间相关性，例如较早数据是否仍适用于当前活动；还可说明为什么数据不覆盖整个期间、实际在哪些较短期间内有效。取数时应将起止日期、整段有效性标记和这段说明一并保存，否则会丢失日期区间内的重要限定。
 
-{% tabs %}
+## 怎样定位、使用与提取
 
-{% tab title="中文" %}
+按年份选择数据时，读取 startDate、endDate 和 isDataValidForEntirePeriod。日期范围覆盖目标年份，并不自动说明该段内每一天的数据都同样适用；不要把文件编辑时间当作清单年份。
 
-## 结构说明
+定位路径相对于完整的 `/ecoSpold/activityDataset`：`activityDescription/timePeriod`。其中 `.//` 表示在当前数据集的后代中检索；返回结果会保留实际父路径，以区分不同交换或参数。
 
-分组可重复：否；分组必填：是。
+下载[教学 demo 与读取脚本 ZIP](demo/ecospold2-tutorial-demo.zip)，解压后在同一目录运行下面代码。`read_section.py` 使用 Python 标准库，返回全部匹配节点的属性和完整子节点树；它保留 UUID、原始数值字符串、语言标签和子节点顺序。代码仅展示前两条，变量 `records` 保留全部匹配记录。文件有多个普通数据集时，显式选择 `index`，或逐个遍历；子数据集应先展开继承。
 
-描述数据集有效时间段的开始日期和结束日期。
+原表名称前带 `@` 的是 XML 属性，去掉 `@` 后在返回记录的 `attributes` 中取值，例如 `record["attributes"].get("amount")`。没有 `@` 的字段是子元素，在 `children` 中按完整 `tag` 匹配；名称前的 `{http://www.EcoInvent.org/EcoSpold02}` 是命名空间。多语言字段保留多个子节点，`xml:lang` 在属性字典中写为 `{http://www.w3.org/XML/1998/namespace}lang`。更深的字段继续进入相应子节点的 `children`；缺失属性返回 `None`，不要补成零。
 
-### `@startDate` · FieldID 600 <a href="#field-600" id="field-600"></a>
+```python
+import json
+from read_section import load_dataset, read_section
 
-局部 XML 位置：`TTimePeriod/@startDate`；ecoSpold1 对照编号：`601`。
+dataset = load_dataset("demo-product.spold", index=0)
+records = read_section(dataset, "TTimePeriod")
+print("匹配节点数：", len(records))
+print(json.dumps(records[:2], ensure_ascii=False, indent=2))
+```
 
-| 类型 | 必填 | 可重复 |
-| --- | --- | --- |
-| `date` | 是 | 否 |
+## 对照 demo 理解读取结果
 
-长度：—；多语言：否；主数据冗余字段：否。
+在 `demo-product.spold` 中实际匹配 **1 个节点**。下面是第一个节点的属性与前两个子节点的精选片段；子节点内部结构和其他节点仍保存在代码的完整返回值中。路径带有同级序号，便于回到原文件定位，序号不是主数据 UUID。
 
-数据集有效时间段的开始日期，以完整日期（年-月-日）表示。
+```json
+{
+  "path": "/ecoSpold/activityDataset/activityDescription[1]/timePeriod[1]",
+  "attributes": {
+    "startDate": "2025-01-01",
+    "endDate": "2025-12-31",
+    "isDataValidForEntirePeriod": "true"
+  },
+  "children_excerpt": []
+}
+```
 
-**XSD 结构约束：** `use="required"`。
+## 继续阅读
 
-模式出处：[EcoSpold02MetaInformation.xsd](original/Schemas/datasets/EcoSpold02MetaInformation.xsd)，`TTimePeriod`。
-
-### `@endDate` · FieldID 610 <a href="#field-610" id="field-610"></a>
-
-局部 XML 位置：`TTimePeriod/@endDate`；ecoSpold1 对照编号：`602`。
-
-| 类型 | 必填 | 可重复 |
-| --- | --- | --- |
-| `date` | 是 | 否 |
-
-长度：—；多语言：否；主数据冗余字段：否。
-
-数据集有效时间段的结束日期，以完整日期（年-月-日）表示。
-
-**XSD 结构约束：** `use="required"`。
-
-模式出处：[EcoSpold02MetaInformation.xsd](original/Schemas/datasets/EcoSpold02MetaInformation.xsd)，`TTimePeriod`。
-
-### `@isDataValidForEntirePeriod` · FieldID 620 <a href="#field-620" id="field-620"></a>
-
-局部 XML 位置：`TTimePeriod/@isDataValidForEntirePeriod`；ecoSpold1 对照编号：`603`。
-
-| 类型 | 必填 | 可重复 |
-| --- | --- | --- |
-| `boolean` | 是 | 否 |
-
-长度：—；多语言：否；主数据冗余字段：否。
-
-表示活动数据（在流数据下报告的基本流交换和中间交换）是否在所述整个时间段内有效。如果不是，可在“comment”中说明。
-
-**XSD 结构约束：** `use="required"`。
-
-模式出处：[EcoSpold02MetaInformation.xsd](original/Schemas/datasets/EcoSpold02MetaInformation.xsd)，`TTimePeriod`。
-
-### `comment` · FieldID 630 <a href="#field-630" id="field-630"></a>
-
-局部 XML 位置：`TTimePeriod/comment`；ecoSpold1 对照编号：`611`。
-
-| 类型 | 必填 | 可重复 |
-| --- | --- | --- |
-| `TTextAndImage` | 否 | 否 |
-
-长度：—；多语言：是；主数据冗余字段：否。
-
-用于进一步说明所报告数据时间有效性的文本和图像字段。例如，可包括以下信息：
-\- 所涉及单元过程的时间相关性有多强（例如，4 年前的数据是否仍适用于今天运行的活动）；
-\- 数据为何不在整个时间段内有效，以及数据在哪些较短时间段内有效。
-文本和图像字段为 text、imageUri 和 variable 元素的列表。text 和 imageUri 元素可用于描述当前章节，并可按其 index 属性指定的顺序任意组合。文本变量通过 variable 元素定义，可在文本中以 {{variablename}} 的形式使用。若父数据集的文本字段包含变量，子活动数据集可重新定义该变量，同时保持父文本的其余部分不变。这样便于修改子过程中的部分文本。
-
-text、imageUri 和 variable 元素的列表。text 和 imageUri 元素可用于描述当前章节，并可按其 index 属性指定的顺序任意组合。文本变量通过 variable 元素定义，可在文本中以 {{variablename}} 的形式使用。若父数据集的文本字段包含变量，子活动数据集可重新定义该变量，同时保持父文本的其余部分不变。这样便于修改子过程中的部分文本。
-
-复合类型详情：[ `TTextAndImage` ](text-and-image.md)。
-
-**XSD 结构约束：** `minOccurs="0"`，`maxOccurs="1"`（未显式声明的值按 XSD 默认值列出）。
-
-模式出处：[EcoSpold02MetaInformation.xsd](original/Schemas/datasets/EcoSpold02MetaInformation.xsd)，`TTimePeriod`。
-
-{% endtab %}
-
-{% tab title="English 原文" %}
-
-## Structure
-
-Group multiple occurrences：No；Group required：Yes。
-
-Describes start and end date of the time period for which the dataset is valid.
-
-### `@startDate` · FieldID 600 <a href="#en-field-600" id="en-field-600"></a>
-
-Local XML path：`TTimePeriod/@startDate`；ecoSpold1 mapping：`601`。
-
-| Type | Required | Multiple occurrence |
-| --- | --- | --- |
-| `date` | Yes | No |
-
-Size：—；Multi language：No；Redundant master data：No。
-
-Start date of the time period for which the dataset is valid, presented as a complete date (year-month-day).
-
-**XSD structural constraints：** `use="required"`。
-
-Schema source：[EcoSpold02MetaInformation.xsd](original/Schemas/datasets/EcoSpold02MetaInformation.xsd)，`TTimePeriod`。
-
-### `@endDate` · FieldID 610 <a href="#en-field-610" id="en-field-610"></a>
-
-Local XML path：`TTimePeriod/@endDate`；ecoSpold1 mapping：`602`。
-
-| Type | Required | Multiple occurrence |
-| --- | --- | --- |
-| `date` | Yes | No |
-
-Size：—；Multi language：No；Redundant master data：No。
-
-End date of the time period for which the dataset is valid, presented as a complete date (year-month-day).
-
-**XSD structural constraints：** `use="required"`。
-
-Schema source：[EcoSpold02MetaInformation.xsd](original/Schemas/datasets/EcoSpold02MetaInformation.xsd)，`TTimePeriod`。
-
-### `@isDataValidForEntirePeriod` · FieldID 620 <a href="#en-field-620" id="en-field-620"></a>
-
-Local XML path：`TTimePeriod/@isDataValidForEntirePeriod`；ecoSpold1 mapping：`603`。
-
-| Type | Required | Multiple occurrence |
-| --- | --- | --- |
-| `boolean` | Yes | No |
-
-Size：—；Multi language：No；Redundant master data：No。
-
-Indicates whether or not the activity data (elementary and intermediate exchanges reported under flow data) are valid for the entire time period stated. If not, explanations may be given under 'comment'.
-
-**XSD structural constraints：** `use="required"`。
-
-Schema source：[EcoSpold02MetaInformation.xsd](original/Schemas/datasets/EcoSpold02MetaInformation.xsd)，`TTimePeriod`。
-
-### `comment` · FieldID 630 <a href="#en-field-630" id="en-field-630"></a>
-
-Local XML path：`TTimePeriod/comment`；ecoSpold1 mapping：`611`。
-
-| Type | Required | Multiple occurrence |
-| --- | --- | --- |
-| `TTextAndImage` | No | No |
-
-Size：—；Multi language：Yes；Redundant master data：No。
-
-Text and image field for additional explanations concerning the temporal validity of the data reported. It may e.g. include information about:- how strong the temporal correlation is for the unit process at issue (e.g., are four year old data still adequate for the activity operated today?),- why data is not valid for the entire period, and for which smaller periods data are then valid. Text and image fields are list of text, imageUri and variable elements. The text and imageUri elements can used to describe the current section and they can be combined in any order given by their index attribute. Text variables are defined by the variable elements, which may be used in the text as {{variablename}}. If a parent text field includes a variable, this variable may be redefined by the child activity dataset while keeping the rest of the parent text intact. This allows easy changes of text parts in child processes.
-
-List of text, imageUri and variable elements. The text and imageUri elements can used to describe the current section and they can be combined in any order given by their index attribute. Text variables are defined by the variable elements, which may be used in the text as {{variablename}}. If a parent text field includes a variable, this variable may be redefined by the child activity dataset while keeping the rest of the parent text intact. This allows easy changes of text parts in child processes.
-
-Complex type details：[ `TTextAndImage` ](text-and-image.md)。
-
-**XSD structural constraints：** `minOccurs="0"`，`maxOccurs="1"` (undeclared values use XSD defaults)。
-
-Schema source：[EcoSpold02MetaInformation.xsd](original/Schemas/datasets/EcoSpold02MetaInformation.xsd)，`TTimePeriod`。
-
-{% endtab %}
-
-{% endtabs %}
+[提取与查询实践](extraction-practice.md)把数量读取、身份筛选与参考产品归一化连起来；[完整中文格式译表](format-reference.md#appendix-ttimeperiod)用于核对本类型的字段次序、类型和原表标记。原文疑点见[审校记录](translation-review.md)。

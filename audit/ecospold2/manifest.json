@@ -1,4 +1,5 @@
 {
+  "presentation": "chaptered-narrative",
   "source_sha256": "3f03c496b83ac15afb08d6e4ea60381603e14b89804324bc465d12c474a605ce",
   "package_sha256": "0670b9dfe85cf10f608d016d4e0e583204301e7934b01297ca00f747fd5799c1",
   "source_file": "Format description/EcoSpold02.html",
@@ -11,7 +12,7 @@
       "field_id": "100",
       "local_path": "TActivity/activityName",
       "page": "ecospold2/activity.md",
-      "anchor": "field-100",
+      "anchor": "read-tactivity",
       "metadata": {
         "type": "TString120",
         "size": "120",
@@ -31,7 +32,7 @@
       "field_id": "102",
       "local_path": "TActivity/@id",
       "page": "ecospold2/activity.md",
-      "anchor": "field-102",
+      "anchor": "read-tactivity",
       "metadata": {
         "type": "TUuid",
         "size": "36",
@@ -51,7 +52,7 @@
       "field_id": "105",
       "local_path": "TActivity/@activityNameId",
       "page": "ecospold2/activity.md",
-      "anchor": "field-105",
+      "anchor": "read-tactivity",
       "metadata": {
         "type": "TUuid",
         "size": "36",
@@ -71,7 +72,7 @@
       "field_id": "106",
       "local_path": "TActivity/@activityNameContextId",
       "page": "ecospold2/activity.md",
-      "anchor": "field-106",
+      "anchor": "read-tactivity",
       "metadata": {
         "type": "TUuid",
         "size": "36",
@@ -92,7 +93,7 @@
       "field_id": "110",
       "local_path": "TActivity/@type",
       "page": "ecospold2/activity.md",
-      "anchor": "field-110",
+      "anchor": "read-tactivity",
       "metadata": {
         "type": "integer",
         "size": "",
@@ -103,8 +104,7 @@
         "spold1_id": "201-type"
       },
       "source_blocks": [
-        "TActivity.110.description.0",
-        "TActivity.110.options"
+        "TActivity.110.description.0"
       ]
     },
     {
@@ -113,7 +113,7 @@
       "field_id": "115",
       "local_path": "TActivity/@specialActivityType",
       "page": "ecospold2/activity.md",
-      "anchor": "field-115",
+      "anchor": "read-tactivity",
       "metadata": {
         "type": "integer",
         "size": "",
@@ -124,8 +124,7 @@
         "spold1_id": "new"
       },
       "source_blocks": [
-        "TActivity.115.description.0",
-        "TActivity.115.options"
+        "TActivity.115.description.0"
       ]
     },
     {
@@ -134,7 +133,7 @@
       "field_id": "120",
       "local_path": "TActivity/generalComment",
       "page": "ecospold2/activity.md",
-      "anchor": "field-120",
+      "anchor": "read-tactivity",
       "metadata": {
         "type": "TTextAndImage",
         "size": "",
@@ -155,7 +154,7 @@
       "field_id": "130",
       "local_path": "TActivity/@parentActivityId",
       "page": "ecospold2/activity.md",
-      "anchor": "field-130",
+      "anchor": "read-tactivity",
       "metadata": {
         "type": "TUuid",
         "size": "36",
@@ -182,7 +181,7 @@
       "field_id": "131",
       "local_path": "TActivity/@parentActivityContextId",
       "page": "ecospold2/activity.md",
-      "anchor": "field-131",
+      "anchor": "read-tactivity",
       "metadata": {
         "type": "TUuid",
         "size": "36",
@@ -203,7 +202,7 @@
       "field_id": "135",
       "local_path": "TActivity/@inheritanceDepth",
       "page": "ecospold2/activity.md",
-      "anchor": "field-135",
+      "anchor": "read-tactivity",
       "metadata": {
         "type": "integer",
         "size": "",
@@ -223,7 +222,7 @@
       "field_id": "145",
       "local_path": "TActivity/includedActivitiesStart",
       "page": "ecospold2/activity.md",
-      "anchor": "field-145",
+      "anchor": "read-tactivity",
       "metadata": {
         "type": "TString32000",
         "size": "32000",
@@ -243,7 +242,7 @@
       "field_id": "150",
       "local_path": "TActivity/includedActivitiesEnd",
       "page": "ecospold2/activity.md",
-      "anchor": "field-150",
+      "anchor": "read-tactivity",
       "metadata": {
         "type": "TString32000",
         "size": "32000",
@@ -263,7 +262,7 @@
       "field_id": "170",
       "local_path": "TActivity/synonym",
       "page": "ecospold2/activity.md",
-      "anchor": "field-170",
+      "anchor": "read-tactivity",
       "metadata": {
         "type": "TSynonym",
         "size": "80",
@@ -284,7 +283,7 @@
       "field_id": "175",
       "local_path": "TActivity/tag",
       "page": "ecospold2/activity.md",
-      "anchor": "field-175",
+      "anchor": "read-tactivity",
       "metadata": {
         "type": "TTag",
         "size": "40",
@@ -304,7 +303,7 @@
       "field_id": "180",
       "local_path": "TActivity/@energyValues",
       "page": "ecospold2/activity.md",
-      "anchor": "field-180",
+      "anchor": "read-tactivity",
       "metadata": {
         "type": "integer",
         "size": "",
@@ -316,8 +315,7 @@
       },
       "source_blocks": [
         "TActivity.180.description.0",
-        "TActivity.180.description.1",
-        "TActivity.180.options"
+        "TActivity.180.description.1"
       ]
     },
     {
@@ -326,7 +324,7 @@
       "field_id": "190",
       "local_path": "TActivity/@masterAllocationPropertyId",
       "page": "ecospold2/activity.md",
-      "anchor": "field-190",
+      "anchor": "read-tactivity",
       "metadata": {
         "type": "TUuid",
         "size": "36",
@@ -347,7 +345,7 @@
       "field_id": "191",
       "local_path": "TActivity/@masterAllocationPropertyContextId",
       "page": "ecospold2/activity.md",
-      "anchor": "field-191",
+      "anchor": "read-tactivity",
       "metadata": {
         "type": "TUuid",
         "size": "36",
@@ -368,7 +366,7 @@
       "field_id": "192",
       "local_path": "TActivity/@masterAllocationPropertyIdOverwrittenByChild",
       "page": "ecospold2/activity.md",
-      "anchor": "field-192",
+      "anchor": "read-tactivity",
       "metadata": {
         "type": "boolean",
         "size": "",
@@ -388,7 +386,7 @@
       "field_id": "195",
       "local_path": "TActivity/allocationComment",
       "page": "ecospold2/activity.md",
-      "anchor": "field-195",
+      "anchor": "read-tactivity",
       "metadata": {
         "type": "TTextAndImage",
         "size": "",
@@ -409,7 +407,7 @@
       "field_id": "200",
       "local_path": "TActivity/@datasetIcon",
       "page": "ecospold2/activity.md",
-      "anchor": "field-200",
+      "anchor": "read-tactivity",
       "metadata": {
         "type": "anyURI",
         "size": "",
@@ -429,7 +427,7 @@
       "field_id": "300",
       "local_path": "TClassification/classificationSystem",
       "page": "ecospold2/classification.md",
-      "anchor": "field-300",
+      "anchor": "read-tclassification",
       "metadata": {
         "type": "TString255",
         "size": "255",
@@ -449,7 +447,7 @@
       "field_id": "310",
       "local_path": "TClassification/classificationValue",
       "page": "ecospold2/classification.md",
-      "anchor": "field-310",
+      "anchor": "read-tclassification",
       "metadata": {
         "type": "TString120",
         "size": "120",
@@ -469,7 +467,7 @@
       "field_id": "320",
       "local_path": "TClassification/@classificationId",
       "page": "ecospold2/classification.md",
-      "anchor": "field-320",
+      "anchor": "read-tclassification",
       "metadata": {
         "type": "TUuid",
         "size": "36",
@@ -489,7 +487,7 @@
       "field_id": "321",
       "local_path": "TClassification/@classificationContextId",
       "page": "ecospold2/classification.md",
-      "anchor": "field-321",
+      "anchor": "read-tclassification",
       "metadata": {
         "type": "TUuid",
         "size": "36",
@@ -510,7 +508,7 @@
       "field_id": "400",
       "local_path": "TGeography/@geographyId",
       "page": "ecospold2/geography.md",
-      "anchor": "field-400",
+      "anchor": "read-tgeography",
       "metadata": {
         "type": "TUuid",
         "size": "36",
@@ -530,7 +528,7 @@
       "field_id": "401",
       "local_path": "TGeography/@geographyContextId",
       "page": "ecospold2/geography.md",
-      "anchor": "field-401",
+      "anchor": "read-tgeography",
       "metadata": {
         "type": "TUuid",
         "size": "36",
@@ -551,7 +549,7 @@
       "field_id": "410",
       "local_path": "TGeography/shortname",
       "page": "ecospold2/geography.md",
-      "anchor": "field-410",
+      "anchor": "read-tgeography",
       "metadata": {
         "type": "TString40",
         "size": "40",
@@ -571,7 +569,7 @@
       "field_id": "420",
       "local_path": "TGeography/comment",
       "page": "ecospold2/geography.md",
-      "anchor": "field-420",
+      "anchor": "read-tgeography",
       "metadata": {
         "type": "TTextAndImage",
         "size": "",
@@ -592,7 +590,7 @@
       "field_id": "500",
       "local_path": "TTechnology/@technologyLevel",
       "page": "ecospold2/technology.md",
-      "anchor": "field-500",
+      "anchor": "read-ttechnology",
       "metadata": {
         "type": "integer",
         "size": "",
@@ -603,8 +601,7 @@
         "spold1_id": "new"
       },
       "source_blocks": [
-        "TTechnology.500.description.0",
-        "TTechnology.500.options"
+        "TTechnology.500.description.0"
       ]
     },
     {
@@ -613,7 +610,7 @@
       "field_id": "510",
       "local_path": "TTechnology/comment",
       "page": "ecospold2/technology.md",
-      "anchor": "field-510",
+      "anchor": "read-ttechnology",
       "metadata": {
         "type": "TTextAndImage",
         "size": "",
@@ -634,7 +631,7 @@
       "field_id": "600",
       "local_path": "TTimePeriod/@startDate",
       "page": "ecospold2/time-period.md",
-      "anchor": "field-600",
+      "anchor": "read-ttimeperiod",
       "metadata": {
         "type": "date",
         "size": "",
@@ -654,7 +651,7 @@
       "field_id": "610",
       "local_path": "TTimePeriod/@endDate",
       "page": "ecospold2/time-period.md",
-      "anchor": "field-610",
+      "anchor": "read-ttimeperiod",
       "metadata": {
         "type": "date",
         "size": "",
@@ -674,7 +671,7 @@
       "field_id": "620",
       "local_path": "TTimePeriod/@isDataValidForEntirePeriod",
       "page": "ecospold2/time-period.md",
-      "anchor": "field-620",
+      "anchor": "read-ttimeperiod",
       "metadata": {
         "type": "boolean",
         "size": "",
@@ -694,7 +691,7 @@
       "field_id": "630",
       "local_path": "TTimePeriod/comment",
       "page": "ecospold2/time-period.md",
-      "anchor": "field-630",
+      "anchor": "read-ttimeperiod",
       "metadata": {
         "type": "TTextAndImage",
         "size": "",
@@ -715,7 +712,7 @@
       "field_id": "700",
       "local_path": "TMacroEconomicScenario/@macroEconomicScenarioId",
       "page": "ecospold2/macro-economic-scenario.md",
-      "anchor": "field-700",
+      "anchor": "read-tmacroeconomicscenario",
       "metadata": {
         "type": "TUuid",
         "size": "36",
@@ -735,7 +732,7 @@
       "field_id": "701",
       "local_path": "TMacroEconomicScenario/@macroEconomicScenarioContextId",
       "page": "ecospold2/macro-economic-scenario.md",
-      "anchor": "field-701",
+      "anchor": "read-tmacroeconomicscenario",
       "metadata": {
         "type": "TUuid",
         "size": "36",
@@ -755,7 +752,7 @@
       "field_id": "720",
       "local_path": "TMacroEconomicScenario/name",
       "page": "ecospold2/macro-economic-scenario.md",
-      "anchor": "field-720",
+      "anchor": "read-tmacroeconomicscenario",
       "metadata": {
         "type": "TString80",
         "size": "80",
@@ -775,7 +772,7 @@
       "field_id": "740",
       "local_path": "TMacroEconomicScenario/comment",
       "page": "ecospold2/macro-economic-scenario.md",
-      "anchor": "field-740",
+      "anchor": "read-tmacroeconomicscenario",
       "metadata": {
         "type": "TString32000",
         "size": "32000",
@@ -795,7 +792,7 @@
       "field_id": "1000",
       "local_path": "TCustomExchange/name",
       "page": "ecospold2/exchanges.md",
-      "anchor": "field-1000",
+      "anchor": "read-tcustomexchange",
       "metadata": {
         "type": "TString120",
         "size": "120",
@@ -815,7 +812,7 @@
       "field_id": "1005",
       "local_path": "TCustomExchange/@id",
       "page": "ecospold2/exchanges.md",
-      "anchor": "field-1005",
+      "anchor": "read-tcustomexchange",
       "metadata": {
         "type": "TUuid",
         "size": "36",
@@ -835,7 +832,7 @@
       "field_id": "1020",
       "local_path": "TCustomExchange/@amount",
       "page": "ecospold2/exchanges.md",
-      "anchor": "field-1020",
+      "anchor": "read-tcustomexchange",
       "metadata": {
         "type": "TFloatNumber",
         "size": "",
@@ -855,7 +852,7 @@
       "field_id": "1030",
       "local_path": "TCustomExchange/@unitId",
       "page": "ecospold2/exchanges.md",
-      "anchor": "field-1030",
+      "anchor": "read-tcustomexchange",
       "metadata": {
         "type": "TUuid",
         "size": "36",
@@ -875,7 +872,7 @@
       "field_id": "1031",
       "local_path": "TCustomExchange/@unitContextId",
       "page": "ecospold2/exchanges.md",
-      "anchor": "field-1031",
+      "anchor": "read-tcustomexchange",
       "metadata": {
         "type": "TUuid",
         "size": "36",
@@ -896,7 +893,7 @@
       "field_id": "1035",
       "local_path": "TCustomExchange/unitName",
       "page": "ecospold2/exchanges.md",
-      "anchor": "field-1035",
+      "anchor": "read-tcustomexchange",
       "metadata": {
         "type": "TString40",
         "size": "40",
@@ -916,7 +913,7 @@
       "field_id": "1040",
       "local_path": "TCustomExchange/@variableName",
       "page": "ecospold2/exchanges.md",
-      "anchor": "field-1040",
+      "anchor": "read-tcustomexchange",
       "metadata": {
         "type": "TVariableName",
         "size": "40",
@@ -936,7 +933,7 @@
       "field_id": "1050",
       "local_path": "TCustomExchange/@isCalculatedAmount",
       "page": "ecospold2/exchanges.md",
-      "anchor": "field-1050",
+      "anchor": "read-tcustomexchange",
       "metadata": {
         "type": "boolean",
         "size": "",
@@ -956,7 +953,7 @@
       "field_id": "1060",
       "local_path": "TCustomExchange/@mathematicalRelation",
       "page": "ecospold2/exchanges.md",
-      "anchor": "field-1060",
+      "anchor": "read-tcustomexchange",
       "metadata": {
         "type": "TBaseString32000",
         "size": "32000",
@@ -977,7 +974,7 @@
       "field_id": "1100",
       "local_path": "TCustomExchange/@casNumber",
       "page": "ecospold2/exchanges.md",
-      "anchor": "field-1100",
+      "anchor": "read-tcustomexchange",
       "metadata": {
         "type": "TCasNumber",
         "size": "11",
@@ -997,7 +994,7 @@
       "field_id": "1110",
       "local_path": "TCustomExchange/comment",
       "page": "ecospold2/exchanges.md",
-      "anchor": "field-1110",
+      "anchor": "read-tcustomexchange",
       "metadata": {
         "type": "TString32000",
         "size": "32000",
@@ -1017,7 +1014,7 @@
       "field_id": "1120",
       "local_path": "TCustomExchange/@sourceId",
       "page": "ecospold2/exchanges.md",
-      "anchor": "field-1120",
+      "anchor": "read-tcustomexchange",
       "metadata": {
         "type": "TUuid",
         "size": "36",
@@ -1028,8 +1025,7 @@
         "spold1_id": "3715"
       },
       "source_blocks": [
-        "TCustomExchange.1120.description.0",
-        "TCustomExchange.1120.options"
+        "TCustomExchange.1120.description.0"
       ]
     },
     {
@@ -1038,7 +1034,7 @@
       "field_id": "1121",
       "local_path": "TCustomExchange/@sourceContextId",
       "page": "ecospold2/exchanges.md",
-      "anchor": "field-1121",
+      "anchor": "read-tcustomexchange",
       "metadata": {
         "type": "TUuid",
         "size": "36",
@@ -1059,7 +1055,7 @@
       "field_id": "1122",
       "local_path": "TCustomExchange/@sourceIdOverwrittenByChild",
       "page": "ecospold2/exchanges.md",
-      "anchor": "field-1122",
+      "anchor": "read-tcustomexchange",
       "metadata": {
         "type": "boolean",
         "size": "",
@@ -1079,7 +1075,7 @@
       "field_id": "1125",
       "local_path": "TCustomExchange/@sourceYear",
       "page": "ecospold2/exchanges.md",
-      "anchor": "field-1125",
+      "anchor": "read-tcustomexchange",
       "metadata": {
         "type": "TBaseString30",
         "size": "30",
@@ -1099,7 +1095,7 @@
       "field_id": "1126",
       "local_path": "TCustomExchange/@sourceFirstAuthor",
       "page": "ecospold2/exchanges.md",
-      "anchor": "field-1126",
+      "anchor": "read-tcustomexchange",
       "metadata": {
         "type": "TBaseString40",
         "size": "40",
@@ -1119,7 +1115,7 @@
       "field_id": "1130",
       "local_path": "TCustomExchange/@pageNumbers",
       "page": "ecospold2/exchanges.md",
-      "anchor": "field-1130",
+      "anchor": "read-tcustomexchange",
       "metadata": {
         "type": "TBaseString30",
         "size": "30",
@@ -1139,7 +1135,7 @@
       "field_id": "1150",
       "local_path": "TCustomExchange/@specificAllocationPropertyId",
       "page": "ecospold2/exchanges.md",
-      "anchor": "field-1150",
+      "anchor": "read-tcustomexchange",
       "metadata": {
         "type": "TUuid",
         "size": "36",
@@ -1159,7 +1155,7 @@
       "field_id": "1151",
       "local_path": "TCustomExchange/@specificAllocationPropertyContextId",
       "page": "ecospold2/exchanges.md",
-      "anchor": "field-1151",
+      "anchor": "read-tcustomexchange",
       "metadata": {
         "type": "TUuid",
         "size": "36",
@@ -1180,7 +1176,7 @@
       "field_id": "1152",
       "local_path": "TCustomExchange/@specificAllocationPropertyIdOverwrittenByChild",
       "page": "ecospold2/exchanges.md",
-      "anchor": "field-1152",
+      "anchor": "read-tcustomexchange",
       "metadata": {
         "type": "boolean",
         "size": "",
@@ -1200,7 +1196,7 @@
       "field_id": "1200",
       "local_path": "TCustomExchange/transferCoefficient",
       "page": "ecospold2/exchanges.md",
-      "anchor": "field-1200",
+      "anchor": "read-tcustomexchange",
       "metadata": {
         "type": "TTransferCoefficient",
         "size": "",
@@ -1221,7 +1217,7 @@
       "field_id": "1300",
       "local_path": "TCustomExchange/uncertainty",
       "page": "ecospold2/exchanges.md",
-      "anchor": "field-1300",
+      "anchor": "read-tcustomexchange",
       "metadata": {
         "type": "TUncertainty",
         "size": "",
@@ -1242,7 +1238,7 @@
       "field_id": "1400",
       "local_path": "TCustomExchange/property",
       "page": "ecospold2/exchanges.md",
-      "anchor": "field-1400",
+      "anchor": "read-tcustomexchange",
       "metadata": {
         "type": "TProperty",
         "size": "",
@@ -1263,7 +1259,7 @@
       "field_id": "1450",
       "local_path": "TCustomExchange/tag",
       "page": "ecospold2/exchanges.md",
-      "anchor": "field-1450",
+      "anchor": "read-tcustomexchange",
       "metadata": {
         "type": "TTag",
         "size": "40",
@@ -1283,7 +1279,7 @@
       "field_id": "1470",
       "local_path": "TCustomExchange/synonym",
       "page": "ecospold2/exchanges.md",
-      "anchor": "field-1470",
+      "anchor": "read-tcustomexchange",
       "metadata": {
         "type": "TSynonym",
         "size": "80",
@@ -1304,7 +1300,7 @@
       "field_id": "1500",
       "local_path": "TIntermediateExchange/inputGroup",
       "page": "ecospold2/intermediate-exchanges.md",
-      "anchor": "field-1500",
+      "anchor": "read-tintermediateexchange",
       "metadata": {
         "type": "integer",
         "size": "",
@@ -1316,8 +1312,7 @@
       },
       "source_blocks": [
         "TIntermediateExchange.1500.description.0",
-        "TIntermediateExchange.1500.description.1",
-        "TIntermediateExchange.1500.options"
+        "TIntermediateExchange.1500.description.1"
       ]
     },
     {
@@ -1326,7 +1321,7 @@
       "field_id": "1510",
       "local_path": "TIntermediateExchange/outputGroup",
       "page": "ecospold2/intermediate-exchanges.md",
-      "anchor": "field-1510",
+      "anchor": "read-tintermediateexchange",
       "metadata": {
         "type": "integer",
         "size": "",
@@ -1338,8 +1333,7 @@
       },
       "source_blocks": [
         "TIntermediateExchange.1510.description.0",
-        "TIntermediateExchange.1510.description.1",
-        "TIntermediateExchange.1510.options"
+        "TIntermediateExchange.1510.description.1"
       ]
     },
     {
@@ -1348,7 +1342,7 @@
       "field_id": "1515",
       "local_path": "TIntermediateExchange/@intermediateExchangeId",
       "page": "ecospold2/intermediate-exchanges.md",
-      "anchor": "field-1515",
+      "anchor": "read-tintermediateexchange",
       "metadata": {
         "type": "TUuid",
         "size": "36",
@@ -1368,7 +1362,7 @@
       "field_id": "1516",
       "local_path": "TIntermediateExchange/@intermediateExchangeContextId",
       "page": "ecospold2/intermediate-exchanges.md",
-      "anchor": "field-1516",
+      "anchor": "read-tintermediateexchange",
       "metadata": {
         "type": "TUuid",
         "size": "36",
@@ -1389,7 +1383,7 @@
       "field_id": "1520",
       "local_path": "TIntermediateExchange/@activityLinkId",
       "page": "ecospold2/intermediate-exchanges.md",
-      "anchor": "field-1520",
+      "anchor": "read-tintermediateexchange",
       "metadata": {
         "type": "TUuid",
         "size": "36",
@@ -1400,8 +1394,7 @@
         "spold1_id": "3715"
       },
       "source_blocks": [
-        "TIntermediateExchange.1520.description.0",
-        "TIntermediateExchange.1520.options"
+        "TIntermediateExchange.1520.description.0"
       ]
     },
     {
@@ -1410,7 +1403,7 @@
       "field_id": "1521",
       "local_path": "TIntermediateExchange/@activityLinkContextId",
       "page": "ecospold2/intermediate-exchanges.md",
-      "anchor": "field-1521",
+      "anchor": "read-tintermediateexchange",
       "metadata": {
         "type": "TUuid",
         "size": "36",
@@ -1431,7 +1424,7 @@
       "field_id": "1522",
       "local_path": "TIntermediateExchange/@activityLinkIdOverwrittenByChild",
       "page": "ecospold2/intermediate-exchanges.md",
-      "anchor": "field-1522",
+      "anchor": "read-tintermediateexchange",
       "metadata": {
         "type": "boolean",
         "size": "",
@@ -1451,7 +1444,7 @@
       "field_id": "1530",
       "local_path": "TIntermediateExchange/@productionVolumeAmount",
       "page": "ecospold2/intermediate-exchanges.md",
-      "anchor": "field-1530",
+      "anchor": "read-tintermediateexchange",
       "metadata": {
         "type": "TFloatNumber",
         "size": "",
@@ -1471,7 +1464,7 @@
       "field_id": "1531",
       "local_path": "TIntermediateExchange/@productionVolumeSourceIdOverwrittenByChild",
       "page": "ecospold2/intermediate-exchanges.md",
-      "anchor": "field-1531",
+      "anchor": "read-tintermediateexchange",
       "metadata": {
         "type": "boolean",
         "size": "",
@@ -1491,7 +1484,7 @@
       "field_id": "1532",
       "local_path": "TIntermediateExchange/@productionVolumeVariableName",
       "page": "ecospold2/intermediate-exchanges.md",
-      "anchor": "field-1532",
+      "anchor": "read-tintermediateexchange",
       "metadata": {
         "type": "TVariableName",
         "size": "40",
@@ -1511,7 +1504,7 @@
       "field_id": "1533",
       "local_path": "TIntermediateExchange/@productionVolumeSourceId",
       "page": "ecospold2/intermediate-exchanges.md",
-      "anchor": "field-1533",
+      "anchor": "read-tintermediateexchange",
       "metadata": {
         "type": "TUuid",
         "size": "36",
@@ -1522,8 +1515,7 @@
         "spold1_id": "new"
       },
       "source_blocks": [
-        "TIntermediateExchange.1533.description.0",
-        "TIntermediateExchange.1533.options"
+        "TIntermediateExchange.1533.description.0"
       ]
     },
     {
@@ -1532,7 +1524,7 @@
       "field_id": "1534",
       "local_path": "TIntermediateExchange/@productionVolumeMathematicalRelation",
       "page": "ecospold2/intermediate-exchanges.md",
-      "anchor": "field-1534",
+      "anchor": "read-tintermediateexchange",
       "metadata": {
         "type": "TBaseString32000",
         "size": "32000",
@@ -1553,7 +1545,7 @@
       "field_id": "1535",
       "local_path": "TIntermediateExchange/productionVolumeComment",
       "page": "ecospold2/intermediate-exchanges.md",
-      "anchor": "field-1535",
+      "anchor": "read-tintermediateexchange",
       "metadata": {
         "type": "TString32000",
         "size": "32000",
@@ -1573,7 +1565,7 @@
       "field_id": "1536",
       "local_path": "TIntermediateExchange/@productionVolumeSourceContextId",
       "page": "ecospold2/intermediate-exchanges.md",
-      "anchor": "field-1536",
+      "anchor": "read-tintermediateexchange",
       "metadata": {
         "type": "TUuid",
         "size": "36",
@@ -1594,7 +1586,7 @@
       "field_id": "1537",
       "local_path": "TIntermediateExchange/@productionVolumeSourceYear",
       "page": "ecospold2/intermediate-exchanges.md",
-      "anchor": "field-1537",
+      "anchor": "read-tintermediateexchange",
       "metadata": {
         "type": "TBaseString30",
         "size": "30",
@@ -1614,7 +1606,7 @@
       "field_id": "1538",
       "local_path": "TIntermediateExchange/@productionVolumeSourceFirstAuthor",
       "page": "ecospold2/intermediate-exchanges.md",
-      "anchor": "field-1538",
+      "anchor": "read-tintermediateexchange",
       "metadata": {
         "type": "TBaseString40",
         "size": "40",
@@ -1634,7 +1626,7 @@
       "field_id": "1539",
       "local_path": "TIntermediateExchange/productionVolumeUncertainty",
       "page": "ecospold2/intermediate-exchanges.md",
-      "anchor": "field-1539",
+      "anchor": "read-tintermediateexchange",
       "metadata": {
         "type": "TUncertainty",
         "size": "",
@@ -1655,7 +1647,7 @@
       "field_id": "1540",
       "local_path": "TIntermediateExchange/classification",
       "page": "ecospold2/intermediate-exchanges.md",
-      "anchor": "field-1540",
+      "anchor": "read-tintermediateexchange",
       "metadata": {
         "type": "TClassification",
         "size": "",
@@ -1675,7 +1667,7 @@
       "field_id": "1600",
       "local_path": "TElementaryExchange/inputGroup",
       "page": "ecospold2/elementary-exchanges.md",
-      "anchor": "field-1600",
+      "anchor": "read-telementaryexchange",
       "metadata": {
         "type": "integer",
         "size": "",
@@ -1688,8 +1680,7 @@
       "source_blocks": [
         "TElementaryExchange.1600.description.0",
         "TElementaryExchange.1600.description.1",
-        "TElementaryExchange.1600.description.2",
-        "TElementaryExchange.1600.options"
+        "TElementaryExchange.1600.description.2"
       ]
     },
     {
@@ -1698,7 +1689,7 @@
       "field_id": "1610",
       "local_path": "TElementaryExchange/outputGroup",
       "page": "ecospold2/elementary-exchanges.md",
-      "anchor": "field-1610",
+      "anchor": "read-telementaryexchange",
       "metadata": {
         "type": "integer",
         "size": "",
@@ -1711,8 +1702,7 @@
       "source_blocks": [
         "TElementaryExchange.1610.description.0",
         "TElementaryExchange.1610.description.1",
-        "TElementaryExchange.1610.description.2",
-        "TElementaryExchange.1610.options"
+        "TElementaryExchange.1610.description.2"
       ]
     },
     {
@@ -1721,7 +1711,7 @@
       "field_id": "1615",
       "local_path": "TElementaryExchange/@elementaryExchangeId",
       "page": "ecospold2/elementary-exchanges.md",
-      "anchor": "field-1615",
+      "anchor": "read-telementaryexchange",
       "metadata": {
         "type": "TUuid",
         "size": "36",
@@ -1741,7 +1731,7 @@
       "field_id": "1616",
       "local_path": "TElementaryExchange/@elementaryExchangeContextId",
       "page": "ecospold2/elementary-exchanges.md",
-      "anchor": "field-1616",
+      "anchor": "read-telementaryexchange",
       "metadata": {
         "type": "TUuid",
         "size": "36",
@@ -1762,7 +1752,7 @@
       "field_id": "1660",
       "local_path": "TElementaryExchange/compartment",
       "page": "ecospold2/elementary-exchanges.md",
-      "anchor": "field-1660",
+      "anchor": "read-telementaryexchange",
       "metadata": {
         "type": "TCompartment",
         "size": "",
@@ -1782,7 +1772,7 @@
       "field_id": "1670",
       "local_path": "TElementaryExchange/@formula",
       "page": "ecospold2/elementary-exchanges.md",
-      "anchor": "field-1670",
+      "anchor": "read-telementaryexchange",
       "metadata": {
         "type": "TBaseString40",
         "size": "40",
@@ -1802,7 +1792,7 @@
       "field_id": "1700",
       "local_path": "TParameter/name",
       "page": "ecospold2/parameters.md",
-      "anchor": "field-1700",
+      "anchor": "read-tparameter",
       "metadata": {
         "type": "TString80",
         "size": "80",
@@ -1822,7 +1812,7 @@
       "field_id": "1705",
       "local_path": "TParameter/@parameterId",
       "page": "ecospold2/parameters.md",
-      "anchor": "field-1705",
+      "anchor": "read-tparameter",
       "metadata": {
         "type": "TUuid",
         "size": "36",
@@ -1842,7 +1832,7 @@
       "field_id": "1706",
       "local_path": "TParameter/@parameterContextId",
       "page": "ecospold2/parameters.md",
-      "anchor": "field-1706",
+      "anchor": "read-tparameter",
       "metadata": {
         "type": "TUuid",
         "size": "36",
@@ -1863,7 +1853,7 @@
       "field_id": "1710",
       "local_path": "TParameter/@amount",
       "page": "ecospold2/parameters.md",
-      "anchor": "field-1710",
+      "anchor": "read-tparameter",
       "metadata": {
         "type": "TFloatNumber",
         "size": "",
@@ -1883,7 +1873,7 @@
       "field_id": "1712",
       "local_path": "TParameter/@unitId",
       "page": "ecospold2/parameters.md",
-      "anchor": "field-1712",
+      "anchor": "read-tparameter",
       "metadata": {
         "type": "TUuid",
         "size": "36",
@@ -1903,7 +1893,7 @@
       "field_id": "1713",
       "local_path": "TParameter/@unitContextId",
       "page": "ecospold2/parameters.md",
-      "anchor": "field-1713",
+      "anchor": "read-tparameter",
       "metadata": {
         "type": "TUuid",
         "size": "36",
@@ -1923,7 +1913,7 @@
       "field_id": "1714",
       "local_path": "TParameter/unitName",
       "page": "ecospold2/parameters.md",
-      "anchor": "field-1714",
+      "anchor": "read-tparameter",
       "metadata": {
         "type": "TString40",
         "size": "40",
@@ -1943,7 +1933,7 @@
       "field_id": "1715",
       "local_path": "TParameter/@variableName",
       "page": "ecospold2/parameters.md",
-      "anchor": "field-1715",
+      "anchor": "read-tparameter",
       "metadata": {
         "type": "TVariableName",
         "size": "40",
@@ -1963,7 +1953,7 @@
       "field_id": "1720",
       "local_path": "TParameter/@mathematicalRelation",
       "page": "ecospold2/parameters.md",
-      "anchor": "field-1720",
+      "anchor": "read-tparameter",
       "metadata": {
         "type": "TBaseString32000",
         "size": "32000",
@@ -1984,7 +1974,7 @@
       "field_id": "1725",
       "local_path": "TParameter/@isCalculatedAmount",
       "page": "ecospold2/parameters.md",
-      "anchor": "field-1725",
+      "anchor": "read-tparameter",
       "metadata": {
         "type": "boolean",
         "size": "",
@@ -2004,7 +1994,7 @@
       "field_id": "1730",
       "local_path": "TParameter/uncertainty",
       "page": "ecospold2/parameters.md",
-      "anchor": "field-1730",
+      "anchor": "read-tparameter",
       "metadata": {
         "type": "TUncertainty",
         "size": "",
@@ -2024,7 +2014,7 @@
       "field_id": "1740",
       "local_path": "TParameter/comment",
       "page": "ecospold2/parameters.md",
-      "anchor": "field-1740",
+      "anchor": "read-tparameter",
       "metadata": {
         "type": "TString32000",
         "size": "32000",
@@ -2044,7 +2034,7 @@
       "field_id": "1800",
       "local_path": "TImpactIndicatorResult/@impactIndicatorId",
       "page": "ecospold2/impact-indicators.md",
-      "anchor": "field-1800",
+      "anchor": "read-timpactindicatorresult",
       "metadata": {
         "type": "TUuid",
         "size": "36",
@@ -2064,7 +2054,7 @@
       "field_id": "1801",
       "local_path": "TImpactIndicatorResult/@impactIndicatorContextId",
       "page": "ecospold2/impact-indicators.md",
-      "anchor": "field-1801",
+      "anchor": "read-timpactindicatorresult",
       "metadata": {
         "type": "TUuid",
         "size": "36",
@@ -2084,7 +2074,7 @@
       "field_id": "1810",
       "local_path": "TImpactIndicatorResult/@impactMethodId",
       "page": "ecospold2/impact-indicators.md",
-      "anchor": "field-1810",
+      "anchor": "read-timpactindicatorresult",
       "metadata": {
         "type": "TUuid",
         "size": "36",
@@ -2104,7 +2094,7 @@
       "field_id": "1811",
       "local_path": "TImpactIndicatorResult/@impactMethodContextId",
       "page": "ecospold2/impact-indicators.md",
-      "anchor": "field-1811",
+      "anchor": "read-timpactindicatorresult",
       "metadata": {
         "type": "TUuid",
         "size": "36",
@@ -2124,7 +2114,7 @@
       "field_id": "1815",
       "local_path": "TImpactIndicatorResult/impactMethodName",
       "page": "ecospold2/impact-indicators.md",
-      "anchor": "field-1815",
+      "anchor": "read-timpactindicatorresult",
       "metadata": {
         "type": "TString120",
         "size": "120",
@@ -2144,7 +2134,7 @@
       "field_id": "1820",
       "local_path": "TImpactIndicatorResult/@impactCategoryId",
       "page": "ecospold2/impact-indicators.md",
-      "anchor": "field-1820",
+      "anchor": "read-timpactindicatorresult",
       "metadata": {
         "type": "TUuid",
         "size": "36",
@@ -2164,7 +2154,7 @@
       "field_id": "1821",
       "local_path": "TImpactIndicatorResult/@impactCategoryContextId",
       "page": "ecospold2/impact-indicators.md",
-      "anchor": "field-1821",
+      "anchor": "read-timpactindicatorresult",
       "metadata": {
         "type": "TUuid",
         "size": "36",
@@ -2184,7 +2174,7 @@
       "field_id": "1825",
       "local_path": "TImpactIndicatorResult/impactCategoryName",
       "page": "ecospold2/impact-indicators.md",
-      "anchor": "field-1825",
+      "anchor": "read-timpactindicatorresult",
       "metadata": {
         "type": "TString120",
         "size": "120",
@@ -2204,7 +2194,7 @@
       "field_id": "1830",
       "local_path": "TImpactIndicatorResult/@amount",
       "page": "ecospold2/impact-indicators.md",
-      "anchor": "field-1830",
+      "anchor": "read-timpactindicatorresult",
       "metadata": {
         "type": "TFloatNumber",
         "size": "",
@@ -2224,7 +2214,7 @@
       "field_id": "1840",
       "local_path": "TImpactIndicatorResult/name",
       "page": "ecospold2/impact-indicators.md",
-      "anchor": "field-1840",
+      "anchor": "read-timpactindicatorresult",
       "metadata": {
         "type": "TString120",
         "size": "120",
@@ -2244,7 +2234,7 @@
       "field_id": "1850",
       "local_path": "TImpactIndicatorResult/unitName",
       "page": "ecospold2/impact-indicators.md",
-      "anchor": "field-1850",
+      "anchor": "read-timpactindicatorresult",
       "metadata": {
         "type": "TString40",
         "size": "40",
@@ -2264,7 +2254,7 @@
       "field_id": "330",
       "local_path": "TCompartment/compartment",
       "page": "ecospold2/compartments.md",
-      "anchor": "field-330",
+      "anchor": "read-tcompartment",
       "metadata": {
         "type": "TCompartmentName",
         "size": "40",
@@ -2284,7 +2274,7 @@
       "field_id": "340",
       "local_path": "TCompartment/subcompartment",
       "page": "ecospold2/compartments.md",
-      "anchor": "field-340",
+      "anchor": "read-tcompartment",
       "metadata": {
         "type": "TCompartmentName",
         "size": "40",
@@ -2304,7 +2294,7 @@
       "field_id": "350",
       "local_path": "TCompartment/@subcompartmentId",
       "page": "ecospold2/compartments.md",
-      "anchor": "field-350",
+      "anchor": "read-tcompartment",
       "metadata": {
         "type": "TUuid",
         "size": "36",
@@ -2324,7 +2314,7 @@
       "field_id": "351",
       "local_path": "TCompartment/@subcompartmentContextId",
       "page": "ecospold2/compartments.md",
-      "anchor": "field-351",
+      "anchor": "read-tcompartment",
       "metadata": {
         "type": "TUuid",
         "size": "36",
@@ -2345,7 +2335,7 @@
       "field_id": "2010",
       "local_path": "TUncertainty/comment",
       "page": "ecospold2/uncertainty.md",
-      "anchor": "field-2010",
+      "anchor": "read-tuncertainty",
       "metadata": {
         "type": "TString32000",
         "size": "32000",
@@ -2365,7 +2355,7 @@
       "field_id": "2100",
       "local_path": "TUncertainty/lognormal",
       "page": "ecospold2/uncertainty.md",
-      "anchor": "field-2100",
+      "anchor": "read-tuncertainty",
       "metadata": {
         "type": "",
         "size": "",
@@ -2385,7 +2375,7 @@
       "field_id": "2101",
       "local_path": "TUncertainty/lognormal/@meanValue",
       "page": "ecospold2/uncertainty.md",
-      "anchor": "field-2101",
+      "anchor": "read-tuncertainty",
       "metadata": {
         "type": "TFloatNumber",
         "size": "",
@@ -2405,7 +2395,7 @@
       "field_id": "2102",
       "local_path": "TUncertainty/lognormal/@mu",
       "page": "ecospold2/uncertainty.md",
-      "anchor": "field-2102",
+      "anchor": "read-tuncertainty",
       "metadata": {
         "type": "TFloatNumber",
         "size": "",
@@ -2425,7 +2415,7 @@
       "field_id": "2103",
       "local_path": "TUncertainty/lognormal/@variance",
       "page": "ecospold2/uncertainty.md",
-      "anchor": "field-2103",
+      "anchor": "read-tuncertainty",
       "metadata": {
         "type": "TFloatNumber",
         "size": "",
@@ -2445,7 +2435,7 @@
       "field_id": "2104",
       "local_path": "TUncertainty/lognormal/@varianceWithPedigreeUncertainty",
       "page": "ecospold2/uncertainty.md",
-      "anchor": "field-2104",
+      "anchor": "read-tuncertainty",
       "metadata": {
         "type": "TFloatNumber",
         "size": "",
@@ -2465,7 +2455,7 @@
       "field_id": "2110",
       "local_path": "TUncertainty/normal",
       "page": "ecospold2/uncertainty.md",
-      "anchor": "field-2110",
+      "anchor": "read-tuncertainty",
       "metadata": {
         "type": "",
         "size": "",
@@ -2485,7 +2475,7 @@
       "field_id": "2111",
       "local_path": "TUncertainty/normal/@meanValue",
       "page": "ecospold2/uncertainty.md",
-      "anchor": "field-2111",
+      "anchor": "read-tuncertainty",
       "metadata": {
         "type": "TFloatNumber",
         "size": "",
@@ -2505,7 +2495,7 @@
       "field_id": "2112",
       "local_path": "TUncertainty/normal/@variance",
       "page": "ecospold2/uncertainty.md",
-      "anchor": "field-2112",
+      "anchor": "read-tuncertainty",
       "metadata": {
         "type": "TFloatNumber",
         "size": "",
@@ -2525,7 +2515,7 @@
       "field_id": "2113",
       "local_path": "TUncertainty/normal/@varianceWithPedigreeUncertainty",
       "page": "ecospold2/uncertainty.md",
-      "anchor": "field-2113",
+      "anchor": "read-tuncertainty",
       "metadata": {
         "type": "TFloatNumber",
         "size": "",
@@ -2545,7 +2535,7 @@
       "field_id": "2120",
       "local_path": "TUncertainty/triangular",
       "page": "ecospold2/uncertainty.md",
-      "anchor": "field-2120",
+      "anchor": "read-tuncertainty",
       "metadata": {
         "type": "",
         "size": "",
@@ -2566,7 +2556,7 @@
       "field_id": "2121",
       "local_path": "TUncertainty/triangular/@minValue",
       "page": "ecospold2/uncertainty.md",
-      "anchor": "field-2121",
+      "anchor": "read-tuncertainty",
       "metadata": {
         "type": "TFloatNumber",
         "size": "",
@@ -2586,7 +2576,7 @@
       "field_id": "2122",
       "local_path": "TUncertainty/triangular/@mostLikelyValue",
       "page": "ecospold2/uncertainty.md",
-      "anchor": "field-2122",
+      "anchor": "read-tuncertainty",
       "metadata": {
         "type": "TFloatNumber",
         "size": "",
@@ -2606,7 +2596,7 @@
       "field_id": "2123",
       "local_path": "TUncertainty/triangular/@maxValue",
       "page": "ecospold2/uncertainty.md",
-      "anchor": "field-2123",
+      "anchor": "read-tuncertainty",
       "metadata": {
         "type": "TFloatNumber",
         "size": "",
@@ -2626,7 +2616,7 @@
       "field_id": "2130",
       "local_path": "TUncertainty/uniform",
       "page": "ecospold2/uncertainty.md",
-      "anchor": "field-2130",
+      "anchor": "read-tuncertainty",
       "metadata": {
         "type": "",
         "size": "",
@@ -2646,7 +2636,7 @@
       "field_id": "2131",
       "local_path": "TUncertainty/uniform/@minValue",
       "page": "ecospold2/uncertainty.md",
-      "anchor": "field-2131",
+      "anchor": "read-tuncertainty",
       "metadata": {
         "type": "TFloatNumber",
         "size": "",
@@ -2666,7 +2656,7 @@
       "field_id": "2132",
       "local_path": "TUncertainty/uniform/@maxValue",
       "page": "ecospold2/uncertainty.md",
-      "anchor": "field-2132",
+      "anchor": "read-tuncertainty",
       "metadata": {
         "type": "TFloatNumber",
         "size": "",
@@ -2686,7 +2676,7 @@
       "field_id": "2140",
       "local_path": "TUncertainty/beta",
       "page": "ecospold2/uncertainty.md",
-      "anchor": "field-2140",
+      "anchor": "read-tuncertainty",
       "metadata": {
         "type": "",
         "size": "",
@@ -2706,7 +2696,7 @@
       "field_id": "2141",
       "local_path": "TUncertainty/beta/@minValue",
       "page": "ecospold2/uncertainty.md",
-      "anchor": "field-2141",
+      "anchor": "read-tuncertainty",
       "metadata": {
         "type": "TFloatNumber",
         "size": "",
@@ -2726,7 +2716,7 @@
       "field_id": "2142",
       "local_path": "TUncertainty/beta/@mostFrequentValue",
       "page": "ecospold2/uncertainty.md",
-      "anchor": "field-2142",
+      "anchor": "read-tuncertainty",
       "metadata": {
         "type": "TFloatNumber",
         "size": "",
@@ -2746,7 +2736,7 @@
       "field_id": "2143",
       "local_path": "TUncertainty/beta/@maxValue",
       "page": "ecospold2/uncertainty.md",
-      "anchor": "field-2143",
+      "anchor": "read-tuncertainty",
       "metadata": {
         "type": "TFloatNumber",
         "size": "",
@@ -2766,7 +2756,7 @@
       "field_id": "2150",
       "local_path": "TUncertainty/gamma",
       "page": "ecospold2/uncertainty.md",
-      "anchor": "field-2150",
+      "anchor": "read-tuncertainty",
       "metadata": {
         "type": "",
         "size": "",
@@ -2786,7 +2776,7 @@
       "field_id": "2151",
       "local_path": "TUncertainty/gamma/@shape",
       "page": "ecospold2/uncertainty.md",
-      "anchor": "field-2151",
+      "anchor": "read-tuncertainty",
       "metadata": {
         "type": "TFloatNumber",
         "size": "",
@@ -2806,7 +2796,7 @@
       "field_id": "2152",
       "local_path": "TUncertainty/gamma/@scale",
       "page": "ecospold2/uncertainty.md",
-      "anchor": "field-2152",
+      "anchor": "read-tuncertainty",
       "metadata": {
         "type": "TFloatNumber",
         "size": "",
@@ -2826,7 +2816,7 @@
       "field_id": "2153",
       "local_path": "TUncertainty/gamma/@minValue",
       "page": "ecospold2/uncertainty.md",
-      "anchor": "field-2153",
+      "anchor": "read-tuncertainty",
       "metadata": {
         "type": "TFloatNumber",
         "size": "",
@@ -2846,7 +2836,7 @@
       "field_id": "2160",
       "local_path": "TUncertainty/binomial",
       "page": "ecospold2/uncertainty.md",
-      "anchor": "field-2160",
+      "anchor": "read-tuncertainty",
       "metadata": {
         "type": "",
         "size": "",
@@ -2866,7 +2856,7 @@
       "field_id": "2161",
       "local_path": "TUncertainty/binomial/@n",
       "page": "ecospold2/uncertainty.md",
-      "anchor": "field-2161",
+      "anchor": "read-tuncertainty",
       "metadata": {
         "type": "integer",
         "size": "",
@@ -2886,7 +2876,7 @@
       "field_id": "2162",
       "local_path": "TUncertainty/binomial/@p",
       "page": "ecospold2/uncertainty.md",
-      "anchor": "field-2162",
+      "anchor": "read-tuncertainty",
       "metadata": {
         "type": "TFloatNumber",
         "size": "",
@@ -2906,7 +2896,7 @@
       "field_id": "2170",
       "local_path": "TUncertainty/undefined",
       "page": "ecospold2/uncertainty.md",
-      "anchor": "field-2170",
+      "anchor": "read-tuncertainty",
       "metadata": {
         "type": "",
         "size": "",
@@ -2926,7 +2916,7 @@
       "field_id": "2171",
       "local_path": "TUncertainty/undefined/@minValue",
       "page": "ecospold2/uncertainty.md",
-      "anchor": "field-2171",
+      "anchor": "read-tuncertainty",
       "metadata": {
         "type": "TFloatNumber",
         "size": "",
@@ -2946,7 +2936,7 @@
       "field_id": "2172",
       "local_path": "TUncertainty/undefined/@maxValue",
       "page": "ecospold2/uncertainty.md",
-      "anchor": "field-2172",
+      "anchor": "read-tuncertainty",
       "metadata": {
         "type": "TFloatNumber",
         "size": "",
@@ -2966,7 +2956,7 @@
       "field_id": "2173",
       "local_path": "TUncertainty/undefined/@standardDeviation95",
       "page": "ecospold2/uncertainty.md",
-      "anchor": "field-2173",
+      "anchor": "read-tuncertainty",
       "metadata": {
         "type": "TFloatNumber",
         "size": "",
@@ -2986,7 +2976,7 @@
       "field_id": "2270",
       "local_path": "TUncertainty/pedigreeMatrix",
       "page": "ecospold2/uncertainty.md",
-      "anchor": "field-2270",
+      "anchor": "read-tuncertainty",
       "metadata": {
         "type": "integer",
         "size": "",
@@ -3006,7 +2996,7 @@
       "field_id": "2271",
       "local_path": "TUncertainty/pedigreeMatrix/@reliability",
       "page": "ecospold2/uncertainty.md",
-      "anchor": "field-2271",
+      "anchor": "read-tuncertainty",
       "metadata": {
         "type": "integer",
         "size": "",
@@ -3030,7 +3020,7 @@
       "field_id": "2272",
       "local_path": "TUncertainty/pedigreeMatrix/@completeness",
       "page": "ecospold2/uncertainty.md",
-      "anchor": "field-2272",
+      "anchor": "read-tuncertainty",
       "metadata": {
         "type": "integer",
         "size": "",
@@ -3054,7 +3044,7 @@
       "field_id": "2273",
       "local_path": "TUncertainty/pedigreeMatrix/@temporalCorrelation",
       "page": "ecospold2/uncertainty.md",
-      "anchor": "field-2273",
+      "anchor": "read-tuncertainty",
       "metadata": {
         "type": "integer",
         "size": "",
@@ -3078,7 +3068,7 @@
       "field_id": "2274",
       "local_path": "TUncertainty/pedigreeMatrix/@geographicalCorrelation",
       "page": "ecospold2/uncertainty.md",
-      "anchor": "field-2274",
+      "anchor": "read-tuncertainty",
       "metadata": {
         "type": "integer",
         "size": "",
@@ -3102,7 +3092,7 @@
       "field_id": "2275",
       "local_path": "TUncertainty/pedigreeMatrix/@furtherTechnologyCorrelation",
       "page": "ecospold2/uncertainty.md",
-      "anchor": "field-2275",
+      "anchor": "read-tuncertainty",
       "metadata": {
         "type": "integer",
         "size": "",
@@ -3126,7 +3116,7 @@
       "field_id": "2300",
       "local_path": "TProperty/@propertyId",
       "page": "ecospold2/properties.md",
-      "anchor": "field-2300",
+      "anchor": "read-tproperty",
       "metadata": {
         "type": "TUuid",
         "size": "36",
@@ -3146,7 +3136,7 @@
       "field_id": "2301",
       "local_path": "TProperty/@propertyContextId",
       "page": "ecospold2/properties.md",
-      "anchor": "field-2301",
+      "anchor": "read-tproperty",
       "metadata": {
         "type": "TUuid",
         "size": "36",
@@ -3167,7 +3157,7 @@
       "field_id": "2310",
       "local_path": "TProperty/name",
       "page": "ecospold2/properties.md",
-      "anchor": "field-2310",
+      "anchor": "read-tproperty",
       "metadata": {
         "type": "TString80",
         "size": "80",
@@ -3187,7 +3177,7 @@
       "field_id": "2320",
       "local_path": "TProperty/@unitId",
       "page": "ecospold2/properties.md",
-      "anchor": "field-2320",
+      "anchor": "read-tproperty",
       "metadata": {
         "type": "TUuid",
         "size": "36",
@@ -3207,7 +3197,7 @@
       "field_id": "2321",
       "local_path": "TProperty/@unitContextId",
       "page": "ecospold2/properties.md",
-      "anchor": "field-2321",
+      "anchor": "read-tproperty",
       "metadata": {
         "type": "TUuid",
         "size": "36",
@@ -3228,7 +3218,7 @@
       "field_id": "2325",
       "local_path": "TProperty/unitName",
       "page": "ecospold2/properties.md",
-      "anchor": "field-2325",
+      "anchor": "read-tproperty",
       "metadata": {
         "type": "TString40",
         "size": "40",
@@ -3248,7 +3238,7 @@
       "field_id": "2330",
       "local_path": "TProperty/@amount",
       "page": "ecospold2/properties.md",
-      "anchor": "field-2330",
+      "anchor": "read-tproperty",
       "metadata": {
         "type": "TFloatNumber",
         "size": "",
@@ -3268,7 +3258,7 @@
       "field_id": "2335",
       "local_path": "TProperty/@isDefiningValue",
       "page": "ecospold2/properties.md",
-      "anchor": "field-2335",
+      "anchor": "read-tproperty",
       "metadata": {
         "type": "boolean",
         "size": "",
@@ -3288,7 +3278,7 @@
       "field_id": "2340",
       "local_path": "TProperty/@mathematicalRelation",
       "page": "ecospold2/properties.md",
-      "anchor": "field-2340",
+      "anchor": "read-tproperty",
       "metadata": {
         "type": "TBaseString32000",
         "size": "32000",
@@ -3309,7 +3299,7 @@
       "field_id": "2345",
       "local_path": "TProperty/@isCalculatedAmount",
       "page": "ecospold2/properties.md",
-      "anchor": "field-2345",
+      "anchor": "read-tproperty",
       "metadata": {
         "type": "boolean",
         "size": "",
@@ -3329,7 +3319,7 @@
       "field_id": "2350",
       "local_path": "TProperty/@variableName",
       "page": "ecospold2/properties.md",
-      "anchor": "field-2350",
+      "anchor": "read-tproperty",
       "metadata": {
         "type": "TVariableName",
         "size": "40",
@@ -3350,7 +3340,7 @@
       "field_id": "2360",
       "local_path": "TProperty/uncertainty",
       "page": "ecospold2/properties.md",
-      "anchor": "field-2360",
+      "anchor": "read-tproperty",
       "metadata": {
         "type": "TUncertainty",
         "size": "",
@@ -3370,7 +3360,7 @@
       "field_id": "2370",
       "local_path": "TProperty/@sourceId",
       "page": "ecospold2/properties.md",
-      "anchor": "field-2370",
+      "anchor": "read-tproperty",
       "metadata": {
         "type": "TUuid",
         "size": "36",
@@ -3390,7 +3380,7 @@
       "field_id": "2371",
       "local_path": "TProperty/@sourceContextId",
       "page": "ecospold2/properties.md",
-      "anchor": "field-2371",
+      "anchor": "read-tproperty",
       "metadata": {
         "type": "TUuid",
         "size": "36",
@@ -3411,7 +3401,7 @@
       "field_id": "2372",
       "local_path": "TProperty/@sourceIdOverwrittenByChild",
       "page": "ecospold2/properties.md",
-      "anchor": "field-2372",
+      "anchor": "read-tproperty",
       "metadata": {
         "type": "boolean",
         "size": "",
@@ -3431,7 +3421,7 @@
       "field_id": "2375",
       "local_path": "TProperty/@sourceYear",
       "page": "ecospold2/properties.md",
-      "anchor": "field-2375",
+      "anchor": "read-tproperty",
       "metadata": {
         "type": "TBaseString30",
         "size": "30",
@@ -3451,7 +3441,7 @@
       "field_id": "2376",
       "local_path": "TProperty/@sourceFirstAuthor",
       "page": "ecospold2/properties.md",
-      "anchor": "field-2376",
+      "anchor": "read-tproperty",
       "metadata": {
         "type": "TBaseString40",
         "size": "40",
@@ -3471,7 +3461,7 @@
       "field_id": "2380",
       "local_path": "TProperty/comment",
       "page": "ecospold2/properties.md",
-      "anchor": "field-2380",
+      "anchor": "read-tproperty",
       "metadata": {
         "type": "TString32000",
         "size": "32000",
@@ -3491,7 +3481,7 @@
       "field_id": "2400",
       "local_path": "TTransferCoefficient/@exchangeId",
       "page": "ecospold2/transfer-coefficients.md",
-      "anchor": "field-2400",
+      "anchor": "read-ttransfercoefficient",
       "metadata": {
         "type": "TUuid",
         "size": "36",
@@ -3511,7 +3501,7 @@
       "field_id": "2410",
       "local_path": "TTransferCoefficient/@amount",
       "page": "ecospold2/transfer-coefficients.md",
-      "anchor": "field-2410",
+      "anchor": "read-ttransfercoefficient",
       "metadata": {
         "type": "TFloatNumber",
         "size": "",
@@ -3531,7 +3521,7 @@
       "field_id": "2420",
       "local_path": "TTransferCoefficient/@mathematicalRelation",
       "page": "ecospold2/transfer-coefficients.md",
-      "anchor": "field-2420",
+      "anchor": "read-ttransfercoefficient",
       "metadata": {
         "type": "TBaseString32000",
         "size": "32000",
@@ -3552,7 +3542,7 @@
       "field_id": "2425",
       "local_path": "TTransferCoefficient/@isCalculatedAmount",
       "page": "ecospold2/transfer-coefficients.md",
-      "anchor": "field-2425",
+      "anchor": "read-ttransfercoefficient",
       "metadata": {
         "type": "boolean",
         "size": "",
@@ -3572,7 +3562,7 @@
       "field_id": "2430",
       "local_path": "TTransferCoefficient/uncertainty",
       "page": "ecospold2/transfer-coefficients.md",
-      "anchor": "field-2430",
+      "anchor": "read-ttransfercoefficient",
       "metadata": {
         "type": "TUncertainty",
         "size": "",
@@ -3592,7 +3582,7 @@
       "field_id": "2440",
       "local_path": "TTransferCoefficient/@sourceId",
       "page": "ecospold2/transfer-coefficients.md",
-      "anchor": "field-2440",
+      "anchor": "read-ttransfercoefficient",
       "metadata": {
         "type": "TUuid",
         "size": "36",
@@ -3603,8 +3593,7 @@
         "spold1_id": "new"
       },
       "source_blocks": [
-        "TTransferCoefficient.2440.description.0",
-        "TTransferCoefficient.2440.options"
+        "TTransferCoefficient.2440.description.0"
       ]
     },
     {
@@ -3613,7 +3602,7 @@
       "field_id": "2441",
       "local_path": "TTransferCoefficient/@sourceContextId",
       "page": "ecospold2/transfer-coefficients.md",
-      "anchor": "field-2441",
+      "anchor": "read-ttransfercoefficient",
       "metadata": {
         "type": "TUuid",
         "size": "36",
@@ -3634,7 +3623,7 @@
       "field_id": "2442",
       "local_path": "TTransferCoefficient/@sourceIdOverwrittenByChild",
       "page": "ecospold2/transfer-coefficients.md",
-      "anchor": "field-2442",
+      "anchor": "read-ttransfercoefficient",
       "metadata": {
         "type": "boolean",
         "size": "",
@@ -3654,7 +3643,7 @@
       "field_id": "2445",
       "local_path": "TTransferCoefficient/@sourceYear",
       "page": "ecospold2/transfer-coefficients.md",
-      "anchor": "field-2445",
+      "anchor": "read-ttransfercoefficient",
       "metadata": {
         "type": "TBaseString30",
         "size": "30",
@@ -3674,7 +3663,7 @@
       "field_id": "2446",
       "local_path": "TTransferCoefficient/@sourceFirstAuthor",
       "page": "ecospold2/transfer-coefficients.md",
-      "anchor": "field-2446",
+      "anchor": "read-ttransfercoefficient",
       "metadata": {
         "type": "TBaseString40",
         "size": "40",
@@ -3694,7 +3683,7 @@
       "field_id": "2450",
       "local_path": "TTransferCoefficient/comment",
       "page": "ecospold2/transfer-coefficients.md",
-      "anchor": "field-2450",
+      "anchor": "read-ttransfercoefficient",
       "metadata": {
         "type": "TString32000",
         "size": "32000",
@@ -3714,7 +3703,7 @@
       "field_id": "3900",
       "local_path": "TTextAndImage/text",
       "page": "ecospold2/text-and-image.md",
-      "anchor": "field-3900",
+      "anchor": "read-ttextandimage",
       "metadata": {
         "type": "TIndexedString32000",
         "size": "32000",
@@ -3734,7 +3723,7 @@
       "field_id": "3910",
       "local_path": "TTextAndImage/imageUrl",
       "page": "ecospold2/text-and-image.md",
-      "anchor": "field-3910",
+      "anchor": "read-ttextandimage",
       "metadata": {
         "type": "anyURI",
         "size": "",
@@ -3754,7 +3743,7 @@
       "field_id": "3920",
       "local_path": "TTextAndImage/variable",
       "page": "ecospold2/text-and-image.md",
-      "anchor": "field-3920",
+      "anchor": "read-ttextandimage",
       "metadata": {
         "type": "TNamedString32000",
         "size": "32000",
@@ -3774,7 +3763,7 @@
       "field_id": "3000",
       "local_path": "TRepresentativeness/@systemModelId",
       "page": "ecospold2/representativeness.md",
-      "anchor": "field-3000",
+      "anchor": "read-trepresentativeness",
       "metadata": {
         "type": "TUuid",
         "size": "36",
@@ -3794,7 +3783,7 @@
       "field_id": "3001",
       "local_path": "TRepresentativeness/@systemModelContextId",
       "page": "ecospold2/representativeness.md",
-      "anchor": "field-3001",
+      "anchor": "read-trepresentativeness",
       "metadata": {
         "type": "TUuid",
         "size": "36",
@@ -3815,7 +3804,7 @@
       "field_id": "3005",
       "local_path": "TRepresentativeness/systemModelName",
       "page": "ecospold2/representativeness.md",
-      "anchor": "field-3005",
+      "anchor": "read-trepresentativeness",
       "metadata": {
         "type": "TString120",
         "size": "120",
@@ -3835,7 +3824,7 @@
       "field_id": "3010",
       "local_path": "TRepresentativeness/@percent",
       "page": "ecospold2/representativeness.md",
-      "anchor": "field-3010",
+      "anchor": "read-trepresentativeness",
       "metadata": {
         "type": "TPercent",
         "size": "",
@@ -3846,8 +3835,7 @@
         "spold1_id": "722"
       },
       "source_blocks": [
-        "TRepresentativeness.3010.description.0",
-        "TRepresentativeness.3010.options"
+        "TRepresentativeness.3010.description.0"
       ]
     },
     {
@@ -3856,7 +3844,7 @@
       "field_id": "3030",
       "local_path": "TRepresentativeness/samplingProcedure",
       "page": "ecospold2/representativeness.md",
-      "anchor": "field-3030",
+      "anchor": "read-trepresentativeness",
       "metadata": {
         "type": "TString32000",
         "size": "32000",
@@ -3876,7 +3864,7 @@
       "field_id": "3040",
       "local_path": "TRepresentativeness/extrapolations",
       "page": "ecospold2/representativeness.md",
-      "anchor": "field-3040",
+      "anchor": "read-trepresentativeness",
       "metadata": {
         "type": "TString32000",
         "size": "32000",
@@ -3899,7 +3887,7 @@
       "field_id": "3300",
       "local_path": "TReview/@reviewerId",
       "page": "ecospold2/review.md",
-      "anchor": "field-3300",
+      "anchor": "read-treview",
       "metadata": {
         "type": "TUuid",
         "size": "36",
@@ -3910,8 +3898,7 @@
         "spold1_id": "5616"
       },
       "source_blocks": [
-        "TReview.3300.description.0",
-        "TReview.3300.options"
+        "TReview.3300.description.0"
       ]
     },
     {
@@ -3920,7 +3907,7 @@
       "field_id": "3301",
       "local_path": "TReview/@reviewerContextId",
       "page": "ecospold2/review.md",
-      "anchor": "field-3301",
+      "anchor": "read-treview",
       "metadata": {
         "type": "TUuid",
         "size": "36",
@@ -3941,7 +3928,7 @@
       "field_id": "3305",
       "local_path": "TReview/@reviewerName",
       "page": "ecospold2/review.md",
-      "anchor": "field-3305",
+      "anchor": "read-treview",
       "metadata": {
         "type": "TBaseString40",
         "size": "40",
@@ -3961,7 +3948,7 @@
       "field_id": "3306",
       "local_path": "TReview/@reviewerEmail",
       "page": "ecospold2/review.md",
-      "anchor": "field-3306",
+      "anchor": "read-treview",
       "metadata": {
         "type": "TBaseString80",
         "size": "80",
@@ -3981,7 +3968,7 @@
       "field_id": "3310",
       "local_path": "TReview/@reviewDate",
       "page": "ecospold2/review.md",
-      "anchor": "field-3310",
+      "anchor": "read-treview",
       "metadata": {
         "type": "date",
         "size": "",
@@ -4001,7 +3988,7 @@
       "field_id": "3320",
       "local_path": "TReview/@reviewedMajorRelease",
       "page": "ecospold2/review.md",
-      "anchor": "field-3320",
+      "anchor": "read-treview",
       "metadata": {
         "type": "integer",
         "size": "",
@@ -4021,7 +4008,7 @@
       "field_id": "3325",
       "local_path": "TReview/@reviewedMinorRelease",
       "page": "ecospold2/review.md",
-      "anchor": "field-3325",
+      "anchor": "read-treview",
       "metadata": {
         "type": "integer",
         "size": "",
@@ -4041,7 +4028,7 @@
       "field_id": "3330",
       "local_path": "TReview/@reviewedMajorRevision",
       "page": "ecospold2/review.md",
-      "anchor": "field-3330",
+      "anchor": "read-treview",
       "metadata": {
         "type": "integer",
         "size": "",
@@ -4061,7 +4048,7 @@
       "field_id": "3335",
       "local_path": "TReview/@reviewedMinorRevision",
       "page": "ecospold2/review.md",
-      "anchor": "field-3335",
+      "anchor": "read-treview",
       "metadata": {
         "type": "integer",
         "size": "",
@@ -4081,7 +4068,7 @@
       "field_id": "3340",
       "local_path": "TReview/details",
       "page": "ecospold2/review.md",
-      "anchor": "field-3340",
+      "anchor": "read-treview",
       "metadata": {
         "type": "TTextAndImage",
         "size": "",
@@ -4102,7 +4089,7 @@
       "field_id": "3350",
       "local_path": "TReview/otherDetails",
       "page": "ecospold2/review.md",
-      "anchor": "field-3350",
+      "anchor": "read-treview",
       "metadata": {
         "type": "TString32000",
         "size": "32000",
@@ -4122,7 +4109,7 @@
       "field_id": "3400",
       "local_path": "TDataEntryBy/@personId",
       "page": "ecospold2/data-entry.md",
-      "anchor": "field-3400",
+      "anchor": "read-tdataentryby",
       "metadata": {
         "type": "TUuid",
         "size": "36",
@@ -4133,8 +4120,7 @@
         "spold1_id": "302"
       },
       "source_blocks": [
-        "TDataEntryBy.3400.description.0",
-        "TDataEntryBy.3400.options"
+        "TDataEntryBy.3400.description.0"
       ]
     },
     {
@@ -4143,7 +4129,7 @@
       "field_id": "3401",
       "local_path": "TDataEntryBy/@personContextId",
       "page": "ecospold2/data-entry.md",
-      "anchor": "field-3401",
+      "anchor": "read-tdataentryby",
       "metadata": {
         "type": "TUuid",
         "size": "36",
@@ -4164,7 +4150,7 @@
       "field_id": "3403",
       "local_path": "TDataEntryBy/@isActiveAuthor",
       "page": "ecospold2/data-entry.md",
-      "anchor": "field-3403",
+      "anchor": "read-tdataentryby",
       "metadata": {
         "type": "boolean",
         "size": "",
@@ -4184,7 +4170,7 @@
       "field_id": "3405",
       "local_path": "TDataEntryBy/@personName",
       "page": "ecospold2/data-entry.md",
-      "anchor": "field-3405",
+      "anchor": "read-tdataentryby",
       "metadata": {
         "type": "TBaseString40",
         "size": "40",
@@ -4204,7 +4190,7 @@
       "field_id": "3406",
       "local_path": "TDataEntryBy/@personEmail",
       "page": "ecospold2/data-entry.md",
-      "anchor": "field-3406",
+      "anchor": "read-tdataentryby",
       "metadata": {
         "type": "TBaseString80",
         "size": "80",
@@ -4224,7 +4210,7 @@
       "field_id": "3500",
       "local_path": "TDataGeneratorAndPublication/@personId",
       "page": "ecospold2/publication.md",
-      "anchor": "field-3500",
+      "anchor": "read-tdatageneratorandpublication",
       "metadata": {
         "type": "TUuid",
         "size": "36",
@@ -4235,8 +4221,7 @@
         "spold1_id": "751"
       },
       "source_blocks": [
-        "TDataGeneratorAndPublication.3500.description.0",
-        "TDataGeneratorAndPublication.3500.options"
+        "TDataGeneratorAndPublication.3500.description.0"
       ]
     },
     {
@@ -4245,7 +4230,7 @@
       "field_id": "3501",
       "local_path": "TDataGeneratorAndPublication/@personContextId",
       "page": "ecospold2/publication.md",
-      "anchor": "field-3501",
+      "anchor": "read-tdatageneratorandpublication",
       "metadata": {
         "type": "TUuid",
         "size": "36",
@@ -4266,7 +4251,7 @@
       "field_id": "3505",
       "local_path": "TDataGeneratorAndPublication/@personName",
       "page": "ecospold2/publication.md",
-      "anchor": "field-3505",
+      "anchor": "read-tdatageneratorandpublication",
       "metadata": {
         "type": "TBaseString40",
         "size": "40",
@@ -4286,7 +4271,7 @@
       "field_id": "3506",
       "local_path": "TDataGeneratorAndPublication/@personEmail",
       "page": "ecospold2/publication.md",
-      "anchor": "field-3506",
+      "anchor": "read-tdatageneratorandpublication",
       "metadata": {
         "type": "TBaseString80",
         "size": "80",
@@ -4306,7 +4291,7 @@
       "field_id": "3510",
       "local_path": "TDataGeneratorAndPublication/@dataPublishedIn",
       "page": "ecospold2/publication.md",
-      "anchor": "field-3510",
+      "anchor": "read-tdatageneratorandpublication",
       "metadata": {
         "type": "integer",
         "size": "",
@@ -4318,8 +4303,7 @@
       },
       "source_blocks": [
         "TDataGeneratorAndPublication.3510.description.0",
-        "TDataGeneratorAndPublication.3510.description.1",
-        "TDataGeneratorAndPublication.3510.options"
+        "TDataGeneratorAndPublication.3510.description.1"
       ]
     },
     {
@@ -4328,7 +4312,7 @@
       "field_id": "3520",
       "local_path": "TDataGeneratorAndPublication/@publishedSourceId",
       "page": "ecospold2/publication.md",
-      "anchor": "field-3520",
+      "anchor": "read-tdatageneratorandpublication",
       "metadata": {
         "type": "TUuid",
         "size": "36",
@@ -4339,8 +4323,7 @@
         "spold1_id": "757"
       },
       "source_blocks": [
-        "TDataGeneratorAndPublication.3520.description.0",
-        "TDataGeneratorAndPublication.3520.options"
+        "TDataGeneratorAndPublication.3520.description.0"
       ]
     },
     {
@@ -4349,7 +4332,7 @@
       "field_id": "3521",
       "local_path": "TDataGeneratorAndPublication/@publishedSourceContextId",
       "page": "ecospold2/publication.md",
-      "anchor": "field-3521",
+      "anchor": "read-tdatageneratorandpublication",
       "metadata": {
         "type": "TUuid",
         "size": "36",
@@ -4370,7 +4353,7 @@
       "field_id": "3522",
       "local_path": "TDataGeneratorAndPublication/@publishedSourceIdOverwrittenByChild",
       "page": "ecospold2/publication.md",
-      "anchor": "field-3522",
+      "anchor": "read-tdatageneratorandpublication",
       "metadata": {
         "type": "boolean",
         "size": "",
@@ -4390,7 +4373,7 @@
       "field_id": "3525",
       "local_path": "TDataGeneratorAndPublication/@publishedSourceYear",
       "page": "ecospold2/publication.md",
-      "anchor": "field-3525",
+      "anchor": "read-tdatageneratorandpublication",
       "metadata": {
         "type": "TBaseString30",
         "size": "30",
@@ -4410,7 +4393,7 @@
       "field_id": "3526",
       "local_path": "TDataGeneratorAndPublication/@publishedSourceFirstAuthor",
       "page": "ecospold2/publication.md",
-      "anchor": "field-3526",
+      "anchor": "read-tdatageneratorandpublication",
       "metadata": {
         "type": "TBaseString40",
         "size": "40",
@@ -4430,7 +4413,7 @@
       "field_id": "3530",
       "local_path": "TDataGeneratorAndPublication/@pageNumbers",
       "page": "ecospold2/publication.md",
-      "anchor": "field-3530",
+      "anchor": "read-tdatageneratorandpublication",
       "metadata": {
         "type": "TBaseString30",
         "size": "30",
@@ -4450,7 +4433,7 @@
       "field_id": "3540",
       "local_path": "TDataGeneratorAndPublication/@isCopyrightProtected",
       "page": "ecospold2/publication.md",
-      "anchor": "field-3540",
+      "anchor": "read-tdatageneratorandpublication",
       "metadata": {
         "type": "boolean",
         "size": "",
@@ -4470,7 +4453,7 @@
       "field_id": "3550",
       "local_path": "TDataGeneratorAndPublication/@accessRestrictedTo",
       "page": "ecospold2/publication.md",
-      "anchor": "field-3550",
+      "anchor": "read-tdatageneratorandpublication",
       "metadata": {
         "type": "integer",
         "size": "",
@@ -4486,8 +4469,7 @@
         "TDataGeneratorAndPublication.3550.description.2",
         "TDataGeneratorAndPublication.3550.description.3",
         "TDataGeneratorAndPublication.3550.description.4",
-        "TDataGeneratorAndPublication.3550.description.5",
-        "TDataGeneratorAndPublication.3550.options"
+        "TDataGeneratorAndPublication.3550.description.5"
       ]
     },
     {
@@ -4496,7 +4478,7 @@
       "field_id": "3560",
       "local_path": "TDataGeneratorAndPublication/@companyId",
       "page": "ecospold2/publication.md",
-      "anchor": "field-3560",
+      "anchor": "read-tdatageneratorandpublication",
       "metadata": {
         "type": "TUuid",
         "size": "36",
@@ -4507,8 +4489,7 @@
         "spold1_id": "760"
       },
       "source_blocks": [
-        "TDataGeneratorAndPublication.3560.description.0",
-        "TDataGeneratorAndPublication.3560.options"
+        "TDataGeneratorAndPublication.3560.description.0"
       ]
     },
     {
@@ -4517,7 +4498,7 @@
       "field_id": "3561",
       "local_path": "TDataGeneratorAndPublication/@companyContextId",
       "page": "ecospold2/publication.md",
-      "anchor": "field-3561",
+      "anchor": "read-tdatageneratorandpublication",
       "metadata": {
         "type": "TUuid",
         "size": "36",
@@ -4538,7 +4519,7 @@
       "field_id": "3562",
       "local_path": "TDataGeneratorAndPublication/@companyCode",
       "page": "ecospold2/publication.md",
-      "anchor": "field-3562",
+      "anchor": "read-tdatageneratorandpublication",
       "metadata": {
         "type": "TCompanyCode",
         "size": "7",
@@ -4549,8 +4530,7 @@
         "spold1_id": "760"
       },
       "source_blocks": [
-        "TDataGeneratorAndPublication.3562.description.0",
-        "TDataGeneratorAndPublication.3562.options"
+        "TDataGeneratorAndPublication.3562.description.0"
       ]
     },
     {
@@ -4559,7 +4539,7 @@
       "field_id": "3563",
       "local_path": "TDataGeneratorAndPublication/@companyIdOverwrittenByChild",
       "page": "ecospold2/publication.md",
-      "anchor": "field-3563",
+      "anchor": "read-tdatageneratorandpublication",
       "metadata": {
         "type": "boolean",
         "size": "",
@@ -4579,7 +4559,7 @@
       "field_id": "3800",
       "local_path": "TFileAttributes/@majorRelease",
       "page": "ecospold2/file-attributes.md",
-      "anchor": "field-3800",
+      "anchor": "read-tfileattributes",
       "metadata": {
         "type": "integer",
         "size": "",
@@ -4599,7 +4579,7 @@
       "field_id": "3805",
       "local_path": "TFileAttributes/@minorRelease",
       "page": "ecospold2/file-attributes.md",
-      "anchor": "field-3805",
+      "anchor": "read-tfileattributes",
       "metadata": {
         "type": "integer",
         "size": "",
@@ -4619,7 +4599,7 @@
       "field_id": "3810",
       "local_path": "TFileAttributes/@majorRevision",
       "page": "ecospold2/file-attributes.md",
-      "anchor": "field-3810",
+      "anchor": "read-tfileattributes",
       "metadata": {
         "type": "integer",
         "size": "",
@@ -4639,7 +4619,7 @@
       "field_id": "3815",
       "local_path": "TFileAttributes/@minorRevision",
       "page": "ecospold2/file-attributes.md",
-      "anchor": "field-3815",
+      "anchor": "read-tfileattributes",
       "metadata": {
         "type": "integer",
         "size": "",
@@ -4659,7 +4639,7 @@
       "field_id": "3820",
       "local_path": "TFileAttributes/@defaultLanguage",
       "page": "ecospold2/file-attributes.md",
-      "anchor": "field-3820",
+      "anchor": "read-tfileattributes",
       "metadata": {
         "type": "string",
         "size": "",
@@ -4679,7 +4659,7 @@
       "field_id": "3830",
       "local_path": "TFileAttributes/@creationTimestamp",
       "page": "ecospold2/file-attributes.md",
-      "anchor": "field-3830",
+      "anchor": "read-tfileattributes",
       "metadata": {
         "type": "dateTime",
         "size": "",
@@ -4690,8 +4670,7 @@
         "spold1_id": "204a"
       },
       "source_blocks": [
-        "TFileAttributes.3830.description.0",
-        "TFileAttributes.3830.options"
+        "TFileAttributes.3830.description.0"
       ]
     },
     {
@@ -4700,7 +4679,7 @@
       "field_id": "3840",
       "local_path": "TFileAttributes/@lastEditTimestamp",
       "page": "ecospold2/file-attributes.md",
-      "anchor": "field-3840",
+      "anchor": "read-tfileattributes",
       "metadata": {
         "type": "dateTime",
         "size": "",
@@ -4711,8 +4690,7 @@
         "spold1_id": "204b"
       },
       "source_blocks": [
-        "TFileAttributes.3840.description.0",
-        "TFileAttributes.3840.options"
+        "TFileAttributes.3840.description.0"
       ]
     },
     {
@@ -4721,7 +4699,7 @@
       "field_id": "3850",
       "local_path": "TFileAttributes/@internalSchemaVersion",
       "page": "ecospold2/file-attributes.md",
-      "anchor": "field-3850",
+      "anchor": "read-tfileattributes",
       "metadata": {
         "type": "TBaseString80",
         "size": "80",
@@ -4741,7 +4719,7 @@
       "field_id": "3860",
       "local_path": "TFileAttributes/@fileGenerator",
       "page": "ecospold2/file-attributes.md",
-      "anchor": "field-3860",
+      "anchor": "read-tfileattributes",
       "metadata": {
         "type": "TBaseString255",
         "size": "255",
@@ -4761,7 +4739,7 @@
       "field_id": "3870",
       "local_path": "TFileAttributes/@fileTimestamp",
       "page": "ecospold2/file-attributes.md",
-      "anchor": "field-3870",
+      "anchor": "read-tfileattributes",
       "metadata": {
         "type": "dateTime",
         "size": "",
@@ -4781,7 +4759,7 @@
       "field_id": "3880",
       "local_path": "TFileAttributes/@contextId",
       "page": "ecospold2/file-attributes.md",
-      "anchor": "field-3880",
+      "anchor": "read-tfileattributes",
       "metadata": {
         "type": "TUuid",
         "size": "36",
@@ -4802,7 +4780,7 @@
       "field_id": "3885",
       "local_path": "TFileAttributes/contextName",
       "page": "ecospold2/file-attributes.md",
-      "anchor": "field-3885",
+      "anchor": "read-tfileattributes",
       "metadata": {
         "type": "TString80",
         "size": "80",
@@ -4823,7 +4801,7 @@
       "field_id": "3890",
       "local_path": "TFileAttributes/requiredContext",
       "page": "ecospold2/file-attributes.md",
-      "anchor": "field-3890",
+      "anchor": "read-tfileattributes",
       "metadata": {
         "type": "TRequiredContextReference",
         "size": "",
@@ -4843,7 +4821,7 @@
       "field_id": "7810",
       "local_path": "TRequiredContextReference/@majorRelease",
       "page": "ecospold2/required-contexts.md",
-      "anchor": "field-7810",
+      "anchor": "read-trequiredcontextreference",
       "metadata": {
         "type": "integer",
         "size": "",
@@ -4863,7 +4841,7 @@
       "field_id": "7820",
       "local_path": "TRequiredContextReference/@minorRelease",
       "page": "ecospold2/required-contexts.md",
-      "anchor": "field-7820",
+      "anchor": "read-trequiredcontextreference",
       "metadata": {
         "type": "integer",
         "size": "",
@@ -4883,7 +4861,7 @@
       "field_id": "7830",
       "local_path": "TRequiredContextReference/@majorRevision",
       "page": "ecospold2/required-contexts.md",
-      "anchor": "field-7830",
+      "anchor": "read-trequiredcontextreference",
       "metadata": {
         "type": "integer",
         "size": "",
@@ -4903,7 +4881,7 @@
       "field_id": "7840",
       "local_path": "TRequiredContextReference/@minorRevision",
       "page": "ecospold2/required-contexts.md",
-      "anchor": "field-7840",
+      "anchor": "read-trequiredcontextreference",
       "metadata": {
         "type": "integer",
         "size": "",
@@ -4923,7 +4901,7 @@
       "field_id": "7850",
       "local_path": "TRequiredContextReference/@requiredContextId",
       "page": "ecospold2/required-contexts.md",
-      "anchor": "field-7850",
+      "anchor": "read-trequiredcontextreference",
       "metadata": {
         "type": "TUuid",
         "size": "36",
@@ -4944,7 +4922,7 @@
       "field_id": "7855",
       "local_path": "TRequiredContextReference/requiredContextName",
       "page": "ecospold2/required-contexts.md",
-      "anchor": "field-7855",
+      "anchor": "read-trequiredcontextreference",
       "metadata": {
         "type": "TString80",
         "size": "80",
@@ -4964,7 +4942,7 @@
       "field_id": "7860",
       "local_path": "TRequiredContextReference/@requiredContextFileLocation",
       "page": "ecospold2/required-contexts.md",
-      "anchor": "field-7860",
+      "anchor": "read-trequiredcontextreference",
       "metadata": {
         "type": "anyURI",
         "size": "",
@@ -5718,131 +5696,147 @@
   "pages": [
     {
       "path": "ecospold2/README.md",
-      "sha256": "cb6c6e522edc7bc78e166adcc4f97a7303460284bb4f8182ff988bd93f835307"
+      "sha256": "e3a0a8690d1d79c988b3b0f4ef51e93deca2399d0321ac9c1ec21709e2b92824"
     },
     {
       "path": "ecospold2/activity-description.md",
-      "sha256": "e9d0d82e693600fcf883f1939cb1100a22cc92bc24e3357e7335b182cc842132"
+      "sha256": "8a5861103e2e47301bfcedd50fcb3db213beab391d79ee06c624c32c2a7b2515"
     },
     {
       "path": "ecospold2/activity.md",
-      "sha256": "51c65f7cc6c7f214c51103dee732292c4ad41c81fc3cf521de1dfa787ba9ab52"
+      "sha256": "f8d5eccecc45ceb3027a19bd86bf5c18bd204ea4ba0fc300ced05e0b0710f00b"
     },
     {
       "path": "ecospold2/administrative-information.md",
-      "sha256": "511dc545190de12a4f9b75df54c3aba2688584ceab7f213d4042cd997f9a9fc1"
+      "sha256": "bda4e3e03b268dd3fb95d222335f2228772090829e9bcf887f7030fdef4920b5"
     },
     {
       "path": "ecospold2/classification.md",
-      "sha256": "6b84187758f1e1c77fca88d75b332b85cf703b41591ee0a11f493b3c10422a2d"
+      "sha256": "99f2e2072deef2fb2329a33da203027700b83450c6d189c4eb87722b44164876"
     },
     {
       "path": "ecospold2/compartments.md",
-      "sha256": "464c1c0ecea6b5e49af59bb613a85814d7a4d44de43e574f616e39ccc0c5d5e0"
+      "sha256": "b91f3c1d7e6e40d6557bb9c42818f0564fea52bf370a3ec73746f2282dcbdf1e"
     },
     {
       "path": "ecospold2/complex-types.md",
-      "sha256": "dc9351112a4a0a379877fad3f8d49109025ebd324bafebd43aae7a9af77462dc"
+      "sha256": "6180cdf1ce3a1c8e288d96fe6d9070df4acb2997fd31d8ef167f248fdcee0a28"
     },
     {
       "path": "ecospold2/data-entry.md",
-      "sha256": "71983fa4efa52ee79492df27d28bf2af6c1e805e4fdead9d8748665489e0c0a4"
+      "sha256": "abb8495a32b64d6afcf18e7babaf02858e62c8aa07d969ef1172bf3f63d425b4"
+    },
+    {
+      "path": "ecospold2/data-levels.md",
+      "sha256": "9b55ee543f2e97f1a40ff415808eb133b42b3291b3b734e5fa573e44cc6471a6"
+    },
+    {
+      "path": "ecospold2/demo-walkthrough.md",
+      "sha256": "98fe52f527e2bd74f872699b41a419433aa8ef8eef80c30139cf53715971b090"
     },
     {
       "path": "ecospold2/elementary-exchanges.md",
-      "sha256": "e22e55176c36a50c7312429619f2172bf5111b0dd64542b62b9359dfe011e877"
+      "sha256": "3a1fd1610332385151b3efef54a0271d933840ae507e0e7f3b7c97260b1b4f92"
     },
     {
       "path": "ecospold2/exchanges.md",
-      "sha256": "4cd14acff48f7469fcb02ff8d0287a894b6175a8a6977da71bc6023304dfe2d3"
+      "sha256": "cfece74f6e2dce65876e386acc174633b8f7fa19e525546d97a90bb95eb2231d"
     },
     {
-      "path": "ecospold2/field-index.md",
-      "sha256": "ad7fbf28fe5827a5aef87dfdeb917fc61a8e43dda4d386ce640e37599cd94317"
+      "path": "ecospold2/extraction-practice.md",
+      "sha256": "c35261563967645f2c9e95b435275d5fece19d1acf75b8497623c15fc6e917dd"
     },
     {
       "path": "ecospold2/file-attributes.md",
-      "sha256": "473bfcb9938668bc3aa0c0071f33d8480c2a24d0ebe997a8716f122920bd2a68"
+      "sha256": "cd92d0dc88414a5cf5f0b750f30f066549838a75ba32521102e995c7b0d57be7"
     },
     {
       "path": "ecospold2/flow-data.md",
-      "sha256": "889cc19c02e83fcd8997dd965cb351af73e716d8d6197ac53febffe6415081ab"
+      "sha256": "5e4e7c7d57aec7acb38e2f4a865df328246e71e1a949ef7aa285bf590585a5d4"
+    },
+    {
+      "path": "ecospold2/format-reference.md",
+      "sha256": "9c3b083084104ef424970c01292a990a927f1e60725cf87ac1a5b287bf4e8593"
     },
     {
       "path": "ecospold2/geography.md",
-      "sha256": "401fcebb7375136cf9b25f825bd28387cf646504ad0cb9e1ebf53432af8f7794"
+      "sha256": "eabb9e57e10a312fddbd5beb753210b9c255ef5173fcc65067e769cfb9c4be0e"
     },
     {
       "path": "ecospold2/impact-indicators.md",
-      "sha256": "ce26d829107fc2bc8a9f9ae56cbe2ffd2849f094589685cd9f9744942d1106cc"
+      "sha256": "1dd06055e24fd19714c02c9ddf55d1d4a8665191c3b3dac14d99246b9c1b4da7"
     },
     {
       "path": "ecospold2/intermediate-exchanges.md",
-      "sha256": "fe8fdbdf06771ea01d6e1c6051db0db506cd98d78366eedc602d570aa998a227"
+      "sha256": "156eaf6db4ea3e9999ee6bd44814b47311ae32385961a3a68d607b6e057441b7"
     },
     {
       "path": "ecospold2/macro-economic-scenario.md",
-      "sha256": "755b07192da5d53497c234b91018690aa596bb80031bc5c3795237e143ae15cb"
+      "sha256": "7a023aac503ec092ddc7b9c8a56f038048ccfc958a993bebdcaaaece7dacd664"
     },
     {
       "path": "ecospold2/modelling-validation.md",
-      "sha256": "1542257b6f606d1b6cc0421419a9f2ab3d433c4af1b23d8152c989e6e67b2621"
+      "sha256": "41e5b11a018cf7ab785b80cdb444eb61e99200009630eee8997c7fb47960ceb7"
     },
     {
       "path": "ecospold2/parameters.md",
-      "sha256": "b986948780a7a639fc42c865159829bc469fb13b7f0120924ae03323a1d33721"
+      "sha256": "4ae4c4415207f39e32d0c6ce93f77bff455d51ffb0a052449e4d62e4924b9a4a"
     },
     {
       "path": "ecospold2/properties.md",
-      "sha256": "4cfb056abf63843a90837c6d20f3e2189e7af9f518fee9fd85f49df0e6a72e9d"
+      "sha256": "168efd29e2cb0db41e373b76b9877de8b0c4b7ecbd95a9b355521d810a003bad"
+    },
+    {
+      "path": "ecospold2/provenance.md",
+      "sha256": "9edce0609142d8b1c63541b98593aca5063e3ed4526db69109cb32b270ecbe59"
     },
     {
       "path": "ecospold2/publication.md",
-      "sha256": "2f88d5fc01c5af9962f6581caa23d8dc3c055362cf43547863025225cc568531"
-    },
-    {
-      "path": "ecospold2/reading-guide.md",
-      "sha256": "03c84c27e484422fdfa06b0e678528f8288597cf19f50730f28e6acb11619fae"
+      "sha256": "ac4d81da884aa49f2e29894d043c3f144a808f2183e36dde9e2b881c2926870e"
     },
     {
       "path": "ecospold2/representativeness.md",
-      "sha256": "95ef60f83d0d195ce719ac6ac69fbb85d8198e5d13f8e00b89006caeac29c535"
+      "sha256": "222f6f76decfad5cb5eef6bd9c0237e671afa0dabd40c5c37f688cc4c4d2bdab"
     },
     {
       "path": "ecospold2/required-contexts.md",
-      "sha256": "d884716f29b35d298275a8cbb08dc23f6b352ee9660bb50073685bf89b98fabf"
+      "sha256": "b0ae1ea8f915aab99c7d6c62ece4acc57857e5883f65d5b84dfa914935c36dda"
     },
     {
       "path": "ecospold2/review.md",
-      "sha256": "d047bc8e5861691bef4661bfeb9f735243ec66a3b27d03c4ed7ee3228f9d223e"
+      "sha256": "8afeaa4e317fabb579426db2f32b13b1241a35c91f6d844253b45128557e0978"
     },
     {
       "path": "ecospold2/technology.md",
-      "sha256": "c8cc3dca0819ba8447b515c102313cdf3edb48658a9d6e45217fd06bd5547d58"
+      "sha256": "b1bf2ef9170401363a7bd6ec0972ee0ed99b6bdf6d39fd6948d63cea87620437"
     },
     {
       "path": "ecospold2/text-and-image.md",
-      "sha256": "848063e0c27e22b047b2972a86dc2f5d7fe2148c0e2bc8ceff2f1b3bc627eb13"
+      "sha256": "b3c9bad8cff62d68ee562158ac96a6da5ab17c4829d33b4660be88e7dd3cccc1"
     },
     {
       "path": "ecospold2/time-period.md",
-      "sha256": "21cc95286b33d8163157e4619100516a60cae10b443f4b67993839f3e38fce9a"
+      "sha256": "3bc2d64b187ed15acb41b0dba701815dc31acb614547ea6dcb845312d27a8dce"
     },
     {
       "path": "ecospold2/transfer-coefficients.md",
-      "sha256": "19093aa8eb73792524ec59c46b1417f7c3d4f8c1ddd8f5563916f9cfd28d3f9e"
+      "sha256": "b04f17b5fa035c4342a3328a31d7cfc8c8d053ffeacbfe4e1d2ac2b4040f6ea8"
     },
     {
       "path": "ecospold2/translation-review.md",
-      "sha256": "2661c6a6842aeba8cdc0630f59ddeb2ebbfdb6b394925eecb9dd8a3228c92796"
+      "sha256": "6153d05ac627f9b2bd1efae7eeeb271a5a7c7662702f3d302e54ae919d9e184e"
     },
     {
       "path": "ecospold2/tutorial-review.md",
-      "sha256": "abd9e99a5ba3c01a2d3eb8e368d5ae522a734217c2bb97354ad20fe3eb775d67"
+      "sha256": "178fefb775b7afff1f1b229c6396c52d55c4d90522780f85d72aab5f46b61688"
     },
     {
       "path": "ecospold2/uncertainty.md",
-      "sha256": "73ce47183f5587eeef49cacdeb76bc8710af95fb79806505cf51636342157358"
+      "sha256": "125a609ce17a3b914006ca816d10d2878cd1058073b6d6c4f5faae727b2a2f3e"
+    },
+    {
+      "path": "ecospold2/xml-structure.md",
+      "sha256": "12cf418aaa50af7c52ef3159469d9ba433626f73af550d16dcef497461466f0a"
     }
   ],
   "original_files": [

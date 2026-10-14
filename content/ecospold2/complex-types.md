@@ -1,13 +1,13 @@
 # 复合类型
 
-本组按官方 XML 结构组织。字段章节同时保留中文说明与英文原文。
+本组把相关 XML 结构分为下面的文章章节。每篇先解释字段及其相互关系，再说明使用和提取，最后对照教学 demo。
 
-| 字段章节 | 模式类型 | 字段条目数 |
-| --- | --- | --- |
-| [区室与子区室](compartments.md) | `TCompartment` | 4 |
-| [不确定性与分布参数](uncertainty.md) | `TUncertainty` | 38 |
-| [交换属性](properties.md) | `TProperty` | 18 |
-| [转移系数](transfer-coefficients.md) | `TTransferCoefficient` | 11 |
-| [文本、图像与文本变量](text-and-image.md) | `TTextAndImage` | 3 |
+[区室与子区室](compartments.md)：区室配对决定环境流的具体位置
 
-[全部字段索引](field-index.md) · [阅读约定与 XSD 约束](reading-guide.md)
+[不确定性与分布参数](uncertainty.md)：不确定性：先辨认分布，再读取它的参数
+
+[交换属性](properties.md)：交换属性：把产品特征与交换数量分开理解
+
+[转移系数](transfer-coefficients.md)：转移系数：追踪特定投入对特定输出的贡献
+
+[文本、图像与文本变量](text-and-image.md)：文本和图像：按顺序组织说明，用文本变量继承局部内容

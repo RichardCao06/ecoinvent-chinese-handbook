@@ -1,269 +1,67 @@
-# 基本流交换专用字段（TElementaryExchange）
+# 基本流交换专用字段
 
-源文分组：Only valid for Elementary Exchanges。本章完整收录 **6 条字段定义**。
+对应官方格式类型：`TElementaryExchange`。本篇以文章解释该类型的 6 条字段；复合类型也会说明它们依附在哪个对象上。
 
-XML 位置：`flowData/elementaryExchange`。以 `activityDescription/`、`flowData/`、`modellingAndValidation/` 或 `administrativeInformation/` 开头的位置，均相对于 `/ecoSpold/activityDataset/`；`…` 表示可复用结构。
+## 基本流交换记录与环境的往来 <a href="#read-telementaryexchange" id="read-telementaryexchange"></a>
 
-[阅读约定与 XSD 约束](reading-guide.md) · [全部字段索引](field-index.md) · [审校记录](translation-review.md)
+`TElementaryExchange` 表示单元过程与环境之间的基本流输入或输出，同样继承 `TCustomExchange` 的实例标识、数量、单位、来源和不确定性等共同字段。与中间产品的识别方式相对应，必需的 `elementaryExchangeId` 引用基本流的主数据条目，而可选的 `elementaryExchangeContextId` 指明该主数据所属上下文，省略时使用数据集自身上下文。取数时应保留这个基本流标识，同时保留交换实例 `id`；一个用于识别流，另一个用于识别本数据集中的具体记录。
 
-> 本参考译自官方格式包 v1.0.13（所附 XSD version 为 2.0.13）。必填性和重复性先忠实保留原表，再单列 XSD 结构约束；不自动代表所有后续版本的模式。
+基本流的分组值与中间交换不同：`inputGroup` 的有效值 4 表示来自环境，`outputGroup` 的有效值 4 表示流向环境。两者仍然只能选择一个，不能因为中间交换有材料、能源或参考产品分组，就把同一套编号移用于基本流。来自环境的资源获取、流向环境的释放，都要结合分组理解；数量的符号不能替代分组判定，也不应在未理解模型含义之前被删除。
 
-{% tabs %}
+必需的 `compartment` 提供区室与子区室的配对信息，由 `TCompartment` 的内部结构表达。原说明中的 `validCompartments` 所引用 XML 文档定义给定语言下有效的区室／子区室配对。可选的 `formula` 可补充化学式，例如分子式，但它不代替基本流主数据或区室。读取环境清单时，应同时取出流标识、名称、方向、数量、单位以及区室配对；不能仅按化学名称把不同区室的流合为一个“总排放”，然后假设可以直接使用同一个表征因子。
 
-{% tab title="中文" %}
+## 怎样定位、使用与提取
 
-## 结构说明
+要拿环境取水或污染物排放，遍历 elementaryExchange，并同时保留 elementaryExchangeId、有效上下文、inputGroup/outputGroup、compartment 和单位。负 amount 不会自动把输出变成输入；同名、不同区室或不同流 UUID 的记录不能直接相加。
 
-分组可重复：是；分组必填：否。
+定位路径相对于完整的 `/ecoSpold/activityDataset`：`flowData/elementaryExchange`。其中 `.//` 表示在当前数据集的后代中检索；返回结果会保留实际父路径，以区分不同交换或参数。
 
-包含仅适用于基本流交换的字段（除交换部分的字段之外）。与环境的交换是作为单元过程输入和输出记录的基本流，并包含其相关信息。
+下载[教学 demo 与读取脚本 ZIP](demo/ecospold2-tutorial-demo.zip)，解压后在同一目录运行下面代码。`read_section.py` 使用 Python 标准库，返回全部匹配节点的属性和完整子节点树；它保留 UUID、原始数值字符串、语言标签和子节点顺序。代码仅展示前两条，变量 `records` 保留全部匹配记录。文件有多个普通数据集时，显式选择 `index`，或逐个遍历；子数据集应先展开继承。
 
-当交换发生于活动与环境之间时，此部分扩展交换部分。
+原表名称前带 `@` 的是 XML 属性，去掉 `@` 后在返回记录的 `attributes` 中取值，例如 `record["attributes"].get("amount")`。没有 `@` 的字段是子元素，在 `children` 中按完整 `tag` 匹配；名称前的 `{http://www.EcoInvent.org/EcoSpold02}` 是命名空间。多语言字段保留多个子节点，`xml:lang` 在属性字典中写为 `{http://www.w3.org/XML/1998/namespace}lang`。更深的字段继续进入相应子节点的 `children`；缺失属性返回 `None`，不要补成零。
 
-**继承关系：** 本章仅列专用字段；完整交换结构还包含[交换的通用字段](exchanges.md)。
+```python
+import json
+from read_section import load_dataset, read_section
 
-### `inputGroup` · FieldID 1600 <a href="#field-1600" id="field-1600"></a>
+dataset = load_dataset("demo-product.spold", index=0)
+records = read_section(dataset, "TElementaryExchange")
+print("匹配节点数：", len(records))
+print(json.dumps(records[:2], ensure_ascii=False, indent=2))
+```
 
-局部 XML 位置：`TElementaryExchange/inputGroup`；ecoSpold1 对照编号：`3503`。
+## 对照 demo 理解读取结果
 
-| 类型 | 必填 | 可重复 |
-| --- | --- | --- |
-| `integer` | 是 | 否 |
+在 `demo-product.spold` 中实际匹配 **4 个节点**。下面是第一个节点的属性与前两个子节点的精选片段；子节点内部结构和其他节点仍保存在代码的完整返回值中。路径带有同级序号，便于回到原文件定位，序号不是主数据 UUID。
 
-长度：—；多语言：否；主数据冗余字段：否。
+```json
+{
+  "path": "/ecoSpold/activityDataset/flowData[1]/elementaryExchange[1]",
+  "attributes": {
+    "id": "9da6137e-52d1-5c5f-930a-fed238b20968",
+    "amount": "0.04",
+    "unitId": "ff547598-1a08-5b8b-904c-a0d8a4d032fd",
+    "elementaryExchangeId": "376dc400-e4fb-5da8-a2fb-2f8c581892cb"
+  },
+  "children_excerpt": [
+    {
+      "tag": "{http://www.EcoInvent.org/EcoSpold02}name",
+      "attributes": {
+        "{http://www.w3.org/XML/1998/namespace}lang": "zh"
+      },
+      "text": "水，来自环境（教学）"
+    },
+    {
+      "tag": "{http://www.EcoInvent.org/EcoSpold02}name",
+      "attributes": {
+        "{http://www.w3.org/XML/1998/namespace}lang": "en"
+      },
+      "text": "Water, from environment (synthetic)"
+    }
+  ]
+}
+```
 
-表示输入流的类型。代码为：4=来自环境（From Environment）。
+## 继续阅读
 
-对于每个交换，只能存在 inputGroup 或 outputGroup 中的一个，以表明流的方向。
-
-此字段相当于字段 1500，但有效值集合不同。
-
-**取值选项（原表）：** 4 = 来自环境（From Environment）
-
-**XSD 结构约束：** `minOccurs="1"`，`maxOccurs="1"`（未显式声明的值按 XSD 默认值列出）。该字段位于 `xsd:choice` 分支内；出现条件须结合父级结构判断。
-
-模式出处：[EcoSpold02FlowData.xsd](original/Schemas/datasets/EcoSpold02FlowData.xsd)，`TElementaryExchange`。
-
-### `outputGroup` · FieldID 1610 <a href="#field-1610" id="field-1610"></a>
-
-局部 XML 位置：`TElementaryExchange/outputGroup`；ecoSpold1 对照编号：`3504`。
-
-| 类型 | 必填 | 可重复 |
-| --- | --- | --- |
-| `integer` | 是 | 否 |
-
-长度：—；多语言：否；主数据冗余字段：否。
-
-表示输出流的类型。代码为：4=流向环境（ToEnvironment）。
-
-对于每个交换，只能存在 inputGroup 或 outputGroup 中的一个，以表明流的方向。
-
-此字段相当于字段 1510，但有效值集合不同。
-
-**取值选项（原表）：** 4 = 流向环境（ToEnvironment）
-
-**XSD 结构约束：** `minOccurs="1"`，`maxOccurs="1"`（未显式声明的值按 XSD 默认值列出）。该字段位于 `xsd:choice` 分支内；出现条件须结合父级结构判断。
-
-模式出处：[EcoSpold02FlowData.xsd](original/Schemas/datasets/EcoSpold02FlowData.xsd)，`TElementaryExchange`。
-
-### `@elementaryExchangeId` · FieldID 1615 <a href="#field-1615" id="field-1615"></a>
-
-局部 XML 位置：`TElementaryExchange/@elementaryExchangeId`；ecoSpold1 对照编号：`3793`。
-
-| 类型 | 必填 | 可重复 |
-| --- | --- | --- |
-| `TUuid` | 是 | 否 |
-
-长度：36；多语言：否；主数据冗余字段：否。
-
-引用此基本流交换的主数据条目。
-
-**XSD 结构约束：** `use="required"`。
-
-模式出处：[EcoSpold02FlowData.xsd](original/Schemas/datasets/EcoSpold02FlowData.xsd)，`TElementaryExchange`。
-
-### `@elementaryExchangeContextId` · FieldID 1616 <a href="#field-1616" id="field-1616"></a>
-
-局部 XML 位置：`TElementaryExchange/@elementaryExchangeContextId`；ecoSpold1 对照编号：`new`。
-
-| 类型 | 必填 | 可重复 |
-| --- | --- | --- |
-| `TUuid` | 否 | 否 |
-
-长度：36；多语言：否；主数据冗余字段：否。
-
-引用该基本流交换所属的上下文。
-
-如果省略此属性，则改用数据集自身的上下文。
-
-**XSD 结构约束：** `use="optional"`。
-
-模式出处：[EcoSpold02FlowData.xsd](original/Schemas/datasets/EcoSpold02FlowData.xsd)，`TElementaryExchange`。
-
-### `compartment` · FieldID 1660 <a href="#field-1660" id="field-1660"></a>
-
-局部 XML 位置：`TElementaryExchange/compartment`；ecoSpold1 对照编号：`new`。
-
-| 类型 | 必填 | 可重复 |
-| --- | --- | --- |
-| `TCompartment` | 是 | 否 |
-
-长度：—；多语言：否；主数据冗余字段：是。
-
-交换的区室及子区室名称。validCompartments 所引用的 XML 文档包含给定语言下有效的区室／子区室配对的定义。
-
-复合类型详情：[ `TCompartment` ](compartments.md)。
-
-**XSD 结构约束：** `minOccurs="1"`，`maxOccurs="1"`（未显式声明的值按 XSD 默认值列出）。
-
-模式出处：[EcoSpold02FlowData.xsd](original/Schemas/datasets/EcoSpold02FlowData.xsd)，`TElementaryExchange`。
-
-### `@formula` · FieldID 1670 <a href="#field-1670" id="field-1670"></a>
-
-局部 XML 位置：`TElementaryExchange/@formula`；ecoSpold1 对照编号：`3711`。
-
-| 类型 | 必填 | 可重复 |
-| --- | --- | --- |
-| `TBaseString40` | 否 | 否 |
-
-长度：40；多语言：否；主数据冗余字段：是。
-
-可以填写化学式，例如分子式。
-
-**XSD 结构约束：** `use="optional"`。
-
-模式出处：[EcoSpold02FlowData.xsd](original/Schemas/datasets/EcoSpold02FlowData.xsd)，`TElementaryExchange`。
-
-{% endtab %}
-
-{% tab title="English 原文" %}
-
-## Structure
-
-Group multiple occurrences：Yes；Group required：No。
-
-Comprises fields (additional to the exchanges section) which are only valid for elementary exchanges. Exchanges with environment are elementary flows as inputs and outputs recorded in a unit process and its related information.
-
-This section extends the exchanges section in case of exchanges with environment.
-
-**Inheritance:** These are additional fields; the complete exchange also includes [common exchange fields](exchanges.md).
-
-### `inputGroup` · FieldID 1600 <a href="#en-field-1600" id="en-field-1600"></a>
-
-Local XML path：`TElementaryExchange/inputGroup`；ecoSpold1 mapping：`3503`。
-
-| Type | Required | Multiple occurrence |
-| --- | --- | --- |
-| `integer` | Yes | No |
-
-Size：—；Multi language：No；Redundant master data：No。
-
-Indicates the kind of input flow. The codes are: 4=From Environment
-
-For each exchange only an inputGroup or outputGroup shall exist. This indicates the direction of the flow.
-
-This field is the equivalent of field 1500 with a different set of valid values.
-
-**Options (original table)：** 4 = From Environment
-
-**XSD structural constraints：** `minOccurs="1"`，`maxOccurs="1"` (undeclared values use XSD defaults). This field is within an xsd:choice branch; interpret occurrence in its parent structure。
-
-Schema source：[EcoSpold02FlowData.xsd](original/Schemas/datasets/EcoSpold02FlowData.xsd)，`TElementaryExchange`。
-
-### `outputGroup` · FieldID 1610 <a href="#en-field-1610" id="en-field-1610"></a>
-
-Local XML path：`TElementaryExchange/outputGroup`；ecoSpold1 mapping：`3504`。
-
-| Type | Required | Multiple occurrence |
-| --- | --- | --- |
-| `integer` | Yes | No |
-
-Size：—；Multi language：No；Redundant master data：No。
-
-Indicates the kind of output flow. The codes are: 4=ToEnvironment
-
-For each exchange only an inputGroup or outputGroup shall exist. This indicates the direction of the flow.
-
-This field is the equivalent of field 1510 with a different set of valid values.
-
-**Options (original table)：** 4 = ToEnvironment
-
-**XSD structural constraints：** `minOccurs="1"`，`maxOccurs="1"` (undeclared values use XSD defaults). This field is within an xsd:choice branch; interpret occurrence in its parent structure。
-
-Schema source：[EcoSpold02FlowData.xsd](original/Schemas/datasets/EcoSpold02FlowData.xsd)，`TElementaryExchange`。
-
-### `@elementaryExchangeId` · FieldID 1615 <a href="#en-field-1615" id="en-field-1615"></a>
-
-Local XML path：`TElementaryExchange/@elementaryExchangeId`；ecoSpold1 mapping：`3793`。
-
-| Type | Required | Multiple occurrence |
-| --- | --- | --- |
-| `TUuid` | Yes | No |
-
-Size：36；Multi language：No；Redundant master data：No。
-
-Reference to the master data entry for this elementary exchange
-
-**XSD structural constraints：** `use="required"`。
-
-Schema source：[EcoSpold02FlowData.xsd](original/Schemas/datasets/EcoSpold02FlowData.xsd)，`TElementaryExchange`。
-
-### `@elementaryExchangeContextId` · FieldID 1616 <a href="#en-field-1616" id="en-field-1616"></a>
-
-Local XML path：`TElementaryExchange/@elementaryExchangeContextId`；ecoSpold1 mapping：`new`。
-
-| Type | Required | Multiple occurrence |
-| --- | --- | --- |
-| `TUuid` | No | No |
-
-Size：36；Multi language：No；Redundant master data：No。
-
-Reference to the context of the elementary exchange.
-
-If this attribute is omitted the context of the dataset itself will be used instead.
-
-**XSD structural constraints：** `use="optional"`。
-
-Schema source：[EcoSpold02FlowData.xsd](original/Schemas/datasets/EcoSpold02FlowData.xsd)，`TElementaryExchange`。
-
-### `compartment` · FieldID 1660 <a href="#en-field-1660" id="en-field-1660"></a>
-
-Local XML path：`TElementaryExchange/compartment`；ecoSpold1 mapping：`new`。
-
-| Type | Required | Multiple occurrence |
-| --- | --- | --- |
-| `TCompartment` | Yes | No |
-
-Size：—；Multi language：No；Redundant master data：Yes。
-
-Name of the compartment and subcompartment of the exchange. The xml document referenced by validCompartments contains definitions of valid compartment/subcompartment pairs for a given language.
-
-Complex type details：[ `TCompartment` ](compartments.md)。
-
-**XSD structural constraints：** `minOccurs="1"`，`maxOccurs="1"` (undeclared values use XSD defaults)。
-
-Schema source：[EcoSpold02FlowData.xsd](original/Schemas/datasets/EcoSpold02FlowData.xsd)，`TElementaryExchange`。
-
-### `@formula` · FieldID 1670 <a href="#en-field-1670" id="en-field-1670"></a>
-
-Local XML path：`TElementaryExchange/@formula`；ecoSpold1 mapping：`3711`。
-
-| Type | Required | Multiple occurrence |
-| --- | --- | --- |
-| `TBaseString40` | No | No |
-
-Size：40；Multi language：No；Redundant master data：Yes。
-
-Chemical formula (e.g. sum formula) may be entered.
-
-**XSD structural constraints：** `use="optional"`。
-
-Schema source：[EcoSpold02FlowData.xsd](original/Schemas/datasets/EcoSpold02FlowData.xsd)，`TElementaryExchange`。
-
-{% endtab %}
-
-{% endtabs %}
-
-## 翻译与审校注记
-
-- **已处理／已说明 · `TElementaryExchange.1660.description.0`**：将 compartment/subcompartment 统一为站内数据结构用语“区室／子区室”；这些分类不仅表示空气、水、土壤等环境介质，还可包含自然资源区室。 已修正术语，保留全部 XML 标识与引用编号。
+[提取与查询实践](extraction-practice.md)把数量读取、身份筛选与参考产品归一化连起来；[完整中文格式译表](format-reference.md#appendix-telementaryexchange)用于核对本类型的字段次序、类型和原表标记。原文疑点见[审校记录](translation-review.md)。

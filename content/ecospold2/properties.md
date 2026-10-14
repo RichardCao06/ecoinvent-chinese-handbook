@@ -1,633 +1,69 @@
-# 交换属性（TProperty）
+# 交换属性
 
-源文分组：TProperty。本章完整收录 **18 条字段定义**。
+对应官方格式类型：`TProperty`。本篇以文章解释该类型的 18 条字段；复合类型也会说明它们依附在哪个对象上。
 
-XML 位置：`…/property`。以 `activityDescription/`、`flowData/`、`modellingAndValidation/` 或 `administrativeInformation/` 开头的位置，均相对于 `/ecoSpold/activityDataset/`；`…` 表示可复用结构。
+## 交换属性：把产品特征与交换数量分开理解 <a href="#read-tproperty" id="read-tproperty"></a>
 
-[阅读约定与 XSD 约束](reading-guide.md) · [全部字段索引](field-index.md) · [审校记录](translation-review.md)
+`TProperty` 附在交换的 `property` 元素中，描述干质量、含水率、价格、元素或物质含量等特征。中间交换和基本流交换都继承通用交换结构，因此都可具有这些属性。阅读一条属性时，首先用 `propertyId` 识别它引用的属性主数据，再读描述性文本 `name`；`propertyContextId` 指定该属性主数据所属的上下文，省略时采用数据集自身的上下文。UUID 引用和上下文确定的是属性身份，名称帮助人理解身份，不能仅靠同名文字认定两个属性一定相同。
 
-> 本参考译自官方格式包 v1.0.13（所附 XSD version 为 2.0.13）。必填性和重复性先忠实保留原表，再单列 XSD 结构约束；不自动代表所有后续版本的模式。
+属性的数值存于自身的 `amount`，其单位由 `unitId` 引用，`unitName` 提供单位名称，`unitContextId` 指明单位主数据上下文，省略时同样采用数据集上下文。这里的 `amount` 并不等于外层交换的 `amount`，也不保证与它具有相同单位；价格、含水率和干质量描述的量并不相同。取数时，应把属性定义、数值及单位一起读取，并核查其计量或归一化基准，不能直接把属性量加到投入输出清单中。`isDefiningValue` 为 true 时，属性值属于交换定义的一部分，与交换量之间具有不能针对不同数据集中个别实例改变的固定关系；它既不表示两个数值相等，也不是允许任意按比例改写所有属性的开关。
 
-{% tabs %}
+若属性不是手工指定的值，`mathematicalRelation` 可通过变量名或 `REF` 函数引用流、参数和属性的数值，计算结果写入本属性的 `amount`；`isCalculatedAmount` 为 true 表示这个数值来自该数学关系。`variableName` 则给本属性量一个可在数学关系中引用的名字。文档要求变量名以字母 a-z 开头，可以包含字母、数字和下划线，并且不区分大小写，例如 `calorific_Value` 与 `Calorific_value` 等同。所附 XSD 的 `TVariableName` 类型限定长度最多 40，并采用正则 `\w\S*`，它没有直接表达与文字规则完全等价的约束，因此不能仅凭 XSD 验证通过就认定变量名满足所有公式语言规则。读取已计算数值与重算公式是不同工作；字段定义本身不足以替代公式解析、引用解析和继承处理。
 
-{% tab title="中文" %}
+`uncertainty` 描述的是该属性值的不确定性，仍须按所选分布解释，而不是默认套用外层交换的不确定性。`sourceId` 引用记录该属性的有效来源或出版物，`sourceContextId` 指定来源上下文，省略时采用数据集上下文。对子数据集，如果要移除继承的来源引用，应将 `sourceIdOverwrittenByChild` 设为 true；仅让引用消失会按原文规则被解释为保留父值。`sourceYear` 记录出版或交流年份，网站来源记录最后访问；`sourceFirstAuthor` 通常填写第一作者的姓氏和名字缩写，例如 Einstein A.，而来源类型 `sourceType` 为 4、5、6、7 的现场测量、口头交流、个人书面交流或问卷调查，填写提供信息的人。最后，`comment` 可以补充该交换中这项具体属性的假设、说明和限制，使数值能够追溯到其证据。
 
-## 结构说明
+## 怎样定位、使用与提取
 
-分组可重复：是；分组必填：否。
+需要干质量、含水率、价格或组成等信息，读取每个交换下的 property，同时保留所属交换实例路径、propertyId、单位和 amount。只有明确属性定义与计量基准后，才能决定是否与交换量相乘；属性不是额外物质流。
 
-用于指定交换属性的格式。
+定位路径相对于完整的 `/ecoSpold/activityDataset`：`flowData/intermediateExchange/property`；`flowData/elementaryExchange/property`。其中 `.//` 表示在当前数据集的后代中检索；返回结果会保留实际父路径，以区分不同交换或参数。
 
-### `@propertyId` · FieldID 2300 <a href="#field-2300" id="field-2300"></a>
+下载[教学 demo 与读取脚本 ZIP](demo/ecospold2-tutorial-demo.zip)，解压后在同一目录运行下面代码。`read_section.py` 使用 Python 标准库，返回全部匹配节点的属性和完整子节点树；它保留 UUID、原始数值字符串、语言标签和子节点顺序。代码仅展示前两条，变量 `records` 保留全部匹配记录。文件有多个普通数据集时，显式选择 `index`，或逐个遍历；子数据集应先展开继承。
 
-局部 XML 位置：`TProperty/@propertyId`；ecoSpold1 对照编号：`new`。
+原表名称前带 `@` 的是 XML 属性，去掉 `@` 后在返回记录的 `attributes` 中取值，例如 `record["attributes"].get("amount")`。没有 `@` 的字段是子元素，在 `children` 中按完整 `tag` 匹配；名称前的 `{http://www.EcoInvent.org/EcoSpold02}` 是命名空间。多语言字段保留多个子节点，`xml:lang` 在属性字典中写为 `{http://www.w3.org/XML/1998/namespace}lang`。更深的字段继续进入相应子节点的 `children`；缺失属性返回 `None`，不要补成零。
 
-| 类型 | 必填 | 可重复 |
-| --- | --- | --- |
-| `TUuid` | 是 | 否 |
+```python
+import json
+from read_section import load_dataset, read_section
 
-长度：36；多语言：否；主数据冗余字段：否。
+dataset = load_dataset("demo-product.spold", index=0)
+records = read_section(dataset, "TProperty")
+print("匹配节点数：", len(records))
+print(json.dumps(records[:2], ensure_ascii=False, indent=2))
+```
 
-引用该属性的主数据条目。
+## 对照 demo 理解读取结果
 
-**XSD 结构约束：** `use="required"`。
+在 `demo-product.spold` 中实际匹配 **1 个节点**。下面是第一个节点的属性与前两个子节点的精选片段；子节点内部结构和其他节点仍保存在代码的完整返回值中。路径带有同级序号，便于回到原文件定位，序号不是主数据 UUID。
 
-模式出处：[EcoSpold02DataTypes.xsd](original/Schemas/datasets/EcoSpold02DataTypes.xsd)，`TProperty`。
+```json
+{
+  "path": "/ecoSpold/activityDataset/flowData[1]/intermediateExchange[1]/property[1]",
+  "attributes": {
+    "propertyId": "157cb588-bc77-5666-9107-3791e5783446",
+    "amount": "1",
+    "unitId": "00875264-8155-513e-8182-437026535fcb",
+    "isDefiningValue": "true"
+  },
+  "children_excerpt": [
+    {
+      "tag": "{http://www.EcoInvent.org/EcoSpold02}name",
+      "attributes": {
+        "{http://www.w3.org/XML/1998/namespace}lang": "zh"
+      },
+      "text": "干质量（教学比例）"
+    },
+    {
+      "tag": "{http://www.EcoInvent.org/EcoSpold02}name",
+      "attributes": {
+        "{http://www.w3.org/XML/1998/namespace}lang": "en"
+      },
+      "text": "Dry mass (teaching ratio)"
+    }
+  ]
+}
+```
 
-### `@propertyContextId` · FieldID 2301 <a href="#field-2301" id="field-2301"></a>
+## 继续阅读
 
-局部 XML 位置：`TProperty/@propertyContextId`；ecoSpold1 对照编号：`new`。
-
-| 类型 | 必填 | 可重复 |
-| --- | --- | --- |
-| `TUuid` | 否 | 否 |
-
-长度：36；多语言：否；主数据冗余字段：否。
-
-对属性所属上下文的引用。
-
-如果省略此属性，则改用数据集自身的上下文。
-
-**XSD 结构约束：** `use="optional"`。
-
-模式出处：[EcoSpold02DataTypes.xsd](original/Schemas/datasets/EcoSpold02DataTypes.xsd)，`TProperty`。
-
-### `name` · FieldID 2310 <a href="#field-2310" id="field-2310"></a>
-
-局部 XML 位置：`TProperty/name`；ecoSpold1 对照编号：`new`。
-
-| 类型 | 必填 | 可重复 |
-| --- | --- | --- |
-| `TString80` | 是 | 否 |
-
-长度：80；多语言：是；主数据冗余字段：是。
-
-属性的描述性名称。
-
-**XSD 结构约束：** `minOccurs="1"`，`maxOccurs="unbounded"`（未显式声明的值按 XSD 默认值列出）。
-
-模式出处：[EcoSpold02DataTypes.xsd](original/Schemas/datasets/EcoSpold02DataTypes.xsd)，`TProperty`。
-
-### `@unitId` · FieldID 2320 <a href="#field-2320" id="field-2320"></a>
-
-局部 XML 位置：`TProperty/@unitId`；ecoSpold1 对照编号：`3706`。
-
-| 类型 | 必填 | 可重复 |
-| --- | --- | --- |
-| `TUuid` | 否 | 否 |
-
-长度：36；多语言：否；主数据冗余字段：是。
-
-对该数量所用单位的引用。
-
-**XSD 结构约束：** `use="optional"`。
-
-模式出处：[EcoSpold02DataTypes.xsd](original/Schemas/datasets/EcoSpold02DataTypes.xsd)，`TProperty`。
-
-### `@unitContextId` · FieldID 2321 <a href="#field-2321" id="field-2321"></a>
-
-局部 XML 位置：`TProperty/@unitContextId`；ecoSpold1 对照编号：`new`。
-
-| 类型 | 必填 | 可重复 |
-| --- | --- | --- |
-| `TUuid` | 否 | 否 |
-
-长度：36；多语言：否；主数据冗余字段：是。
-
-对单位所属上下文的引用。
-
-如果省略此属性，则改用数据集自身的上下文。
-
-**XSD 结构约束：** `use="optional"`。
-
-模式出处：[EcoSpold02DataTypes.xsd](original/Schemas/datasets/EcoSpold02DataTypes.xsd)，`TProperty`。
-
-### `unitName` · FieldID 2325 <a href="#field-2325" id="field-2325"></a>
-
-局部 XML 位置：`TProperty/unitName`；ecoSpold1 对照编号：`3706`。
-
-| 类型 | 必填 | 可重复 |
-| --- | --- | --- |
-| `TString40` | 否 | 否 |
-
-长度：40；多语言：是；主数据冗余字段：是。
-
-属性量所用单位的名称。
-
-**XSD 结构约束：** `minOccurs="0"`，`maxOccurs="unbounded"`。
-
-模式出处：[EcoSpold02DataTypes.xsd](original/Schemas/datasets/EcoSpold02DataTypes.xsd)，`TProperty`。
-
-### `@amount` · FieldID 2330 <a href="#field-2330" id="field-2330"></a>
-
-局部 XML 位置：`TProperty/@amount`；ecoSpold1 对照编号：`new`。
-
-| 类型 | 必填 | 可重复 |
-| --- | --- | --- |
-| `TFloatNumber` | 是 | 否 |
-
-长度：—；多语言：否；主数据冗余字段：否。
-
-属性的值。
-
-**XSD 结构约束：** `use="required"`。
-
-模式出处：[EcoSpold02DataTypes.xsd](original/Schemas/datasets/EcoSpold02DataTypes.xsd)，`TProperty`。
-
-### `@isDefiningValue` · FieldID 2335 <a href="#field-2335" id="field-2335"></a>
-
-局部 XML 位置：`TProperty/@isDefiningValue`；ecoSpold1 对照编号：`new`。
-
-| 类型 | 必填 | 可重复 |
-| --- | --- | --- |
-| `boolean` | 否 | 否 |
-
-长度：—；多语言：否；主数据冗余字段：否。
-
-如果此字段为 true，则该属性值是交换定义的一部分，因此与交换量之间具有固定关系；不能针对该交换在不同数据集中的个别实例改变这一关系。
-
-**XSD 结构约束：** `use="optional"`；`default="false"`。
-
-模式出处：[EcoSpold02DataTypes.xsd](original/Schemas/datasets/EcoSpold02DataTypes.xsd)，`TProperty`。
-
-### `@mathematicalRelation` · FieldID 2340 <a href="#field-2340" id="field-2340"></a>
-
-局部 XML 位置：`TProperty/@mathematicalRelation`；ecoSpold1 对照编号：`new`。
-
-| 类型 | 必填 | 可重复 |
-| --- | --- | --- |
-| `TBaseString32000` | 否 | 否 |
-
-长度：32000；多语言：否；主数据冗余字段：否。
-
-定义一个数学公式，通过变量名或 REF 函数引用流、参数或属性的数值。
-
-将公式在一组特定变量值下的计算结果写入 amount 字段。
-
-**XSD 结构约束：** `use="optional"`。
-
-模式出处：[EcoSpold02DataTypes.xsd](original/Schemas/datasets/EcoSpold02DataTypes.xsd)，`TProperty`。
-
-### `@isCalculatedAmount` · FieldID 2345 <a href="#field-2345" id="field-2345"></a>
-
-局部 XML 位置：`TProperty/@isCalculatedAmount`；ecoSpold1 对照编号：`new`。
-
-| 类型 | 必填 | 可重复 |
-| --- | --- | --- |
-| `boolean` | 否 | 否 |
-
-长度：—；多语言：否；主数据冗余字段：否。
-
-如果为 true，则 amount 字段的值为 mathematicalRelation 的计算值。
-
-**XSD 结构约束：** `use="optional"`；`default="false"`。
-
-模式出处：[EcoSpold02DataTypes.xsd](original/Schemas/datasets/EcoSpold02DataTypes.xsd)，`TProperty`。
-
-### `@variableName` · FieldID 2350 <a href="#field-2350" id="field-2350"></a>
-
-局部 XML 位置：`TProperty/@variableName`；ecoSpold1 对照编号：`new`。
-
-| 类型 | 必填 | 可重复 |
-| --- | --- | --- |
-| `TVariableName` | 否 | 否 |
-
-长度：40；多语言：否；主数据冗余字段：否。
-
-定义变量名，以便在 mathematicalrelation（数学关系）中引用属性量。
-
-变量名必须以字母（a-z）开头，可包含字母、数字和下划线（\_）。变量名不区分大小写（calorific\_Value 与 Calorific\_value 等同）。
-
-**XSD 结构约束：** `use="optional"`。
-
-模式出处：[EcoSpold02DataTypes.xsd](original/Schemas/datasets/EcoSpold02DataTypes.xsd)，`TProperty`。
-
-### `uncertainty` · FieldID 2360 <a href="#field-2360" id="field-2360"></a>
-
-局部 XML 位置：`TProperty/uncertainty`；ecoSpold1 对照编号：`new`。
-
-| 类型 | 必填 | 可重复 |
-| --- | --- | --- |
-| `TUncertainty` | 否 | 否 |
-
-长度：—；多语言：否；主数据冗余字段：否。
-
-属性值的不确定性。
-
-复合类型详情：[ `TUncertainty` ](uncertainty.md)。
-
-**XSD 结构约束：** `minOccurs="0"`，`maxOccurs="1"`（未显式声明的值按 XSD 默认值列出）。
-
-模式出处：[EcoSpold02DataTypes.xsd](original/Schemas/datasets/EcoSpold02DataTypes.xsd)，`TProperty`。
-
-### `@sourceId` · FieldID 2370 <a href="#field-2370" id="field-2370"></a>
-
-局部 XML 位置：`TProperty/@sourceId`；ecoSpold1 对照编号：`new`。
-
-| 类型 | 必填 | 可重复 |
-| --- | --- | --- |
-| `TUuid` | 否 | 否 |
-
-长度：36；多语言：否；主数据冗余字段：否。
-
-对有效来源的引用，指明记录该属性的出版物。
-
-**XSD 结构约束：** `use="optional"`。
-
-模式出处：[EcoSpold02DataTypes.xsd](original/Schemas/datasets/EcoSpold02DataTypes.xsd)，`TProperty`。
-
-### `@sourceContextId` · FieldID 2371 <a href="#field-2371" id="field-2371"></a>
-
-局部 XML 位置：`TProperty/@sourceContextId`；ecoSpold1 对照编号：`new`。
-
-| 类型 | 必填 | 可重复 |
-| --- | --- | --- |
-| `TUuid` | 否 | 否 |
-
-长度：36；多语言：否；主数据冗余字段：否。
-
-对来源所属上下文的引用。
-
-如果省略此属性，则改用数据集自身的上下文。
-
-**XSD 结构约束：** `use="optional"`。
-
-模式出处：[EcoSpold02DataTypes.xsd](original/Schemas/datasets/EcoSpold02DataTypes.xsd)，`TProperty`。
-
-### `@sourceIdOverwrittenByChild` · FieldID 2372 <a href="#field-2372" id="field-2372"></a>
-
-局部 XML 位置：`TProperty/@sourceIdOverwrittenByChild`；ecoSpold1 对照编号：`new`。
-
-| 类型 | 必填 | 可重复 |
-| --- | --- | --- |
-| `boolean` | 否 | 否 |
-
-长度：—；多语言：否；主数据冗余字段：否。
-
-如果必须在子数据集中移除对某个主数据实体的引用，则必须将相应的 xxxOverwrittenByChild 属性设置为 true。否则，移除该引用会被解释为“保留父数据集的值”（Keep the Parent Value）。
-
-**XSD 结构约束：** `use="optional"`。
-
-模式出处：[EcoSpold02DataTypes.xsd](original/Schemas/datasets/EcoSpold02DataTypes.xsd)，`TProperty`。
-
-### `@sourceYear` · FieldID 2375 <a href="#field-2375" id="field-2375"></a>
-
-局部 XML 位置：`TProperty/@sourceYear`；ecoSpold1 对照编号：`new`。
-
-| 类型 | 必填 | 可重复 |
-| --- | --- | --- |
-| `TBaseString30` | 否 | 否 |
-
-长度：30；多语言：否；主数据冗余字段：是。
-
-分别注明出版年份或信息交流年份。对于网站，填写最后访问的年份。
-
-**XSD 结构约束：** `use="optional"`。
-
-模式出处：[EcoSpold02DataTypes.xsd](original/Schemas/datasets/EcoSpold02DataTypes.xsd)，`TProperty`。
-
-### `@sourceFirstAuthor` · FieldID 2376 <a href="#field-2376" id="field-2376"></a>
-
-局部 XML 位置：`TProperty/@sourceFirstAuthor`；ecoSpold1 对照编号：`new`。
-
-| 类型 | 必填 | 可重复 |
-| --- | --- | --- |
-| `TBaseString40` | 否 | 否 |
-
-长度：40；多语言：否；主数据冗余字段：是。
-
-以姓氏和名字缩写注明第一作者（例如 Einstein A.）。对于现场测量、口头交流、个人书面交流和问卷调查（sourceType=4, 5, 6, 7），此处填写提供信息的人员姓名。
-
-**XSD 结构约束：** `use="optional"`。
-
-模式出处：[EcoSpold02DataTypes.xsd](original/Schemas/datasets/EcoSpold02DataTypes.xsd)，`TProperty`。
-
-### `comment` · FieldID 2380 <a href="#field-2380" id="field-2380"></a>
-
-局部 XML 位置：`TProperty/comment`；ecoSpold1 对照编号：`new`。
-
-| 类型 | 必填 | 可重复 |
-| --- | --- | --- |
-| `TString32000` | 否 | 否 |
-
-长度：32000；多语言：是；主数据冗余字段：否。
-
-可对某个特定交换的每项单独属性添加一般注释。
-
-**XSD 结构约束：** `minOccurs="0"`，`maxOccurs="unbounded"`。
-
-模式出处：[EcoSpold02DataTypes.xsd](original/Schemas/datasets/EcoSpold02DataTypes.xsd)，`TProperty`。
-
-{% endtab %}
-
-{% tab title="English 原文" %}
-
-## Structure
-
-Group multiple occurrences：Yes；Group required：No。
-
-Format to specify properties of exchanges.
-
-### `@propertyId` · FieldID 2300 <a href="#en-field-2300" id="en-field-2300"></a>
-
-Local XML path：`TProperty/@propertyId`；ecoSpold1 mapping：`new`。
-
-| Type | Required | Multiple occurrence |
-| --- | --- | --- |
-| `TUuid` | Yes | No |
-
-Size：36；Multi language：No；Redundant master data：No。
-
-Reference to the master data entry for this property.
-
-**XSD structural constraints：** `use="required"`。
-
-Schema source：[EcoSpold02DataTypes.xsd](original/Schemas/datasets/EcoSpold02DataTypes.xsd)，`TProperty`。
-
-### `@propertyContextId` · FieldID 2301 <a href="#en-field-2301" id="en-field-2301"></a>
-
-Local XML path：`TProperty/@propertyContextId`；ecoSpold1 mapping：`new`。
-
-| Type | Required | Multiple occurrence |
-| --- | --- | --- |
-| `TUuid` | No | No |
-
-Size：36；Multi language：No；Redundant master data：No。
-
-Reference to the context of the property.
-
-If this attribute is omitted the context of the dataset itself will be used instead.
-
-**XSD structural constraints：** `use="optional"`。
-
-Schema source：[EcoSpold02DataTypes.xsd](original/Schemas/datasets/EcoSpold02DataTypes.xsd)，`TProperty`。
-
-### `name` · FieldID 2310 <a href="#en-field-2310" id="en-field-2310"></a>
-
-Local XML path：`TProperty/name`；ecoSpold1 mapping：`new`。
-
-| Type | Required | Multiple occurrence |
-| --- | --- | --- |
-| `TString80` | Yes | No |
-
-Size：80；Multi language：Yes；Redundant master data：Yes。
-
-Descriptive name of the property.
-
-**XSD structural constraints：** `minOccurs="1"`，`maxOccurs="unbounded"` (undeclared values use XSD defaults)。
-
-Schema source：[EcoSpold02DataTypes.xsd](original/Schemas/datasets/EcoSpold02DataTypes.xsd)，`TProperty`。
-
-### `@unitId` · FieldID 2320 <a href="#en-field-2320" id="en-field-2320"></a>
-
-Local XML path：`TProperty/@unitId`；ecoSpold1 mapping：`3706`。
-
-| Type | Required | Multiple occurrence |
-| --- | --- | --- |
-| `TUuid` | No | No |
-
-Size：36；Multi language：No；Redundant master data：Yes。
-
-Reference to the unit of the amount.
-
-**XSD structural constraints：** `use="optional"`。
-
-Schema source：[EcoSpold02DataTypes.xsd](original/Schemas/datasets/EcoSpold02DataTypes.xsd)，`TProperty`。
-
-### `@unitContextId` · FieldID 2321 <a href="#en-field-2321" id="en-field-2321"></a>
-
-Local XML path：`TProperty/@unitContextId`；ecoSpold1 mapping：`new`。
-
-| Type | Required | Multiple occurrence |
-| --- | --- | --- |
-| `TUuid` | No | No |
-
-Size：36；Multi language：No；Redundant master data：Yes。
-
-Reference to the context of the unit.
-
-If this attribute is omitted the context of the dataset itself will be used instead.
-
-**XSD structural constraints：** `use="optional"`。
-
-Schema source：[EcoSpold02DataTypes.xsd](original/Schemas/datasets/EcoSpold02DataTypes.xsd)，`TProperty`。
-
-### `unitName` · FieldID 2325 <a href="#en-field-2325" id="en-field-2325"></a>
-
-Local XML path：`TProperty/unitName`；ecoSpold1 mapping：`3706`。
-
-| Type | Required | Multiple occurrence |
-| --- | --- | --- |
-| `TString40` | No | No |
-
-Size：40；Multi language：Yes；Redundant master data：Yes。
-
-Unit name of the property amount.
-
-**XSD structural constraints：** `minOccurs="0"`，`maxOccurs="unbounded"`。
-
-Schema source：[EcoSpold02DataTypes.xsd](original/Schemas/datasets/EcoSpold02DataTypes.xsd)，`TProperty`。
-
-### `@amount` · FieldID 2330 <a href="#en-field-2330" id="en-field-2330"></a>
-
-Local XML path：`TProperty/@amount`；ecoSpold1 mapping：`new`。
-
-| Type | Required | Multiple occurrence |
-| --- | --- | --- |
-| `TFloatNumber` | Yes | No |
-
-Size：—；Multi language：No；Redundant master data：No。
-
-The value of the property.
-
-**XSD structural constraints：** `use="required"`。
-
-Schema source：[EcoSpold02DataTypes.xsd](original/Schemas/datasets/EcoSpold02DataTypes.xsd)，`TProperty`。
-
-### `@isDefiningValue` · FieldID 2335 <a href="#en-field-2335" id="en-field-2335"></a>
-
-Local XML path：`TProperty/@isDefiningValue`；ecoSpold1 mapping：`new`。
-
-| Type | Required | Multiple occurrence |
-| --- | --- | --- |
-| `boolean` | No | No |
-
-Size：—；Multi language：No；Redundant master data：No。
-
-If this field is true, the value of this property is a part of the definition of the exchange and therefore has a fixed relation to the amount of the exchange that cannot be changed for individual instances of the exchange in different datasets.
-
-**XSD structural constraints：** `use="optional"`；`default="false"`。
-
-Schema source：[EcoSpold02DataTypes.xsd](original/Schemas/datasets/EcoSpold02DataTypes.xsd)，`TProperty`。
-
-### `@mathematicalRelation` · FieldID 2340 <a href="#en-field-2340" id="en-field-2340"></a>
-
-Local XML path：`TProperty/@mathematicalRelation`；ecoSpold1 mapping：`new`。
-
-| Type | Required | Multiple occurrence |
-| --- | --- | --- |
-| `TBaseString32000` | No | No |
-
-Size：32000；Multi language：No；Redundant master data：No。
-
-Defines a mathematical formula with references to values of flows, parameters or properties by variable names or REF function.
-
-The result of the formula with a specific set of variable values is written into the amount field.
-
-**XSD structural constraints：** `use="optional"`。
-
-Schema source：[EcoSpold02DataTypes.xsd](original/Schemas/datasets/EcoSpold02DataTypes.xsd)，`TProperty`。
-
-### `@isCalculatedAmount` · FieldID 2345 <a href="#en-field-2345" id="en-field-2345"></a>
-
-Local XML path：`TProperty/@isCalculatedAmount`；ecoSpold1 mapping：`new`。
-
-| Type | Required | Multiple occurrence |
-| --- | --- | --- |
-| `boolean` | No | No |
-
-Size：—；Multi language：No；Redundant master data：No。
-
-If true the value of the amount field is the calculated value of the mathematicalRelation.
-
-**XSD structural constraints：** `use="optional"`；`default="false"`。
-
-Schema source：[EcoSpold02DataTypes.xsd](original/Schemas/datasets/EcoSpold02DataTypes.xsd)，`TProperty`。
-
-### `@variableName` · FieldID 2350 <a href="#en-field-2350" id="en-field-2350"></a>
-
-Local XML path：`TProperty/@variableName`；ecoSpold1 mapping：`new`。
-
-| Type | Required | Multiple occurrence |
-| --- | --- | --- |
-| `TVariableName` | No | No |
-
-Size：40；Multi language：No；Redundant master data：No。
-
-Defines a variable name for referencing the property amount in a mathematicalrelation.
-
-Variable names must start with a character (a-z) and may contain characters, numbers and underscores (\_). Variable names are not case sensitive (calorific\_Value equals Calorific\_value).
-
-**XSD structural constraints：** `use="optional"`。
-
-Schema source：[EcoSpold02DataTypes.xsd](original/Schemas/datasets/EcoSpold02DataTypes.xsd)，`TProperty`。
-
-### `uncertainty` · FieldID 2360 <a href="#en-field-2360" id="en-field-2360"></a>
-
-Local XML path：`TProperty/uncertainty`；ecoSpold1 mapping：`new`。
-
-| Type | Required | Multiple occurrence |
-| --- | --- | --- |
-| `TUncertainty` | No | No |
-
-Size：—；Multi language：No；Redundant master data：No。
-
-Uncertainty of the property value.
-
-Complex type details：[ `TUncertainty` ](uncertainty.md)。
-
-**XSD structural constraints：** `minOccurs="0"`，`maxOccurs="1"` (undeclared values use XSD defaults)。
-
-Schema source：[EcoSpold02DataTypes.xsd](original/Schemas/datasets/EcoSpold02DataTypes.xsd)，`TProperty`。
-
-### `@sourceId` · FieldID 2370 <a href="#en-field-2370" id="en-field-2370"></a>
-
-Local XML path：`TProperty/@sourceId`；ecoSpold1 mapping：`new`。
-
-| Type | Required | Multiple occurrence |
-| --- | --- | --- |
-| `TUuid` | No | No |
-
-Size：36；Multi language：No；Redundant master data：No。
-
-A reference to a valid source. It indicates the publication where the property is documented.
-
-**XSD structural constraints：** `use="optional"`。
-
-Schema source：[EcoSpold02DataTypes.xsd](original/Schemas/datasets/EcoSpold02DataTypes.xsd)，`TProperty`。
-
-### `@sourceContextId` · FieldID 2371 <a href="#en-field-2371" id="en-field-2371"></a>
-
-Local XML path：`TProperty/@sourceContextId`；ecoSpold1 mapping：`new`。
-
-| Type | Required | Multiple occurrence |
-| --- | --- | --- |
-| `TUuid` | No | No |
-
-Size：36；Multi language：No；Redundant master data：No。
-
-Reference to the context of the source.
-
-If this attribute is omitted the context of the dataset itself will be used instead.
-
-**XSD structural constraints：** `use="optional"`。
-
-Schema source：[EcoSpold02DataTypes.xsd](original/Schemas/datasets/EcoSpold02DataTypes.xsd)，`TProperty`。
-
-### `@sourceIdOverwrittenByChild` · FieldID 2372 <a href="#en-field-2372" id="en-field-2372"></a>
-
-Local XML path：`TProperty/@sourceIdOverwrittenByChild`；ecoSpold1 mapping：`new`。
-
-| Type | Required | Multiple occurrence |
-| --- | --- | --- |
-| `boolean` | No | No |
-
-Size：—；Multi language：No；Redundant master data：No。
-
-If a reference to a master data entity must be removed in a child dataset it is required to set the corresponding xxxOverwrittenByChild attribute to true. Otherwise the removed referenced will be interpreted as "Keep the Parent Value".
-
-**XSD structural constraints：** `use="optional"`。
-
-Schema source：[EcoSpold02DataTypes.xsd](original/Schemas/datasets/EcoSpold02DataTypes.xsd)，`TProperty`。
-
-### `@sourceYear` · FieldID 2375 <a href="#en-field-2375" id="en-field-2375"></a>
-
-Local XML path：`TProperty/@sourceYear`；ecoSpold1 mapping：`new`。
-
-| Type | Required | Multiple occurrence |
-| --- | --- | --- |
-| `TBaseString30` | No | No |
-
-Size：30；Multi language：No；Redundant master data：Yes。
-
-Indicates the year of publication and communication, respectively. For web-sites: last visited.
-
-**XSD structural constraints：** `use="optional"`。
-
-Schema source：[EcoSpold02DataTypes.xsd](original/Schemas/datasets/EcoSpold02DataTypes.xsd)，`TProperty`。
-
-### `@sourceFirstAuthor` · FieldID 2376 <a href="#en-field-2376" id="en-field-2376"></a>
-
-Local XML path：`TProperty/@sourceFirstAuthor`；ecoSpold1 mapping：`new`。
-
-| Type | Required | Multiple occurrence |
-| --- | --- | --- |
-| `TBaseString40` | No | No |
-
-Size：40；Multi language：No；Redundant master data：Yes。
-
-Indicates the first author by surname and abbreviated name (e.g., Einstein A.). In case of measurement on site, oral communication, personal written communication and questionnaries ('sourceType'=4, 5, 6, 7) the name of the communicating person is mentioned here.
-
-**XSD structural constraints：** `use="optional"`。
-
-Schema source：[EcoSpold02DataTypes.xsd](original/Schemas/datasets/EcoSpold02DataTypes.xsd)，`TProperty`。
-
-### `comment` · FieldID 2380 <a href="#en-field-2380" id="en-field-2380"></a>
-
-Local XML path：`TProperty/comment`；ecoSpold1 mapping：`new`。
-
-| Type | Required | Multiple occurrence |
-| --- | --- | --- |
-| `TString32000` | No | No |
-
-Size：32000；Multi language：Yes；Redundant master data：No。
-
-A general comment can be made about each individual property of a particular exchange.
-
-**XSD structural constraints：** `minOccurs="0"`，`maxOccurs="unbounded"`。
-
-Schema source：[EcoSpold02DataTypes.xsd](original/Schemas/datasets/EcoSpold02DataTypes.xsd)，`TProperty`。
-
-{% endtab %}
-
-{% endtabs %}
+[提取与查询实践](extraction-practice.md)把数量读取、身份筛选与参考产品归一化连起来；[完整中文格式译表](format-reference.md#appendix-tproperty)用于核对本类型的字段次序、类型和原表标记。原文疑点见[审校记录](translation-review.md)。

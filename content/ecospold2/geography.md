@@ -1,173 +1,63 @@
-# 地理区域（TGeography）
+# 地理区域
 
-源文分组：Geography。本章完整收录 **4 条字段定义**。
+对应官方格式类型：`TGeography`。本篇以文章解释该类型的 4 条字段；复合类型也会说明它们依附在哪个对象上。
 
-XML 位置：`activityDescription/geography`。以 `activityDescription/`、`flowData/`、`modellingAndValidation/` 或 `administrativeInformation/` 开头的位置，均相对于 `/ecoSpold/activityDataset/`；`…` 表示可复用结构。
+## 地理信息描述适用范围，也界定市场范围 <a href="#read-tgeography" id="read-tgeography"></a>
 
-[阅读约定与 XSD 约束](reading-guide.md) · [全部字段索引](field-index.md) · [审校记录](translation-review.md)
+`activityDescription/geography` 采用 `TGeography`。属性 `geographyId` 引用有效地理位置主数据中的详细定义，`geographyContextId` 指定该引用的上下文，省略时使用数据集自身的上下文。元素 `shortname` 是这一地理位置的描述性简称，可用于报告和筛选；它不是替代 UUID 的主数据键。元素 `comment` 提供进一步的地理解释，采用 `TTextAndImage`，可说明边界划分的性质、非行政区域的界定方式以及市场边界的依据。
 
-> 本参考译自官方格式包 v1.0.13（所附 XSD version 为 2.0.13）。必填性和重复性先忠实保留原表，再单列 XSD 结构约束；不自动代表所有后续版本的模式。
+不要把 geography 一律理解为国家。它可表示活动的点位置、移动活动的线，或包含多个具体活动地点的分布式活动及生产组合的区域。对于市场和消费组合，它描述限制跨界进出口的市场边界。读取时可先提取 `shortname` 了解地理范围，再用 `geographyId` 及对应上下文解析主数据，最后结合 `comment` 判断该范围是否与研究对象一致；地理简称本身并不交代全部边界含义。
 
-{% tabs %}
+## 怎样定位、使用与提取
 
-{% tab title="中文" %}
+需要筛选地区或解释市场范围时，使用 geographyId 与有效上下文定位地理主数据，shortname 用作展示。不要把一个全球范围的数据集默认为具体国家；地区的适用解释还要结合 comment。
 
-## 结构说明
+定位路径相对于完整的 `/ecoSpold/activityDataset`：`activityDescription/geography`。其中 `.//` 表示在当前数据集的后代中检索；返回结果会保留实际父路径，以区分不同交换或参数。
 
-分组可重复：否；分组必填：是。
+下载[教学 demo 与读取脚本 ZIP](demo/ecospold2-tutorial-demo.zip)，解压后在同一目录运行下面代码。`read_section.py` 使用 Python 标准库，返回全部匹配节点的属性和完整子节点树；它保留 UUID、原始数值字符串、语言标签和子节点顺序。代码仅展示前两条，变量 `records` 保留全部匹配记录。文件有多个普通数据集时，显式选择 `index`，或逐个遍历；子数据集应先展开继承。
 
-包含过程地理适用范围的信息。地理区域可以是活动所在的点位置、描述移动活动的一条线，或分布式活动或生产组合覆盖的区域；该区域包含多个位于具体地点的活动。对于市场（消费组合），地理区域描述市场边界，跨越这些边界的进口和出口受到限制。
+原表名称前带 `@` 的是 XML 属性，去掉 `@` 后在返回记录的 `attributes` 中取值，例如 `record["attributes"].get("amount")`。没有 `@` 的字段是子元素，在 `children` 中按完整 `tag` 匹配；名称前的 `{http://www.EcoInvent.org/EcoSpold02}` 是命名空间。多语言字段保留多个子节点，`xml:lang` 在属性字典中写为 `{http://www.w3.org/XML/1998/namespace}lang`。更深的字段继续进入相应子节点的 `children`；缺失属性返回 `None`，不要补成零。
 
-### `@geographyId` · FieldID 400 <a href="#field-400" id="field-400"></a>
+```python
+import json
+from read_section import load_dataset, read_section
 
-局部 XML 位置：`TGeography/@geographyId`；ecoSpold1 对照编号：`new`。
+dataset = load_dataset("demo-product.spold", index=0)
+records = read_section(dataset, "TGeography")
+print("匹配节点数：", len(records))
+print(json.dumps(records[:2], ensure_ascii=False, indent=2))
+```
 
-| 类型 | 必填 | 可重复 |
-| --- | --- | --- |
-| `TUuid` | 是 | 否 |
+## 对照 demo 理解读取结果
 
-长度：36；多语言：否；主数据冗余字段：否。
+在 `demo-product.spold` 中实际匹配 **1 个节点**。下面是第一个节点的属性与前两个子节点的精选片段；子节点内部结构和其他节点仍保存在代码的完整返回值中。路径带有同级序号，便于回到原文件定位，序号不是主数据 UUID。
 
-引用有效地点文件，该文件包含详细的地理区域信息。
+```json
+{
+  "path": "/ecoSpold/activityDataset/activityDescription[1]/geography[1]",
+  "attributes": {
+    "geographyId": "a099d998-acea-50db-a416-a5eaeaf6eb23",
+    "geographyContextId": "f71ac544-3bc8-5c15-8ea4-072d907663f1"
+  },
+  "children_excerpt": [
+    {
+      "tag": "{http://www.EcoInvent.org/EcoSpold02}shortname",
+      "attributes": {
+        "{http://www.w3.org/XML/1998/namespace}lang": "zh"
+      },
+      "text": "教学区域（虚构）"
+    },
+    {
+      "tag": "{http://www.EcoInvent.org/EcoSpold02}shortname",
+      "attributes": {
+        "{http://www.w3.org/XML/1998/namespace}lang": "en"
+      },
+      "text": "Teaching region (synthetic)"
+    }
+  ]
+}
+```
 
-**XSD 结构约束：** `use="required"`。
+## 继续阅读
 
-模式出处：[EcoSpold02MetaInformation.xsd](original/Schemas/datasets/EcoSpold02MetaInformation.xsd)，`TGeography`。
-
-### `@geographyContextId` · FieldID 401 <a href="#field-401" id="field-401"></a>
-
-局部 XML 位置：`TGeography/@geographyContextId`；ecoSpold1 对照编号：`new`。
-
-| 类型 | 必填 | 可重复 |
-| --- | --- | --- |
-| `TUuid` | 否 | 否 |
-
-长度：36；多语言：否；主数据冗余字段：否。
-
-引用该地理区域所属的上下文。
-
-如果省略此属性，则改用数据集自身的上下文。
-
-**XSD 结构约束：** `use="optional"`。
-
-模式出处：[EcoSpold02MetaInformation.xsd](original/Schemas/datasets/EcoSpold02MetaInformation.xsd)，`TGeography`。
-
-### `shortname` · FieldID 410 <a href="#field-410" id="field-410"></a>
-
-局部 XML 位置：`TGeography/shortname`；ecoSpold1 对照编号：`662`。
-
-| 类型 | 必填 | 可重复 |
-| --- | --- | --- |
-| `TString40` | 是 | 否 |
-
-长度：40；多语言：是；主数据冗余字段：是。
-
-geographyId 所引用地点的描述性简称，例如 EcoSpold 第 1 版的地区代码。
-
-**XSD 结构约束：** `minOccurs="1"`，`maxOccurs="unbounded"`（未显式声明的值按 XSD 默认值列出）。
-
-模式出处：[EcoSpold02MetaInformation.xsd](original/Schemas/datasets/EcoSpold02MetaInformation.xsd)，`TGeography`。
-
-### `comment` · FieldID 420 <a href="#field-420" id="field-420"></a>
-
-局部 XML 位置：`TGeography/comment`；ecoSpold1 对照编号：`663`。
-
-| 类型 | 必填 | 可重复 |
-| --- | --- | --- |
-| `TTextAndImage` | 否 | 否 |
-
-长度：—；多语言：是；主数据冗余字段：否。
-
-用于进一步解释地理区域的文本和图像字段。尤其在描述区域时，可以说明地理边界划定的性质，特别是在该区域不是行政区的情况下。这里也可提供市场边界的划定依据。文本和图像字段由 text、imageUri 和 variable 元素列表组成。text 和 imageUri 元素可用于描述当前部分，并可按照其 index 属性确定的顺序任意组合。文本变量由 variable 元素定义，可在文本中以 {{variablename}} 形式使用。如果父文本字段包含变量，子活动数据集可以重新定义该变量，同时保持父文本的其余内容不变。这样便可轻松修改子过程中的部分文本。
-
-文本和图像字段由 text、imageUri 和 variable 元素列表组成。text 和 imageUri 元素可用于描述当前部分，并可按照其 index 属性确定的顺序任意组合。文本变量由 variable 元素定义，可在文本中以 {{variablename}} 形式使用。如果父文本字段包含变量，子活动数据集可以重新定义该变量，同时保持父文本的其余内容不变。这样便可轻松修改子过程中的部分文本。
-
-复合类型详情：[ `TTextAndImage` ](text-and-image.md)。
-
-**XSD 结构约束：** `minOccurs="0"`，`maxOccurs="1"`（未显式声明的值按 XSD 默认值列出）。
-
-模式出处：[EcoSpold02MetaInformation.xsd](original/Schemas/datasets/EcoSpold02MetaInformation.xsd)，`TGeography`。
-
-{% endtab %}
-
-{% tab title="English 原文" %}
-
-## Structure
-
-Group multiple occurrences：No；Group required：Yes。
-
-Contains information about the geographic validity of the process. The geography may be the point location of the activity, a line describing a mobile activity, or an area of a distributed activity or of a production mix, containing several located activities. For markets (consumption mixes), the geography describes the market boundaries, across which imports and exports are limited.
-
-### `@geographyId` · FieldID 400 <a href="#en-field-400" id="en-field-400"></a>
-
-Local XML path：`TGeography/@geographyId`；ecoSpold1 mapping：`new`。
-
-| Type | Required | Multiple occurrence |
-| --- | --- | --- |
-| `TUuid` | Yes | No |
-
-Size：36；Multi language：No；Redundant master data：No。
-
-Reference to valid locations file with detailed geography information.
-
-**XSD structural constraints：** `use="required"`。
-
-Schema source：[EcoSpold02MetaInformation.xsd](original/Schemas/datasets/EcoSpold02MetaInformation.xsd)，`TGeography`。
-
-### `@geographyContextId` · FieldID 401 <a href="#en-field-401" id="en-field-401"></a>
-
-Local XML path：`TGeography/@geographyContextId`；ecoSpold1 mapping：`new`。
-
-| Type | Required | Multiple occurrence |
-| --- | --- | --- |
-| `TUuid` | No | No |
-
-Size：36；Multi language：No；Redundant master data：No。
-
-Reference to the context of the geography.
-
-If this attribute is omitted the context of the dataset itself will be used instead.
-
-**XSD structural constraints：** `use="optional"`。
-
-Schema source：[EcoSpold02MetaInformation.xsd](original/Schemas/datasets/EcoSpold02MetaInformation.xsd)，`TGeography`。
-
-### `shortname` · FieldID 410 <a href="#en-field-410" id="en-field-410"></a>
-
-Local XML path：`TGeography/shortname`；ecoSpold1 mapping：`662`。
-
-| Type | Required | Multiple occurrence |
-| --- | --- | --- |
-| `TString40` | Yes | No |
-
-Size：40；Multi language：Yes；Redundant master data：Yes。
-
-Descriptive shortname of the location referenced by geographyId, e.g. the regional codes of EcoSpold version 1.
-
-**XSD structural constraints：** `minOccurs="1"`，`maxOccurs="unbounded"` (undeclared values use XSD defaults)。
-
-Schema source：[EcoSpold02MetaInformation.xsd](original/Schemas/datasets/EcoSpold02MetaInformation.xsd)，`TGeography`。
-
-### `comment` · FieldID 420 <a href="#en-field-420" id="en-field-420"></a>
-
-Local XML path：`TGeography/comment`；ecoSpold1 mapping：`663`。
-
-| Type | Required | Multiple occurrence |
-| --- | --- | --- |
-| `TTextAndImage` | No | No |
-
-Size：—；Multi language：Yes；Redundant master data：No。
-
-Text and image field for further explanations of the geography. Especially for area descriptions, the nature of the geographical delimitation may be given, especially when this is not an administrative area. Justifications for market boundaries may also be provided here.Text and image fields are list of text, imageUri and variable elements. The text and imageUri elements can used to describe the current section and they can be combined in any order given by their index attribute. Text variables are defined by the variable elements, which may be used in the text as {{variablename}}. If a parent text field includes a variable, this variable may be redefined by the child activity dataset while keeping the rest of the parent text intact. This allows easy changes of text parts in child processes.
-
-List of text, imageUri and variable elements. The text and imageUri elements can used to describe the current section and they can be combined in any order given by their index attribute. Text variables are defined by the variable elements, which may be used in the text as {{variablename}}. If a parent text field includes a variable, this variable may be redefined by the child activity dataset while keeping the rest of the parent text intact. This allows easy changes of text parts in child processes.
-
-Complex type details：[ `TTextAndImage` ](text-and-image.md)。
-
-**XSD structural constraints：** `minOccurs="0"`，`maxOccurs="1"` (undeclared values use XSD defaults)。
-
-Schema source：[EcoSpold02MetaInformation.xsd](original/Schemas/datasets/EcoSpold02MetaInformation.xsd)，`TGeography`。
-
-{% endtab %}
-
-{% endtabs %}
+[提取与查询实践](extraction-practice.md)把数量读取、身份筛选与参考产品归一化连起来；[完整中文格式译表](format-reference.md#appendix-tgeography)用于核对本类型的字段次序、类型和原表标记。原文疑点见[审校记录](translation-review.md)。

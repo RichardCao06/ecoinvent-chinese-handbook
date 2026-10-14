@@ -4,7 +4,7 @@
 
 正式网站：[ecoinvent 中文技术文档](https://hiqlcd.gitbook.io/hiqlcd-docs/)。GitBook 已与本仓库的 `main` 分支关联，中文空间映射到 `./content`；站点初次导入及中英标签页预览已验证。
 
-新增 **ecoSpold2 XML 字段参考**：32 个页面，包含以文章讲解的完整教程、22 个字段章节、243 条字段定义、388 个完整中英文本块。教程以三个教学 XML 和实际运行的提取、查询脚本说明如何读数，原始十列表的中文译表放在文末，并提供独立 HTML。字段元数据与官方 HTML 原表一致，XSD 约束和原文歧义分别解释；原逐块审校记录仍为 27 条（12 条待专家复核），教程另有独立叙述和代码审阅。新增后共有 151 个内容页面；原 99 篇支持文档及其审校记录分别计数。 [在线完整教程](https://hiqlcd.gitbook.io/hiqlcd-docs/ecospold2-xml-zi-duan-can-kao/ecospold2)。
+新增 **ecoSpold2 分章阅读与取数教程**：36 个页面，包含五组 22 篇字段文章，完整解释 243 条字段；导读、XML 结构、demo、提取实践和追溯说明分章阅读。每个字段章节提供定位路径、使用方法、可运行读取代码和实际运行的教学 demo 输出。最后一个查询附录保留官方格式表的完整中文翻译，另提供独立 HTML。字段翻译覆盖 388 个源文块；27 条源文注记（12 条待专家复核）与原支持文档分开计数。新增后共有 155 个内容页面，原 99 篇支持文档保留。 [在线教程](https://hiqlcd.gitbook.io/hiqlcd-docs/ecospold2-xml-zi-duan-can-kao/ecospold2)。
 
 首次导出验证：119 个内容页面、6,125 处引用检查通过；99 篇的中文及英文正文共 198 份转换后文本与审阅依据一致（只规范空白），全部 213 个资源哈希一致。GitBook 站点配置通过官方 JSON Schema 校验，并包含实际导入所要求的默认章节标记。在线导入状态为 Synced，公开首页和中英标签页预览已确认；详见 `audit/gitbook-site-verification.json`。
 
@@ -21,7 +21,7 @@ content/
   topics/                    11 个主题目录
   review/                    审校说明、待复核清单及完整记录
   assets/                    原图、PDF、Excel
-  ecospold2/                 字段章节、索引、阅读指南及官方原包
+  ecospold2/                 分章阅读教程、单一查询附录及官方原包
   terminology.md             核心术语对照
   releases.md                版本索引
 audit/                       源稿校验摘要、独立审阅记录与资源哈希
@@ -85,7 +85,7 @@ python3 tools/validate.py
 
 原项目可通过 `scripts/build_gitbook.py` 重新生成本包；它会覆盖生成的正文，请先保留在 GitBook 或仓库中做出的后续修改。
 
-字段参考的审阅依据保存在 `audit/ecospold2/`，原包保存在 `content/ecospold2/original/`。从本仓库根运行 `python3 tools/build_ecospold_fields.py` 可以重建 32 个字段页面（含完整教程及其运行审阅），并恢复 `SUMMARY.md` 中的字段目录；无需重新翻译或访问网络。自动检查也会校验该部分的完整性、原件和最终审阅哈希。若先运行旧的全站导出脚本，请再运行字段构建脚本，并保留首页等页面新增的字段入口。
+字段参考的审阅依据保存在 `audit/ecospold2/`，原包保存在 `content/ecospold2/original/`。从本仓库根运行 `python3 tools/build_ecospold_fields.py` 可以重建 36 个教程页面（含完整教程及其运行审阅），并恢复 `SUMMARY.md` 中的字段目录；无需重新翻译或访问网络。自动检查也会校验该部分的完整性、原件和最终审阅哈希。若先运行旧的全站导出脚本，请再运行字段构建脚本，并保留首页等页面新增的字段入口。
 
 ## 来源与审核
 

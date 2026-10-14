@@ -8,11 +8,13 @@
 
 本页保留 **29 条教程编写注记**，包括已修正问题、模式限定和需数据方进一步澄清的源文问题。它们与原字段参考的 27 条记录有范围重叠，不能相加为独立问题数量。原逐块翻译记录仍见[字段翻译与审校记录](translation-review.md)。
 
+本轮按 XML 结构拆为五组 22 篇字段文章，替换独立表格翻译页。各章增加定位路径、使用说明与实际 demo 读取片段；`read_section.py` 只读取原始属性和节点树，不计算 LCI/LCIA，也不代替 XSD 或语义验证。新增的章节读取测试实际执行全部 22 段代码，并检查多语言、嵌套数量、负输出、缺失结构、多数据集与子数据集拒绝；与原 12 项提取器测试分别记录。
+
 ## 教程注记
 
 ### 1. 待专家复核 · TActivity 135
 
-相关正文：[活动](README.md#read-tactivity)
+相关正文：[活动](activity.md#read-tactivity)
 
 继承深度的父层数定义与地理／时间／情景类型说明之间关系未明确；正文保留原定义及0–3含义，不自行推断父链。
 
@@ -20,7 +22,7 @@
 
 ### 2. 待专家复核 · TActivity 120
 
-相关正文：[活动](README.md#read-tactivity)
+相关正文：[活动](activity.md#read-tactivity)
 
 格式说明的 TTextAndImage 复用段落写 imageUri，官方 XSD 实际元素名为 imageUrl。正文明确区分说明文字与模式标识，未静默改写源文。
 
@@ -28,7 +30,7 @@
 
 ### 3. 待专家复核 · TClassification 300
 
-相关正文：[分类](README.md#read-tclassification)
+相关正文：[分类](classification.md#read-tclassification)
 
 classificationSystem 与 classificationValue 的说明称可选，但完整XSD默认minOccurs=1且HTML表格列为必填。正文并列说明差异。
 
@@ -36,7 +38,7 @@ classificationSystem 与 classificationValue 的说明称可选，但完整XSD�
 
 ### 4. 待专家复核 · TRequiredContextReference 7850
 
-相关正文：[所需上下文引用](README.md#read-trequiredcontextreference)
+相关正文：[所需上下文引用](required-contexts.md#read-trequiredcontextreference)
 
 requiredContextId 说明存在省略时回退，但当前完整XSD将其设为required。正文明确交代矛盾，不将回退说明变为可省略的验证规则。
 
@@ -44,7 +46,7 @@ requiredContextId 说明存在省略时回退，但当前完整XSD将其设为re
 
 ### 5. 已处理／已说明 · TDataGeneratorAndPublication 3560
 
-相关正文：[数据生成者与发布](README.md#read-tdatageneratorandpublication)
+相关正文：[数据生成者与发布](publication.md#read-tdatageneratorandpublication)
 
 759、757及801是有效旧SpoldID引用，已依据XSD在正文解释对应当前fieldId 3550、3520及3110。
 
@@ -52,7 +54,7 @@ requiredContextId 说明存在省略时回退，但当前完整XSD将其设为re
 
 ### 6. 待专家复核 · TDataGeneratorAndPublication 3562
 
-相关正文：[数据生成者与发布](README.md#read-tdatageneratorandpublication)
+相关正文：[数据生成者与发布](publication.md#read-tdatageneratorandpublication)
 
 原文及 TCompanyCode 的文字说明要求 7 个大写字母，但 XSD 仅规定 maxLength=7，没有固定长度和字母模式。
 
@@ -60,7 +62,7 @@ requiredContextId 说明存在省略时回退，但当前完整XSD将其设为re
 
 ### 7. 已处理／已说明 · TActivity 130
 
-相关正文：[活动](README.md#read-tactivity)
+相关正文：[活动](activity.md#read-tactivity)
 
 补明 EcoSpold02.xsd 中子数据集外层容器仍属于普通命名空间，避免将子类型的命名空间误套在容器元素上。
 
@@ -68,7 +70,7 @@ requiredContextId 说明存在省略时回退，但当前完整XSD将其设为re
 
 ### 8. 已处理／已说明 · TDataEntryBy 3403
 
-相关正文：[数据录入者](README.md#read-tdataentryby)
+相关正文：[数据录入者](data-entry.md#read-tdataentryby)
 
 明确默认值来自完整数据模式；子模式未设该默认值，省略时先按继承处理。
 
@@ -76,7 +78,7 @@ requiredContextId 说明存在省略时回退，但当前完整XSD将其设为re
 
 ### 9. 已处理／已说明 · TDataGeneratorAndPublication 3525
 
-相关正文：[数据生成者与发布](README.md#read-tdatageneratorandpublication)
+相关正文：[数据生成者与发布](publication.md#read-tdatageneratorandpublication)
 
 原文网站情况仅写 last visited，不能擅自缩窄为最后访问年份。
 
@@ -84,7 +86,7 @@ requiredContextId 说明存在省略时回退，但当前完整XSD将其设为re
 
 ### 10. 已处理／已说明 · TDataGeneratorAndPublication 3562
 
-相关正文：[数据生成者与发布](README.md#read-tdatageneratorandpublication)
+相关正文：[数据生成者与发布](publication.md#read-tdatageneratorandpublication)
 
 区分文字约定与 TCompanyCode 实際 maxLength=7 约束，不让教程暗示 XSD 强制恰好 7 个字母。
 
@@ -92,7 +94,7 @@ requiredContextId 说明存在省略时回退，但当前完整XSD将其设为re
 
 ### 11. 已处理／已说明 · TFileAttributes 3820
 
-相关正文：[文件属性](README.md#read-tfileattributes)
+相关正文：[文件属性](file-attributes.md#read-tfileattributes)
 
 子模式未设 default=en；澄清完整记录的模式默认值与子差异记录的继承。
 
@@ -100,7 +102,7 @@ requiredContextId 说明存在省略时回退，但当前完整XSD将其设为re
 
 ### 12. 已处理／已说明 · TRequiredContextReference 7810
 
-相关正文：[所需上下文引用](README.md#read-trequiredcontextreference)
+相关正文：[所需上下文引用](required-contexts.md#read-trequiredcontextreference)
 
 补明官方子类型中的 use=optional 与 minOccurs=0，避免把完整数据模式的要求泛化到子差异记录。
 
@@ -108,7 +110,7 @@ requiredContextId 说明存在省略时回退，但当前完整XSD将其设为re
 
 ### 13. 待专家复核 · TActivity 110
 
-相关正文：[活动](README.md#read-tactivity)
+相关正文：[活动](activity.md#read-tactivity)
 
 官方 type=2 文字说明称没有中间交换，但本包完整 TFlowData 对 intermediateExchange 的默认 minOccurs=1；教学结果文件以中间交换保留参考输出并通过模式验证。
 
@@ -116,7 +118,7 @@ requiredContextId 说明存在省略时回退，但当前完整XSD将其设为re
 
 ### 14. 待专家复核 · TParameter 1715
 
-相关正文：[参数](README.md#read-tparameter)
+相关正文：[参数](parameters.md#read-tparameter)
 
 该说明位于 TParameter 下，却将变量名描述为 exchange 的简称，可能沿用了交换字段说明；不能据此认定它仅能引用交换。
 
@@ -124,7 +126,7 @@ requiredContextId 说明存在省略时回退，但当前完整XSD将其设为re
 
 ### 15. 待专家复核 · TImpactIndicatorResult 1820
 
-相关正文：[影响指标结果](README.md#read-timpactindicatorresult)
+相关正文：[影响指标结果](impact-indicators.md#read-timpactindicatorresult)
 
 原文写“对影响类别所属方法的引用”，但 EcoSpold02FlowData.xsd 约第 1039–1048 行明确本字段为 impactCategoryId、类型 TUuid、referenceToComplexType=TImpactMethodCategory，区别于字段 1810 的 impactMethodId（TImpactMethod）。译文忠实保留原文方法措辞，源文说明与引用对象存在矛盾。
 
@@ -132,7 +134,7 @@ requiredContextId 说明存在省略时回退，但当前完整XSD将其设为re
 
 ### 16. 待专家复核 · TParameter 1715
 
-相关正文：[参数](README.md#read-tparameter)
+相关正文：[参数](parameters.md#read-tparameter)
 
 文档要求变量名以字母（a-z）开头，并描述字母、数字、下划线字符规则；EcoSpold02DataTypes.xsd 的 TVariableName 仅声明 maxLength=40 与 pattern=\w\S*（约第 858–862 行），该模式未直接表达与文字说明完全等价的规则。可能另有语义验证或公式解析约束。
 
@@ -140,7 +142,7 @@ requiredContextId 说明存在省略时回退，但当前完整XSD将其设为re
 
 ### 17. 待专家复核 · TIntermediateExchange 1534
 
-相关正文：[中间交换专用字段](README.md#read-tintermediateexchange)
+相关正文：[中间交换专用字段](intermediate-exchanges.md#read-tintermediateexchange)
 
 此说明隶属于 @productionVolumeMathematicalRelation，但原文称公式结果写入 amount，可能为通用说明复制残留。官方 EcoSpold02FlowData.xsd 包含同样说明，同时将产量数值字段定义为 productionVolumeAmount；普通交换数值字段为 amount。仅凭XSD说明无法确认软件实际求值目标。译文保留原文 amount。
 
@@ -148,7 +150,7 @@ requiredContextId 说明存在省略时回退，但当前完整XSD将其设为re
 
 ### 18. 待专家复核 · TIntermediateExchange 1520
 
-相关正文：[中间交换专用字段](README.md#read-tintermediateexchange)
+相关正文：[中间交换专用字段](intermediate-exchanges.md#read-tintermediateexchange)
 
 原表1520选项提示引用另一活动数据集字段105，该字段是activityNameId；官方XSD又将activityLinkId声明为TActivityIndexEntry引用，提示与结构引用对象需核对。叙述按已明确的供应活动链接含义解释，并保留原编号提示，不把不同标识混用。
 
@@ -156,7 +158,7 @@ requiredContextId 说明存在省略时回退，但当前完整XSD将其设为re
 
 ### 19. 待专家复核 · TUncertainty 2100
 
-相关正文：[不确定性](README.md#read-tuncertainty)
+相关正文：[不确定性](uncertainty.md#read-tuncertainty)
 
 原文将 σ 称为 variance（方差），而常见对数正态分布记号以 σ 为底层正态分布标准差、σ²为方差；同组字段则明确为 variance。译文忠实保留原符号及“方差”，不能据此自动将参数平方或开方。
 
@@ -164,7 +166,7 @@ requiredContextId 说明存在省略时回退，但当前完整XSD将其设为re
 
 ### 20. 待专家复核 · TUncertainty 2120
 
-相关正文：[不确定性](README.md#read-tuncertainty)
+相关正文：[不确定性](uncertainty.md#read-tuncertainty)
 
 原文要求从 mostLikelyValue 计算 meanValue，同时禁止在 ecoinvent 上下文使用 mostLikelyValue（#3797）。官方 EcoSpold02DataTypes.xsd 的 triangular 类型却将当前 @mostLikelyValue（fieldId=2122）设为 required；#3797 与当前编号不同，禁令适用对象及与模式必填要求的关系尚不清楚。三角分布均值也不能仅由众数单独确定。正文保留 shall/must not 及 #3797，不擅自撤销禁令。
 
@@ -172,7 +174,7 @@ requiredContextId 说明存在省略时回退，但当前完整XSD将其设为re
 
 ### 21. 待专家复核 · TUncertainty 2140
 
-相关正文：[不确定性](README.md#read-tuncertainty)
+相关正文：[不确定性](uncertainty.md#read-tuncertainty)
 
 原文允许退化条件 a=b，但所列 Shape1 公式含分母 b-a，此条件下会出现除零；原文未说明退化分布如何处理。译文完整保留条件和公式。
 
@@ -180,7 +182,7 @@ requiredContextId 说明存在省略时回退，但当前完整XSD将其设为re
 
 ### 22. 待专家复核 · TUncertainty 2173
 
-相关正文：[不确定性](README.md#read-tuncertainty)
+相关正文：[不确定性](uncertainty.md#read-tuncertainty)
 
 原文仅将旧格式 standardDeviation95 描述为从均值两侧扩展、覆盖总体95%所需的值，未说明它是加性半宽度、乘性因子或其他量，不能一概理解成普通标准差。译文不额外指定计算形式。
 
@@ -188,7 +190,7 @@ requiredContextId 说明存在省略时回退，但当前完整XSD将其设为re
 
 ### 23. 待专家复核 · TUncertainty 2110
 
-相关正文：[不确定性](README.md#read-tuncertainty)
+相关正文：[不确定性](uncertainty.md#read-tuncertainty)
 
 原文将正态分布参数称为 MeanValue 和 Deviation，但官方 XSD 中当前 normal 类型的属性为 meanValue、variance 和 varianceWithPedigreeUncertainty，没有 Deviation。原文的标准差概念说明不等同于当前字段的方差存储约定。
 
@@ -196,7 +198,7 @@ requiredContextId 说明存在省略时回退，但当前完整XSD将其设为re
 
 ### 24. 待专家复核 · TTextAndImage intro
 
-相关正文：[文本与图像](README.md#read-ttextandimage)
+相关正文：[文本与图像](text-and-image.md#read-ttextandimage)
 
 源文开头将图像元素称为 imageUri，后文却称为 imageUrl；相同 imageUri 表述也出现于 TTechnology.510 和 TReview.3340 的复用说明。独立核查官方 Schemas/datasets/EcoSpold02DataTypes.xsd 的 TTextAndImage 定义，实际子元素为 text、imageUrl、variable，而没有 imageUri。译文忠实保留原文两种名称，文档说明与XSD元素定义存在冲突。
 
@@ -204,7 +206,7 @@ requiredContextId 说明存在省略时回退，但当前完整XSD将其设为re
 
 ### 25. 待专家复核 · TUncertainty 2270
 
-相关正文：[不确定性](README.md#read-tuncertainty)
+相关正文：[不确定性](uncertainty.md#read-tuncertainty)
 
 主 HTML 把 pedigreeMatrix 行类型写为 integer，但实际 EcoSpold02DataTypes.xsd 定义的是含五个整数评分属性的匿名复合类型。教程按 XSD 说明容器结构，原始译表应保留原表并提示差异。
 
@@ -212,7 +214,7 @@ requiredContextId 说明存在省略时回退，但当前完整XSD将其设为re
 
 ### 26. 待专家复核 · TUncertainty 2273
 
-相关正文：[不确定性](README.md#read-tuncertainty)
+相关正文：[不确定性](uncertainty.md#read-tuncertainty)
 
 原评分 4 为不足 15 年，评分 5 为超过 15 年，未明确恰好 15 年的分类。教程保留边界并明示缺口，没有自行推断为大于等于。
 
@@ -220,7 +222,7 @@ requiredContextId 说明存在省略时回退，但当前完整XSD将其设为re
 
 ### 27. 待专家复核 · TRepresentativeness 3030
 
-相关正文：[代表性](README.md#read-trepresentativeness)
+相关正文：[代表性](representativeness.md#read-trepresentativeness)
 
 samplingProcedure 的说明混入 TTextAndImage 模板，但 EcoSpold02MetaInformation.xsd 实际将该元素定义为 TString32000，不能包含 text/imageUrl/variable 子元素。教程保留其业务含义，并明确区分文字模板与实际字段类型。
 
@@ -228,7 +230,7 @@ samplingProcedure 的说明混入 TTextAndImage 模板，但 EcoSpold02MetaInfor
 
 ### 28. 待专家复核 · TProperty 2350
 
-相关正文：[属性](README.md#read-tproperty)
+相关正文：[属性](properties.md#read-tproperty)
 
 文字变量规则与 TVariableName 的 maxLength=40、pattern=\w\S* 并非直接等价；教程分别陈述文档规则与 XSD 约束，不从模式单独推断全部公式语言规则。
 
@@ -236,7 +238,7 @@ samplingProcedure 的说明混入 TTextAndImage 模板，但 EcoSpold02MetaInfor
 
 ### 29. 待专家复核 · TUncertainty 2150
 
-相关正文：[不确定性](README.md#read-tuncertainty)
+相关正文：[不确定性](uncertainty.md#read-tuncertainty)
 
 原文及官方 EcoSpold02DataTypes.xsd 注释均说“Absolute values of the values entered here will be used”，继而说将最小值参数加到所有样本。前句未明确绝对值处理是否只适用于 shape/scale，或也涵盖 minValue；模式仅声明三个浮点属性，不提供抽样实现。教程已移除将范围限定到形状、尺度参数的推断。
 

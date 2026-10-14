@@ -1,14 +1,15 @@
 # 活动描述
 
-本组按官方 XML 结构组织。字段章节同时保留中文说明与英文原文。
+本组把相关 XML 结构分为下面的文章章节。每篇先解释字段及其相互关系，再说明使用和提取，最后对照教学 demo。
 
-| 字段章节 | 模式类型 | 字段条目数 |
-| --- | --- | --- |
-| [活动](activity.md) | `TActivity` | 20 |
-| [活动分类](classification.md) | `TClassification` | 4 |
-| [地理区域](geography.md) | `TGeography` | 4 |
-| [技术](technology.md) | `TTechnology` | 2 |
-| [时间范围](time-period.md) | `TTimePeriod` | 4 |
-| [宏观经济情景](macro-economic-scenario.md) | `TMacroEconomicScenario` | 4 |
+[活动](activity.md)：先识别活动，再判断边界与继承
 
-[全部字段索引](field-index.md) · [阅读约定与 XSD 约束](reading-guide.md)
+[活动分类](classification.md)：用分类定位行业，不把名称当作主数据标识
+
+[地理区域](geography.md)：地理信息描述适用范围，也界定市场范围
+
+[技术](technology.md)：技术水平要结合有效年份和地点阅读
+
+[时间范围](time-period.md)：时间段与整段有效性要分开判断
+
+[宏观经济情景](macro-economic-scenario.md)：情景是主数据引用，也可能是子数据集的变化依据

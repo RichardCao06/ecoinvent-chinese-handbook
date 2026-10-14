@@ -1,13 +1,32 @@
 {
-  "pages": 119,
+  "pages": 155,
   "articles": 99,
   "topics": 11,
   "source_blocks": 4583,
   "assets": 213,
-  "references": 6125,
+  "references": 6433,
   "review_annotations": 170,
   "pending_expert_review": 40,
   "snapshot_hashes_checked": true,
   "errors": [],
-  "gitbook_import_preview_verified": false
+  "gitbook_import_preview_verified": false,
+  "ecospold2_fields": {
+    "sections": 22,
+    "fields": 243,
+    "source_blocks": 388,
+    "pages": 36,
+    "original_files": 51,
+    "review_annotations": 27,
+    "pending_expert_review": 12,
+    "errors": []
+  },
+  "ecospold2_tutorial": {
+    "narrative_fields": 243,
+    "translated_table_fields": 243,
+    "translated_description_rows": 333,
+    "chapter_pages": 22,
+    "appendix_characters": 97686,
+    "tables_only_in_appendix": true,
+    "errors": []
+  }
 }

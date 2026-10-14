@@ -1,165 +1,37 @@
-# 活动分类（TClassification）
+# 活动分类
 
-源文分组：Classification。本章完整收录 **4 条字段定义**。
+对应官方格式类型：`TClassification`。本篇以文章解释该类型的 4 条字段；复合类型也会说明它们依附在哪个对象上。
 
-XML 位置：`activityDescription/classification`。以 `activityDescription/`、`flowData/`、`modellingAndValidation/` 或 `administrativeInformation/` 开头的位置，均相对于 `/ecoSpold/activityDataset/`；`…` 表示可复用结构。
+## 用分类定位行业，不把名称当作主数据标识 <a href="#read-tclassification" id="read-tclassification"></a>
 
-[阅读约定与 XSD 约束](reading-guide.md) · [全部字段索引](field-index.md) · [审校记录](translation-review.md)
+活动描述中的 `classification` 可重复出现，每一项采用 `TClassification`，把一个分类体系与其中的类别配对。元素 `classificationSystem` 给出体系名称，如原文示例 `ISIC Rev. 4`；`classificationValue` 给出活动在该体系中所属的类别。它们便于展示和筛选，但机器解析的主数据引用是属性 `classificationId`，指向有效分类列表中的分类值。`classificationContextId` 指定这个分类所属上下文，省略时采用数据集自身的上下文。取数时应逐项保留体系、类别和引用标识，不能假定只有一个分类，也不能将不同体系中看起来相同的类别文本合并为同一条主数据。
 
-> 本参考译自官方格式包 v1.0.13（所附 XSD version 为 2.0.13）。必填性和重复性先忠实保留原表，再单列 XSD 结构约束；不自动代表所有后续版本的模式。
+这里有一处需明确交代的原文差异：字段说明把 `classificationSystem` 和 `classificationValue` 称为可选纯文本值，而本版完整数据 XSD 将两个元素设为至少出现一次，官方 HTML 表格也标为必填。阅读已有文本与校验文件结构是不同操作；校验当前完整数据时应按所用 XSD 执行，不能根据说明中的“可选”自行删除元素。子数据集另有差异模式，其规则还需结合继承处理。
 
-{% tabs %}
+## 怎样定位、使用与提取
 
-{% tab title="中文" %}
+需要按行业或某个分类体系筛选活动时，把同一 classification 节点内的 classificationSystem 和 classificationValue 成对保存。不同体系的同名类别不能直接合并；应连同相应标识和上下文核对。这个类型也用于中间交换的产品分类，位置为 flowData/intermediateExchange/classification；返回的父路径用于区分活动分类与产品分类，按行业筛选活动时只取 activityDescription 下的记录。
 
-## 结构说明
+定位路径相对于完整的 `/ecoSpold/activityDataset`：`activityDescription/classification`；`flowData/intermediateExchange/classification`。其中 `.//` 表示在当前数据集的后代中检索；返回结果会保留实际父路径，以区分不同交换或参数。
 
-分组可重复：是；分组必填：否。
+下载[教学 demo 与读取脚本 ZIP](demo/ecospold2-tutorial-demo.zip)，解压后在同一目录运行下面代码。`read_section.py` 使用 Python 标准库，返回全部匹配节点的属性和完整子节点树；它保留 UUID、原始数值字符串、语言标签和子节点顺序。代码仅展示前两条，变量 `records` 保留全部匹配记录。文件有多个普通数据集时，显式选择 `index`，或逐个遍历；子数据集应先展开继承。
 
-包含用于指定活动分类的分类配对信息。
+原表名称前带 `@` 的是 XML 属性，去掉 `@` 后在返回记录的 `attributes` 中取值，例如 `record["attributes"].get("amount")`。没有 `@` 的字段是子元素，在 `children` 中按完整 `tag` 匹配；名称前的 `{http://www.EcoInvent.org/EcoSpold02}` 是命名空间。多语言字段保留多个子节点，`xml:lang` 在属性字典中写为 `{http://www.w3.org/XML/1998/namespace}lang`。更深的字段继续进入相应子节点的 `children`；缺失属性返回 `None`，不要补成零。
 
-### `classificationSystem` · FieldID 300 <a href="#field-300" id="field-300"></a>
+```python
+import json
+from read_section import load_dataset, read_section
 
-局部 XML 位置：`TClassification/classificationSystem`；ecoSpold1 对照编号：`501`。
+dataset = load_dataset("demo-product.spold", index=0)
+records = read_section(dataset, "TClassification")
+print("匹配节点数：", len(records))
+print(json.dumps(records[:2], ensure_ascii=False, indent=2))
+```
 
-| 类型 | 必填 | 可重复 |
-| --- | --- | --- |
-| `TString255` | 是 | 否 |
+## 对照 demo 理解读取结果
 
-长度：255；多语言：是；主数据冗余字段：是。
+`demo-product.spold` 未提供该类节点，因此这个例子返回空列表 `[]`。这表示当前教学文件没有记录该信息，不能填成数值零，也不说明实际数据集永远没有此字段。换成包含该结构的完整文件后，代码会读取其实际属性和子节点；本章字段语义仍适用。
 
-所用分类体系的名称，例如 ISIC Rev. 4。这是所引用分类体系（字段 320）的可选纯文本值。
+## 继续阅读
 
-**XSD 结构约束：** `minOccurs="1"`，`maxOccurs="unbounded"`（未显式声明的值按 XSD 默认值列出）。
-
-模式出处：[EcoSpold02DataTypes.xsd](original/Schemas/datasets/EcoSpold02DataTypes.xsd)，`TClassification`。
-
-### `classificationValue` · FieldID 310 <a href="#field-310" id="field-310"></a>
-
-局部 XML 位置：`TClassification/classificationValue`；ecoSpold1 对照编号：`new`。
-
-| 类型 | 必填 | 可重复 |
-| --- | --- | --- |
-| `TString120` | 是 | 否 |
-
-长度：120；多语言：是；主数据冗余字段：是。
-
-活动在所指定分类体系中所属的类别。这是所引用分类值（字段 320）的可选纯文本值。
-
-**XSD 结构约束：** `minOccurs="1"`，`maxOccurs="unbounded"`（未显式声明的值按 XSD 默认值列出）。
-
-模式出处：[EcoSpold02DataTypes.xsd](original/Schemas/datasets/EcoSpold02DataTypes.xsd)，`TClassification`。
-
-### `@classificationId` · FieldID 320 <a href="#field-320" id="field-320"></a>
-
-局部 XML 位置：`TClassification/@classificationId`；ecoSpold1 对照编号：`new`。
-
-| 类型 | 必填 | 可重复 |
-| --- | --- | --- |
-| `TUuid` | 是 | 否 |
-
-长度：36；多语言：否；主数据冗余字段：否。
-
-对分类体系中某分类值的引用。该值必须在有效分类列表中定义（见字段 5160）。
-
-**XSD 结构约束：** `use="required"`。
-
-模式出处：[EcoSpold02DataTypes.xsd](original/Schemas/datasets/EcoSpold02DataTypes.xsd)，`TClassification`。
-
-### `@classificationContextId` · FieldID 321 <a href="#field-321" id="field-321"></a>
-
-局部 XML 位置：`TClassification/@classificationContextId`；ecoSpold1 对照编号：`new`。
-
-| 类型 | 必填 | 可重复 |
-| --- | --- | --- |
-| `TUuid` | 否 | 否 |
-
-长度：36；多语言：否；主数据冗余字段：否。
-
-对分类所属上下文的引用。
-
-若省略此属性，则改用数据集自身的上下文。
-
-**XSD 结构约束：** `use="optional"`。
-
-模式出处：[EcoSpold02DataTypes.xsd](original/Schemas/datasets/EcoSpold02DataTypes.xsd)，`TClassification`。
-
-{% endtab %}
-
-{% tab title="English 原文" %}
-
-## Structure
-
-Group multiple occurrences：Yes；Group required：No。
-
-Contains classification pairs to specify the activity.
-
-### `classificationSystem` · FieldID 300 <a href="#en-field-300" id="en-field-300"></a>
-
-Local XML path：`TClassification/classificationSystem`；ecoSpold1 mapping：`501`。
-
-| Type | Required | Multiple occurrence |
-| --- | --- | --- |
-| `TString255` | Yes | No |
-
-Size：255；Multi language：Yes；Redundant master data：Yes。
-
-The name of the classification system used, e.g. ISIC Rev. 4. This is an optional plaintext value of the referenced classification system (field 320).
-
-**XSD structural constraints：** `minOccurs="1"`，`maxOccurs="unbounded"` (undeclared values use XSD defaults)。
-
-Schema source：[EcoSpold02DataTypes.xsd](original/Schemas/datasets/EcoSpold02DataTypes.xsd)，`TClassification`。
-
-### `classificationValue` · FieldID 310 <a href="#en-field-310" id="en-field-310"></a>
-
-Local XML path：`TClassification/classificationValue`；ecoSpold1 mapping：`new`。
-
-| Type | Required | Multiple occurrence |
-| --- | --- | --- |
-| `TString120` | Yes | No |
-
-Size：120；Multi language：Yes；Redundant master data：Yes。
-
-The class that the activity belongs to within the specified classification system.  This is an optional plaintext value of the referenced classification value (field 320).
-
-**XSD structural constraints：** `minOccurs="1"`，`maxOccurs="unbounded"` (undeclared values use XSD defaults)。
-
-Schema source：[EcoSpold02DataTypes.xsd](original/Schemas/datasets/EcoSpold02DataTypes.xsd)，`TClassification`。
-
-### `@classificationId` · FieldID 320 <a href="#en-field-320" id="en-field-320"></a>
-
-Local XML path：`TClassification/@classificationId`；ecoSpold1 mapping：`new`。
-
-| Type | Required | Multiple occurrence |
-| --- | --- | --- |
-| `TUuid` | Yes | No |
-
-Size：36；Multi language：No；Redundant master data：No。
-
-Reference to the value of a classification system. Must be defined in list of valid classifications (see field 5160).
-
-**XSD structural constraints：** `use="required"`。
-
-Schema source：[EcoSpold02DataTypes.xsd](original/Schemas/datasets/EcoSpold02DataTypes.xsd)，`TClassification`。
-
-### `@classificationContextId` · FieldID 321 <a href="#en-field-321" id="en-field-321"></a>
-
-Local XML path：`TClassification/@classificationContextId`；ecoSpold1 mapping：`new`。
-
-| Type | Required | Multiple occurrence |
-| --- | --- | --- |
-| `TUuid` | No | No |
-
-Size：36；Multi language：No；Redundant master data：No。
-
-Reference to the context of the classification.
-
-If this attribute is omitted the context of the dataset itself will be used instead.
-
-**XSD structural constraints：** `use="optional"`。
-
-Schema source：[EcoSpold02DataTypes.xsd](original/Schemas/datasets/EcoSpold02DataTypes.xsd)，`TClassification`。
-
-{% endtab %}
-
-{% endtabs %}
+[提取与查询实践](extraction-practice.md)把数量读取、身份筛选与参考产品归一化连起来；[完整中文格式译表](format-reference.md#appendix-tclassification)用于核对本类型的字段次序、类型和原表标记。原文疑点见[审校记录](translation-review.md)。

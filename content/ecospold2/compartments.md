@@ -1,177 +1,62 @@
-# 区室与子区室（TCompartment）
+# 区室与子区室
 
-源文分组：TCompartment。本章完整收录 **4 条字段定义**。
+对应官方格式类型：`TCompartment`。本篇以文章解释该类型的 4 条字段；复合类型也会说明它们依附在哪个对象上。
 
-XML 位置：`…/elementaryExchange/compartment`。以 `activityDescription/`、`flowData/`、`modellingAndValidation/` 或 `administrativeInformation/` 开头的位置，均相对于 `/ecoSpold/activityDataset/`；`…` 表示可复用结构。
+## 区室配对决定环境流的具体位置 <a href="#read-tcompartment" id="read-tcompartment"></a>
 
-[阅读约定与 XSD 约束](reading-guide.md) · [全部字段索引](field-index.md) · [审校记录](translation-review.md)
+`TCompartment` 用来说明一条基本流属于哪一组区室与子区室。“区室”既可表达环境接收介质，也可用于自然资源分类，因此本文采用已交叉审阅确定的“区室／子区室”术语。内部的 `compartment` 和 `subcompartment` 是必需的多语言名称，提供所引用配对的纯文本表示；前者是区室名，后者是更细的子区室名。原表分别将它们追溯到字段 5315 和 5325，不应把这些跨表编号误读成该数据集里的交换编号。
 
-> 本参考译自官方格式包 v1.0.13（所附 XSD version 为 2.0.13）。必填性和重复性先忠实保留原表，再单列 XSD 结构约束；不自动代表所有后续版本的模式。
+必需的 `subcompartmentId` 是配对引用的 UUID，必须在有效区室清单中定义，原表指向字段 5330。可选的 `subcompartmentContextId` 指明子区室所属上下文，省略时使用数据集自身上下文。因而读数时应把配对标识及上下文与显示名称一起保存：显示名称有助于理解，主数据引用用于一致匹配。外层基本流的 `compartment` 元素与内层区室名称的 `compartment` 元素同名，但处于不同结构位置；提取时应按层级识别，避免把整个配对结构当成一段普通文字。
 
-{% tabs %}
+## 怎样定位、使用与提取
 
-{% tab title="中文" %}
+要统计某环境介质的排放，定位 elementaryExchange/compartment，配对读取 compartment 与 subcompartment。提取时保留外层基本流的 UUID、单位与方向；区室节点本身没有一笔可加入总量的交换 amount。
 
-## 结构说明
+定位路径相对于完整的 `/ecoSpold/activityDataset`：`flowData/elementaryExchange/compartment`。其中 `.//` 表示在当前数据集的后代中检索；返回结果会保留实际父路径，以区分不同交换或参数。
 
-分组可重复：否；分组必填：否。
+下载[教学 demo 与读取脚本 ZIP](demo/ecospold2-tutorial-demo.zip)，解压后在同一目录运行下面代码。`read_section.py` 使用 Python 标准库，返回全部匹配节点的属性和完整子节点树；它保留 UUID、原始数值字符串、语言标签和子节点顺序。代码仅展示前两条，变量 `records` 保留全部匹配记录。文件有多个普通数据集时，显式选择 `index`，或逐个遍历；子数据集应先展开继承。
 
-包含用于指定交换的区室配对。
+原表名称前带 `@` 的是 XML 属性，去掉 `@` 后在返回记录的 `attributes` 中取值，例如 `record["attributes"].get("amount")`。没有 `@` 的字段是子元素，在 `children` 中按完整 `tag` 匹配；名称前的 `{http://www.EcoInvent.org/EcoSpold02}` 是命名空间。多语言字段保留多个子节点，`xml:lang` 在属性字典中写为 `{http://www.w3.org/XML/1998/namespace}lang`。更深的字段继续进入相应子节点的 `children`；缺失属性返回 `None`，不要补成零。
 
-### `compartment` · FieldID 330 <a href="#field-330" id="field-330"></a>
+```python
+import json
+from read_section import load_dataset, read_section
 
-局部 XML 位置：`TCompartment/compartment`；ecoSpold1 对照编号：`new`。
+dataset = load_dataset("demo-product.spold", index=0)
+records = read_section(dataset, "TCompartment")
+print("匹配节点数：", len(records))
+print(json.dumps(records[:2], ensure_ascii=False, indent=2))
+```
 
-| 类型 | 必填 | 可重复 |
-| --- | --- | --- |
-| `TCompartmentName` | 是 | 否 |
+## 对照 demo 理解读取结果
 
-长度：40；多语言：是；主数据冗余字段：是。
+在 `demo-product.spold` 中实际匹配 **4 个节点**。下面是第一个节点的属性与前两个子节点的精选片段；子节点内部结构和其他节点仍保存在代码的完整返回值中。路径带有同级序号，便于回到原文件定位，序号不是主数据 UUID。
 
-区室名称。这是所引用区室（字段 5315）的纯文本值。
+```json
+{
+  "path": "/ecoSpold/activityDataset/flowData[1]/elementaryExchange[1]/compartment[1]",
+  "attributes": {
+    "subcompartmentId": "9bfcfd12-1b84-56cf-8bd8-1abc71a30268"
+  },
+  "children_excerpt": [
+    {
+      "tag": "{http://www.EcoInvent.org/EcoSpold02}compartment",
+      "attributes": {
+        "{http://www.w3.org/XML/1998/namespace}lang": "zh"
+      },
+      "text": "自然资源"
+    },
+    {
+      "tag": "{http://www.EcoInvent.org/EcoSpold02}compartment",
+      "attributes": {
+        "{http://www.w3.org/XML/1998/namespace}lang": "en"
+      },
+      "text": "natural resource"
+    }
+  ]
+}
+```
 
-**XSD 结构约束：** `minOccurs="1"`，`maxOccurs="unbounded"`（未显式声明的值按 XSD 默认值列出）。
+## 继续阅读
 
-模式出处：[EcoSpold02DataTypes.xsd](original/Schemas/datasets/EcoSpold02DataTypes.xsd)，`TCompartment`。
-
-### `subcompartment` · FieldID 340 <a href="#field-340" id="field-340"></a>
-
-局部 XML 位置：`TCompartment/subcompartment`；ecoSpold1 对照编号：`new`。
-
-| 类型 | 必填 | 可重复 |
-| --- | --- | --- |
-| `TCompartmentName` | 是 | 否 |
-
-长度：40；多语言：是；主数据冗余字段：是。
-
-子区室名称。这是所引用子区室（字段 5325）的纯文本值。
-
-**XSD 结构约束：** `minOccurs="1"`，`maxOccurs="unbounded"`（未显式声明的值按 XSD 默认值列出）。
-
-模式出处：[EcoSpold02DataTypes.xsd](original/Schemas/datasets/EcoSpold02DataTypes.xsd)，`TCompartment`。
-
-### `@subcompartmentId` · FieldID 350 <a href="#field-350" id="field-350"></a>
-
-局部 XML 位置：`TCompartment/@subcompartmentId`；ecoSpold1 对照编号：`new`。
-
-| 类型 | 必填 | 可重复 |
-| --- | --- | --- |
-| `TUuid` | 是 | 否 |
-
-长度：36；多语言：否；主数据冗余字段：否。
-
-引用区室／子区室配对。该配对必须在有效区室列表中定义（见字段 5330）。
-
-**XSD 结构约束：** `use="required"`。
-
-模式出处：[EcoSpold02DataTypes.xsd](original/Schemas/datasets/EcoSpold02DataTypes.xsd)，`TCompartment`。
-
-### `@subcompartmentContextId` · FieldID 351 <a href="#field-351" id="field-351"></a>
-
-局部 XML 位置：`TCompartment/@subcompartmentContextId`；ecoSpold1 对照编号：`new`。
-
-| 类型 | 必填 | 可重复 |
-| --- | --- | --- |
-| `TUuid` | 否 | 否 |
-
-长度：36；多语言：否；主数据冗余字段：否。
-
-引用该子区室所属的上下文。
-
-如果省略此属性，则改用数据集自身的上下文。
-
-**XSD 结构约束：** `use="optional"`。
-
-模式出处：[EcoSpold02DataTypes.xsd](original/Schemas/datasets/EcoSpold02DataTypes.xsd)，`TCompartment`。
-
-{% endtab %}
-
-{% tab title="English 原文" %}
-
-## Structure
-
-Group multiple occurrences：No；Group required：No。
-
-Contains compartment pairs to specify an exchange.
-
-### `compartment` · FieldID 330 <a href="#en-field-330" id="en-field-330"></a>
-
-Local XML path：`TCompartment/compartment`；ecoSpold1 mapping：`new`。
-
-| Type | Required | Multiple occurrence |
-| --- | --- | --- |
-| `TCompartmentName` | Yes | No |
-
-Size：40；Multi language：Yes；Redundant master data：Yes。
-
-The name of the compartment.This is the plaintext value of the referenced compartment (field 5315).
-
-**XSD structural constraints：** `minOccurs="1"`，`maxOccurs="unbounded"` (undeclared values use XSD defaults)。
-
-Schema source：[EcoSpold02DataTypes.xsd](original/Schemas/datasets/EcoSpold02DataTypes.xsd)，`TCompartment`。
-
-### `subcompartment` · FieldID 340 <a href="#en-field-340" id="en-field-340"></a>
-
-Local XML path：`TCompartment/subcompartment`；ecoSpold1 mapping：`new`。
-
-| Type | Required | Multiple occurrence |
-| --- | --- | --- |
-| `TCompartmentName` | Yes | No |
-
-Size：40；Multi language：Yes；Redundant master data：Yes。
-
-The name of the subcompartment.This is the plaintext value of the referenced subcompartment (field 5325).
-
-**XSD structural constraints：** `minOccurs="1"`，`maxOccurs="unbounded"` (undeclared values use XSD defaults)。
-
-Schema source：[EcoSpold02DataTypes.xsd](original/Schemas/datasets/EcoSpold02DataTypes.xsd)，`TCompartment`。
-
-### `@subcompartmentId` · FieldID 350 <a href="#en-field-350" id="en-field-350"></a>
-
-Local XML path：`TCompartment/@subcompartmentId`；ecoSpold1 mapping：`new`。
-
-| Type | Required | Multiple occurrence |
-| --- | --- | --- |
-| `TUuid` | Yes | No |
-
-Size：36；Multi language：No；Redundant master data：No。
-
-Reference to the compartment/subcompartment pair. Must be defined in list of valid compartments (see field 5330).
-
-**XSD structural constraints：** `use="required"`。
-
-Schema source：[EcoSpold02DataTypes.xsd](original/Schemas/datasets/EcoSpold02DataTypes.xsd)，`TCompartment`。
-
-### `@subcompartmentContextId` · FieldID 351 <a href="#en-field-351" id="en-field-351"></a>
-
-Local XML path：`TCompartment/@subcompartmentContextId`；ecoSpold1 mapping：`new`。
-
-| Type | Required | Multiple occurrence |
-| --- | --- | --- |
-| `TUuid` | No | No |
-
-Size：36；Multi language：No；Redundant master data：No。
-
-Reference to the context of the subcompartment
-
-If this attribute is omitted the context of the dataset itself will be used instead.
-
-**XSD structural constraints：** `use="optional"`。
-
-Schema source：[EcoSpold02DataTypes.xsd](original/Schemas/datasets/EcoSpold02DataTypes.xsd)，`TCompartment`。
-
-{% endtab %}
-
-{% endtabs %}
-
-## 翻译与审校注记
-
-- **已处理／已说明 · `TCompartment.intro.0`**：将 compartment/subcompartment 统一为站内数据结构用语“区室／子区室”；这些分类不仅表示空气、水、土壤等环境介质，还可包含自然资源区室。 已修正术语，保留全部 XML 标识与引用编号。
-
-- **已处理／已说明 · `TCompartment.330.description.0`**：将 compartment/subcompartment 统一为站内数据结构用语“区室／子区室”；这些分类不仅表示空气、水、土壤等环境介质，还可包含自然资源区室。 已修正术语，保留全部 XML 标识与引用编号。
-
-- **已处理／已说明 · `TCompartment.340.description.0`**：将 compartment/subcompartment 统一为站内数据结构用语“区室／子区室”；这些分类不仅表示空气、水、土壤等环境介质，还可包含自然资源区室。 已修正术语，保留全部 XML 标识与引用编号。
-
-- **已处理／已说明 · `TCompartment.350.description.0`**：将 compartment/subcompartment 统一为站内数据结构用语“区室／子区室”；这些分类不仅表示空气、水、土壤等环境介质，还可包含自然资源区室。 已修正术语，保留全部 XML 标识与引用编号。
-
-- **已处理／已说明 · `TCompartment.351.description.0`**：将 compartment/subcompartment 统一为站内数据结构用语“区室／子区室”；这些分类不仅表示空气、水、土壤等环境介质，还可包含自然资源区室。 已修正术语，保留全部 XML 标识与引用编号。
+[提取与查询实践](extraction-practice.md)把数量读取、身份筛选与参考产品归一化连起来；[完整中文格式译表](format-reference.md#appendix-tcompartment)用于核对本类型的字段次序、类型和原表标记。原文疑点见[审校记录](translation-review.md)。

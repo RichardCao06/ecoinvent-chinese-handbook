@@ -1,393 +1,69 @@
-# 影响指标结果（TImpactIndicatorResult）
+# 影响指标结果
 
-源文分组：Impact Indicator Results。本章完整收录 **11 条字段定义**。
+对应官方格式类型：`TImpactIndicatorResult`。本篇以文章解释该类型的 11 条字段；复合类型也会说明它们依附在哪个对象上。
 
-XML 位置：`flowData/impactIndicator`。以 `activityDescription/`、`flowData/`、`modellingAndValidation/` 或 `administrativeInformation/` 开头的位置，均相对于 `/ecoSpold/activityDataset/`；`…` 表示可复用结构。
+## 影响评价结果不是一条环境排放 <a href="#read-timpactindicatorresult" id="read-timpactindicatorresult"></a>
 
-[阅读约定与 XSD 约束](reading-guide.md) · [全部字段索引](field-index.md) · [审校记录](translation-review.md)
+`TImpactIndicatorResult` 保存已经计算出的影响指标结果。它的必需字段 `amount` 是指标值，不是某种污染物的排放量，也不是未表征的资源消耗量；即使字段名与交换数量相同，读数含义也由所在类型决定。提取 LCIA 结果时，需要同时保留方法、类别、指标和单位，不能只取出一列数值，也不能把这些结果与基本流交换相加。
 
-> 本参考译自官方格式包 v1.0.13（所附 XSD version 为 2.0.13）。必填性和重复性先忠实保留原表，再单列 XSD 结构约束；不自动代表所有后续版本的模式。
+一条结果包含三层必需的主数据标识。`impactMethodId` 引用影响评价方法；`impactCategoryId` 按 XSD 引用方法中的影响类别；`impactIndicatorId` 引用具体影响指标。它们分别回答采用什么方法、结果属于什么类别、使用什么指标。这些 ID 均为 UUID，不能因显示名称近似而互相替代。原表字段 1820 的说明写作“对影响类别所属方法的引用”，但其 XSD 引用对象为 `TImpactMethodCategory`，与 `impactMethodId` 的 `TImpactMethod` 不同；这项源文矛盾已在审阅中记录，此处明确区分实际的类别引用与方法引用，没有改写原表译文。
 
-{% hint style="warning" %}
-本章含原文疑点；请阅读文末审校注记，尤其不要据此擅自修正字段名或数值定义。
-{% endhint %}
+可选的 `impactMethodContextId`、`impactCategoryContextId` 和 `impactIndicatorContextId` 分别指定方法、类别和指标主数据所在上下文，任何一个省略时，都使用数据集自身的上下文。结果也包含便于阅读的必需多语言文本：`impactMethodName` 为方法名称，`impactCategoryName` 为类别名称，`name` 为指标名称，`unitName` 为指标值的单位名称。选择语言时应按 `xml:lang` 读取这些名称，不应把多语言版本当成多条独立结果。
 
-{% tabs %}
+因此，读 LCIA 结果的一条可靠路径，是先用方法、类别和指标的标识及上下文确定这条结果的身份，再把 `amount` 与 `unitName` 配对，最后核对活动、产品和系统模型等外部背景及参考数量基准。这个类型自身没有交换的 `inputGroup`、`outputGroup`，也没有为结果另列 `unitId`；不能照搬读取排放交换的字段路径。不同方法、不同指标、不同单位或不同参考基准的结果，应先确认可比性，不能只因中文名称相似就合并或比较。
 
-{% tab title="中文" %}
+## 怎样定位、使用与提取
 
-## 结构说明
+要拿已有碳足迹等结果，读取 impactIndicator，以方法、类别、指标三层 UUID 及有效上下文筛选，再保留 amount 与 unitName。该类型没有独立 unitId 字段，不能凭名称补出 UUID；文件没提供指标时应返回缺失，不能用 CO2 质量冒充影响结果。
 
-分组可重复：是；分组必填：否。
+定位路径相对于完整的 `/ecoSpold/activityDataset`：`flowData/impactIndicator`。其中 `.//` 表示在当前数据集的后代中检索；返回结果会保留实际父路径，以区分不同交换或参数。
 
-计算得到的影响指标。
+下载[教学 demo 与读取脚本 ZIP](demo/ecospold2-tutorial-demo.zip)，解压后在同一目录运行下面代码。`read_section.py` 使用 Python 标准库，返回全部匹配节点的属性和完整子节点树；它保留 UUID、原始数值字符串、语言标签和子节点顺序。代码仅展示前两条，变量 `records` 保留全部匹配记录。文件有多个普通数据集时，显式选择 `index`，或逐个遍历；子数据集应先展开继承。
 
-### `@impactIndicatorId` · FieldID 1800 <a href="#field-1800" id="field-1800"></a>
+原表名称前带 `@` 的是 XML 属性，去掉 `@` 后在返回记录的 `attributes` 中取值，例如 `record["attributes"].get("amount")`。没有 `@` 的字段是子元素，在 `children` 中按完整 `tag` 匹配；名称前的 `{http://www.EcoInvent.org/EcoSpold02}` 是命名空间。多语言字段保留多个子节点，`xml:lang` 在属性字典中写为 `{http://www.w3.org/XML/1998/namespace}lang`。更深的字段继续进入相应子节点的 `children`；缺失属性返回 `None`，不要补成零。
 
-局部 XML 位置：`TImpactIndicatorResult/@impactIndicatorId`；ecoSpold1 对照编号：`new`。
+```python
+import json
+from read_section import load_dataset, read_section
 
-| 类型 | 必填 | 可重复 |
-| --- | --- | --- |
-| `TUuid` | 是 | 否 |
+dataset = load_dataset("demo-lcia.spold", index=0)
+records = read_section(dataset, "TImpactIndicatorResult")
+print("匹配节点数：", len(records))
+print(json.dumps(records[:2], ensure_ascii=False, indent=2))
+```
 
-长度：36；多语言：否；主数据冗余字段：否。
+## 对照 demo 理解读取结果
 
-对影响指标的引用。
+在 `demo-lcia.spold` 中实际匹配 **1 个节点**。下面是第一个节点的属性与前两个子节点的精选片段；子节点内部结构和其他节点仍保存在代码的完整返回值中。路径带有同级序号，便于回到原文件定位，序号不是主数据 UUID。
 
-**XSD 结构约束：** `use="required"`。
+```json
+{
+  "path": "/ecoSpold/activityDataset/flowData[1]/impactIndicator[1]",
+  "attributes": {
+    "impactIndicatorId": "9ce9802d-268d-5ac0-af08-ffca6dc91aa2",
+    "impactMethodId": "496741dc-72ec-5f95-bedb-078512fde969",
+    "impactCategoryId": "07a7bfca-c863-5fd0-a2bf-24aa3af0d959",
+    "amount": "13.9"
+  },
+  "children_excerpt": [
+    {
+      "tag": "{http://www.EcoInvent.org/EcoSpold02}impactMethodName",
+      "attributes": {
+        "{http://www.w3.org/XML/1998/namespace}lang": "zh"
+      },
+      "text": "教学方法（非官方）"
+    },
+    {
+      "tag": "{http://www.EcoInvent.org/EcoSpold02}impactMethodName",
+      "attributes": {
+        "{http://www.w3.org/XML/1998/namespace}lang": "en"
+      },
+      "text": "Teaching method (synthetic, unofficial)"
+    }
+  ]
+}
+```
 
-模式出处：[EcoSpold02FlowData.xsd](original/Schemas/datasets/EcoSpold02FlowData.xsd)，`TImpactIndicatorResult`。
+## 继续阅读
 
-### `@impactIndicatorContextId` · FieldID 1801 <a href="#field-1801" id="field-1801"></a>
-
-局部 XML 位置：`TImpactIndicatorResult/@impactIndicatorContextId`；ecoSpold1 对照编号：`new`。
-
-| 类型 | 必填 | 可重复 |
-| --- | --- | --- |
-| `TUuid` | 否 | 否 |
-
-长度：36；多语言：否；主数据冗余字段：否。
-
-对影响指标所属上下文的引用。若省略此属性，则改用数据集自身的上下文。
-
-**XSD 结构约束：** `use="optional"`。
-
-模式出处：[EcoSpold02FlowData.xsd](original/Schemas/datasets/EcoSpold02FlowData.xsd)，`TImpactIndicatorResult`。
-
-### `@impactMethodId` · FieldID 1810 <a href="#field-1810" id="field-1810"></a>
-
-局部 XML 位置：`TImpactIndicatorResult/@impactMethodId`；ecoSpold1 对照编号：`new`。
-
-| 类型 | 必填 | 可重复 |
-| --- | --- | --- |
-| `TUuid` | 是 | 否 |
-
-长度：36；多语言：否；主数据冗余字段：否。
-
-对影响指标所属方法的引用。
-
-**XSD 结构约束：** `use="required"`。
-
-模式出处：[EcoSpold02FlowData.xsd](original/Schemas/datasets/EcoSpold02FlowData.xsd)，`TImpactIndicatorResult`。
-
-### `@impactMethodContextId` · FieldID 1811 <a href="#field-1811" id="field-1811"></a>
-
-局部 XML 位置：`TImpactIndicatorResult/@impactMethodContextId`；ecoSpold1 对照编号：`new`。
-
-| 类型 | 必填 | 可重复 |
-| --- | --- | --- |
-| `TUuid` | 否 | 否 |
-
-长度：36；多语言：否；主数据冗余字段：否。
-
-对影响评价方法所属上下文的引用。若省略此属性，则改用数据集自身的上下文。
-
-**XSD 结构约束：** `use="optional"`。
-
-模式出处：[EcoSpold02FlowData.xsd](original/Schemas/datasets/EcoSpold02FlowData.xsd)，`TImpactIndicatorResult`。
-
-### `impactMethodName` · FieldID 1815 <a href="#field-1815" id="field-1815"></a>
-
-局部 XML 位置：`TImpactIndicatorResult/impactMethodName`；ecoSpold1 对照编号：`new`。
-
-| 类型 | 必填 | 可重复 |
-| --- | --- | --- |
-| `TString120` | 是 | 否 |
-
-长度：120；多语言：是；主数据冗余字段：是。
-
-影响评价方法的名称。
-
-**XSD 结构约束：** `minOccurs="1"`，`maxOccurs="unbounded"`（未显式声明的值按 XSD 默认值列出）。
-
-模式出处：[EcoSpold02FlowData.xsd](original/Schemas/datasets/EcoSpold02FlowData.xsd)，`TImpactIndicatorResult`。
-
-### `@impactCategoryId` · FieldID 1820 <a href="#field-1820" id="field-1820"></a>
-
-局部 XML 位置：`TImpactIndicatorResult/@impactCategoryId`；ecoSpold1 对照编号：`new`。
-
-| 类型 | 必填 | 可重复 |
-| --- | --- | --- |
-| `TUuid` | 是 | 否 |
-
-长度：36；多语言：否；主数据冗余字段：否。
-
-对影响类别所属方法的引用。
-
-**XSD 结构约束：** `use="required"`。
-
-模式出处：[EcoSpold02FlowData.xsd](original/Schemas/datasets/EcoSpold02FlowData.xsd)，`TImpactIndicatorResult`。
-
-### `@impactCategoryContextId` · FieldID 1821 <a href="#field-1821" id="field-1821"></a>
-
-局部 XML 位置：`TImpactIndicatorResult/@impactCategoryContextId`；ecoSpold1 对照编号：`new`。
-
-| 类型 | 必填 | 可重复 |
-| --- | --- | --- |
-| `TUuid` | 否 | 否 |
-
-长度：36；多语言：否；主数据冗余字段：否。
-
-对影响类别所属上下文的引用。若省略此属性，则改用数据集自身的上下文。
-
-**XSD 结构约束：** `use="optional"`。
-
-模式出处：[EcoSpold02FlowData.xsd](original/Schemas/datasets/EcoSpold02FlowData.xsd)，`TImpactIndicatorResult`。
-
-### `impactCategoryName` · FieldID 1825 <a href="#field-1825" id="field-1825"></a>
-
-局部 XML 位置：`TImpactIndicatorResult/impactCategoryName`；ecoSpold1 对照编号：`new`。
-
-| 类型 | 必填 | 可重复 |
-| --- | --- | --- |
-| `TString120` | 是 | 否 |
-
-长度：120；多语言：是；主数据冗余字段：是。
-
-影响类别的名称。
-
-**XSD 结构约束：** `minOccurs="1"`，`maxOccurs="unbounded"`（未显式声明的值按 XSD 默认值列出）。
-
-模式出处：[EcoSpold02FlowData.xsd](original/Schemas/datasets/EcoSpold02FlowData.xsd)，`TImpactIndicatorResult`。
-
-### `@amount` · FieldID 1830 <a href="#field-1830" id="field-1830"></a>
-
-局部 XML 位置：`TImpactIndicatorResult/@amount`；ecoSpold1 对照编号：`new`。
-
-| 类型 | 必填 | 可重复 |
-| --- | --- | --- |
-| `TFloatNumber` | 是 | 否 |
-
-长度：—；多语言：否；主数据冗余字段：否。
-
-影响指标的值。
-
-**XSD 结构约束：** `use="required"`。
-
-模式出处：[EcoSpold02FlowData.xsd](original/Schemas/datasets/EcoSpold02FlowData.xsd)，`TImpactIndicatorResult`。
-
-### `name` · FieldID 1840 <a href="#field-1840" id="field-1840"></a>
-
-局部 XML 位置：`TImpactIndicatorResult/name`；ecoSpold1 对照编号：`new`。
-
-| 类型 | 必填 | 可重复 |
-| --- | --- | --- |
-| `TString120` | 是 | 否 |
-
-长度：120；多语言：是；主数据冗余字段：是。
-
-影响指标的名称。
-
-**XSD 结构约束：** `minOccurs="1"`，`maxOccurs="unbounded"`（未显式声明的值按 XSD 默认值列出）。
-
-模式出处：[EcoSpold02FlowData.xsd](original/Schemas/datasets/EcoSpold02FlowData.xsd)，`TImpactIndicatorResult`。
-
-### `unitName` · FieldID 1850 <a href="#field-1850" id="field-1850"></a>
-
-局部 XML 位置：`TImpactIndicatorResult/unitName`；ecoSpold1 对照编号：`new`。
-
-| 类型 | 必填 | 可重复 |
-| --- | --- | --- |
-| `TString40` | 是 | 否 |
-
-长度：40；多语言：是；主数据冗余字段：是。
-
-影响指标数量的单位名称。
-
-**XSD 结构约束：** `minOccurs="1"`，`maxOccurs="unbounded"`（未显式声明的值按 XSD 默认值列出）。
-
-模式出处：[EcoSpold02FlowData.xsd](original/Schemas/datasets/EcoSpold02FlowData.xsd)，`TImpactIndicatorResult`。
-
-{% endtab %}
-
-{% tab title="English 原文" %}
-
-## Structure
-
-Group multiple occurrences：Yes；Group required：No。
-
-Calculated impact indicators
-
-### `@impactIndicatorId` · FieldID 1800 <a href="#en-field-1800" id="en-field-1800"></a>
-
-Local XML path：`TImpactIndicatorResult/@impactIndicatorId`；ecoSpold1 mapping：`new`。
-
-| Type | Required | Multiple occurrence |
-| --- | --- | --- |
-| `TUuid` | Yes | No |
-
-Size：36；Multi language：No；Redundant master data：No。
-
-Reference to the impact indicator.
-
-**XSD structural constraints：** `use="required"`。
-
-Schema source：[EcoSpold02FlowData.xsd](original/Schemas/datasets/EcoSpold02FlowData.xsd)，`TImpactIndicatorResult`。
-
-### `@impactIndicatorContextId` · FieldID 1801 <a href="#en-field-1801" id="en-field-1801"></a>
-
-Local XML path：`TImpactIndicatorResult/@impactIndicatorContextId`；ecoSpold1 mapping：`new`。
-
-| Type | Required | Multiple occurrence |
-| --- | --- | --- |
-| `TUuid` | No | No |
-
-Size：36；Multi language：No；Redundant master data：No。
-
-Reference to the context of the impact indicator. If this attribute is omitted the context of the dataset itself will be used instead.
-
-**XSD structural constraints：** `use="optional"`。
-
-Schema source：[EcoSpold02FlowData.xsd](original/Schemas/datasets/EcoSpold02FlowData.xsd)，`TImpactIndicatorResult`。
-
-### `@impactMethodId` · FieldID 1810 <a href="#en-field-1810" id="en-field-1810"></a>
-
-Local XML path：`TImpactIndicatorResult/@impactMethodId`；ecoSpold1 mapping：`new`。
-
-| Type | Required | Multiple occurrence |
-| --- | --- | --- |
-| `TUuid` | Yes | No |
-
-Size：36；Multi language：No；Redundant master data：No。
-
-Reference to the method of the impact indicator.
-
-**XSD structural constraints：** `use="required"`。
-
-Schema source：[EcoSpold02FlowData.xsd](original/Schemas/datasets/EcoSpold02FlowData.xsd)，`TImpactIndicatorResult`。
-
-### `@impactMethodContextId` · FieldID 1811 <a href="#en-field-1811" id="en-field-1811"></a>
-
-Local XML path：`TImpactIndicatorResult/@impactMethodContextId`；ecoSpold1 mapping：`new`。
-
-| Type | Required | Multiple occurrence |
-| --- | --- | --- |
-| `TUuid` | No | No |
-
-Size：36；Multi language：No；Redundant master data：No。
-
-Reference to the context of the impact method. If this attribute is omitted the context of the dataset itself will be used instead.
-
-**XSD structural constraints：** `use="optional"`。
-
-Schema source：[EcoSpold02FlowData.xsd](original/Schemas/datasets/EcoSpold02FlowData.xsd)，`TImpactIndicatorResult`。
-
-### `impactMethodName` · FieldID 1815 <a href="#en-field-1815" id="en-field-1815"></a>
-
-Local XML path：`TImpactIndicatorResult/impactMethodName`；ecoSpold1 mapping：`new`。
-
-| Type | Required | Multiple occurrence |
-| --- | --- | --- |
-| `TString120` | Yes | No |
-
-Size：120；Multi language：Yes；Redundant master data：Yes。
-
-Name of the impact method.
-
-**XSD structural constraints：** `minOccurs="1"`，`maxOccurs="unbounded"` (undeclared values use XSD defaults)。
-
-Schema source：[EcoSpold02FlowData.xsd](original/Schemas/datasets/EcoSpold02FlowData.xsd)，`TImpactIndicatorResult`。
-
-### `@impactCategoryId` · FieldID 1820 <a href="#en-field-1820" id="en-field-1820"></a>
-
-Local XML path：`TImpactIndicatorResult/@impactCategoryId`；ecoSpold1 mapping：`new`。
-
-| Type | Required | Multiple occurrence |
-| --- | --- | --- |
-| `TUuid` | Yes | No |
-
-Size：36；Multi language：No；Redundant master data：No。
-
-Reference to the method of the impact category.
-
-**XSD structural constraints：** `use="required"`。
-
-Schema source：[EcoSpold02FlowData.xsd](original/Schemas/datasets/EcoSpold02FlowData.xsd)，`TImpactIndicatorResult`。
-
-### `@impactCategoryContextId` · FieldID 1821 <a href="#en-field-1821" id="en-field-1821"></a>
-
-Local XML path：`TImpactIndicatorResult/@impactCategoryContextId`；ecoSpold1 mapping：`new`。
-
-| Type | Required | Multiple occurrence |
-| --- | --- | --- |
-| `TUuid` | No | No |
-
-Size：36；Multi language：No；Redundant master data：No。
-
-Reference to the context of the impact category. If this attribute is omitted the context of the dataset itself will be used instead.
-
-**XSD structural constraints：** `use="optional"`。
-
-Schema source：[EcoSpold02FlowData.xsd](original/Schemas/datasets/EcoSpold02FlowData.xsd)，`TImpactIndicatorResult`。
-
-### `impactCategoryName` · FieldID 1825 <a href="#en-field-1825" id="en-field-1825"></a>
-
-Local XML path：`TImpactIndicatorResult/impactCategoryName`；ecoSpold1 mapping：`new`。
-
-| Type | Required | Multiple occurrence |
-| --- | --- | --- |
-| `TString120` | Yes | No |
-
-Size：120；Multi language：Yes；Redundant master data：Yes。
-
-Name of the impact category.
-
-**XSD structural constraints：** `minOccurs="1"`，`maxOccurs="unbounded"` (undeclared values use XSD defaults)。
-
-Schema source：[EcoSpold02FlowData.xsd](original/Schemas/datasets/EcoSpold02FlowData.xsd)，`TImpactIndicatorResult`。
-
-### `@amount` · FieldID 1830 <a href="#en-field-1830" id="en-field-1830"></a>
-
-Local XML path：`TImpactIndicatorResult/@amount`；ecoSpold1 mapping：`new`。
-
-| Type | Required | Multiple occurrence |
-| --- | --- | --- |
-| `TFloatNumber` | Yes | No |
-
-Size：—；Multi language：No；Redundant master data：No。
-
-The value of the impact indicator.
-
-**XSD structural constraints：** `use="required"`。
-
-Schema source：[EcoSpold02FlowData.xsd](original/Schemas/datasets/EcoSpold02FlowData.xsd)，`TImpactIndicatorResult`。
-
-### `name` · FieldID 1840 <a href="#en-field-1840" id="en-field-1840"></a>
-
-Local XML path：`TImpactIndicatorResult/name`；ecoSpold1 mapping：`new`。
-
-| Type | Required | Multiple occurrence |
-| --- | --- | --- |
-| `TString120` | Yes | No |
-
-Size：120；Multi language：Yes；Redundant master data：Yes。
-
-Name of the impact indicator.
-
-**XSD structural constraints：** `minOccurs="1"`，`maxOccurs="unbounded"` (undeclared values use XSD defaults)。
-
-Schema source：[EcoSpold02FlowData.xsd](original/Schemas/datasets/EcoSpold02FlowData.xsd)，`TImpactIndicatorResult`。
-
-### `unitName` · FieldID 1850 <a href="#en-field-1850" id="en-field-1850"></a>
-
-Local XML path：`TImpactIndicatorResult/unitName`；ecoSpold1 mapping：`new`。
-
-| Type | Required | Multiple occurrence |
-| --- | --- | --- |
-| `TString40` | Yes | No |
-
-Size：40；Multi language：Yes；Redundant master data：Yes。
-
-Unit name of the impact indicator amount.
-
-**XSD structural constraints：** `minOccurs="1"`，`maxOccurs="unbounded"` (undeclared values use XSD defaults)。
-
-Schema source：[EcoSpold02FlowData.xsd](original/Schemas/datasets/EcoSpold02FlowData.xsd)，`TImpactIndicatorResult`。
-
-{% endtab %}
-
-{% endtabs %}
-
-## 翻译与审校注记
-
-- **待专家复核 · `TImpactIndicatorResult.1820.description.0`**：原文写“对影响类别所属方法的引用”，但 EcoSpold02FlowData.xsd 约第 1039–1048 行明确本字段为 impactCategoryId、类型 TUuid、referenceToComplexType=TImpactMethodCategory，区别于字段 1810 的 impactMethodId（TImpactMethod）。译文忠实保留原文方法措辞，源文说明与引用对象存在矛盾。 请确认应将官方说明修正为对影响类别的引用；实现时以 impactCategoryId 与 TImpactMethodCategory 的模式定义为依据。
+[提取与查询实践](extraction-practice.md)把数量读取、身份筛选与参考产品归一化连起来；[完整中文格式译表](format-reference.md#appendix-timpactindicatorresult)用于核对本类型的字段次序、类型和原表标记。原文疑点见[审校记录](translation-review.md)。
