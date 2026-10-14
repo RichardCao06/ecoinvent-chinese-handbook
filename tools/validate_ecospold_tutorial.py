@@ -126,9 +126,28 @@ def validate():
     layout_review = json.loads((WORK / 'chapter-layout-review.json').read_text())
     if layout_review['status'] not in ['passed','passed_with_notes']:
         errors.append('Chapter layout review not passed')
+    current_review_path = WORK / 'xml-examples-guide-review.json'
+    current_review = json.loads(current_review_path.read_text()) if current_review_path.exists() else None
+    current_files = current_review['files'] if current_review else {}
+    if manifest.get('chapter_xml_examples'):
+        if current_review is None or current_review['status'] not in ['passed','passed_with_notes']:
+            errors.append('Current XML example publication review missing')
     for filename, reviewed_sha in layout_review['files'].items():
+        if sha(ROOT / filename) != reviewed_sha and filename not in current_files:
+            errors.append('Reviewed chapter/helper changed without superseding review: '+filename)
+    for filename, reviewed_sha in current_files.items():
         if sha(ROOT / filename) != reviewed_sha:
-            errors.append('Reviewed chapter/helper changed: '+filename)
+            errors.append('Current XML example review changed: '+filename)
+    if manifest.get('chapter_xml_examples'):
+        from render_ecospold_xml_examples import packets
+        from ecospold_xml_examples import validate_packets
+        try:
+            reviewed_sections=packets()
+            typed_counts=validate_packets()
+            if len(reviewed_sections)!=22 or len(typed_counts)!=22:
+                errors.append('XML examples do not cover all 22 types')
+        except (AssertionError,ValueError) as exc:
+            errors.append('XML example review/schema invalid: '+str(exc))
     for record in manifest['outputs'] + manifest['review_files']:
         path = ROOT / record['path']
         if not path.exists() or sha(path) != record['sha256']:
@@ -150,6 +169,15 @@ def validate():
         for name in ['read_section.py','demo-product.spold','demo-electricity.spold','demo-lcia.spold','extract_ecospold.py','query_demo.py','README.txt']:
             if name not in z.namelist() or z.read(name) != (BASE / 'demo' / name).read_bytes():
                 errors.append('Demo ZIP missing or stale: ' + name)
+    if manifest.get('chapter_xml_examples'):
+        with zipfile.ZipFile(BASE/'attachments/ecospold2-xml-examples.zip') as z:
+            for record in manifest['chapter_xml_examples']:
+                for example in record['examples']:
+                    name='xml-examples/'+example['filename']
+                    if name not in z.namelist() or z.read(name)!=(BASE/name).read_bytes():
+                        errors.append('XML example ZIP missing or stale: '+name)
+            if z.read('read_xml_fields.py')!=(BASE/'demo/read_xml_fields.py').read_bytes():
+                errors.append('XML field reader ZIP stale')
     return {'narrative_fields':len(coverage),'translated_table_fields':len(parser.fields),
             'translated_description_rows':len(descriptions.blocks),'chapter_pages':len(manifest['chapter_pages']),'appendix_characters':len(article),
             'tables_only_in_appendix':not any(t.type=='table_open' for t in tokens),'errors':errors}

@@ -1,0 +1,12 @@
+<activity xmlns="http://www.EcoInvent.org/EcoSpold02" id="19d3e06c-2a4a-545d-b368-6470e75e1a27" activityNameId="b0ce0613-267e-5be2-82cd-160d5a5d5d4f" activityNameContextId="f71ac544-3bc8-5c15-8ea4-072d907663f1" type="1" specialActivityType="0" inheritanceDepth="0" energyValues="1" masterAllocationPropertyId="4df2fd06-35ca-5aa5-974e-aa71280a96ef" masterAllocationPropertyContextId="f71ac544-3bc8-5c15-8ea4-072d907663f1" masterAllocationPropertyIdOverwrittenByChild="false" datasetIcon="https://example.invalid/teaching/product-icon.svg">
+  <!-- 教学构造；UUID及分配属性不是实际ecoinvent主数据。 -->
+  <activityName xml:lang="zh">教学产品单元过程</activityName>
+  <synonym xml:lang="zh">教学材料生产</synonym>
+  <synonym xml:lang="zh">构造产品制造</synonym>
+  <includedActivitiesStart xml:lang="zh">从接收教学原料开始。</includedActivitiesStart>
+  <includedActivitiesEnd xml:lang="zh">包括厂内加工和产品装车，不包括后续使用。</includedActivitiesEnd>
+  <allocationComment><text index="1" xml:lang="zh">教学示意：默认使用指定属性进行分配；具体属性值须从各输出交换读取。</text></allocationComment>
+  <generalComment><text index="1" xml:lang="zh">教学构造，非真实数据；用于展示活动元信息，不提供分配计算结果。</text></generalComment>
+  <tag>teaching</tag>
+  <tag>product</tag>
+</activity>

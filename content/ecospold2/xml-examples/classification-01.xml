@@ -1,0 +1,5 @@
+<classification xmlns="http://www.EcoInvent.org/EcoSpold02" classificationId="45b127bf-078e-5df0-a5c0-fd6ee9a6b53e" classificationContextId="f71ac544-3bc8-5c15-8ea4-072d907663f1">
+  <!-- 教学构造的分类，不是正式ISIC或其他分类主数据。 -->
+  <classificationSystem xml:lang="zh">教学分类体系</classificationSystem>
+  <classificationValue xml:lang="zh">教学产品制造</classificationValue>
+</classification>

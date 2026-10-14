@@ -1,0 +1,13 @@
+<elementaryExchange xmlns="http://www.EcoInvent.org/EcoSpold02" id="9da6137e-52d1-5c5f-930a-fed238b20968" amount="0.04" unitId="ff547598-1a08-5b8b-904c-a0d8a4d032fd" elementaryExchangeId="376dc400-e4fb-5da8-a2fb-2f8c581892cb" elementaryExchangeContextId="f71ac544-3bc8-5c15-8ea4-072d907663f1" unitContextId="f71ac544-3bc8-5c15-8ea4-072d907663f1" formula="H2O">
+        <name xml:lang="zh">水，来自环境（教学）</name>
+        <name xml:lang="en">Water, from environment (synthetic)</name>
+        <unitName xml:lang="zh">m3</unitName>
+        <unitName xml:lang="en">m3</unitName>
+        <compartment subcompartmentId="9bfcfd12-1b84-56cf-8bd8-1abc71a30268" subcompartmentContextId="f71ac544-3bc8-5c15-8ea4-072d907663f1">
+          <compartment xml:lang="zh">自然资源</compartment>
+          <compartment xml:lang="en">natural resource</compartment>
+          <subcompartment xml:lang="zh">水</subcompartment>
+          <subcompartment xml:lang="en">in water</subcompartment>
+        </compartment>
+        <inputGroup>4</inputGroup>
+      </elementaryExchange>

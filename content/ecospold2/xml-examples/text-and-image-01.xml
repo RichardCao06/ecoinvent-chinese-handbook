@@ -1,0 +1,7 @@
+<generalComment xmlns="http://www.EcoInvent.org/EcoSpold02">
+  <text index="3" xml:lang="zh">这一段排在图像之后；这里只说明文本变量，不定义数学参数。</text>
+  <imageUrl index="2">https://example.invalid/teaching-diagram.png</imageUrl>
+  <variable name="site_name">教学地点 A</variable>
+  <text index="1" xml:lang="zh">在 {{site_name}} 记录本教学活动。</text>
+  <text index="1" xml:lang="en">Record this teaching activity at {{site_name}}.</text>
+</generalComment>

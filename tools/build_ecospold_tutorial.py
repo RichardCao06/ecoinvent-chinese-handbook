@@ -92,7 +92,7 @@ def xml_examples():
         manifest.append({'title':title,'tag':node.tag,'attributes':dict(node.attrib),'snippet_sha256':hashlib.sha256(xml.encode()).hexdigest()})
     return '\n'.join(result),manifest
 
-def build_content():
+def build_content(xml_review_required=True):
     source = json.loads((AUDIT / 'source.json').read_text())
     translations = {}
     for shard in 'abc':
@@ -153,10 +153,18 @@ def build_content():
     demo_text = opening_parts[3].split('\n',1)[1].replace('按第五节运行','按[提取与查询实践](extraction-practice.md)运行')
     write_page('demo-walkthrough.md','# 用 demo 走通读取过程\n\n'+demo_text)
     introduction += '\n\n'+opening_parts[4].split('\n',1)[1].strip()+'\n'
+    if all((WORK / f'xml-examples-{shard}.json').exists() for shard in 'abc'):
+        introduction += '\n\n每篇字段文章还提供对应的 XML 教学片段，逐项标明字段位置和示例值，并给出全部字段的具体提取路径。对照自己的 `.spold` 时，先确认父节点与命名空间，再核对属性、子元素及其上下文。\n'
     introduction += '\n\n## 按问题进入教程\n\n先读[判断 UPR、LCI 与 LCIA](data-levels.md)，确定数量的层级，再读[XML 结构、命名空间与继承](xml-structure.md)和[demo 读取演示](demo-walkthrough.md)。五组字段文章沿文件结构展开；[提取与查询实践](extraction-practice.md)提供完整代码和筛选方法。最后的[官方格式说明中文版本](format-reference.md)集中保留原始表格译文。\n\n'
     extraction = json.loads((WORK / 'chapter-extraction.json').read_text())
     sys.path.insert(0,str(OUT / 'demo'))
     from read_section import PATHS, load_dataset, read_section
+    xml_sections = None
+    xml_manifest = []
+    if all((WORK / f'xml-examples-{shard}.json').exists() for shard in 'abc'):
+        from render_ecospold_xml_examples import packets, render_section, publish_readme
+        xml_sections = packets(require_reviews=xml_review_required)
+        publish_readme()
     chapter_paths = []
     for group_slug,group_title,items in LAYOUT:
         group_body = [f'# {group_title}', '', '本组把相关 XML 结构分为下面的文章章节。每篇先解释字段及其相互关系，再说明使用和提取，最后对照教学 demo。', '']
@@ -165,7 +173,12 @@ def build_content():
             narrative = re.sub(r'(?m)^### ', '## ',chapters[sid].strip())
             narrative_lines = narrative.splitlines()
             narrative_lines[0] += f' <a href="#read-{sid.lower()}" id="read-{sid.lower()}"></a>'
-            body = [f'# {title}', '', '对应官方格式类型：`'+sid+'`。本篇以文章解释该类型的 '+str(len(next(s for s in source['sections'] if s['id']==sid)['fields']))+' 条字段；复合类型也会说明它们依附在哪个对象上。', '', '\n'.join(narrative_lines), '', '## 怎样定位、使用与提取', '', extraction[sid]['use_zh'], '',
+            xml_block = ''
+            if xml_sections is not None:
+                official = next(s for s in source['sections'] if s['id']==sid)
+                xml_block, xml_record = render_section(sid,slug,xml_sections[sid],official,PATHS[sid])
+                xml_manifest.append(xml_record)
+            body = [f'# {title}', '', '对应官方格式类型：`'+sid+'`。本篇以文章解释该类型的 '+str(len(next(s for s in source['sections'] if s['id']==sid)['fields']))+' 条字段；复合类型也会说明它们依附在哪个对象上。', '', '\n'.join(narrative_lines), '', xml_block, '', '## 怎样定位、使用与提取', '', extraction[sid]['use_zh'], '',
                     '定位路径相对于完整的 `/ecoSpold/activityDataset`：'+ '；'.join('`'+p+'`' for p in PATHS[sid])+'。其中 `.//` 表示在当前数据集的后代中检索；返回结果会保留实际父路径，以区分不同交换或参数。', '',
                     '下载[教学 demo 与读取脚本 ZIP](demo/ecospold2-tutorial-demo.zip)，解压后在同一目录运行下面代码。`read_section.py` 使用 Python 标准库，返回全部匹配节点的属性和完整子节点树；它保留 UUID、原始数值字符串、语言标签和子节点顺序。代码仅展示前两条，变量 `records` 保留全部匹配记录。文件有多个普通数据集时，显式选择 `index`，或逐个遍历；子数据集应先展开继承。', '',
                     '原表名称前带 `@` 的是 XML 属性，去掉 `@` 后在返回记录的 `attributes` 中取值，例如 `record["attributes"].get("amount")`。没有 `@` 的字段是子元素，在 `children` 中按完整 `tag` 匹配；名称前的 `{http://www.EcoInvent.org/EcoSpold02}` 是命名空间。多语言字段保留多个子节点，`xml:lang` 在属性字典中写为 `{http://www.w3.org/XML/1998/namespace}lang`。更深的字段继续进入相应子节点的 `children`；缺失属性返回 `None`，不要补成零。', '',
@@ -228,6 +241,7 @@ def build_content():
         '数值练习中的方法与系数均是教学约定。测试不会为这些数值提供 ecoinvent 认证、清单完整性认证或真实 LCIA 方法认证；它确认文中程序与所给 demo 的行为一致。', '',
         f'本页保留 **{len(notes)} 条教程编写注记**，包括已修正问题、模式限定和需数据方进一步澄清的源文问题。它们与原字段参考的 27 条记录有范围重叠，不能相加为独立问题数量。原逐块翻译记录仍见[字段翻译与审校记录](translation-review.md)。', '',
         '本轮按 XML 结构拆为五组 22 篇字段文章，替换独立表格翻译页。各章增加定位路径、使用说明与实际 demo 读取片段；`read_section.py` 只读取原始属性和节点树，不计算 LCI/LCIA，也不代替 XSD 或语义验证。新增的章节读取测试实际执行全部 22 段代码，并检查多语言、嵌套数量、负输出、缺失结构、多数据集与子数据集拒绝；与原 12 项提取器测试分别记录。', '',
+        '各字段章进一步提供可下载 XML 类型片段及逐字段对照说明，所有 243 条定义都在至少一个片段中实际出现。互斥分布和输入/输出分别展示；新片段按官方同包 XSD 对应类型校验。类型级校验不覆盖完整数据集父级关系、外部主数据和继承语义。每章的全字段路径代码均已运行，并用独立 XPath 核对结果；原始数值、重复语言、缺失项与嵌套字段保持区分。', '',
         '## 教程注记', '']
     for index,note in enumerate(notes,1):
         sid = note.get('section') or note.get('block','').split('.')[0]
@@ -240,11 +254,21 @@ def build_content():
     (OUT / 'tutorial-review.md').write_text(write_review)
     demo_dir = OUT / 'demo'
     with zipfile.ZipFile(demo_dir / 'ecospold2-tutorial-demo.zip','w',compression=zipfile.ZIP_DEFLATED) as z:
-        for path in sorted(demo_dir.iterdir()):
-            if path.suffix in ['.spold','.py','.txt','.json']:
-                item = zipfile.ZipInfo(path.name,date_time=(2026,10,14,0,0,0))
+        for path in sorted(demo_dir.rglob('*')):
+            if path.is_file() and path.name!='XML-examples-README.txt' and path.suffix in ['.spold','.py','.txt','.json','.xml']:
+                item = zipfile.ZipInfo(path.relative_to(demo_dir).as_posix(),date_time=(2026,10,14,0,0,0))
                 item.compress_type = zipfile.ZIP_DEFLATED
                 item.external_attr = 0o644 << 16
+                z.writestr(item,path.read_bytes())
+    if xml_sections is not None:
+        # Fragment XML lives outside the recursively scanned full-dataset demo directory.
+        with zipfile.ZipFile(OUT/'attachments/ecospold2-xml-examples.zip','w',compression=zipfile.ZIP_DEFLATED) as z:
+            members=[(p,'xml-examples/'+p.name) for p in sorted((OUT/'xml-examples').glob('*.xml'))]
+            members += [(demo_dir/name,name) for name in ['read_xml_fields.py','read_section.py','demo-product.spold','demo-electricity.spold','demo-lcia.spold','XML-examples-README.txt']]
+            for path,name in members:
+                item=zipfile.ZipInfo(name,date_time=(2026,10,14,0,0,0))
+                item.compress_type=zipfile.ZIP_DEFLATED
+                item.external_attr=0o644 << 16
                 z.writestr(item,path.read_bytes())
     summary_path = ROOT / 'content/SUMMARY.md'
     nav = ['## ecoSpold2 XML 字段参考','','- [完整教程：读懂 XML 并提取数据](ecospold2/README.md)',
@@ -264,12 +288,14 @@ def build_content():
     # Replace legacy field-card anchors in historical review links with chapter targets.
     review_path = OUT / 'translation-review.md'
     review_path.write_text(re.sub(r'(\([^()]+\.md)#field-\d+(\))',r'\1\2',review_path.read_text()))
-    output_paths = list(OUT.glob('*.md')) + [OUT / 'attachments/EcoSpold02.zh.html'] + [p for p in demo_dir.iterdir() if p.is_file()]
+    output_paths = list(OUT.glob('*.md')) + [OUT / 'attachments/EcoSpold02.zh.html'] + [p for p in demo_dir.rglob('*') if p.is_file() and p.suffix in ['.spold','.py','.txt','.json','.xml','.zip']]
+    if xml_sections is not None:
+        output_paths += list((OUT/'xml-examples').glob('*.xml'))+[OUT/'attachments/ecospold2-xml-examples.zip']
     manifest = {'scope':'A chaptered Chinese reading tutorial, 22 narrative field chapters, runnable synthetic demos and a single final translated-table appendix',
                 'coverage':coverage,'notes':notes,'source_blocks':len(source['blocks']),
                 'source_html_sha256':source['source_sha256'],'xml_snippets':snippet_manifest,
                 'layout':'chaptered-narrative','chapter_pages':{sid:'ecospold2/'+slug+'.md' for sid,(slug,title) in CHAPTERS.items()},
-                'appendix_page':'ecospold2/format-reference.md',
+                'appendix_page':'ecospold2/format-reference.md','chapter_xml_examples':xml_manifest,
                 'outputs':[{'path':p.relative_to(ROOT).as_posix(),'sha256':digest(p)} for p in sorted(output_paths)],
                 'review_files':[{'path':p.relative_to(ROOT).as_posix(),'sha256':digest(p)} for p in sorted(WORK.glob('*review*.json'))]}
     (WORK / 'manifest.json').write_text(json.dumps(manifest,ensure_ascii=False,indent=2)+'\n')

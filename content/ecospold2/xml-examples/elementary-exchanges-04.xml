@@ -1,0 +1,13 @@
+<elementaryExchange xmlns="http://www.EcoInvent.org/EcoSpold02" id="c0b41e55-61ce-5aad-909d-1d01846e83db" amount="0.2" unitId="a4800e12-54b1-5444-a6d0-b48a59529439" elementaryExchangeId="d951f598-3f40-57c4-ba76-71df73f1096b" formula="CO2" elementaryExchangeContextId="f71ac544-3bc8-5c15-8ea4-072d907663f1" unitContextId="f71ac544-3bc8-5c15-8ea4-072d907663f1">
+        <name xml:lang="zh">二氧化碳，生物源（教学）</name>
+        <name xml:lang="en">Carbon dioxide, biogenic (synthetic)</name>
+        <unitName xml:lang="zh">kg</unitName>
+        <unitName xml:lang="en">kg</unitName>
+        <compartment subcompartmentId="6bbb1a41-12de-5599-843e-cc02d4084a9a" subcompartmentContextId="f71ac544-3bc8-5c15-8ea4-072d907663f1">
+          <compartment xml:lang="zh">空气</compartment>
+          <compartment xml:lang="en">air</compartment>
+          <subcompartment xml:lang="zh">未指定</subcompartment>
+          <subcompartment xml:lang="en">unspecified</subcompartment>
+        </compartment>
+        <outputGroup>4</outputGroup>
+      </elementaryExchange>

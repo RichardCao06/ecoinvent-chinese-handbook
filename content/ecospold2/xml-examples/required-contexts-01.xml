@@ -1,0 +1,4 @@
+<requiredContext xmlns="http://www.EcoInvent.org/EcoSpold02" majorRelease="1" minorRelease="0" majorRevision="2" minorRevision="1" requiredContextId="d5a99c56-eb38-567d-badd-f9294284f8f6" requiredContextFileLocation="https://example.invalid/teaching/master-data/">
+  <!-- 教学构造的依赖上下文与目录；不会解析真实主数据。 -->
+  <requiredContextName xml:lang="zh">教学依赖主数据上下文</requiredContextName>
+</requiredContext>

@@ -1,0 +1,24 @@
+<exchange xmlns="http://www.EcoInvent.org/EcoSpold02" id="00000000-0000-4000-8000-000000001005" amount="1.5" unitId="a4800e12-54b1-5444-a6d0-b48a59529439" unitContextId="f71ac544-3bc8-5c15-8ea4-072d907663f1" variableName="fossil_co2" isCalculatedAmount="true" mathematicalRelation="0.15 * 10" casNumber="124-38-9" sourceId="00000000-0000-4000-8000-000000001120" sourceContextId="f71ac544-3bc8-5c15-8ea4-072d907663f1" sourceIdOverwrittenByChild="false" sourceYear="2025" sourceFirstAuthor="Demo A." pageNumbers="3-4" specificAllocationPropertyId="00000000-0000-4000-8000-000000001150" specificAllocationPropertyContextId="f71ac544-3bc8-5c15-8ea4-072d907663f1" specificAllocationPropertyIdOverwrittenByChild="false">
+  <name xml:lang="zh">二氧化碳，化石源（教学）</name>
+  <name xml:lang="en">Carbon dioxide, fossil (synthetic)</name>
+  <unitName xml:lang="zh">kg</unitName>
+  <unitName xml:lang="en">kg</unitName>
+  <comment xml:lang="zh">全部为教学构造；此处仅展示交换共用字段。</comment>
+  <comment xml:lang="en">Synthetic teaching example of shared exchange fields only.</comment>
+  <uncertainty>
+    <lognormal meanValue="1.5" mu="0.4054651081081644" variance="0.01" varianceWithPedigreeUncertainty="0.04"/>
+  </uncertainty>
+  <synonym xml:lang="zh">教学化石二氧化碳</synonym>
+  <synonym xml:lang="en">Synthetic fossil carbon dioxide</synonym>
+  <synonym xml:lang="zh">教学 CO2</synonym>
+  <property propertyId="00000000-0000-4000-8000-000000001400" propertyContextId="f71ac544-3bc8-5c15-8ea4-072d907663f1" amount="1" unitId="00000000-0000-4000-8000-000000001401" unitContextId="f71ac544-3bc8-5c15-8ea4-072d907663f1">
+    <name xml:lang="zh">教学比例属性</name>
+    <name xml:lang="en">Synthetic ratio property</name>
+    <unitName xml:lang="zh">kg/kg</unitName>
+    <unitName xml:lang="en">kg/kg</unitName>
+  </property>
+  <transferCoefficient exchangeId="00000000-0000-4000-8000-000000001200" amount="0.6">
+    <comment xml:lang="zh">教学输出中的某一输入贡献份额；被引用的输入行位于完整数据集。</comment>
+  </transferCoefficient>
+  <tag>synthetic-teaching</tag>
+</exchange>

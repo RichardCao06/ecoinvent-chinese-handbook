@@ -24,7 +24,7 @@ class SectionReadingTests(unittest.TestCase):
         for sid,(slug,title) in CHAPTERS.items():
             with self.subTest(section=sid):
                 text = (DEMO.parent / (slug+'.md')).read_text()
-                code = re.search(r'```python\n(.*?)\n```',text,re.S).group(1)
+                code = next(c for c in re.findall(r'```python\n(.*?)\n```',text,re.S) if 'from read_section import' in c and 'records = read_section' in c)
                 filename = re.search(r'load_dataset\("([^"]+)"',code).group(1)
                 code = code.replace('from read_section import load_dataset, read_section','load_dataset = reader.load_dataset\nread_section = reader.read_section')
                 code = code.replace('"'+filename+'"',repr(str(DEMO / filename)))

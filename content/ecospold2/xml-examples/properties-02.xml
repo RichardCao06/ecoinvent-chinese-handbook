@@ -1,0 +1,4 @@
+<property xmlns="http://www.EcoInvent.org/EcoSpold02" propertyId="00000000-0000-4000-8000-000000000101" amount="0.8" sourceIdOverwrittenByChild="true">
+  <name xml:lang="zh">干质量（教学属性）</name>
+  <comment xml:lang="zh">此片段演示省略可选标记及显式删除父来源的属性语法；真实子差异记录还需使用对应子模式并解析父属性。</comment>
+</property>

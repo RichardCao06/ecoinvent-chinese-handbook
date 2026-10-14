@@ -1247,10 +1247,565 @@
     "TRequiredContextReference": "ecospold2/required-contexts.md"
   },
   "appendix_page": "ecospold2/format-reference.md",
+  "chapter_xml_examples": [
+    {
+      "section": "TActivity",
+      "field_paths": {
+        "100": "activityName",
+        "102": "@id",
+        "105": "@activityNameId",
+        "106": "@activityNameContextId",
+        "110": "@type",
+        "115": "@specialActivityType",
+        "120": "generalComment",
+        "130": "@parentActivityId",
+        "131": "@parentActivityContextId",
+        "135": "@inheritanceDepth",
+        "145": "includedActivitiesStart",
+        "150": "includedActivitiesEnd",
+        "170": "synonym",
+        "175": "tag",
+        "180": "@energyValues",
+        "190": "@masterAllocationPropertyId",
+        "191": "@masterAllocationPropertyContextId",
+        "192": "@masterAllocationPropertyIdOverwrittenByChild",
+        "195": "allocationComment",
+        "200": "@datasetIcon"
+      },
+      "examples": [
+        {
+          "filename": "activity-01.xml",
+          "xml_sha256": "0c5ac7ef428ef79e36b972f894fb4e73d0cf772d507c7daf89873b183d5e85d7"
+        },
+        {
+          "filename": "activity-02.xml",
+          "xml_sha256": "2ed9bde061b6e8a942251faf16f6609c449d065956510c320c12625b1b98038f"
+        }
+      ]
+    },
+    {
+      "section": "TClassification",
+      "field_paths": {
+        "300": "classificationSystem",
+        "310": "classificationValue",
+        "320": "@classificationId",
+        "321": "@classificationContextId"
+      },
+      "examples": [
+        {
+          "filename": "classification-01.xml",
+          "xml_sha256": "471c01de52acf872148a167fc819f6c0cfa08071884afe539bd2fc1e25a5a6ea"
+        }
+      ]
+    },
+    {
+      "section": "TGeography",
+      "field_paths": {
+        "400": "@geographyId",
+        "401": "@geographyContextId",
+        "410": "shortname",
+        "420": "comment"
+      },
+      "examples": [
+        {
+          "filename": "geography-01.xml",
+          "xml_sha256": "1af2feeb9fe526f8cbdf53438de39629098f4170de8b03bd53098d96121c1782"
+        }
+      ]
+    },
+    {
+      "section": "TTechnology",
+      "field_paths": {
+        "500": "@technologyLevel",
+        "510": "comment"
+      },
+      "examples": [
+        {
+          "filename": "technology-01.xml",
+          "xml_sha256": "ea78f055f46e0cb25a0cd25bcdb73d142d82ef9528d03c4519173d4df7c1a382"
+        }
+      ]
+    },
+    {
+      "section": "TTimePeriod",
+      "field_paths": {
+        "600": "@startDate",
+        "610": "@endDate",
+        "620": "@isDataValidForEntirePeriod",
+        "630": "comment"
+      },
+      "examples": [
+        {
+          "filename": "time-period-01.xml",
+          "xml_sha256": "c02fa459a0c65696d74cc72c13a1745cbc6e8a3c9a1eea01bfdd161bc81080cc"
+        }
+      ]
+    },
+    {
+      "section": "TMacroEconomicScenario",
+      "field_paths": {
+        "700": "@macroEconomicScenarioId",
+        "701": "@macroEconomicScenarioContextId",
+        "720": "name",
+        "740": "comment"
+      },
+      "examples": [
+        {
+          "filename": "macro-economic-scenario-01.xml",
+          "xml_sha256": "828bf9d37f87813d3c9f7ce8c70dcff388a3936b6b6ab71e9b6e21134c025bc8"
+        }
+      ]
+    },
+    {
+      "section": "TCustomExchange",
+      "field_paths": {
+        "1000": "name",
+        "1005": "@id",
+        "1020": "@amount",
+        "1030": "@unitId",
+        "1031": "@unitContextId",
+        "1035": "unitName",
+        "1040": "@variableName",
+        "1050": "@isCalculatedAmount",
+        "1060": "@mathematicalRelation",
+        "1100": "@casNumber",
+        "1110": "comment",
+        "1120": "@sourceId",
+        "1121": "@sourceContextId",
+        "1122": "@sourceIdOverwrittenByChild",
+        "1125": "@sourceYear",
+        "1126": "@sourceFirstAuthor",
+        "1130": "@pageNumbers",
+        "1150": "@specificAllocationPropertyId",
+        "1151": "@specificAllocationPropertyContextId",
+        "1152": "@specificAllocationPropertyIdOverwrittenByChild",
+        "1200": "transferCoefficient",
+        "1300": "uncertainty",
+        "1400": "property",
+        "1450": "tag",
+        "1470": "synonym"
+      },
+      "examples": [
+        {
+          "filename": "exchanges-01.xml",
+          "xml_sha256": "374b7747319013432be6d4ab927580e80cb2fe4e8aab90a1d457a7d510e5fe93"
+        },
+        {
+          "filename": "exchanges-02.xml",
+          "xml_sha256": "bf792ccbb2b88f52c439d0f11210c8c4448102c70cbf93d0817f4cd94efd3f2d"
+        }
+      ]
+    },
+    {
+      "section": "TIntermediateExchange",
+      "field_paths": {
+        "1500": "inputGroup",
+        "1510": "outputGroup",
+        "1515": "@intermediateExchangeId",
+        "1516": "@intermediateExchangeContextId",
+        "1520": "@activityLinkId",
+        "1521": "@activityLinkContextId",
+        "1522": "@activityLinkIdOverwrittenByChild",
+        "1530": "@productionVolumeAmount",
+        "1531": "@productionVolumeSourceIdOverwrittenByChild",
+        "1532": "@productionVolumeVariableName",
+        "1533": "@productionVolumeSourceId",
+        "1534": "@productionVolumeMathematicalRelation",
+        "1535": "productionVolumeComment",
+        "1536": "@productionVolumeSourceContextId",
+        "1537": "@productionVolumeSourceYear",
+        "1538": "@productionVolumeSourceFirstAuthor",
+        "1539": "productionVolumeUncertainty",
+        "1540": "classification"
+      },
+      "examples": [
+        {
+          "filename": "intermediate-exchanges-01.xml",
+          "xml_sha256": "a995e3a3ce2290c53eead5a7bda6d68aad591328e098f416723e0fa03a9e6753"
+        },
+        {
+          "filename": "intermediate-exchanges-02.xml",
+          "xml_sha256": "7bbd87131ba77364fb603e1b1a7cbb4a7a8088fe5d9647ecf3d65c2d7cb6bf27"
+        }
+      ]
+    },
+    {
+      "section": "TElementaryExchange",
+      "field_paths": {
+        "1600": "inputGroup",
+        "1610": "outputGroup",
+        "1615": "@elementaryExchangeId",
+        "1616": "@elementaryExchangeContextId",
+        "1660": "compartment",
+        "1670": "@formula"
+      },
+      "examples": [
+        {
+          "filename": "elementary-exchanges-01.xml",
+          "xml_sha256": "f861ac0cb56cb0cbd110f3b6d68c2450fd5a5e057e010f0ea5576b42afde384d"
+        },
+        {
+          "filename": "elementary-exchanges-02.xml",
+          "xml_sha256": "92bea3eb128e589658fa279f3a93ab0e27cc6c63504b33fcdee70992f145eb52"
+        },
+        {
+          "filename": "elementary-exchanges-03.xml",
+          "xml_sha256": "ef36f87d583ae5ae5750fbb0de3ce041ffa590b1dabea7edbeb8ee72e582756a"
+        },
+        {
+          "filename": "elementary-exchanges-04.xml",
+          "xml_sha256": "2d037bf287c816f8d38477e71016d009a3e3917d687f70196af9c97d5d406c12"
+        }
+      ]
+    },
+    {
+      "section": "TParameter",
+      "field_paths": {
+        "1700": "name",
+        "1705": "@parameterId",
+        "1706": "@parameterContextId",
+        "1710": "@amount",
+        "1712": "@unitId",
+        "1713": "@unitContextId",
+        "1714": "unitName",
+        "1715": "@variableName",
+        "1720": "@mathematicalRelation",
+        "1725": "@isCalculatedAmount",
+        "1730": "uncertainty",
+        "1740": "comment"
+      },
+      "examples": [
+        {
+          "filename": "parameters-01.xml",
+          "xml_sha256": "f3090633a3cfc16b52b5799dbab16b17dde367edb96f1b3bc2af09206ba33ae6"
+        }
+      ]
+    },
+    {
+      "section": "TImpactIndicatorResult",
+      "field_paths": {
+        "1800": "@impactIndicatorId",
+        "1801": "@impactIndicatorContextId",
+        "1810": "@impactMethodId",
+        "1811": "@impactMethodContextId",
+        "1815": "impactMethodName",
+        "1820": "@impactCategoryId",
+        "1821": "@impactCategoryContextId",
+        "1825": "impactCategoryName",
+        "1830": "@amount",
+        "1840": "name",
+        "1850": "unitName"
+      },
+      "examples": [
+        {
+          "filename": "impact-indicators-01.xml",
+          "xml_sha256": "ee0f4173d8382728907019b565c93794da0ecdc3b942461adca487f3fb040352"
+        }
+      ]
+    },
+    {
+      "section": "TCompartment",
+      "field_paths": {
+        "330": "compartment",
+        "340": "subcompartment",
+        "350": "@subcompartmentId",
+        "351": "@subcompartmentContextId"
+      },
+      "examples": [
+        {
+          "filename": "compartments-01.xml",
+          "xml_sha256": "ca6c1d11d67eb7f43ef6cbc9639f4539207bc651853eca1e317a462ebf8ef076"
+        }
+      ]
+    },
+    {
+      "section": "TUncertainty",
+      "field_paths": {
+        "2010": "comment",
+        "2100": "lognormal",
+        "2101": "lognormal/@meanValue",
+        "2102": "lognormal/@mu",
+        "2103": "lognormal/@variance",
+        "2104": "lognormal/@varianceWithPedigreeUncertainty",
+        "2110": "normal",
+        "2111": "normal/@meanValue",
+        "2112": "normal/@variance",
+        "2113": "normal/@varianceWithPedigreeUncertainty",
+        "2120": "triangular",
+        "2121": "triangular/@minValue",
+        "2122": "triangular/@mostLikelyValue",
+        "2123": "triangular/@maxValue",
+        "2130": "uniform",
+        "2131": "uniform/@minValue",
+        "2132": "uniform/@maxValue",
+        "2140": "beta",
+        "2141": "beta/@minValue",
+        "2142": "beta/@mostFrequentValue",
+        "2143": "beta/@maxValue",
+        "2150": "gamma",
+        "2151": "gamma/@shape",
+        "2152": "gamma/@scale",
+        "2153": "gamma/@minValue",
+        "2160": "binomial",
+        "2161": "binomial/@n",
+        "2162": "binomial/@p",
+        "2170": "undefined",
+        "2171": "undefined/@minValue",
+        "2172": "undefined/@maxValue",
+        "2173": "undefined/@standardDeviation95",
+        "2270": "pedigreeMatrix",
+        "2271": "pedigreeMatrix/@reliability",
+        "2272": "pedigreeMatrix/@completeness",
+        "2273": "pedigreeMatrix/@temporalCorrelation",
+        "2274": "pedigreeMatrix/@geographicalCorrelation",
+        "2275": "pedigreeMatrix/@furtherTechnologyCorrelation"
+      },
+      "examples": [
+        {
+          "filename": "uncertainty-01.xml",
+          "xml_sha256": "d2c55d94580404a4e16c86ee12d2b45894e344fd79e7167664416e5a349d0880"
+        },
+        {
+          "filename": "uncertainty-02.xml",
+          "xml_sha256": "c39e89653393a9f402e938df72cbb8b47cfc422e8ca664827052b98baa4bfef1"
+        },
+        {
+          "filename": "uncertainty-03.xml",
+          "xml_sha256": "0d4acae143b9d4a80b35158c05f687e62cd430c73d9d4dd0986e3f73bbe5c6a7"
+        },
+        {
+          "filename": "uncertainty-04.xml",
+          "xml_sha256": "5141548db9883e68268c641cb16aa627b2b382ed5c912dd66f121e459d93359e"
+        },
+        {
+          "filename": "uncertainty-05.xml",
+          "xml_sha256": "7011865f9ea063437bddb9e765a902964e209ff3610a8aae9e528746b337a932"
+        },
+        {
+          "filename": "uncertainty-06.xml",
+          "xml_sha256": "3353c592d27bf64b99562d130eeb7e08502e0fe956ed78c2785266b78644b29b"
+        },
+        {
+          "filename": "uncertainty-07.xml",
+          "xml_sha256": "f43e1af7be92d2fea1acbb4e70fff746760466435b6d2d2ec725c17bd3dbd78a"
+        },
+        {
+          "filename": "uncertainty-08.xml",
+          "xml_sha256": "d5eb0a36c2e4d68fd8cf181aaece86692309258d89f5b56b33910731ac14c532"
+        },
+        {
+          "filename": "uncertainty-09.xml",
+          "xml_sha256": "57d7ff206f3a5eeeff2c086dbbe3dc6b71c5e410073471775b0028e98142685c"
+        }
+      ]
+    },
+    {
+      "section": "TProperty",
+      "field_paths": {
+        "2300": "@propertyId",
+        "2301": "@propertyContextId",
+        "2310": "name",
+        "2320": "@unitId",
+        "2321": "@unitContextId",
+        "2325": "unitName",
+        "2330": "@amount",
+        "2335": "@isDefiningValue",
+        "2340": "@mathematicalRelation",
+        "2345": "@isCalculatedAmount",
+        "2350": "@variableName",
+        "2360": "uncertainty",
+        "2370": "@sourceId",
+        "2371": "@sourceContextId",
+        "2372": "@sourceIdOverwrittenByChild",
+        "2375": "@sourceYear",
+        "2376": "@sourceFirstAuthor",
+        "2380": "comment"
+      },
+      "examples": [
+        {
+          "filename": "properties-01.xml",
+          "xml_sha256": "449b18b28a00c6180e309ea0b31d0f8128fe0f31ecb5f1b76d67611d67214491"
+        },
+        {
+          "filename": "properties-02.xml",
+          "xml_sha256": "96350aec8b18ae64d9300a27cb262c08cdcab28cbb7b9f589d0f1797be392fb4"
+        }
+      ]
+    },
+    {
+      "section": "TTransferCoefficient",
+      "field_paths": {
+        "2400": "@exchangeId",
+        "2410": "@amount",
+        "2420": "@mathematicalRelation",
+        "2425": "@isCalculatedAmount",
+        "2430": "uncertainty",
+        "2440": "@sourceId",
+        "2441": "@sourceContextId",
+        "2442": "@sourceIdOverwrittenByChild",
+        "2445": "@sourceYear",
+        "2446": "@sourceFirstAuthor",
+        "2450": "comment"
+      },
+      "examples": [
+        {
+          "filename": "transfer-coefficients-01.xml",
+          "xml_sha256": "3ea451bff6e5f3db8952e0e76ae107cb524565dd63321a91f1eac919b842ce46"
+        },
+        {
+          "filename": "transfer-coefficients-02.xml",
+          "xml_sha256": "82488c4ea1b5c517d097d78e506974334e1b8bc7b1d819c4706b64d7a2311123"
+        }
+      ]
+    },
+    {
+      "section": "TTextAndImage",
+      "field_paths": {
+        "3900": "text",
+        "3910": "imageUrl",
+        "3920": "variable"
+      },
+      "examples": [
+        {
+          "filename": "text-and-image-01.xml",
+          "xml_sha256": "3b356ae709f01886b3b87d809bca020a5ee4ac77ab6fb364f479032c0b14d9b3"
+        }
+      ]
+    },
+    {
+      "section": "TRepresentativeness",
+      "field_paths": {
+        "3000": "@systemModelId",
+        "3001": "@systemModelContextId",
+        "3005": "systemModelName",
+        "3010": "@percent",
+        "3030": "samplingProcedure",
+        "3040": "extrapolations"
+      },
+      "examples": [
+        {
+          "filename": "representativeness-01.xml",
+          "xml_sha256": "53cf9893e60a61cc9c988667a020e6ed0955f13bfa80473043db3e79c723b7fd"
+        }
+      ]
+    },
+    {
+      "section": "TReview",
+      "field_paths": {
+        "3300": "@reviewerId",
+        "3301": "@reviewerContextId",
+        "3305": "@reviewerName",
+        "3306": "@reviewerEmail",
+        "3310": "@reviewDate",
+        "3320": "@reviewedMajorRelease",
+        "3325": "@reviewedMinorRelease",
+        "3330": "@reviewedMajorRevision",
+        "3335": "@reviewedMinorRevision",
+        "3340": "details",
+        "3350": "otherDetails"
+      },
+      "examples": [
+        {
+          "filename": "review-01.xml",
+          "xml_sha256": "f14d819bb36b0be348a4b9e32eb269dc9d40338bcbb7aee4b41f86a1661f7688"
+        }
+      ]
+    },
+    {
+      "section": "TDataEntryBy",
+      "field_paths": {
+        "3400": "@personId",
+        "3401": "@personContextId",
+        "3403": "@isActiveAuthor",
+        "3405": "@personName",
+        "3406": "@personEmail"
+      },
+      "examples": [
+        {
+          "filename": "data-entry-01.xml",
+          "xml_sha256": "e238cabcde49bc991c8feb1f87c6971a6ff1a21c5b782e1940b0adab43965fef"
+        }
+      ]
+    },
+    {
+      "section": "TDataGeneratorAndPublication",
+      "field_paths": {
+        "3500": "@personId",
+        "3501": "@personContextId",
+        "3505": "@personName",
+        "3506": "@personEmail",
+        "3510": "@dataPublishedIn",
+        "3520": "@publishedSourceId",
+        "3521": "@publishedSourceContextId",
+        "3522": "@publishedSourceIdOverwrittenByChild",
+        "3525": "@publishedSourceYear",
+        "3526": "@publishedSourceFirstAuthor",
+        "3530": "@pageNumbers",
+        "3540": "@isCopyrightProtected",
+        "3550": "@accessRestrictedTo",
+        "3560": "@companyId",
+        "3561": "@companyContextId",
+        "3562": "@companyCode",
+        "3563": "@companyIdOverwrittenByChild"
+      },
+      "examples": [
+        {
+          "filename": "publication-01.xml",
+          "xml_sha256": "449607b413d7ca3ef2d2a409e7f16194a3f0b6b378abd6de35283b2889595415"
+        },
+        {
+          "filename": "publication-02.xml",
+          "xml_sha256": "316630ee4bdbce789cac1f7e4e94a23b48a9f1e9ffca9461816752b2bbf57462"
+        }
+      ]
+    },
+    {
+      "section": "TFileAttributes",
+      "field_paths": {
+        "3800": "@majorRelease",
+        "3805": "@minorRelease",
+        "3810": "@majorRevision",
+        "3815": "@minorRevision",
+        "3820": "@defaultLanguage",
+        "3830": "@creationTimestamp",
+        "3840": "@lastEditTimestamp",
+        "3850": "@internalSchemaVersion",
+        "3860": "@fileGenerator",
+        "3870": "@fileTimestamp",
+        "3880": "@contextId",
+        "3885": "contextName",
+        "3890": "requiredContext"
+      },
+      "examples": [
+        {
+          "filename": "file-attributes-01.xml",
+          "xml_sha256": "8659a9a8f5f336830610a395f1fab0dbafef2021d29fa92f5f9b2383bb1e5869"
+        }
+      ]
+    },
+    {
+      "section": "TRequiredContextReference",
+      "field_paths": {
+        "7810": "@majorRelease",
+        "7820": "@minorRelease",
+        "7830": "@majorRevision",
+        "7840": "@minorRevision",
+        "7850": "@requiredContextId",
+        "7855": "requiredContextName",
+        "7860": "@requiredContextFileLocation"
+      },
+      "examples": [
+        {
+          "filename": "required-contexts-01.xml",
+          "xml_sha256": "7f2dd5fc80918fe567e89df0c4a3f2132964869ca996a739ea1a769bf58b6516"
+        }
+      ]
+    }
+  ],
   "outputs": [
     {
       "path": "content/ecospold2/README.md",
-      "sha256": "e3a0a8690d1d79c988b3b0f4ef51e93deca2399d0321ac9c1ec21709e2b92824"
+      "sha256": "066eb6aa49d316ad772cf40c190ffb31dfa47369410e4cf98ade2886092706ee"
     },
     {
       "path": "content/ecospold2/activity-description.md",
@@ -1258,7 +1813,7 @@
     },
     {
       "path": "content/ecospold2/activity.md",
-      "sha256": "f8d5eccecc45ceb3027a19bd86bf5c18bd204ea4ba0fc300ced05e0b0710f00b"
+      "sha256": "8f7cdcd87c190b37d981055212f77bc0f37cac3e87d9f1dd4a387ee639191559"
     },
     {
       "path": "content/ecospold2/administrative-information.md",
@@ -1269,12 +1824,16 @@
       "sha256": "f27d3bdef42095ff5876934b78a56ef1f3f744277ef28ad3755626f1789ca848"
     },
     {
+      "path": "content/ecospold2/attachments/ecospold2-xml-examples.zip",
+      "sha256": "241a4be401227e08d4e835344ab2faa91935e12a605796e8cf17ce7e08bf5769"
+    },
+    {
       "path": "content/ecospold2/classification.md",
-      "sha256": "99f2e2072deef2fb2329a33da203027700b83450c6d189c4eb87722b44164876"
+      "sha256": "db5828b7ea36c3a3277d1b22494c03368f8c750a1ed3b504b190325bac43b3df"
     },
     {
       "path": "content/ecospold2/compartments.md",
-      "sha256": "b91f3c1d7e6e40d6557bb9c42818f0564fea52bf370a3ec73746f2282dcbdf1e"
+      "sha256": "3eeec7925589bde61e1797a9091001383740f9bd724f42de95f6561a65bf27c0"
     },
     {
       "path": "content/ecospold2/complex-types.md",
@@ -1282,7 +1841,7 @@
     },
     {
       "path": "content/ecospold2/data-entry.md",
-      "sha256": "abb8495a32b64d6afcf18e7babaf02858e62c8aa07d969ef1172bf3f63d425b4"
+      "sha256": "b3151123930780f4f3a475d82ebe3fecf04b991e5b49c7d6cd194cb12219889f"
     },
     {
       "path": "content/ecospold2/data-levels.md",
@@ -1291,6 +1850,10 @@
     {
       "path": "content/ecospold2/demo/README.txt",
       "sha256": "f7656238fe5e0ef469f0693980b9472d6588f25cccee4d2677330744dc05da10"
+    },
+    {
+      "path": "content/ecospold2/demo/XML-examples-README.txt",
+      "sha256": "bfe2524b9e430952865733831133e606b871306c5f8afd900e664725786aea16"
     },
     {
       "path": "content/ecospold2/demo/demo-electricity.spold",
@@ -1306,7 +1869,7 @@
     },
     {
       "path": "content/ecospold2/demo/ecospold2-tutorial-demo.zip",
-      "sha256": "1ad9127aefb7c6d9e042167cefd2135d62650d7fdd551e23c6ff48550c22b033"
+      "sha256": "de7b85847ea2d3b5208baac3090c25144e13d651af3b355b6620fc0386d89a6e"
     },
     {
       "path": "content/ecospold2/demo/extract_ecospold.py",
@@ -1325,16 +1888,20 @@
       "sha256": "e7310c0fdc6d6830556095050f784a3b9249be6f72c793d1f11521e4e2aa5e3b"
     },
     {
+      "path": "content/ecospold2/demo/read_xml_fields.py",
+      "sha256": "e1900ea4641492068159d1edfb5de22172a173fb7867cfdadeaab2357a8c2e70"
+    },
+    {
       "path": "content/ecospold2/demo-walkthrough.md",
       "sha256": "98fe52f527e2bd74f872699b41a419433aa8ef8eef80c30139cf53715971b090"
     },
     {
       "path": "content/ecospold2/elementary-exchanges.md",
-      "sha256": "3a1fd1610332385151b3efef54a0271d933840ae507e0e7f3b7c97260b1b4f92"
+      "sha256": "2dd42ad82a22dd5059f62c453a265c4ea2b4d603e56865b84f97f1f51b47dc8c"
     },
     {
       "path": "content/ecospold2/exchanges.md",
-      "sha256": "cfece74f6e2dce65876e386acc174633b8f7fa19e525546d97a90bb95eb2231d"
+      "sha256": "737a47c6d319d29b4dafb61b52f9b141a378ee32db28589a3376c86a9e906f6e"
     },
     {
       "path": "content/ecospold2/extraction-practice.md",
@@ -1342,7 +1909,7 @@
     },
     {
       "path": "content/ecospold2/file-attributes.md",
-      "sha256": "cd92d0dc88414a5cf5f0b750f30f066549838a75ba32521102e995c7b0d57be7"
+      "sha256": "e884b7ec9206d18f8b7bfe0f5893729abadedb28cc498474627485858b7f19e1"
     },
     {
       "path": "content/ecospold2/flow-data.md",
@@ -1354,19 +1921,19 @@
     },
     {
       "path": "content/ecospold2/geography.md",
-      "sha256": "eabb9e57e10a312fddbd5beb753210b9c255ef5173fcc65067e769cfb9c4be0e"
+      "sha256": "6fd29da645f71a85476d67be1b09dcdc1e725f70786228f440728c1732c52285"
     },
     {
       "path": "content/ecospold2/impact-indicators.md",
-      "sha256": "1dd06055e24fd19714c02c9ddf55d1d4a8665191c3b3dac14d99246b9c1b4da7"
+      "sha256": "4277231328e270315753192a269ea38831b2cae1901221a6baf2309abc19f983"
     },
     {
       "path": "content/ecospold2/intermediate-exchanges.md",
-      "sha256": "156eaf6db4ea3e9999ee6bd44814b47311ae32385961a3a68d607b6e057441b7"
+      "sha256": "c3cb5c3d5e3ebee6981b5951652130c56e263b85c6f84b65825d8d7776f3cf32"
     },
     {
       "path": "content/ecospold2/macro-economic-scenario.md",
-      "sha256": "7a023aac503ec092ddc7b9c8a56f038048ccfc958a993bebdcaaaece7dacd664"
+      "sha256": "598854f16e746fdb353c7dfa06dd49210ce3d041c245cf1213ea243092ec4a74"
     },
     {
       "path": "content/ecospold2/modelling-validation.md",
@@ -1374,11 +1941,11 @@
     },
     {
       "path": "content/ecospold2/parameters.md",
-      "sha256": "4ae4c4415207f39e32d0c6ce93f77bff455d51ffb0a052449e4d62e4924b9a4a"
+      "sha256": "a8fbb7d51df9ff86298116088448afd53dc3338b9894d01eb64e57e38dd59a6b"
     },
     {
       "path": "content/ecospold2/properties.md",
-      "sha256": "168efd29e2cb0db41e373b76b9877de8b0c4b7ecbd95a9b355521d810a003bad"
+      "sha256": "7f5c20dcacf9d6d61c451c23bd7ac8774c5251019b16a914c970977db631b935"
     },
     {
       "path": "content/ecospold2/provenance.md",
@@ -1386,35 +1953,35 @@
     },
     {
       "path": "content/ecospold2/publication.md",
-      "sha256": "ac4d81da884aa49f2e29894d043c3f144a808f2183e36dde9e2b881c2926870e"
+      "sha256": "88387d1570e6a8689d5185fbef532398a057764465d4e574bfcfbb120d1b8baf"
     },
     {
       "path": "content/ecospold2/representativeness.md",
-      "sha256": "222f6f76decfad5cb5eef6bd9c0237e671afa0dabd40c5c37f688cc4c4d2bdab"
+      "sha256": "b4831467c9db4ec057f41c17efcdbac9009c47b7439f10ac084607d672d9e3d0"
     },
     {
       "path": "content/ecospold2/required-contexts.md",
-      "sha256": "b0ae1ea8f915aab99c7d6c62ece4acc57857e5883f65d5b84dfa914935c36dda"
+      "sha256": "3e8768d84f68c7a5f4f529ff477ebf2a8a47ed9eec0e2f16d4eabe9a432c99c8"
     },
     {
       "path": "content/ecospold2/review.md",
-      "sha256": "8afeaa4e317fabb579426db2f32b13b1241a35c91f6d844253b45128557e0978"
+      "sha256": "b823c39403215c75e701c609a8c0932b5bda26f417af33795ac3977247c9681b"
     },
     {
       "path": "content/ecospold2/technology.md",
-      "sha256": "b1bf2ef9170401363a7bd6ec0972ee0ed99b6bdf6d39fd6948d63cea87620437"
+      "sha256": "b8e3418ba511acf7b8b2bf6de3d2c90cedf22b907d8566f78a12f1bd0e7f745c"
     },
     {
       "path": "content/ecospold2/text-and-image.md",
-      "sha256": "b3c9bad8cff62d68ee562158ac96a6da5ab17c4829d33b4660be88e7dd3cccc1"
+      "sha256": "161b5946d338bdd33b2a936a637b06e6c888475e03ad7a59061609fb8dd66ea7"
     },
     {
       "path": "content/ecospold2/time-period.md",
-      "sha256": "3bc2d64b187ed15acb41b0dba701815dc31acb614547ea6dcb845312d27a8dce"
+      "sha256": "a5403f46fe1665cf1dbc3d7bafe829113d896f7f5aaf65d011d756d47f314c00"
     },
     {
       "path": "content/ecospold2/transfer-coefficients.md",
-      "sha256": "b04f17b5fa035c4342a3328a31d7cfc8c8d053ffeacbfe4e1d2ac2b4040f6ea8"
+      "sha256": "e3bf5469864500506ce6111b9de547c2de88eaea6907a95b667c6427f4822c53"
     },
     {
       "path": "content/ecospold2/translation-review.md",
@@ -1422,11 +1989,167 @@
     },
     {
       "path": "content/ecospold2/tutorial-review.md",
-      "sha256": "178fefb775b7afff1f1b229c6396c52d55c4d90522780f85d72aab5f46b61688"
+      "sha256": "c046124a40a2555adb4393458b56e356cee316583efba89218e9dbd71cb119f6"
     },
     {
       "path": "content/ecospold2/uncertainty.md",
-      "sha256": "125a609ce17a3b914006ca816d10d2878cd1058073b6d6c4f5faae727b2a2f3e"
+      "sha256": "44627bcb007e7b647dfabf1d9319d06d11d6e0949b2516be4b763111f8570cd5"
+    },
+    {
+      "path": "content/ecospold2/xml-examples/activity-01.xml",
+      "sha256": "0c5ac7ef428ef79e36b972f894fb4e73d0cf772d507c7daf89873b183d5e85d7"
+    },
+    {
+      "path": "content/ecospold2/xml-examples/activity-02.xml",
+      "sha256": "2ed9bde061b6e8a942251faf16f6609c449d065956510c320c12625b1b98038f"
+    },
+    {
+      "path": "content/ecospold2/xml-examples/classification-01.xml",
+      "sha256": "471c01de52acf872148a167fc819f6c0cfa08071884afe539bd2fc1e25a5a6ea"
+    },
+    {
+      "path": "content/ecospold2/xml-examples/compartments-01.xml",
+      "sha256": "ca6c1d11d67eb7f43ef6cbc9639f4539207bc651853eca1e317a462ebf8ef076"
+    },
+    {
+      "path": "content/ecospold2/xml-examples/data-entry-01.xml",
+      "sha256": "e238cabcde49bc991c8feb1f87c6971a6ff1a21c5b782e1940b0adab43965fef"
+    },
+    {
+      "path": "content/ecospold2/xml-examples/elementary-exchanges-01.xml",
+      "sha256": "f861ac0cb56cb0cbd110f3b6d68c2450fd5a5e057e010f0ea5576b42afde384d"
+    },
+    {
+      "path": "content/ecospold2/xml-examples/elementary-exchanges-02.xml",
+      "sha256": "92bea3eb128e589658fa279f3a93ab0e27cc6c63504b33fcdee70992f145eb52"
+    },
+    {
+      "path": "content/ecospold2/xml-examples/elementary-exchanges-03.xml",
+      "sha256": "ef36f87d583ae5ae5750fbb0de3ce041ffa590b1dabea7edbeb8ee72e582756a"
+    },
+    {
+      "path": "content/ecospold2/xml-examples/elementary-exchanges-04.xml",
+      "sha256": "2d037bf287c816f8d38477e71016d009a3e3917d687f70196af9c97d5d406c12"
+    },
+    {
+      "path": "content/ecospold2/xml-examples/exchanges-01.xml",
+      "sha256": "374b7747319013432be6d4ab927580e80cb2fe4e8aab90a1d457a7d510e5fe93"
+    },
+    {
+      "path": "content/ecospold2/xml-examples/exchanges-02.xml",
+      "sha256": "bf792ccbb2b88f52c439d0f11210c8c4448102c70cbf93d0817f4cd94efd3f2d"
+    },
+    {
+      "path": "content/ecospold2/xml-examples/file-attributes-01.xml",
+      "sha256": "8659a9a8f5f336830610a395f1fab0dbafef2021d29fa92f5f9b2383bb1e5869"
+    },
+    {
+      "path": "content/ecospold2/xml-examples/geography-01.xml",
+      "sha256": "1af2feeb9fe526f8cbdf53438de39629098f4170de8b03bd53098d96121c1782"
+    },
+    {
+      "path": "content/ecospold2/xml-examples/impact-indicators-01.xml",
+      "sha256": "ee0f4173d8382728907019b565c93794da0ecdc3b942461adca487f3fb040352"
+    },
+    {
+      "path": "content/ecospold2/xml-examples/intermediate-exchanges-01.xml",
+      "sha256": "a995e3a3ce2290c53eead5a7bda6d68aad591328e098f416723e0fa03a9e6753"
+    },
+    {
+      "path": "content/ecospold2/xml-examples/intermediate-exchanges-02.xml",
+      "sha256": "7bbd87131ba77364fb603e1b1a7cbb4a7a8088fe5d9647ecf3d65c2d7cb6bf27"
+    },
+    {
+      "path": "content/ecospold2/xml-examples/macro-economic-scenario-01.xml",
+      "sha256": "828bf9d37f87813d3c9f7ce8c70dcff388a3936b6b6ab71e9b6e21134c025bc8"
+    },
+    {
+      "path": "content/ecospold2/xml-examples/parameters-01.xml",
+      "sha256": "f3090633a3cfc16b52b5799dbab16b17dde367edb96f1b3bc2af09206ba33ae6"
+    },
+    {
+      "path": "content/ecospold2/xml-examples/properties-01.xml",
+      "sha256": "449b18b28a00c6180e309ea0b31d0f8128fe0f31ecb5f1b76d67611d67214491"
+    },
+    {
+      "path": "content/ecospold2/xml-examples/properties-02.xml",
+      "sha256": "96350aec8b18ae64d9300a27cb262c08cdcab28cbb7b9f589d0f1797be392fb4"
+    },
+    {
+      "path": "content/ecospold2/xml-examples/publication-01.xml",
+      "sha256": "449607b413d7ca3ef2d2a409e7f16194a3f0b6b378abd6de35283b2889595415"
+    },
+    {
+      "path": "content/ecospold2/xml-examples/publication-02.xml",
+      "sha256": "316630ee4bdbce789cac1f7e4e94a23b48a9f1e9ffca9461816752b2bbf57462"
+    },
+    {
+      "path": "content/ecospold2/xml-examples/representativeness-01.xml",
+      "sha256": "53cf9893e60a61cc9c988667a020e6ed0955f13bfa80473043db3e79c723b7fd"
+    },
+    {
+      "path": "content/ecospold2/xml-examples/required-contexts-01.xml",
+      "sha256": "7f2dd5fc80918fe567e89df0c4a3f2132964869ca996a739ea1a769bf58b6516"
+    },
+    {
+      "path": "content/ecospold2/xml-examples/review-01.xml",
+      "sha256": "f14d819bb36b0be348a4b9e32eb269dc9d40338bcbb7aee4b41f86a1661f7688"
+    },
+    {
+      "path": "content/ecospold2/xml-examples/technology-01.xml",
+      "sha256": "ea78f055f46e0cb25a0cd25bcdb73d142d82ef9528d03c4519173d4df7c1a382"
+    },
+    {
+      "path": "content/ecospold2/xml-examples/text-and-image-01.xml",
+      "sha256": "3b356ae709f01886b3b87d809bca020a5ee4ac77ab6fb364f479032c0b14d9b3"
+    },
+    {
+      "path": "content/ecospold2/xml-examples/time-period-01.xml",
+      "sha256": "c02fa459a0c65696d74cc72c13a1745cbc6e8a3c9a1eea01bfdd161bc81080cc"
+    },
+    {
+      "path": "content/ecospold2/xml-examples/transfer-coefficients-01.xml",
+      "sha256": "3ea451bff6e5f3db8952e0e76ae107cb524565dd63321a91f1eac919b842ce46"
+    },
+    {
+      "path": "content/ecospold2/xml-examples/transfer-coefficients-02.xml",
+      "sha256": "82488c4ea1b5c517d097d78e506974334e1b8bc7b1d819c4706b64d7a2311123"
+    },
+    {
+      "path": "content/ecospold2/xml-examples/uncertainty-01.xml",
+      "sha256": "d2c55d94580404a4e16c86ee12d2b45894e344fd79e7167664416e5a349d0880"
+    },
+    {
+      "path": "content/ecospold2/xml-examples/uncertainty-02.xml",
+      "sha256": "c39e89653393a9f402e938df72cbb8b47cfc422e8ca664827052b98baa4bfef1"
+    },
+    {
+      "path": "content/ecospold2/xml-examples/uncertainty-03.xml",
+      "sha256": "0d4acae143b9d4a80b35158c05f687e62cd430c73d9d4dd0986e3f73bbe5c6a7"
+    },
+    {
+      "path": "content/ecospold2/xml-examples/uncertainty-04.xml",
+      "sha256": "5141548db9883e68268c641cb16aa627b2b382ed5c912dd66f121e459d93359e"
+    },
+    {
+      "path": "content/ecospold2/xml-examples/uncertainty-05.xml",
+      "sha256": "7011865f9ea063437bddb9e765a902964e209ff3610a8aae9e528746b337a932"
+    },
+    {
+      "path": "content/ecospold2/xml-examples/uncertainty-06.xml",
+      "sha256": "3353c592d27bf64b99562d130eeb7e08502e0fe956ed78c2785266b78644b29b"
+    },
+    {
+      "path": "content/ecospold2/xml-examples/uncertainty-07.xml",
+      "sha256": "f43e1af7be92d2fea1acbb4e70fff746760466435b6d2d2ec725c17bd3dbd78a"
+    },
+    {
+      "path": "content/ecospold2/xml-examples/uncertainty-08.xml",
+      "sha256": "d5eb0a36c2e4d68fd8cf181aaece86692309258d89f5b56b33910731ac14c532"
+    },
+    {
+      "path": "content/ecospold2/xml-examples/uncertainty-09.xml",
+      "sha256": "57d7ff206f3a5eeeff2c086dbbe3dc6b71c5e410073471775b0028e98142685c"
     },
     {
       "path": "content/ecospold2/xml-structure.md",
@@ -1461,6 +2184,22 @@
     {
       "path": "audit/ecospold2/tutorial/tutorial-guide-review.json",
       "sha256": "eb85116c92abb3f1ff0a7e91333427c698c3788df52f22017e9462aa73f92445"
+    },
+    {
+      "path": "audit/ecospold2/tutorial/xml-examples-guide-review.json",
+      "sha256": "ac13e4024f2f77cc3eaef22e8eb0347ecc8d34bf2f43005f7fde36db6469de07"
+    },
+    {
+      "path": "audit/ecospold2/tutorial/xml-examples-review-a.json",
+      "sha256": "83a7fa1e99132172b92105a0ad64abf93ee96c9af12687e7d280a3f574006d2d"
+    },
+    {
+      "path": "audit/ecospold2/tutorial/xml-examples-review-b.json",
+      "sha256": "b887d32d2528c72eacd66e7a8d6429923eefe0634a377eedbacc129dfef477e6"
+    },
+    {
+      "path": "audit/ecospold2/tutorial/xml-examples-review-c.json",
+      "sha256": "4d2df50ffc5a22aef756f5795655458abc2962e1bd4bc657191761225f5c8058"
     }
   ]
 }

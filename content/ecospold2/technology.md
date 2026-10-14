@@ -10,6 +10,71 @@
 
 元素 `comment` 采用 `TTextAndImage`，说明技术的性质、特征及单元过程的技术属性。若活动包含多个子活动，也应描述对应技术，并使用专业工艺名称。提取这段说明，是理解技术差异及决定是否采用数据的步骤；仅用技术等级整数无法替代工艺文档。
 
+## 对照 XML 找到每个字段
+
+以下是为本章构造的教学 XML 类型片段，不是真实 ecoinvent 记录。片段声明了默认命名空间，可独立解析；插入自己的 `.spold` 时应定位到本章所述父元素。这里展示该类型的结构，整个数据集的必填关系、继承和主数据引用仍需结合外层文件判断。
+
+### 示例 1：技术层级与具体工艺
+
+[下载本段 XML](xml-examples/technology-01.xml)。
+
+```xml
+<technology xmlns="http://www.EcoInvent.org/EcoSpold02" technologyLevel="3">
+  <!-- 教学构造的技术说明。 -->
+  <comment><text index="1" xml:lang="zh">教学过程采用连续加工设备；清洗和包装作为本例的子活动一并说明。</text></comment>
+</technology>
+```
+
+technology 位于活动描述中。层级码只是粗略分类，具体设备及子活动信息仍从 comment 读取；这里没有提供任何真实能效数值。
+
+### 顺着示例读取字段
+
+下面按本类型的字段逐项对照。属性前的 `@` 只是参考文档的写法；XML 中没有这个字符。没有写出的可选项表示缺失，不能直接补成零。引用字段的有效上下文可能要从外层 `fileAttributes/@contextId` 取得，单独片段不会替你提供这项外层信息。
+
+**`@technologyLevel`（FieldID 500）**：`technologyLevel="3"` 表示当前技术，也是普通 XSD 的默认值。0 为未定义，1 为新技术，2 为现代技术，4 为旧技术，5 为过时技术；读取整数码并结合有效年份和地区解释竞争力，不能把“现代”直接换算成设备制造年份，市场可用 0 表示无技术层级。
+
+**`comment`（FieldID 510）**：`comment/text` 的连续加工、清洗和包装说明本活动及其子活动采用的技术。按命名空间进入 comment 的有序文本，保留工艺细节；它与上一项的层级标签相互补充，不应只取层级码而忽略实际技术。
+
+### 按相同路径提取自己的字段
+
+下面的字典逐项对应上面的 XML 字段。解压[XML 片段与读取代码 ZIP](attachments/ecospold2-xml-examples.zip)后，在解压目录运行；更换文件名即可阅读本章其他片段。返回值始终是列表：`[]` 表示未出现，属性保留原始字符串，子元素保留语言等属性、文字和完整 XML。多个语言或重复元素不会被悄悄丢弃。
+
+```python
+import json
+import xml.etree.ElementTree as ET
+from read_xml_fields import field_values
+
+node = ET.parse("xml-examples/technology-01.xml").getroot()
+FIELDS = {
+    "500": "@technologyLevel",
+    "510": "comment",
+}
+for field_id, relative_path in FIELDS.items():
+    values = field_values(node, relative_path)
+    print(field_id, relative_path, json.dumps(values, ensure_ascii=False))
+```
+
+换成完整 `.spold` 文件时，先使用本章定位路径选出目标节点，再把它作为 `node` 传入。例如属性 `@amount` 最终用 `.get("amount")` 读取；子元素 `unitName` 用带命名空间的 `.findall("es:unitName", ns)` 读取。嵌套路径先进入对应子元素，再取最后的属性；如 `lognormal/@variance`，不能在外层 `uncertainty` 上直接取 `variance`。复合类型的子元素不能只读外层 `.text`，其结构已保留在返回记录的 `xml` 中。
+
+### 直接在完整 spold 中使用这些路径
+
+沿用上一段的 `FIELDS` 字典与 `field_values`，下面改从完整文件选取本类型节点。先用配套 demo 运行，再把文件名改为自己的 `.spold`。XML 查找会返回全部同类节点；可选结构未提供时，匹配数为零，不会被填成数值零。多个路径代表同类型的不同使用位置，统计时按父路径区分。
+
+```python
+from read_section import load_dataset, NS
+
+dataset = load_dataset("demo-product.spold", index=0)
+LOCATIONS = ['es:activityDescription/es:technology']
+for location in LOCATIONS:
+    nodes = dataset.findall(location, NS)
+    print("父路径：", location, "匹配数：", len(nodes))
+    for node in nodes:
+        for field_id, relative_path in FIELDS.items():
+            print(field_id, relative_path,
+                  json.dumps(field_values(node, relative_path), ensure_ascii=False))
+```
+
+
 ## 怎样定位、使用与提取
 
 比较工艺与技术先进程度时，同时阅读 technologyLevel 和 comment。技术等级是适用性信息，不能作为交换量的系数；缺失或“未定义”也不等于零技术投入。

@@ -1,0 +1,6 @@
+<exchange xmlns="http://www.EcoInvent.org/EcoSpold02" id="00000000-0000-4000-8000-000000001006" amount="1.5" unitId="a4800e12-54b1-5444-a6d0-b48a59529439" sourceIdOverwrittenByChild="true" specificAllocationPropertyIdOverwrittenByChild="true">
+  <name xml:lang="zh">教学清除引用标记</name>
+  <name xml:lang="en">Synthetic reference-removal markers</name>
+  <unitName xml:lang="zh">kg</unitName>
+  <unitName xml:lang="en">kg</unitName>
+</exchange>

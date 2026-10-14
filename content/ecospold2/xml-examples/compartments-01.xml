@@ -1,0 +1,6 @@
+<compartment xmlns="http://www.EcoInvent.org/EcoSpold02" subcompartmentId="6bbb1a41-12de-5599-843e-cc02d4084a9a" subcompartmentContextId="f71ac544-3bc8-5c15-8ea4-072d907663f1">
+          <compartment xml:lang="zh">空气</compartment>
+          <compartment xml:lang="en">air</compartment>
+          <subcompartment xml:lang="zh">未指定</subcompartment>
+          <subcompartment xml:lang="en">unspecified</subcompartment>
+        </compartment>

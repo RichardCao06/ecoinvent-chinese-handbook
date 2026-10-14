@@ -1,0 +1,5 @@
+<macroEconomicScenario xmlns="http://www.EcoInvent.org/EcoSpold02" macroEconomicScenarioId="0984f81b-aa81-5830-b34b-99b00a49a684" macroEconomicScenarioContextId="f71ac544-3bc8-5c15-8ea4-072d907663f1">
+  <!-- 教学构造的情景，非官方预测。 -->
+  <name xml:lang="zh">教学需求变化情景</name>
+  <comment xml:lang="zh">教学宏观情景子活动：相对父活动默认情景调整需求假设，其他条件须在完整文件中核查。</comment>
+</macroEconomicScenario>

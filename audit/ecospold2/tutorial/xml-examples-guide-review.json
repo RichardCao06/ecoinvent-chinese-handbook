@@ -1,0 +1,159 @@
+{
+  "reviewer": "translator_a",
+  "status": "passed_with_notes",
+  "files": {
+    ".github/workflows/validate-docs.yml": "f442af9b6cd5b686b79be79f56e70f57d7cd300a4ee2798c2e5ca7764613b191",
+    "README.md": "04a14af83b57f1f59ec6c0d9ff98f8989a6b1de0fd1595b44eacfe896b362326",
+    "content/README.md": "dff656a8b1efd6064a929e0fe12ab40ad79ae9f142d4f88657fb0e878ef7890e",
+    "content/ecospold2/README.md": "066eb6aa49d316ad772cf40c190ffb31dfa47369410e4cf98ade2886092706ee",
+    "content/ecospold2/activity.md": "8f7cdcd87c190b37d981055212f77bc0f37cac3e87d9f1dd4a387ee639191559",
+    "content/ecospold2/attachments/ecospold2-xml-examples.zip": "241a4be401227e08d4e835344ab2faa91935e12a605796e8cf17ce7e08bf5769",
+    "content/ecospold2/classification.md": "db5828b7ea36c3a3277d1b22494c03368f8c750a1ed3b504b190325bac43b3df",
+    "content/ecospold2/compartments.md": "3eeec7925589bde61e1797a9091001383740f9bd724f42de95f6561a65bf27c0",
+    "content/ecospold2/data-entry.md": "b3151123930780f4f3a475d82ebe3fecf04b991e5b49c7d6cd194cb12219889f",
+    "content/ecospold2/demo/XML-examples-README.txt": "bfe2524b9e430952865733831133e606b871306c5f8afd900e664725786aea16",
+    "content/ecospold2/demo/ecospold2-tutorial-demo.zip": "de7b85847ea2d3b5208baac3090c25144e13d651af3b355b6620fc0386d89a6e",
+    "content/ecospold2/demo/read_section.py": "e7310c0fdc6d6830556095050f784a3b9249be6f72c793d1f11521e4e2aa5e3b",
+    "content/ecospold2/demo/read_xml_fields.py": "e1900ea4641492068159d1edfb5de22172a173fb7867cfdadeaab2357a8c2e70",
+    "content/ecospold2/elementary-exchanges.md": "2dd42ad82a22dd5059f62c453a265c4ea2b4d603e56865b84f97f1f51b47dc8c",
+    "content/ecospold2/exchanges.md": "737a47c6d319d29b4dafb61b52f9b141a378ee32db28589a3376c86a9e906f6e",
+    "content/ecospold2/file-attributes.md": "e884b7ec9206d18f8b7bfe0f5893729abadedb28cc498474627485858b7f19e1",
+    "content/ecospold2/geography.md": "6fd29da645f71a85476d67be1b09dcdc1e725f70786228f440728c1732c52285",
+    "content/ecospold2/impact-indicators.md": "4277231328e270315753192a269ea38831b2cae1901221a6baf2309abc19f983",
+    "content/ecospold2/intermediate-exchanges.md": "c3cb5c3d5e3ebee6981b5951652130c56e263b85c6f84b65825d8d7776f3cf32",
+    "content/ecospold2/macro-economic-scenario.md": "598854f16e746fdb353c7dfa06dd49210ce3d041c245cf1213ea243092ec4a74",
+    "content/ecospold2/parameters.md": "a8fbb7d51df9ff86298116088448afd53dc3338b9894d01eb64e57e38dd59a6b",
+    "content/ecospold2/properties.md": "7f5c20dcacf9d6d61c451c23bd7ac8774c5251019b16a914c970977db631b935",
+    "content/ecospold2/publication.md": "88387d1570e6a8689d5185fbef532398a057764465d4e574bfcfbb120d1b8baf",
+    "content/ecospold2/representativeness.md": "b4831467c9db4ec057f41c17efcdbac9009c47b7439f10ac084607d672d9e3d0",
+    "content/ecospold2/required-contexts.md": "3e8768d84f68c7a5f4f529ff477ebf2a8a47ed9eec0e2f16d4eabe9a432c99c8",
+    "content/ecospold2/review.md": "b823c39403215c75e701c609a8c0932b5bda26f417af33795ac3977247c9681b",
+    "content/ecospold2/technology.md": "b8e3418ba511acf7b8b2bf6de3d2c90cedf22b907d8566f78a12f1bd0e7f745c",
+    "content/ecospold2/text-and-image.md": "161b5946d338bdd33b2a936a637b06e6c888475e03ad7a59061609fb8dd66ea7",
+    "content/ecospold2/time-period.md": "a5403f46fe1665cf1dbc3d7bafe829113d896f7f5aaf65d011d756d47f314c00",
+    "content/ecospold2/transfer-coefficients.md": "e3bf5469864500506ce6111b9de547c2de88eaea6907a95b667c6427f4822c53",
+    "content/ecospold2/tutorial-review.md": "c046124a40a2555adb4393458b56e356cee316583efba89218e9dbd71cb119f6",
+    "content/ecospold2/uncertainty.md": "44627bcb007e7b647dfabf1d9319d06d11d6e0949b2516be4b763111f8570cd5",
+    "content/ecospold2/xml-examples/activity-01.xml": "0c5ac7ef428ef79e36b972f894fb4e73d0cf772d507c7daf89873b183d5e85d7",
+    "content/ecospold2/xml-examples/activity-02.xml": "2ed9bde061b6e8a942251faf16f6609c449d065956510c320c12625b1b98038f",
+    "content/ecospold2/xml-examples/classification-01.xml": "471c01de52acf872148a167fc819f6c0cfa08071884afe539bd2fc1e25a5a6ea",
+    "content/ecospold2/xml-examples/compartments-01.xml": "ca6c1d11d67eb7f43ef6cbc9639f4539207bc651853eca1e317a462ebf8ef076",
+    "content/ecospold2/xml-examples/data-entry-01.xml": "e238cabcde49bc991c8feb1f87c6971a6ff1a21c5b782e1940b0adab43965fef",
+    "content/ecospold2/xml-examples/elementary-exchanges-01.xml": "f861ac0cb56cb0cbd110f3b6d68c2450fd5a5e057e010f0ea5576b42afde384d",
+    "content/ecospold2/xml-examples/elementary-exchanges-02.xml": "92bea3eb128e589658fa279f3a93ab0e27cc6c63504b33fcdee70992f145eb52",
+    "content/ecospold2/xml-examples/elementary-exchanges-03.xml": "ef36f87d583ae5ae5750fbb0de3ce041ffa590b1dabea7edbeb8ee72e582756a",
+    "content/ecospold2/xml-examples/elementary-exchanges-04.xml": "2d037bf287c816f8d38477e71016d009a3e3917d687f70196af9c97d5d406c12",
+    "content/ecospold2/xml-examples/exchanges-01.xml": "374b7747319013432be6d4ab927580e80cb2fe4e8aab90a1d457a7d510e5fe93",
+    "content/ecospold2/xml-examples/exchanges-02.xml": "bf792ccbb2b88f52c439d0f11210c8c4448102c70cbf93d0817f4cd94efd3f2d",
+    "content/ecospold2/xml-examples/file-attributes-01.xml": "8659a9a8f5f336830610a395f1fab0dbafef2021d29fa92f5f9b2383bb1e5869",
+    "content/ecospold2/xml-examples/geography-01.xml": "1af2feeb9fe526f8cbdf53438de39629098f4170de8b03bd53098d96121c1782",
+    "content/ecospold2/xml-examples/impact-indicators-01.xml": "ee0f4173d8382728907019b565c93794da0ecdc3b942461adca487f3fb040352",
+    "content/ecospold2/xml-examples/intermediate-exchanges-01.xml": "a995e3a3ce2290c53eead5a7bda6d68aad591328e098f416723e0fa03a9e6753",
+    "content/ecospold2/xml-examples/intermediate-exchanges-02.xml": "7bbd87131ba77364fb603e1b1a7cbb4a7a8088fe5d9647ecf3d65c2d7cb6bf27",
+    "content/ecospold2/xml-examples/macro-economic-scenario-01.xml": "828bf9d37f87813d3c9f7ce8c70dcff388a3936b6b6ab71e9b6e21134c025bc8",
+    "content/ecospold2/xml-examples/parameters-01.xml": "f3090633a3cfc16b52b5799dbab16b17dde367edb96f1b3bc2af09206ba33ae6",
+    "content/ecospold2/xml-examples/properties-01.xml": "449b18b28a00c6180e309ea0b31d0f8128fe0f31ecb5f1b76d67611d67214491",
+    "content/ecospold2/xml-examples/properties-02.xml": "96350aec8b18ae64d9300a27cb262c08cdcab28cbb7b9f589d0f1797be392fb4",
+    "content/ecospold2/xml-examples/publication-01.xml": "449607b413d7ca3ef2d2a409e7f16194a3f0b6b378abd6de35283b2889595415",
+    "content/ecospold2/xml-examples/publication-02.xml": "316630ee4bdbce789cac1f7e4e94a23b48a9f1e9ffca9461816752b2bbf57462",
+    "content/ecospold2/xml-examples/representativeness-01.xml": "53cf9893e60a61cc9c988667a020e6ed0955f13bfa80473043db3e79c723b7fd",
+    "content/ecospold2/xml-examples/required-contexts-01.xml": "7f2dd5fc80918fe567e89df0c4a3f2132964869ca996a739ea1a769bf58b6516",
+    "content/ecospold2/xml-examples/review-01.xml": "f14d819bb36b0be348a4b9e32eb269dc9d40338bcbb7aee4b41f86a1661f7688",
+    "content/ecospold2/xml-examples/technology-01.xml": "ea78f055f46e0cb25a0cd25bcdb73d142d82ef9528d03c4519173d4df7c1a382",
+    "content/ecospold2/xml-examples/text-and-image-01.xml": "3b356ae709f01886b3b87d809bca020a5ee4ac77ab6fb364f479032c0b14d9b3",
+    "content/ecospold2/xml-examples/time-period-01.xml": "c02fa459a0c65696d74cc72c13a1745cbc6e8a3c9a1eea01bfdd161bc81080cc",
+    "content/ecospold2/xml-examples/transfer-coefficients-01.xml": "3ea451bff6e5f3db8952e0e76ae107cb524565dd63321a91f1eac919b842ce46",
+    "content/ecospold2/xml-examples/transfer-coefficients-02.xml": "82488c4ea1b5c517d097d78e506974334e1b8bc7b1d819c4706b64d7a2311123",
+    "content/ecospold2/xml-examples/uncertainty-01.xml": "d2c55d94580404a4e16c86ee12d2b45894e344fd79e7167664416e5a349d0880",
+    "content/ecospold2/xml-examples/uncertainty-02.xml": "c39e89653393a9f402e938df72cbb8b47cfc422e8ca664827052b98baa4bfef1",
+    "content/ecospold2/xml-examples/uncertainty-03.xml": "0d4acae143b9d4a80b35158c05f687e62cd430c73d9d4dd0986e3f73bbe5c6a7",
+    "content/ecospold2/xml-examples/uncertainty-04.xml": "5141548db9883e68268c641cb16aa627b2b382ed5c912dd66f121e459d93359e",
+    "content/ecospold2/xml-examples/uncertainty-05.xml": "7011865f9ea063437bddb9e765a902964e209ff3610a8aae9e528746b337a932",
+    "content/ecospold2/xml-examples/uncertainty-06.xml": "3353c592d27bf64b99562d130eeb7e08502e0fe956ed78c2785266b78644b29b",
+    "content/ecospold2/xml-examples/uncertainty-07.xml": "f43e1af7be92d2fea1acbb4e70fff746760466435b6d2d2ec725c17bd3dbd78a",
+    "content/ecospold2/xml-examples/uncertainty-08.xml": "d5eb0a36c2e4d68fd8cf181aaece86692309258d89f5b56b33910731ac14c532",
+    "content/ecospold2/xml-examples/uncertainty-09.xml": "57d7ff206f3a5eeeff2c086dbbe3dc6b71c5e410073471775b0028e98142685c",
+    "tools/build_ecospold_fields.py": "6df0e16e42c6d51bdc5ce5613afcdbe6515407383b2520f01bf56f28ae973645",
+    "tools/build_ecospold_tutorial.py": "779225b3252c9e1f5b47b6327724341d9cf54bca7de0a65fb26b9d30ea5943c4",
+    "tools/ecospold_layout.py": "23a4e9dae02758c6f7a08f1c7a240fb2f23287f389af2f2e15513637e1c607c9",
+    "tools/ecospold_xml_examples.py": "265a10cb20f404d36891b1fe3923ebfe1a4ccdfd8c45b3c20f343d5f3dec8ed0",
+    "tools/render_ecospold_xml_examples.py": "7df83a9b313f46b93d504f6d11e67090ed30913bfe850aad4c1376c65027fe0f",
+    "tools/test_ecospold_sections.py": "e66fd177b10bbc7b58678c10e18800a6b2a4f9bce442768a47ce3404955f949b",
+    "tools/test_ecospold_tutorial.py": "a4ae6d439e8cdac11df5c9efbe20640face2067eaf0a0c862c28b0f205ea32d3",
+    "tools/test_ecospold_xml_examples.py": "0193756797d219266d372c391cff8a543e259cce8413f2b3d92b9b635dc4e4bd",
+    "tools/validate.py": "dcfd22ec28568efd2cb6f0561b99b7c606418b0b39b1752f505c445b190ac775",
+    "tools/validate_ecospold.py": "e739cdf90e0a6e3e73fb1ab7a396e218f38dab53becf07a8d4915ea831b49f7d",
+    "tools/validate_ecospold_tutorial.py": "e4cf51ea6e18e794489ed5b20203ceb1add570a2bb855b6e394bdbbfb7defab1"
+  },
+  "checks": [
+    {
+      "check": "code_and_schema_paths",
+      "status": "passed",
+      "details_zh": "独立读取 read_xml_fields.py、render_ecospold_xml_examples.py、ecospold_xml_examples.py、build_ecospold_tutorial.py、新XML测试、章节测试和当前教程validator。243条字段路径按source.schema.nested与field.name生成；属性、直接子元素、嵌套参数及复合子树定位正确。原始字符串、全部重复语言、XML属性和完整子树保留，缺失返回[]，不补零、不执行公式、不转换单位或作LCA计算。"
+    },
+    {
+      "check": "all_published_examples",
+      "status": "passed",
+      "chapters": 22,
+      "xml_fragments": 39,
+      "fields": 243,
+      "details_zh": "全新4项XML测试实际通过：全部22类型/39片段按官方对应XSD类型校验；243字段在至少一片段中出现；页面XML与下载XML一致；39片段的全字段代码用独立lxml XPath逐项核对；22章完整spold父路径代码实际运行并独立核对。"
+    },
+    {
+      "check": "regression_tests",
+      "status": "passed",
+      "details_zh": "独立实际运行新XML测试4项、原提取器测试12项、原章节读取测试4项，合计20项均通过。使用 /opt/homebrew/anaconda3/bin/python3，含lxml 5.2.1；仓库requirements已声明验证依赖，配套下载读取脚本仍仅用标准库。"
+    },
+    {
+      "check": "real_zip_code_execution",
+      "status": "passed",
+      "details_zh": "直接解压独立XML ZIP并使用真实模块导入及目录布局，22章各3段Python代码连续执行全部exit=0。解压原demo ZIP后，extract_ecospold.py递归读取整个目录实际成功，得到3数据集/10交换；query_demo.py实际给出电力25/2.5、化石CO₂两output行1.5和-0.1、净量1.4/0.14及模拟LCIA13.9/1.39，生物源0.2排除。"
+    },
+    {
+      "check": "final_archive_consistency",
+      "status": "passed",
+      "xml_zip_members": 45,
+      "complete_demo_zip_members": 9,
+      "details_zh": "最后修正后重核两ZIP全部成员集合、重复名及逐字节内容：XML ZIP为45成员，含39XML、两个标准库reader、三个完整spold及专属说明；原demo ZIP为9成员，排除XML-examples-README.txt且无xml-examples目录。XML片段位于content/ecospold2/xml-examples，原demo目录无XML片段，避免递归CLI误扫。"
+    },
+    {
+      "check": "zip_instructions",
+      "status": "passed",
+      "details_zh": "最新XML-examples-README明确对应独立ecospold2-xml-examples.zip，若目录缺失须取得该包；完整extract/query/README明确另从提取实践下载完整demo ZIP，不再暗示独立片段包带有这些文件。"
+    },
+    {
+      "check": "strict_review_boundary",
+      "status": "passed",
+      "details_zh": "build_content(xml_review_required=True)及正式命令默认仍要求独立包review；False只作为显式内部草稿参数。packets(require_reviews=True)核对三包最终SHA、reviewer不同于author、通过状态及逐字段覆盖；最终三包review齐全，严格packets检查已通过。当前guide哈希替代旧chapter-layout-review的已变更文件哈希，旧记录保持历史，审阅JSON自身及生成manifest/validation不进入files，避免循环。"
+    },
+    {
+      "check": "final_file_hashes",
+      "status": "passed",
+      "file_count": 82,
+      "details_zh": "记录全部22字段章、变化首页/教程审阅页面、build/render/helper/测试/validators/CI、新39XML及两ZIP的当前SHA256；未把旧审阅JSON或生成审计manifest/validation作为本次内容哈希对象。"
+    },
+    {
+      "check": "markdown_xml_name_visibility",
+      "status": "passed",
+      "details_zh": "独立核对最新 markdown_prose：对非反引号说明文字执行html.escape，保留反引号内代码；XML代码块不经过该函数。exchanges.md 中原裸<exchange>现在写为&lt;exchange&gt;，经MarkdownIt commonmark实际渲染和HTML可见文字提取后，字面的<exchange>仍完整显示，不被当成HTML元素吞掉。仅更新render工具和exchanges.md两项SHA，其余80项文件哈希保持原样；XML/ZIP和字段包及其审阅SHA未变化。"
+    }
+  ],
+  "notes": [
+    {
+      "status": "resolved",
+      "reason_zh": "独立审阅发现独立XML ZIP的旧说明引用未包含的原README/提取器/查询脚本；root已修生成源及严格重建，说明明确引向另一完整demo ZIP，原demo ZIP也排除了XML专属说明。最后两包成员与字节复核通过。"
+    },
+    {
+      "status": "needs_expert_review",
+      "reason_zh": "字段原文与XSD之间既有的三角分布#3797禁令、方差符号、产量公式目标、旧交叉引用及其他源文疑点继续由逐字段包和正文注记保留；本工具/渲染审阅不解决这些官方规范歧义。"
+    },
+    {
+      "status": "resolved",
+      "reason_zh": "通过的是独立代理的代码、发布一致性与实际运行审阅。类型级XSD校验不覆盖完整文件身份约束、外部主数据有效性、稀疏子文档继承、产品系统求解或真实LCIA方法认证，不代表人工或官方签核。"
+    },
+    {
+      "status": "resolved",
+      "reason_zh": "b包一般说明中的裸<exchange>可能被Markdown当作HTML标签而不显示。root已在渲染器对非代码说明做HTML转义；独立检查页面可见文字确认<exchange>完整显示，反引号代码与XML代码块保持原用途。"
+    }
+  ]
+}

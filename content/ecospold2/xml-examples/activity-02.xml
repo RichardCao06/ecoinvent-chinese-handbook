@@ -1,0 +1,5 @@
+<activity xmlns="http://www.EcoInvent.org/EcoSpold02" id="1e2c8927-d64d-5549-ada7-cef8f77ea70b" activityNameId="b0ce0613-267e-5be2-82cd-160d5a5d5d4f" activityNameContextId="f71ac544-3bc8-5c15-8ea4-072d907663f1" type="1" specialActivityType="0" parentActivityId="19d3e06c-2a4a-545d-b368-6470e75e1a27" parentActivityContextId="f71ac544-3bc8-5c15-8ea4-072d907663f1" inheritanceDepth="1" masterAllocationPropertyIdOverwrittenByChild="true">
+  <!-- 教学构造：以普通类型的完整片段显示子活动引用及删除标记的位置；不是稀疏子文档。 -->
+  <activityName xml:lang="zh">教学产品单元过程</activityName>
+  <generalComment><text index="1" xml:lang="zh">教学地理子活动：移除从父活动继承的默认分配属性引用。</text></generalComment>
+</activity>

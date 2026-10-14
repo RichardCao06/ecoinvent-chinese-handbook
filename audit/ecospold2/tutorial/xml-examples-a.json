@@ -1,0 +1,550 @@
+{
+  "author": "translator_a",
+  "sections": {
+    "TActivity": {
+      "examples": [
+        {
+          "label_zh": "教学活动的身份、边界与默认分配属性",
+          "xml": "<activity xmlns=\"http://www.EcoInvent.org/EcoSpold02\" id=\"19d3e06c-2a4a-545d-b368-6470e75e1a27\" activityNameId=\"b0ce0613-267e-5be2-82cd-160d5a5d5d4f\" activityNameContextId=\"f71ac544-3bc8-5c15-8ea4-072d907663f1\" type=\"1\" specialActivityType=\"0\" inheritanceDepth=\"0\" energyValues=\"1\" masterAllocationPropertyId=\"4df2fd06-35ca-5aa5-974e-aa71280a96ef\" masterAllocationPropertyContextId=\"f71ac544-3bc8-5c15-8ea4-072d907663f1\" masterAllocationPropertyIdOverwrittenByChild=\"false\" datasetIcon=\"https://example.invalid/teaching/product-icon.svg\">\n  <!-- 教学构造；UUID及分配属性不是实际ecoinvent主数据。 -->\n  <activityName xml:lang=\"zh\">教学产品单元过程</activityName>\n  <synonym xml:lang=\"zh\">教学材料生产</synonym>\n  <synonym xml:lang=\"zh\">构造产品制造</synonym>\n  <includedActivitiesStart xml:lang=\"zh\">从接收教学原料开始。</includedActivitiesStart>\n  <includedActivitiesEnd xml:lang=\"zh\">包括厂内加工和产品装车，不包括后续使用。</includedActivitiesEnd>\n  <allocationComment><text index=\"1\" xml:lang=\"zh\">教学示意：默认使用指定属性进行分配；具体属性值须从各输出交换读取。</text></allocationComment>\n  <generalComment><text index=\"1\" xml:lang=\"zh\">教学构造，非真实数据；用于展示活动元信息，不提供分配计算结果。</text></generalComment>\n  <tag>teaching</tag>\n  <tag>product</tag>\n</activity>",
+          "explanation_zh": "这个 activity 片段通常放在 activityDescription 内。所有值均为教学构造；它依官方 TActivity 顺序放置子元素，必填身份属性完整，但不构成一份完整 .spold，也不证明虚构主数据引用可被解析。",
+          "focus": [
+            "100",
+            "102",
+            "105",
+            "106",
+            "110",
+            "115",
+            "120",
+            "135",
+            "145",
+            "150",
+            "170",
+            "175",
+            "180",
+            "190",
+            "191",
+            "195",
+            "200"
+          ]
+        },
+        {
+          "label_zh": "子活动引用与明确移除父分配属性",
+          "xml": "<activity xmlns=\"http://www.EcoInvent.org/EcoSpold02\" id=\"1e2c8927-d64d-5549-ada7-cef8f77ea70b\" activityNameId=\"b0ce0613-267e-5be2-82cd-160d5a5d5d4f\" activityNameContextId=\"f71ac544-3bc8-5c15-8ea4-072d907663f1\" type=\"1\" specialActivityType=\"0\" parentActivityId=\"19d3e06c-2a4a-545d-b368-6470e75e1a27\" parentActivityContextId=\"f71ac544-3bc8-5c15-8ea4-072d907663f1\" inheritanceDepth=\"1\" masterAllocationPropertyIdOverwrittenByChild=\"true\">\n  <!-- 教学构造：以普通类型的完整片段显示子活动引用及删除标记的位置；不是稀疏子文档。 -->\n  <activityName xml:lang=\"zh\">教学产品单元过程</activityName>\n  <generalComment><text index=\"1\" xml:lang=\"zh\">教学地理子活动：移除从父活动继承的默认分配属性引用。</text></generalComment>\n</activity>",
+          "explanation_zh": "第二个片段用 parentActivityId 指向第一个教学活动，inheritanceDepth=1 表示教学地理继承层级，并用 true 标记移除继承的分配属性，因此不再填写 masterAllocationPropertyId。这里为了展示普通类型中各属性位置而给出完整身份字段；真实稀疏子文档使用 EcoSpold02Child 模式和相应命名空间，不能把这个片段当作已经完成继承展开的整个文件。",
+          "focus": [
+            "130",
+            "131",
+            "135",
+            "192"
+          ]
+        }
+      ],
+      "walkthrough": [
+        {
+          "field_id": "100",
+          "explanation_zh": "第一个示例的 `activityName` 子元素写着“教学产品单元过程”。按命名空间查找全部同名子元素，并同时读取 `xml:lang=\"zh\"`；这是活动的可读名称，不是唯一身份。"
+        },
+        {
+          "field_id": "102",
+          "explanation_zh": "根元素上的 `id=\"19d3e06c-2a4a-545d-b368-6470e75e1a27\"` 标识活动本身，第二例则有不同的子活动 UUID。用属性读取取得它；它不等于名称主数据 UUID，也不等于交换实例 UUID，比较记录时还要带上文件上下文及版本。"
+        },
+        {
+          "field_id": "105",
+          "explanation_zh": "`activityNameId=\"b0ce0613-267e-5be2-82cd-160d5a5d5d4f\"` 引用活动名称主数据，两例可共用这一名称身份。提取该属性并与名称上下文配对，不能把它误用为 `activityLinkId` 所引用的活动实例身份。"
+        },
+        {
+          "field_id": "106",
+          "explanation_zh": "`activityNameContextId=\"f71ac544-3bc8-5c15-8ea4-072d907663f1\"` 显式指定名称主数据上下文。若真实文件省略此可选属性，应使用 `fileAttributes/@contextId` 的有效上下文；文件自身也缺少上下文时，不能自行虚构可解析的主数据来源。"
+        },
+        {
+          "field_id": "110",
+          "explanation_zh": "示例的 `type=\"1\"` 表示单元过程；`2` 表示系统终止数据集。读取整数码而不是用名称猜测阶段；原文将终止系统描述为包含全部上游的累计环境交换和影响结果，但实际导出仍需核对，不能只凭此码断定所有字段一定存在。"
+        },
+        {
+          "field_id": "115",
+          "explanation_zh": "`specialActivityType=\"0\"` 将本例标为普通转换活动，范围包括生产、运输等改变投入输出的活动。其他码为 1 市场、10 市场组、2 IO 活动、3 剩余活动、4 生产组合、5 进口、6 供应组合、7 出口、8 再出口、9 校正活动；保留编码以便筛选，不把本字段当成上一项的数据阶段。"
+        },
+        {
+          "field_id": "120",
+          "explanation_zh": "`generalComment/text` 的“教学构造，非真实数据”是活动的一般说明。先找 `generalComment`，再按 `text/@index` 和语言读取内容；图像实际元素名是 XSD 的 `imageUrl`，不是原说明混用的 `imageUri`，该源文疑点仍需保留。"
+        },
+        {
+          "field_id": "130",
+          "explanation_zh": "第二例的 `parentActivityId=\"19d3e06c-2a4a-545d-b368-6470e75e1a27\"` 明确引用第一例的父活动。提取后需要获取相应父数据集才能解释继承，不能仅以这个 UUID 声称父数据已经加载。真实子文档中的留空通常表示保留父值，填写内容表示覆盖，也有 `{{PARENTTEXT}}`、文本变量和公式 `PARENTVALUE` 等专门规则，不能用简单字典合并替代完整继承处理。"
+        },
+        {
+          "field_id": "131",
+          "explanation_zh": "第二例的 `parentActivityContextId=\"f71ac544-3bc8-5c15-8ea4-072d907663f1\"` 指定父活动引用的上下文。将它与父 UUID 一起保存；省略时才回退到子文件自身上下文，不能沿用名称上下文来替代。"
+        },
+        {
+          "field_id": "135",
+          "explanation_zh": "两例的 `inheritanceDepth` 分别为 `0` 和 `1`，即非子活动与教学地理子活动。原文以该值表示最大父层数，ecoinvent 约定 2 为时间子活动、3 为宏观经济情景子活动；它是整数元信息，不是要求读取器凭数字构造缺失的父链。"
+        },
+        {
+          "field_id": "145",
+          "explanation_zh": "第一个示例的 `includedActivitiesStart` 写“从接收教学原料开始”，指过程边界起点。它是可重复的多语言直接文本，读取元素文本与语言；终止系统的原文起点为从摇篮包含所有上游，本例 `type=1` 的厂门起点不能外推为累计范围。"
+        },
+        {
+          "field_id": "150",
+          "explanation_zh": "`includedActivitiesEnd` 说明包括厂内加工和装车，明确排除后续使用。读取直接文本，保留包含项、排除项和最终交付点；不能只把“装车”当作一句描述而遗漏使用阶段不在边界内这一限定。"
+        },
+        {
+          "field_id": "170",
+          "explanation_zh": "示例有两个 `synonym`，均为 `xml:lang=\"zh\"`，分别是“教学材料生产”和“构造产品制造”。必须读取全部同名元素；同义词允许同语言多条，每条最多 80 字符，不能按语言字典覆盖成最后一条。"
+        },
+        {
+          "field_id": "175",
+          "explanation_zh": "两个 `tag` 的值是 `teaching` 和 `product`，用于关键词筛选、分组与检索。读取全部直接文本；它们是开放标签，不是主数据 UUID，原文规定未在预定义标签表中找到时只提示信息，不据此判断格式错误。"
+        },
+        {
+          "field_id": "180",
+          "explanation_zh": "第一个示例的 `energyValues=\"1\"` 表示净值，即低位热值；2 表示总值或高位热值，0 表示未定义且是默认值。提取整数码后再解释能量口径，不能把这里的“净值”误当成正负交换求和所得的净排放。"
+        },
+        {
+          "field_id": "190",
+          "explanation_zh": "`masterAllocationPropertyId=\"4df2fd06-35ca-5aa5-974e-aa71280a96ef\"` 引用所有交换的默认分配属性，真实属性值要从输出的 `property` 读取，个别交换还可用 `specificAllocationPropertyId` 覆盖。原文分配因子是某输出的属性值乘输出量，再除以全部相应输出乘积之和；片段没有输出数据，不能据 UUID 直接算出分配比例。"
+        },
+        {
+          "field_id": "191",
+          "explanation_zh": "`masterAllocationPropertyContextId=\"f71ac544-3bc8-5c15-8ea4-072d907663f1\"` 指明该默认分配属性的主数据上下文。与属性 UUID 一起提取；省略时采用文件自身上下文，不与父活动上下文自动视为同一含义。"
+        },
+        {
+          "field_id": "192",
+          "explanation_zh": "第一例的 `masterAllocationPropertyIdOverwrittenByChild=\"false\"` 没有请求删除；第二例将它设为 `true` 且省略该引用，示意明确移除继承值。读取布尔词法值并保留缺失状态；单独省略引用通常表示保留父值，不能当作删除，真实操作仍须在正确的子文档继承流程中处理。"
+        },
+        {
+          "field_id": "195",
+          "explanation_zh": "`allocationComment/text` 写明默认分配属性仅作示意、实际值要从输出交换读取。它是有索引的文本图像说明，不是公式求值字段；读取有序内容可了解分配依据和限制，不能从文字说明直接替换原有数量。"
+        },
+        {
+          "field_id": "200",
+          "explanation_zh": "`datasetIcon` 是指向 `https://example.invalid/teaching/product-icon.svg` 的 URI 属性。它表示外部图标位置，不是 XML 内嵌图像；示例地址刻意不是真实资源，读取 URI 不等于图标可访问，也不应为提取数值自动下载图像。"
+        }
+      ]
+    },
+    "TClassification": {
+      "examples": [
+        {
+          "label_zh": "分类值引用与两层可读名称",
+          "xml": "<classification xmlns=\"http://www.EcoInvent.org/EcoSpold02\" classificationId=\"45b127bf-078e-5df0-a5c0-fd6ee9a6b53e\" classificationContextId=\"f71ac544-3bc8-5c15-8ea4-072d907663f1\">\n  <!-- 教学构造的分类，不是正式ISIC或其他分类主数据。 -->\n  <classificationSystem xml:lang=\"zh\">教学分类体系</classificationSystem>\n  <classificationValue xml:lang=\"zh\">教学产品制造</classificationValue>\n</classification>",
+          "explanation_zh": "classification 可以放在活动描述或相应交换的分类位置。这里给出完整的分类体系名称和分类值名称，并明确它们与 UUID 引用的区别；虚构 UUID 不表示它已经出现在真实 validClassifications 表中。",
+          "focus": [
+            "300",
+            "310",
+            "320",
+            "321"
+          ]
+        }
+      ],
+      "walkthrough": [
+        {
+          "field_id": "300",
+          "explanation_zh": "`classificationSystem` 子元素的文本“教学分类体系”说明所用分类体系。按命名空间及语言读取它，不能把它当成分类值 UUID；原文称文字可选，但普通 XSD 要求存在这一子元素，本片段按 XSD 补齐，仍保留源文与模式的差异。"
+        },
+        {
+          "field_id": "310",
+          "explanation_zh": "`classificationValue` 的“教学产品制造”是该活动在体系中所属类别的可读值。读取文本并与上面的体系名称关联；原文的可选描述同样与普通 XSD 必填要求有差异，不用省略示例来消除该疑点。"
+        },
+        {
+          "field_id": "320",
+          "explanation_zh": "根属性 `classificationId=\"45b127bf-078e-5df0-a5c0-fd6ee9a6b53e\"` 引用分类主数据中的具体分类值，而不是只引用体系名称。读取 UUID 并到对应上下文的合法分类表核实，不能从示例文字猜造真实编码。"
+        },
+        {
+          "field_id": "321",
+          "explanation_zh": "`classificationContextId=\"f71ac544-3bc8-5c15-8ea4-072d907663f1\"` 为分类引用指定上下文。与分类 UUID 配对保存；省略时用数据集自身上下文，本孤立片段不提供 `fileAttributes`，所以回退操作必须由完整文件的读取器执行。"
+        }
+      ]
+    },
+    "TGeography": {
+      "examples": [
+        {
+          "label_zh": "区域引用及边界说明",
+          "xml": "<geography xmlns=\"http://www.EcoInvent.org/EcoSpold02\" geographyId=\"a099d998-acea-50db-a416-a5eaeaf6eb23\" geographyContextId=\"f71ac544-3bc8-5c15-8ea4-072d907663f1\">\n  <!-- 教学构造，非真实区域。 -->\n  <shortname xml:lang=\"zh\">教学区域（虚构）</shortname>\n  <comment><text index=\"1\" xml:lang=\"zh\">按教学厂区边界划定，不代表行政区域或真实市场范围。</text></comment>\n</geography>",
+          "explanation_zh": "本例是 activityDescription 中的 geography 片段。它用地区 UUID 识别位置，用可读短名称和边界说明帮助理解；实际位置可能是点、线或面，市场活动还需解释市场边界。",
+          "focus": [
+            "400",
+            "401",
+            "410",
+            "420"
+          ]
+        }
+      ],
+      "walkthrough": [
+        {
+          "field_id": "400",
+          "explanation_zh": "`geographyId=\"a099d998-acea-50db-a416-a5eaeaf6eb23\"` 是合法地区主数据的引用位置，本例沿用教学 demo 的虚构区域 UUID。读取该属性后应到对应地区主数据取得详细几何信息；它本身既不是经纬度，也不能仅从 UUID 判断是国家或厂区。"
+        },
+        {
+          "field_id": "401",
+          "explanation_zh": "`geographyContextId=\"f71ac544-3bc8-5c15-8ea4-072d907663f1\"` 显式给出地区主数据上下文。解析地区身份时使用 UUID 加有效上下文；省略时回退到文件自身上下文，不把活动所在地文字直接当成引用依据。"
+        },
+        {
+          "field_id": "410",
+          "explanation_zh": "`shortname` 写“教学区域（虚构）”，是所引用地区的简短名称。读取全部语言条目并选择需要的语言；短名称可以类似区域代码，但不是地区 UUID，不能把同名区域无条件合并。"
+        },
+        {
+          "field_id": "420",
+          "explanation_zh": "`comment/text` 解释教学厂区边界而非行政区域或真实市场范围。读取索引及语言后保留完整边界限定；市场活动可在这里说明边界理由，不能把一个地区名称直接解释为所有进口出口都自由发生。"
+        }
+      ]
+    },
+    "TTechnology": {
+      "examples": [
+        {
+          "label_zh": "技术层级与具体工艺",
+          "xml": "<technology xmlns=\"http://www.EcoInvent.org/EcoSpold02\" technologyLevel=\"3\">\n  <!-- 教学构造的技术说明。 -->\n  <comment><text index=\"1\" xml:lang=\"zh\">教学过程采用连续加工设备；清洗和包装作为本例的子活动一并说明。</text></comment>\n</technology>",
+          "explanation_zh": "technology 位于活动描述中。层级码只是粗略分类，具体设备及子活动信息仍从 comment 读取；这里没有提供任何真实能效数值。",
+          "focus": [
+            "500",
+            "510"
+          ]
+        }
+      ],
+      "walkthrough": [
+        {
+          "field_id": "500",
+          "explanation_zh": "`technologyLevel=\"3\"` 表示当前技术，也是普通 XSD 的默认值。0 为未定义，1 为新技术，2 为现代技术，4 为旧技术，5 为过时技术；读取整数码并结合有效年份和地区解释竞争力，不能把“现代”直接换算成设备制造年份，市场可用 0 表示无技术层级。"
+        },
+        {
+          "field_id": "510",
+          "explanation_zh": "`comment/text` 的连续加工、清洗和包装说明本活动及其子活动采用的技术。按命名空间进入 comment 的有序文本，保留工艺细节；它与上一项的层级标签相互补充，不应只取层级码而忽略实际技术。"
+        }
+      ]
+    },
+    "TTimePeriod": {
+      "examples": [
+        {
+          "label_zh": "声明时间段及局部有效性",
+          "xml": "<timePeriod xmlns=\"http://www.EcoInvent.org/EcoSpold02\" startDate=\"2025-01-01\" endDate=\"2025-12-31\" isDataValidForEntirePeriod=\"false\">\n  <!-- 教学构造的有效期，非真实数据年代。 -->\n  <comment><text index=\"1\" xml:lang=\"zh\">教学数据仅适用于2025年1月至6月；下半年改造后需重新核实。</text></comment>\n</timePeriod>",
+          "explanation_zh": "这个 timePeriod 片段声明全年范围，却明确标为不是整个时间段都有效，并在 comment 解释较小适用区间。false 不表示缺失或零交换量。",
+          "focus": [
+            "600",
+            "610",
+            "620",
+            "630"
+          ]
+        }
+      ],
+      "walkthrough": [
+        {
+          "field_id": "600",
+          "explanation_zh": "`startDate=\"2025-01-01\"` 是所声明有效时间段的开始日期。用属性读取取得完整年、月、日并按日期解析；它不是文件创建日期，本例日期只是教学构造。"
+        },
+        {
+          "field_id": "610",
+          "explanation_zh": "`endDate=\"2025-12-31\"` 是所声明时间段的结束日期。与 startDate 一起保存和比较，不只保留年份；还须结合 false 标记及说明判断交换数据实际在哪个较短期间有效。"
+        },
+        {
+          "field_id": "620",
+          "explanation_zh": "`isDataValidForEntirePeriod=\"false\"` 明确说明 flowData 的基本流和中间交换不适用于整个声明期间。读取布尔值时不要用非空字符串的真假代替语义，因为字符串“false”在 Python 中也非空；应据布尔词法规则解析，并进一步读取 comment。"
+        },
+        {
+          "field_id": "630",
+          "explanation_zh": "`comment/text` 指明只有2025年1月至6月适用，并说明下半年改造后须重新核实。按索引、语言读取说明，把这一限制与日期属性一起返回；不能因 endDate 写到12月就忽略实际有效性的限定。"
+        }
+      ]
+    },
+    "TMacroEconomicScenario": {
+      "examples": [
+        {
+          "label_zh": "宏观情景引用及与父情景的区别",
+          "xml": "<macroEconomicScenario xmlns=\"http://www.EcoInvent.org/EcoSpold02\" macroEconomicScenarioId=\"0984f81b-aa81-5830-b34b-99b00a49a684\" macroEconomicScenarioContextId=\"f71ac544-3bc8-5c15-8ea4-072d907663f1\">\n  <!-- 教学构造的情景，非官方预测。 -->\n  <name xml:lang=\"zh\">教学需求变化情景</name>\n  <comment xml:lang=\"zh\">教学宏观情景子活动：相对父活动默认情景调整需求假设，其他条件须在完整文件中核查。</comment>\n</macroEconomicScenario>",
+          "explanation_zh": "本例展示 activityDescription 中的宏观情景。comment 在这个类型中是直接多语言文本，不能套用其他 comment 所用的 text/index 嵌套结构。",
+          "focus": [
+            "700",
+            "701",
+            "720",
+            "740"
+          ]
+        }
+      ],
+      "walkthrough": [
+        {
+          "field_id": "700",
+          "explanation_zh": "`macroEconomicScenarioId=\"0984f81b-aa81-5830-b34b-99b00a49a684\"` 引用情景主数据。提取 UUID 并核对合法情景表，不从“需求变化”这类名称自行推导模型参数；本例只是教学引用。"
+        },
+        {
+          "field_id": "701",
+          "explanation_zh": "`macroEconomicScenarioContextId=\"f71ac544-3bc8-5c15-8ea4-072d907663f1\"` 指定情景主数据上下文。与情景 UUID 一同识别对象；该属性省略时才采用文件自身上下文，不能把它当作地区上下文。"
+        },
+        {
+          "field_id": "720",
+          "explanation_zh": "`name` 子元素写“教学需求变化情景”，说明数据集所属情景的可读名称。读取元素文本及 xml:lang，身份匹配仍依据 UUID 和上下文；名称本身不说明全部经济假设。"
+        },
+        {
+          "field_id": "740",
+          "explanation_zh": "`comment` 的直接文本说明教学子活动相对父默认情景调整需求假设。直接读这个子元素的文本和语言，不寻找不存在的 `comment/text`；完整应用还需加载父活动及变化字段，不能由一句说明推算任何真实数值。"
+        }
+      ]
+    },
+    "TDataEntryBy": {
+      "examples": [
+        {
+          "label_zh": "录入人员与当前负责人",
+          "xml": "<dataEntryBy xmlns=\"http://www.EcoInvent.org/EcoSpold02\" personId=\"2163e122-88c4-55e7-af84-00947e9b7b0a\" personContextId=\"f71ac544-3bc8-5c15-8ea4-072d907663f1\" isActiveAuthor=\"true\" personName=\"Teaching author\" personEmail=\"demo@example.invalid\">\n  <!-- 教学构造的录入者，邮箱不用于联系真实人员。 -->\n</dataEntryBy>",
+          "explanation_zh": "dataEntryBy 位于 administrativeInformation 中，本类型字段都是根属性，示例没有 personName 或 personEmail 子元素。人员标识沿用教学 demo，true 用于展示当前作者标记。",
+          "focus": [
+            "3400",
+            "3401",
+            "3403",
+            "3405",
+            "3406"
+          ]
+        }
+      ],
+      "walkthrough": [
+        {
+          "field_id": "3400",
+          "explanation_zh": "`personId=\"2163e122-88c4-55e7-af84-00947e9b7b0a\"` 标识准备并录入数据集的人员。直接读取属性后关联人员主数据（原表引用人员字段3610），不要与原始数据生成者或评审者自动视作同一角色。"
+        },
+        {
+          "field_id": "3401",
+          "explanation_zh": "`personContextId=\"f71ac544-3bc8-5c15-8ea4-072d907663f1\"` 是录入者人员引用的上下文。人员 UUID 加有效上下文才构成引用键；省略时回退到文件上下文，不能靠邮箱替代身份。"
+        },
+        {
+          "field_id": "3403",
+          "explanation_zh": "`isActiveAuthor=\"true\"` 表示此人是数据集的当前作者，其他提供者以后修改时会征询其意见。读取布尔值，不把它解释为人员账户在线、数据审核通过或自动授权发布；普通 XSD 省略时默认 false。"
+        },
+        {
+          "field_id": "3405",
+          "explanation_zh": "`personName=\"Teaching author\"` 是录入者的姓名属性。用属性读取取得文字，不找同名子元素；姓名便于阅读，同名不能保证人员身份相同。"
+        },
+        {
+          "field_id": "3406",
+          "explanation_zh": "`personEmail=\"demo@example.invalid\"` 保存完整电子邮件地址。它也是属性，示例地址为教学构造；提取时保留原文，不据其存在自动发送联系或判断信息已核实。"
+        }
+      ]
+    },
+    "TDataGeneratorAndPublication": {
+      "examples": [
+        {
+          "label_zh": "完整发布、出版证据与机构限制",
+          "xml": "<dataGeneratorAndPublication xmlns=\"http://www.EcoInvent.org/EcoSpold02\" personId=\"901bbfee-b5bd-5006-b40d-ca76e25c03ad\" personContextId=\"f71ac544-3bc8-5c15-8ea4-072d907663f1\" personName=\"Teaching generator\" personEmail=\"generator@example.invalid\" dataPublishedIn=\"2\" publishedSourceId=\"a10d3603-b4bd-5a41-b7a0-1319aad7c28a\" publishedSourceContextId=\"f71ac544-3bc8-5c15-8ea4-072d907663f1\" publishedSourceIdOverwrittenByChild=\"false\" publishedSourceYear=\"2025\" publishedSourceFirstAuthor=\"Teaching A.\" pageNumbers=\"12-18\" isCopyrightProtected=\"true\" accessRestrictedTo=\"3\" companyId=\"d10c3ee0-d8cf-5e58-bbbb-6747c4364856\" companyContextId=\"f71ac544-3bc8-5c15-8ea4-072d907663f1\" companyCode=\"DEMOORG\" companyIdOverwrittenByChild=\"false\">\n  <!-- 教学构造：虚构出版物和机构；不表示真实许可条件。 -->\n</dataGeneratorAndPublication>",
+          "explanation_zh": "本例位于 administrativeInformation，全部字段均为属性。数据生成者不同于录入者；虚构出版物标为完整发表，访问限定给虚构机构。版权和访问限制是两种不同信息，不能相互推断。",
+          "focus": [
+            "3500",
+            "3501",
+            "3505",
+            "3506",
+            "3510",
+            "3520",
+            "3521",
+            "3525",
+            "3526",
+            "3530",
+            "3540",
+            "3550",
+            "3560",
+            "3561",
+            "3562"
+          ]
+        },
+        {
+          "label_zh": "在子数据集明确移除继承来源和机构",
+          "xml": "<dataGeneratorAndPublication xmlns=\"http://www.EcoInvent.org/EcoSpold02\" personId=\"901bbfee-b5bd-5006-b40d-ca76e25c03ad\" personContextId=\"f71ac544-3bc8-5c15-8ea4-072d907663f1\" personName=\"Teaching generator\" personEmail=\"generator@example.invalid\" dataPublishedIn=\"0\" publishedSourceIdOverwrittenByChild=\"true\" isCopyrightProtected=\"false\" accessRestrictedTo=\"0\" companyIdOverwrittenByChild=\"true\">\n  <!-- 教学构造：普通类型完整片段示意子数据集删除父来源与父机构引用的标记位置。 -->\n</dataGeneratorAndPublication>",
+          "explanation_zh": "第二片段省略出版来源和机构 UUID，并各用 OverwrittenByChild=true 明确删除继承引用，同时教学设为未发表、公开访问。它只以普通类型完整字段展示属性位置与删除意图；真实稀疏子文档须在 EcoSpold02Child 模式中处理，并核查其他继承文字是否仍适用。",
+          "focus": [
+            "3522",
+            "3563"
+          ]
+        }
+      ],
+      "walkthrough": [
+        {
+          "field_id": "3500",
+          "explanation_zh": "第一例的 `personId=\"901bbfee-b5bd-5006-b40d-ca76e25c03ad\"` 是收集、汇编或发表原始数据的生成者引用，与录入者的 UUID 不同。按属性提取并关联人员主数据，以追溯数据来源，不能把它误当为评审签名。"
+        },
+        {
+          "field_id": "3501",
+          "explanation_zh": "`personContextId=\"f71ac544-3bc8-5c15-8ea4-072d907663f1\"` 指定生成者的人员主数据上下文。与生成者 UUID 配对；可选属性省略时采用文件自身上下文。"
+        },
+        {
+          "field_id": "3505",
+          "explanation_zh": "`personName=\"Teaching generator\"` 给出生成者姓名，存于根属性。读取文字辅助理解，但识别人员仍用 UUID 和上下文，不能只按姓名合并不同角色。"
+        },
+        {
+          "field_id": "3506",
+          "explanation_zh": "`personEmail=\"generator@example.invalid\"` 给出生成者的完整邮箱属性。它与录入者邮箱不同，仅为教学构造；读取地址不能证明这个人在实际数据库中存在。"
+        },
+        {
+          "field_id": "3510",
+          "explanation_zh": "第一例 `dataPublishedIn=\"2\"` 表示数据已完整发表在引用来源中；第二例的 0 表示数据本身未在别处发表，1 表示某些单元过程或子系统数据已发表。读取码时同时保留出版来源字段，原表旧字段757对应来源引用，不能把编号当作当前 XML 属性。"
+        },
+        {
+          "field_id": "3520",
+          "explanation_zh": "`publishedSourceId=\"a10d3603-b4bd-5a41-b7a0-1319aad7c28a\"` 引用记载数据集的出版报告。用 UUID 与有效来源上下文查找来源主数据；原表的“801”是旧编号引用，不是报告年份，也不是须填入属性的数字。"
+        },
+        {
+          "field_id": "3521",
+          "explanation_zh": "`publishedSourceContextId=\"f71ac544-3bc8-5c15-8ea4-072d907663f1\"` 指向出版来源的上下文。它与人员上下文是不同引用角色，即使本例值相同也要分别保留；省略时才用数据集自身上下文。"
+        },
+        {
+          "field_id": "3522",
+          "explanation_zh": "第一例 `publishedSourceIdOverwrittenByChild=\"false\"` 保留引用，第二例将它设为 true 并省略 publishedSourceId，示意删除父数据集继承的来源。读取布尔标记并识别缺失引用；仅省略来源而未设 true 通常表示保留父值，不能用空值删除。"
+        },
+        {
+          "field_id": "3525",
+          "explanation_zh": "`publishedSourceYear=\"2025\"` 记录出版或交流年份，类型是文字而非交换数量。网站来源应记最后访问时间；提取时保留原字符串，不将它与 timePeriod 的适用年份自动等同。"
+        },
+        {
+          "field_id": "3526",
+          "explanation_zh": "`publishedSourceFirstAuthor=\"Teaching A.\"` 示意第一作者姓氏加名字缩写。若来源类型是4现场测量、5口头交流、6个人书面交流或7问卷，应记录信息提供者；这里没有 sourceType，须关联真实来源主数据后判断，不能只凭作者格式猜来源类型。"
+        },
+        {
+          "field_id": "3530",
+          "explanation_zh": "`pageNumbers=\"12-18\"` 是报告中相关页码的文字范围。读取字符串供追溯，不将短横线当作数学减法，也不把页码作为影响指标数值。"
+        },
+        {
+          "field_id": "3540",
+          "explanation_zh": "第一例 `isCopyrightProtected=\"true\"` 表示存在版权，第二例为 false。按 XML 布尔值读取，允许的词法形式还包括1和0；版权存在与否不能替代 accessRestrictedTo 的访问条件。"
+        },
+        {
+          "field_id": "3550",
+          "explanation_zh": "第一例的 `accessRestrictedTo=\"3\"` 表示只允许指定机构和数据库管理员访问，第二例的0表示公开；1为许可证持有人，2为许可证持有人仅可访问LCI结果而非单元过程原数据、管理员可全部访问。原表条件中的759是该属性旧编号，不能当作新的 XML 字段。"
+        },
+        {
+          "field_id": "3560",
+          "explanation_zh": "`companyId=\"d10c3ee0-d8cf-5e58-bbbb-6747c4364856\"` 在受限示例中引用允许使用数据的机构。以 UUID 加机构上下文查主数据，与 accessRestrictedTo=3 一起解释；公开访问的删除示例没有保留这个机构引用。"
+        },
+        {
+          "field_id": "3561",
+          "explanation_zh": "`companyContextId=\"f71ac544-3bc8-5c15-8ea4-072d907663f1\"` 是受限机构的主数据上下文。不要用生成者的人员引用替代机构引用；省略时仅按文件自身上下文回退。"
+        },
+        {
+          "field_id": "3562",
+          "explanation_zh": "`companyCode=\"DEMOORG\"` 是所引用虚构机构的7字母可读代码，不是 companyId 的替代键。读取文字辅助阅读并核对实际机构主数据，本教学码不能解释为真实许可方。"
+        },
+        {
+          "field_id": "3563",
+          "explanation_zh": "第一例 `companyIdOverwrittenByChild=\"false\"` 不删除机构，第二例 true 配合省略 companyId，示意明确移除父机构引用。提取删除标记时还要核查访问限制及继承的机构代码等信息，不能只删除 UUID 就声称全部许可元信息已经一致。"
+        }
+      ]
+    },
+    "TFileAttributes": {
+      "examples": [
+        {
+          "label_zh": "文件身份、四段版本与主数据依赖",
+          "xml": "<fileAttributes xmlns=\"http://www.EcoInvent.org/EcoSpold02\" majorRelease=\"1\" minorRelease=\"0\" majorRevision=\"2\" minorRevision=\"1\" defaultLanguage=\"zh\" creationTimestamp=\"2025-01-01T00:00:00Z\" lastEditTimestamp=\"2025-02-01T10:00:00Z\" internalSchemaVersion=\"2.0.13\" fileGenerator=\"Teaching XML generator 1.0\" fileTimestamp=\"2025-02-01T10:05:00Z\" contextId=\"f71ac544-3bc8-5c15-8ea4-072d907663f1\">\n  <!-- 教学版本号和时间戳；不是实际ecoinvent发布记录。 -->\n  <contextName xml:lang=\"zh\">教学主数据上下文（虚构UUID）</contextName>\n  <requiredContext majorRelease=\"1\" minorRelease=\"0\" majorRevision=\"2\" minorRevision=\"1\" requiredContextId=\"d5a99c56-eb38-567d-badd-f9294284f8f6\" requiredContextFileLocation=\"https://example.invalid/teaching/master-data/\">\n    <requiredContextName xml:lang=\"zh\">教学依赖主数据上下文</requiredContextName>\n  </requiredContext>\n</fileAttributes>",
+          "explanation_zh": "fileAttributes 位于 administrativeInformation。四段数字是教学版本，2.0.13 是所依的内部格式版本；contextName 先于 requiredContext，后者引用一个与本文件自身不同的教学主数据上下文。片段中的URI只展示目录位置，不表示文件可实际下载。",
+          "focus": [
+            "3800",
+            "3805",
+            "3810",
+            "3815",
+            "3820",
+            "3830",
+            "3840",
+            "3850",
+            "3860",
+            "3870",
+            "3880",
+            "3885",
+            "3890"
+          ]
+        }
+      ],
+      "walkthrough": [
+        {
+          "field_id": "3800",
+          "explanation_zh": "`majorRelease=\"1\"` 是示例数据库主发布部分。读取整数并保留四段版本；原文说主要更新时递增，这里的1不是 ecoinvent 当前主版本，也不能据原文示例时间间隔预测真实发布日程。"
+        },
+        {
+          "field_id": "3805",
+          "explanation_zh": "`minorRelease=\"0\"` 是两次主要更新之间的次发布部分。与 majorRelease 配对记录数据库发布版本；它不同于数据集编辑修订号，不能把四个整数只拼成前两段而丢掉修订身份。"
+        },
+        {
+          "field_id": "3810",
+          "explanation_zh": "`majorRevision=\"2\"` 是本数据集的主修订部分，独立于数据库发布。原文规定接受数据集变更时由系统递增且不应手动改动，同时把 minorRevision 重置为1；本例的教学2不表示真实审核次数。"
+        },
+        {
+          "field_id": "3815",
+          "explanation_zh": "`minorRevision=\"1\"` 表示当前编辑修订部分。原文规定保存本地或服务端草稿时自动增加，接受变更并增加主修订时重置为1；读取完整版本以区分编辑稿，不能把此数当作 XML 模式版本。"
+        },
+        {
+          "field_id": "3820",
+          "explanation_zh": "`defaultLanguage=\"zh\"` 指定默认中文，示例的多语言文本均提供 zh 条目。读取属性后用于语言选择及回退；普通 XSD 省略时默认 en，但最小 XML 读取器不一定自动补齐模式默认值，需要明确实现回退。"
+        },
+        {
+          "field_id": "3830",
+          "explanation_zh": "`creationTimestamp=\"2025-01-01T00:00:00Z\"` 是数据集建立时刻，Z 表示 UTC。按日期时间读取并保留时区，不把它当作活动数据适用起始日期。"
+        },
+        {
+          "field_id": "3840",
+          "explanation_zh": "`lastEditTimestamp=\"2025-02-01T10:00:00Z\"` 是数据集最后保存时刻。它晚于创建时刻，但仍不是交换数据的采样年代；比较文件时把它与版本及编辑流程一起保留。"
+        },
+        {
+          "field_id": "3850",
+          "explanation_zh": "`internalSchemaVersion=\"2.0.13\"` 说明文件基于该内部模式生成。读取字符串并选择对应模式核对结构，不能与 majorRelease=1 混为同一个版本，也不能把格式包v1.0.13与内部模式2.0.13写成同义编号。"
+        },
+        {
+          "field_id": "3860",
+          "explanation_zh": "`fileGenerator=\"Teaching XML generator 1.0\"` 给出生成软件及其教学版本。按属性保留文字帮助追溯导出工具，不据此推断数据库系统模型或数据内容已经审核。"
+        },
+        {
+          "field_id": "3870",
+          "explanation_zh": "`fileTimestamp=\"2025-02-01T10:05:00Z\"` 是导出文件创建时刻，与10:00的最后编辑时刻不同。分别读取这两个日期时间，不能拿文件导出时间替换原数据的适用时间。"
+        },
+        {
+          "field_id": "3880",
+          "explanation_zh": "`contextId=\"f71ac544-3bc8-5c15-8ea4-072d907663f1\"` 是文件自身上下文，供缺少显式引用上下文的字段回退。读取后保存到数据集元信息；原文规定省略时视为独立数据集、主数据引用不可解引用，不能从 contextName 或名称文字猜补 UUID。"
+        },
+        {
+          "field_id": "3885",
+          "explanation_zh": "`contextName` 子元素给出“教学主数据上下文（虚构UUID）”。读取元素文本与语言，是 contextId 的可读名称而非身份；旧格式质量网络由上下文机制替代，不能把这个名称当作旧质量网络数字字段。"
+        },
+        {
+          "field_id": "3890",
+          "explanation_zh": "`requiredContext` 子元素引用另一个教学上下文 `d5a99c56-eb38-567d-badd-f9294284f8f6`，并携带所需版本及目录信息。要读取全部同名子元素，再进入它们的属性和 requiredContextName；它表示完整加载主数据所需的依赖，不是本文件 contextId 的替代值，解析整个文件前还需确认依赖实际可用。"
+        }
+      ]
+    },
+    "TRequiredContextReference": {
+      "examples": [
+        {
+          "label_zh": "一个主数据上下文依赖的完整片段",
+          "xml": "<requiredContext xmlns=\"http://www.EcoInvent.org/EcoSpold02\" majorRelease=\"1\" minorRelease=\"0\" majorRevision=\"2\" minorRevision=\"1\" requiredContextId=\"d5a99c56-eb38-567d-badd-f9294284f8f6\" requiredContextFileLocation=\"https://example.invalid/teaching/master-data/\">\n  <!-- 教学构造的依赖上下文与目录；不会解析真实主数据。 -->\n  <requiredContextName xml:lang=\"zh\">教学依赖主数据上下文</requiredContextName>\n</requiredContext>",
+          "explanation_zh": "这个 requiredContext 在完整文档里嵌在 fileAttributes 中，不能直接当作 ecoSpold 根。所有值为教学构造；类型校验可以确认结构和词法，却不能确认版本对应的主数据真的存在。",
+          "focus": [
+            "7810",
+            "7820",
+            "7830",
+            "7840",
+            "7850",
+            "7855",
+            "7860"
+          ]
+        }
+      ],
+      "walkthrough": [
+        {
+          "field_id": "7810",
+          "explanation_zh": "示例 `majorRelease=\"1\"` 是依赖上下文的主发布要求，用来核查所需主数据条目是否可用。读取后与依赖包的版本信息比较，不把它当作当前活动文件自身的 majorRelease。"
+        },
+        {
+          "field_id": "7820",
+          "explanation_zh": "`minorRelease=\"0\"` 是该依赖的次发布要求。与依赖主发布部分配对，本普通类型中两项必填；字段说明未给出通用的版本兼容算法，不能自行认定任意更高版本都可安全替代。"
+        },
+        {
+          "field_id": "7830",
+          "explanation_zh": "`majorRevision=\"2\"` 是依赖上下文的主修订要求，而非当前活动数据集接受变更的次数。它在普通 XSD 中可选；提取时区分省略与显式2，不把缺失自动补为0。"
+        },
+        {
+          "field_id": "7840",
+          "explanation_zh": "`minorRevision=\"1\"` 是依赖上下文的次修订要求。与其他版本部分共同保留以核查主数据，这个可选值缺失时不能直接套用当前文件的 minorRevision。"
+        },
+        {
+          "field_id": "7850",
+          "explanation_zh": "`requiredContextId=\"d5a99c56-eb38-567d-badd-f9294284f8f6\"` 明确引用所需主数据上下文。原文说省略时用数据集上下文，但普通 XSD 将该属性设为必填，所以本例显式提供；不能擅自省略以消除原文与模式的矛盾，应由数据方澄清适用范围。"
+        },
+        {
+          "field_id": "7855",
+          "explanation_zh": "`requiredContextName` 子元素写“教学依赖主数据上下文”，是上述 UUID 的可读名称。读取全部语言条目；匹配依赖时依然依据 UUID 和版本，不只依赖名称相似。"
+        },
+        {
+          "field_id": "7860",
+          "explanation_zh": "`requiredContextFileLocation=\"https://example.invalid/teaching/master-data/\"` 是指向主数据目录的可选URI，不是一项数据集数量或某个具体流文件。保留地址并按自己的文件获取策略处理，本教学地址不会提供真实文件；URI存在不能证明依赖已加载，也不能替代上下文UUID。"
+        }
+      ]
+    }
+  }
+}

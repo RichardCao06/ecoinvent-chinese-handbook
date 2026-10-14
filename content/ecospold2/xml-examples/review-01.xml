@@ -1,0 +1,4 @@
+<review xmlns="http://www.EcoInvent.org/EcoSpold02" reviewerId="00000000-0000-4000-8000-000000000106" reviewerContextId="00000000-0000-4000-8000-000000000100" reviewerName="Teaching Reviewer" reviewerEmail="demo@example.invalid" reviewDate="2025-03-01" reviewedMajorRelease="1" reviewedMinorRelease="0" reviewedMajorRevision="1" reviewedMinorRevision="1">
+  <details><text index="1" xml:lang="zh">教学审查意见：仅演示目标版本、结论与建议的记录位置，不表示真实数据已通过人工审查。</text></details>
+  <otherDetails xml:lang="zh">本例人员、日期和意见均虚构；后续修订不自动继承本次审查覆盖。</otherDetails>
+</review>

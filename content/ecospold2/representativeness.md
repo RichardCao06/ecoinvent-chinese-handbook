@@ -12,6 +12,84 @@
 
 `extrapolations` 记录数据从其他时间、其他地理区域或其他技术外推而来的情况，以及外推如何实施。说明应交代单个交换是否采用不同的外推方法；如果把一个国家运行活动的数据用于另一个国家，可以在这里注明原始代表性，并记录外推引起的均值变化。读取这段内容后，才能把样本覆盖、原始来源和当前适用范围联系起来；不能仅因模型名称或地区代码符合要求，就跳过采样及外推说明。
 
+## 对照 XML 找到每个字段
+
+以下是为本章构造的教学 XML 类型片段，不是真实 ecoinvent 记录。片段声明了默认命名空间，可独立解析；插入自己的 `.spold` 时应定位到本章所述父元素。这里展示该类型的结构，整个数据集的必填关系、继承和主数据引用仍需结合外层文件判断。
+
+### 示例 1：教学系统模型与样本代表性
+
+[下载本段 XML](xml-examples/representativeness-01.xml)。
+
+```xml
+<representativeness xmlns="http://www.EcoInvent.org/EcoSpold02" systemModelId="00000000-0000-4000-8000-000000000105" systemModelContextId="00000000-0000-4000-8000-000000000100" percent="60">
+  <systemModelName xml:lang="zh">教学链接约定（非官方模型）</systemModelName>
+  <samplingProcedure xml:lang="zh">教学设定：在所声明地域、技术与时间范围内采集部分场所数据；电力用计量记录，物料用质量核算，组合时核对口径。</samplingProcedure>
+  <extrapolations xml:lang="zh">教学设定：部分物料信息由另一期间外推；电力未采用该外推，均值调整须另记依据。</extrapolations>
+</representativeness>
+```
+
+所有 UUID、覆盖率和采样叙述均为教学构造。percent=60 以百分值表示相对所代表总体的覆盖，不是把全部交换乘 0.6 的比例。samplingProcedure 和 extrapolations 在本版 XSD 都是普通字符串，尽管原文前者夹有富文本模板说明，不应套用 text/imageUrl 子结构。
+
+### 顺着示例读取字段
+
+下面按本类型的字段逐项对照。属性前的 `@` 只是参考文档的写法；XML 中没有这个字符。没有写出的可选项表示缺失，不能直接补成零。引用字段的有效上下文可能要从外层 `fileAttributes/@contextId` 取得，单独片段不会替你提供这项外层信息。
+
+**`@systemModelId`（FieldID 3000）**：`representativeness/@systemModelId="00000000-0000-4000-8000-000000000105"` 是教学链接约定的模型 UUID。它限定过程如何组成产品系统；查主数据时不能根据名称把它当作正式 ecoinvent 模型。
+
+**`@systemModelContextId`（FieldID 3001）**：`@systemModelContextId="00000000-0000-4000-8000-000000000100"` 给出模型主数据的教学上下文。省略时使用数据集自身上下文；如果后者也未知，模型身份不能被确认匹配。
+
+**`systemModelName`（FieldID 3005）**：`systemModelName` 的文本为“教学链接约定（非官方模型）”，它是模型引用的冗余显示名。读取语言与文本，但供应候选比较仍依赖模型 UUID 和有效上下文。
+
+**`@percent`（FieldID 3010）**：`@percent="60"` 表示对所声明地域、技术、时间总体的教学采样覆盖率为 60%。它不是 0.60 的字段存储方式，也不是交换归一化系数；不应据此放大或缩小清单。 本版 XSD 明确限制最大值为 100，但未在该限制中另给最小值；类型校验与采样语义仍应分别判断。
+
+**`samplingProcedure`（FieldID 3030）**：`samplingProcedure` 说明教学电力与物料的采样/核算方法及组合口径。按这个普通字符串的 `.text` 和语言读取；本版 XSD 为 TString32000，不能因原文富文本模板而添加 text 子节点。
+
+**`extrapolations`（FieldID 3040）**：`extrapolations` 指出哪些教学物料由另一期间外推、哪些电力没有这样处理。应逐交换结合依据理解均值变化；它是普通字符串，不是自动执行外推的公式或新的交换量。
+
+### 按相同路径提取自己的字段
+
+下面的字典逐项对应上面的 XML 字段。解压[XML 片段与读取代码 ZIP](attachments/ecospold2-xml-examples.zip)后，在解压目录运行；更换文件名即可阅读本章其他片段。返回值始终是列表：`[]` 表示未出现，属性保留原始字符串，子元素保留语言等属性、文字和完整 XML。多个语言或重复元素不会被悄悄丢弃。
+
+```python
+import json
+import xml.etree.ElementTree as ET
+from read_xml_fields import field_values
+
+node = ET.parse("xml-examples/representativeness-01.xml").getroot()
+FIELDS = {
+    "3000": "@systemModelId",
+    "3001": "@systemModelContextId",
+    "3005": "systemModelName",
+    "3010": "@percent",
+    "3030": "samplingProcedure",
+    "3040": "extrapolations",
+}
+for field_id, relative_path in FIELDS.items():
+    values = field_values(node, relative_path)
+    print(field_id, relative_path, json.dumps(values, ensure_ascii=False))
+```
+
+换成完整 `.spold` 文件时，先使用本章定位路径选出目标节点，再把它作为 `node` 传入。例如属性 `@amount` 最终用 `.get("amount")` 读取；子元素 `unitName` 用带命名空间的 `.findall("es:unitName", ns)` 读取。嵌套路径先进入对应子元素，再取最后的属性；如 `lognormal/@variance`，不能在外层 `uncertainty` 上直接取 `variance`。复合类型的子元素不能只读外层 `.text`，其结构已保留在返回记录的 `xml` 中。
+
+### 直接在完整 spold 中使用这些路径
+
+沿用上一段的 `FIELDS` 字典与 `field_values`，下面改从完整文件选取本类型节点。先用配套 demo 运行，再把文件名改为自己的 `.spold`。XML 查找会返回全部同类节点；可选结构未提供时，匹配数为零，不会被填成数值零。多个路径代表同类型的不同使用位置，统计时按父路径区分。
+
+```python
+from read_section import load_dataset, NS
+
+dataset = load_dataset("demo-product.spold", index=0)
+LOCATIONS = ['es:modellingAndValidation/es:representativeness']
+for location in LOCATIONS:
+    nodes = dataset.findall(location, NS)
+    print("父路径：", location, "匹配数：", len(nodes))
+    for node in nodes:
+        for field_id, relative_path in FIELDS.items():
+            print(field_id, relative_path,
+                  json.dumps(field_values(node, relative_path), ensure_ascii=False))
+```
+
+
 ## 怎样定位、使用与提取
 
 需要解释系统模型、样本总体或外推依据时，读取 representativeness 的全部字段，尤其保留 systemModelId 与上下文。比较数量之前先核对模型；百分比或外推描述是代表性元数据，不是清单中另一项数量。

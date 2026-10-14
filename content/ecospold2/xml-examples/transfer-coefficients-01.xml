@@ -1,0 +1,4 @@
+<transferCoefficient xmlns="http://www.EcoInvent.org/EcoSpold02" exchangeId="00000000-0000-4000-8000-000000000104" amount="0.25" mathematicalRelation="0.5 * 0.5" isCalculatedAmount="true" sourceId="00000000-0000-4000-8000-000000000103" sourceContextId="00000000-0000-4000-8000-000000000100" sourceIdOverwrittenByChild="false" sourceYear="2025" sourceFirstAuthor="Example A.">
+  <uncertainty><uniform minValue="0.2" maxValue="0.3"/></uncertainty>
+  <comment xml:lang="zh">教学约定：exchangeId 指同一活动中被引用的投入交换实例；外层是接收这部分投入的输出交换。所有 UUID 和来源均虚构。</comment>
+</transferCoefficient>

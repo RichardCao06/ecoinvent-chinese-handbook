@@ -1,0 +1,5 @@
+<representativeness xmlns="http://www.EcoInvent.org/EcoSpold02" systemModelId="00000000-0000-4000-8000-000000000105" systemModelContextId="00000000-0000-4000-8000-000000000100" percent="60">
+  <systemModelName xml:lang="zh">教学链接约定（非官方模型）</systemModelName>
+  <samplingProcedure xml:lang="zh">教学设定：在所声明地域、技术与时间范围内采集部分场所数据；电力用计量记录，物料用质量核算，组合时核对口径。</samplingProcedure>
+  <extrapolations xml:lang="zh">教学设定：部分物料信息由另一期间外推；电力未采用该外推，均值调整须另记依据。</extrapolations>
+</representativeness>

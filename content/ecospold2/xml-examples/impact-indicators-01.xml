@@ -1,0 +1,10 @@
+<impactIndicator xmlns="http://www.EcoInvent.org/EcoSpold02" impactIndicatorId="9ce9802d-268d-5ac0-af08-ffca6dc91aa2" impactMethodId="496741dc-72ec-5f95-bedb-078512fde969" impactCategoryId="07a7bfca-c863-5fd0-a2bf-24aa3af0d959" amount="13.9" impactIndicatorContextId="f71ac544-3bc8-5c15-8ea4-072d907663f1" impactMethodContextId="f71ac544-3bc8-5c15-8ea4-072d907663f1" impactCategoryContextId="f71ac544-3bc8-5c15-8ea4-072d907663f1">
+        <impactMethodName xml:lang="zh">教学方法（非官方）</impactMethodName>
+        <impactMethodName xml:lang="en">Teaching method (synthetic, unofficial)</impactMethodName>
+        <impactCategoryName xml:lang="zh">教学化石CO2类别</impactCategoryName>
+        <impactCategoryName xml:lang="en">Teaching fossil CO2 category</impactCategoryName>
+        <name xml:lang="zh">教学GWP（构造）</name>
+        <name xml:lang="en">Teaching GWP (synthetic)</name>
+        <unitName xml:lang="zh">kg CO2-eq</unitName>
+        <unitName xml:lang="en">kg CO2-eq</unitName>
+      </impactIndicator>

@@ -1,0 +1,5 @@
+<geography xmlns="http://www.EcoInvent.org/EcoSpold02" geographyId="a099d998-acea-50db-a416-a5eaeaf6eb23" geographyContextId="f71ac544-3bc8-5c15-8ea4-072d907663f1">
+  <!-- 教学构造，非真实区域。 -->
+  <shortname xml:lang="zh">教学区域（虚构）</shortname>
+  <comment><text index="1" xml:lang="zh">按教学厂区边界划定，不代表行政区域或真实市场范围。</text></comment>
+</geography>

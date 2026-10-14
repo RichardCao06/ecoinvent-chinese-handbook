@@ -1,0 +1,12 @@
+<intermediateExchange xmlns="http://www.EcoInvent.org/EcoSpold02" id="b8754d71-a0c7-5b08-a889-67d6f1146d58" amount="10" unitId="a4800e12-54b1-5444-a6d0-b48a59529439" intermediateExchangeId="c5a1fe25-46d4-5646-9d78-5c10b6bfdeae" intermediateExchangeContextId="f71ac544-3bc8-5c15-8ea4-072d907663f1" productionVolumeAmount="1000" productionVolumeSourceIdOverwrittenByChild="false" productionVolumeVariableName="annual_product_volume" productionVolumeSourceId="00000000-0000-4000-8000-000000001533" productionVolumeMathematicalRelation="100 * 10" productionVolumeSourceContextId="f71ac544-3bc8-5c15-8ea4-072d907663f1" productionVolumeSourceYear="2025" productionVolumeSourceFirstAuthor="Demo A.">
+        <name xml:lang="zh">教学产品</name>
+        <name xml:lang="en">Teaching product</name>
+        <unitName xml:lang="zh">kg</unitName>
+        <unitName xml:lang="en">kg</unitName>
+        <property propertyId="157cb588-bc77-5666-9107-3791e5783446" amount="1" unitId="00875264-8155-513e-8182-437026535fcb" isDefiningValue="true">
+          <name xml:lang="zh">干质量（教学比例）</name>
+          <name xml:lang="en">Dry mass (teaching ratio)</name>
+          <unitName xml:lang="zh">kg/kg</unitName>
+          <unitName xml:lang="en">kg/kg</unitName>
+        </property>
+        <productionVolumeComment xml:lang="zh">教学年度产量：100 批，每批 10 kg；不代表真实产能。</productionVolumeComment><productionVolumeComment xml:lang="en">Synthetic annual output: 100 batches of 10 kg; not real capacity.</productionVolumeComment><productionVolumeUncertainty><normal meanValue="1000" variance="100" varianceWithPedigreeUncertainty="144"/></productionVolumeUncertainty><classification classificationId="00000000-0000-4000-8000-000000001540" classificationContextId="f71ac544-3bc8-5c15-8ea4-072d907663f1"><classificationSystem xml:lang="zh">教学产品分类</classificationSystem><classificationSystem xml:lang="en">Synthetic product classification</classificationSystem><classificationValue xml:lang="zh">教学产品 A</classificationValue><classificationValue xml:lang="en">Teaching product A</classificationValue></classification><outputGroup>0</outputGroup></intermediateExchange>

@@ -1,0 +1,351 @@
+{
+  "reviewer": "translator_a",
+  "status": "passed_with_notes",
+  "packet_sha256": "8cce7c2085362a2555c02cc5153b6ab0de31507ed73dd618661a22e64b4a5a85",
+  "reviewed_fields": [
+    {
+      "section": "TCustomExchange",
+      "field_id": "1000"
+    },
+    {
+      "section": "TCustomExchange",
+      "field_id": "1005"
+    },
+    {
+      "section": "TCustomExchange",
+      "field_id": "1020"
+    },
+    {
+      "section": "TCustomExchange",
+      "field_id": "1030"
+    },
+    {
+      "section": "TCustomExchange",
+      "field_id": "1031"
+    },
+    {
+      "section": "TCustomExchange",
+      "field_id": "1035"
+    },
+    {
+      "section": "TCustomExchange",
+      "field_id": "1040"
+    },
+    {
+      "section": "TCustomExchange",
+      "field_id": "1050"
+    },
+    {
+      "section": "TCustomExchange",
+      "field_id": "1060"
+    },
+    {
+      "section": "TCustomExchange",
+      "field_id": "1100"
+    },
+    {
+      "section": "TCustomExchange",
+      "field_id": "1110"
+    },
+    {
+      "section": "TCustomExchange",
+      "field_id": "1120"
+    },
+    {
+      "section": "TCustomExchange",
+      "field_id": "1121"
+    },
+    {
+      "section": "TCustomExchange",
+      "field_id": "1122"
+    },
+    {
+      "section": "TCustomExchange",
+      "field_id": "1125"
+    },
+    {
+      "section": "TCustomExchange",
+      "field_id": "1126"
+    },
+    {
+      "section": "TCustomExchange",
+      "field_id": "1130"
+    },
+    {
+      "section": "TCustomExchange",
+      "field_id": "1150"
+    },
+    {
+      "section": "TCustomExchange",
+      "field_id": "1151"
+    },
+    {
+      "section": "TCustomExchange",
+      "field_id": "1152"
+    },
+    {
+      "section": "TCustomExchange",
+      "field_id": "1200"
+    },
+    {
+      "section": "TCustomExchange",
+      "field_id": "1300"
+    },
+    {
+      "section": "TCustomExchange",
+      "field_id": "1400"
+    },
+    {
+      "section": "TCustomExchange",
+      "field_id": "1450"
+    },
+    {
+      "section": "TCustomExchange",
+      "field_id": "1470"
+    },
+    {
+      "section": "TIntermediateExchange",
+      "field_id": "1500"
+    },
+    {
+      "section": "TIntermediateExchange",
+      "field_id": "1510"
+    },
+    {
+      "section": "TIntermediateExchange",
+      "field_id": "1515"
+    },
+    {
+      "section": "TIntermediateExchange",
+      "field_id": "1516"
+    },
+    {
+      "section": "TIntermediateExchange",
+      "field_id": "1520"
+    },
+    {
+      "section": "TIntermediateExchange",
+      "field_id": "1521"
+    },
+    {
+      "section": "TIntermediateExchange",
+      "field_id": "1522"
+    },
+    {
+      "section": "TIntermediateExchange",
+      "field_id": "1530"
+    },
+    {
+      "section": "TIntermediateExchange",
+      "field_id": "1531"
+    },
+    {
+      "section": "TIntermediateExchange",
+      "field_id": "1532"
+    },
+    {
+      "section": "TIntermediateExchange",
+      "field_id": "1533"
+    },
+    {
+      "section": "TIntermediateExchange",
+      "field_id": "1534"
+    },
+    {
+      "section": "TIntermediateExchange",
+      "field_id": "1535"
+    },
+    {
+      "section": "TIntermediateExchange",
+      "field_id": "1536"
+    },
+    {
+      "section": "TIntermediateExchange",
+      "field_id": "1537"
+    },
+    {
+      "section": "TIntermediateExchange",
+      "field_id": "1538"
+    },
+    {
+      "section": "TIntermediateExchange",
+      "field_id": "1539"
+    },
+    {
+      "section": "TIntermediateExchange",
+      "field_id": "1540"
+    },
+    {
+      "section": "TElementaryExchange",
+      "field_id": "1600"
+    },
+    {
+      "section": "TElementaryExchange",
+      "field_id": "1610"
+    },
+    {
+      "section": "TElementaryExchange",
+      "field_id": "1615"
+    },
+    {
+      "section": "TElementaryExchange",
+      "field_id": "1616"
+    },
+    {
+      "section": "TElementaryExchange",
+      "field_id": "1660"
+    },
+    {
+      "section": "TElementaryExchange",
+      "field_id": "1670"
+    },
+    {
+      "section": "TParameter",
+      "field_id": "1700"
+    },
+    {
+      "section": "TParameter",
+      "field_id": "1705"
+    },
+    {
+      "section": "TParameter",
+      "field_id": "1706"
+    },
+    {
+      "section": "TParameter",
+      "field_id": "1710"
+    },
+    {
+      "section": "TParameter",
+      "field_id": "1712"
+    },
+    {
+      "section": "TParameter",
+      "field_id": "1713"
+    },
+    {
+      "section": "TParameter",
+      "field_id": "1714"
+    },
+    {
+      "section": "TParameter",
+      "field_id": "1715"
+    },
+    {
+      "section": "TParameter",
+      "field_id": "1720"
+    },
+    {
+      "section": "TParameter",
+      "field_id": "1725"
+    },
+    {
+      "section": "TParameter",
+      "field_id": "1730"
+    },
+    {
+      "section": "TParameter",
+      "field_id": "1740"
+    },
+    {
+      "section": "TImpactIndicatorResult",
+      "field_id": "1800"
+    },
+    {
+      "section": "TImpactIndicatorResult",
+      "field_id": "1801"
+    },
+    {
+      "section": "TImpactIndicatorResult",
+      "field_id": "1810"
+    },
+    {
+      "section": "TImpactIndicatorResult",
+      "field_id": "1811"
+    },
+    {
+      "section": "TImpactIndicatorResult",
+      "field_id": "1815"
+    },
+    {
+      "section": "TImpactIndicatorResult",
+      "field_id": "1820"
+    },
+    {
+      "section": "TImpactIndicatorResult",
+      "field_id": "1821"
+    },
+    {
+      "section": "TImpactIndicatorResult",
+      "field_id": "1825"
+    },
+    {
+      "section": "TImpactIndicatorResult",
+      "field_id": "1830"
+    },
+    {
+      "section": "TImpactIndicatorResult",
+      "field_id": "1840"
+    },
+    {
+      "section": "TImpactIndicatorResult",
+      "field_id": "1850"
+    },
+    {
+      "section": "TCompartment",
+      "field_id": "330"
+    },
+    {
+      "section": "TCompartment",
+      "field_id": "340"
+    },
+    {
+      "section": "TCompartment",
+      "field_id": "350"
+    },
+    {
+      "section": "TCompartment",
+      "field_id": "351"
+    }
+  ],
+  "notes": [
+    {
+      "section": "TCustomExchange",
+      "field_id": "1400",
+      "status": "resolved",
+      "reason_zh": "独立审查指出 CO₂ 交换上的“碳含量属性=1 kg/kg”可能暗示错误的物理质量分数。作者已将示例中英文名称改为“教学比例属性 / Synthetic ratio property”，并在示例说明及1400讲解中明确1 kg/kg仅为结构示意，不代表CO₂真实碳含量。最终版本已重新核对。"
+    },
+    {
+      "section": "TIntermediateExchange",
+      "field_id": "1520",
+      "status": "needs_expert_review",
+      "reason_zh": "原文把 activityLinkId 交叉引用到105，当前示例正确引用供应活动 activity/@id，而不是 activityNameId，并保留原编号疑点。复核当前 extract_ecospold.py 的 supplier_compatibility 及对应测试，现已实现 systemModelId/有效模型context和数据库 majorRelease/minorRelease 比较，1520关于模型/发布版本检查的解释成立。",
+      "recommendation_zh": "请数据方确认旧字段105的交叉引用；读取真实候选时继续保留模型、版本和上下文信息，不把匹配候选当作完整上游网络计算。"
+    },
+    {
+      "section": "TIntermediateExchange",
+      "field_id": "1534",
+      "status": "needs_expert_review",
+      "reason_zh": "原文 productionVolumeMathematicalRelation 将结果写入amount的措辞与独立productionVolumeAmount字段存在已记录歧义。示例明确年度产量1000与参考交换量10不同，公式文本只保存，说明没有抹去该源文问题。",
+      "recommendation_zh": "请数据方确认产量公式的目标字段；不以本教学例重写交换amount或生成新的官方求值规则。"
+    },
+    {
+      "section": "TParameter",
+      "field_id": "1715",
+      "status": "needs_expert_review",
+      "reason_zh": "原文变量说明沿用了exchange/交换数量措辞，但此处类型是TParameter；示例和讲解明确 electricity_intensity 引用参数amount，不把参数当成具有方向的交换。该源文模板疑点应与既有原始翻译注记一起保留。",
+      "recommendation_zh": "请技术编辑核对参数变量说明；公式取值遵循参数定义与正式公式语言，不因示例而执行eval。"
+    },
+    {
+      "section": "TImpactIndicatorResult",
+      "field_id": "1820",
+      "status": "needs_expert_review",
+      "reason_zh": "源文把类别引用写成“method of the impact category”，示例正确保存类别UUID/context并与方法、指标层分开，讲解明确指出原措辞不精确。",
+      "recommendation_zh": "请数据方澄清原文的类别引用表述；继续以三层UUID及有效上下文和单位核对指标身份。"
+    },
+    {
+      "status": "resolved",
+      "reason_zh": "审查范围为全部6类型/76字段/11片段：逐段对照官方字段与XSD，全部片段通过validate_fragment类型校验，每字段在XML实际出现且有对应讲解。核对属性/直接文本/复合子树定位、多语言重复同义词、派生类型共同字段、方向互斥及负output、六项基本流身份键、交换/属性/参数/年度产量的数值尺度、引用删除标记、三层指标身份与指标无unitId结构。示例均明确教学构造。类型校验不覆盖完整.spold、虚构主数据是否存在、引用完整性、继承展开或产品系统求解；此记录不是人工或官方签核。"
+    }
+  ]
+}

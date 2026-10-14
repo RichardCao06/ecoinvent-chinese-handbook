@@ -5696,7 +5696,7 @@
   "pages": [
     {
       "path": "ecospold2/README.md",
-      "sha256": "e3a0a8690d1d79c988b3b0f4ef51e93deca2399d0321ac9c1ec21709e2b92824"
+      "sha256": "066eb6aa49d316ad772cf40c190ffb31dfa47369410e4cf98ade2886092706ee"
     },
     {
       "path": "ecospold2/activity-description.md",
@@ -5704,7 +5704,7 @@
     },
     {
       "path": "ecospold2/activity.md",
-      "sha256": "f8d5eccecc45ceb3027a19bd86bf5c18bd204ea4ba0fc300ced05e0b0710f00b"
+      "sha256": "8f7cdcd87c190b37d981055212f77bc0f37cac3e87d9f1dd4a387ee639191559"
     },
     {
       "path": "ecospold2/administrative-information.md",
@@ -5712,11 +5712,11 @@
     },
     {
       "path": "ecospold2/classification.md",
-      "sha256": "99f2e2072deef2fb2329a33da203027700b83450c6d189c4eb87722b44164876"
+      "sha256": "db5828b7ea36c3a3277d1b22494c03368f8c750a1ed3b504b190325bac43b3df"
     },
     {
       "path": "ecospold2/compartments.md",
-      "sha256": "b91f3c1d7e6e40d6557bb9c42818f0564fea52bf370a3ec73746f2282dcbdf1e"
+      "sha256": "3eeec7925589bde61e1797a9091001383740f9bd724f42de95f6561a65bf27c0"
     },
     {
       "path": "ecospold2/complex-types.md",
@@ -5724,7 +5724,7 @@
     },
     {
       "path": "ecospold2/data-entry.md",
-      "sha256": "abb8495a32b64d6afcf18e7babaf02858e62c8aa07d969ef1172bf3f63d425b4"
+      "sha256": "b3151123930780f4f3a475d82ebe3fecf04b991e5b49c7d6cd194cb12219889f"
     },
     {
       "path": "ecospold2/data-levels.md",
@@ -5736,11 +5736,11 @@
     },
     {
       "path": "ecospold2/elementary-exchanges.md",
-      "sha256": "3a1fd1610332385151b3efef54a0271d933840ae507e0e7f3b7c97260b1b4f92"
+      "sha256": "2dd42ad82a22dd5059f62c453a265c4ea2b4d603e56865b84f97f1f51b47dc8c"
     },
     {
       "path": "ecospold2/exchanges.md",
-      "sha256": "cfece74f6e2dce65876e386acc174633b8f7fa19e525546d97a90bb95eb2231d"
+      "sha256": "737a47c6d319d29b4dafb61b52f9b141a378ee32db28589a3376c86a9e906f6e"
     },
     {
       "path": "ecospold2/extraction-practice.md",
@@ -5748,7 +5748,7 @@
     },
     {
       "path": "ecospold2/file-attributes.md",
-      "sha256": "cd92d0dc88414a5cf5f0b750f30f066549838a75ba32521102e995c7b0d57be7"
+      "sha256": "e884b7ec9206d18f8b7bfe0f5893729abadedb28cc498474627485858b7f19e1"
     },
     {
       "path": "ecospold2/flow-data.md",
@@ -5760,19 +5760,19 @@
     },
     {
       "path": "ecospold2/geography.md",
-      "sha256": "eabb9e57e10a312fddbd5beb753210b9c255ef5173fcc65067e769cfb9c4be0e"
+      "sha256": "6fd29da645f71a85476d67be1b09dcdc1e725f70786228f440728c1732c52285"
     },
     {
       "path": "ecospold2/impact-indicators.md",
-      "sha256": "1dd06055e24fd19714c02c9ddf55d1d4a8665191c3b3dac14d99246b9c1b4da7"
+      "sha256": "4277231328e270315753192a269ea38831b2cae1901221a6baf2309abc19f983"
     },
     {
       "path": "ecospold2/intermediate-exchanges.md",
-      "sha256": "156eaf6db4ea3e9999ee6bd44814b47311ae32385961a3a68d607b6e057441b7"
+      "sha256": "c3cb5c3d5e3ebee6981b5951652130c56e263b85c6f84b65825d8d7776f3cf32"
     },
     {
       "path": "ecospold2/macro-economic-scenario.md",
-      "sha256": "7a023aac503ec092ddc7b9c8a56f038048ccfc958a993bebdcaaaece7dacd664"
+      "sha256": "598854f16e746fdb353c7dfa06dd49210ce3d041c245cf1213ea243092ec4a74"
     },
     {
       "path": "ecospold2/modelling-validation.md",
@@ -5780,11 +5780,11 @@
     },
     {
       "path": "ecospold2/parameters.md",
-      "sha256": "4ae4c4415207f39e32d0c6ce93f77bff455d51ffb0a052449e4d62e4924b9a4a"
+      "sha256": "a8fbb7d51df9ff86298116088448afd53dc3338b9894d01eb64e57e38dd59a6b"
     },
     {
       "path": "ecospold2/properties.md",
-      "sha256": "168efd29e2cb0db41e373b76b9877de8b0c4b7ecbd95a9b355521d810a003bad"
+      "sha256": "7f5c20dcacf9d6d61c451c23bd7ac8774c5251019b16a914c970977db631b935"
     },
     {
       "path": "ecospold2/provenance.md",
@@ -5792,35 +5792,35 @@
     },
     {
       "path": "ecospold2/publication.md",
-      "sha256": "ac4d81da884aa49f2e29894d043c3f144a808f2183e36dde9e2b881c2926870e"
+      "sha256": "88387d1570e6a8689d5185fbef532398a057764465d4e574bfcfbb120d1b8baf"
     },
     {
       "path": "ecospold2/representativeness.md",
-      "sha256": "222f6f76decfad5cb5eef6bd9c0237e671afa0dabd40c5c37f688cc4c4d2bdab"
+      "sha256": "b4831467c9db4ec057f41c17efcdbac9009c47b7439f10ac084607d672d9e3d0"
     },
     {
       "path": "ecospold2/required-contexts.md",
-      "sha256": "b0ae1ea8f915aab99c7d6c62ece4acc57857e5883f65d5b84dfa914935c36dda"
+      "sha256": "3e8768d84f68c7a5f4f529ff477ebf2a8a47ed9eec0e2f16d4eabe9a432c99c8"
     },
     {
       "path": "ecospold2/review.md",
-      "sha256": "8afeaa4e317fabb579426db2f32b13b1241a35c91f6d844253b45128557e0978"
+      "sha256": "b823c39403215c75e701c609a8c0932b5bda26f417af33795ac3977247c9681b"
     },
     {
       "path": "ecospold2/technology.md",
-      "sha256": "b1bf2ef9170401363a7bd6ec0972ee0ed99b6bdf6d39fd6948d63cea87620437"
+      "sha256": "b8e3418ba511acf7b8b2bf6de3d2c90cedf22b907d8566f78a12f1bd0e7f745c"
     },
     {
       "path": "ecospold2/text-and-image.md",
-      "sha256": "b3c9bad8cff62d68ee562158ac96a6da5ab17c4829d33b4660be88e7dd3cccc1"
+      "sha256": "161b5946d338bdd33b2a936a637b06e6c888475e03ad7a59061609fb8dd66ea7"
     },
     {
       "path": "ecospold2/time-period.md",
-      "sha256": "3bc2d64b187ed15acb41b0dba701815dc31acb614547ea6dcb845312d27a8dce"
+      "sha256": "a5403f46fe1665cf1dbc3d7bafe829113d896f7f5aaf65d011d756d47f314c00"
     },
     {
       "path": "ecospold2/transfer-coefficients.md",
-      "sha256": "b04f17b5fa035c4342a3328a31d7cfc8c8d053ffeacbfe4e1d2ac2b4040f6ea8"
+      "sha256": "e3bf5469864500506ce6111b9de547c2de88eaea6907a95b667c6427f4822c53"
     },
     {
       "path": "ecospold2/translation-review.md",
@@ -5828,11 +5828,11 @@
     },
     {
       "path": "ecospold2/tutorial-review.md",
-      "sha256": "178fefb775b7afff1f1b229c6396c52d55c4d90522780f85d72aab5f46b61688"
+      "sha256": "c046124a40a2555adb4393458b56e356cee316583efba89218e9dbd71cb119f6"
     },
     {
       "path": "ecospold2/uncertainty.md",
-      "sha256": "125a609ce17a3b914006ca816d10d2878cd1058073b6d6c4f5faae727b2a2f3e"
+      "sha256": "44627bcb007e7b647dfabf1d9319d06d11d6e0949b2516be4b763111f8570cd5"
     },
     {
       "path": "ecospold2/xml-structure.md",

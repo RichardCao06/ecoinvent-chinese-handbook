@@ -1,0 +1,4 @@
+<uncertainty xmlns="http://www.EcoInvent.org/EcoSpold02">
+  <triangular minValue="1" mostLikelyValue="2" maxValue="4"/>
+  <comment xml:lang="zh">仅演示 XSD 语法；原文关于 ecoinvent 中不得使用旧字段 #3797 的限定仍需另行核对。</comment>
+</uncertainty>

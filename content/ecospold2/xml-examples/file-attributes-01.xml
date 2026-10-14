@@ -1,0 +1,7 @@
+<fileAttributes xmlns="http://www.EcoInvent.org/EcoSpold02" majorRelease="1" minorRelease="0" majorRevision="2" minorRevision="1" defaultLanguage="zh" creationTimestamp="2025-01-01T00:00:00Z" lastEditTimestamp="2025-02-01T10:00:00Z" internalSchemaVersion="2.0.13" fileGenerator="Teaching XML generator 1.0" fileTimestamp="2025-02-01T10:05:00Z" contextId="f71ac544-3bc8-5c15-8ea4-072d907663f1">
+  <!-- 教学版本号和时间戳；不是实际ecoinvent发布记录。 -->
+  <contextName xml:lang="zh">教学主数据上下文（虚构UUID）</contextName>
+  <requiredContext majorRelease="1" minorRelease="0" majorRevision="2" minorRevision="1" requiredContextId="d5a99c56-eb38-567d-badd-f9294284f8f6" requiredContextFileLocation="https://example.invalid/teaching/master-data/">
+    <requiredContextName xml:lang="zh">教学依赖主数据上下文</requiredContextName>
+  </requiredContext>
+</fileAttributes>

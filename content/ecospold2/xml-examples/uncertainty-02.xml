@@ -1,0 +1,3 @@
+<uncertainty xmlns="http://www.EcoInvent.org/EcoSpold02">
+  <normal meanValue="10" variance="1" varianceWithPedigreeUncertainty="1.44"/>
+</uncertainty>

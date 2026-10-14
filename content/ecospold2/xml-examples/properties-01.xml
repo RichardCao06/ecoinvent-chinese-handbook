@@ -1,0 +1,6 @@
+<property xmlns="http://www.EcoInvent.org/EcoSpold02" propertyId="00000000-0000-4000-8000-000000000101" propertyContextId="00000000-0000-4000-8000-000000000100" unitId="00000000-0000-4000-8000-000000000102" unitContextId="00000000-0000-4000-8000-000000000100" amount="0.8" isDefiningValue="true" mathematicalRelation="0.5 + 0.3" isCalculatedAmount="true" variableName="dry_mass" sourceId="00000000-0000-4000-8000-000000000103" sourceContextId="00000000-0000-4000-8000-000000000100" sourceIdOverwrittenByChild="false" sourceYear="2025" sourceFirstAuthor="Example A.">
+  <name xml:lang="zh">干质量（教学属性）</name>
+  <unitName xml:lang="zh">kg/kg</unitName>
+  <uncertainty><normal meanValue="0.8" variance="0.0001" varianceWithPedigreeUncertainty="0.0004"/></uncertainty>
+  <comment xml:lang="zh">教学构造：这里约定每 kg 交换产品含 0.8 kg 干物质；所有 UUID、文献名和单位身份都是虚构。</comment>
+</property>

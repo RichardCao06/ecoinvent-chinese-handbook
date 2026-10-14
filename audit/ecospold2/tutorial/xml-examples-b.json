@@ -1,0 +1,521 @@
+{
+  "author": "translator_b",
+  "sections": {
+    "TCustomExchange": {
+      "examples": [
+        {
+          "label_zh": "教学示例：只含共同类型字段的交换",
+          "xml": "<exchange xmlns=\"http://www.EcoInvent.org/EcoSpold02\" id=\"00000000-0000-4000-8000-000000001005\" amount=\"1.5\" unitId=\"a4800e12-54b1-5444-a6d0-b48a59529439\" unitContextId=\"f71ac544-3bc8-5c15-8ea4-072d907663f1\" variableName=\"fossil_co2\" isCalculatedAmount=\"true\" mathematicalRelation=\"0.15 * 10\" casNumber=\"124-38-9\" sourceId=\"00000000-0000-4000-8000-000000001120\" sourceContextId=\"f71ac544-3bc8-5c15-8ea4-072d907663f1\" sourceIdOverwrittenByChild=\"false\" sourceYear=\"2025\" sourceFirstAuthor=\"Demo A.\" pageNumbers=\"3-4\" specificAllocationPropertyId=\"00000000-0000-4000-8000-000000001150\" specificAllocationPropertyContextId=\"f71ac544-3bc8-5c15-8ea4-072d907663f1\" specificAllocationPropertyIdOverwrittenByChild=\"false\">\n  <name xml:lang=\"zh\">二氧化碳，化石源（教学）</name>\n  <name xml:lang=\"en\">Carbon dioxide, fossil (synthetic)</name>\n  <unitName xml:lang=\"zh\">kg</unitName>\n  <unitName xml:lang=\"en\">kg</unitName>\n  <comment xml:lang=\"zh\">全部为教学构造；此处仅展示交换共用字段。</comment>\n  <comment xml:lang=\"en\">Synthetic teaching example of shared exchange fields only.</comment>\n  <uncertainty>\n    <lognormal meanValue=\"1.5\" mu=\"0.4054651081081644\" variance=\"0.01\" varianceWithPedigreeUncertainty=\"0.04\"/>\n  </uncertainty>\n  <synonym xml:lang=\"zh\">教学化石二氧化碳</synonym>\n  <synonym xml:lang=\"en\">Synthetic fossil carbon dioxide</synonym>\n  <synonym xml:lang=\"zh\">教学 CO2</synonym>\n  <property propertyId=\"00000000-0000-4000-8000-000000001400\" propertyContextId=\"f71ac544-3bc8-5c15-8ea4-072d907663f1\" amount=\"1\" unitId=\"00000000-0000-4000-8000-000000001401\" unitContextId=\"f71ac544-3bc8-5c15-8ea4-072d907663f1\">\n    <name xml:lang=\"zh\">教学比例属性</name>\n    <name xml:lang=\"en\">Synthetic ratio property</name>\n    <unitName xml:lang=\"zh\">kg/kg</unitName>\n    <unitName xml:lang=\"en\">kg/kg</unitName>\n  </property>\n  <transferCoefficient exchangeId=\"00000000-0000-4000-8000-000000001200\" amount=\"0.6\">\n    <comment xml:lang=\"zh\">教学输出中的某一输入贡献份额；被引用的输入行位于完整数据集。</comment>\n  </transferCoefficient>\n  <tag>synthetic-teaching</tag>\n</exchange>",
+          "explanation_zh": "这是完整、可解析的 TCustomExchange 类型片段；<exchange> 是本教程用于类型级校验的示例根名，并非 flowData 的实际交换标签。它不含 inputGroup/outputGroup、产品或基本流 master ID，也不单独确定方向；完整文件要使用 intermediateExchange 或 elementaryExchange 的派生结构。所有 UUID、来源和属性均为教学构造。子元素依 XSD 顺序排列，属性顺序没有语义。这里 amount=1.5 kg 是交换数量，property/amount=1 kg/kg 是独立属性值，transferCoefficient/amount=0.6 是份额，三者不能混为一列。 此处的教学比例属性 1 kg/kg 仅展示属性结构，不表示 CO₂ 的真实碳质量分数或其他实测物性。",
+          "focus": [
+            "1000",
+            "1005",
+            "1020",
+            "1030",
+            "1031",
+            "1035",
+            "1040",
+            "1050",
+            "1060",
+            "1100",
+            "1110",
+            "1120",
+            "1121",
+            "1122",
+            "1125",
+            "1126",
+            "1130",
+            "1150",
+            "1151",
+            "1152",
+            "1200",
+            "1300",
+            "1400",
+            "1450",
+            "1470"
+          ]
+        },
+        {
+          "label_zh": "教学示例：继承清除标志的共同字段片段",
+          "xml": "<exchange xmlns=\"http://www.EcoInvent.org/EcoSpold02\" id=\"00000000-0000-4000-8000-000000001006\" amount=\"1.5\" unitId=\"a4800e12-54b1-5444-a6d0-b48a59529439\" sourceIdOverwrittenByChild=\"true\" specificAllocationPropertyIdOverwrittenByChild=\"true\">\n  <name xml:lang=\"zh\">教学清除引用标记</name>\n  <name xml:lang=\"en\">Synthetic reference-removal markers</name>\n  <unitName xml:lang=\"zh\">kg</unitName>\n  <unitName xml:lang=\"en\">kg</unitName>\n</exchange>",
+          "explanation_zh": "此片段展示 sourceId 与 specificAllocationPropertyId 缺省、对应 OverwrittenByChild=true 的显式清除写法；仅在实际子数据集继承处理中才发生清除父引用的效果。它不是已展开的 childActivityDataset，也不定义父值；普通缺省引用不等价于清除。UUID 和数值为教学构造。",
+          "focus": [
+            "1000",
+            "1005",
+            "1020",
+            "1030",
+            "1035",
+            "1122",
+            "1152"
+          ]
+        }
+      ],
+      "walkthrough": [
+        {
+          "field_id": "1000",
+          "explanation_zh": "字段 `name` 位于“教学示例：只含共同类型字段的交换”的直接子元素 `name` 中，示例值为 `二氧化碳，化石源（教学） / Carbon dioxide, fossil (synthetic)`。同一交换的中文和英文名称供展示与检索，应读取全部 `name` 子元素及其 `xml:lang`；这些标签不能代替 master UUID 作为合并依据。"
+        },
+        {
+          "field_id": "1005",
+          "explanation_zh": "字段 `id` 可在“教学示例：只含共同类型字段的交换”根元素的 `id=\"00000000-0000-4000-8000-000000001005\"` 属性中读到。该 UUID 唯一标识数据集内的一条交换实例；同一产品或基本流 master 可被多条不同 `id` 的交换引用，因此保留每行，不按 master ID 去重。"
+        },
+        {
+          "field_id": "1020",
+          "explanation_zh": "字段 `amount` 可在“教学示例：只含共同类型字段的交换”根元素的 `amount=\"1.5\"` 属性中读到。这是交换数量，配合单位解释为 1.5 kg；读取属性原字符串并以有限 Decimal 校验，方向需由派生类型的分组判断，不能只看正负号。"
+        },
+        {
+          "field_id": "1030",
+          "explanation_zh": "字段 `unitId` 可在“教学示例：只含共同类型字段的交换”根元素的 `unitId=\"a4800e12-54b1-5444-a6d0-b48a59529439\"` 属性中读到。该 UUID 指向数量单位的 master；应以 `unitId` 和有效 `unitContextId` 定位单位，不能把显示文本 kg 当作唯一身份。"
+        },
+        {
+          "field_id": "1031",
+          "explanation_zh": "字段 `unitContextId` 可在“教学示例：只含共同类型字段的交换”根元素的 `unitContextId=\"f71ac544-3bc8-5c15-8ea4-072d907663f1\"` 属性中读到。此例显式给出单位上下文；读取该属性，与单位 UUID 一起保存；省略时按所在数据集的 `fileAttributes/@contextId` 回退，片段自身没有 fileAttributes，不能另猜上下文。"
+        },
+        {
+          "field_id": "1035",
+          "explanation_zh": "字段 `unitName` 位于“教学示例：只含共同类型字段的交换”的直接子元素 `unitName` 中，示例值为 `kg / kg`。这里的 kg 是数量单位的冗余展示名称，两个语言版本都应保留；与 `unitId` 的 master 定义核对后才能进行可靠的单位换算。"
+        },
+        {
+          "field_id": "1040",
+          "explanation_zh": "字段 `variableName` 可在“教学示例：只含共同类型字段的交换”根元素的 `variableName=\"fossil_co2\"` 属性中读到。`fossil_co2` 是公式引用交换数量时使用的变量名，不是流的 master 身份；读取为字符串，遵循以字母起始和不区分大小写的变量规则。"
+        },
+        {
+          "field_id": "1050",
+          "explanation_zh": "字段 `isCalculatedAmount` 可在“教学示例：只含共同类型字段的交换”根元素的 `isCalculatedAmount=\"true\"` 属性中读到。`true` 表示记录的 amount 来自数学关系或传递系数的计算；读取标志与数值并列保存，标志本身既不提供公式结果，也不要求提取时重算。"
+        },
+        {
+          "field_id": "1060",
+          "explanation_zh": "字段 `mathematicalRelation` 可在“教学示例：只含共同类型字段的交换”根元素的 `mathematicalRelation=\"0.15 * 10\"` 属性中读到。字符串 `0.15 * 10` 展示如何记录产生 1.5 的数学关系；取数时保存原公式及 amount，涉及变量或 REF 时仍不执行 eval 或擅自解析成新的算法。"
+        },
+        {
+          "field_id": "1100",
+          "explanation_zh": "字段 `casNumber` 可在“教学示例：只含共同类型字段的交换”根元素的 `casNumber=\"124-38-9\"` 属性中读到。`124-38-9` 是此教学二氧化碳标签所用的 CAS 号，按字符串保留连字符；它辅助识别化学物质，但不能区分 ecoinvent 的来源、区室或 master 身份。"
+        },
+        {
+          "field_id": "1110",
+          "explanation_zh": "字段 `comment` 位于“教学示例：只含共同类型字段的交换”的直接子元素 `comment` 中，示例值为 `全部为教学构造；此处仅展示交换共用字段。 / Synthetic teaching example of shared exchange fields only.`。中英文 comment 明确限定为教学构造，并说明这里仅展示共同字段；应逐个读取评论文本及语言，用它解释数量的范围，不能把评论当作数量字段。"
+        },
+        {
+          "field_id": "1120",
+          "explanation_zh": "字段 `sourceId` 可在“教学示例：只含共同类型字段的交换”根元素的 `sourceId=\"00000000-0000-4000-8000-000000001120\"` 属性中读到。该 UUID 是教学来源 master 的引用；保存引用并结合 sourceContextId 查询有效来源，不因字段说明提到 modellingAndValidation 就把所有来源当作内嵌文字。"
+        },
+        {
+          "field_id": "1121",
+          "explanation_zh": "字段 `sourceContextId` 可在“教学示例：只含共同类型字段的交换”根元素的 `sourceContextId=\"f71ac544-3bc8-5c15-8ea4-072d907663f1\"` 属性中读到。此例的 sourceContextId 明确给出来源上下文；省略时采用文件上下文，取数时来源的 UUID 和 context 必须成对保留。"
+        },
+        {
+          "field_id": "1122",
+          "explanation_zh": "字段 `sourceIdOverwrittenByChild` 可在“教学示例：只含共同类型字段的交换”根元素的 `sourceIdOverwrittenByChild=\"false\"` 属性中读到。主例的 false 没有要求清除父来源引用；第二例 true 配合省略 sourceId 才展示子数据集显式清除父引用的标记。继承尚未展开时，缺失引用不能直接解释为无来源。"
+        },
+        {
+          "field_id": "1125",
+          "explanation_zh": "字段 `sourceYear` 可在“教学示例：只含共同类型字段的交换”根元素的 `sourceYear=\"2025\"` 属性中读到。`2025` 是教学来源的出版或交流年份，网络来源则可表示最后访问年份；按字符串读取，不把它当作活动 timePeriod 或交换数量。"
+        },
+        {
+          "field_id": "1126",
+          "explanation_zh": "字段 `sourceFirstAuthor` 可在“教学示例：只含共同类型字段的交换”根元素的 `sourceFirstAuthor=\"Demo A.\"` 属性中读到。`Demo A.` 表示教学来源第一作者的姓和名字缩写；现场测量或沟通型来源可对应交流者，需结合来源类型理解，不能据此推断活动生产者。"
+        },
+        {
+          "field_id": "1130",
+          "explanation_zh": "字段 `pageNumbers` 可在“教学示例：只含共同类型字段的交换”根元素的 `pageNumbers=\"3-4\"` 属性中读到。`3-4` 指教学来源中支持此记录的页码范围；保留字符串作为追溯信息，不按减法或两个数量处理。"
+        },
+        {
+          "field_id": "1150",
+          "explanation_zh": "字段 `specificAllocationPropertyId` 可在“教学示例：只含共同类型字段的交换”根元素的 `specificAllocationPropertyId=\"00000000-0000-4000-8000-000000001150\"` 属性中读到。该 UUID 指向本交换的特定分配属性，并覆盖数据集的 masterAllocationPropertyId 默认值；只保存引用及上下文，不能仅据此字段自行实施分配。"
+        },
+        {
+          "field_id": "1151",
+          "explanation_zh": "字段 `specificAllocationPropertyContextId` 可在“教学示例：只含共同类型字段的交换”根元素的 `specificAllocationPropertyContextId=\"f71ac544-3bc8-5c15-8ea4-072d907663f1\"` 属性中读到。这是特定分配属性的 master 上下文，省略时回退文件 context；取数时和 specificAllocationPropertyId 一起用于定位属性。"
+        },
+        {
+          "field_id": "1152",
+          "explanation_zh": "字段 `specificAllocationPropertyIdOverwrittenByChild` 可在“教学示例：只含共同类型字段的交换”根元素的 `specificAllocationPropertyIdOverwrittenByChild=\"false\"` 属性中读到。主例 false 保留通常的继承行为，第二例 true 加上省略 specificAllocationPropertyId 展示清除父分配属性引用的写法；必须先展开继承再判断最终有效引用。"
+        },
+        {
+          "field_id": "1200",
+          "explanation_zh": "字段 `transferCoefficient` 对应“教学示例：只含共同类型字段的交换”的直接子元素 `transferCoefficient`，其中包含 `comment` 子元素。嵌套 transferCoefficient 的 amount=0.6 记录特定输入贡献到当前输出的份额，exchangeId 指向该输入交换实例；需读取整个子元素并在完整数据集中解析实例引用，0.6 不是当前交换的 kg 数量。"
+        },
+        {
+          "field_id": "1300",
+          "explanation_zh": "字段 `uncertainty` 对应“教学示例：只含共同类型字段的交换”的直接子元素 `uncertainty`，其中包含 `lognormal` 子元素。嵌套 lognormal 明示 meanValue=1.5、mu=0.4054651081081644、variance=0.01 与含 pedigree 的方差 0.04；应保存 uncertainty 子树的分布类型和全部参数，不把两种方差或对数均值当作交换 amount。"
+        },
+        {
+          "field_id": "1400",
+          "explanation_zh": "字段 `property` 对应“教学示例：只含共同类型字段的交换”的直接子元素 `property`，其中包含 `name` 子元素。property 的 name 为“教学比例属性 / Synthetic ratio property”，amount=1、unitName=kg/kg 仅是结构示意比例，不代表 CO₂ 的真实碳含量，propertyId 另指属性 master；逐个读取属性行，不把它和外层 amount=1.5 kg 混同，也不随交换参考数量归一化。"
+        },
+        {
+          "field_id": "1450",
+          "explanation_zh": "字段 `tag` 位于“教学示例：只含共同类型字段的交换”的直接子元素 `tag` 中，示例值为 `synthetic-teaching`。`synthetic-teaching` 是开放关键词，读取所有 tag 用于筛选和分组；不在预定义标签清单中按原规范应提示信息，而不能仅因此判整个记录非法。"
+        },
+        {
+          "field_id": "1470",
+          "explanation_zh": "字段 `synonym` 位于“教学示例：只含共同类型字段的交换”的直接子元素 `synonym` 中，示例值为 `教学化石二氧化碳 / Synthetic fossil carbon dioxide / 教学 CO2`。这里有两个中文 synonym 和一个英文 synonym，展示同一种 xml:lang 可以重复；应保留全部同义词而非以语言作字典键覆盖前项。"
+        }
+      ]
+    },
+    "TIntermediateExchange": {
+      "examples": [
+        {
+          "label_zh": "教学示例：25 kWh 电力输入及显式供应链接",
+          "xml": "<intermediateExchange xmlns=\"http://www.EcoInvent.org/EcoSpold02\" id=\"33697568-a16c-54ea-a6db-8275bf713e20\" amount=\"25\" unitId=\"a5533771-6995-50cd-b03c-7a2af998708e\" intermediateExchangeId=\"cf4dd220-d849-5595-92fe-1dac1fcecae7\" activityLinkId=\"44be1818-16fc-56f4-a988-9306a39129df\" variableName=\"electricity_use\" isCalculatedAmount=\"true\" mathematicalRelation=\"electricity_intensity * 10\" intermediateExchangeContextId=\"f71ac544-3bc8-5c15-8ea4-072d907663f1\" activityLinkContextId=\"f71ac544-3bc8-5c15-8ea4-072d907663f1\" activityLinkIdOverwrittenByChild=\"false\">\n        <name xml:lang=\"zh\">教学电力</name>\n        <name xml:lang=\"en\">Teaching electricity</name>\n        <unitName xml:lang=\"zh\">kWh</unitName>\n        <unitName xml:lang=\"en\">kWh</unitName>\n        <uncertainty>\n          <lognormal meanValue=\"25\" mu=\"3.2188758248682006\" variance=\"0.01\" varianceWithPedigreeUncertainty=\"0.04\"/>\n        </uncertainty>\n        <inputGroup>2</inputGroup>\n      </intermediateExchange>",
+          "explanation_zh": "片段取自教学主过程并补齐上下文与继承标志，不是实际 ecoinvent 数据。inputGroup=2 表示电力/热输入，amount=25 的单位为 kWh。id 标识这条交换实例；intermediateExchangeId 标识电力产品 master；activityLinkId 指向教学电力供应活动的 activity/@id，三者各有作用。共同字段 name、unitName、uncertainty 等遵循 TCustomExchange；末尾方向元素在扩展字段之后。",
+          "focus": [
+            "1500",
+            "1515",
+            "1516",
+            "1520",
+            "1521",
+            "1522"
+          ]
+        },
+        {
+          "label_zh": "教学示例：10 kg 参考输出与独立年度产量",
+          "xml": "<intermediateExchange xmlns=\"http://www.EcoInvent.org/EcoSpold02\" id=\"b8754d71-a0c7-5b08-a889-67d6f1146d58\" amount=\"10\" unitId=\"a4800e12-54b1-5444-a6d0-b48a59529439\" intermediateExchangeId=\"c5a1fe25-46d4-5646-9d78-5c10b6bfdeae\" intermediateExchangeContextId=\"f71ac544-3bc8-5c15-8ea4-072d907663f1\" productionVolumeAmount=\"1000\" productionVolumeSourceIdOverwrittenByChild=\"false\" productionVolumeVariableName=\"annual_product_volume\" productionVolumeSourceId=\"00000000-0000-4000-8000-000000001533\" productionVolumeMathematicalRelation=\"100 * 10\" productionVolumeSourceContextId=\"f71ac544-3bc8-5c15-8ea4-072d907663f1\" productionVolumeSourceYear=\"2025\" productionVolumeSourceFirstAuthor=\"Demo A.\">\n        <name xml:lang=\"zh\">教学产品</name>\n        <name xml:lang=\"en\">Teaching product</name>\n        <unitName xml:lang=\"zh\">kg</unitName>\n        <unitName xml:lang=\"en\">kg</unitName>\n        <property propertyId=\"157cb588-bc77-5666-9107-3791e5783446\" amount=\"1\" unitId=\"00875264-8155-513e-8182-437026535fcb\" isDefiningValue=\"true\">\n          <name xml:lang=\"zh\">干质量（教学比例）</name>\n          <name xml:lang=\"en\">Dry mass (teaching ratio)</name>\n          <unitName xml:lang=\"zh\">kg/kg</unitName>\n          <unitName xml:lang=\"en\">kg/kg</unitName>\n        </property>\n        <productionVolumeComment xml:lang=\"zh\">教学年度产量：100 批，每批 10 kg；不代表真实产能。</productionVolumeComment><productionVolumeComment xml:lang=\"en\">Synthetic annual output: 100 batches of 10 kg; not real capacity.</productionVolumeComment><productionVolumeUncertainty><normal meanValue=\"1000\" variance=\"100\" varianceWithPedigreeUncertainty=\"144\"/></productionVolumeUncertainty><classification classificationId=\"00000000-0000-4000-8000-000000001540\" classificationContextId=\"f71ac544-3bc8-5c15-8ea4-072d907663f1\"><classificationSystem xml:lang=\"zh\">教学产品分类</classificationSystem><classificationSystem xml:lang=\"en\">Synthetic product classification</classificationSystem><classificationValue xml:lang=\"zh\">教学产品 A</classificationValue><classificationValue xml:lang=\"en\">Teaching product A</classificationValue></classification><outputGroup>0</outputGroup></intermediateExchange>",
+          "explanation_zh": "这是教学参考产品输出，outputGroup=0、amount=10 kg 给出本数据集的参考数量。productionVolumeAmount=1000 指年度产量，仍使用 kg，但时间尺度和作用不同，不可用 1000 代替归一化分母 10，也不把产量随交换量归一化。生产量来源、公式、不确定性和产品分类是扩展字段；dry mass 属性仍为 1 kg/kg。所有分类/来源 UUID 为教学标识。原文 productionVolumeMathematicalRelation 对结果写入 amount 的表述存在已记录的歧义；此例把产量结果明确写入 productionVolumeAmount。",
+          "focus": [
+            "1510",
+            "1515",
+            "1516",
+            "1530",
+            "1531",
+            "1532",
+            "1533",
+            "1534",
+            "1535",
+            "1536",
+            "1537",
+            "1538",
+            "1539",
+            "1540"
+          ]
+        }
+      ],
+      "walkthrough": [
+        {
+          "field_id": "1500",
+          "explanation_zh": "字段 `inputGroup` 位于“教学示例：25 kWh 电力输入及显式供应链接”的直接子元素 `inputGroup` 中，示例值为 `2`。电力例的 inputGroup=2 标识 Electricity/Heat 输入；取整数码判断方向为 input。其他合法输入码为 1（材料/燃料）、3（服务）、5（未指定技术圈输入），同一交换只能有 inputGroup 或 outputGroup 中的一个。"
+        },
+        {
+          "field_id": "1510",
+          "explanation_zh": "字段 `outputGroup` 位于“教学示例：10 kg 参考输出与独立年度产量”的直接子元素 `outputGroup` 中，示例值为 `0`。参考产品例的 outputGroup=0 标识 ReferenceProduct 输出；唯一正数量参考输出才可作为 amount 比例分母。其他输出码 2/3/5 分别表示副产品、待处理材料和库存增加，不能自动选为参考产品。"
+        },
+        {
+          "field_id": "1515",
+          "explanation_zh": "字段 `intermediateExchangeId` 可在“教学示例：25 kWh 电力输入及显式供应链接”根元素的 `intermediateExchangeId=\"cf4dd220-d849-5595-92fe-1dac1fcecae7\"` 属性中读到。电力例中的 UUID 标识电力产品 master，参考输出例则指教学产品 master；它区别于交换 id，也区别于 activityLinkId。保留此属性及有效 master context 用于产品匹配。"
+        },
+        {
+          "field_id": "1516",
+          "explanation_zh": "字段 `intermediateExchangeContextId` 可在“教学示例：25 kWh 电力输入及显式供应链接”根元素的 `intermediateExchangeContextId=\"f71ac544-3bc8-5c15-8ea4-072d907663f1\"` 属性中读到。这个显式上下文界定 intermediateExchangeId 所属的产品 master 空间；省略时回退 file context。跨文件匹配必须比较产品 UUID 与 context，不能只比名称“电力”。"
+        },
+        {
+          "field_id": "1520",
+          "explanation_zh": "字段 `activityLinkId` 可在“教学示例：25 kWh 电力输入及显式供应链接”根元素的 `activityLinkId=\"44be1818-16fc-56f4-a988-9306a39129df\"` 属性中读到。该 UUID 指向教学供应电力活动的 activity/@id，而非 activityNameId；官方字段文档中对 105 的旧交叉引用有疑点。提取器保存显式链接，并在同模型、同发布版本及上下文的导出候选中检查；空值不能自行随意选择供应者。"
+        },
+        {
+          "field_id": "1521",
+          "explanation_zh": "字段 `activityLinkContextId` 可在“教学示例：25 kWh 电力输入及显式供应链接”根元素的 `activityLinkContextId=\"f71ac544-3bc8-5c15-8ea4-072d907663f1\"` 属性中读到。此值给出 activityLinkId 所引用活动的上下文；省略时按文件 context 回退。它与产品 master context 分别保存，即使本教学例数值相同，也不能当成同一个字段。"
+        },
+        {
+          "field_id": "1522",
+          "explanation_zh": "字段 `activityLinkIdOverwrittenByChild` 可在“教学示例：25 kWh 电力输入及显式供应链接”根元素的 `activityLinkIdOverwrittenByChild=\"false\"` 属性中读到。此例 false 没有要求移除父供应活动引用；在子数据集里 true 加上省略 activityLinkId 才表示显式清除，而普通缺失可表示保留父值。读取后应在继承展开阶段解释该标志。"
+        },
+        {
+          "field_id": "1530",
+          "explanation_zh": "字段 `productionVolumeAmount` 可在“教学示例：10 kg 参考输出与独立年度产量”根元素的 `productionVolumeAmount=\"1000\"` 属性中读到。参考输出例的 1000 是每年 1000 kg 的教学产量，不是本过程参考产品的 10 kg。读取原始年度产量，不用它作交换归一化分母，也不把产量除以 10。"
+        },
+        {
+          "field_id": "1531",
+          "explanation_zh": "字段 `productionVolumeSourceIdOverwrittenByChild` 可在“教学示例：10 kg 参考输出与独立年度产量”根元素的 `productionVolumeSourceIdOverwrittenByChild=\"false\"` 属性中读到。参考输出例 false 未要求清除父产量来源；该属性只控制 productionVolumeSourceId 的继承清除，不能与外层共同 sourceIdOverwrittenByChild 互换。"
+        },
+        {
+          "field_id": "1532",
+          "explanation_zh": "字段 `productionVolumeVariableName` 可在“教学示例：10 kg 参考输出与独立年度产量”根元素的 `productionVolumeVariableName=\"annual_product_volume\"` 属性中读到。`annual_product_volume` 是公式引用该产量数值的变量名；作为字符串保存，与普通交换 variableName 所引用的 amount 明确区分。"
+        },
+        {
+          "field_id": "1533",
+          "explanation_zh": "字段 `productionVolumeSourceId` 可在“教学示例：10 kg 参考输出与独立年度产量”根元素的 `productionVolumeSourceId=\"00000000-0000-4000-8000-000000001533\"` 属性中读到。此 UUID 引用年度产量的教学来源 master，而不是电力交换或普通数量的来源；提取时和 productionVolumeSourceContextId 一起保存以便追溯。"
+        },
+        {
+          "field_id": "1534",
+          "explanation_zh": "字段 `productionVolumeMathematicalRelation` 可在“教学示例：10 kg 参考输出与独立年度产量”根元素的 `productionVolumeMathematicalRelation=\"100 * 10\"` 属性中读到。`100 * 10` 是教学产量公式，对应 1000 kg/年。源文称结果写入 amount 的表述与 productionVolumeAmount 字段存在已记录歧义；此例明确保存产量字段的值和公式，读取时不覆盖 amount=10、不执行公式。"
+        },
+        {
+          "field_id": "1535",
+          "explanation_zh": "字段 `productionVolumeComment` 位于“教学示例：10 kg 参考输出与独立年度产量”的直接子元素 `productionVolumeComment` 中，示例值为 `教学年度产量：100 批，每批 10 kg；不代表真实产能。 / Synthetic annual output: 100 batches of 10 kg; not real capacity.`。中英文 productionVolumeComment 说明“100 批，每批 10 kg”的教学年度范围；读取全部语言的说明，区分年度产量假设与当前参考产品的过程数量。"
+        },
+        {
+          "field_id": "1536",
+          "explanation_zh": "字段 `productionVolumeSourceContextId` 可在“教学示例：10 kg 参考输出与独立年度产量”根元素的 `productionVolumeSourceContextId=\"f71ac544-3bc8-5c15-8ea4-072d907663f1\"` 属性中读到。该属性给出产量来源的上下文，省略时采用文件 context；它不替代普通 sourceContextId，两个来源引用应分别提取。"
+        },
+        {
+          "field_id": "1537",
+          "explanation_zh": "字段 `productionVolumeSourceYear` 可在“教学示例：10 kg 参考输出与独立年度产量”根元素的 `productionVolumeSourceYear=\"2025\"` 属性中读到。`2025` 记录年度产量来源的出版、交流或访问年份；按原字符串保存，不能拿来替代 activityDescription/timePeriod。"
+        },
+        {
+          "field_id": "1538",
+          "explanation_zh": "字段 `productionVolumeSourceFirstAuthor` 可在“教学示例：10 kg 参考输出与独立年度产量”根元素的 `productionVolumeSourceFirstAuthor=\"Demo A.\"` 属性中读到。`Demo A.` 是产量来源第一作者或沟通者的教学标签，供追溯产量假设；与共同数量来源作者即使相同也应分别存储。"
+        },
+        {
+          "field_id": "1539",
+          "explanation_zh": "字段 `productionVolumeUncertainty` 对应“教学示例：10 kg 参考输出与独立年度产量”的直接子元素 `productionVolumeUncertainty`，其中包含 `normal` 子元素。productionVolumeUncertainty/normal 中 meanValue=1000、variance=100、varianceWithPedigreeUncertainty=144 描述年度产量的不确定性；它与交换 uncertainty 是两个不同子树，不要把其均值或方差写回普通 amount。"
+        },
+        {
+          "field_id": "1540",
+          "explanation_zh": "字段 `classification` 对应“教学示例：10 kg 参考输出与独立年度产量”的直接子元素 `classification`，其中包含 `classificationSystem` 子元素。classification 子元素将教学分类系统和“教学产品 A”配对，classificationId 引用分类值 master；保留分类 UUID、context 及多语言标签，用于产品分类检索，不能把它当成活动分类或方向码。"
+        }
+      ]
+    },
+    "TElementaryExchange": {
+      "examples": [
+        {
+          "label_zh": "教学示例：0.04 m3 水资源输入",
+          "xml": "<elementaryExchange xmlns=\"http://www.EcoInvent.org/EcoSpold02\" id=\"9da6137e-52d1-5c5f-930a-fed238b20968\" amount=\"0.04\" unitId=\"ff547598-1a08-5b8b-904c-a0d8a4d032fd\" elementaryExchangeId=\"376dc400-e4fb-5da8-a2fb-2f8c581892cb\" elementaryExchangeContextId=\"f71ac544-3bc8-5c15-8ea4-072d907663f1\" unitContextId=\"f71ac544-3bc8-5c15-8ea4-072d907663f1\" formula=\"H2O\">\n        <name xml:lang=\"zh\">水，来自环境（教学）</name>\n        <name xml:lang=\"en\">Water, from environment (synthetic)</name>\n        <unitName xml:lang=\"zh\">m3</unitName>\n        <unitName xml:lang=\"en\">m3</unitName>\n        <compartment subcompartmentId=\"9bfcfd12-1b84-56cf-8bd8-1abc71a30268\" subcompartmentContextId=\"f71ac544-3bc8-5c15-8ea4-072d907663f1\">\n          <compartment xml:lang=\"zh\">自然资源</compartment>\n          <compartment xml:lang=\"en\">natural resource</compartment>\n          <subcompartment xml:lang=\"zh\">水</subcompartment>\n          <subcompartment xml:lang=\"en\">in water</subcompartment>\n        </compartment>\n        <inputGroup>4</inputGroup>\n      </elementaryExchange>",
+          "explanation_zh": "片段来自教学构造数据，非真实 ecoinvent 记录。水资源输入由 inputGroup=4 表示 From Environment，不是从技术圈购买的水产品。 name/unitName 是继承共同字段；compartment 位于方向元素之前。基本流身份及区室、单位的 UUID 与有效上下文共同用于对照和汇总，名称只供展示。",
+          "focus": [
+            "1600",
+            "1615",
+            "1616",
+            "1660",
+            "1670"
+          ]
+        },
+        {
+          "label_zh": "教学示例：1.5 kg 化石 CO2 向空气输出",
+          "xml": "<elementaryExchange xmlns=\"http://www.EcoInvent.org/EcoSpold02\" id=\"8f3bf890-fe29-5b2f-9648-95e9e569b715\" amount=\"1.5\" unitId=\"a4800e12-54b1-5444-a6d0-b48a59529439\" elementaryExchangeId=\"f420b314-c085-57e7-ba47-5cdfa839e9a3\" formula=\"CO2\" elementaryExchangeContextId=\"f71ac544-3bc8-5c15-8ea4-072d907663f1\" unitContextId=\"f71ac544-3bc8-5c15-8ea4-072d907663f1\">\n        <name xml:lang=\"zh\">二氧化碳，化石源（教学）</name>\n        <name xml:lang=\"en\">Carbon dioxide, fossil (synthetic)</name>\n        <unitName xml:lang=\"zh\">kg</unitName>\n        <unitName xml:lang=\"en\">kg</unitName>\n        <compartment subcompartmentId=\"6bbb1a41-12de-5599-843e-cc02d4084a9a\" subcompartmentContextId=\"f71ac544-3bc8-5c15-8ea4-072d907663f1\">\n          <compartment xml:lang=\"zh\">空气</compartment>\n          <compartment xml:lang=\"en\">air</compartment>\n          <subcompartment xml:lang=\"zh\">未指定</subcompartment>\n          <subcompartment xml:lang=\"en\">unspecified</subcompartment>\n        </compartment>\n        <outputGroup>4</outputGroup>\n      </elementaryExchange>",
+          "explanation_zh": "片段来自教学构造数据，非真实 ecoinvent 记录。空气排放方向由 outputGroup=4 表示 To Environment，amount=1.5 kg 是直接交换数量。 name/unitName 是继承共同字段；compartment 位于方向元素之前。基本流身份及区室、单位的 UUID 与有效上下文共同用于对照和汇总，名称只供展示。",
+          "focus": [
+            "1610",
+            "1615",
+            "1616",
+            "1660",
+            "1670"
+          ]
+        },
+        {
+          "label_zh": "教学示例：-0.1 kg 同一基本流的修正输出",
+          "xml": "<elementaryExchange xmlns=\"http://www.EcoInvent.org/EcoSpold02\" id=\"fff82fe6-92c9-5f26-98e2-3b04663bc952\" amount=\"-0.1\" unitId=\"a4800e12-54b1-5444-a6d0-b48a59529439\" elementaryExchangeId=\"f420b314-c085-57e7-ba47-5cdfa839e9a3\" formula=\"CO2\" elementaryExchangeContextId=\"f71ac544-3bc8-5c15-8ea4-072d907663f1\" unitContextId=\"f71ac544-3bc8-5c15-8ea4-072d907663f1\">\n        <name xml:lang=\"zh\">二氧化碳，化石源（教学）</name>\n        <name xml:lang=\"en\">Carbon dioxide, fossil (synthetic)</name>\n        <unitName xml:lang=\"zh\">kg</unitName>\n        <unitName xml:lang=\"en\">kg</unitName>\n        <compartment subcompartmentId=\"6bbb1a41-12de-5599-843e-cc02d4084a9a\" subcompartmentContextId=\"f71ac544-3bc8-5c15-8ea4-072d907663f1\">\n          <compartment xml:lang=\"zh\">空气</compartment>\n          <compartment xml:lang=\"en\">air</compartment>\n          <subcompartment xml:lang=\"zh\">未指定</subcompartment>\n          <subcompartment xml:lang=\"en\">unspecified</subcompartment>\n        </compartment>\n        <outputGroup>4</outputGroup>\n      </elementaryExchange>",
+          "explanation_zh": "片段来自教学构造数据，非真实 ecoinvent 记录。负数量仍配 outputGroup=4，表示该输出记录的修正；不能因负号改为 input。 name/unitName 是继承共同字段；compartment 位于方向元素之前。基本流身份及区室、单位的 UUID 与有效上下文共同用于对照和汇总，名称只供展示。",
+          "focus": [
+            "1610",
+            "1615",
+            "1616",
+            "1660",
+            "1670"
+          ]
+        },
+        {
+          "label_zh": "教学示例：0.2 kg 生物源 CO2 输出",
+          "xml": "<elementaryExchange xmlns=\"http://www.EcoInvent.org/EcoSpold02\" id=\"c0b41e55-61ce-5aad-909d-1d01846e83db\" amount=\"0.2\" unitId=\"a4800e12-54b1-5444-a6d0-b48a59529439\" elementaryExchangeId=\"d951f598-3f40-57c4-ba76-71df73f1096b\" formula=\"CO2\" elementaryExchangeContextId=\"f71ac544-3bc8-5c15-8ea4-072d907663f1\" unitContextId=\"f71ac544-3bc8-5c15-8ea4-072d907663f1\">\n        <name xml:lang=\"zh\">二氧化碳，生物源（教学）</name>\n        <name xml:lang=\"en\">Carbon dioxide, biogenic (synthetic)</name>\n        <unitName xml:lang=\"zh\">kg</unitName>\n        <unitName xml:lang=\"en\">kg</unitName>\n        <compartment subcompartmentId=\"6bbb1a41-12de-5599-843e-cc02d4084a9a\" subcompartmentContextId=\"f71ac544-3bc8-5c15-8ea4-072d907663f1\">\n          <compartment xml:lang=\"zh\">空气</compartment>\n          <compartment xml:lang=\"en\">air</compartment>\n          <subcompartment xml:lang=\"zh\">未指定</subcompartment>\n          <subcompartment xml:lang=\"en\">unspecified</subcompartment>\n        </compartment>\n        <outputGroup>4</outputGroup>\n      </elementaryExchange>",
+          "explanation_zh": "片段来自教学构造数据，非真实 ecoinvent 记录。它的 elementaryExchangeId 与化石源 CO2 不同，即使 formula 同为 CO2，也保持独立 master 身份。 name/unitName 是继承共同字段；compartment 位于方向元素之前。基本流身份及区室、单位的 UUID 与有效上下文共同用于对照和汇总，名称只供展示。",
+          "focus": [
+            "1610",
+            "1615",
+            "1616",
+            "1660",
+            "1670"
+          ]
+        }
+      ],
+      "walkthrough": [
+        {
+          "field_id": "1600",
+          "explanation_zh": "字段 `inputGroup` 位于“教学示例：0.04 m3 水资源输入”的直接子元素 `inputGroup` 中，示例值为 `4`。水例的 inputGroup=4 表示从环境获取 0.04 m3 水资源；取整数码识别 input，与中间交换的技术圈输入区分。同一交换不能同时写 outputGroup，数量为正本身不决定方向。"
+        },
+        {
+          "field_id": "1610",
+          "explanation_zh": "字段 `outputGroup` 位于“教学示例：1.5 kg 化石 CO2 向空气输出”的直接子元素 `outputGroup` 中，示例值为 `4`。化石 CO2 主输出和修正输出的 outputGroup 都为 4，表示向环境输出；分别读取 1.5 与 -0.1 的原符号后可在身份完全相同的条件下合计为 1.4，不能将负记录改判为环境输入。"
+        },
+        {
+          "field_id": "1615",
+          "explanation_zh": "字段 `elementaryExchangeId` 可在“教学示例：0.04 m3 水资源输入”根元素的 `elementaryExchangeId=\"376dc400-e4fb-5da8-a2fb-2f8c581892cb\"` 属性中读到。化石源主输出与修正行共享 elementaryExchangeId，却有不同交换 id；生物源 CO2 使用另一个 master UUID。提取时先保留每行，汇总不得只按相同名称或化学式 CO2 合并。"
+        },
+        {
+          "field_id": "1616",
+          "explanation_zh": "字段 `elementaryExchangeContextId` 可在“教学示例：0.04 m3 水资源输入”根元素的 `elementaryExchangeContextId=\"f71ac544-3bc8-5c15-8ea4-072d907663f1\"` 属性中读到。这个显式属性界定基本流 master 的上下文，省略时回退文件 context；汇总键至少同时保留基本流 ID/context、区室配对 ID/context 和单位 ID/context。"
+        },
+        {
+          "field_id": "1660",
+          "explanation_zh": "字段 `compartment` 对应“教学示例：0.04 m3 水资源输入”的直接子元素 `compartment`，其中包含 `compartment` 子元素。水例的 compartment 子树表示资源/水，化石 CO2 例表示空气/未指定；应递归读取外层 compartment 内的 compartment、subcompartment 和配对 UUID，而非只取第一个文本或凭区室猜方向。"
+        },
+        {
+          "field_id": "1670",
+          "explanation_zh": "字段 `formula` 可在“教学示例：0.04 m3 水资源输入”根元素的 `formula=\"H2O\"` 属性中读到。水例为 H2O，CO2 各例为 CO2；formula 是化学式说明文本，不是数学关系、不执行，也不能据同式将不同来源或区室的基本流 master 合并。"
+        }
+      ]
+    },
+    "TParameter": {
+      "examples": [
+        {
+          "label_zh": "教学示例：2.5 kWh/kg 电力强度参数",
+          "xml": "<parameter xmlns=\"http://www.EcoInvent.org/EcoSpold02\" parameterId=\"0c72e7c0-a190-5ba6-85ae-0b15236cc19d\" amount=\"2.5\" unitId=\"0489b6ee-11b9-577d-b8e0-1e45b6b2fcc1\" variableName=\"electricity_intensity\" parameterContextId=\"f71ac544-3bc8-5c15-8ea4-072d907663f1\" unitContextId=\"f71ac544-3bc8-5c15-8ea4-072d907663f1\" mathematicalRelation=\"25 / 10\" isCalculatedAmount=\"true\">\n        <name xml:lang=\"zh\">电力强度（教学）</name>\n        <name xml:lang=\"en\">Electricity intensity (synthetic)</name>\n        <unitName xml:lang=\"zh\">kWh/kg</unitName>\n        <unitName xml:lang=\"en\">kWh/kg</unitName>\n      <uncertainty><normal meanValue=\"2.5\" variance=\"0.01\" varianceWithPedigreeUncertainty=\"0.04\"/></uncertainty><comment xml:lang=\"zh\">教学电力强度；公式仅保存文本，不执行。</comment><comment xml:lang=\"en\">Synthetic electricity intensity; formula text is never evaluated.</comment></parameter>",
+          "explanation_zh": "该独立参数片段以 parameterId 引用教学参数 master；它没有交换实例 id 和方向。amount=2.5、单位 kWh/kg 表示教学电力强度，mathematicalRelation=\"25 / 10\" 与已记录值一致，但提取器只读取值和公式字符串，不使用 eval。参数不因参考产品为 10 kg 再被归一化。",
+          "focus": [
+            "1700",
+            "1705",
+            "1706",
+            "1710",
+            "1712",
+            "1713",
+            "1714",
+            "1715",
+            "1720",
+            "1725",
+            "1730",
+            "1740"
+          ]
+        }
+      ],
+      "walkthrough": [
+        {
+          "field_id": "1700",
+          "explanation_zh": "字段 `name` 位于“教学示例：2.5 kWh/kg 电力强度参数”的直接子元素 `name` 中，示例值为 `电力强度（教学） / Electricity intensity (synthetic)`。中英文 name 说明这是教学电力强度参数；读取全部名称和 xml:lang 便于展示，参数 master 身份仍由 parameterId 和其 context 确定。"
+        },
+        {
+          "field_id": "1705",
+          "explanation_zh": "字段 `parameterId` 可在“教学示例：2.5 kWh/kg 电力强度参数”根元素的 `parameterId=\"0c72e7c0-a190-5ba6-85ae-0b15236cc19d\"` 属性中读到。该 UUID 引用参数 master，不是交换实例 id；保存参数引用以便在 master data 中核对定义，不能当作供应活动或产品 UUID。"
+        },
+        {
+          "field_id": "1706",
+          "explanation_zh": "字段 `parameterContextId` 可在“教学示例：2.5 kWh/kg 电力强度参数”根元素的 `parameterContextId=\"f71ac544-3bc8-5c15-8ea4-072d907663f1\"` 属性中读到。参数上下文已显式给出，省略时回退文件 context；取数时将它与 parameterId 配对，片段无文件上下文时不自行猜默认值。"
+        },
+        {
+          "field_id": "1710",
+          "explanation_zh": "字段 `amount` 可在“教学示例：2.5 kWh/kg 电力强度参数”根元素的 `amount=\"2.5\"` 属性中读到。2.5 是参数当前值，单位为 kWh/kg；该值已经是电力强度，不因完整数据集参考产品为 10 kg 再除以 10，也不自动生成交换行。"
+        },
+        {
+          "field_id": "1712",
+          "explanation_zh": "字段 `unitId` 可在“教学示例：2.5 kWh/kg 电力强度参数”根元素的 `unitId=\"0489b6ee-11b9-577d-b8e0-1e45b6b2fcc1\"` 属性中读到。此 UUID 引用电力强度所用单位的 master；参数的单位属性在 XSD 中可选，缺省时不能填造单位 UUID，应保存未知并结合参数定义核对。"
+        },
+        {
+          "field_id": "1713",
+          "explanation_zh": "字段 `unitContextId` 可在“教学示例：2.5 kWh/kg 电力强度参数”根元素的 `unitContextId=\"f71ac544-3bc8-5c15-8ea4-072d907663f1\"` 属性中读到。显式单位上下文与 unitId 共同定位参数单位，省略时回退文件 context；该上下文和 parameterContextId 即使相同也分别保留。"
+        },
+        {
+          "field_id": "1714",
+          "explanation_zh": "字段 `unitName` 位于“教学示例：2.5 kWh/kg 电力强度参数”的直接子元素 `unitName` 中，示例值为 `kWh/kg / kWh/kg`。展示单位 kWh/kg 表明参数是每千克产品的电力强度；读取各语言 unitName 并结合单位 master 核对，不能按字符串将它当成 kWh 交换数量。"
+        },
+        {
+          "field_id": "1715",
+          "explanation_zh": "字段 `variableName` 可在“教学示例：2.5 kWh/kg 电力强度参数”根元素的 `variableName=\"electricity_intensity\"` 属性中读到。`electricity_intensity` 是数学关系引用参数值的变量名，不是 parameterId；保存原变量名，遵循以字母起始、数字和下划线可用且不区分大小写的规则。"
+        },
+        {
+          "field_id": "1720",
+          "explanation_zh": "字段 `mathematicalRelation` 可在“教学示例：2.5 kWh/kg 电力强度参数”根元素的 `mathematicalRelation=\"25 / 10\"` 属性中读到。`25 / 10` 展示参数值 2.5 的教学关系；提取时只保存该字符串和 amount，不执行 eval，也不根据公式修改实际读取的数值。"
+        },
+        {
+          "field_id": "1725",
+          "explanation_zh": "字段 `isCalculatedAmount` 可在“教学示例：2.5 kWh/kg 电力强度参数”根元素的 `isCalculatedAmount=\"true\"` 属性中读到。true 表示 amount 是已计算得到的参数值；此标志不等于要求读取软件重算，还需和数学关系、缺失值及已展开继承的状态一起理解。"
+        },
+        {
+          "field_id": "1730",
+          "explanation_zh": "字段 `uncertainty` 对应“教学示例：2.5 kWh/kg 电力强度参数”的直接子元素 `uncertainty`，其中包含 `normal` 子元素。uncertainty/normal 中 meanValue=2.5、variance=0.01、varianceWithPedigreeUncertainty=0.04 描述参数值的不确定性；保存完整分布属性，与电力交换 25 kWh 的不确定性区分。"
+        },
+        {
+          "field_id": "1740",
+          "explanation_zh": "字段 `comment` 位于“教学示例：2.5 kWh/kg 电力强度参数”的直接子元素 `comment` 中，示例值为 `教学电力强度；公式仅保存文本，不执行。 / Synthetic electricity intensity; formula text is never evaluated.`。comment 的中英文文本明确参数和公式仅用于教学，提取应保留全部说明及语言，用来解释范围，而不是把文本当作计算指令。"
+        }
+      ]
+    },
+    "TImpactIndicatorResult": {
+      "examples": [
+        {
+          "label_zh": "教学示例：13.9 kg CO2-eq 的模拟指标结果",
+          "xml": "<impactIndicator xmlns=\"http://www.EcoInvent.org/EcoSpold02\" impactIndicatorId=\"9ce9802d-268d-5ac0-af08-ffca6dc91aa2\" impactMethodId=\"496741dc-72ec-5f95-bedb-078512fde969\" impactCategoryId=\"07a7bfca-c863-5fd0-a2bf-24aa3af0d959\" amount=\"13.9\" impactIndicatorContextId=\"f71ac544-3bc8-5c15-8ea4-072d907663f1\" impactMethodContextId=\"f71ac544-3bc8-5c15-8ea4-072d907663f1\" impactCategoryContextId=\"f71ac544-3bc8-5c15-8ea4-072d907663f1\">\n        <impactMethodName xml:lang=\"zh\">教学方法（非官方）</impactMethodName>\n        <impactMethodName xml:lang=\"en\">Teaching method (synthetic, unofficial)</impactMethodName>\n        <impactCategoryName xml:lang=\"zh\">教学化石CO2类别</impactCategoryName>\n        <impactCategoryName xml:lang=\"en\">Teaching fossil CO2 category</impactCategoryName>\n        <name xml:lang=\"zh\">教学GWP（构造）</name>\n        <name xml:lang=\"en\">Teaching GWP (synthetic)</name>\n        <unitName xml:lang=\"zh\">kg CO2-eq</unitName>\n        <unitName xml:lang=\"en\">kg CO2-eq</unitName>\n      </impactIndicator>",
+          "explanation_zh": "片段从教学结果文件取出并显式补全三层 master 上下文。方法、类别、指标均为构造标识，Teaching GWP (synthetic) 不代表官方影响方法。amount=13.9 是已提供的指标结果，不是排放交换，也没有 inputGroup/outputGroup 或 unitId。与完整教学文件中的 10 kg 参考输出配合时，只能给出 13.9/10=1.39 的算术比例；片段本身不含参考产品，不能自行推断分母。",
+          "focus": [
+            "1800",
+            "1801",
+            "1810",
+            "1811",
+            "1815",
+            "1820",
+            "1821",
+            "1825",
+            "1830",
+            "1840",
+            "1850"
+          ]
+        }
+      ],
+      "walkthrough": [
+        {
+          "field_id": "1800",
+          "explanation_zh": "字段 `impactIndicatorId` 可在“教学示例：13.9 kg CO2-eq 的模拟指标结果”根元素的 `impactIndicatorId=\"9ce9802d-268d-5ac0-af08-ffca6dc91aa2\"` 属性中读到。该 UUID 指向具体教学影响指标 master；与方法和类别 UUID 一起保存以免同名指标混淆，不能当成 elementaryExchangeId。"
+        },
+        {
+          "field_id": "1801",
+          "explanation_zh": "字段 `impactIndicatorContextId` 可在“教学示例：13.9 kg CO2-eq 的模拟指标结果”根元素的 `impactIndicatorContextId=\"f71ac544-3bc8-5c15-8ea4-072d907663f1\"` 属性中读到。它界定教学指标 master 的上下文，省略时回退 file context；指标 ID 与其 context 成对提取，不能只存展示名称。"
+        },
+        {
+          "field_id": "1810",
+          "explanation_zh": "字段 `impactMethodId` 可在“教学示例：13.9 kg CO2-eq 的模拟指标结果”根元素的 `impactMethodId=\"496741dc-72ec-5f95-bedb-078512fde969\"` 属性中读到。这个 UUID 引用教学影响方法 master，是方法层而非指标层标识；与类别、指标分层保存，此例并不是官方影响方法。"
+        },
+        {
+          "field_id": "1811",
+          "explanation_zh": "字段 `impactMethodContextId` 可在“教学示例：13.9 kg CO2-eq 的模拟指标结果”根元素的 `impactMethodContextId=\"f71ac544-3bc8-5c15-8ea4-072d907663f1\"` 属性中读到。此属性指定方法 master 的上下文，省略时回退文件 context；需要与 impactMethodId 配对，不能因教学例三种 context 相同就丢弃层级。"
+        },
+        {
+          "field_id": "1815",
+          "explanation_zh": "字段 `impactMethodName` 位于“教学示例：13.9 kg CO2-eq 的模拟指标结果”的直接子元素 `impactMethodName` 中，示例值为 `教学方法（非官方） / Teaching method (synthetic, unofficial)`。中英文 impactMethodName 明确为构造教学方法，是方法层展示名称；保留全部语言并以方法 UUID/context 核对，不根据名称自动套用真实 GWP 因子。"
+        },
+        {
+          "field_id": "1820",
+          "explanation_zh": "字段 `impactCategoryId` 可在“教学示例：13.9 kg CO2-eq 的模拟指标结果”根元素的 `impactCategoryId=\"07a7bfca-c863-5fd0-a2bf-24aa3af0d959\"` 属性中读到。该 UUID 引用影响类别 master；原文把说明写成“method of the impact category”的措辞不精确，此处按字段名和 schema 的类别引用读取，不将它替代 impactMethodId。"
+        },
+        {
+          "field_id": "1821",
+          "explanation_zh": "字段 `impactCategoryContextId` 可在“教学示例：13.9 kg CO2-eq 的模拟指标结果”根元素的 `impactCategoryContextId=\"f71ac544-3bc8-5c15-8ea4-072d907663f1\"` 属性中读到。它给出类别 master 上下文，省略时回退文件 context；单独保留，与方法和指标上下文各自对应。"
+        },
+        {
+          "field_id": "1825",
+          "explanation_zh": "字段 `impactCategoryName` 位于“教学示例：13.9 kg CO2-eq 的模拟指标结果”的直接子元素 `impactCategoryName` 中，示例值为 `教学化石CO2类别 / Teaching fossil CO2 category`。impactCategoryName 展示“教学化石CO2类别”的中英文标签；名称供展示和分类，指标结果的身份仍要保留类别 UUID/context。"
+        },
+        {
+          "field_id": "1830",
+          "explanation_zh": "字段 `amount` 可在“教学示例：13.9 kg CO2-eq 的模拟指标结果”根元素的 `amount=\"13.9\"` 属性中读到。13.9 是已经给定的指标结果，展示单位为 kg CO2-eq，不是排放交换质量。只有结合完整例中唯一正参考输出 10 kg 才能读出算术比例 1.39；不能由此片段自行重做 LCIA。"
+        },
+        {
+          "field_id": "1840",
+          "explanation_zh": "字段 `name` 位于“教学示例：13.9 kg CO2-eq 的模拟指标结果”的直接子元素 `name` 中，示例值为 `教学GWP（构造） / Teaching GWP (synthetic)`。name 中的 Teaching GWP (synthetic) 是具体指标标签，区别于 impactMethodName 和 impactCategoryName；读取全部语言，同时保留三层 master 引用。"
+        },
+        {
+          "field_id": "1850",
+          "explanation_zh": "字段 `unitName` 位于“教学示例：13.9 kg CO2-eq 的模拟指标结果”的直接子元素 `unitName` 中，示例值为 `kg CO2-eq / kg CO2-eq`。kg CO2-eq 是指标结果的展示单位；TImpactIndicatorResult 没有 unitId/unitContextId 属性，不要补造这两项，真实结果的单位应结合指标 master 定义确认。"
+        }
+      ]
+    },
+    "TCompartment": {
+      "examples": [
+        {
+          "label_zh": "教学示例：空气／未指定子区室",
+          "xml": "<compartment xmlns=\"http://www.EcoInvent.org/EcoSpold02\" subcompartmentId=\"6bbb1a41-12de-5599-843e-cc02d4084a9a\" subcompartmentContextId=\"f71ac544-3bc8-5c15-8ea4-072d907663f1\">\n          <compartment xml:lang=\"zh\">空气</compartment>\n          <compartment xml:lang=\"en\">air</compartment>\n          <subcompartment xml:lang=\"zh\">未指定</subcompartment>\n          <subcompartment xml:lang=\"en\">unspecified</subcompartment>\n        </compartment>",
+          "explanation_zh": "这是教学基本流中的区室配对子元素，外层 compartment 包含同名内层 compartment，提取时必须区分两层。air/unspecified 是英文展示名称；subcompartmentId 引用区室/子区室配对 master，subcompartmentContextId 指其上下文，均为构造 UUID。片段没有流量和方向，不能靠 air 推断一条排放记录。",
+          "focus": [
+            "330",
+            "340",
+            "350",
+            "351"
+          ]
+        }
+      ],
+      "walkthrough": [
+        {
+          "field_id": "330",
+          "explanation_zh": "字段 `compartment` 位于“教学示例：空气／未指定子区室”的直接子元素 `compartment` 中，示例值为 `空气 / air`。外层 compartment 下面的同名子元素展示空气/air；读取相对于外层根的直接子元素及 xml:lang，避免把外层容器误当名称文本，也不据“空气”自动推断输出方向。"
+        },
+        {
+          "field_id": "340",
+          "explanation_zh": "字段 `subcompartment` 位于“教学示例：空气／未指定子区室”的直接子元素 `subcompartment` 中，示例值为 `未指定 / unspecified`。subcompartment 的未指定/unspecified 是对子区室的展示标签；逐语言保存，并与 subcompartmentId 指向的区室配对 master 核对，不能仅按“未指定”跨区室合并。"
+        },
+        {
+          "field_id": "350",
+          "explanation_zh": "字段 `subcompartmentId` 可在“教学示例：空气／未指定子区室”根元素的 `subcompartmentId=\"6bbb1a41-12de-5599-843e-cc02d4084a9a\"` 属性中读到。该 UUID 引用 compartment/subcompartment 配对的 master，不是一个独立的交换实例或流 master；汇总基本流时应与其 context、流 ID/context、单位 ID/context 一起使用。"
+        },
+        {
+          "field_id": "351",
+          "explanation_zh": "字段 `subcompartmentContextId` 可在“教学示例：空气／未指定子区室”根元素的 `subcompartmentContextId=\"f71ac544-3bc8-5c15-8ea4-072d907663f1\"` 属性中读到。这个属性明确区室配对 master 的上下文，省略时回退所在数据集的文件 context；读取片段时没有 fileAttributes 就保留未确认上下文，不凭显示名称猜归属。"
+        }
+      ]
+    }
+  }
+}

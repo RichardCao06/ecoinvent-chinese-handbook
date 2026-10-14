@@ -1,0 +1,351 @@
+{
+  "reviewer": "translator_c",
+  "status": "passed_with_notes",
+  "packet_sha256": "a04272ad217b68b738fe91dcabf2398ba818c429979580c806689d416bb7d3aa",
+  "reviewed_fields": [
+    {
+      "section": "TActivity",
+      "field_id": "100"
+    },
+    {
+      "section": "TActivity",
+      "field_id": "102"
+    },
+    {
+      "section": "TActivity",
+      "field_id": "105"
+    },
+    {
+      "section": "TActivity",
+      "field_id": "106"
+    },
+    {
+      "section": "TActivity",
+      "field_id": "110"
+    },
+    {
+      "section": "TActivity",
+      "field_id": "115"
+    },
+    {
+      "section": "TActivity",
+      "field_id": "120"
+    },
+    {
+      "section": "TActivity",
+      "field_id": "130"
+    },
+    {
+      "section": "TActivity",
+      "field_id": "131"
+    },
+    {
+      "section": "TActivity",
+      "field_id": "135"
+    },
+    {
+      "section": "TActivity",
+      "field_id": "145"
+    },
+    {
+      "section": "TActivity",
+      "field_id": "150"
+    },
+    {
+      "section": "TActivity",
+      "field_id": "170"
+    },
+    {
+      "section": "TActivity",
+      "field_id": "175"
+    },
+    {
+      "section": "TActivity",
+      "field_id": "180"
+    },
+    {
+      "section": "TActivity",
+      "field_id": "190"
+    },
+    {
+      "section": "TActivity",
+      "field_id": "191"
+    },
+    {
+      "section": "TActivity",
+      "field_id": "192"
+    },
+    {
+      "section": "TActivity",
+      "field_id": "195"
+    },
+    {
+      "section": "TActivity",
+      "field_id": "200"
+    },
+    {
+      "section": "TClassification",
+      "field_id": "300"
+    },
+    {
+      "section": "TClassification",
+      "field_id": "310"
+    },
+    {
+      "section": "TClassification",
+      "field_id": "320"
+    },
+    {
+      "section": "TClassification",
+      "field_id": "321"
+    },
+    {
+      "section": "TGeography",
+      "field_id": "400"
+    },
+    {
+      "section": "TGeography",
+      "field_id": "401"
+    },
+    {
+      "section": "TGeography",
+      "field_id": "410"
+    },
+    {
+      "section": "TGeography",
+      "field_id": "420"
+    },
+    {
+      "section": "TTechnology",
+      "field_id": "500"
+    },
+    {
+      "section": "TTechnology",
+      "field_id": "510"
+    },
+    {
+      "section": "TTimePeriod",
+      "field_id": "600"
+    },
+    {
+      "section": "TTimePeriod",
+      "field_id": "610"
+    },
+    {
+      "section": "TTimePeriod",
+      "field_id": "620"
+    },
+    {
+      "section": "TTimePeriod",
+      "field_id": "630"
+    },
+    {
+      "section": "TMacroEconomicScenario",
+      "field_id": "700"
+    },
+    {
+      "section": "TMacroEconomicScenario",
+      "field_id": "701"
+    },
+    {
+      "section": "TMacroEconomicScenario",
+      "field_id": "720"
+    },
+    {
+      "section": "TMacroEconomicScenario",
+      "field_id": "740"
+    },
+    {
+      "section": "TDataEntryBy",
+      "field_id": "3400"
+    },
+    {
+      "section": "TDataEntryBy",
+      "field_id": "3401"
+    },
+    {
+      "section": "TDataEntryBy",
+      "field_id": "3403"
+    },
+    {
+      "section": "TDataEntryBy",
+      "field_id": "3405"
+    },
+    {
+      "section": "TDataEntryBy",
+      "field_id": "3406"
+    },
+    {
+      "section": "TDataGeneratorAndPublication",
+      "field_id": "3500"
+    },
+    {
+      "section": "TDataGeneratorAndPublication",
+      "field_id": "3501"
+    },
+    {
+      "section": "TDataGeneratorAndPublication",
+      "field_id": "3505"
+    },
+    {
+      "section": "TDataGeneratorAndPublication",
+      "field_id": "3506"
+    },
+    {
+      "section": "TDataGeneratorAndPublication",
+      "field_id": "3510"
+    },
+    {
+      "section": "TDataGeneratorAndPublication",
+      "field_id": "3520"
+    },
+    {
+      "section": "TDataGeneratorAndPublication",
+      "field_id": "3521"
+    },
+    {
+      "section": "TDataGeneratorAndPublication",
+      "field_id": "3522"
+    },
+    {
+      "section": "TDataGeneratorAndPublication",
+      "field_id": "3525"
+    },
+    {
+      "section": "TDataGeneratorAndPublication",
+      "field_id": "3526"
+    },
+    {
+      "section": "TDataGeneratorAndPublication",
+      "field_id": "3530"
+    },
+    {
+      "section": "TDataGeneratorAndPublication",
+      "field_id": "3540"
+    },
+    {
+      "section": "TDataGeneratorAndPublication",
+      "field_id": "3550"
+    },
+    {
+      "section": "TDataGeneratorAndPublication",
+      "field_id": "3560"
+    },
+    {
+      "section": "TDataGeneratorAndPublication",
+      "field_id": "3561"
+    },
+    {
+      "section": "TDataGeneratorAndPublication",
+      "field_id": "3562"
+    },
+    {
+      "section": "TDataGeneratorAndPublication",
+      "field_id": "3563"
+    },
+    {
+      "section": "TFileAttributes",
+      "field_id": "3800"
+    },
+    {
+      "section": "TFileAttributes",
+      "field_id": "3805"
+    },
+    {
+      "section": "TFileAttributes",
+      "field_id": "3810"
+    },
+    {
+      "section": "TFileAttributes",
+      "field_id": "3815"
+    },
+    {
+      "section": "TFileAttributes",
+      "field_id": "3820"
+    },
+    {
+      "section": "TFileAttributes",
+      "field_id": "3830"
+    },
+    {
+      "section": "TFileAttributes",
+      "field_id": "3840"
+    },
+    {
+      "section": "TFileAttributes",
+      "field_id": "3850"
+    },
+    {
+      "section": "TFileAttributes",
+      "field_id": "3860"
+    },
+    {
+      "section": "TFileAttributes",
+      "field_id": "3870"
+    },
+    {
+      "section": "TFileAttributes",
+      "field_id": "3880"
+    },
+    {
+      "section": "TFileAttributes",
+      "field_id": "3885"
+    },
+    {
+      "section": "TFileAttributes",
+      "field_id": "3890"
+    },
+    {
+      "section": "TRequiredContextReference",
+      "field_id": "7810"
+    },
+    {
+      "section": "TRequiredContextReference",
+      "field_id": "7820"
+    },
+    {
+      "section": "TRequiredContextReference",
+      "field_id": "7830"
+    },
+    {
+      "section": "TRequiredContextReference",
+      "field_id": "7840"
+    },
+    {
+      "section": "TRequiredContextReference",
+      "field_id": "7850"
+    },
+    {
+      "section": "TRequiredContextReference",
+      "field_id": "7855"
+    },
+    {
+      "section": "TRequiredContextReference",
+      "field_id": "7860"
+    }
+  ],
+  "notes": [
+    {
+      "section": "TClassification",
+      "field_id": "300",
+      "status": "needs_expert_review",
+      "reason_zh": "原文称classificationSystem/classificationValue文字可选，普通XSD却必填；示例遵循XSD、逐字段说明明确差异，无未解决示例错误。",
+      "recommendation_zh": "保留源文疑点，不以可选描述删除本版完整模式所需名称。"
+    },
+    {
+      "section": "TRequiredContextReference",
+      "field_id": "7850",
+      "status": "needs_expert_review",
+      "reason_zh": "原文称省略requiredContextId时回退数据集上下文，普通XSD将其设为必填；示例显式填值并保留冲突说明。",
+      "recommendation_zh": "完整片段按XSD执行，真实子模式适用条件另核对。"
+    },
+    {
+      "section": "TActivity",
+      "field_id": "135",
+      "status": "needs_expert_review",
+      "reason_zh": "继承深度的最大父层数与地理/时间/情景类型编码关系属于既有源文疑点；教学例只展示0/1及具体父UUID，没有用它推造父链。",
+      "recommendation_zh": "继续保留正文相关注记；完整继承须依专门规范。"
+    }
+  ],
+  "summary_zh": "逐篇逐字段独立审校10类型、80字段、12完整XML片段；实际通过原XSD类型级验证、字段XML出现及walkthrough精确覆盖。逐段比对属性/子元素位置和示例值、UUID角色及有效上下文、层级/边界/时间/技术码、父引用和删除标记、能源与分配口径、人员角色、出版及权限、发布与修订/时间戳、主数据依赖。全部值与示例一致，教学身份和非完整spold范围明确；布尔false不被当非空字符串真值，plain评论与富文本结构区分准确。未发现需修复的实例或说明错误；原文/XSD既有歧义按上述注记保留，不代表人工或官方认证。"
+}

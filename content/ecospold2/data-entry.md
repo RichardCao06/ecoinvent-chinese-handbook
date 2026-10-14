@@ -8,6 +8,79 @@
 
 属性 `isActiveAuthor` 表示这位人员是否为数据集的活跃作者，完整数据 XSD 的默认值为 `false`。这里的活跃作者是后续维护中的联系角色：其他数据提供者今后修改数据集时，将征询此人的意见。它不能仅凭姓名是否出现在文件中推断，也不等同于版权人、审核人或原始数据采集者。取数时应保留这个标记，才能区分一般录入人员与需要在后续变更中联系的作者。
 
+## 对照 XML 找到每个字段
+
+以下是为本章构造的教学 XML 类型片段，不是真实 ecoinvent 记录。片段声明了默认命名空间，可独立解析；插入自己的 `.spold` 时应定位到本章所述父元素。这里展示该类型的结构，整个数据集的必填关系、继承和主数据引用仍需结合外层文件判断。
+
+### 示例 1：录入人员与当前负责人
+
+[下载本段 XML](xml-examples/data-entry-01.xml)。
+
+```xml
+<dataEntryBy xmlns="http://www.EcoInvent.org/EcoSpold02" personId="2163e122-88c4-55e7-af84-00947e9b7b0a" personContextId="f71ac544-3bc8-5c15-8ea4-072d907663f1" isActiveAuthor="true" personName="Teaching author" personEmail="demo@example.invalid">
+  <!-- 教学构造的录入者，邮箱不用于联系真实人员。 -->
+</dataEntryBy>
+```
+
+dataEntryBy 位于 administrativeInformation 中，本类型字段都是根属性，示例没有 personName 或 personEmail 子元素。人员标识沿用教学 demo，true 用于展示当前作者标记。
+
+### 顺着示例读取字段
+
+下面按本类型的字段逐项对照。属性前的 `@` 只是参考文档的写法；XML 中没有这个字符。没有写出的可选项表示缺失，不能直接补成零。引用字段的有效上下文可能要从外层 `fileAttributes/@contextId` 取得，单独片段不会替你提供这项外层信息。
+
+**`@personId`（FieldID 3400）**：`personId="2163e122-88c4-55e7-af84-00947e9b7b0a"` 标识准备并录入数据集的人员。直接读取属性后关联人员主数据（原表引用人员字段3610），不要与原始数据生成者或评审者自动视作同一角色。
+
+**`@personContextId`（FieldID 3401）**：`personContextId="f71ac544-3bc8-5c15-8ea4-072d907663f1"` 是录入者人员引用的上下文。人员 UUID 加有效上下文才构成引用键；省略时回退到文件上下文，不能靠邮箱替代身份。
+
+**`@isActiveAuthor`（FieldID 3403）**：`isActiveAuthor="true"` 表示此人是数据集的当前作者，其他提供者以后修改时会征询其意见。读取布尔值，不把它解释为人员账户在线、数据审核通过或自动授权发布；普通 XSD 省略时默认 false。
+
+**`@personName`（FieldID 3405）**：`personName="Teaching author"` 是录入者的姓名属性。用属性读取取得文字，不找同名子元素；姓名便于阅读，同名不能保证人员身份相同。
+
+**`@personEmail`（FieldID 3406）**：`personEmail="demo@example.invalid"` 保存完整电子邮件地址。它也是属性，示例地址为教学构造；提取时保留原文，不据其存在自动发送联系或判断信息已核实。
+
+### 按相同路径提取自己的字段
+
+下面的字典逐项对应上面的 XML 字段。解压[XML 片段与读取代码 ZIP](attachments/ecospold2-xml-examples.zip)后，在解压目录运行；更换文件名即可阅读本章其他片段。返回值始终是列表：`[]` 表示未出现，属性保留原始字符串，子元素保留语言等属性、文字和完整 XML。多个语言或重复元素不会被悄悄丢弃。
+
+```python
+import json
+import xml.etree.ElementTree as ET
+from read_xml_fields import field_values
+
+node = ET.parse("xml-examples/data-entry-01.xml").getroot()
+FIELDS = {
+    "3400": "@personId",
+    "3401": "@personContextId",
+    "3403": "@isActiveAuthor",
+    "3405": "@personName",
+    "3406": "@personEmail",
+}
+for field_id, relative_path in FIELDS.items():
+    values = field_values(node, relative_path)
+    print(field_id, relative_path, json.dumps(values, ensure_ascii=False))
+```
+
+换成完整 `.spold` 文件时，先使用本章定位路径选出目标节点，再把它作为 `node` 传入。例如属性 `@amount` 最终用 `.get("amount")` 读取；子元素 `unitName` 用带命名空间的 `.findall("es:unitName", ns)` 读取。嵌套路径先进入对应子元素，再取最后的属性；如 `lognormal/@variance`，不能在外层 `uncertainty` 上直接取 `variance`。复合类型的子元素不能只读外层 `.text`，其结构已保留在返回记录的 `xml` 中。
+
+### 直接在完整 spold 中使用这些路径
+
+沿用上一段的 `FIELDS` 字典与 `field_values`，下面改从完整文件选取本类型节点。先用配套 demo 运行，再把文件名改为自己的 `.spold`。XML 查找会返回全部同类节点；可选结构未提供时，匹配数为零，不会被填成数值零。多个路径代表同类型的不同使用位置，统计时按父路径区分。
+
+```python
+from read_section import load_dataset, NS
+
+dataset = load_dataset("demo-product.spold", index=0)
+LOCATIONS = ['es:administrativeInformation/es:dataEntryBy']
+for location in LOCATIONS:
+    nodes = dataset.findall(location, NS)
+    print("父路径：", location, "匹配数：", len(nodes))
+    for node in nodes:
+        for field_id, relative_path in FIELDS.items():
+            print(field_id, relative_path,
+                  json.dumps(field_values(node, relative_path), ensure_ascii=False))
+```
+
+
 ## 怎样定位、使用与提取
 
 需要追溯数据录入人员时，读取 dataEntryBy 的人员 UUID、有效上下文及主数据冗余信息。录入者与原始数据生成者是不同角色；只凭人名不宜关联或去重人员记录。生成工具则读取文件属性的 fileGenerator。

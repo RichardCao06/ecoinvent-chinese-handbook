@@ -1,0 +1,3 @@
+<uncertainty xmlns="http://www.EcoInvent.org/EcoSpold02">
+  <undefined minValue="8" maxValue="12" standardDeviation95="2"/>
+</uncertainty>

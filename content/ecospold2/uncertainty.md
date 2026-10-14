@@ -26,6 +26,278 @@
 
 `temporalCorrelation` 将数据年代与数据集时间段字段 600–610 比较：1、2、3、4 分别对应相差不足 3、6、10、15 年，5 对应年代未知或相差超过 15 年。原说明没有明确恰好相差 15 年的归类，不能自行补造边界规则。`geographicalCorrelation` 的 1 是研究区域自身的数据，2 是包含研究区域的更大区域平均数据，3 是生产条件相似区域的数据，4 是生产条件略有相似之处区域的数据，5 是未知区域或明显不同区域的数据，例如用北美代替中东、用 OECD 欧洲代替俄罗斯。`furtherTechnologyCorrelation` 的 1 对应所研究企业、过程和材料，2 对应相同过程与材料及相同技术但不同企业，3 对应同类过程和材料但不同技术，4 对应相关过程或材料，5 对应实验室规模相关过程或不同技术的数据。完整读取这五项，才能理解质量评价的依据，而不能仅凭某一个低分判定整个数据集适用。
 
+## 对照 XML 找到每个字段
+
+以下是为本章构造的教学 XML 类型片段，不是真实 ecoinvent 记录。片段声明了默认命名空间，可独立解析；插入自己的 `.spold` 时应定位到本章所述父元素。这里展示该类型的结构，整个数据集的必填关系、继承和主数据引用仍需结合外层文件判断。
+
+### 示例 1：教学对数正态分布
+
+[下载本段 XML](xml-examples/uncertainty-01.xml)。
+
+```xml
+<uncertainty xmlns="http://www.EcoInvent.org/EcoSpold02">
+  <lognormal meanValue="25" mu="3.2188758248682006" variance="0.01" varianceWithPedigreeUncertainty="0.04"/>
+  <comment xml:lang="zh">教学构造：这里只保存分布参数，不产生交换量或抽样结果。</comment>
+</uncertainty>
+```
+
+八种分布互斥：这个完整 uncertainty 片段仅选择 lognormal。25 是几何均值，mu 是 ln(x) 的算术均值；0.01 和 0.04 都是底层正态变量的方差，不是标准差。示例数字仅用于解释格式，不是 ecoinvent 数据；外层交换的 amount 需另读。
+
+### 示例 2：教学正态分布
+
+[下载本段 XML](xml-examples/uncertainty-02.xml)。
+
+```xml
+<uncertainty xmlns="http://www.EcoInvent.org/EcoSpold02">
+  <normal meanValue="10" variance="1" varianceWithPedigreeUncertainty="1.44"/>
+</uncertainty>
+```
+
+normal 的 meanValue=10 是原变量的算术均值，不是对数正态例子的几何均值；1 和 1.44 分别演示基础方差及含谱系不确定性的方差。读取这些参数不会执行抽样，也不会把均值当成额外一笔交换。
+
+### 示例 3：三角分布的模式语法示例
+
+[下载本段 XML](xml-examples/uncertainty-03.xml)。
+
+```xml
+<uncertainty xmlns="http://www.EcoInvent.org/EcoSpold02">
+  <triangular minValue="1" mostLikelyValue="2" maxValue="4"/>
+  <comment xml:lang="zh">仅演示 XSD 语法；原文关于 ecoinvent 中不得使用旧字段 #3797 的限定仍需另行核对。</comment>
+</uncertainty>
+```
+
+当前 XSD 要求 triangular 同时填写下界、众数和上界，示例为 1、2、4。原文又要求均值由众数计算，并禁止在 ecoinvent 上下文使用旧字段 #3797；本例只演示当前类型的合法结构，不能据此取消原禁令或确认真实数据库允许任意填写众数。
+
+### 示例 4：教学均匀分布
+
+[下载本段 XML](xml-examples/uncertainty-04.xml)。
+
+```xml
+<uncertainty xmlns="http://www.EcoInvent.org/EcoSpold02">
+  <uniform minValue="1" maxValue="3"/>
+</uncertainty>
+```
+
+uniform 在 1 与 3 之间表示均匀分布。原说明称上下界倒置时交换两值；读取器仍应保存原始属性，而不是默默改写文件。这里采用有序边界，不展示未经实现的抽样算法。
+
+### 示例 5：教学 Beta 分布
+
+[下载本段 XML](xml-examples/uncertainty-05.xml)。
+
+```xml
+<uncertainty xmlns="http://www.EcoInvent.org/EcoSpold02">
+  <beta minValue="0" mostFrequentValue="0.25" maxValue="1"/>
+</uncertainty>
+```
+
+本例 a=0、m=0.25、b=1，满足 a≤m≤b。原公式 Shape1=1+4*((m-a)/(b-a))、Shape2=6-Shape1 在此给出 2 和 4，XML 本身仍存 a、m、b 而非两个 shape 属性。原文允许 a=b，却会使所列公式分母为零；该特殊情况没有在此示例中擅自定义。
+
+### 示例 6：教学 Gamma 分布
+
+[下载本段 XML](xml-examples/uncertainty-06.xml)。
+
+```xml
+<uncertainty xmlns="http://www.EcoInvent.org/EcoSpold02">
+  <gamma shape="2" scale="3" minValue="1"/>
+</uncertainty>
+```
+
+shape=2 和 scale=3 是形状与尺度，minValue=1 是加入样本的位置偏移。原说明要求使用所填值的绝对值；本例全部为正，避免引入负值处理歧义。尺度不是方差，位置偏移也不是交换的 amount；示例不执行抽样。
+
+### 示例 7：教学二项分布
+
+[下载本段 XML](xml-examples/uncertainty-07.xml)。
+
+```xml
+<uncertainty xmlns="http://www.EcoInvent.org/EcoSpold02">
+  <binomial n="10" p="0.3"/>
+</uncertainty>
+```
+
+binomial 的 n=10 表示独立试验次数，p=0.3 表示每次成功概率。它们是分布参数，不是 10 单位产品或 0.3 单位投入；需要抽样时仍须使用适当的概率模型。
+
+### 示例 8：旧式未定义分布的教学存储示例
+
+[下载本段 XML](xml-examples/uncertainty-08.xml)。
+
+```xml
+<uncertainty xmlns="http://www.EcoInvent.org/EcoSpold02">
+  <undefined minValue="8" maxValue="12" standardDeviation95="2"/>
+</uncertainty>
+```
+
+undefined 用于保存旧 EcoSpold01 数据而不指定一个现代分布族。8、12、2 仅展示旧字段的存储位置；standardDeviation95 的名称不能使 2 自动等同于正态标准差，也不能由这些值擅自重建分布。
+
+### 示例 9：分布之后的五项谱系编码
+
+[下载本段 XML](xml-examples/uncertainty-09.xml)。
+
+```xml
+<uncertainty xmlns="http://www.EcoInvent.org/EcoSpold02">
+  <normal meanValue="10" variance="1" varianceWithPedigreeUncertainty="1.44"/>
+  <pedigreeMatrix reliability="1" completeness="2" temporalCorrelation="1" geographicalCorrelation="2" furtherTechnologyCorrelation="2"/>
+  <comment xml:lang="zh">谱系代码均为教学选择，不表示这些教学数据实际经过测量或审查。</comment>
+</uncertainty>
+```
+
+pedigreeMatrix 放在唯一分布节点之后、comment 之前，是包含五个 1–5 整数评分的容器，不是一个整数值。代码只演示原规范中的类别；不能把五个评分相加当作方差，也不能据这个构造片段认定数据已被验证。
+
+### 顺着示例读取字段
+
+下面按本类型的字段逐项对照。属性前的 `@` 只是参考文档的写法；XML 中没有这个字符。没有写出的可选项表示缺失，不能直接补成零。引用字段的有效上下文可能要从外层 `fileAttributes/@contextId` 取得，单独片段不会替你提供这项外层信息。
+
+**`comment`（FieldID 2010）**：对数正态例子的 `uncertainty/comment` 给出“这里只保存分布参数”的普通文本。按子元素读其文本并保留 `xml:lang`；它解释参数，不参与求和，也不是 `TTextAndImage`。
+
+**`lognormal`（FieldID 2100）**：对数正态例子选择子元素 `lognormal`，其属性描述 ln(x) 的正态分布。先识别这个分布名再解释属性，同一个 `uncertainty` 不能同时塞入 `normal` 等第二种分布。
+
+**`lognormal/@meanValue`（FieldID 2101）**：从 `lognormal/@meanValue` 读取 `25`，意思是原变量的几何均值。它不具有正态例子 `meanValue` 的算术均值含义，也不能代替外层交换数量。
+
+**`lognormal/@mu`（FieldID 2102）**：从 `lognormal/@mu` 读取 `3.2188758248682006`，这是底层 ln(x) 正态变量的算术均值，示例约为 ln(25)。不能将这个对数参数当作原变量的平均数量。
+
+**`lognormal/@variance`（FieldID 2103）**：`lognormal/@variance="0.01"` 保存底层正态变量的基础无偏方差。读取该字符串后应按方差参数解释，而非当成标准差或额外的 0.01 单位排放。
+
+**`lognormal/@varianceWithPedigreeUncertainty`（FieldID 2104）**：`lognormal/@varianceWithPedigreeUncertainty="0.04"` 是包含基础和谱系不确定性的底层正态方差。它已经是合并后的参数，不能再无依据地加一次基础方差。
+
+**`normal`（FieldID 2110）**：正态例子使用 `normal` 子元素而不包含其他分布。它描述原变量的正态分布；根据分布名选择参数化方式，不套用对数正态的 ln(x) 解释。
+
+**`normal/@meanValue`（FieldID 2111）**：`normal/@meanValue="10"` 是原变量的算术均值。读取时与外层交换 `amount` 分别保存；是否一致需看数据定义，不能靠同名字段自动覆盖。
+
+**`normal/@variance`（FieldID 2112）**：`normal/@variance="1"` 是基础无偏方差。若工具需要标准差，应明确采用方差到标准差的转换，不能把字符串 `1` 的字段类型改称标准差。
+
+**`normal/@varianceWithPedigreeUncertainty`（FieldID 2113）**：`normal/@varianceWithPedigreeUncertainty="1.44"` 是含谱系不确定性的方差。此值与基础方差各有角色，读取时分别保留，不能仅取较大值而丢掉字段身份。
+
+**`triangular`（FieldID 2120）**：三角例子包含 `triangular`，其完整语法为下界、众数、上界三个属性。原说明关于旧 #3797 的禁用与均值计算限定仍需遵守；这个类型校验示例不是解除限制的依据。
+
+**`triangular/@minValue`（FieldID 2121）**：`triangular/@minValue="1"` 是该三角分布的最小值。应与同一个 `triangular` 内的众数和上界共同读取，不能与其他分布的下界拼成参数组。
+
+**`triangular/@mostLikelyValue`（FieldID 2122）**：`triangular/@mostLikelyValue="2"` 是众数，非算术均值。当前 XSD 要求此属性，但原文禁止使用旧字段 #3797；保存语法示例值不等于确认其真实 ecoinvent 建模用法。
+
+**`triangular/@maxValue`（FieldID 2123）**：`triangular/@maxValue="4"` 是该分布上界。取数时保留下界 1、众数 2、上界 4 的对应关系，不把最大可能值当作当前交换的确定数量。
+
+**`uniform`（FieldID 2130）**：均匀例子以 `uniform` 子元素表达区间内的均匀分布。原说明提及倒置边界交换规则，示例未执行这一步；解析和后续分布构造应分开。
+
+**`uniform/@minValue`（FieldID 2131）**：`uniform/@minValue="1"` 是本例下界。先按原始属性保存，再结合上界判断区间；不要因字段也叫 minValue 就混入三角或 Gamma 参数。
+
+**`uniform/@maxValue`（FieldID 2132）**：`uniform/@maxValue="3"` 是本例上界，与同节点下界 1 配对。两值不是两笔交换，不能求和得到投入量。
+
+**`beta`（FieldID 2140）**：Beta 例子使用 `beta`，存 a、m、b 三个量。0≤0.25≤1 满足原文条件；原公式的 a=b 分母问题仍留痕，不能把该 XML 片段当作处理退化分布的算法。
+
+**`beta/@minValue`（FieldID 2141）**：`beta/@minValue="0"` 对应原公式中的 a。读取到零是合法示例值，不是属性缺失，必须与当前 Beta 节点的 m、b 一起保留。
+
+**`beta/@mostFrequentValue`（FieldID 2142）**：`beta/@mostFrequentValue="0.25"` 对应 m，即最频繁值。它与三角分布的 mostLikelyValue 名称不同，应使用准确的 XML 属性名而非互相替换。
+
+**`beta/@maxValue`（FieldID 2143）**：`beta/@maxValue="1"` 对应 b。该值限制分布区间，并参与原文形状参数公式的 b-a 分母；不是成功概率 p，也不是标准差。
+
+**`gamma`（FieldID 2150）**：Gamma 例子使用 `gamma`，形状 2、尺度 3、位置偏移 1 都是正数。原文绝对值规则仍适用；这个片段保存参数而不实现随机数生成。
+
+**`gamma/@shape`（FieldID 2151）**：`gamma/@shape="2"` 是形状参数。按 Gamma 参数保存，不能当成正态分布的方差或试验次数。
+
+**`gamma/@scale`（FieldID 2152）**：`gamma/@scale="3"` 是尺度参数。工具若使用 rate 参数，须明确查其参数化约定，不能将 scale 原样塞到一个 rate 字段中。
+
+**`gamma/@minValue`（FieldID 2153）**：`gamma/@minValue="1"` 是位置参数，原说明要求将其加至样本。它不同于均匀分布的区间下界角色；读取器本身不因此增加外层交换量。
+
+**`binomial`（FieldID 2160）**：二项例子选择 `binomial` 子元素，其参数是 n 和 p。先识别二项分布再处理独立试验与成功概率，不把它当成连续数量区间。
+
+**`binomial/@n`（FieldID 2161）**：`binomial/@n="10"` 是整数的独立试验次数。应按整数读取并结合概率解释，不以产品单位赋给它。
+
+**`binomial/@p`（FieldID 2162）**：`binomial/@p="0.3"` 是每次试验成功概率，示例位于 0 与 1 之间。它不是百分数 30 的存储方式，也不是属性量或交换份额。
+
+**`undefined`（FieldID 2170）**：旧数据例子选择 `undefined` 而不宣称正态、均匀等分布。读取器只保留三个旧字段，不能在没有额外依据时把它重新贴上某个分布标签。
+
+**`undefined/@minValue`（FieldID 2171）**：`undefined/@minValue="8"` 保存旧数据的最小值。应连同原节点类型保留，避免仅按字段名与其他分布参数合并。
+
+**`undefined/@maxValue`（FieldID 2172）**：`undefined/@maxValue="12"` 保存旧数据最大值。上下界可以作为旧信息被导出，但不足以唯一决定概率分布。
+
+**`undefined/@standardDeviation95`（FieldID 2173）**：`undefined/@standardDeviation95="2"` 对应原说明中从均值两侧扩展、覆盖 95% 总体所需的值。旧式定义不能直接等同于常规正态标准差，也不擅自给出换算公式。
+
+**`pedigreeMatrix`（FieldID 2270）**：谱系例子的 `pedigreeMatrix` 位于 `normal` 之后，它自身没有文本数值，而以五个属性保存评分。应保持它与这一分布的父子关系，不把容器当作另一种互斥分布。
+
+**`pedigreeMatrix/@reliability`（FieldID 2271）**：`pedigreeMatrix/@reliability="1"` 的编码含义是基于测量且已验证的数据；这里只演示类别，不宣称教学数据真的达到该质量。把评分 1 与所对应字段一起保存。
+
+**`pedigreeMatrix/@completeness`（FieldID 2272）**：`pedigreeMatrix/@completeness="2"` 表示在足以平衡正常波动的期间，具有所考虑市场超过 50% 相关场所的代表性数据。这个等级不是采样百分比 2%，也不是方差 2。
+
+**`pedigreeMatrix/@temporalCorrelation`（FieldID 2273）**：`pedigreeMatrix/@temporalCorrelation="1"` 对应与数据集有效期间差异小于 3 年。不能把评分解释为数据年份；原文对恰好 15 年的边界未说明，示例避开该歧义。
+
+**`pedigreeMatrix/@geographicalCorrelation`（FieldID 2274）**：`pedigreeMatrix/@geographicalCorrelation="2"` 对应包含研究区域的更大区域平均数据。该等级需结合研究区域解释，不是可与 geographyId 相互替换的地点 ID。
+
+**`pedigreeMatrix/@furtherTechnologyCorrelation`（FieldID 2275）**：`pedigreeMatrix/@furtherTechnologyCorrelation="2"` 表示相同过程与材料、相同技术，但来自不同企业。保存这个类别，不自行把五项等级平均后称作附加方差。
+
+### 按相同路径提取自己的字段
+
+下面的字典逐项对应上面的 XML 字段。解压[XML 片段与读取代码 ZIP](attachments/ecospold2-xml-examples.zip)后，在解压目录运行；更换文件名即可阅读本章其他片段。返回值始终是列表：`[]` 表示未出现，属性保留原始字符串，子元素保留语言等属性、文字和完整 XML。多个语言或重复元素不会被悄悄丢弃。
+
+```python
+import json
+import xml.etree.ElementTree as ET
+from read_xml_fields import field_values
+
+node = ET.parse("xml-examples/uncertainty-01.xml").getroot()
+FIELDS = {
+    "2010": "comment",
+    "2100": "lognormal",
+    "2101": "lognormal/@meanValue",
+    "2102": "lognormal/@mu",
+    "2103": "lognormal/@variance",
+    "2104": "lognormal/@varianceWithPedigreeUncertainty",
+    "2110": "normal",
+    "2111": "normal/@meanValue",
+    "2112": "normal/@variance",
+    "2113": "normal/@varianceWithPedigreeUncertainty",
+    "2120": "triangular",
+    "2121": "triangular/@minValue",
+    "2122": "triangular/@mostLikelyValue",
+    "2123": "triangular/@maxValue",
+    "2130": "uniform",
+    "2131": "uniform/@minValue",
+    "2132": "uniform/@maxValue",
+    "2140": "beta",
+    "2141": "beta/@minValue",
+    "2142": "beta/@mostFrequentValue",
+    "2143": "beta/@maxValue",
+    "2150": "gamma",
+    "2151": "gamma/@shape",
+    "2152": "gamma/@scale",
+    "2153": "gamma/@minValue",
+    "2160": "binomial",
+    "2161": "binomial/@n",
+    "2162": "binomial/@p",
+    "2170": "undefined",
+    "2171": "undefined/@minValue",
+    "2172": "undefined/@maxValue",
+    "2173": "undefined/@standardDeviation95",
+    "2270": "pedigreeMatrix",
+    "2271": "pedigreeMatrix/@reliability",
+    "2272": "pedigreeMatrix/@completeness",
+    "2273": "pedigreeMatrix/@temporalCorrelation",
+    "2274": "pedigreeMatrix/@geographicalCorrelation",
+    "2275": "pedigreeMatrix/@furtherTechnologyCorrelation",
+}
+for field_id, relative_path in FIELDS.items():
+    values = field_values(node, relative_path)
+    print(field_id, relative_path, json.dumps(values, ensure_ascii=False))
+```
+
+换成完整 `.spold` 文件时，先使用本章定位路径选出目标节点，再把它作为 `node` 传入。例如属性 `@amount` 最终用 `.get("amount")` 读取；子元素 `unitName` 用带命名空间的 `.findall("es:unitName", ns)` 读取。嵌套路径先进入对应子元素，再取最后的属性；如 `lognormal/@variance`，不能在外层 `uncertainty` 上直接取 `variance`。复合类型的子元素不能只读外层 `.text`，其结构已保留在返回记录的 `xml` 中。
+
+### 直接在完整 spold 中使用这些路径
+
+沿用上一段的 `FIELDS` 字典与 `field_values`，下面改从完整文件选取本类型节点。先用配套 demo 运行，再把文件名改为自己的 `.spold`。XML 查找会返回全部同类节点；可选结构未提供时，匹配数为零，不会被填成数值零。多个路径代表同类型的不同使用位置，统计时按父路径区分。
+
+```python
+from read_section import load_dataset, NS
+
+dataset = load_dataset("demo-product.spold", index=0)
+LOCATIONS = ['.//es:uncertainty', './/es:productionVolumeUncertainty']
+for location in LOCATIONS:
+    nodes = dataset.findall(location, NS)
+    print("父路径：", location, "匹配数：", len(nodes))
+    for node in nodes:
+        for field_id, relative_path in FIELDS.items():
+            print(field_id, relative_path,
+                  json.dumps(field_values(node, relative_path), ensure_ascii=False))
+```
+
+
 ## 怎样定位、使用与提取
 
 需要保留分布或开展抽样前，先读取分布子节点名称，再取其参数和 pedigreeMatrix。普通 uncertainty 与 productionVolumeUncertainty 的父节点不同，必须用路径区分；读取平均量不会自动开展抽样，方差也不能直接当标准差使用。

@@ -1,0 +1,4 @@
+<uncertainty xmlns="http://www.EcoInvent.org/EcoSpold02">
+  <lognormal meanValue="25" mu="3.2188758248682006" variance="0.01" varianceWithPedigreeUncertainty="0.04"/>
+  <comment xml:lang="zh">教学构造：这里只保存分布参数，不产生交换量或抽样结果。</comment>
+</uncertainty>

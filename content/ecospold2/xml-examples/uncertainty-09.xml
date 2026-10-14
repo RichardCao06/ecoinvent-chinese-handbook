@@ -1,0 +1,5 @@
+<uncertainty xmlns="http://www.EcoInvent.org/EcoSpold02">
+  <normal meanValue="10" variance="1" varianceWithPedigreeUncertainty="1.44"/>
+  <pedigreeMatrix reliability="1" completeness="2" temporalCorrelation="1" geographicalCorrelation="2" furtherTechnologyCorrelation="2"/>
+  <comment xml:lang="zh">谱系代码均为教学选择，不表示这些教学数据实际经过测量或审查。</comment>
+</uncertainty>

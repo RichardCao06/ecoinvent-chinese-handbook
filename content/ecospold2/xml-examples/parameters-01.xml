@@ -1,0 +1,6 @@
+<parameter xmlns="http://www.EcoInvent.org/EcoSpold02" parameterId="0c72e7c0-a190-5ba6-85ae-0b15236cc19d" amount="2.5" unitId="0489b6ee-11b9-577d-b8e0-1e45b6b2fcc1" variableName="electricity_intensity" parameterContextId="f71ac544-3bc8-5c15-8ea4-072d907663f1" unitContextId="f71ac544-3bc8-5c15-8ea4-072d907663f1" mathematicalRelation="25 / 10" isCalculatedAmount="true">
+        <name xml:lang="zh">电力强度（教学）</name>
+        <name xml:lang="en">Electricity intensity (synthetic)</name>
+        <unitName xml:lang="zh">kWh/kg</unitName>
+        <unitName xml:lang="en">kWh/kg</unitName>
+      <uncertainty><normal meanValue="2.5" variance="0.01" varianceWithPedigreeUncertainty="0.04"/></uncertainty><comment xml:lang="zh">教学电力强度；公式仅保存文本，不执行。</comment><comment xml:lang="en">Synthetic electricity intensity; formula text is never evaluated.</comment></parameter>

@@ -1,0 +1,424 @@
+{
+  "reviewer": "translator_b",
+  "status": "passed_with_notes",
+  "packet_sha256": "c3b7195db3c3f5c3b411c9a0a2bbe65e373bd0ffc5fef2977668631566a836bd",
+  "reviewed_fields": [
+    {
+      "section": "TUncertainty",
+      "field_id": "2010"
+    },
+    {
+      "section": "TUncertainty",
+      "field_id": "2100"
+    },
+    {
+      "section": "TUncertainty",
+      "field_id": "2101"
+    },
+    {
+      "section": "TUncertainty",
+      "field_id": "2102"
+    },
+    {
+      "section": "TUncertainty",
+      "field_id": "2103"
+    },
+    {
+      "section": "TUncertainty",
+      "field_id": "2104"
+    },
+    {
+      "section": "TUncertainty",
+      "field_id": "2110"
+    },
+    {
+      "section": "TUncertainty",
+      "field_id": "2111"
+    },
+    {
+      "section": "TUncertainty",
+      "field_id": "2112"
+    },
+    {
+      "section": "TUncertainty",
+      "field_id": "2113"
+    },
+    {
+      "section": "TUncertainty",
+      "field_id": "2120"
+    },
+    {
+      "section": "TUncertainty",
+      "field_id": "2121"
+    },
+    {
+      "section": "TUncertainty",
+      "field_id": "2122"
+    },
+    {
+      "section": "TUncertainty",
+      "field_id": "2123"
+    },
+    {
+      "section": "TUncertainty",
+      "field_id": "2130"
+    },
+    {
+      "section": "TUncertainty",
+      "field_id": "2131"
+    },
+    {
+      "section": "TUncertainty",
+      "field_id": "2132"
+    },
+    {
+      "section": "TUncertainty",
+      "field_id": "2140"
+    },
+    {
+      "section": "TUncertainty",
+      "field_id": "2141"
+    },
+    {
+      "section": "TUncertainty",
+      "field_id": "2142"
+    },
+    {
+      "section": "TUncertainty",
+      "field_id": "2143"
+    },
+    {
+      "section": "TUncertainty",
+      "field_id": "2150"
+    },
+    {
+      "section": "TUncertainty",
+      "field_id": "2151"
+    },
+    {
+      "section": "TUncertainty",
+      "field_id": "2152"
+    },
+    {
+      "section": "TUncertainty",
+      "field_id": "2153"
+    },
+    {
+      "section": "TUncertainty",
+      "field_id": "2160"
+    },
+    {
+      "section": "TUncertainty",
+      "field_id": "2161"
+    },
+    {
+      "section": "TUncertainty",
+      "field_id": "2162"
+    },
+    {
+      "section": "TUncertainty",
+      "field_id": "2170"
+    },
+    {
+      "section": "TUncertainty",
+      "field_id": "2171"
+    },
+    {
+      "section": "TUncertainty",
+      "field_id": "2172"
+    },
+    {
+      "section": "TUncertainty",
+      "field_id": "2173"
+    },
+    {
+      "section": "TUncertainty",
+      "field_id": "2270"
+    },
+    {
+      "section": "TUncertainty",
+      "field_id": "2271"
+    },
+    {
+      "section": "TUncertainty",
+      "field_id": "2272"
+    },
+    {
+      "section": "TUncertainty",
+      "field_id": "2273"
+    },
+    {
+      "section": "TUncertainty",
+      "field_id": "2274"
+    },
+    {
+      "section": "TUncertainty",
+      "field_id": "2275"
+    },
+    {
+      "section": "TProperty",
+      "field_id": "2300"
+    },
+    {
+      "section": "TProperty",
+      "field_id": "2301"
+    },
+    {
+      "section": "TProperty",
+      "field_id": "2310"
+    },
+    {
+      "section": "TProperty",
+      "field_id": "2320"
+    },
+    {
+      "section": "TProperty",
+      "field_id": "2321"
+    },
+    {
+      "section": "TProperty",
+      "field_id": "2325"
+    },
+    {
+      "section": "TProperty",
+      "field_id": "2330"
+    },
+    {
+      "section": "TProperty",
+      "field_id": "2335"
+    },
+    {
+      "section": "TProperty",
+      "field_id": "2340"
+    },
+    {
+      "section": "TProperty",
+      "field_id": "2345"
+    },
+    {
+      "section": "TProperty",
+      "field_id": "2350"
+    },
+    {
+      "section": "TProperty",
+      "field_id": "2360"
+    },
+    {
+      "section": "TProperty",
+      "field_id": "2370"
+    },
+    {
+      "section": "TProperty",
+      "field_id": "2371"
+    },
+    {
+      "section": "TProperty",
+      "field_id": "2372"
+    },
+    {
+      "section": "TProperty",
+      "field_id": "2375"
+    },
+    {
+      "section": "TProperty",
+      "field_id": "2376"
+    },
+    {
+      "section": "TProperty",
+      "field_id": "2380"
+    },
+    {
+      "section": "TTransferCoefficient",
+      "field_id": "2400"
+    },
+    {
+      "section": "TTransferCoefficient",
+      "field_id": "2410"
+    },
+    {
+      "section": "TTransferCoefficient",
+      "field_id": "2420"
+    },
+    {
+      "section": "TTransferCoefficient",
+      "field_id": "2425"
+    },
+    {
+      "section": "TTransferCoefficient",
+      "field_id": "2430"
+    },
+    {
+      "section": "TTransferCoefficient",
+      "field_id": "2440"
+    },
+    {
+      "section": "TTransferCoefficient",
+      "field_id": "2441"
+    },
+    {
+      "section": "TTransferCoefficient",
+      "field_id": "2442"
+    },
+    {
+      "section": "TTransferCoefficient",
+      "field_id": "2445"
+    },
+    {
+      "section": "TTransferCoefficient",
+      "field_id": "2446"
+    },
+    {
+      "section": "TTransferCoefficient",
+      "field_id": "2450"
+    },
+    {
+      "section": "TTextAndImage",
+      "field_id": "3900"
+    },
+    {
+      "section": "TTextAndImage",
+      "field_id": "3910"
+    },
+    {
+      "section": "TTextAndImage",
+      "field_id": "3920"
+    },
+    {
+      "section": "TRepresentativeness",
+      "field_id": "3000"
+    },
+    {
+      "section": "TRepresentativeness",
+      "field_id": "3001"
+    },
+    {
+      "section": "TRepresentativeness",
+      "field_id": "3005"
+    },
+    {
+      "section": "TRepresentativeness",
+      "field_id": "3010"
+    },
+    {
+      "section": "TRepresentativeness",
+      "field_id": "3030"
+    },
+    {
+      "section": "TRepresentativeness",
+      "field_id": "3040"
+    },
+    {
+      "section": "TReview",
+      "field_id": "3300"
+    },
+    {
+      "section": "TReview",
+      "field_id": "3301"
+    },
+    {
+      "section": "TReview",
+      "field_id": "3305"
+    },
+    {
+      "section": "TReview",
+      "field_id": "3306"
+    },
+    {
+      "section": "TReview",
+      "field_id": "3310"
+    },
+    {
+      "section": "TReview",
+      "field_id": "3320"
+    },
+    {
+      "section": "TReview",
+      "field_id": "3325"
+    },
+    {
+      "section": "TReview",
+      "field_id": "3330"
+    },
+    {
+      "section": "TReview",
+      "field_id": "3335"
+    },
+    {
+      "section": "TReview",
+      "field_id": "3340"
+    },
+    {
+      "section": "TReview",
+      "field_id": "3350"
+    }
+  ],
+  "notes": [
+    {
+      "section": "TUncertainty",
+      "field_id": "2103",
+      "status": "resolved",
+      "reason_zh": "对照原字段和实例确认：lognormal 的25为几何均值，mu=3.2188758248682006约为ln(25)；variance=0.01是ln(x)底层正态基础无偏方差，varianceWithPedigreeUncertainty=0.04为已含基础与谱系不确定性的方差。讲解没有把两者叫标准差或重复累加。normal亦分别保存基础与含谱系方差。源文分布简介使用σ及标准差措辞，与具体variance属性的区别已由示例和逐字段讲解澄清。"
+    },
+    {
+      "section": "TUncertainty",
+      "field_id": "2122",
+      "status": "needs_expert_review",
+      "reason_zh": "原文要求三角分布填写minValue/mostLikelyValue/maxValue并以众数计算均值，却又禁止ecoinvent上下文使用旧字段#3797。当前XSD要求mostLikelyValue；例子明确仅展示类型合法结构，并保留禁用限定，没有宣称真实数据库可任意填写。",
+      "recommendation_zh": "真实建模需请数据方澄清旧字段禁令与当前mostLikelyValue的适用关系；保持语法校验与数据库语义限制的区别。"
+    },
+    {
+      "section": "TUncertainty",
+      "field_id": "2140",
+      "status": "needs_expert_review",
+      "reason_zh": "Beta源文允许a=b，却使所列Shape1公式的b-a为零。示例a=0/m=0.25/b=1合法且得到Shape1=2、Shape2=4；讲解保留退化情形疑点，未补造处理算法。",
+      "recommendation_zh": "遇到a=b真实数据时应另向数据方确认退化分布规则，不从本例推断求值方式。"
+    },
+    {
+      "section": "TUncertainty",
+      "field_id": "2173",
+      "status": "resolved",
+      "reason_zh": "undefined的standardDeviation95=2仅作为旧式95%覆盖定义保存，例子与讲解均未等同常规正态标准差，也未从8/12/2重建分布。八种分布分别出现且每个uncertainty只含一种；额外插入第二分布的负例实际被官方XSD拒绝。"
+    },
+    {
+      "section": "TUncertainty",
+      "field_id": "2273",
+      "status": "needs_expert_review",
+      "reason_zh": "temporalCorrelation源文等级4写差异小于15年、等级5写超过15年，对恰好15年未说明。例子采用等级1并正确解释小于3年，同时留痕边界缺口。",
+      "recommendation_zh": "出现恰好15年差异的真实评分时请确认正式编码规则，不自行把边界归入4或5。"
+    },
+    {
+      "section": "TProperty",
+      "field_id": "2335",
+      "status": "resolved",
+      "reason_zh": "已核对property/amount=0.8 kg/kg仅为教学干质量定义，与外层交换数量分开。isDefiningValue=true固定定义关系；第二例省略isDefiningValue/isCalculatedAmount，普通XSD两者default=false。sourceId省略与sourceIdOverwrittenByChild=true显式清除也明确区分。"
+    },
+    {
+      "section": "TTransferCoefficient",
+      "field_id": "2400",
+      "status": "resolved",
+      "reason_zh": "exchangeId明确引用同活动被引用投入的交换实例id而非产品或基本流master。0.25×教学投入40=10的说明只是引用贡献份额，不是外层输出amount或完整网络计算；片段没有虚称引用已存在。isCalculatedAmount在此类型没有default=false，与TProperty差别解释正确。"
+    },
+    {
+      "section": "TTextAndImage",
+      "field_id": "3910",
+      "status": "resolved",
+      "reason_zh": "实例采用官方实际元素imageUrl（源文字模板写imageUri），未添加不支持的xml:lang。已核对中文显示顺序按index为text1/image2/text3，原始XML顺序不同；英文index1不会重复拼接到中文。variable/name=site_name无index，用{{site_name}}文本占位，不是数学variableName。"
+    },
+    {
+      "section": "TRepresentativeness",
+      "field_id": "3030",
+      "status": "resolved",
+      "reason_zh": "原文samplingProcedure附带富文本模板描述，但当前XSD明确为TString32000。示例与讲解按普通带语言字符串读取，没有错误添加text/imageUrl子树。percent=60是百分值、不是归一化系数；该类型限制最大100且未给最小值，相关说明经原XSD核对成立。"
+    },
+    {
+      "section": "TReview",
+      "field_id": "3320",
+      "status": "resolved",
+      "reason_zh": "四个版本字段分别描述数据库发布1.0与数据集修订1.1，未误拼成单一版本。details富文本与otherDetails普通文本定位正确；人员、邮箱、日期和意见明确虚构，不宣称实际数据已获人工或官方签核。"
+    },
+    {
+      "status": "resolved",
+      "reason_zh": "审阅覆盖TUncertainty38/TProperty18/TTransferCoefficient11/TTextAndImage3/TRepresentativeness6/TReview11，共87字段与16段XML；逐字段对照source.json的名称、嵌套位置、原描述与官方XSD，逐段核对实际值/语言/数量尺度/引用/顺序。全部validate_fragment类型校验、XML字段实际出现和walkthrough完整覆盖检查通过。类型校验不验证虚构master引用存在、完整.spold引用完整性、继承展开或数学/网络计算；本记录是代理独立对照审核。"
+    }
+  ]
+}

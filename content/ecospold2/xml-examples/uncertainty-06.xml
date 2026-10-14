@@ -1,0 +1,3 @@
+<uncertainty xmlns="http://www.EcoInvent.org/EcoSpold02">
+  <gamma shape="2" scale="3" minValue="1"/>
+</uncertainty>

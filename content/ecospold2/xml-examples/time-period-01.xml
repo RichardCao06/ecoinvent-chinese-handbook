@@ -1,0 +1,4 @@
+<timePeriod xmlns="http://www.EcoInvent.org/EcoSpold02" startDate="2025-01-01" endDate="2025-12-31" isDataValidForEntirePeriod="false">
+  <!-- 教学构造的有效期，非真实数据年代。 -->
+  <comment><text index="1" xml:lang="zh">教学数据仅适用于2025年1月至6月；下半年改造后需重新核实。</text></comment>
+</timePeriod>
