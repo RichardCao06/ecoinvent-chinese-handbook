@@ -1,0 +1,27 @@
+{
+  "verified_date": "2026-10-14",
+  "content_commit": "decda7af5650d72bf18163deafb347fb42d5a286",
+  "repository": "https://github.com/RichardCao06/ecoinvent-chinese-handbook",
+  "branch": "main",
+  "published_base": "https://hiqlcd.gitbook.io/hiqlcd-docs/ecospold2-xml-zi-duan-can-kao/ecospold2",
+  "published": true,
+  "checks": {
+    "homepage_field_reference_visible": true,
+    "five_groups_visible": true,
+    "field_index_to_amount_anchor": "https://hiqlcd.gitbook.io/hiqlcd-docs/ecospold2-xml-zi-duan-can-kao/ecospold2/flow-data/exchanges#field-1020",
+    "chinese_amount_definition_visible": true,
+    "english_original_tab_verified": true,
+    "metadata_three_column_table_verified": true,
+    "search_query": "activityLinkId",
+    "search_result": "https://hiqlcd.gitbook.io/hiqlcd-docs/ecospold2-xml-zi-duan-can-kao/ecospold2/flow-data/intermediate-exchanges",
+    "review_page": "https://hiqlcd.gitbook.io/hiqlcd-docs/ecospold2-xml-zi-duan-can-kao/ecospold2/translation-review",
+    "review_notes_visible": 27,
+    "pending_expert_notes_visible": 12,
+    "source_links_resolve_to_public_repository": true,
+    "implementation_ci": {
+      "run_id": 38498280482,
+      "conclusion": "success"
+    }
+  },
+  "screenshot": "translation-work/screenshots/gitbook-ecospold2-fields.jpg"
+}
