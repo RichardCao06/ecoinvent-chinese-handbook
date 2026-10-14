@@ -175,7 +175,7 @@ UPR 是单元过程层面的清单。它的电力输入是该过程所需的电�
 
 ### 4.1 活动描述：确定清单适用于什么活动
 
-#### 先识别活动，再判断边界与继承 <a href="#read-TActivity" id="read-TActivity"></a>
+#### 先识别活动，再判断边界与继承 <a href="#read-tactivity" id="read-tactivity"></a>
 
 读取一个活动数据集时，可先进入 `activityDescription/activity`。这个元素采用 `TActivity` 类型，回答“这是什么活动、记录了哪一层数据、边界在哪里”。元素 `activityName` 是供人阅读的活动名称；属性 `id` 是活动的 UUID，而 `activityNameId` 是对活动名称主数据条目的 UUID 引用。两种 UUID 的角色不同：前者识别活动，后者查找名称主数据，不能因为都使用 `TUuid` 就混作同一个键。该类型以 36 个字符表示 UUID；创建新条目的 UUID 需要由外部软件生成。`activityNameContextId` 指明名称主数据所属上下文，省略时使用数据集自身的上下文。因此，程序可以把名称提取为显示文本，但在追踪对象身份和解析主数据时，应同时保留相应 UUID 与上下文。
 
@@ -193,19 +193,19 @@ UPR 是单元过程层面的清单。它的电力输入是该过程所需的电�
 
 能源和分配信息也属于活动描述。`energyValues` 默认 `0`，表示未指定；`1` 表示净值，即低位热值；`2` 表示总值，即高位热值。它声明能源数值的口径，不是另一笔能源交换。`masterAllocationPropertyId` 引用全数据集默认分配属性，`masterAllocationPropertyContextId` 指定该属性所属上下文，省略时沿用数据集上下文；某交换可通过自己的 `specificAllocationPropertyId` 覆盖这一默认属性。按原说明，某输出的分配因子等于该输出的 `TProperty` 值乘输出数量，再除以所有输出相应乘积的总和。`allocationComment` 解释分配程序和选择该属性的理由，也可说明采用物理、经济等不同参数却得到相同分配因子的情况。若子数据集要删除默认分配属性的引用，必须把 `masterAllocationPropertyIdOverwrittenByChild` 设为 `true`；单纯不写引用会被解释为保留父值。
 
-#### 用分类定位行业，不把名称当作主数据标识 <a href="#read-TClassification" id="read-TClassification"></a>
+#### 用分类定位行业，不把名称当作主数据标识 <a href="#read-tclassification" id="read-tclassification"></a>
 
 活动描述中的 `classification` 可重复出现，每一项采用 `TClassification`，把一个分类体系与其中的类别配对。元素 `classificationSystem` 给出体系名称，如原文示例 `ISIC Rev. 4`；`classificationValue` 给出活动在该体系中所属的类别。它们便于展示和筛选，但机器解析的主数据引用是属性 `classificationId`，指向有效分类列表中的分类值。`classificationContextId` 指定这个分类所属上下文，省略时采用数据集自身的上下文。取数时应逐项保留体系、类别和引用标识，不能假定只有一个分类，也不能将不同体系中看起来相同的类别文本合并为同一条主数据。
 
 这里有一处需明确交代的原文差异：字段说明把 `classificationSystem` 和 `classificationValue` 称为可选纯文本值，而本版完整数据 XSD 将两个元素设为至少出现一次，官方 HTML 表格也标为必填。阅读已有文本与校验文件结构是不同操作；校验当前完整数据时应按所用 XSD 执行，不能根据说明中的“可选”自行删除元素。子数据集另有差异模式，其规则还需结合继承处理。
 
-#### 地理信息描述适用范围，也界定市场范围 <a href="#read-TGeography" id="read-TGeography"></a>
+#### 地理信息描述适用范围，也界定市场范围 <a href="#read-tgeography" id="read-tgeography"></a>
 
 `activityDescription/geography` 采用 `TGeography`。属性 `geographyId` 引用有效地理位置主数据中的详细定义，`geographyContextId` 指定该引用的上下文，省略时使用数据集自身的上下文。元素 `shortname` 是这一地理位置的描述性简称，可用于报告和筛选；它不是替代 UUID 的主数据键。元素 `comment` 提供进一步的地理解释，采用 `TTextAndImage`，可说明边界划分的性质、非行政区域的界定方式以及市场边界的依据。
 
 不要把 geography 一律理解为国家。它可表示活动的点位置、移动活动的线，或包含多个具体活动地点的分布式活动及生产组合的区域。对于市场和消费组合，它描述限制跨界进出口的市场边界。读取时可先提取 `shortname` 了解地理范围，再用 `geographyId` 及对应上下文解析主数据，最后结合 `comment` 判断该范围是否与研究对象一致；地理简称本身并不交代全部边界含义。
 
-#### 技术水平要结合有效年份和地点阅读 <a href="#read-TTechnology" id="read-TTechnology"></a>
+#### 技术水平要结合有效年份和地点阅读 <a href="#read-ttechnology" id="read-ttechnology"></a>
 
 `activityDescription/technology` 采用 `TTechnology`。属性 `technologyLevel` 是粗粒度的技术分类，默认值为 `3`，可用于建模时选择特定技术水平的过程。值 `0` 为未指定，适用于没有技术水平的市场活动；`1` 为新兴技术，在某些方面技术性能优于现代技术，但纯按经济考虑投资时尚未成为最常安装的选择；`2` 为现代技术，是纯按经济考虑新增产能时采用的、竞争力最强的技术；`3` 为当前技术，介于现代与旧有之间；`4` 为旧有技术，是纯按经济考虑退役时正在退出使用、竞争力最低的技术；`5` 为过时技术，已经不再使用。
 
@@ -213,13 +213,13 @@ UPR 是单元过程层面的清单。它的电力输入是该过程所需的电�
 
 元素 `comment` 采用 `TTextAndImage`，说明技术的性质、特征及单元过程的技术属性。若活动包含多个子活动，也应描述对应技术，并使用专业工艺名称。提取这段说明，是理解技术差异及决定是否采用数据的步骤；仅用技术等级整数无法替代工艺文档。
 
-#### 时间段与整段有效性要分开判断 <a href="#read-TTimePeriod" id="read-TTimePeriod"></a>
+#### 时间段与整段有效性要分开判断 <a href="#read-ttimeperiod" id="read-ttimeperiod"></a>
 
 `activityDescription/timePeriod` 采用 `TTimePeriod`。属性 `startDate` 和 `endDate` 是数据集有效时间段的完整日期，采用年-月-日；它们与文件创建、编辑和导出时间不同。属性 `isDataValidForEntirePeriod` 说明该活动的基本流交换和中间交换是否对所列整个时间段都有效，不能仅根据起止日期推定整段有效。
 
 当 `isDataValidForEntirePeriod` 不为真时，可在元素 `comment` 中解释。这个 `TTextAndImage` 字段也可说明单元过程的时间相关性，例如较早数据是否仍适用于当前活动；还可说明为什么数据不覆盖整个期间、实际在哪些较短期间内有效。取数时应将起止日期、整段有效性标记和这段说明一并保存，否则会丢失日期区间内的重要限定。
 
-#### 情景是主数据引用，也可能是子数据集的变化依据 <a href="#read-TMacroEconomicScenario" id="read-TMacroEconomicScenario"></a>
+#### 情景是主数据引用，也可能是子数据集的变化依据 <a href="#read-tmacroeconomicscenario" id="read-tmacroeconomicscenario"></a>
 
 `activityDescription/macroEconomicScenario` 采用 `TMacroEconomicScenario`。属性 `macroEconomicScenarioId` 指向有效情景列表中的宏观经济情景；`macroEconomicScenarioContextId` 指定该情景主数据所属上下文，省略时使用数据集自身的上下文。元素 `name` 是情景名称，供人阅读；不能用它替换情景 UUID 做唯一连接。
 
@@ -227,7 +227,7 @@ UPR 是单元过程层面的清单。它的电力输入是该过程所需的电�
 
 ### 4.2 交换数据：从清单中读取数量和结果
 
-#### 先读交换的共同结构 <a href="#read-TCustomExchange" id="read-TCustomExchange"></a>
+#### 先读交换的共同结构 <a href="#read-tcustomexchange" id="read-tcustomexchange"></a>
 
 一个活动的数据不只是一个总数，而是一组说明“交换了什么、交换多少、用什么单位表示”的记录。`TCustomExchange` 定义中间交换与基本流交换共有的字段；`TIntermediateExchange` 和 `TElementaryExchange` 在它的基础上增加各自的信息。因此，读到具体交换时，既要读取该交换类型的专用字段，也要读取这些共同字段。下文用代码标出实际 XML 名称：属性写在元素的开始标签中，名称、说明等内容则由子元素承载。
 
@@ -243,7 +243,7 @@ UPR 是单元过程层面的清单。它的电力输入是该过程所需的电�
 
 若交换有独立的分配设置，`specificAllocationPropertyId` 指定分配所用属性，并覆盖数据集层面由 `masterAllocationPropertyId` 定义的默认设置；`specificAllocationPropertyContextId` 指明该属性所属上下文，省略时使用数据集上下文。这些字段说明应使用哪项属性，不能单凭它们自行构造一套新的分配算法。继承时还要读取 `sourceIdOverwrittenByChild` 与 `specificAllocationPropertyIdOverwrittenByChild`：子数据集要移除对应的主数据引用，必须把相应标记设为 `true`；否则，引用不再出现仍可能被解释为“保留父数据集的值”，不能据此判断它已被清空。
 
-#### 中间交换如何连接产品与供应者 <a href="#read-TIntermediateExchange" id="read-TIntermediateExchange"></a>
+#### 中间交换如何连接产品与供应者 <a href="#read-tintermediateexchange" id="read-tintermediateexchange"></a>
 
 `TIntermediateExchange` 表示单元过程中的产品、服务或废物输入与输出，连接活动与技术圈。它继承共同交换字段，因此一条记录既有交换实例的 `id` 和数量 `amount`，又有引用产品主数据的 `intermediateExchangeId`。后者为必需 UUID，回答“是哪一种中间产品”；可选的 `intermediateExchangeContextId` 指明产品主数据上下文，省略时使用数据集自身的上下文。产品名称相同，不等于实例相同，也不等于供应活动相同。
 
@@ -257,7 +257,7 @@ UPR 是单元过程层面的清单。它的电力输入是该过程所需的电�
 
 产量有一组独立的来源说明。`productionVolumeSourceId` 引用产量依据的有效来源，`productionVolumeSourceContextId` 指明其上下文，省略时使用数据集上下文。`productionVolumeSourceIdOverwrittenByChild` 设为 `true`，才明确表示在子数据集中移除该来源引用；缺少引用本身仍可能意味着继承父值。`productionVolumeSourceYear` 表示出版、交流或网站最后访问年份；`productionVolumeSourceFirstAuthor` 表示第一作者或现场测量、口头交流、个人书面交流及问卷来源的提供人员，规则对应 `sourceType` 为 4、5、6、7 的情况。可多语言填写的 `productionVolumeComment` 解释产量来源、假设和计算，可选的 `productionVolumeUncertainty` 则用分布及其参数和／或谱系信息记录产量不确定性。最后，可重复的 `classification` 通过分类配对描述产品所属类别。提取产量时应连同这一组依据保存，而不是拿交换的一般来源记录代替产量来源。
 
-#### 基本流交换记录与环境的往来 <a href="#read-TElementaryExchange" id="read-TElementaryExchange"></a>
+#### 基本流交换记录与环境的往来 <a href="#read-telementaryexchange" id="read-telementaryexchange"></a>
 
 `TElementaryExchange` 表示单元过程与环境之间的基本流输入或输出，同样继承 `TCustomExchange` 的实例标识、数量、单位、来源和不确定性等共同字段。与中间产品的识别方式相对应，必需的 `elementaryExchangeId` 引用基本流的主数据条目，而可选的 `elementaryExchangeContextId` 指明该主数据所属上下文，省略时使用数据集自身上下文。取数时应保留这个基本流标识，同时保留交换实例 `id`；一个用于识别流，另一个用于识别本数据集中的具体记录。
 
@@ -265,7 +265,7 @@ UPR 是单元过程层面的清单。它的电力输入是该过程所需的电�
 
 必需的 `compartment` 提供区室与子区室的配对信息，由 `TCompartment` 的内部结构表达。原说明中的 `validCompartments` 所引用 XML 文档定义给定语言下有效的区室／子区室配对。可选的 `formula` 可补充化学式，例如分子式，但它不代替基本流主数据或区室。读取环境清单时，应同时取出流标识、名称、方向、数量、单位以及区室配对；不能仅按化学名称把不同区室的流合为一个“总排放”，然后假设可以直接使用同一个表征因子。
 
-#### 参数为交换公式提供可追溯的数值 <a href="#read-TParameter" id="read-TParameter"></a>
+#### 参数为交换公式提供可追溯的数值 <a href="#read-tparameter" id="read-tparameter"></a>
 
 `TParameter` 保存供公式使用的数据集参数。参数不是物质输入或排放记录，即使也具有 `amount`，也不能混入基本流或中间交换的清单总量。必需的 `name` 是可多语言填写的描述性名称，必需的 `parameterId` 引用有效参数主数据；可选的 `parameterContextId` 指明参数所属上下文，省略时使用数据集上下文。必需的 `amount` 保存参数当前数值，是阅读公式时可用的已保存值，而非参数名称或 UUID。
 
@@ -275,7 +275,7 @@ UPR 是单元过程层面的清单。它的电力输入是该过程所需的电�
 
 可选的 `mathematicalRelation` 通过变量名或 `REF` 函数引用流、参数和属性的值，在给定变量值后，将结果写入参数自身的 `amount`。可选的 `isCalculatedAmount` 为 `true` 时，说明该数值由该数学关系计算得到；这一参数标记的 XSD 没有声明默认值，不能套用共同交换类型的默认设置。阅读现有文件时应区分直接记录的当前数值与其计算依据，只有在正确理解公式语言和依赖关系后，才重新计算参数。
 
-#### 影响评价结果不是一条环境排放 <a href="#read-TImpactIndicatorResult" id="read-TImpactIndicatorResult"></a>
+#### 影响评价结果不是一条环境排放 <a href="#read-timpactindicatorresult" id="read-timpactindicatorresult"></a>
 
 `TImpactIndicatorResult` 保存已经计算出的影响指标结果。它的必需字段 `amount` 是指标值，不是某种污染物的排放量，也不是未表征的资源消耗量；即使字段名与交换数量相同，读数含义也由所在类型决定。提取 LCIA 结果时，需要同时保留方法、类别、指标和单位，不能只取出一列数值，也不能把这些结果与基本流交换相加。
 
@@ -287,13 +287,13 @@ UPR 是单元过程层面的清单。它的电力输入是该过程所需的电�
 
 ### 4.3 复合类型：解释区室、属性、不确定性和文本
 
-#### 区室配对决定环境流的具体位置 <a href="#read-TCompartment" id="read-TCompartment"></a>
+#### 区室配对决定环境流的具体位置 <a href="#read-tcompartment" id="read-tcompartment"></a>
 
 `TCompartment` 用来说明一条基本流属于哪一组区室与子区室。“区室”既可表达环境接收介质，也可用于自然资源分类，因此本文采用已交叉审阅确定的“区室／子区室”术语。内部的 `compartment` 和 `subcompartment` 是必需的多语言名称，提供所引用配对的纯文本表示；前者是区室名，后者是更细的子区室名。原表分别将它们追溯到字段 5315 和 5325，不应把这些跨表编号误读成该数据集里的交换编号。
 
 必需的 `subcompartmentId` 是配对引用的 UUID，必须在有效区室清单中定义，原表指向字段 5330。可选的 `subcompartmentContextId` 指明子区室所属上下文，省略时使用数据集自身上下文。因而读数时应把配对标识及上下文与显示名称一起保存：显示名称有助于理解，主数据引用用于一致匹配。外层基本流的 `compartment` 元素与内层区室名称的 `compartment` 元素同名，但处于不同结构位置；提取时应按层级识别，避免把整个配对结构当成一段普通文字。
 
-#### 不确定性：先辨认分布，再读取它的参数 <a href="#read-TUncertainty" id="read-TUncertainty"></a>
+#### 不确定性：先辨认分布，再读取它的参数 <a href="#read-tuncertainty" id="read-tuncertainty"></a>
 
 交换、属性、参数和转移系数可以分别附带 `uncertainty`，中间交换的生产量则使用 `productionVolumeUncertainty`。这些元素采用同一个复合类型 `TUncertainty`，但描述的是各自所属数值的不确定性。读取时，先确定外层对象和它的单位，再进入不确定性结构；不能把这里的概率参数当成另一笔投入、排放或产品数量，加进生命周期清单。`comment` 用来补充这项不确定性的说明，也可能交代数据来源或选用分布的理由。
 
@@ -317,7 +317,7 @@ UPR 是单元过程层面的清单。它的电力输入是该过程所需的电�
 
 `temporalCorrelation` 将数据年代与数据集时间段字段 600–610 比较：1、2、3、4 分别对应相差不足 3、6、10、15 年，5 对应年代未知或相差超过 15 年。原说明没有明确恰好相差 15 年的归类，不能自行补造边界规则。`geographicalCorrelation` 的 1 是研究区域自身的数据，2 是包含研究区域的更大区域平均数据，3 是生产条件相似区域的数据，4 是生产条件略有相似之处区域的数据，5 是未知区域或明显不同区域的数据，例如用北美代替中东、用 OECD 欧洲代替俄罗斯。`furtherTechnologyCorrelation` 的 1 对应所研究企业、过程和材料，2 对应相同过程与材料及相同技术但不同企业，3 对应同类过程和材料但不同技术，4 对应相关过程或材料，5 对应实验室规模相关过程或不同技术的数据。完整读取这五项，才能理解质量评价的依据，而不能仅凭某一个低分判定整个数据集适用。
 
-#### 交换属性：把产品特征与交换数量分开理解 <a href="#read-TProperty" id="read-TProperty"></a>
+#### 交换属性：把产品特征与交换数量分开理解 <a href="#read-tproperty" id="read-tproperty"></a>
 
 `TProperty` 附在交换的 `property` 元素中，描述干质量、含水率、价格、元素或物质含量等特征。中间交换和基本流交换都继承通用交换结构，因此都可具有这些属性。阅读一条属性时，首先用 `propertyId` 识别它引用的属性主数据，再读描述性文本 `name`；`propertyContextId` 指定该属性主数据所属的上下文，省略时采用数据集自身的上下文。UUID 引用和上下文确定的是属性身份，名称帮助人理解身份，不能仅靠同名文字认定两个属性一定相同。
 
@@ -327,7 +327,7 @@ UPR 是单元过程层面的清单。它的电力输入是该过程所需的电�
 
 `uncertainty` 描述的是该属性值的不确定性，仍须按所选分布解释，而不是默认套用外层交换的不确定性。`sourceId` 引用记录该属性的有效来源或出版物，`sourceContextId` 指定来源上下文，省略时采用数据集上下文。对子数据集，如果要移除继承的来源引用，应将 `sourceIdOverwrittenByChild` 设为 true；仅让引用消失会按原文规则被解释为保留父值。`sourceYear` 记录出版或交流年份，网站来源记录最后访问；`sourceFirstAuthor` 通常填写第一作者的姓氏和名字缩写，例如 Einstein A.，而来源类型 `sourceType` 为 4、5、6、7 的现场测量、口头交流、个人书面交流或问卷调查，填写提供信息的人。最后，`comment` 可以补充该交换中这项具体属性的假设、说明和限制，使数值能够追溯到其证据。
 
-#### 转移系数：追踪特定投入对特定输出的贡献 <a href="#read-TTransferCoefficient" id="read-TTransferCoefficient"></a>
+#### 转移系数：追踪特定投入对特定输出的贡献 <a href="#read-ttransfercoefficient" id="read-ttransfercoefficient"></a>
 
 转移系数将一项特定投入与一项特定输出关联，记录该投入对该输出的贡献份额，用于根据投入量计算相应的输出贡献。在 XSD 中，`transferCoefficient` 定义在 `TCustomExchange` 内，因此中间交换和基本流交换都可以通过继承包含它，不能把它限制为只供中间产品使用。阅读时应同时保留容纳系数的交换和被引用交换的身份，才能知道所描述的是哪一条投入输出关系。
 
@@ -337,7 +337,7 @@ UPR 是单元过程层面的清单。它的电力输入是该过程所需的电�
 
 证据链由 `sourceId`、`sourceContextId`、`sourceYear` 和 `sourceFirstAuthor` 组成。`sourceId` 指向有效来源，原选项说明将其关联到 `modellingAndValidation` 部分定义的来源；`sourceContextId` 指定来源的上下文，省略时使用数据集上下文；`sourceYear` 是出版或交流年份，网站记录最后访问；`sourceFirstAuthor` 是第一作者姓氏和名字缩写，现场测量、口头交流、个人书面交流和问卷调查，即 `sourceType` 为 4、5、6、7 时，则填写提供信息的人员。在子数据集中移除继承的来源引用，需要将 `sourceIdOverwrittenByChild` 设为 true，否则移除会被解释为保留父值。`comment` 用于每个系数的补充说明，读取时应与该系数而非其他交换的说明关联。
 
-#### 文本和图像：按顺序组织说明，用文本变量继承局部内容 <a href="#read-TTextAndImage" id="read-TTextAndImage"></a>
+#### 文本和图像：按顺序组织说明，用文本变量继承局部内容 <a href="#read-ttextandimage" id="read-ttextandimage"></a>
 
 `TTextAndImage` 是一般说明、技术描述和审查详细意见等字段采用的复合结构。实际 XSD 将它定义为可以多次出现的 `xsd:choice`，其中可交错选择 `text`、`imageUrl` 和 `variable`；这与不确定性中恰选一种分布的选择组不同。它可以包含多个文本和图像片段，而不是一次性固定为“一个文本加一张图”。原英文说明多次使用 `imageUri`，但所附 XSD 的实际图像元素名是 `imageUrl`。教程取数应按实际元素名识别，源文这一不一致仍在审校注记中保留，不能据说明文字生成一个并不存在的 `imageUri` 元素。
 
@@ -347,7 +347,7 @@ UPR 是单元过程层面的清单。它的电力输入是该过程所需的电�
 
 ### 4.4 建模与审查：判断结果的依据
 
-#### 代表性：理解数据代表的总体，以及样本如何形成 <a href="#read-TRepresentativeness" id="read-TRepresentativeness"></a>
+#### 代表性：理解数据代表的总体，以及样本如何形成 <a href="#read-trepresentativeness" id="read-trepresentativeness"></a>
 
 `representativeness` 位于 `modellingAndValidation` 中，采用 `TRepresentativeness` 类型，记录数据集的代表性和数据如何采样或计算。它帮助读者判断数据能否服务于研究中的地区、技术和时间条件，而不是为每项交换提供一个新的数量。首先，`systemModelId` 引用所用系统模型，`systemModelContextId` 指定该模型的上下文，省略时采用数据集自身的上下文；`systemModelName` 是该引用的纯文本名称。这些信息说明活动数据集如何链接成产品系统。原文举出的 `undefined`、`attributional, average current suppliers, revenue allocation` 和 `consequential, small-scale, long-term decisions` 是该历史格式说明中的模型描述，不能未经核对就视为当前全部系统模型名称或完整清单。在正常 XSD 中，只要此可选结构出现，模型引用和模型名称便是其内部必填项。
 
@@ -357,7 +357,7 @@ UPR 是单元过程层面的清单。它的电力输入是该过程所需的电�
 
 `extrapolations` 记录数据从其他时间、其他地理区域或其他技术外推而来的情况，以及外推如何实施。说明应交代单个交换是否采用不同的外推方法；如果把一个国家运行活动的数据用于另一个国家，可以在这里注明原始代表性，并记录外推引起的均值变化。读取这段内容后，才能把样本覆盖、原始来源和当前适用范围联系起来；不能仅因模型名称或地区代码符合要求，就跳过采样及外推说明。
 
-#### 审查记录：把意见、人员和所审版本对应起来 <a href="#read-TReview" id="read-TReview"></a>
+#### 审查记录：把意见、人员和所审版本对应起来 <a href="#read-treview" id="read-treview"></a>
 
 `review` 位于 `modellingAndValidation` 中，采用 `TReview` 类型，记录开展鉴定性评审的人员、主要结果、结论和建议。父级允许多个 `review`，因此一份数据集可以有多位评审者或多条审查记录；读取时不能只取第一条便覆盖其余意见。另一方面，一条记录包含的姓名、日期和意见只证明它记录了一次评审，并不自动代表整个数据库已获官方认证。
 
@@ -369,13 +369,13 @@ UPR 是单元过程层面的清单。它的电力输入是该过程所需的电�
 
 ### 4.5 管理信息：保留来源和版本证据
 
-#### 录入者说明谁编制并提交了这份记录 <a href="#read-TDataEntryBy" id="read-TDataEntryBy"></a>
+#### 录入者说明谁编制并提交了这份记录 <a href="#read-tdataentryby" id="read-tdataentryby"></a>
 
 在 `administrativeInformation/dataEntryBy` 中，`TDataEntryBy` 记录编制数据集并将其录入数据库的人员。属性 `personId` 引用该人员，`personContextId` 指定人员主数据所属上下文，省略时使用数据集自身的上下文。属性 `personName` 和 `personEmail` 分别存储人员的名与姓以及完整电子邮件地址；它们用于显示和联系，身份连接仍依赖人员 ID 与上下文。
 
 属性 `isActiveAuthor` 表示这位人员是否为数据集的活跃作者，完整数据 XSD 的默认值为 `false`。这里的活跃作者是后续维护中的联系角色：其他数据提供者今后修改数据集时，将征询此人的意见。它不能仅凭姓名是否出现在文件中推断，也不等同于版权人、审核人或原始数据采集者。取数时应保留这个标记，才能区分一般录入人员与需要在后续变更中联系的作者。
 
-#### 原始数据来源、出版物与访问限制构成另一组管理信息 <a href="#read-TDataGeneratorAndPublication" id="read-TDataGeneratorAndPublication"></a>
+#### 原始数据来源、出版物与访问限制构成另一组管理信息 <a href="#read-tdatageneratorandpublication" id="read-tdatageneratorandpublication"></a>
 
 `administrativeInformation/dataGeneratorAndPublication` 采用 `TDataGeneratorAndPublication`。这里的属性 `personId` 识别收集、汇编或发布原始数据的数据生成者，未必与 `dataEntryBy` 的录入者相同。`personContextId` 指向其人员上下文，省略时沿用数据集上下文；`personName` 和 `personEmail` 分别记录姓名和完整邮箱。读取两个人员组时，要保留各自所属的 XML 路径，即使字段都叫 `personId`，也不能把两种角色覆盖成同一个“作者”。原说明还将数据生成者解释为应获认可的数据来源及承担主要采集工作的个人或组织；当前人员引用须与相应人员主数据匹配。
 
@@ -387,7 +387,7 @@ UPR 是单元过程层面的清单。它的电力输入是该过程所需的电�
 
 当访问限制为 `3` 时，`companyId` 引用获准使用数据集的组织或机构，`companyContextId` 指定该组织上下文，省略时使用数据集上下文；`companyCode` 是对应公司的可选代码纯文本。原说明称其为 7 字母代码，`TCompanyCode` 的说明还称应使用大写字母，但本版 XSD 的实际约束只有最长 7 个字符，没有固定长度或字母字符模式；因此，通过 XSD 并不等于已经满足这项文字约定。原文条件 `759=3` 中的 `759` 是 `accessRestrictedTo` 的旧 SpoldID，当前 fieldId 为 `3550`，因此条件应理解为访问限制类别为 `3`，不是另一项编号为 759 的当前属性。若子数据集需要移除组织引用，必须把 `companyIdOverwrittenByChild` 设为 `true`，否则仍视为保留父值。这套规则让程序能够分别处理“继承已有引用”与“明确删除引用”。
 
-#### 区分数据库发布版本、数据集修订版本和文件时间 <a href="#read-TFileAttributes" id="read-TFileAttributes"></a>
+#### 区分数据库发布版本、数据集修订版本和文件时间 <a href="#read-tfileattributes" id="read-tfileattributes"></a>
 
 `administrativeInformation/fileAttributes` 采用 `TFileAttributes`，描述文件整体信息。属性 `majorRelease` 和 `minorRelease` 属于发布版本：主发布号在重大更新时加一，次发布号在两次重大更新之间的每次发布时加一。原文以每两年一次为重大更新的例子，但这不是由格式规定的固定发布日程。属性 `majorRevision` 和 `minorRevision` 则区分某个数据集本身的修订，独立于数据库发布版本。因此，程序应将发布版本和数据集修订版本分别保存，而不是拼成一个失去角色区分的版本字段。
 
@@ -399,7 +399,7 @@ UPR 是单元过程层面的清单。它的电力输入是该过程所需的电�
 
 缺少 `contextId` 时，说明将文件视为独立数据集，主数据引用不能被解析为实际主数据内容。这与缺少某个可选的 `…ContextId` 属性不同：后者通常沿用数据集上下文，但前提是这个上下文已经可知。元素 `requiredContext` 可重复出现，采用 `TRequiredContextReference`，用于列明完整读取主数据引用所需的其他上下文。真正取数前，应先识别本文件的上下文及所需上下文，再尝试连接各个名称、地点、人员、来源和属性的 UUID。
 
-#### 解析跨上下文引用前，先核对主数据依赖 <a href="#read-TRequiredContextReference" id="read-TRequiredContextReference"></a>
+#### 解析跨上下文引用前，先核对主数据依赖 <a href="#read-trequiredcontextreference" id="read-trequiredcontextreference"></a>
 
 每个 `requiredContext` 条目采用 `TRequiredContextReference`，说明读取文件所需的主数据上下文。属性 `requiredContextId` 引用主数据文件所属上下文，元素 `requiredContextName` 提供相应名称；属性 `requiredContextFileLocation` 是可选 URI，指向包含这一上下文主数据文件的目录。它给出的是主数据目录位置，不能直接当成某一条主数据对象的 UUID，也不应未经判断就当成单个 XML 文件路径。
 
@@ -701,7 +701,7 @@ The following version 1 SpoldIds have been removed in the EcoSpold02 format:
 
 {% endtabs %}
 
-<h3><a href="#appendix-TActivity" id="appendix-TActivity"></a>活动（TActivity）</h3>
+<h3><a href="#appendix-tactivity" id="appendix-tactivity"></a>活动（TActivity）</h3>
 <p>原表分组可重复：否；原表分组必填：是。</p>
 <p>包含活动数据集的标识信息，包括名称和分类。</p>
 <table class="format-table">
@@ -774,7 +774,7 @@ The following version 1 SpoldIds have been removed in the EcoSpold02 format:
 <tr data-field-id="200"><td>@datasetIcon</td><td>200</td><td>new</td><td></td><td>anyURI</td><td></td><td>否</td><td>否</td><td>否</td><td>否</td></tr>
 <tr data-source-block="TActivity.200.description.0"><td></td><td colspan="9">数据集图标的 URL。图标用于快速识别特定数据集，也可用于产品品牌和公司徽标。图标并非数据集的直接组成部分，而是存储于本地或 ecoinvent 网络服务器，可通过 Http 协议获取。</td></tr>
 </tbody></table>
-<h3><a href="#appendix-TClassification" id="appendix-TClassification"></a>分类（TClassification）</h3>
+<h3><a href="#appendix-tclassification" id="appendix-tclassification"></a>分类（TClassification）</h3>
 <p>原表分组可重复：是；原表分组必填：否。</p>
 <p>包含用于指定活动分类的分类配对信息。</p>
 <table class="format-table">
@@ -790,7 +790,7 @@ The following version 1 SpoldIds have been removed in the EcoSpold02 format:
 <tr data-source-block="TClassification.321.description.0"><td></td><td colspan="9">对分类所属上下文的引用。</td></tr>
 <tr data-source-block="TClassification.321.description.1"><td></td><td colspan="9">若省略此属性，则改用数据集自身的上下文。</td></tr>
 </tbody></table>
-<h3><a href="#appendix-TGeography" id="appendix-TGeography"></a>地理区域（TGeography）</h3>
+<h3><a href="#appendix-tgeography" id="appendix-tgeography"></a>地理区域（TGeography）</h3>
 <p>原表分组可重复：否；原表分组必填：是。</p>
 <p>包含过程地理适用范围的信息。地理区域可以是活动所在的点位置、描述移动活动的一条线，或分布式活动或生产组合覆盖的区域；该区域包含多个位于具体地点的活动。对于市场（消费组合），地理区域描述市场边界，跨越这些边界的进口和出口受到限制。</p>
 <table class="format-table">
@@ -807,7 +807,7 @@ The following version 1 SpoldIds have been removed in the EcoSpold02 format:
 <tr data-source-block="TGeography.420.description.0"><td></td><td colspan="9">用于进一步解释地理区域的文本和图像字段。尤其在描述区域时，可以说明地理边界划定的性质，特别是在该区域不是行政区的情况下。这里也可提供市场边界的划定依据。文本和图像字段由 text、imageUri 和 variable 元素列表组成。text 和 imageUri 元素可用于描述当前部分，并可按照其 index 属性确定的顺序任意组合。文本变量由 variable 元素定义，可在文本中以 {{variablename}} 形式使用。如果父文本字段包含变量，子活动数据集可以重新定义该变量，同时保持父文本的其余内容不变。这样便可轻松修改子过程中的部分文本。</td></tr>
 <tr data-source-block="TGeography.420.description.1"><td></td><td colspan="9">文本和图像字段由 text、imageUri 和 variable 元素列表组成。text 和 imageUri 元素可用于描述当前部分，并可按照其 index 属性确定的顺序任意组合。文本变量由 variable 元素定义，可在文本中以 {{variablename}} 形式使用。如果父文本字段包含变量，子活动数据集可以重新定义该变量，同时保持父文本的其余内容不变。这样便可轻松修改子过程中的部分文本。</td></tr>
 </tbody></table>
-<h3><a href="#appendix-TTechnology" id="appendix-TTechnology"></a>技术（TTechnology）</h3>
+<h3><a href="#appendix-ttechnology" id="appendix-ttechnology"></a>技术（TTechnology）</h3>
 <p>原表分组可重复：否；原表分组必填：是。</p>
 <p>描述已收集数据所对应的技术。文本应包含识别活动数据所依据技术的属性和特征所需的信息。</p>
 <table class="format-table">
@@ -819,7 +819,7 @@ The following version 1 SpoldIds have been removed in the EcoSpold02 format:
 <tr data-source-block="TTechnology.510.description.0"><td></td><td colspan="9">用于描述活动技术的文本和图像字段。文本应包含识别活动数据所依据技术的属性和特征所需的信息，描述该单元过程的技术属性。如果活动包含多个子活动，也应报告相应技术。描述应使用专业命名。文本和图像字段是 text、imageUri 和 variable 元素的列表。text 和 imageUri 元素可用于描述当前部分，并可按照各自 index 属性指定的任意顺序组合。文本变量由 variable 元素定义，可在文本中以 {{variablename}} 的形式使用。如果父数据集的文本字段包含变量，子活动数据集可重新定义该变量，同时保持父数据集其余文本不变。这样便于修改子过程中的局部文本。</td></tr>
 <tr data-source-block="TTechnology.510.description.1"><td></td><td colspan="9">text、imageUri 和 variable 元素的列表。text 和 imageUri 元素可用于描述当前部分，并可按照各自 index 属性指定的任意顺序组合。文本变量由 variable 元素定义，可在文本中以 {{variablename}} 的形式使用。如果父数据集的文本字段包含变量，子活动数据集可重新定义该变量，同时保持父数据集其余文本不变。这样便于修改子过程中的局部文本。</td></tr>
 </tbody></table>
-<h3><a href="#appendix-TTimePeriod" id="appendix-TTimePeriod"></a>时间范围（TTimePeriod）</h3>
+<h3><a href="#appendix-ttimeperiod" id="appendix-ttimeperiod"></a>时间范围（TTimePeriod）</h3>
 <p>原表分组可重复：否；原表分组必填：是。</p>
 <p>描述数据集有效时间段的开始日期和结束日期。</p>
 <table class="format-table">
@@ -838,7 +838,7 @@ The following version 1 SpoldIds have been removed in the EcoSpold02 format:
 文本和图像字段为 text、imageUri 和 variable 元素的列表。text 和 imageUri 元素可用于描述当前章节，并可按其 index 属性指定的顺序任意组合。文本变量通过 variable 元素定义，可在文本中以 {{variablename}} 的形式使用。若父数据集的文本字段包含变量，子活动数据集可重新定义该变量，同时保持父文本的其余部分不变。这样便于修改子过程中的部分文本。</td></tr>
 <tr data-source-block="TTimePeriod.630.description.1"><td></td><td colspan="9">text、imageUri 和 variable 元素的列表。text 和 imageUri 元素可用于描述当前章节，并可按其 index 属性指定的顺序任意组合。文本变量通过 variable 元素定义，可在文本中以 {{variablename}} 的形式使用。若父数据集的文本字段包含变量，子活动数据集可重新定义该变量，同时保持父文本的其余部分不变。这样便于修改子过程中的部分文本。</td></tr>
 </tbody></table>
-<h3><a href="#appendix-TMacroEconomicScenario" id="appendix-TMacroEconomicScenario"></a>宏观经济情景（TMacroEconomicScenario）</h3>
+<h3><a href="#appendix-tmacroeconomicscenario" id="appendix-tmacroeconomicscenario"></a>宏观经济情景（TMacroEconomicScenario）</h3>
 <p>原表分组可重复：否；原表分组必填：是。</p>
 <p>引用本数据集所用的宏观经济情景。</p>
 <table class="format-table">
@@ -853,7 +853,7 @@ The following version 1 SpoldIds have been removed in the EcoSpold02 format:
 <tr data-field-id="740"><td>comment</td><td>740</td><td>new</td><td></td><td>TString32000</td><td>32000</td><td>否</td><td>否</td><td>是</td><td>否</td></tr>
 <tr data-source-block="TMacroEconomicScenario.740.description.0"><td></td><td colspan="9">描述宏观经济子数据集与父数据集默认情景的差异。</td></tr>
 </tbody></table>
-<h3><a href="#appendix-TCustomExchange" id="appendix-TCustomExchange"></a>交换的通用字段（TCustomExchange）</h3>
+<h3><a href="#appendix-tcustomexchange" id="appendix-tcustomexchange"></a>交换的通用字段（TCustomExchange）</h3>
 <p>原表分组可重复：是；原表分组必填：是。</p>
 <p>本部分包含两种交换类型共同使用的元素。中间交换或与环境的交换各自特有的元素，列于下方相应部分。</p>
 <table class="format-table">
@@ -918,7 +918,7 @@ The following version 1 SpoldIds have been removed in the EcoSpold02 format:
 <tr data-source-block="TCustomExchange.1470.description.0"><td></td><td colspan="9">名称的同义词列表。与普通多语言字符串不同，同义词可包含多个具有相同 xml:lang 属性值的元素。</td></tr>
 <tr data-source-block="TCustomExchange.1470.description.1"><td></td><td colspan="9">允许 0..n 个条目，每个条目的最大长度为 80。</td></tr>
 </tbody></table>
-<h3><a href="#appendix-TIntermediateExchange" id="appendix-TIntermediateExchange"></a>中间交换专用字段（TIntermediateExchange）</h3>
+<h3><a href="#appendix-tintermediateexchange" id="appendix-tintermediateexchange"></a>中间交换专用字段（TIntermediateExchange）</h3>
 <p>原表分组可重复：是；原表分组必填：是。</p>
 <p>包含仅适用于中间交换的字段，是交换部分之外的附加字段。中间交换是单元过程中记录的产品或废物投入和输出，以及相应的相关信息。</p>
 <p>对于中间交换，本部分扩展交换部分。</p>
@@ -969,7 +969,7 @@ The following version 1 SpoldIds have been removed in the EcoSpold02 format:
 <tr data-field-id="1540"><td>classification</td><td>1540</td><td>new</td><td></td><td>TClassification</td><td></td><td>是</td><td>否</td><td>否</td><td>是</td></tr>
 <tr data-source-block="TIntermediateExchange.1540.description.0"><td></td><td colspan="9">包含用于界定产品的分类配对。</td></tr>
 </tbody></table>
-<h3><a href="#appendix-TElementaryExchange" id="appendix-TElementaryExchange"></a>基本流交换专用字段（TElementaryExchange）</h3>
+<h3><a href="#appendix-telementaryexchange" id="appendix-telementaryexchange"></a>基本流交换专用字段（TElementaryExchange）</h3>
 <p>原表分组可重复：是；原表分组必填：否。</p>
 <p>包含仅适用于基本流交换的字段（除交换部分的字段之外）。与环境的交换是作为单元过程输入和输出记录的基本流，并包含其相关信息。</p>
 <p>当交换发生于活动与环境之间时，此部分扩展交换部分。</p>
@@ -994,7 +994,7 @@ The following version 1 SpoldIds have been removed in the EcoSpold02 format:
 <tr data-field-id="1670"><td>@formula</td><td>1670</td><td>3711</td><td></td><td>TBaseString40</td><td>40</td><td>否</td><td>否</td><td>否</td><td>是</td></tr>
 <tr data-source-block="TElementaryExchange.1670.description.0"><td></td><td colspan="9">可以填写化学式，例如分子式。</td></tr>
 </tbody></table>
-<h3><a href="#appendix-TParameter" id="appendix-TParameter"></a>参数（TParameter）</h3>
+<h3><a href="#appendix-tparameter" id="appendix-tparameter"></a>参数（TParameter）</h3>
 <p>原表分组可重复：是；原表分组必填：否。</p>
 <p>供公式使用的数据集参数。</p>
 <table class="format-table">
@@ -1027,7 +1027,7 @@ The following version 1 SpoldIds have been removed in the EcoSpold02 format:
 <tr data-field-id="1740"><td>comment</td><td>1740</td><td>new</td><td></td><td>TString32000</td><td>32000</td><td>否</td><td>否</td><td>是</td><td>否</td></tr>
 <tr data-source-block="TParameter.1740.description.0"><td></td><td colspan="9">可对每个单独参数填写一般说明。</td></tr>
 </tbody></table>
-<h3><a href="#appendix-TImpactIndicatorResult" id="appendix-TImpactIndicatorResult"></a>影响指标结果（TImpactIndicatorResult）</h3>
+<h3><a href="#appendix-timpactindicatorresult" id="appendix-timpactindicatorresult"></a>影响指标结果（TImpactIndicatorResult）</h3>
 <p>原表分组可重复：是；原表分组必填：否。</p>
 <p>计算得到的影响指标。</p>
 <table class="format-table">
@@ -1056,7 +1056,7 @@ The following version 1 SpoldIds have been removed in the EcoSpold02 format:
 <tr data-field-id="1850"><td>unitName</td><td>1850</td><td>new</td><td></td><td>TString40</td><td>40</td><td>否</td><td>是</td><td>是</td><td>是</td></tr>
 <tr data-source-block="TImpactIndicatorResult.1850.description.0"><td></td><td colspan="9">影响指标数量的单位名称。</td></tr>
 </tbody></table>
-<h3><a href="#appendix-TCompartment" id="appendix-TCompartment"></a>区室与子区室（TCompartment）</h3>
+<h3><a href="#appendix-tcompartment" id="appendix-tcompartment"></a>区室与子区室（TCompartment）</h3>
 <p>原表分组可重复：否；原表分组必填：否。</p>
 <p>包含用于指定交换的区室配对。</p>
 <table class="format-table">
@@ -1072,7 +1072,7 @@ The following version 1 SpoldIds have been removed in the EcoSpold02 format:
 <tr data-source-block="TCompartment.351.description.0"><td></td><td colspan="9">引用该子区室所属的上下文。</td></tr>
 <tr data-source-block="TCompartment.351.description.1"><td></td><td colspan="9">如果省略此属性，则改用数据集自身的上下文。</td></tr>
 </tbody></table>
-<h3><a href="#appendix-TUncertainty" id="appendix-TUncertainty"></a>不确定性（TUncertainty）</h3>
+<h3><a href="#appendix-tuncertainty" id="appendix-tuncertainty"></a>不确定性（TUncertainty）</h3>
 <p>原表分组可重复：否；原表分组必填：否。</p>
 <p>必须从以下不确定性方法（对数正态、正态、……、未定义分布）中恰好选择一种。TUncertainty 复杂类型用于多个位置，因此，一个数据集可在不同位置包含多个 uncertainty 元素。但每个具有不确定性信息的元素只能包含一个 uncertainty 元素。</p>
 <table class="format-table">
@@ -1176,7 +1176,7 @@ The following version 1 SpoldIds have been removed in the EcoSpold02 format:
 <tr data-source-block="TUncertainty.2275.description.3"><td></td><td colspan="9">4=有关相关过程或材料的数据。</td></tr>
 <tr data-source-block="TUncertainty.2275.description.4"><td></td><td colspan="9">5=有关实验室规模相关过程的数据，或来自不同技术的数据。</td></tr>
 </tbody></table>
-<h3><a href="#appendix-TProperty" id="appendix-TProperty"></a>属性（TProperty）</h3>
+<h3><a href="#appendix-tproperty" id="appendix-tproperty"></a>属性（TProperty）</h3>
 <p>原表分组可重复：是；原表分组必填：否。</p>
 <p>用于指定交换属性的格式。</p>
 <table class="format-table">
@@ -1224,7 +1224,7 @@ The following version 1 SpoldIds have been removed in the EcoSpold02 format:
 <tr data-field-id="2380"><td>comment</td><td>2380</td><td>new</td><td></td><td>TString32000</td><td>32000</td><td>否</td><td>否</td><td>是</td><td>否</td></tr>
 <tr data-source-block="TProperty.2380.description.0"><td></td><td colspan="9">可对某个特定交换的每项单独属性添加一般注释。</td></tr>
 </tbody></table>
-<h3><a href="#appendix-TTransferCoefficient" id="appendix-TTransferCoefficient"></a>转移系数（TTransferCoefficient）</h3>
+<h3><a href="#appendix-ttransfercoefficient" id="appendix-ttransfercoefficient"></a>转移系数（TTransferCoefficient）</h3>
 <p>原表分组可重复：是；原表分组必填：否。</p>
 <p>用于根据投入量计算输出量的转移系数。</p>
 <table class="format-table">
@@ -1255,7 +1255,7 @@ The following version 1 SpoldIds have been removed in the EcoSpold02 format:
 <tr data-field-id="2450"><td>comment</td><td>2450</td><td>3792</td><td></td><td>TString32000</td><td>32000</td><td>否</td><td>否</td><td>是</td><td>否</td></tr>
 <tr data-source-block="TTransferCoefficient.2450.description.0"><td></td><td colspan="9">可对每个单独的转移系数添加一般注释。</td></tr>
 </tbody></table>
-<h3><a href="#appendix-TTextAndImage" id="appendix-TTextAndImage"></a>文本与图像（TTextAndImage）</h3>
+<h3><a href="#appendix-ttextandimage" id="appendix-ttextandimage"></a>文本与图像（TTextAndImage）</h3>
 <p>原表分组可重复：否；原表分组必填：否。</p>
 <p>text、imageUri 和 variable 元素的列表。这些元素可按任意顺序组合。必须通过 text 和 imageUrl 元素的 index 属性指定它们在结果中的所需顺序。</p>
 <table class="format-table">
@@ -1268,7 +1268,7 @@ The following version 1 SpoldIds have been removed in the EcoSpold02 format:
 <tr data-field-id="3920"><td>variable</td><td>3920</td><td>new</td><td></td><td>TNamedString32000</td><td>32000</td><td>是</td><td>否</td><td>否</td><td>否</td></tr>
 <tr data-source-block="TTextAndImage.3920.description.0"><td></td><td colspan="9">定义本部分 text 元素中使用的变量名及其值。派生数据集可以覆盖这些定义，以改变变量值。</td></tr>
 </tbody></table>
-<h3><a href="#appendix-TRepresentativeness" id="appendix-TRepresentativeness"></a>代表性（TRepresentativeness）</h3>
+<h3><a href="#appendix-trepresentativeness" id="appendix-trepresentativeness"></a>代表性（TRepresentativeness）</h3>
 <p>原表分组可重复：否；原表分组必填：否。</p>
 <p>包含数据集信息的代表性，以及数据如何采样和／或计算的信息。</p>
 <table class="format-table">
@@ -1291,7 +1291,7 @@ The following version 1 SpoldIds have been removed in the EcoSpold02 format:
 <tr data-source-block="TRepresentativeness.3040.description.2"><td></td><td colspan="9">如果将代表某一国家运行活动的数据用于另一国家的活动，可在这里注明其原始代表性。</td></tr>
 <tr data-source-block="TRepresentativeness.3040.description.3"><td></td><td colspan="9">也可在这里说明外推导致的均值变化。</td></tr>
 </tbody></table>
-<h3><a href="#appendix-TReview" id="appendix-TReview"></a>审查（TReview）</h3>
+<h3><a href="#appendix-treview" id="appendix-treview"></a>审查（TReview）</h3>
 <p>原表分组可重复：是；原表分组必填：否。</p>
 <p>包含开展鉴定性评审（critical review）的人员信息，以及评审的主要结果、结论和提出的建议。</p>
 <p>允许多名评审者。</p>
@@ -1323,7 +1323,7 @@ The following version 1 SpoldIds have been removed in the EcoSpold02 format:
 <tr data-field-id="3350"><td>otherDetails</td><td>3350</td><td>5619</td><td></td><td>TString32000</td><td>32000</td><td>否</td><td>否</td><td>是</td><td>否</td></tr>
 <tr data-source-block="TReview.3350.description.0"><td></td><td colspan="9">包含评审过程的进一步信息，例如数据集首次发布后补充的小幅修正。</td></tr>
 </tbody></table>
-<h3><a href="#appendix-TDataEntryBy" id="appendix-TDataEntryBy"></a>数据录入者（TDataEntryBy）</h3>
+<h3><a href="#appendix-tdataentryby" id="appendix-tdataentryby"></a>数据录入者（TDataEntryBy）</h3>
 <p>原表分组可重复：否；原表分组必填：是。</p>
 <p>包含数据集作者的信息，即将数据录入数据库格式的人员，也是对数据负责的人员。</p>
 <table class="format-table">
@@ -1341,7 +1341,7 @@ The following version 1 SpoldIds have been removed in the EcoSpold02 format:
 <tr data-field-id="3406"><td>@personEmail</td><td>3406</td><td>new</td><td></td><td>TBaseString80</td><td>80</td><td>否</td><td>是</td><td>否</td><td>是</td></tr>
 <tr data-source-block="TDataEntryBy.3406.description.0"><td></td><td colspan="9">人员的完整电子邮件地址。</td></tr>
 </tbody></table>
-<h3><a href="#appendix-TDataGeneratorAndPublication" id="appendix-TDataGeneratorAndPublication"></a>数据生成者与发布（TDataGeneratorAndPublication）</h3>
+<h3><a href="#appendix-tdatageneratorandpublication" id="appendix-tdatageneratorandpublication"></a>数据生成者与发布（TDataGeneratorAndPublication）</h3>
 <p>原表分组可重复：否；原表分组必填：是。</p>
 <p>包含谁收集、汇编或发布原始数据的信息。此人与 &#x27;DataEntryBy&#x27; 中的人可能相同，也可能不同。此外，还包含数据集所依据出版物的类型及数据集可访问性的信息。</p>
 <table class="format-table">
@@ -1391,7 +1391,7 @@ The following version 1 SpoldIds have been removed in the EcoSpold02 format:
 <tr data-field-id="3563"><td>@companyIdOverwrittenByChild</td><td>3563</td><td>new</td><td></td><td>boolean</td><td></td><td>否</td><td>否</td><td>否</td><td>否</td></tr>
 <tr data-source-block="TDataGeneratorAndPublication.3563.description.0"><td></td><td colspan="9">如果必须在子数据集中移除对某个主数据实体的引用，则必须将相应的 xxxOverwrittenByChild 属性设置为 true。否则，移除该引用将被解释为“保留父数据集的值”（Keep the Parent Value）。</td></tr>
 </tbody></table>
-<h3><a href="#appendix-TFileAttributes" id="appendix-TFileAttributes"></a>文件属性（TFileAttributes）</h3>
+<h3><a href="#appendix-tfileattributes" id="appendix-tfileattributes"></a>文件属性（TFileAttributes）</h3>
 <p>原表分组可重复：否；原表分组必填：是。</p>
 <p>包含关于整个文件的元信息。</p>
 <table class="format-table">
@@ -1426,7 +1426,7 @@ The following version 1 SpoldIds have been removed in the EcoSpold02 format:
 <tr data-field-id="3890"><td>requiredContext</td><td>3890</td><td>new</td><td></td><td>TRequiredContextReference</td><td></td><td>是</td><td>否</td><td>否</td><td>否</td></tr>
 <tr data-source-block="TFileAttributes.3890.description.0"><td></td><td colspan="9">引用加载本文档所必需的上下文，以完整保留文档中的所有主数据引用。</td></tr>
 </tbody></table>
-<h3><a href="#appendix-TRequiredContextReference" id="appendix-TRequiredContextReference"></a>所需上下文引用（TRequiredContextReference）</h3>
+<h3><a href="#appendix-trequiredcontextreference" id="appendix-trequiredcontextreference"></a>所需上下文引用（TRequiredContextReference）</h3>
 <p>原表分组可重复：否；原表分组必填：否。</p>
 <p>此类型用于指定：若要使用数据集引用的主数据读取该数据集，必须了解哪些上下文。</p>
 <p>此类型可用于表明：读取该数据集需要来自不同上下文的主数据条目。读取数据集的软件必须识别这些上下文，并知道各上下文的实际主数据文件位于何处。</p>

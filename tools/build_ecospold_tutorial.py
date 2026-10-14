@@ -41,7 +41,7 @@ def tables(source, translations):
     heads = ['名称','FieldID','SpoldID（第 1 版）','取值选项','类型','长度','可重复','必填','多语言','主数据冗余字段']
     for section in source['sections']:
         sid = section['id']
-        fragments.append(f'<h3><a href="#appendix-{sid}" id="appendix-{sid}"></a>{TITLES[sid]}（{sid}）</h3>')
+        fragments.append(f'<h3><a href="#appendix-{sid.lower()}" id="appendix-{sid.lower()}"></a>{TITLES[sid]}（{sid}）</h3>')
         occurrence = section['occurrence']
         fragments.append(f'<p>原表分组可重复：{flag(occurrence[1])}；原表分组必填：{flag(occurrence[3])}。</p>')
         fragments.extend(f'<p>{escape(translations[k])}</p>' for k in section['intro_blocks'])
@@ -140,7 +140,7 @@ def build_content():
             # Give the chapter a stable, namespace-aware destination for review links.
             lines = text.splitlines()
             if lines[0].startswith('#### '):
-                lines[0] += f' <a href="#read-{sid}" id="read-{sid}"></a>'
+                lines[0] += f' <a href="#read-{sid.lower()}" id="read-{sid.lower()}"></a>'
             article += ['\n'.join(lines), '']
     practice = guide['practice'].replace('### 按你的问题筛选数据',query_text+'\n\n### 按你的问题筛选数据')
     practice = practice.replace('本文配套的教程审阅记录','[本文配套的教程审阅记录](tutorial-review.md)')
@@ -181,7 +181,7 @@ def build_content():
         fid = note.get('field_id') or (note.get('block','').split('.')[1] if '.' in note.get('block','') else '')
         status = '待专家复核' if note.get('status') == 'needs_expert_review' else '已处理／已说明'
         audit_page += [f'### {index}. {status} · {sid} {fid}', '',
-            f'相关正文：[{TITLES.get(sid,sid)}](README.md#read-{sid})', '',
+            f'相关正文：[{TITLES.get(sid,sid)}](README.md#read-{sid.lower()})', '',
             note.get('reason_zh',note.get('reason','')), '',note.get('recommendation_zh',''), '']
     write_review = '\n'.join(audit_page).rstrip()+'\n'
     (OUT / 'tutorial-review.md').write_text(write_review)
