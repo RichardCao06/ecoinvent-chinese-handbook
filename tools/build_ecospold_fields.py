@@ -50,7 +50,7 @@ def sha(path):
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
 def write(name, text):
-    (OUT / name).write_text(text.rstrip() + '\n')
+    (OUT / name).write_text(text.replace('\r\n', '\n').replace('\r', '\n').rstrip() + '\n')
 
 def cell(value):
     return str(value).replace('|', '\\|').replace('\n', '<br>')
